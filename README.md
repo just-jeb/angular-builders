@@ -59,7 +59,7 @@ Options:
               "builder": "angular-cli-builders:custom-webpack-browser"
               "options": {
                      "webpackConfigPath": "./extra-webpack.config.js",
-                     "outputPath": "dist/my-cool-library",
+                     "outputPath": "dist/my-cool-client",
                      "index": "src/index.html",
                      "main": "src/main.ts",
                      "polyfills": "src/polyfills.ts",
@@ -84,11 +84,8 @@ Options:
     "build": {
               "builder": "angular-cli-builders:custom-webpack-server"
               "options": {
-                     "webpackConfigPath": "./extra-webpack.config.js",
-                     "outputPath": "dist/my-cool-library",
-                     "index": "src/index.html",
-                     "main": "src/main.ts",
-                     "polyfills": "src/polyfills.ts",
-                     "tsConfig": "src/tsconfig.app.json"
+                    "outputPath": "dist/my-cool-server",
+                    "main": "src/main.server.ts",
+                    "tsConfig": "src/tsconfig.server.json"
               }
 ```
