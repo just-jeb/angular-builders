@@ -84,6 +84,7 @@ Options:
     "build": {
               "builder": "angular-cli-builders:custom-webpack-server"
               "options": {
+                    "webpackConfigPath": "./extra-webpack.config.js",
                     "outputPath": "dist/my-cool-server",
                     "main": "src/main.server.ts",
                     "tsConfig": "src/tsconfig.server.json"
