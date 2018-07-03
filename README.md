@@ -5,7 +5,6 @@ A set of additional builders for angular-cli
  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
  - [@angular-devkit/architect](https://www.npmjs.com/package/@angular-devkit/architect) >= 0.7.0-rc.0
  - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.7.0-rc.0
- - [@angular-devkit/build-webpack](https://npmjs.com/package/@angular-devkit/build-webpack) >= 0.7.0-rc.0
 
 # Usage
 
