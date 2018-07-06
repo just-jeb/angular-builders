@@ -35,6 +35,7 @@
     "testEnvironment": "node"
   },
   "scripts": {
+    "postbuild": "npm run e2e",
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e"
