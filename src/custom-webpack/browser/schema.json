@@ -1,12 +1,7 @@
 {
-  "title": "Webpack browser schema for Build Facade.",
-  "id": "BuildCustomWebpackBrowserSchema",
+  "title": "Custom webpack browser schema for Build Facade",
   "description": "Browser target options",
   "properties": {
-    "webpackConfigPath": {
-      "type": "string",
-      "description": "The path to the custom webpack configuration file"
-    },
     "assets": {
       "type": "array",
       "description": "List of static application assets.",
@@ -242,6 +237,10 @@
         "$ref": "#/definitions/budget"
       },
       "default": []
+    },
+    "webpackConfigPath": {
+      "type": "string",
+      "description": "The path to the custom webpack configuration file"
     }
   },
   "additionalProperties": false,
@@ -401,5 +400,6 @@
         "type"
       ]
     }
-  }
+  },
+  "id": "BuildCustomWebpackBrowserSchema"
 }
