@@ -1,12 +1,8 @@
 {
   "$schema": "http://json-schema.org/schema",
   "id": "BuildCustomWebpackServerSchema",
-  "title": "Angular Webpack Architect Builder Schema",
+  "title": "Custom webpack server schema for Build Facade",
   "properties": {
-    "webpackConfigPath": {
-      "type": "string",
-      "description": "The path to the custom webpack configuration file"
-    },
     "main": {
       "type": "string",
       "description": "The name of the main entry-point file."
@@ -170,6 +166,10 @@
     "poll": {
       "type": "number",
       "description": "Enable and define the file watching poll time period in milliseconds."
+    },
+    "webpackConfigPath": {
+      "type": "string",
+      "description": "The path to the custom webpack configuration file"
     }
   },
   "additionalProperties": false,
@@ -215,6 +215,6 @@
         }
       ]
     }
-
-  }
+  },
+  "description": "Server target options"
 }
