@@ -3,3 +3,4 @@
  */
 export * from './src/custom-webpack/browser/index';
 export * from './src/custom-webpack/server/index';
+export * from './src/custom-webpack/dev-server/index';
