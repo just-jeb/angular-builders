@@ -89,3 +89,27 @@ Options:
                     "tsConfig": "src/tsconfig.server.json"
               }
 ```
+
+
+
+## custom-webpack-dev-server
+
+Extended `@angular-devkit/build-angular:dev-server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).   
+The builder will run the same build as `@angular-devkit/build-angular:dev-server` does with extra parameters that are specified in the provided webpack 
+configuration.
+
+Options:
+ - All the `@angular-devkit/build-angular:dev-server` options
+ - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
+
+`angular.json` Example: 
+```
+"architect": {
+    ...
+    "serve": {
+              "builder": "angular-cli-builders:custom-webpack-dev-server"
+              "options": {
+                    "webpackConfigPath": "./extra-webpack.config.js",
+                    "browserTarget": "project-name:build"
+              }
+```
