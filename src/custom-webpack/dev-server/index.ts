@@ -4,7 +4,7 @@
 
 import {BuilderContext} from '@angular-devkit/architect';
 import {CustomWebpackDevServerBuildSchema} from './schema';
-import {DevServerBuilder, NormalizedBrowserBuilderSchema} from '@angular-devkit/build-angular';
+import {DevServerBuilder, BrowserBuilderSchema } from '@angular-devkit/build-angular';
 import {getSystemPath, Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
 
@@ -18,7 +18,7 @@ export class CustomWebpackDevServerBuilder extends DevServerBuilder {
   buildWebpackConfig(root: Path,
                      projectRoot: Path,
                      host: virtualFs.Host<fs.Stats>,
-                     options: NormalizedBrowserBuilderSchema) {
+                     options: BrowserBuilderSchema) {
 
     const opt = options as CustomWebpackDevServerBuildSchema;
     const webpackConfigPath = opt.webpackConfigPath || 'webpack.config.js';
