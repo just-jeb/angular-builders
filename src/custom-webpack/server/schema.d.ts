@@ -6,4 +6,5 @@ import {BuildWebpackServerSchema} from '@angular-devkit/build-angular/src/server
 
 export interface CustomWebpackServerBuildSchema extends BuildWebpackServerSchema {
   webpackConfigPath?: string;
+  strategy: { [key: string] : 'append' | 'prepend' | 'replace' }
 }
