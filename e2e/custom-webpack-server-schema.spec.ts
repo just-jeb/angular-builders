@@ -9,7 +9,7 @@ describe('custom webpack server builder test', () => {
 	it('Should fit the schema of @angular-devkit/build-angular:server', () => {
 		const originalBrowserSchema = require('@angular-devkit/build-angular/src/server/schema.json');
 		customWebpackBrowserSchema.properties['webpackConfigPath'] = undefined;
-		customWebpackBrowserSchema.properties['strategy'] = undefined;
+		customWebpackBrowserSchema.properties['mergeStrategy'] = undefined;
 		expect(originalBrowserSchema.properties).toEqual(customWebpackBrowserSchema.properties);
 	});
 

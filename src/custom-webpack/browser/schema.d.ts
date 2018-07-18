@@ -6,5 +6,5 @@ import {BrowserBuilderSchema} from '@angular-devkit/build-angular';
 
 export interface CustomWebpackBrowserBuildSchema extends BrowserBuilderSchema {
   webpackConfigPath?: string;
-  strategy: { [key: string] : 'append' | 'prepend' | 'replace' }
+  mergeStrategy: { [key: string] : 'append' | 'prepend' | 'replace' }
 }
