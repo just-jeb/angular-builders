@@ -3,7 +3,7 @@
   "title": "Custom webpack server schema for Build Facade",
   "description": "Server target options",
   "properties": {
-    "strategy": {
+    "mergeStrategy": {
       "type": "object",
       "description": "The webpack merge strategy, keys must be the same as webpack config attributes, values can only be append | prepend | replace. See npm package webpack-merge"
     },

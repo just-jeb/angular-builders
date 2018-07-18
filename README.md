@@ -49,6 +49,7 @@ The builder will run the same build as `@angular-devkit/build-angular:browser` d
 Options:
  - All the `@angular-devkit/build-angular:browser` options
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
+ - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace`. Defaults to append
 
 `angular.json` Example: 
 ```
@@ -58,6 +59,7 @@ Options:
               "builder": "angular-cli-builders:custom-webpack-browser"
               "options": {
                      "webpackConfigPath": "./extra-webpack.config.js",
+                     "mergeStrategy": { "plugins": "prepend" },
                      "outputPath": "dist/my-cool-client",
                      "index": "src/index.html",
                      "main": "src/main.ts",
@@ -75,6 +77,7 @@ configuration.
 Options:
  - All the `@angular-devkit/build-angular:server` options
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
+ - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace`. Defaults to append
 
 `angular.json` Example: 
 ```
@@ -84,6 +87,7 @@ Options:
               "builder": "angular-cli-builders:custom-webpack-server"
               "options": {
                     "webpackConfigPath": "./extra-webpack.config.js",
+                    "mergeStrategy": { "plugins": "prepend" },
                     "outputPath": "dist/my-cool-server",
                     "main": "src/main.server.ts",
                     "tsConfig": "src/tsconfig.server.json"
