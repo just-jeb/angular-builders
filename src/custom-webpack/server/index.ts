@@ -24,7 +24,7 @@ export class CustomWebpackServerBuilder extends ServerBuilder {
     const webpackConfigPath = opt.webpackConfigPath || 'webpack.config.js';
     const customWebpackConfig = require(`${getSystemPath(root)}/${webpackConfigPath}`);
     const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-    return webpackMerge([browserWebpackConfig, customWebpackConfig]);
+    return webpackMerge.strategy(opt.strategy || {})([browserWebpackConfig, customWebpackConfig]);
   }
 }
 

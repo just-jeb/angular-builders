@@ -11,6 +11,7 @@ const webpackMerge = require('webpack-merge');
 
 export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema {
   webpackConfigPath?: string;
+  strategy: { [key: string] : 'append' | 'prepend' | 'replace' }
 }
 
 export class CustomWebpackBrowserBuilder extends BrowserBuilder {
@@ -29,7 +30,7 @@ export class CustomWebpackBrowserBuilder extends BrowserBuilder {
       throw Error('No custom webpack config path specified. The default path is ./webpack.config.js');
     }
     const browserWebpackCOnfig = super.buildWebpackConfig(root, projectRoot, host, options);
-    return webpackMerge([browserWebpackCOnfig, customWebpackConfig]);
+    return webpackMerge.strategy(options.strategy || {})([browserWebpackCOnfig, customWebpackConfig]);
   }
 }
 
