@@ -50,6 +50,10 @@ Options:
  - All the `@angular-devkit/build-angular:browser` options
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
  - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace`. Defaults to append
+      - `append`: adds the configurations to the end of the angular cli config. The custom plugins config will be added to the end of the angular cli plugins array
+      - `prepend`: adds the configurations to the beginning of the angular cli config. The custom loaders config will be added to the beginning of the angular cli loaders array
+      - `replace`: replaces the configuration entirely. The custom webpack config will replace the angular cli webpack config
+      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
 
 `angular.json` Example: 
 ```
@@ -78,6 +82,10 @@ Options:
  - All the `@angular-devkit/build-angular:server` options
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
  - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace`. Defaults to append
+      - `append`: adds the configurations to the end of the angular cli config. The custom plugins config will be added to the end of the angular cli plugins array
+      - `prepend`: adds the configurations to the beginning of the angular cli config. The custom loaders config will be added to the beginning of the angular cli loaders array
+      - `replace`: replaces the configuration entirely. The custom webpack config will replace the angular cli webpack config
+      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
 
 `angular.json` Example: 
 ```
@@ -87,7 +95,7 @@ Options:
               "builder": "angular-cli-builders:custom-webpack-server"
               "options": {
                     "webpackConfigPath": "./extra-webpack.config.js",
-                    "mergeStrategy": { "plugins": "prepend" },
+                    "mergeStrategy": { "loaders": "replace" },
                     "outputPath": "dist/my-cool-server",
                     "main": "src/main.server.ts",
                     "tsConfig": "src/tsconfig.server.json"
