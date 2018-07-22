@@ -51,7 +51,7 @@ Options:
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
  - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace` per webpack config entry. Defaults to append
       - `append`: appends the given field configuration (in custom webpack config) to the existing Angular CLI webpack configuration
-      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config)n. The custom loaders config will be added to the _beginning_ of the existing loaders array
+      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array
       - `replace`: replaces the configuration entirely. The custom webpack config will replace the Angular CLI webpack config
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
 
@@ -84,7 +84,7 @@ Options:
  - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
  - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace` per webpack config entry. Defaults to append
       - `append`: appends the given field configuration (in custom webpack config) to the existing Angular CLI webpack configuration
-      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config)n. The custom loaders config will be added to the _beginning_ of the existing loaders array
+      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array
       - `replace`: replaces the configuration entirely. The custom webpack config will replace the Angular CLI webpack config
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
 
