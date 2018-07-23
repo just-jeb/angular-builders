@@ -4,14 +4,12 @@
 
 import {BuilderContext} from '@angular-devkit/architect';
 import {BrowserBuilder, NormalizedBrowserBuilderSchema} from '@angular-devkit/build-angular';
-import {getSystemPath, Path, virtualFs} from '@angular-devkit/core';
+import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
+import {CustomWebpackSchema} from "../custom-webpack-schema";
+import {CustomWebpackBuilder} from "../custom-webpack-builder";
 
-const webpackMerge = require('webpack-merge');
-
-export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema {
-  webpackConfigPath?: string;
-  mergeStrategy: { [key: string] : 'append' | 'prepend' | 'replace' }
+export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema, CustomWebpackSchema {
 }
 
 export class CustomWebpackBrowserBuilder extends BrowserBuilder {
@@ -24,13 +22,8 @@ export class CustomWebpackBrowserBuilder extends BrowserBuilder {
                      projectRoot: Path,
                      host: virtualFs.Host<fs.Stats>,
                      options: NormalizedCustomWebpackBrowserBuildSchema) {
-    const webpackConfigPath = options.webpackConfigPath || 'webpack.config.js';
-    const customWebpackConfig = require(`${getSystemPath(root)}/${webpackConfigPath}`);
-    if (!customWebpackConfig) {
-      throw Error('No custom webpack config path specified. The default path is ./webpack.config.js');
-    }
-    const browserWebpackCOnfig = super.buildWebpackConfig(root, projectRoot, host, options);
-    return webpackMerge.strategy(options.mergeStrategy || {})([browserWebpackCOnfig, customWebpackConfig]);
+	  const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
+	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig) as any;
   }
 }
 
