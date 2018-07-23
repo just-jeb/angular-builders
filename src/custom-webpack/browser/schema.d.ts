@@ -3,8 +3,7 @@
  */
 
 import {BrowserBuilderSchema} from '@angular-devkit/build-angular';
+import {CustomWebpackSchema} from "../custom-webpack-schema";
 
-export interface CustomWebpackBrowserBuildSchema extends BrowserBuilderSchema {
-  webpackConfigPath?: string;
-  mergeStrategy: { [key: string] : 'append' | 'prepend' | 'replace' }
+export interface CustomWebpackBrowserBuildSchema extends BrowserBuilderSchema, CustomWebpackSchema {
 }
