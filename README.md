@@ -55,7 +55,7 @@ Options:
       - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
       - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).  
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-    - `replaceDuplicatePlugins`: Defaults to `false`. If true, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
+    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
 `angular.json` Example: 
 ```
@@ -92,7 +92,7 @@ Options:
       - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
       - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).  
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-    - `replaceDuplicatePlugins`: Defaults to `false`. If true, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
+    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
 `angular.json` Example: 
 ```
