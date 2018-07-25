@@ -4,7 +4,8 @@ import {DevServerBuilder, DevServerBuilderOptions, BrowserBuilderSchema, Browser
 import {Path, virtualFs} from '@angular-devkit/core';
 import {Observable} from 'rxjs';
 import {tap, switchMap} from 'rxjs/operators';
-import * as fs from 'fs';
+import {Stats} from 'fs';
+import {GenericWebpackBuilder} from '../generic-webpack-builder';
 
 
 export class GenericDevServerBuilder extends DevServerBuilder {
@@ -33,18 +34,15 @@ export class GenericDevServerBuilder extends DevServerBuilder {
   buildWebpackConfig(
     root: Path,
     projectRoot: Path,
-    host: virtualFs.Host<fs.Stats>,
+    host: virtualFs.Host<Stats>,
     browserOptions: BrowserBuilderSchema,
   ) {
-    // If our target builder has a webpack config method lets use it. Otherwise we
-    // will fall to the default config
-    if (this.targetBuilder instanceof BrowserBuilder) {
-      return (<BrowserBuilder> this.targetBuilder).buildWebpackConfig(
-        root, projectRoot, host, <NormalizedBrowserBuilderSchema> browserOptions
-      );
-    }
-
-    return super.buildWebpackConfig(root, projectRoot, host, browserOptions);
+    // Check if we can use the generic webpack builder if so lets use it, otherwise we'll fall back to the DevServerBuilder's
+    // implementation
+    return (
+      GenericWebpackBuilder.buildWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
+      super.buildWebpackConfig(root, projectRoot, host, browserOptions)
+    );
   }
 }
 
