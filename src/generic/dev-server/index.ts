@@ -7,8 +7,6 @@ import {tap, switchMap} from 'rxjs/operators';
 import * as fs from 'fs';
 
 
-const webpackMerge = require('webpack-merge');
-
 export class GenericDevServerBuilder extends DevServerBuilder {
 
   private targetBuilder: Builder<BrowserBuilderSchema> | undefined;
