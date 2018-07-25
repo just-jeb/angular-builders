@@ -3,19 +3,19 @@ import {merge} from 'lodash';
 
 interface CustomSchema {
 	originalSchemaPath: string;
-	schemaExtensionPath: string,
+	schemaExtensionPaths: string[],
 	newSchemaPath: string;
 }
 
 const schemesToMerge: CustomSchema[] = [
 	{
 		originalSchemaPath: '@angular-devkit/build-angular/src/browser/schema.json',
-		schemaExtensionPath: './src/custom-webpack/browser/schema.ext.json',
+		schemaExtensionPaths: ['./src/custom-webpack/browser/schema.ext.json', './src/custom-webpack/schema.ext.json'],
 		newSchemaPath: './src/custom-webpack/browser/schema.json'
 	},
 	{
 		originalSchemaPath: '@angular-devkit/build-angular/src/server/schema.json',
-		schemaExtensionPath: './src/custom-webpack/server/schema.ext.json',
+		schemaExtensionPaths: ['./src/custom-webpack/server/schema.ext.json', './src/custom-webpack/schema.ext.json'],
 		newSchemaPath: './src/custom-webpack/server/schema.json'
 	},
 	{
@@ -27,7 +27,7 @@ const schemesToMerge: CustomSchema[] = [
 
 for(const customSchema of schemesToMerge){
 	const originalSchema = require(customSchema.originalSchemaPath);
-	const schemaExtension = require(customSchema.schemaExtensionPath);
-	const newSchema = merge(originalSchema, schemaExtension);
+	const schemaExtensions = customSchema.schemaExtensionPaths.map(path => require(path));
+	const newSchema = schemaExtensions.reduce((extendedSchema, currentExtension) => merge(extendedSchema, currentExtension), originalSchema);
 	writeFileSync(customSchema.newSchemaPath, JSON.stringify(newSchema, null, 2), 'utf-8');
 }

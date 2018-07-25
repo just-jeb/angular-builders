@@ -50,12 +50,14 @@ The builder will run the same build as `@angular-devkit/build-angular:browser` d
 
 Options:
  - All the `@angular-devkit/build-angular:browser` options
- - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
- - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace` per webpack config entry. Defaults to append
-      - `append`: appends the given field configuration (in custom webpack config) to the existing Angular CLI webpack configuration
-      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array
-      - `replace`: replaces the configuration entirely. The custom webpack config will replace the Angular CLI webpack config
-      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
+ - `customWebpackConfig`: configuration object with the following properties:
+    - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`
+    - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
+      - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
+      - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
+      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
+      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
+    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
 `angular.json` Example:
 ```
@@ -64,8 +66,10 @@ Options:
     "build": {
               "builder": "angular-cli-builders:custom-webpack-browser"
               "options": {
-                     "webpackConfigPath": "./extra-webpack.config.js",
-                     "mergeStrategy": { "plugins": "prepend" },
+                     "customWebpackConfig": {
+                        path: "./extra-webpack.config.js",
+                        mergeStrategies: { "externals": "prepend" },
+                     }
                      "outputPath": "dist/my-cool-client",
                      "index": "src/index.html",
                      "main": "src/main.ts",
@@ -73,7 +77,7 @@ Options:
                      "tsConfig": "src/tsconfig.app.json"
               }
 ```
-In this example `plugins` entry from `extra-webpack.config.js` will be prepended to `plugins` entry from Angular CLI underlying webpack config.
+In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config.
 
 ## custom-webpack-server
 
@@ -83,12 +87,14 @@ configuration.
 
 Options:
  - All the `@angular-devkit/build-angular:server` options
- - `webpackConfigPath`: path to the extra webpack configuration, defaults to `webpack.config.js`
- - `mergeStrategy`: webpack config merge strategy, strategies can be `append | prepend | replace` per webpack config entry. Defaults to append
-      - `append`: appends the given field configuration (in custom webpack config) to the existing Angular CLI webpack configuration
-      - `prepend`: prepends the given field configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array
-      - `replace`: replaces the configuration entirely. The custom webpack config will replace the Angular CLI webpack config
-      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info
+ - `customWebpackConfig`: configuration object with the following properties:
+    - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`
+    - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
+      - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
+      - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
+      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
+      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
+    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
 `angular.json` Example:
 ```
@@ -97,15 +103,18 @@ Options:
     "build": {
               "builder": "angular-cli-builders:custom-webpack-server"
               "options": {
-                    "webpackConfigPath": "./extra-webpack.config.js",
-                    "mergeStrategy": { "loaders": "replace" },
+                     "customWebpackConfig": {
+                        path: "./extra-webpack.config.js",
+                        mergeStrategies: { "loaders": "replace" },
+                        replaceDuplicatePlugins: true
+                     }
                     "outputPath": "dist/my-cool-server",
                     "main": "src/main.server.ts",
                     "tsConfig": "src/tsconfig.server.json"
               }
 ```
 
-In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`
+In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
 
 ## generic-dev-server
 

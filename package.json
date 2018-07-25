@@ -1,6 +1,6 @@
 {
   "name": "angular-cli-builders",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "A set of additional builders for angular-cli",
   "main": "index.js",
   "typings": "typings/index.d.ts",
@@ -23,6 +23,12 @@
     "custom"
   ],
   "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true,
+        "enableTsDiagnostics": false
+      }
+    },
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
@@ -35,20 +41,22 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "postbuild": "npm run e2e",
+    "postbuild": "npm test && npm run e2e",
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e"
   },
   "builders": "builders.json",
-  "dependencies": {},
+  "dependencies": {
+    "@types/lodash": "^4.14.112"
+  },
   "devDependencies": {
     "@angular-devkit/architect": "^0.7.0-rc.3",
     "@angular-devkit/build-angular": "^0.7.0-rc.3",
     "@angular-devkit/core": "^0.7.0-rc.3",
     "@types/jest": "^23.1.4",
-    "@types/lodash": "^4.14.110",
     "@types/node": "^10.5.1",
+    "@types/webpack-merge": "^4.1.3",
     "jest": "^23.3.0",
     "lodash": "^4.17.10",
     "ts-jest": "^23.0.0",

@@ -3,8 +3,8 @@
  */
 
 import {BuildWebpackServerSchema} from '@angular-devkit/build-angular/src/server/schema';
+import {CustomWebpackSchema} from "../custom-webpack-schema";
 
-export interface CustomWebpackServerBuildSchema extends BuildWebpackServerSchema {
-  webpackConfigPath?: string;
-  mergeStrategy: { [key: string] : 'append' | 'prepend' | 'replace' }
+export interface CustomWebpackServerBuildSchema extends BuildWebpackServerSchema, CustomWebpackSchema {
+
 }

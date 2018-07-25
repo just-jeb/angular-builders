@@ -1,3 +1,6 @@
+import {customWebpackConfig} from "./custom-webpack-config-schema";
+
+
 describe('custom webpack browser builder test', () => {
 	let customWebpackBrowserSchema: any;
 
@@ -8,12 +11,11 @@ describe('custom webpack browser builder test', () => {
 
 	it('Should fit the schema of @angular-devkit/build-angular:browser', () => {
 		const originalBrowserSchema = require('@angular-devkit/build-angular/src/browser/schema.json');
-		customWebpackBrowserSchema.properties['webpackConfigPath'] = undefined;
-		customWebpackBrowserSchema.properties['mergeStrategy'] = undefined;
+		customWebpackBrowserSchema.properties['customWebpackConfig'] = undefined;
 		expect(originalBrowserSchema.properties).toEqual(customWebpackBrowserSchema.properties);
 	});
 
-	it('Should contain webpackConfigPath', () => {
-		expect(customWebpackBrowserSchema.properties.webpackConfigPath).toMatchObject({type: 'string'});
-	})
+	it('Should contain customWebpackConfig', () => {
+		expect(customWebpackBrowserSchema.properties.customWebpackConfig).toEqual(customWebpackConfig);
+	});
 });
