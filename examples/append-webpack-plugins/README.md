@@ -22,7 +22,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 5. [Add BuildStampPlugin example plugin](build/BuildStampPlugin.js)
 
-6. `npm run build` Then look at the generated index.html it contains the build stamp:
+6. `npm run build` Then look at the generated `index.html` for the build stamp:
 
 ```
 ...
