@@ -6,7 +6,10 @@
 class BuildStampPlugin {
 
   /**
-   * Webpack apply method to set listeners to the various events.
+   * The angular CLI will generate the 'index.html' asset in response to the same
+   * emit event that we are attaching to. We will wait for that the CLI's plugin
+   * to complete polling for the asset. When it's finished we'll update it
+   * with our buildstamp.
    *
    * @param {Object} compiler - The webpack compile object.
    */
@@ -14,8 +17,7 @@ class BuildStampPlugin {
 
     compiler.hooks.emit.tapPromise('ExamplePlugin', (compilation) => {
 
-      // The angular CLI will generate the 'index.html' asset in response to the emit event,
-      // wait for that plugin to finish before stamping it's contents.
+      // Wait for the CLI to generate the index.html.
       return this.waitForAsset(compilation, 'index.html').then((source) => {
 
         // Find where the end of the body is.

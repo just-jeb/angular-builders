@@ -1,4 +1,5 @@
 
+// Our very simple example plugin.
 const BuildStampPlugin = require('./build/BuildStampPlugin');
 
 /**
