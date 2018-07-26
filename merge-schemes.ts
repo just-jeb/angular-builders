@@ -17,6 +17,11 @@ const schemesToMerge: CustomSchema[] = [
 		originalSchemaPath: '@angular-devkit/build-angular/src/server/schema.json',
 		schemaExtensionPaths: ['./src/custom-webpack/server/schema.ext.json', './src/custom-webpack/schema.ext.json'],
 		newSchemaPath: './src/custom-webpack/server/schema.json'
+	},
+	{
+		originalSchemaPath: '@angular-devkit/build-angular/src/dev-server/schema.json',
+		schemaExtensionPaths: ['./src/generic/dev-server/schema.ext.json'],
+		newSchemaPath: './src/generic/dev-server/schema.json'
 	}
 ];
 

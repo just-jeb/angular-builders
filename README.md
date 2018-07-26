@@ -3,13 +3,15 @@ A set of additional builders for angular-cli
 
 # Prerequisites:
  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
- - [@angular-devkit/architect](https://www.npmjs.com/package/@angular-devkit/architect) >= 0.7.0-rc.0
- - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.7.0-rc.0
+ - [@angular-devkit/architect](https://www.npmjs.com/package/@angular-devkit/architect) >= 0.7.0-rc.3
+ - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.7.0-rc.3
+ - [@angular-devkit/core](https://npmjs.com/package/@angular-devkit/core) >= 0.7.0-rc.3
+
 
 # Usage
 
  1. ```npm i -D angular-cli-builders```
- 2. In your `angular.json`:  
+ 2. In your `angular.json`:
      ```
      ...
      "architect": {
@@ -24,9 +26,9 @@ A set of additional builders for angular-cli
     - [architect-target] is the name of build target you want to run (build, serve, test etc.)
     - [name-of-builder] one of the supported builders (specified below)
  3. `ng [architect-target]`
- 
+
  ## For example
- 
+
   - angular.json:
     ```
     "architect": {
@@ -43,7 +45,7 @@ A set of additional builders for angular-cli
 
 ## custom-webpack-browser
 
-Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).   
+Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
 
 Options:
@@ -53,11 +55,11 @@ Options:
     - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
       - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
       - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).  
+      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
     - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
-`angular.json` Example: 
+`angular.json` Example:
 ```
 "architect": {
     ...
@@ -75,12 +77,12 @@ Options:
                      "tsConfig": "src/tsconfig.app.json"
               }
 ```
-In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config. 
+In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config.
 
 ## custom-webpack-server
 
-Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).   
-The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack 
+Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
+The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack
 configuration.
 
 Options:
@@ -90,11 +92,11 @@ Options:
     - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
       - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
       - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).  
+      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
     - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 
-`angular.json` Example: 
+`angular.json` Example:
 ```
 "architect": {
     ...
@@ -113,3 +115,29 @@ Options:
 ```
 
 In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
+
+## generic-dev-server
+
+Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration. Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
+Thus, if you use `generic-dev-server` along with `custom-webpack-browser`, `ng serve` will run with custom configuration provided in the latter.
+
+`angular.json` Example
+```
+"architect": {
+    ...
+    "build": {
+        "builder": "angular-cli-builders:custom-webpack-browser"
+        "options": {
+            "webpackConfigPath": "./extra-webpack.config.js",
+            "mergeStrategy": { "loaders": "replace" },
+            ...
+        },
+    "serve": {
+        "builder": "angular-cli-builders:generic-dev-server",
+        "options": {
+            "browserTarget": "my-project:build"
+        }
+    }
+```
+
+In this example the dev-server will use the webpack builder from the custom-webpack-browser when invoking the serve target.
