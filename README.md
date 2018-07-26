@@ -118,8 +118,8 @@ In this example `loaders` entry from Angular CLI webpack config will be _replace
 
 ## generic-dev-server
 
-Extended `@angular-devkit/build-angular:dev-server` builder that leverages the custom-webpack-browser builder above to merge configuration. Unlike the others you do not specify a webpack config or merge strategy directly with the dev-server. Instead it leverages those options from
-the targeted custom-webpack-browser.
+Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration. Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
+Thus, if you use `generic-dev-server` along with `custom-webpack-browser`, `ng serve` will run with custom configuration provided in the latter.
 
 `angular.json` Example
 ```
