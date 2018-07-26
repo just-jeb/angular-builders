@@ -145,3 +145,7 @@ Thus, if you use `generic-dev-server` along with `custom-webpack-browser`, `ng s
 ```
 
 In this example the dev-server will use the webpack builder from the custom-webpack-browser when invoking the serve target.
+
+# Further reading
+
+ - [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21) 
