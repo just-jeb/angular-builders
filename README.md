@@ -45,9 +45,9 @@ A set of additional builders for angular-cli
 
  - [custom-webpack-browser](#custom-webpack-browser)
  - [custom-webpack-server](#custom-webpack-server)
- - [custom-webpack-browser](#custom-webpack-browser)
+ - [generic-dev-server](#generic-dev-server)
 
-### custom-webpack-browser
+## custom-webpack-browser
 
 Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
@@ -83,7 +83,7 @@ Options:
 ```
 In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config.
 
-### custom-webpack-server
+## custom-webpack-server
 
 Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack
@@ -120,7 +120,7 @@ Options:
 
 In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
 
-### generic-dev-server
+## generic-dev-server
 
 Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration. Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
 Thus, if you use `generic-dev-server` along with `custom-webpack-browser`, `ng serve` will run with custom configuration provided in the latter.
