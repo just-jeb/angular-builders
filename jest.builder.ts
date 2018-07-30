@@ -1,6 +1,6 @@
 import {Builder, BuilderConfiguration, BuilderContext, BuildEvent} from '@angular-devkit/architect';
-import {Observable, of} from 'rxjs';
-import {catchError, tap} from 'rxjs/operators';
+import {Observable, from} from 'rxjs';
+import {map, tap} from 'rxjs/operators';
 import {JestBuilderSchema} from "./schema";
 import {getSystemPath} from "@angular-devkit/core";
 import {existsSync} from 'fs';
@@ -15,7 +15,8 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
 
 
 	run(builderConfig: BuilderConfiguration<Partial<JestBuilderSchema>>): Observable<BuildEvent> {
-		const {options, root} = builderConfig;
+		const {options} = builderConfig;
+		const root = this.context.workspace.root;
 		let argv: any[] = [];
 		for (const option of Object.keys(options)) {
 			if (options[option] === true) argv.push(`--${option}`)
@@ -30,8 +31,7 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
 		}
 		//TODO: add jest config property to schema?
 		argv.push('--config', JSON.stringify(merge(defaultConfig, customConfig)));
-
-		return of({success: true}).pipe(tap(() => jest.run(argv)), catchError(err => of({success: false})));
+		return from(jest.run(argv)).pipe(tap(res => console.log(res)), map(()=>({success: true})));
 	}
 
 }

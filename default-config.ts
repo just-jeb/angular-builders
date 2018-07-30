@@ -1,6 +1,7 @@
 export default {
   'preset': 'jest-preset-angular',
-  'setupTestFrameworkScriptFile': `${__dirname}/setup.ts`,
+  'testURL': 'https://github.com/meltedspark/angular-cli-builders',
+  'setupTestFrameworkScriptFile': `${__dirname}/setup.js`,
   "moduleNameMapper": {
     "\\.(jpg|jpeg|png)$": `${__dirname}/mock-module.js`,
   }
