@@ -7,7 +7,6 @@ import {existsSync} from 'fs';
 import defaultConfig from './default-config';
 import {merge} from 'lodash';
 
-const defaultJestPath = 'jest.config.js';
 const jest = require('jest');
 
 export default class JestBuilder implements Builder<JestBuilderSchema> {
@@ -23,7 +22,7 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
 		}
 		let customConfig = {};
 		const packageJson = require(`${getSystemPath(root)}/package.json`);
-		const jestConfigPath = `${getSystemPath(root)}/${options.configPath || defaultJestPath}`;
+		const jestConfigPath = `${getSystemPath(root)}/${options.configPath}`;
 		if (packageJson.jest) {
 			customConfig = packageJson.jest;
 		} else if (existsSync(jestConfigPath)) {

@@ -2,9 +2,9 @@
   "$schema": "@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "run": {
-      "class": "./src/custom-webpack/browser",
-      "schema": "./src/custom-webpack/browser/schema.json",
-      "description": "Build browser app extended with custom webpack config"
+      "class": "./jest.builder.js",
+      "schema": "./schema.json",
+      "description": "Jest runner"
     }
   }
 }

@@ -4,10 +4,16 @@
   "license": "Apache -2.0",
   "author": "Evgeny Barabanov",
   "builders": "builders.json",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@angular-devkit/architect": "^0.7.1",
     "@angular-devkit/core": "^0.7.1",
-    "jest": "^23.4.2"
+    "jest": "^23.4.2",
+    "ts-jest": "^23.0.1",
+    "ts-node": "^7.0.0",
+    "typescript": "^3.0.1"
   },
   "dependencies": {
     "jest-preset-angular": "^5.2.3",
