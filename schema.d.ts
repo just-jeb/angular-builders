@@ -1,6 +1,6 @@
 export interface JestBuilderSchema {
-	watch: boolean;
-	coverage: boolean;
-	configPath: string;
-	mockExtensions: string[];
+    watch: boolean;
+    coverage: boolean;
+    configPath: string;
+    mockExtensions: string[];
 }

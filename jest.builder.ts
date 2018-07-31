@@ -12,8 +12,6 @@ const jest = require('jest');
 export default class JestBuilder implements Builder<JestBuilderSchema> {
 	constructor(private context: BuilderContext) {
 	}
-
-
 	run(builderConfig: BuilderConfiguration<Partial<JestBuilderSchema>>): Observable<BuildEvent> {
 		const {options} = builderConfig;
 		const root = this.context.workspace.root;
@@ -29,7 +27,6 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
 		} else if (existsSync(jestConfigPath)) {
 			customConfig = require(jestConfigPath);
 		}
-		//TODO: add jest config property to schema?
 		argv.push('--config', JSON.stringify(merge(defaultConfig, customConfig)));
 		return from(jest.run(argv)).pipe(tap(res => console.log(res)), map(()=>({success: true})));
 	}
