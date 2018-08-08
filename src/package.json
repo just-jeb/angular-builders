@@ -1,8 +1,25 @@
 {
-  "name": "@angular-cli-builders/jest",
+  "name": "@angular-builders/jest",
   "version": "1.0.0",
-  "license": "MIT",
+  "description": "Jest builder for Angular build facade. Allows ng test run with Jest instead of Karma",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular-builders/jest"
+  },
   "author": "Evgeny Barabanov",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "keywords": [
+    "jest",
+    "testing",
+    "test",
+    "angular",
+    "cli",
+    "builder",
+    "runner"
+  ],
   "builders": "builders.json",
   "scripts": {
     "build": "tsc"
@@ -21,5 +38,9 @@
     "jest-preset-angular": "^5.2.3",
     "lodash": "^4.17.10"
   },
-  "peerDependencies": "jest"
+  "peerDependencies": {
+    "jest": ">= 20",
+    "@angular-devkit/architect": ">= ^0.7.0",
+    "@angular-devkit/core": ">= 0.7.0"
+  }
 }

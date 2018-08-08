@@ -2,8 +2,13 @@
 
 ## Prerequisits
   - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
+  - [Jest](https://www.npmjs.com/package/jest)
 ## Installation
-1. Remove karma & jasmin related libraries and files
+1. Remove karma & jasmin related libraries and files:
+   ```
+     npm remove @types/jasmine @types/jasminewd2 jasmine-spec-reporter karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
+	 rm karma.config.js
+   ```
 2. Install the builder: `npm i -D @angular-builders/jest`
 ## Running with Angular CLI
   - In your `angular.json`:

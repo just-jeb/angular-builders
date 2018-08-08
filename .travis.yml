@@ -10,5 +10,5 @@ install: cd example && npm install && cd ../src && npm install
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
-  - cd src && npm run build && PACKAGE=`npm pack` && cp $PACKAGE ../example
-  - cd ../example && npm i -D $PACKAGE && npm test > ../test.output
+  - cd src && npm run build && PACKAGE=`npm pack`
+  - cd ../example && npm i -D ../src/$PACKAGE && ng test

@@ -31,7 +31,7 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
       customConfig = require(jestConfigPath);
     }
     argv.push('--config', JSON.stringify(merge(defaultConfig, customConfig)));
-    return from(jest.run(argv)).pipe(tap(res => console.log(res)), map(() => ({success: true})));
+    return from(jest.run(argv)).pipe(map(() => ({success: true})));
   }
 
 }
