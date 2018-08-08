@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/angular-builders/jest.svg?branch=master)](https://travis-ci.org/angular-builders/jest)
 ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
 
-Jest builder for Angular build facade. Allows running `ng test` with Jest and not Karma & Jasmine.
+Jest builder for Angular build facade. Allows running `ng test` with Jest instead of Karma & Jasmine.
 
 ## Prerequisits
   - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
