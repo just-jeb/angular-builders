@@ -1,18 +1,18 @@
 # timestamp
-Example builder for timestamp creation.  
-This repository is part of the Medium article [Angular CLI 6 under the hood — builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01).
+Timestamp builder for Angular build facade.  
+This builder is an example from the Medium article [Angular CLI 6 under the hood — builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01).
 
 ##Usage
 
   1. In the root of your Angular application:
         ```
-        npm i -D @angular-cli-builders/timestamp
+        npm i -D @angular-builders/timestamp
         ```
   2. In your _angular.json_ add the following to _architect_ section of the relevant project:
   
         ```
         "timestamp": {
-          "builder": "@angular-cli-builders/timestamp:file",
+          "builder": "@angular-builders/timestamp:file",
           "options": {}
         },
         ```
