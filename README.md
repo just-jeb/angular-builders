@@ -14,32 +14,42 @@ Allows customizing the build configuration without ejecting webpack configuratio
  1. ```npm i -D angular-cli-builders```
  2. In your `angular.json`:
      ```
-     ...
-     "architect": {
-            ...
-            "[architect-target]": {
-                      "builder": "angular-cli-builders:[name-of-builder]"
-                      "options": {
-                            ...
-                      }
+     "projects": {
+         ...
+         "[project]": {
+              ...
+              "architect": {
+                     ...
+                     "[architect-target]": {
+                               "builder": "angular-cli-builders:[name-of-builder]"
+                               "options": {
+                                     ...
+                               }
       ```
     Where:
-    - [architect-target] is the name of build target you want to run (build, serve, test etc.)
+    - [project] is the name of the project to which you want to add the builder
+    - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
     - [name-of-builder] one of the supported builders (specified below)
- 3. `ng [architect-target]`
+ 3. If `[architect-target]` is not one of the predefined targets (like build, serve etc.) then run it like this:  
+    `ng run [project]:[architect-target]`  
+    If it is one of the predefined targets, you can run it by `ng [architect-target]`
 
  ## For example
 
   - angular.json:
-    ```
-    "architect": {
-        ...
-        "build": {
-                  "builder": "angular-builders:custom-webpack-browser"
-                  "options": {
-                        ...
-                  }
-    ```
+     ```
+     "projects": {
+         ...
+         "example-app": {
+              ...
+              "architect": {
+                     ...
+                     "build": {
+                               "builder": "angular-cli-builders:custom-webpack-browser"
+                               "options": {
+                                     ...
+                               }
+      ```
   - Run the build: `ng build`
 
 # Builders
