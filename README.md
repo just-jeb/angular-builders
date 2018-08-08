@@ -57,6 +57,8 @@ Allows customizing the build configuration without ejecting webpack configuratio
  - [custom-webpack-browser](#custom-webpack-browser)
  - [custom-webpack-server](#custom-webpack-server)
  - [generic-dev-server](#generic-dev-server)
+ - [jest builder](https://github.com/angular-builders/jest)
+ - [timestamp builder (example)](https://github.com/angular-builders/timestamp)
 
 ## custom-webpack-browser
 
