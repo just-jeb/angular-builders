@@ -1,5 +1,6 @@
 # timestamp
-Example builder for timestamp creation.
+Example builder for timestamp creation.  
+This repository is part of the Medium article [Angular CLI 6 under the hood — builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01).
 
 ##Usage
 
