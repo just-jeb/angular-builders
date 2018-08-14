@@ -1,14 +1,29 @@
+dist: trusty
+sudo: false
+
 language: node_js
 node_js:
   - 8
   - 10
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
 cache: node_modules
+
 before_install:
 - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest'
 - npm install -g greenkeeper-lockfile
 install: cd example && npm install && cd ../src && npm install
+
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
   - npm run build && PACKAGE=`npm pack`
-  - cd ../example && npm i -D ../src/$PACKAGE && ng test
+  - cd ../example && npm i -D ../src/$PACKAGE
+  - npm run test jest-builder-example-app && npm run test my-app && npm run test my-lib
+  - npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
