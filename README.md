@@ -14,6 +14,7 @@ Allows running `ng test` with Jest instead of Karma & Jasmine.
    ```
      npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 	 rm karma.config.js
+	 rm src/test.ts
    ```
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
 
