@@ -67,7 +67,6 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "src/jest.config.js"
           }
         },
         "lint": {
@@ -175,8 +174,6 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "projects/my-app/jest.config.js",
-            "no-cache": true
           }
         },
         "lint": {
@@ -214,8 +211,6 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "projects/my-lib/jest.config.js",
-            "no-cache": true
           }
         },
         "lint": {
