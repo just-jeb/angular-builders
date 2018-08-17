@@ -1,0 +1,71 @@
+{
+  "name": "angular-cli-builders",
+  "version": "2.1.2",
+  "description": "A set of additional builders for angular-cli",
+  "main": "index.js",
+  "typings": "typings/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meltedspark/angular-cli-builders"
+  },
+  "author": "Evgeny Barabanov",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "keywords": [
+    "cli",
+    "angular",
+    "builder",
+    "angular6",
+    "angular-cli",
+    "webpack",
+    "custom"
+  ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true,
+        "enableTsDiagnostics": false
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*spec\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "postbuild": "npm test && npm run e2e",
+    "build": "tsc && ts-node merge-schemes.ts",
+    "test": "jest src",
+    "e2e": "jest e2e"
+  },
+  "builders": "builders.json",
+  "dependencies": {
+    "@types/lodash": "^4.14.112"
+  },
+  "devDependencies": {
+    "@angular-devkit/architect": "^0.7.0",
+    "@angular-devkit/build-angular": "^0.7.0",
+    "@angular-devkit/core": "^0.7.0",
+    "@types/jest": "^23.1.4",
+    "@types/node": "^10.5.1",
+    "@types/webpack-merge": "^4.1.3",
+    "jest": "^23.3.0",
+    "lodash": "^4.17.10",
+    "ts-jest": "^23.0.0",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2"
+  },
+  "peerDependencies": {
+    "@angular-devkit/architect": ">=0.7.0",
+    "@angular-devkit/build-angular": ">=0.7.0",
+    "@angular-devkit/core": "^0.7.0"
+  }
+}

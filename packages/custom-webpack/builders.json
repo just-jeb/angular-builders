@@ -1,0 +1,15 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "browser": {
+      "class": "./browser",
+      "schema": "./browser/schema.json",
+      "description": "Build browser app extended with custom webpack config"
+    },
+    "server": {
+      "class": "./server",
+      "schema": "./server/schema.json",
+      "description": "Build server app extended with custom webpack config"
+    }
+  }
+}
