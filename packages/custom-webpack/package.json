@@ -1,0 +1,58 @@
+{
+  "name": "@angular-builders/custom-webpack",
+  "version": "2.1.2",
+  "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
+  "main": "index.js",
+  "typings": "typings/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meltedspark/angular-builders"
+  },
+  "author": "Evgeny Barabanov",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "keywords": [
+    "cli",
+    "angular",
+    "builder",
+    "angular6",
+    "angular-cli",
+    "webpack",
+    "custom"
+  ],
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true,
+        "enableTsDiagnostics": false
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": ".*spec\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "postbuild": "npm test && npm run e2e",
+    "build": "..\\..\\node_modules\\.bin\\tsc && ..\\..\\node_modules\\.bin\\ts-node ..\\..\\merge-schemes.ts",
+    "test": "..\\..\\node_modules\\.bin\\jest . --config ..\\..\\jest.config.js",
+    "e2e": "jest e2e"
+  },
+  "builders": "builders.json",
+  "dependencies": {
+    "@types/lodash": "^4.14.112"
+  },
+  "peerDependencies": {
+    "@angular-devkit/architect": ">=0.7.0",
+    "@angular-devkit/build-angular": ">=0.7.0",
+    "@angular-devkit/core": "^0.7.0"
+  }
+}
