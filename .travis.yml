@@ -7,7 +7,7 @@ cache:
   directories:
     - node_modules
 before_install: yarn global add greenkeeper-lockfile@2
-install: npm install
+install: ./scripts/install_all.sh
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
