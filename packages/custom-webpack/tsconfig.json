@@ -1,5 +1,8 @@
 {
   "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declarationDir": "typings"
+  },
   "files": [
     "index.ts",
     "schemes.ts"

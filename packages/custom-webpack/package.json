@@ -22,33 +22,15 @@
     "webpack",
     "custom"
   ],
-  "jest": {
-    "globals": {
-      "ts-jest": {
-        "skipBabel": true,
-        "enableTsDiagnostics": false
-      }
-    },
-    "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": ".*spec\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "testEnvironment": "node"
-  },
   "scripts": {
-    "postbuild": "npm test && npm run e2e",
-    "build": "..\\..\\node_modules\\.bin\\tsc && ..\\..\\node_modules\\.bin\\ts-node ..\\..\\merge-schemes.ts",
-    "test": "..\\..\\node_modules\\.bin\\jest . --config ..\\..\\jest.config.js",
-    "e2e": "jest e2e"
+    "postbuild": "yarn test && yarn run e2e",
+    "build": "../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
+    "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
+    "e2e": "../../node_modules/.bin/jest jest e2e --config ../../jest-e2e.config.js"
   },
   "builders": "builders.json",
   "dependencies": {
-    "@types/lodash": "^4.14.112"
+    "lodash": "^4.17.10"
   },
   "peerDependencies": {
     "@angular-devkit/architect": ">=0.7.0",
