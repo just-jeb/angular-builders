@@ -4,9 +4,9 @@ node_js:
   - 10
 cache:
   yarn: true
-    directories:
-      - node_modules
-before_install: before_install: yarn global add greenkeeper-lockfile@2
+  directories:
+    - node_modules
+before_install: yarn global add greenkeeper-lockfile@2
 install: npm install
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
