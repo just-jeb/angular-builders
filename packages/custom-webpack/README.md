@@ -1,6 +1,6 @@
 # angular-cli-builders [![npm version](https://badge.fury.io/js/angular-cli-builders.svg)](https://badge.fury.io/js/angular-cli-builders) [![Build Status](https://travis-ci.org/meltedspark/angular-cli-builders.svg?branch=master)](https://travis-ci.org/meltedspark/angular-cli-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-cli-builders.svg)](https://greenkeeper.io/)
-A set of additional [builders](#builders) for Angular CLI.  
-Allows customizing the build configuration without ejecting webpack configuration (`ng eject`)
+Custom webpack [builders](#builders) for Angular build facade.  
+Allow customizing the build configuration without ejecting webpack configuration (`ng eject`)
 
 # Prerequisites:
  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
@@ -11,7 +11,7 @@ Allows customizing the build configuration without ejecting webpack configuratio
 
 # Usage
 
- 1. ```npm i -D angular-cli-builders```
+ 1. ```npm i -D @angular-builders/custom-webpack```
  2. In your `angular.json`:
      ```
      "projects": {
@@ -21,7 +21,7 @@ Allows customizing the build configuration without ejecting webpack configuratio
               "architect": {
                      ...
                      "[architect-target]": {
-                               "builder": "angular-cli-builders:[name-of-builder]"
+                               "builder": "@angular-builders/custom-webpack:[browser|server]"
                                "options": {
                                      ...
                                }
@@ -29,7 +29,7 @@ Allows customizing the build configuration without ejecting webpack configuratio
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [name-of-builder] one of the supported builders (specified below)
+    - [browser|server] one of the supported builders - [browser](#Custom-webpack-browser) or [server](#Custom-webpack-server)
  3. If `[architect-target]` is not one of the predefined targets (like build, serve etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it by `ng [architect-target]`
@@ -45,7 +45,7 @@ Allows customizing the build configuration without ejecting webpack configuratio
               "architect": {
                      ...
                      "build": {
-                               "builder": "angular-cli-builders:custom-webpack-browser"
+                               "builder": "@angular-builders/custom-webpack:browser"
                                "options": {
                                      ...
                                }
@@ -54,13 +54,10 @@ Allows customizing the build configuration without ejecting webpack configuratio
 
 # Builders
 
- - [custom-webpack-browser](#custom-webpack-browser)
- - [custom-webpack-server](#custom-webpack-server)
- - [generic-dev-server](#generic-dev-server)
- - [jest builder](https://github.com/angular-builders/jest)
- - [timestamp builder (example)](https://github.com/angular-builders/timestamp)
+ - [@angular-builders/custom-webpack:browser](#Custom-webpack-browser)
+ - [@angular-builders/custom-webpack:server](#Custom-webpack-server)
 
-## custom-webpack-browser
+## Custom webpack browser
 
 Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
@@ -81,7 +78,7 @@ Options:
 "architect": {
     ...
     "build": {
-              "builder": "angular-cli-builders:custom-webpack-browser"
+              "builder": "@angular-builders/custom-webpack:browser"
               "options": {
                      "customWebpackConfig": {
                         path: "./extra-webpack.config.js",
@@ -96,7 +93,7 @@ Options:
 ```
 In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config.
 
-## custom-webpack-server
+## Custom webpack server
 
 Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack
@@ -118,7 +115,7 @@ Options:
 "architect": {
     ...
     "build": {
-              "builder": "angular-cli-builders:custom-webpack-server"
+              "builder": "@angular-builders/custom-webpack:server"
               "options": {
                      "customWebpackConfig": {
                         path: "./extra-webpack.config.js",
@@ -132,32 +129,6 @@ Options:
 ```
 
 In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
-
-## generic-dev-server
-
-Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration. Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
-Thus, if you use `generic-dev-server` along with `custom-webpack-browser`, `ng serve` will run with custom configuration provided in the latter.
-
-`angular.json` Example
-```
-"architect": {
-    ...
-    "build": {
-        "builder": "angular-cli-builders:custom-webpack-browser"
-        "options": {
-            "webpackConfigPath": "./extra-webpack.config.js",
-            "mergeStrategy": { "loaders": "replace" },
-            ...
-        },
-    "serve": {
-        "builder": "angular-cli-builders:generic-dev-server",
-        "options": {
-            "browserTarget": "my-project:build"
-        }
-    }
-```
-
-In this example the dev-server will use the webpack builder from the custom-webpack-browser when invoking the serve target.
 
 # Further reading
 
