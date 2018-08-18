@@ -15,11 +15,6 @@ addons:
 
 cache: node_modules
 
-stages:
-  - build @angular-builders/jest
-  - test
-  - deploy
-
 before_install:
   - "[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest"
   - npm install -g greenkeeper-lockfile
