@@ -5,7 +5,7 @@ describe('custom webpack server builder test', () => {
 
 	beforeEach(() => {
 		jest.resetModules()
-		customWebpackBrowserSchema = require('../src/custom-webpack/server/schema.json');
+		customWebpackBrowserSchema = require('../server/schema.json');
 	});
 
 	it('Should fit the schema of @angular-devkit/build-angular:server', () => {
