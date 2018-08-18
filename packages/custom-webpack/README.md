@@ -1,6 +1,6 @@
-# angular-cli-builders [![npm version](https://badge.fury.io/js/angular-cli-builders.svg)](https://badge.fury.io/js/angular-cli-builders) [![Build Status](https://travis-ci.org/meltedspark/angular-cli-builders.svg?branch=master)](https://travis-ci.org/meltedspark/angular-cli-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-cli-builders.svg)](https://greenkeeper.io/)
+# custom-webpack [![npm version](https://badge.fury.io/js/angular-cli-builders.svg)](https://badge.fury.io/js/@angular-builders/custom-webpack)
 Custom webpack [builders](#builders) for Angular build facade.  
-Allow customizing the build configuration without ejecting webpack configuration (`ng eject`)
+Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
 # Prerequisites:
  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)

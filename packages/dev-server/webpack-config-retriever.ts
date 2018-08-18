@@ -5,9 +5,9 @@ import {BrowserBuilderSchema } from '@angular-devkit/build-angular';
 import {Stats} from 'fs';
 import {Configuration} from "webpack";
 
-export class GenericWebpackBuilder {
+export class WebpackConfigRetriever {
 
-  static buildWebpackConfig(
+  static getTargetBuilderWebpackConfig(
     targetBuilder: Builder<BrowserBuilderSchema> | undefined,
     root: Path,
     projectRoot: Path,

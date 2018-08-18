@@ -3,7 +3,7 @@ describe('generic dev server builder test', () => {
 
 	beforeEach(() => {
 		jest.resetModules()
-		genericDevServerSchema = require('../dev-server/schema.json');
+		genericDevServerSchema = require('../generic/schema.json');
 	});
 
 	it('Should fit the schema of @angular-devkit/build-angular:dev-server', () => {

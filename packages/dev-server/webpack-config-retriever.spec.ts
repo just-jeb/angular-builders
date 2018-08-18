@@ -1,10 +1,10 @@
-import {GenericWebpackBuilder} from './generic-webpack-builder';
+import {WebpackConfigRetriever} from './webpack-config-retriever';
 import {Path, virtualFs} from '@angular-devkit/core';
 import {Builder} from '@angular-devkit/architect';
 import {BrowserBuilderSchema} from '@angular-devkit/build-angular';
 import {Stats} from 'fs';
 
-describe('GenericWebpackBuilder test', () => {
+describe('TargetWebpackConfigRetriever test', () => {
 
 	const mockRoot = <Path> 'mockRoot';
 	const mockProjectRoot = <Path> 'mockProjectRoot';
@@ -17,7 +17,7 @@ describe('GenericWebpackBuilder test', () => {
 			run: jest.fn()
 		};
 
-		const result = GenericWebpackBuilder.buildWebpackConfig(mockTarget, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
+		const result = WebpackConfigRetriever.getTargetBuilderWebpackConfig(mockTarget, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
 
 		expect(result).toBe('mockConfig');
 		expect(mockTarget.buildWebpackConfig).toHaveBeenCalledWith('mockRoot', 'mockProjectRoot', 'mockHost', 'mockBrowserOptions');
@@ -30,7 +30,7 @@ describe('GenericWebpackBuilder test', () => {
 			run: jest.fn()
 		};
 
-		const result = GenericWebpackBuilder.buildWebpackConfig(mockTarget, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
+		const result = WebpackConfigRetriever.getTargetBuilderWebpackConfig(mockTarget, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
 
 		expect(result).toBeUndefined();
 		expect(mockTarget.anyOtherMethod).not.toHaveBeenCalled();
@@ -38,7 +38,7 @@ describe('GenericWebpackBuilder test', () => {
 
 	it('should not blow up if the target builder is null', () => {
 
-		const result = GenericWebpackBuilder.buildWebpackConfig(undefined, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
+		const result = WebpackConfigRetriever.getTargetBuilderWebpackConfig(undefined, mockRoot, mockProjectRoot, mockHost, mockBrowserOptions);
 
 		expect(result).toBeUndefined()
 	});

@@ -1,0 +1,10 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "generic": {
+      "class": "./generic",
+      "schema": "./generic/schema.json",
+      "description": "Dev Server extended to build with targeted builder"
+    }
+  }
+}
