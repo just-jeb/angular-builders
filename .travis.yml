@@ -23,7 +23,7 @@ stages:
 before_install:
   - "[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest"
   - npm install -g greenkeeper-lockfile
-install: cd example && npm install && cd ../src && npm install
+install: cd examples/simple-app && npm install && cd ../multiple-apps && npm install && cd ../../src && npm install
 
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
