@@ -4,7 +4,7 @@ import {Path, virtualFs} from '@angular-devkit/core';
 import {Observable} from 'rxjs';
 import {switchMap, tap} from 'rxjs/operators';
 import {Stats} from 'fs';
-import {GenericWebpackBuilder} from '../generic-webpack-builder';
+import {WebpackConfigRetriever} from '../webpack-config-retriever';
 import {Configuration} from "webpack";
 
 
@@ -40,7 +40,7 @@ export class GenericDevServerBuilder extends DevServerBuilder {
     // Check if we can use the generic webpack builder if so lets use it, otherwise we'll fall back to the DevServerBuilder's
     // implementation
     return (
-      GenericWebpackBuilder.buildWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
+      WebpackConfigRetriever.getTargetBuilderWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
       super.buildWebpackConfig(root, projectRoot, host, browserOptions)
     );
   }

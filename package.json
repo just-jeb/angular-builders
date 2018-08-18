@@ -11,15 +11,6 @@
   "engines": {
     "node": ">=8.9"
   },
-  "keywords": [
-    "cli",
-    "angular",
-    "builder",
-    "angular6",
-    "angular-cli",
-    "webpack",
-    "custom"
-  ],
   "scripts": {
     "postbuild": "npm test && npm run e2e",
     "build": "tsc && ts-node merge-schemes.ts",

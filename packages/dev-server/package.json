@@ -1,12 +1,12 @@
 {
-  "name": "@angular-builders/custom-webpack",
+  "name": "@angular-builders/dev-server",
   "version": "2.2.0",
-  "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
+  "description": "Dev server generic builder for Angular build facade. Allows to run custom builder in serve target",
   "main": "index.js",
   "typings": "typings/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meltedspark/angular-builders/packages/custom-webpack"
+    "url": "https://github.com/meltedspark/angular-builders/packages/dev-server"
   },
   "author": "Evgeny Barabanov",
   "license": "MIT",
@@ -20,6 +20,8 @@
     "angular6",
     "angular-cli",
     "webpack",
+    "dev-server",
+    "generic",
     "custom"
   ],
   "scripts": {
@@ -29,9 +31,6 @@
     "e2e": "../../node_modules/.bin/jest jest e2e --config ../../jest-e2e.config.js"
   },
   "builders": "builders.json",
-  "dependencies": {
-    "lodash": "^4.17.10"
-  },
   "peerDependencies": {
     "@angular-devkit/architect": ">=0.7.0",
     "@angular-devkit/build-angular": ">=0.7.0",
