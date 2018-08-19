@@ -4,8 +4,8 @@ The purpose of this repository is to consolidate all the community builders for 
 
 # Builders
 
- - [Custom webpack builders](https://github.com/meltedspark/angular-builders/package/custom-webpack) (an alternative to `ng eject`)
- - [Dev server generic builder](https://github.com/meltedspark/angular-builders/package/dev-server) (allows running `ng serve` target with custom builder)
+ - [Custom webpack builders](./packages/custom-webpack) (an alternative to `ng eject`)
+ - [Dev server generic builder](./packages/dev-server) (allows running `ng serve` target with custom builder)
  - [Jest builder](https://github.com/angular-builders/jest) (allows running `ng test` with Jest)
  - [timestamp builder (example)](https://github.com/angular-builders/timestamp) (an example builder from [this](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01) article)
 
