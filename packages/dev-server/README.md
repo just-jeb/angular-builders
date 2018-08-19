@@ -1,6 +1,10 @@
-# dev-server:generic [![npm version](https://badge.fury.io/js/angular-cli-builders.svg)](https://badge.fury.io/js/@angular-builders/dev-server)
+# dev-server:generic [![npm version](https://badge.fury.io/js/%40angular-builders%2Fdev-server.svg)](https://badge.fury.io/js/%40angular-builders%2Fdev-server)
 
-Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration. Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
+Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration.  
+
+Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server.  
+Instead it uses a builder that is specified in `browserTarget` _as long as it provides `buildWebpackConfig` method_.  
+
 Thus, if you use `@angular-builders/dev-server:generic` along with `@angular-builders/custom-webpack:browser`, `ng serve` will run with custom configuration provided in the latter.
 
 # Prerequisites:

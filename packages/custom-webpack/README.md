@@ -1,4 +1,4 @@
-# custom-webpack [![npm version](https://badge.fury.io/js/angular-cli-builders.svg)](https://badge.fury.io/js/@angular-builders/custom-webpack)
+# custom-webpack [![npm version](https://badge.fury.io/js/%40angular-builders%2Fcustom-webpack.svg)](https://badge.fury.io/js/%40angular-builders%2Fcustom-webpack)
 Custom webpack [builders](#builders) for Angular build facade.  
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
