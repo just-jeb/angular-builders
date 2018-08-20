@@ -1,0 +1,10 @@
+{
+  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "run": {
+      "class": "./src/jest.builder.js",
+      "schema": "./src/schema.json",
+      "description": "Jest runner"
+    }
+  }
+}
