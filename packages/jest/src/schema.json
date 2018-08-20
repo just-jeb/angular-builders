@@ -1,0 +1,30 @@
+{
+  "id": "JestRunnerSchema",
+  "title": "Jest runner for build facade",
+  "description": "Jest runner options",
+  "properties": {
+    "watch": {
+      "type": "boolean",
+      "description": "Rerun tests when files change.",
+      "default": false
+    },
+    "coverage": {
+      "type": "boolean",
+      "description": "Run coverage or not.",
+      "default": false
+    },
+    "configPath": {
+      "type": "string",
+      "description": "Path to jest config file.",
+      "default": "jest.config.js"
+    },
+    "mockExtensions": {
+      "description": "List of extensions to mock with mock loader.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}
