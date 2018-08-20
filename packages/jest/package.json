@@ -11,6 +11,7 @@
   "engines": {
     "node": ">=8.9.0"
   },
+  "typings": "typings",
   "keywords": [
     "jest",
     "testing",
@@ -22,17 +23,10 @@
   ],
   "builders": "builders.json",
   "scripts": {
-    "build": "tsc"
-  },
-  "devDependencies": {
-    "@angular-devkit/architect": "^0.7.1",
-    "@angular-devkit/core": "^0.7.1",
-    "@types/lodash": "^4.14.115",
-    "@types/node": "^10.5.4",
-    "jest": "^23.4.2",
-    "ts-jest": "^23.0.1",
-    "ts-node": "^7.0.0",
-    "typescript": "^3.0.1"
+    "postinstall": "chmod +x -R ./scripts && ./scripts/install.sh",
+    "build": "../../node_modules/.bin/tsc",
+    "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
+    "e2e": "../../node_modules/.bin/jest jest e2e --config ../../jest-e2e.config.js"
   },
   "dependencies": {
     "jest-preset-angular": "^5.2.3",
