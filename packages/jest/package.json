@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/jest",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Jest builder for Angular build facade. Allows ng test run with Jest instead of Karma",
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   ],
   "builders": "builders.json",
   "scripts": {
-    "postinstall": "chmod +x -R ./scripts && ./scripts/install.sh",
     "build": "../../node_modules/.bin/tsc",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
     "e2e": "../../node_modules/.bin/jest jest e2e --config ../../jest-e2e.config.js"
