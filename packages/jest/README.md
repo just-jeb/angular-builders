@@ -3,7 +3,8 @@
 [![Build Status](https://travis-ci.org/angular-builders/jest.svg?branch=master)](https://travis-ci.org/angular-builders/jest)
 ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
 
-Allows running `ng test` with Jest instead of Karma & Jasmine.
+Allows running `ng test` with Jest instead of Karma & Jasmine.  
+The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
 ## Prerequisits
   - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
@@ -59,12 +60,26 @@ In order to avoid that kind of problems you have to specify the types explicitly
       ```
   - Run the tests: `ng test`  
   
+## Multi-projects workspace support
+The builder supports multi-project workspaces out of the box, the only thing required is editing _tsconfig.spec.json_ in the relevant project directory as described [above](#updating-typescript-configurations).
+  
 ## Builder options
  - `watch` - whether to run jest in watch mode, defaults to `false`
  - `coverage` - whether to run jest with coverage, defaults to `false`
- - `configPath` - path to jest config file, defaults to `jest.config.js`.  
-   If `jest` entry exists in _package.json_, `configPath` will be ignored.  
-   If no configuration provided (neither in package.json nor here) the [default configuration](https://github.com/angular-builders/jest/blob/master/src/jest-config/default-config.ts) is taken from the builder.
+ - `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. 
+   The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
+   The way the configurations are merged is as following:
+   1. Take the [default configuration](https://github.com/angular-builders/jest/blob/master/src/jest-config/default-config.ts) from the library
+   2. Add on top of it default project specific config (that is dynamic due to different root directories). Used to scope single project test runs.
+   3. Add on top of it 
+   _package.json_ jest config if exists (for **all** projects)
+   **or**
+   Project specific config if it is specified inside _angular.json_
+   **or**
+    _jest.config.js_ from project directory (or src/ directory in case of non-project app) if exists.  
+
+   Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
+   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
  - `[booleanOption]` - any boolean option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching use:
    ```
    "options": {
