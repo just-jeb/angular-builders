@@ -16,8 +16,10 @@ export default class JestBuilder implements Builder<JestBuilderSchema> {
     const {options, root, sourceRoot} = builderConfig;
     const workspaceRoot = this.context.workspace.root;
 
-    const argv = OptionsConverter.convertToCliArgs(options);
     const configuration = JestConfigurationBuilder.buildConfiguration(root, sourceRoot, workspaceRoot, options.configPath);
+    delete options.configPath;
+    const argv = OptionsConverter.convertToCliArgs(options);
+
 
     argv.push('--config', JSON.stringify(configuration));
     return from(jest.run(argv)).pipe(map(() => ({success: true})));
