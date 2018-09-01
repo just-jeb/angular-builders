@@ -2,7 +2,7 @@
   "name": "@angular-builders/custom-webpack",
   "version": "2.3.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
-  "main": "index.js",
+  "main": "src/index.js",
   "typings": "typings/index.d.ts",
   "repository": {
     "type": "git",
@@ -33,8 +33,8 @@
     "lodash": "^4.17.10"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": ">=0.7.0",
-    "@angular-devkit/build-angular": ">=0.7.0",
-    "@angular-devkit/core": "^0.7.0"
+    "@angular-devkit/architect": ">= 0.7.0",
+    "@angular-devkit/build-angular": ">= 0.7.0",
+    "@angular-devkit/core": ">= 0.7.0"
   }
 }
