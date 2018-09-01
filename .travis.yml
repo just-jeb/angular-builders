@@ -6,6 +6,12 @@ cache:
   yarn: true
   directories:
     - node_modules
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 before_install:
   - yarn global add greenkeeper-lockfile@2
   - chmod +x -R ./scripts
