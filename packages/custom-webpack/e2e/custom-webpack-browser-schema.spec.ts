@@ -6,7 +6,7 @@ describe('custom webpack browser builder test', () => {
 
 	beforeEach(() => {
 		jest.resetModules()
-		customWebpackBrowserSchema = require('../browser/schema.json');
+		customWebpackBrowserSchema = require('../src/browser/schema.json');
 	});
 
 	it('Should fit the schema of @angular-devkit/build-angular:browser', () => {
