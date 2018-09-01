@@ -35,7 +35,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
     If it is one of the predefined targets, you can run it by `ng [architect-target]`
 
  ## For example
-
   - angular.json:
      ```
      "projects": {
@@ -62,17 +61,10 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
 The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
 
-Options:
+Builder options:
  - All the `@angular-devkit/build-angular:browser` options
- - `customWebpackConfig`: configuration object with the following properties:
-    - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`
-    - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
-      - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
-      - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
-      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
-
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
+ 
 `angular.json` Example:
 ```
 "architect": {
@@ -96,19 +88,11 @@ In this example `externals` entry from `extra-webpack.config.js` will be prepend
 ## Custom webpack server
 
 Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack
-configuration.
+The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
 
-Options:
+Builder options:
  - All the `@angular-devkit/build-angular:server` options
- - `customWebpackConfig`: configuration object with the following properties:
-    - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`
-    - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
-      - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
-      - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-      - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
-      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-    - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
 
 `angular.json` Example:
 ```
@@ -130,6 +114,29 @@ Options:
 
 In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
 
+# Custom webpack config object
+This object defines your custom webpack configuration. It is defined by the following properties:
+ - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
+    Notice that this configuration shall contain only modifications and additions, you don't have to specify the whole webpack confgiuration.  
+    Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
+    
+        {
+          test: /\.css$/,
+          use: [
+            {loader: 'style-loader', options: {...}}
+          ]
+        }
+    
+    The builder will take care of merging the delta with the existing configuration provided by Angular.  
+
+    The only exception is `plugins` that are not merged by default. If you want to add some functionality to `AngularCompilerPlugin` you have to specify the whole configuration for this plugin (including your modifications) and use `replaceDuplicatePlugins` option (see below).
+    The is an [ongoing work](https://github.com/meltedspark/angular-builders/issues/30) to fix this behavior.
+ - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
+    - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
+    - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
+    - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
+      See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
+ - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration.
 # Further reading
 
  - [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21) 
