@@ -13,4 +13,4 @@ install: ./scripts/install_all.sh
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
-  - ./scripts/build_all.sh
+  - ./scripts/build_all.sh && ./scripts/ci_all.sh
