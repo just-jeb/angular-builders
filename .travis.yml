@@ -13,10 +13,11 @@ addons:
     packages:
       - google-chrome-stable
 before_install:
+  - yarn global add yarn@1
   - yarn global add greenkeeper-lockfile@2
   - chmod +x -R ./scripts
 install: ./scripts/install_all.sh
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
-  - ./scripts/build_all.sh && ./scripts/ci_all.sh
+  - ./scripts/ci_all.sh
