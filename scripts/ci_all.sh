@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e;
 for dir in packages/*; do (
     cd "$dir"
     yarn build
