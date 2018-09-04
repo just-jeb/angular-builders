@@ -4,7 +4,7 @@ import {Path, virtualFs} from '@angular-devkit/core';
 import {Observable} from 'rxjs';
 import {switchMap, tap} from 'rxjs/operators';
 import {Stats} from 'fs';
-import {WebpackConfigRetriever} from '../src/webpack-config-retriever';
+import {WebpackConfigRetriever} from '../webpack-config-retriever';
 import {Configuration} from "webpack";
 
 
