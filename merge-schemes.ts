@@ -12,7 +12,7 @@ const schemesToMerge: CustomSchema[] = require(`${wd}/src/schemes`);
 
 for(const customSchema of schemesToMerge){
 	const originalSchema = require(customSchema.originalSchemaPath);
-	const schemaExtensions = customSchema.schemaExtensionPaths.map((path: string) => require(`${wd}/${path}`));
+	const schemaExtensions = customSchema.schemaExtensionPaths.map((path: string) => require(path));
 	const newSchema = schemaExtensions.reduce((extendedSchema: any, currentExtension: any) => merge(extendedSchema, currentExtension), originalSchema);
-	writeFileSync(`${wd}/${customSchema.newSchemaPath}`, JSON.stringify(newSchema, null, 2), 'utf-8');
+	writeFileSync(customSchema.newSchemaPath, JSON.stringify(newSchema, null, 2), 'utf-8');
 }
