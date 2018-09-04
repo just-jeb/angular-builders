@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 filename=jest-builder.tgz
-
+set -e;
 yarn pack --filename ${filename}
 cd ./examples/simple-app && yarn remove @angular-builders/jest && yarn cache clean @angular-builders/jest && yarn add -D file:../../${filename}
 yarn test
