@@ -8,7 +8,7 @@ describe("Convert options to Jest CLI arguments", () => {
 
   it("Should convert options with string value argument-name=argument-value form", () => {
     const argv = OptionsConverter.convertToCliArgs({stringOption: 'somestring'});
-    expect(argv).toContain("--stringOption=\"somestring\"");
+    expect(argv).toContain("--stringOption=somestring");
   });
 
   it("Should handle string options with whitespaces", () => {

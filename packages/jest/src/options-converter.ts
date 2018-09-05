@@ -4,10 +4,14 @@ export class OptionsConverter {
   static convertToCliArgs(options: Partial<JestBuilderSchema>): string[] {
     const argv = [];
     for (const option of Object.keys(options)) {
-      if (options[option] === true) {
+      let optionValue = options[option];
+      if (optionValue === true) {
         argv.push(`--${option}`);
-      } else if (typeof options[option] === 'string'){
-        argv.push(`--${option}="${options[option]}"`);
+      } else if (typeof optionValue === 'string') {
+        if (optionValue.includes(' ')) {
+          optionValue = `"${optionValue}"`;
+        }
+        argv.push(`--${option}=${optionValue}`);
       }
     }
 
