@@ -20,4 +20,4 @@ install: ./scripts/install_all.sh
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 script:
-  - ./scripts/ci_all.sh
+  - sh -x ./scripts/ci_all.sh
