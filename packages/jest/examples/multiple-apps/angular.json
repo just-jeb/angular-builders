@@ -96,6 +96,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "my-first-app:serve:production"
+            },
+            "ci": {
+              "protractorConfig": "projects/my-first-app-e2e/protractor-ci.conf.js"
             }
           }
         },
@@ -203,6 +206,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "my-second-app:serve:production"
+            },
+            "ci": {
+              "protractorConfig": "projects/my-second-app-e2e/protractor-ci.conf.js"
             }
           }
         },
