@@ -5,18 +5,13 @@
   "author": "Evgeny Barabanov",
   "builders": "builders.json",
   "scripts": {
-    "build": "tsc"
+    "build": "../../node_modules/.bin/tsc"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "^0.7.1",
-    "@angular-devkit/core": "^0.7.1",
-    "@types/dateformat": "^1.0.1",
-    "@types/node": "^10.5.6",
-    "typescript": "^3.0.1"
+    "@types/dateformat": "^1.0.1"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": ">=0.7.0",
-    "@angular-devkit/core": ">=0.7.0"
+    "@angular-devkit/build_angular": ">=0.7.0"
   },
   "dependencies": {
     "dateformat": "^3.0.3"
