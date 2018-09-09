@@ -1,0 +1,19 @@
+{
+  "name": "@angular-builders/timestamp",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Evgeny Barabanov",
+  "builders": "builders.json",
+  "scripts": {
+    "build": "../../node_modules/.bin/tsc"
+  },
+  "devDependencies": {
+    "@types/dateformat": "^1.0.1"
+  },
+  "peerDependencies": {
+    "@angular-devkit/build_angular": ">=0.7.0"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3"
+  }
+}

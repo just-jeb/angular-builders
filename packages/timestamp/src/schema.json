@@ -1,0 +1,17 @@
+{
+  "id": "TimestampBuilderSchema",
+  "title": "Timestamp builder",
+  "description": "Timestamp builder options",
+  "properties": {
+    "format": {
+      "type": "string",
+      "description": "Timestamp format",
+      "default": "dd/mm/yyyy"
+    },
+    "path": {
+      "type": "string",
+      "description": "Path to the timestamp file",
+      "default": "./timestamp"
+    }
+  }
+}
