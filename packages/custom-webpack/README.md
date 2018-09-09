@@ -117,7 +117,7 @@ In this example `loaders` entry from Angular CLI webpack config will be _replace
 # Custom webpack config object
 This object defines your custom webpack configuration. It is defined by the following properties:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
-    Notice that this configuration shall contain only modifications and additions, you don't have to specify the whole webpack confgiuration.  
+    Notice that this configuration shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
     Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
     
         {
@@ -128,9 +128,6 @@ This object defines your custom webpack configuration. It is defined by the foll
         }
     
     The builder will take care of merging the delta with the existing configuration provided by Angular.  
-
-    The only exception is `plugins` that are not merged by default. If you want to add some functionality to `AngularCompilerPlugin` you have to specify the whole configuration for this plugin (including your modifications) and use `replaceDuplicatePlugins` option (see below).  
-    There is an [ongoing work](https://github.com/meltedspark/angular-builders/issues/30) to fix this behavior.
  - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
     - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
     - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
