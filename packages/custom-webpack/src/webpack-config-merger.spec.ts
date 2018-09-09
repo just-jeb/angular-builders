@@ -60,6 +60,39 @@ describe('Webpack config merger test', () => {
     expect(output).toEqual(expected);
   });
 
+  it('Should merge plugins if there are duplicates', () => {
+    const plugin1 = new webpack.HotModuleReplacementPlugin({
+      multiStep: true,
+      fullBuildTimeout: 3000,
+      requestTimeout: 1000
+    });
+
+    const plugin2 = new webpack.ContextReplacementPlugin('1');
+
+    const plugin3 = new webpack.HotModuleReplacementPlugin({
+      fullBuildTimeout: 300,
+      requestTimeout: 500
+    });
+
+    const plugin4 = new webpack.DefinePlugin({a: '2'});
+
+    const output = WebpackConfigMerger.merge({
+      plugins: [plugin1, plugin2]
+    }, {
+      plugins: [plugin4, plugin3]
+    }, {});
+
+    const expected = {
+      plugins: [plugin2, plugin4, new webpack.HotModuleReplacementPlugin({
+        multiStep: true,
+        fullBuildTimeout: 300,
+        requestTimeout: 500
+      })]
+    };
+
+    expect(output).toEqual(expected);
+  });
+
   it('Should replace plugins while working properly with other strategies', () => {
     const plugin1 = new webpack.HotModuleReplacementPlugin({
       multiStep: true,
