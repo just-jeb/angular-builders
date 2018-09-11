@@ -11,17 +11,10 @@
       "schematics": {},
       "architect": {
         "build": {
-          // Update the builder id for the build target to point to angular-cli-builders
-          "builder": "angular-cli-builders:custom-webpack-browser",
-          //"builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            // Add the new new customWebpackConfig parameters to point to
-            // a webpack config & optionally a merge strategy.
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "mergeStrategies": {
-                "plugins": "append"
-              }
+              "path": "./extra-webpack.config.js"
             },
             "outputPath": "dist/append-webpack-plugins",
             "index": "src/index.html",
@@ -58,10 +51,7 @@
           }
         },
         "serve": {
-          // TODO: Uncomment when PR #10 is merged.
-          // Update the builder id for the build target to point to angular-cli-builders
-          //"builder": "angular-cli-builders:generic-dev-server",
-          "builder": "@angular-devkit/build-angular:server",
+          "builder": "@angular-builders/dev-server:generic",
           "options": {
             "browserTarget": "append-webpack-plugins:build"
           },
