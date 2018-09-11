@@ -8,25 +8,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Steps
 1. `ng new append-webpack-plugins`
 
-2. [Update package.json to add angular-cli-builders](package.json#L46)
-```
-    "angular-cli-builders": "^2.0.0",
-    "@angular-devkit/architect": "^0.7.0-rc.3",
-    "@angular-devkit/build-angular": "^0.7.0-rc.3",
-    "@angular-devkit/core": "^0.7.0-rc.3"
-```
+2. [Update package.json to add @angular-builders/custom-webpack and @angular-builders/dev-server](package.json#L28)
 
 3. [Update angular.json configuration changes](angular.json#L14)
 
 4. [Add extra-webpack.config.js with new plugins to merge into the build](extra-webpack.config.js)
 
-5. [Add BuildStampPlugin example plugin](build/BuildStampPlugin.js)
+5. [Add HelloWorldPlugin example plugin](build/hello-world.plugin.js)
 
-6. `npm run build` Then look at the generated `index.html` for the build stamp:
+6. `npm run build` Then look at the generated `index.html` for the Hello World div:
 
 ```
 ...
-<!-- Built on Wed, 25 Jul 2018 22:59:38 GMT -->
+<div>Hello world</div>
 </body>
 </html>
 ```

@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getDivText() {
-    return element(by.css('div')).getText();
+    return element(by.css('body>div')).getText();
   }
 }

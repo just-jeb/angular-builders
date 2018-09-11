@@ -7,7 +7,7 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display generated Hello World div', () => {
     page.navigateTo();
     expect(page.getDivText()).toEqual('Hello world');
   });
