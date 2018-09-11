@@ -2,17 +2,18 @@
 *.log
 **/tsconfig.json
 
-**/*.ext.json
-**/*.spec.ts
+**/*.spec.*
 
 
 **/*.ts
 **/*.js.map
 !typings/*
-typings/schemes.d.ts
-schemes.js
+examples/append-webpack-plugins/extra-webpack.config.js
+examples
+
 
 node_modules
 e2e
+scripts
 
 *.tgz
