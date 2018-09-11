@@ -10,7 +10,7 @@ export class WebpackConfigMerger {
       const conf1ExceptConf2 = differenceWith(webpackConfig1.plugins, webpackConfig2.plugins, (item1, item2) => item1.constructor.name === item2.constructor.name);
       if(!replacePlugins){
         const conf1ByName = keyBy(webpackConfig1.plugins, 'constructor.name');
-        webpackConfig2.plugins = webpackConfig2.plugins.map(p => merge(conf1ByName[p.constructor.name], p));
+        webpackConfig2.plugins = webpackConfig2.plugins.map(p => conf1ByName[p.constructor.name] ? merge(conf1ByName[p.constructor.name], p) : p);
 			}
       mergedConfig.plugins = [...conf1ExceptConf2, ...webpackConfig2.plugins];
     }
