@@ -74,23 +74,47 @@ describe('Webpack config merger test', () => {
       requestTimeout: 500
     });
 
-    const plugin4 = new webpack.DefinePlugin({a: '2'});
-
     const output = WebpackConfigMerger.merge({
       plugins: [plugin1, plugin2]
     }, {
-      plugins: [plugin4, plugin3]
+      plugins: [plugin3]
     }, {});
 
     const expected = {
-      plugins: [plugin2, plugin4, new webpack.HotModuleReplacementPlugin({
+      plugins: [plugin2, new webpack.HotModuleReplacementPlugin({
         multiStep: true,
         fullBuildTimeout: 300,
         requestTimeout: 500
       })]
     };
 
+    expect(output.plugins).toBeDefined();
+    if(output.plugins) {
+      expect(output.plugins[0]).toBeInstanceOf(webpack.ContextReplacementPlugin);
+      expect(output.plugins[1]).toBeInstanceOf(webpack.HotModuleReplacementPlugin);
+    }
     expect(output).toEqual(expected);
+  });
+
+  it(`Should handle non-duplicate plugins properly`, () => {
+    const plugin1 = new webpack.DefinePlugin({
+      a: 1
+    });
+    const output = WebpackConfigMerger.merge({
+      plugins: []
+    }, {
+      plugins: [plugin1]
+    }, {});
+
+    const expected = {
+      plugins: [plugin1]
+    };
+
+    expect(output.plugins).toBeDefined();
+    if(output.plugins) {
+      expect(output.plugins[0]).toBeInstanceOf(webpack.DefinePlugin);
+      expect(output).toEqual(expected);
+    }
   });
 
   it('Should replace plugins while working properly with other strategies', () => {
