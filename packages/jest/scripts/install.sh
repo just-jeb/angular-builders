@@ -2,4 +2,3 @@
 
 cd examples/multiple-apps && yarn
 cd ../simple-app && yarn
-cd ../
