@@ -14,7 +14,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 1. Remove Karma related libraries and files:
    ```Shell
      npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
-	 rm karma.config.js
+	 rm src/karma.conf.js
 	 rm src/test.ts
    ```
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
