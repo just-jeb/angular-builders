@@ -8,7 +8,7 @@ export class OptionsConverter {
       if (optionValue === true) {
         argv.push(`--${option}`);
       } else if (typeof optionValue === 'string') {
-        if (optionValue.includes(' ')) {
+        if (optionValue.includes(' ') && !optionValue.startsWith('"') && !optionValue.endsWith('"')) {
           optionValue = `"${optionValue}"`;
         }
         argv.push(`--${option}=${optionValue}`);

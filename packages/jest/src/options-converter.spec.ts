@@ -13,11 +13,16 @@ describe("Convert options to Jest CLI arguments", () => {
 
   it("Should handle string options with whitespaces", () => {
     const argv = OptionsConverter.convertToCliArgs({stringOption: 'some string'});
-    expect(argv).toContain("--stringOption=\"some string\"");
+    expect(argv).toContain('--stringOption="some string"');
+  });
+
+  it("Should properly handle string options with whitespaces that are enclosed with quotes", () => {
+    const argv = OptionsConverter.convertToCliArgs({stringOption: '"some string"'});
+    expect(argv).toContain('--stringOption="some string"');
   });
 
   it("Should handle different arguments types provided in single object", () => {
     const argv = OptionsConverter.convertToCliArgs({stringOption: 'some string', booleanOption: true});
-    expect(argv).toEqual(["--stringOption=\"some string\"", "--booleanOption"]);
+    expect(argv).toEqual(['--stringOption="some string"', "--booleanOption"]);
   });
 });
