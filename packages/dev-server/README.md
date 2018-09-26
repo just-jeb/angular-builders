@@ -9,9 +9,7 @@ Thus, if you use `@angular-builders/dev-server:generic` along with `@angular-bui
 
 # Prerequisites:
  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
- - [@angular-devkit/architect](https://www.npmjs.com/package/@angular-devkit/architect) >= 0.7.0
  - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.7.0
- - [@angular-devkit/core](https://npmjs.com/package/@angular-devkit/core) >= 0.7.0
 
 
 # Usage
