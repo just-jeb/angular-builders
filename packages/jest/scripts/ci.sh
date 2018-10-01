@@ -46,7 +46,7 @@ function ciApp() {
     appDir=$1;
     e2eOptions=$2;
     local -n testOptions=$3;
-    packagePath=$(readlink -f --relative-to="$appDir" "$(pwd)/${filename}");
+    packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
         installPackage ${packagePath};

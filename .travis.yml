@@ -8,6 +8,7 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+      - realpath
 before_install:
   - npm i -g yarn@1
   - yarn global add greenkeeper-lockfile@2
