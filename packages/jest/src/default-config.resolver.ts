@@ -5,11 +5,12 @@ export const testPattern = `/**/+(*.)+(spec|test).+(ts|js)?(x)`;
 export const tsConfigName = 'tsconfig.spec.json';
 
 export class DefaultConfigResolver {
-  static resolveGlobal(): any {
+
+  resolveGlobal(): any {
     return defaultConfig;
   }
 
-  static resolveForProject(projectRoot: Path): any {
+  resolveForProject(projectRoot: Path): any {
     return {
       globals: {
         'ts-jest': {
