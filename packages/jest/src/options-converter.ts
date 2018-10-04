@@ -1,7 +1,7 @@
 import {JestBuilderSchema} from "./schema";
 
 export class OptionsConverter {
-  static convertToCliArgs(options: Partial<JestBuilderSchema>): string[] {
+  convertToCliArgs(options: Partial<JestBuilderSchema>): string[] {
     const argv = [];
     for (const option of Object.keys(options)) {
       let optionValue = options[option];
