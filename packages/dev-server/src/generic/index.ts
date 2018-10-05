@@ -1,16 +1,21 @@
 import {Builder, BuilderConfiguration, BuilderContext, BuilderDescription, BuildEvent} from '@angular-devkit/architect';
-import {BrowserBuilderSchema, DevServerBuilder, DevServerBuilderOptions} from '@angular-devkit/build-angular';
+import {
+  BrowserBuilderSchema,
+  DevServerBuilder,
+  DevServerBuilderOptions,
+  NormalizedBrowserBuilderSchema
+} from '@angular-devkit/build-angular';
 import {Path, virtualFs} from '@angular-devkit/core';
 import {Observable} from 'rxjs';
 import {switchMap, tap} from 'rxjs/operators';
 import {Stats} from 'fs';
 import {WebpackConfigRetriever} from '../webpack-config-retriever';
 import {Configuration} from "webpack";
-
+import {merge} from 'lodash';
 
 export class GenericDevServerBuilder extends DevServerBuilder {
 
-  private targetBuilder: Builder<any> | undefined;
+  private targetBuilder: Builder<any>;
 
   constructor(context: BuilderContext) {
     super(context);
@@ -20,7 +25,7 @@ export class GenericDevServerBuilder extends DevServerBuilder {
 
     const architect = this.context.architect;
     const [project, target, configuration] = builderConfig.options.browserTarget.split(':');
-    const targetSpec = { project, target, configuration };
+    const targetSpec = {project, target, configuration};
     const targetConfig = architect.getBuilderConfiguration(targetSpec);
 
     // Before we run the dev server grab the target builder so that we have it synchronously
@@ -39,10 +44,19 @@ export class GenericDevServerBuilder extends DevServerBuilder {
   ): Configuration {
     // Check if we can use the generic webpack builder if so lets use it, otherwise we'll fall back to the DevServerBuilder's
     // implementation
-    return (
-      WebpackConfigRetriever.getTargetBuilderWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
-      super.buildWebpackConfig(root, projectRoot, host, browserOptions)
-    );
+    const webpackConfig = WebpackConfigRetriever.getTargetBuilderWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
+      super.buildWebpackConfig(root, projectRoot, host, browserOptions);
+    //Hack to override private base method _buildServerConfig
+    this['_buildServerConfig'] = this.buildServerConfig(webpackConfig['devServer']);
+    return webpackConfig;
+  }
+
+  buildServerConfig = (devServerConfig: any) => (root: Path, projectRoot: Path, options: DevServerBuilderOptions, browserOptions: NormalizedBrowserBuilderSchema) => {
+    const angularDevServerConfig = DevServerBuilder.prototype['_buildServerConfig'].call(this, root, projectRoot, options, browserOptions);
+    if (devServerConfig) {
+      merge(angularDevServerConfig, devServerConfig);
+    }
+    return angularDevServerConfig;
   }
 }
 
