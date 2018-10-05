@@ -26,7 +26,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [browser|server] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server) or [karma](#Custom-webpack-Karma)
+    - [browser|server|karma] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server) or [karma](#Custom-webpack-Karma)
  3. If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it with `ng [architect-target]`
