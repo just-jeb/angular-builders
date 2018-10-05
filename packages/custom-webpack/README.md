@@ -52,6 +52,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
  - [@angular-builders/custom-webpack:browser](#Custom-webpack-browser)
  - [@angular-builders/custom-webpack:server](#Custom-webpack-server)
+ - [@angular-builders/custom-webpack:karma](#Custom-webpack-Karma)
 
 ## Custom webpack browser
 
