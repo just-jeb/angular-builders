@@ -109,7 +109,32 @@ Builder options:
               }
 ```
 
-In this example `loaders` entry from Angular CLI webpack config will be _replaced_ with loaders entry from `extra-webpack.config.js`. The plugins from `extra-webpack.config.js` will override the corresponding plugins from Angular CLI webpack config.
+## Custom webpack Karma
+
+Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
+The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
+
+Builder options:
+ - All the `@angular-devkit/build-angular:karma` options
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
+
+`angular.json` Example:
+```
+"architect": {
+    ...
+    "test": {
+              "builder": "@angular-builders/custom-webpack:karma"
+              "options": {
+                     "customWebpackConfig": {
+                        path: "./extra-webpack.config.js",
+                     }
+                    "main": "src/test.ts",
+                    "polyfills": "src/polyfills.ts",
+                    "tsConfig": "src/tsconfig.spec.json",
+                    "karmaConfig": "src/karma.conf.js",
+                    ...
+              }
+```
 
 # Custom webpack config object
 This object defines your custom webpack configuration. It is defined by the following properties:
