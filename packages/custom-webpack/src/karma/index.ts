@@ -3,14 +3,11 @@
  */
 
 import {BuilderContext} from '@angular-devkit/architect';
-import {KarmaBuilder, NormalizedKarmaBuilderSchema} from '@angular-devkit/build-angular';
+import {KarmaBuilder} from '@angular-devkit/build-angular';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
-import {CustomWebpackSchema} from "../custom-webpack-schema";
+import {NormalizedCustomWebpackBrowserBuildSchema} from "../custom-webpack-schema";
 import {CustomWebpackBuilder} from "../custom-webpack-builder";
-
-export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedKarmaBuilderSchema, CustomWebpackSchema {
-}
 
 export class CustomWebpackKarmaBuilder extends KarmaBuilder {
 
