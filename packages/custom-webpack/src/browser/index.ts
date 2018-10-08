@@ -3,11 +3,14 @@
  */
 
 import {BuilderContext} from '@angular-devkit/architect';
-import {BrowserBuilder} from '@angular-devkit/build-angular';
+import {BrowserBuilder, NormalizedBrowserBuilderSchema} from '@angular-devkit/build-angular';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
-import {NormalizedCustomWebpackBrowserBuildSchema} from "../custom-webpack-schema";
+import {CustomWebpackSchema} from "../custom-webpack-schema";
 import {CustomWebpackBuilder} from "../custom-webpack-builder";
+
+export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema, CustomWebpackSchema {
+}
 
 export class CustomWebpackBrowserBuilder extends BrowserBuilder {
 
