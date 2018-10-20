@@ -1,8 +1,7 @@
 module.exports = {
     globals: {
         "ts-jest": {
-            skipBabel: true,
-            enableTsDiagnostics: false
+            diagnostics: false
         }
     },
     transform: {
@@ -14,5 +13,5 @@ module.exports = {
         "js",
         "json"
     ],
-    testEnvironment: "node"
+    testEnvironment: "./jest-custom-environment"
 };
