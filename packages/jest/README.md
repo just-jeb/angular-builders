@@ -23,7 +23,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889).
 Due to this fact it's possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests or Jest types in e2e test.
-In order to avoid that kind of problems you have to specify the types explicitly:
+In order to avoid these problems you have to specify the types explicitly:
 
 1. In _tsconfig.spec.json_ (_src_ directory, used by Jest): 
 	```js
