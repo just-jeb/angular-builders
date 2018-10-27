@@ -7,5 +7,6 @@ for dir in packages/*; do (
     yarn
     if [ -e ./scripts/install.sh ]; then
         chmod +x ./scripts/install.sh
+        ./scripts/install.sh
     fi
 ) done
