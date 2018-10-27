@@ -71,8 +71,8 @@ Builder options:
               "builder": "@angular-builders/custom-webpack:browser"
               "options": {
                      "customWebpackConfig": {
-                        path: "./extra-webpack.config.js",
-                        mergeStrategies: { "externals": "prepend" },
+                        "path": "./extra-webpack.config.js",
+                        "mergeStrategies": { "externals": "prepend" }
                      }
                      "outputPath": "dist/my-cool-client",
                      "index": "src/index.html",
@@ -100,9 +100,9 @@ Builder options:
               "builder": "@angular-builders/custom-webpack:server"
               "options": {
                      "customWebpackConfig": {
-                        path: "./extra-webpack.config.js",
-                        mergeStrategies: { "loaders": "replace" },
-                        replaceDuplicatePlugins: true
+                        "path": "./extra-webpack.config.js",
+                        "mergeStrategies": { "loaders": "replace" },
+                        "replaceDuplicatePlugins": true
                      }
                     "outputPath": "dist/my-cool-server",
                     "main": "src/main.server.ts",
@@ -127,7 +127,7 @@ Builder options:
               "builder": "@angular-builders/custom-webpack:karma"
               "options": {
                      "customWebpackConfig": {
-                        path: "./extra-webpack.config.js",
+                        "path": "./extra-webpack.config.js"
                      }
                     "main": "src/test.ts",
                     "polyfills": "src/polyfills.ts",
