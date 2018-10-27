@@ -1,30 +1,23 @@
 const NodeEnvironment = require('jest-environment-node');
 
-
-const originalPrepareStackTrace = Error.prepareStackTrace;
-const originalError = Error;
-
-
 class JestCustomEnvironment extends NodeEnvironment {
-    constructor(config){
+    constructor(config) {
         super(config);
-
+        this.jestErrorHasInstance = this.global.Error[Symbol.hasInstance];
     }
 
-    async setup(){
+    async setup() {
         await super.setup();
-        // Return array of CallSites instead of string
-        // callsites package does the same, but as we are replacing the original Error with Jest's Error,
-        // callsites' replacement won't affect the original V8 Error
-        Error.prepareStackTrace = (_, stack) => stack;
         // Workaround for this bug https://github.com/facebook/jest/issues/2549
-        Error = this.global.Error;
+        this.jestErrorHasInstance = this.global.Error[Symbol.hasInstance];
+        Object.defineProperty(this.global.Error, Symbol.hasInstance, {
+            value: target => target instanceof Error || this.jestErrorHasInstance(target)
+        });
     }
 
-    async tearDown(){
-        Error = originalError;
-        Error.prepareStackTrace = originalPrepareStackTrace;
-       await super.tearDown();
+    async tearDown() {
+        Object.defineProperty(this.global.Error, Symbol.hasInstance, {value: this.jestErrorHasInstance});
+        await super.tearDown();
     }
 }
 
