@@ -8,6 +8,7 @@ import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
 import {NormalizedCustomWebpackBrowserBuildSchema} from "../browser";
 import {CustomWebpackBuilder} from "../custom-webpack-builder";
+import {Configuration} from "webpack";
 
 export class CustomWebpackKarmaBuilder extends KarmaBuilder {
 
@@ -20,7 +21,7 @@ export class CustomWebpackKarmaBuilder extends KarmaBuilder {
                      projectRoot: Path,
                      sourceRoot: Path,
                      host: virtualFs.Host<fs.Stats>,
-                     options: NormalizedCustomWebpackBrowserBuildSchema) {
+                     options: NormalizedCustomWebpackBrowserBuildSchema): Configuration {
     const karmaConfig = KarmaBuilder.prototype['_buildWebpackConfig'].call(this, root, projectRoot, sourceRoot, host, options);
 	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, karmaConfig);
   }
