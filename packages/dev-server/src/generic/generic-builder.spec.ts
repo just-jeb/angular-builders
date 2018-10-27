@@ -11,7 +11,7 @@ describe('Dev server generic builder test', () => {
 
   beforeEach(() => {
     // @ts-ignore
-    builder = new GenericDevServerBuilder({});
+   builder = new GenericDevServerBuilder({});
   });
 
   it('Should override devServer config if provided', () => {
