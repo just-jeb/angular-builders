@@ -1,6 +1,8 @@
-import {getSystemPath, normalize} from '@angular-devkit/core';
-
+// Should be defined before any import due to the hoisting
 const existsSyncMock = jest.fn();
+
+import {getSystemPath, normalize} from '@angular-devkit/core';
+// TODO: find a way to mock 'fs' only for custom-config.resolver
 jest.mock('fs', () => ({existsSync: existsSyncMock}));
 
 import {CustomConfigResolver} from './custom-config.resolver';
