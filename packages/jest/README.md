@@ -1,7 +1,5 @@
 # Jest builder for Angular build facade
-[![npm version](https://badge.fury.io/js/%40angular-builders%2Fjest.svg)](https://badge.fury.io/js/%40angular-builders%2Fjest)
-[![Build Status](https://travis-ci.org/angular-builders/jest.svg?branch=master)](https://travis-ci.org/angular-builders/jest)
-![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
+[![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
@@ -9,8 +7,8 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Prerequisits
   - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
   - [Jest](https://www.npmjs.com/package/jest)
+  
 ## Installation
-
 1. Remove Karma related libraries and files:
    ```Shell
      npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
@@ -20,7 +18,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
 
 ## Updating Typescript configurations
-
 Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889).
 Due to this fact it's possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests or Jest types in e2e test.
 In order to avoid these problems you have to specify the types explicitly:
@@ -98,5 +95,6 @@ The builder supports multi-project workspaces out of the box, the only thing req
     })
    ```
    Use the following command: `ng test --testNamePattern="My cool suite Should do one thing"`
+   
 ## Migrating existing tests to Jest
 Use [this](https://jestjs.io/docs/en/migration-guide) for automatic migration of your Jasmine tests to Jest framework.
