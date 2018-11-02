@@ -6,17 +6,24 @@
         "packages/custom-webpack/package.json",
         "packages/dev-server/package.json",
         "packages/timestamp/package.json",
-        "packages/jest/package.json",
-        "packages/jest/examples/multiple-apps/projects/my-shared-library/ng-package.json",
-        "packages/jest/examples/multiple-apps/projects/my-shared-library/package.json"
+        "packages/jest/package.json"
+      ],
+      "ignore": [
+        "@angular-devkit/build-angular",
+        "@angular/cli",
+        "@angular/compiler",
+        "@angular/compiler-cli"
       ]
     },
-    "angular-apps": {
+    "angular": {
       "packages": [
+        "package.json",
         "packages/custom-webpack/examples/append-webpack-plugins/package.json",
         "packages/timestamp/example/package.json",
+        "packages/jest/examples/simple-app/package.json",
         "packages/jest/examples/multiple-apps/package.json",
-        "packages/jest/examples/simple-app/package.json"
+        "packages/jest/examples/multiple-apps/projects/my-shared-library/ng-package.json",
+        "packages/jest/examples/multiple-apps/projects/my-shared-library/package.json"
       ],
       "ignore": [
         "typescript"
