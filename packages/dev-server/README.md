@@ -1,5 +1,14 @@
-# dev-server:generic [![npm version](https://badge.fury.io/js/%40angular-builders%2Fdev-server.svg)](https://badge.fury.io/js/%40angular-builders%2Fdev-server)
+# Dev server [builders](#builders) for Angular build facade
+[![npm version](https://img.shields.io/npm/v/@angular-builders/dev-server.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/dev-server.svg)](https://www.npmjs.com/package/@angular-builders/dev-server)
 
+# Prerequisites:
+ - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
+ - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.10.0
+
+# Builders
+ - [@angular-builders/dev-server:generic](#Dev-server-generic)
+
+## Dev server generic
 Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration.  
 
 Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use  `@angular-devkit/build-angular:browser` configuration to run the dev server.  
@@ -7,13 +16,7 @@ Instead it uses a builder that is specified in `browserTarget` _as long as it pr
 
 Thus, if you use `@angular-builders/dev-server:generic` along with `@angular-builders/custom-webpack:browser`, `ng serve` will run with custom configuration provided in the latter.
 
-# Prerequisites:
- - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
- - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.7.0
-
-
-# Usage
-
+### Usage
  1. ```npm i -D @angular-builders/dev-server```
  2. In your `angular.json`:
      ```
@@ -36,8 +39,7 @@ Thus, if you use `@angular-builders/dev-server:generic` along with `@angular-bui
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it by `ng [architect-target]`
 
-# Example
-
+### Example
 `angular.json`:
 ```
 "architect": {
