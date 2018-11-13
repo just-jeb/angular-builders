@@ -11,3 +11,43 @@ The purpose of this repository is to consolidate all the community builders for 
 
 # Further reading
 [Angular CLI 6 under the hood - builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01)
+
+## Troubleshooting
+
+Please find below a selection of potential issues you might face when using this builder. Refer to [jest-preset-angular Troubleshooting](https://github.com/thymikee/jest-preset-angular) for angular jest preset specific issues
+
+### Unexpected token [import|export|other]
+
+This means that you are using a library that is not transformed through typescript. You will need to implement the recommndations mentioned in [jest-preset-angular Troubleshooting Guid](https://github.com/thymikee/jest-preset-angular#unexpected-token-importexportother)
+
+One of the recommendations might require you to [transpile js files through babel-jest](Transpile js files through babel-jest#transpile-js-files-through-babel-jest) in this case make sure you add `allowSyntheticDefaultImports` to the `ts-jest` configuration (see [here](https://github.com/7leads/ngx-cookie-service/issues/39) for an explanation of this setting).
+
+```js
+    "ts-jest": {
+       ...
+      "allowSyntheticDefaultImports": true
+    }
+```
+
+Your final `jest.config.js` file should look something like this:
+
+```js
+const esModules = ['[thir-party-lib]'].join('|');
+
+module.exports = {
+  globals: {
+    "__TRANSFORM_HTML__": true,
+    "ts-jest": {
+      "tsConfigFile": `${__dirname}\\tsconfig.spec.json`,
+      "allowSyntheticDefaultImports": true
+    }
+  },
+  preset: "jest-preset-angular",
+  testURL: "https://github.com/@angular-cli-builders",
+  transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
+
+  "transform": {
+    "^.+\\.js$": "babel-jest"
+  }
+};
+```
