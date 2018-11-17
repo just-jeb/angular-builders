@@ -73,7 +73,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
    **or**
     _jest.config.js_ from project directory (or src/ directory in case of non-project app) if exists.  
 
-   Thus, if you don't provide `configPath` in options, and you'd like to customise the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
+   Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
    Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
  - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
    ```js
@@ -101,19 +101,20 @@ Use [this](https://jestjs.io/docs/en/migration-guide) for automatic migration of
 
 ## Troubleshooting
 
-Please find below a selection of potential issues you might face when using this builder. Refer to [jest-preset-angular Troubleshooting](https://github.com/thymikee/jest-preset-angular) for  jest-preset-angular specific issues
+Please find below a selection of potential issues you might face when using this builder. Refer to [jest-preset-angular Troubleshooting](https://github.com/thymikee/jest-preset-angular) for  `jest-preset-angular` specific issues.
 
 ### Unexpected token [import|export|other]
 
-This means that the library you're using doesn't use `commonjs` module format (which jest) expects to see. You will need to implement the recommendations mentioned in [jest-preset-angular Troubleshooting Guide](https://github.com/thymikee/jest-preset-angular#unexpected-token-importexportother)
+This means that the library you're using doesn't use `commonjs` module format (which `jest` expects to see). You will need to implement the recommendations mentioned in [jest-preset-angular Troubleshooting Guide](https://github.com/thymikee/jest-preset-angular#unexpected-token-importexportother).
 
-One of the recommendations might require you to [transpile js files through babel-jest](https://github.com/thymikee/jest-preset-angular#transpile-js-files-through-babel-jest) in this case make sure you add `allowSyntheticDefaultImports` to the `ts-jest` configuration (see [here](https://github.com/7leads/ngx-cookie-service/issues/39) for an explanation of this setting).
+One of the recommendations might require you to [transpile js files through babel-jest](https://github.com/thymikee/jest-preset-angular#transpile-js-files-through-babel-jest).  
+In this case make sure you add `allowSyntheticDefaultImports` to the `ts-jest` configuration (see [here](https://github.com/7leads/ngx-cookie-service/issues/39) for an explanation of this setting).
 
 ```js
-    "ts-jest": {
-       ...
-      "allowSyntheticDefaultImports": true
-    }
+"ts-jest": {
+   ...
+  "allowSyntheticDefaultImports": true
+}
 ```
 
 Your final `jest.config.js` file should look something like this:
