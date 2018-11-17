@@ -4,6 +4,7 @@
 
 import {BuilderContext} from '@angular-devkit/architect';
 import {BrowserBuilder, NormalizedBrowserBuilderSchema} from '@angular-devkit/build-angular';
+import {createConsoleLogger} from '@angular-devkit/core/node';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
 import {CustomWebpackSchema} from "../custom-webpack-schema";
@@ -23,8 +24,9 @@ export class CustomWebpackBrowserBuilder extends BrowserBuilder {
                      projectRoot: Path,
                      host: virtualFs.Host<fs.Stats>,
                      options: NormalizedCustomWebpackBrowserBuildSchema): Configuration {
+    const customWebpackBuilder = new CustomWebpackBuilder(createConsoleLogger(options.verbose));
 	  const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig);
+	  return customWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig);
   }
 }
 
