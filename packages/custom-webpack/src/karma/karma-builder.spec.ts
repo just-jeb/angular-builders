@@ -12,8 +12,10 @@ jest.mock('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-co
 }));
 const buildWebpackConfigMock = jest.fn();
 jest.mock('../custom-webpack-builder', () => ({
-  CustomWebpackBuilder: {
-    buildWebpackConfig: buildWebpackConfigMock,
+  CustomWebpackBuilderFactory: {
+    create: () => ({
+      buildWebpackConfig: buildWebpackConfigMock,
+    }),
   }
 }));
 import {CustomWebpackKarmaBuilder} from './';
