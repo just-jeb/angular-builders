@@ -8,7 +8,7 @@ import {ServerBuilder} from '@angular-devkit/build-angular';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
 import {BuildWebpackServerSchema} from '@angular-devkit/build-angular/src/server/schema';
-import {CustomWebpackBuilder} from "../custom-webpack-builder";
+import {CustomWebpackBuilderFactory} from "../custom-webpack-builder";
 
 export class CustomWebpackServerBuilder extends ServerBuilder {
 
@@ -20,9 +20,10 @@ export class CustomWebpackServerBuilder extends ServerBuilder {
 					   projectRoot: Path,
 					   host: virtualFs.Host<fs.Stats>,
 					   options: BuildWebpackServerSchema) {
+    const customWebpackBuilder = CustomWebpackBuilderFactory.create(options);
 		const serverWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
 		const opt = options as CustomWebpackServerBuildSchema;
-		return CustomWebpackBuilder.buildWebpackConfig(root, opt.customWebpackConfig, serverWebpackConfig) as any;
+		return customWebpackBuilder.buildWebpackConfig(root, opt.customWebpackConfig, serverWebpackConfig) as any;
 	}
 }
 
