@@ -30,14 +30,14 @@ describe('CustomWebpackBuilder test', () => {
 	it('Should load webpack.config.js if no path specified', () => {
 		fileName = defaultWebpackConfigPath;
 		createConfigFile(fileName);
-		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig);
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, undefined);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, undefined);
 	});
 
 	it('Should load the file specified in configuration', () => {
 		fileName = 'extra-webpack.config.js';
 		createConfigFile(fileName);
-		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {path: 'extra-webpack.config.js'}, baseWebpackConfig);
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {path: 'extra-webpack.config.js'}, baseWebpackConfig, undefined);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, undefined);
 	});
 
@@ -45,14 +45,14 @@ describe('CustomWebpackBuilder test', () => {
 		fileName = defaultWebpackConfigPath;
 		createConfigFile(fileName);
 		const mergeStrategies: MergeStrategies = {'blah': 'prepend'};
-		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {mergeStrategies}, baseWebpackConfig);
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {mergeStrategies}, baseWebpackConfig, undefined);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, mergeStrategies, undefined);
 	});
 
 	it('Should pass on replaceDuplicatePlugins flag', () => {
 		fileName = defaultWebpackConfigPath;
 		createConfigFile(fileName);
-		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {replaceDuplicatePlugins: true}, baseWebpackConfig);
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {replaceDuplicatePlugins: true}, baseWebpackConfig, undefined);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
 	});
 });

@@ -34,7 +34,7 @@ describe('Custom webpack karma builder test', () => {
     buildWebpackConfigMock.mockReturnValue(mergedConfig);
     const root = `${__dirname}/../../../../`;
     const config = builder['_buildWebpackConfig'](root, root, "./", {}, options);
-    expect(buildWebpackConfigMock).toHaveBeenCalledWith(root, options.customWebpackConfig, angularConfigs);
+    expect(buildWebpackConfigMock).toHaveBeenCalledWith(root, options.customWebpackConfig, angularConfigs, options);
     expect(config).toEqual(mergedConfig);
   })
 });
