@@ -22,7 +22,7 @@ export class CustomWebpackServerBuilder extends ServerBuilder {
 					   options: BuildWebpackServerSchema) {
 		const serverWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
 		const opt = options as CustomWebpackServerBuildSchema;
-		return CustomWebpackBuilder.buildWebpackConfig(root, opt.customWebpackConfig, serverWebpackConfig) as any;
+		return CustomWebpackBuilder.buildWebpackConfig(root, opt.customWebpackConfig, serverWebpackConfig, options) as any;
 	}
 }
 

@@ -23,7 +23,7 @@ export class CustomWebpackKarmaBuilder extends KarmaBuilder {
                      host: virtualFs.Host<fs.Stats>,
                      options: NormalizedCustomWebpackBrowserBuildSchema): Configuration {
     const karmaConfig = KarmaBuilder.prototype['_buildWebpackConfig'].call(this, root, projectRoot, sourceRoot, host, options);
-	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, karmaConfig);
+	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, karmaConfig, options);
   }
 }
 
