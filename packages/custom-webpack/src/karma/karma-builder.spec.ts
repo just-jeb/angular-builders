@@ -1,3 +1,14 @@
+const buildWebpackConfigMock = jest.fn();
+
+jest.mock('../custom-webpack-builder', () => ({
+  CustomWebpackBuilder: {
+    buildWebpackConfig: buildWebpackConfigMock,
+  }
+}));
+
+import {normalize} from '@angular-devkit/core';
+import {CustomWebpackKarmaBuilder, NormalizedCustomWebpackKarmaBuildSchema} from './';
+
 const commonConfig = {common: 1};
 const stylesConfig = {styles: 2};
 const nonAotTestConfig = {nonAotTest: 3};
@@ -10,20 +21,14 @@ jest.mock('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-co
   getNonAotTestConfig: () => nonAotTestConfig,
   getTestConfig: () => testConfig,
 }));
-const buildWebpackConfigMock = jest.fn();
-jest.mock('../custom-webpack-builder', () => ({
-  CustomWebpackBuilder: {
-    buildWebpackConfig: buildWebpackConfigMock,
-  }
-}));
-import {CustomWebpackKarmaBuilder} from './';
+
+
 
 describe('Custom webpack karma builder test', () => {
   let builder: CustomWebpackKarmaBuilder;
 
   beforeEach(() => {
-    // @ts-ignore
-    builder = new CustomWebpackKarmaBuilder({});
+    builder = new CustomWebpackKarmaBuilder({} as any);
   });
 
   it('Should merge custom webpack config with the default one', () => {
@@ -32,9 +37,10 @@ describe('Custom webpack karma builder test', () => {
     const mergedConfig = {...angularConfigs, ...customConfig};
     const options = {customWebpackConfig: 'custom.webpack.js', tsConfig: 'blah'};
     buildWebpackConfigMock.mockReturnValue(mergedConfig);
-    const root = `${__dirname}/../../../../`;
-    const config = builder['_buildWebpackConfig'](root, root, "./", {}, options);
+    const root = normalize(`${__dirname}/../../../../`);
+    const config = builder.buildWebpackConfig(root, root, normalize('./'), {} as any, options as NormalizedCustomWebpackKarmaBuildSchema);
     expect(buildWebpackConfigMock).toHaveBeenCalledWith(root, options.customWebpackConfig, angularConfigs);
+
     expect(config).toEqual(mergedConfig);
   })
 });
