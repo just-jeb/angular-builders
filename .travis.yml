@@ -12,10 +12,7 @@ addons:
       - coreutils
 before_install:
   - npm i -g yarn@1
-  - yarn global add greenkeeper-lockfile@2
   - chmod +x -R ./scripts
 install: ./scripts/install_all.sh
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
 script:
   - sh -x ./scripts/ci_all.sh
