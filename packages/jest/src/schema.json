@@ -59,11 +59,7 @@
       "type": "boolean"
     },
     "collectCoverageFrom": {
-      "description": "A glob pattern relative to <rootDir> matching the files that coverage info needs to be collected from.",
-      "type": "array"
-    },
-    "collectCoverageOnlyFrom": {
-      "description": "Explicit list of paths coverage will be restricted to.",
+      "description": "An array of glob patterns indicating a set of files for which coverage information should be collected. If a file matches the specified glob pattern, coverage information will be collected for it even if no tests exist for this file and it's never required in the test suite",
       "type": "array"
     },
     "color": {
