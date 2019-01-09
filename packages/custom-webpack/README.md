@@ -73,7 +73,7 @@ Builder options:
               "options": {
                      "customWebpackConfig": {
                         "path": "./extra-webpack.config.js",
-                        "mergeStrategies": { "externals": "prepend" }
+                        "mergeStrategies": { "externals": "replace" }
                      }
                      "outputPath": "dist/my-cool-client",
                      "index": "src/index.html",
@@ -82,7 +82,7 @@ Builder options:
                      "tsConfig": "src/tsconfig.app.json"
               }
 ```
-In this example `externals` entry from `extra-webpack.config.js` will be prepended to `externals` entry from Angular CLI underlying webpack config.
+In this example `externals` entry from `extra-webpack.config.js` will replace `externals` entry from Angular CLI underlying webpack config.
 
 ## Custom webpack server
 
@@ -102,7 +102,7 @@ Builder options:
               "options": {
                      "customWebpackConfig": {
                         "path": "./extra-webpack.config.js",
-                        "mergeStrategies": { "module.rules": "replace" },
+                        "mergeStrategies": { "module.rules": "prepend" },
                         "replaceDuplicatePlugins": true
                      }
                     "outputPath": "dist/my-cool-server",
@@ -110,6 +110,9 @@ Builder options:
                     "tsConfig": "src/tsconfig.server.json"
               }
 ```
+
+In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.  
+Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
 
 ## Custom webpack Karma
 
