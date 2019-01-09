@@ -19,9 +19,9 @@ describe('Dev server generic builder test', () => {
     getTargetBuilderWebpackConfigMock.mockReturnValue({someConfig: {blah: 1}, devServer});
     //Call buildWebpackConfig to imitate "run" method behavior
     // @ts-ignore
-    builder.buildWebpackConfig("root", "projectRoot", {}, {index: 'blah.html'});
+    builder.buildWebpackConfig("root", "projectRoot", {}, {index: 'blah.html', optimization: {}});
     //Call overridden _buildServerConfig method
-    const config = builder['_buildServerConfig']("root", "projectRoot", {}, {index: 'blah.html'});
+    const config = builder['_buildServerConfig']("root", "projectRoot", {}, {index: 'blah.html', optimization: {}});
     //Validate that the final devServer config contains the config from webpack configuration
     expect(config).toMatchObject(devServer);
   })
