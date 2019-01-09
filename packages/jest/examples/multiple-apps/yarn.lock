@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@angular-builders/jest@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@angular-builders/jest/-/jest-7.1.1.tgz#3fb1ad57553a6ea0ed71320771295757657c1f25"
-  integrity sha512-Vl4w8C2k0BddpNSXRqQoh9Y9GLvFwSQ2HG+FXZxwDx5QEF6qpcwIgh9eVRtPuW19PLavLAQrphaaTuPuLZHZYw==
+"@angular-builders/jest@^7.2.0":
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/@angular-builders/jest/-/jest-7.2.0.tgz#92f2918f48d67c84318d0c67383d88ba82b697a3"
+  integrity sha512-PpHy6ETK8jTGO3cVsaovta42e3UCVIsuXlbi+eI32b1/IVRj7gjrX5TXsLVDFESIRv0sLrm6fmjlkGuYGnJAIQ==
   dependencies:
     jest-preset-angular "^6.0.0"
     lodash "^4.17.10"
@@ -292,7 +292,12 @@
   dependencies:
     "@types/jasmine" "*"
 
-"@types/jest@^23.3.1", "@types/jest@^23.3.10":
+"@types/jest@^23.3.1":
+  version "23.3.12"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"
+  integrity sha512-/kQvbVzdEpOq4tEWT79yAHSM4nH4xMlhJv2GrLVQt4Qmo8yYsPdioBM1QpN/2GX1wkfMnyXvdoftvLUr0LBj7Q==
+
+"@types/jest@^23.3.10":
   version "23.3.10"
   resolved "https://registry.npmjs.org/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
   integrity sha512-DC8xTuW/6TYgvEg3HEXS7cu9OijFqprVDXXiOcdOKZCU/5PJNLZU37VVvmZHdtMiGOa8wAA/We+JzbdxFzQTRQ==
@@ -1536,7 +1541,7 @@ clone@^2.1.1, clone@^2.1.2:
 
 closest-file-data@^0.1.4:
   version "0.1.4"
-  resolved "https://registry.npmjs.org/closest-file-data/-/closest-file-data-0.1.4.tgz#975f87c132f299d24a0375b9f63ca3fb88f72b3a"
+  resolved "https://registry.yarnpkg.com/closest-file-data/-/closest-file-data-0.1.4.tgz#975f87c132f299d24a0375b9f63ca3fb88f72b3a"
   integrity sha1-l1+HwTLymdJKA3W59jyj+4j3Kzo=
 
 co@^4.6.0:
@@ -2678,7 +2683,7 @@ from2@^2.1.0:
 
 fs-extra@6.0.1:
   version "6.0.1"
-  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
+  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-6.0.1.tgz#8abc128f7946e310135ddc93b98bddb410e7a34b"
   integrity sha512-GnyIkKhhzXZUWFCaJzvyDLEEgDkPfb4/TPvJCJVuS8MWZgoSsErf++QpiAlDnKFcqhRlm+tIOcencCjyJE6ZCA==
   dependencies:
     graceful-fs "^4.1.2"
@@ -3862,12 +3867,12 @@ jest-mock@^23.2.0:
   resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-23.2.0.tgz#ad1c60f29e8719d47c26e1138098b6d18b261134"
 
 jest-preset-angular@^6.0.0:
-  version "6.0.1"
-  resolved "https://registry.npmjs.org/jest-preset-angular/-/jest-preset-angular-6.0.1.tgz#40a6c16ca5bbf3ac83a8594ac190643d7c6e7a07"
-  integrity sha512-7b54ZOntt8wtf39X838vZZmXWkZYVRtk9bCO66yQhkmFkmLaxULDHdbUobiD+f8sn5Zb2u9grhOQbZZ+/RaY0g==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/jest-preset-angular/-/jest-preset-angular-6.0.2.tgz#a5c79d6c1b1f894fa12f9dd07bab9506ef9737c1"
+  integrity sha512-uhrllY41tUvkeR41aX9bU5w3/EvvmwZiJ3UitDhRSEJL2Jvq2N/xKlmw7qvlZoGZnciFjOUJ2WDKv5fmCrvnQA==
   dependencies:
     "@types/jest" "^23.3.1"
-    jest-zone-patch "^0.0.8"
+    jest-zone-patch ">=0.0.9 <1.0.0"
     ts-jest "~23.1.3"
 
 jest-regex-util@^23.3.0:
@@ -3988,10 +3993,10 @@ jest-worker@^23.2.0:
   dependencies:
     merge-stream "^1.0.1"
 
-jest-zone-patch@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/jest-zone-patch/-/jest-zone-patch-0.0.8.tgz#90fa3b5b60e95ad3e624dd2c3eb59bb1dcabd371"
-  integrity sha1-kPo7W2DpWtPmJN0sPrWbsdyr03E=
+"jest-zone-patch@>=0.0.9 <1.0.0":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/jest-zone-patch/-/jest-zone-patch-0.0.10.tgz#58252f44ab4aad45aaed62a705819577b9709b82"
+  integrity sha512-K5uHLHgMgi2Eyj74gbY+xSeGGekb5U48bXsgDwgipRbFdaekyZK+TAcp8auamqU4UjrAt5S4sIUZz/2bBNyTTA==
 
 jest@^23.6.0:
   version "23.6.0"
@@ -7001,7 +7006,7 @@ trim-right@^1.0.1:
 
 ts-jest@~23.1.3:
   version "23.1.4"
-  resolved "https://registry.npmjs.org/ts-jest/-/ts-jest-23.1.4.tgz#66ac1d8d3fbf8f9a98432b11aa377aa850664b2b"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-23.1.4.tgz#66ac1d8d3fbf8f9a98432b11aa377aa850664b2b"
   integrity sha512-9rCSxbWfoZxxeXnSoEIzRNr9hDIQ8iEJAWmSRsWhDHDT8OeuGfURhJQUE8jtJlkyEygs6rngH8RYtHz9cfjmEA==
   dependencies:
     closest-file-data "^0.1.4"
