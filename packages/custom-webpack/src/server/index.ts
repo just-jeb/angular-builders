@@ -3,12 +3,15 @@
  */
 
 import {BuilderContext} from '@angular-devkit/architect';
-import {CustomWebpackServerBuildSchema} from './schema';
 import {ServerBuilder} from '@angular-devkit/build-angular';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
-import {BuildWebpackServerSchema} from '@angular-devkit/build-angular/src/server/schema';
+import {NormalizedServerBuilderServerSchema} from '@angular-devkit/build-angular/src/server/schema';
 import {CustomWebpackBuilder} from "../custom-webpack-builder";
+import {CustomWebpackSchema} from "../custom-webpack-schema";
+
+export interface NormalizedCustomWebpackServerBuildSchema extends NormalizedServerBuilderServerSchema, CustomWebpackSchema {
+}
 
 export class CustomWebpackServerBuilder extends ServerBuilder {
 
@@ -19,10 +22,9 @@ export class CustomWebpackServerBuilder extends ServerBuilder {
 	buildWebpackConfig(root: Path,
 					   projectRoot: Path,
 					   host: virtualFs.Host<fs.Stats>,
-					   options: BuildWebpackServerSchema) {
+					   options: NormalizedCustomWebpackServerBuildSchema) {
 		const serverWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-		const opt = options as CustomWebpackServerBuildSchema;
-		return CustomWebpackBuilder.buildWebpackConfig(root, opt.customWebpackConfig, serverWebpackConfig) as any;
+		return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, serverWebpackConfig) as any;
 	}
 }
 
