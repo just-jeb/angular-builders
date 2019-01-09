@@ -40,7 +40,7 @@ export class GenericDevServerBuilder extends DevServerBuilder {
     root: Path,
     projectRoot: Path,
     host: virtualFs.Host<Stats>,
-    browserOptions: BrowserBuilderSchema,
+    browserOptions: NormalizedBrowserBuilderSchema,
   ): Configuration {
     // Check if we can use the generic webpack builder if so lets use it, otherwise we'll fall back to the DevServerBuilder's
     // implementation
