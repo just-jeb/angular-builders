@@ -14,7 +14,7 @@ export class DefaultConfigResolver {
     return {
       globals: {
         'ts-jest': {
-          tsConfigFile: getSystemPath(join(projectRoot, tsConfigName))
+          tsConfig: getSystemPath(join(projectRoot, tsConfigName))
         }
       },
       testMatch: [

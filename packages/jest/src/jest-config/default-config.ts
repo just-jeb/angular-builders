@@ -1,6 +1,7 @@
 export default {
   globals: {
-    "__TRANSFORM_HTML__": true
+    stringifyContentPathRegex:  "\\.html$",
+    astTransformers: ['jest-preset-angular/InlineHtmlStripStylesTransformer.js']
   },
   preset: 'jest-preset-angular',
   testURL: 'https://github.com/@angular-cli-builders',
