@@ -11,7 +11,7 @@ describe('Dev server generic builder test', () => {
 
   beforeEach(() => {
     // @ts-ignore
-   builder = new GenericDevServerBuilder({});
+    builder = new GenericDevServerBuilder({});
   });
 
   it('Should override devServer config if provided', () => {
@@ -21,7 +21,7 @@ describe('Dev server generic builder test', () => {
     // @ts-ignore
     builder.buildWebpackConfig("root", "projectRoot", {}, {index: 'blah.html', optimization: {}});
     //Call overridden _buildServerConfig method
-    const config = builder['_buildServerConfig']("root", "projectRoot", {}, {index: 'blah.html', optimization: {}});
+    const config = builder['_buildServerConfig']("root", "projectRoot", {index: 'blah.html', optimization: {}});
     //Validate that the final devServer config contains the config from webpack configuration
     expect(config).toMatchObject(devServer);
   })
