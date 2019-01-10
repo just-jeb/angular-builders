@@ -44,14 +44,14 @@ export class GenericDevServerBuilder extends DevServerBuilder {
   ): Configuration {
     // Check if we can use the generic webpack builder if so lets use it, otherwise we'll fall back to the DevServerBuilder's
     // implementation
-    const webpackConfig = WebpackConfigRetriever.getTargetBuilderWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions) ||
-      super.buildWebpackConfig(root, projectRoot, host, browserOptions);
+    const webpackConfig = WebpackConfigRetriever.getTargetBuilderWebpackConfig(this.targetBuilder, root, projectRoot, host, browserOptions)
+      || super.buildWebpackConfig(root, projectRoot, host, browserOptions);
     //Hack to override private base method _buildServerConfig
     this['_buildServerConfig'] = this.buildServerConfig(webpackConfig['devServer']);
     return webpackConfig;
   }
 
-  buildServerConfig = (devServerConfig: any) => (root: Path, projectRoot: Path, options: DevServerBuilderOptions, browserOptions: NormalizedBrowserBuilderSchema) => {
+  buildServerConfig = (devServerConfig: any) => (root: Path, options: DevServerBuilderOptions, browserOptions: NormalizedBrowserBuilderSchema) => {
     const angularDevServerConfig = DevServerBuilder.prototype['_buildServerConfig'].call(this, root, options, browserOptions);
     if (devServerConfig) {
       merge(angularDevServerConfig, devServerConfig);
