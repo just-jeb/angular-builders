@@ -3637,6 +3637,17 @@ jest-jasmine2@^23.6.0:
     jest-util "^23.4.0"
     pretty-format "^23.6.0"
 
+jest-junit@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/jest-junit/-/jest-junit-6.0.1.tgz#7c24b2aff4ddfce3a8c0e0c84978123c0d4a945a"
+  integrity sha512-gMJb8qqyLKTD4pyaU8gjQv6wiudAqEFFt2VFswJ/+swB69WQh5mMn8tezR9B8ukejHjFbq5y9qbYWxi9uZeQZA==
+  dependencies:
+    jest-config "^23.6.0"
+    jest-validate "^23.0.1"
+    mkdirp "^0.5.1"
+    strip-ansi "^4.0.0"
+    xml "^1.0.1"
+
 jest-leak-detector@^23.6.0:
   version "23.6.0"
   resolved "https://registry.yarnpkg.com/jest-leak-detector/-/jest-leak-detector-23.6.0.tgz#e4230fd42cf381a1a1971237ad56897de7e171de"
@@ -3769,7 +3780,7 @@ jest-util@^23.4.0:
     slash "^1.0.0"
     source-map "^0.6.0"
 
-jest-validate@^23.6.0:
+jest-validate@^23.0.1, jest-validate@^23.6.0:
   version "23.6.0"
   resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-23.6.0.tgz#36761f99d1ed33fcd425b4e4c5595d62b6597474"
   dependencies:
@@ -7080,6 +7091,11 @@ xml2js@^0.4.17:
   dependencies:
     sax ">=0.6.0"
     xmlbuilder "~9.0.1"
+
+xml@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
+  integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
 xmlbuilder@~9.0.1:
   version "9.0.7"
