@@ -34,5 +34,13 @@
   },
   "peerDependencies": {
     "@angular-devkit/build-angular": ">=0.12.4"
-  }
+  },
+  "files": [
+    "src/**/*.js",
+    "typings",
+    "!typings/schemes.d.ts",
+    "!schemes.js",
+    "schema.json",
+    "builders.json"
+  ]
 }
