@@ -14,12 +14,12 @@ export class JestConfigurationBuilder {
     const configRoot = root === '' ? sourceRoot || normalize('') : root ;
     const projectRoot: Path = resolve(workspaceRoot, configRoot);
 
-    const globalDefaultConfig = this.defaultConfigResolver.resolveGlobal();
+    const globalDefaultConfig = this.defaultConfigResolver.resolveGlobal(workspaceRoot);
     const projectDefaultConfig = this.defaultConfigResolver.resolveForProject(projectRoot);
     const globalCustomConfig = this.customConfigResolver.resolveGlobal(workspaceRoot);
-    const globalProjectConfig = this.customConfigResolver.resolveForProject(projectRoot, configPath);
+    const projectCustomConfig = this.customConfigResolver.resolveForProject(projectRoot, configPath);
 
-    return merge(globalDefaultConfig, projectDefaultConfig, globalCustomConfig, globalProjectConfig);
+    return merge(globalDefaultConfig, projectDefaultConfig, globalCustomConfig, projectCustomConfig);
   }
 
 
