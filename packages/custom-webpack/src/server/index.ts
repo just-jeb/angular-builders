@@ -24,7 +24,7 @@ export class CustomWebpackServerBuilder extends ServerBuilder {
 					   host: virtualFs.Host<fs.Stats>,
 					   options: NormalizedCustomWebpackServerBuildSchema) {
 		const serverWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-		return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, serverWebpackConfig) as any;
+		return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, serverWebpackConfig, options) as any;
 	}
 }
 
