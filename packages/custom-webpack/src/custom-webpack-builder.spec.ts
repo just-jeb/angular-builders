@@ -27,6 +27,10 @@ function createConfigFile(fileName: string){
 describe('CustomWebpackBuilder test', () => {
 	let fileName: string;
 
+	beforeEach(() => {
+		jest.clearAllMocks();
+	});
+
 	it('Should load webpack.config.js if no path specified', () => {
 		fileName = defaultWebpackConfigPath;
 		createConfigFile(fileName);
@@ -54,5 +58,11 @@ describe('CustomWebpackBuilder test', () => {
 		createConfigFile(fileName);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {replaceDuplicatePlugins: true}, baseWebpackConfig);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
+	});
+
+	it('Should ignore if no customWebpackConfig set', () => {
+		const config = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, null, baseWebpackConfig);
+		expect(WebpackConfigMerger.merge).not.toHaveBeenCalled();
+		expect(config).toEqual(baseWebpackConfig);
 	});
 });
