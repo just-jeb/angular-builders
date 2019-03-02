@@ -9,10 +9,6 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  afterAll(() => {
-    browser.close();
-  });
-
   it('should display generated Hello World div when production build', () => {
     page.navigateTo();
     if(environment.production) {
