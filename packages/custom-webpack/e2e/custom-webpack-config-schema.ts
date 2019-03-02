@@ -7,3 +7,4 @@ export const customWebpackConfig = {
 		"replaceDuplicatePlugins": {"type": "boolean", "description": "Flag that indicates whether to replace duplicate webpack plugins or not"}
 	}
 };
+

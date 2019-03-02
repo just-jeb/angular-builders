@@ -12,3 +12,4 @@ yarn pack --filename ${filename}
 cd ../custom-webpack/examples/append-webpack-plugins && yarn remove @angular-builders/dev-server && yarn cache clean @angular-builders/dev-server && yarn add -D file:../../../dev-server/${filename}
 
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
+yarn e2e --protractor-config=./e2e/protractor-ci.conf.js -- --prod

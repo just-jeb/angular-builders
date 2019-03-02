@@ -1,7 +1,6 @@
 import {MergeStrategies} from "./custom-webpack-builder-config";
 jest.mock('./webpack-config-merger');
 import {CustomWebpackBuilder, defaultWebpackConfigPath} from "./custom-webpack-builder";
-import * as fs from 'fs';
 import {WebpackConfigMerger} from "./webpack-config-merger";
 import {Path} from '@angular-devkit/core';
 
@@ -27,8 +26,10 @@ function createConfigFile(fileName: string){
 describe('CustomWebpackBuilder test', () => {
 	let fileName: string;
 
-	beforeEach(() => {
-		jest.clearAllMocks();
+	it('Should ignore if no customWebpackConfig set', () => {
+		const config = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig);
+		expect(WebpackConfigMerger.merge).not.toHaveBeenCalled();
+		expect(config).toEqual(baseWebpackConfig);
 	});
 
 	it('Should load webpack.config.js if no path specified', () => {
@@ -58,11 +59,5 @@ describe('CustomWebpackBuilder test', () => {
 		createConfigFile(fileName);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {replaceDuplicatePlugins: true}, baseWebpackConfig);
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
-	});
-
-	it('Should ignore if no customWebpackConfig set', () => {
-		const config = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, null, baseWebpackConfig);
-		expect(WebpackConfigMerger.merge).not.toHaveBeenCalled();
-		expect(config).toEqual(baseWebpackConfig);
 	});
 });

@@ -1,4 +1,6 @@
 import { AppPage } from './app.po';
+import {environment} from "../../src/environments/environment";
+import {by, element} from "protractor";
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -9,6 +11,10 @@ describe('workspace-project App', () => {
 
   it('should display generated Hello World div', () => {
     page.navigateTo();
-    expect(page.getDivText()).toEqual('Hello world');
+    if(environment.production) {
+      expect(page.getDivText()).toEqual('Hello world');
+    } else {
+      expect(element(by.css('body>div')).isPresent()).toBeFalsy();
+    }
   });
 });

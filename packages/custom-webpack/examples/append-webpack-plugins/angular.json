@@ -13,9 +13,6 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
-            },
             "outputPath": "dist/append-webpack-plugins",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,6 +29,9 @@
           },
           "configurations": {
             "production": {
+              "customWebpackConfig": {
+                "path": "./extra-webpack.config.js"
+              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
