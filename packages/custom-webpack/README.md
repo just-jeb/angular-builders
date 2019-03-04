@@ -144,7 +144,7 @@ Builder options:
 # Custom webpack config object
 This object defines your custom webpack configuration. It is defined by the following properties:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
-    Notice that this configuration shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
+    The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
     Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
 
         {
@@ -155,6 +155,7 @@ This object defines your custom webpack configuration. It is defined by the foll
         }
 
     The builder will take care of merging the delta with the existing configuration provided by Angular.  
+    In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
  - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
     - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
     - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
@@ -180,7 +181,7 @@ For example, if you'd like to add an additional entry in `excludeChunks` list of
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
 
-# Custom Webpack config function
+## Custom Webpack config function
 
 If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function
 is called with the base Webpack configuration and must return the new configuration.
