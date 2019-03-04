@@ -62,8 +62,8 @@ The builder will run the same build as `@angular-devkit/build-angular:browser` d
 
 Builder options:
  - All the `@angular-devkit/build-angular:browser` options
- - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
- 
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+
 `angular.json` Example:
 ```
 "architect": {
@@ -91,7 +91,7 @@ The builder will run the same build as `@angular-devkit/build-angular:server` do
 
 Builder options:
  - All the `@angular-devkit/build-angular:server` options
- - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
 ```
@@ -121,7 +121,7 @@ The builder will run the same build as `@angular-devkit/build-angular:karma` doe
 
 Builder options:
  - All the `@angular-devkit/build-angular:karma` options
- - `customWebpackConfig`: [see below](#custom-webpack-config-object) 
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
 ```
@@ -144,17 +144,18 @@ Builder options:
 # Custom webpack config object
 This object defines your custom webpack configuration. It is defined by the following properties:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
-    Notice that this configuration shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
+    The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
     Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
-    
+
         {
           test: /\.css$/,
           use: [
             {loader: 'style-loader', options: {...}}
           ]
         }
-    
+
     The builder will take care of merging the delta with the existing configuration provided by Angular.  
+    In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
  - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
     - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
     - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
@@ -162,6 +163,7 @@ This object defines your custom webpack configuration. It is defined by the foll
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
  - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
     **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
+
 ## Merging plugins configuration:
 If in your custom configuration you specify a plugin that is already added by Angular CLI then by default the two instances will be merged.  
 In case of the conflicts your configuration will override the existing one.  
@@ -178,6 +180,32 @@ For example, if you'd like to add an additional entry in `excludeChunks` list of
 
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
+
+## Custom Webpack config function
+
+If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function
+is called with the base Webpack configuration and must return the new configuration.
+
+The function is called with the base config and the builder options as parameters.
+
+In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no effect.
+
+`custom-webpack.config.js` example :
+```js
+const webpack = require('webpack');
+const pkg = require('./package.json');
+
+module.exports = (config, options) => {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'APP_VERSION': JSON.stringify(pkg.version),
+    }),
+  );
+
+  return config;
+};
+```
+
 # Further reading
 
- - [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21) 
+ - [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)

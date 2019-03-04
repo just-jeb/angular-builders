@@ -32,6 +32,9 @@
           },
           "configurations": {
             "production": {
+              "customWebpackConfig": {
+                "path": "./func-webpack.config.js"
+              },
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
