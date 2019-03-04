@@ -50,45 +50,48 @@ const customWebpackFunctionObj = {
 	}
 };
 
-function createConfigFile(fileName: string) {
-	jest.mock(`${__dirname}/${fileName}`, () => customWebpackConfig, {virtual: true});
-}
-
-function createConfigFunction(fileName: string) {
-	jest.mock(`${__dirname}/${fileName}`, () => customWebpackFunction, {virtual: true})
+function createConfigFile(fileName: string, content: any) {
+	jest.unmock(`${__dirname}/${fileName}`);
+	jest.mock(`${__dirname}/${fileName}`, () => content, {virtual: true});
 }
 
 describe('CustomWebpackBuilder test', () => {
 	it('Should load webpack.config.js if no path specified', () => {
-		createConfigFile(defaultWebpackConfigPath);
+		createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, undefined);
 	});
 
 	it('Should load the file specified in configuration', () => {
 		const fileName = 'extra-webpack.config.js';
-		createConfigFile(fileName);
+		createConfigFile(fileName, customWebpackConfig);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {path: fileName}, baseWebpackConfig, {});
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, undefined);
 	});
 
 	it('Should pass on merge strategies', () => {
-		createConfigFile(defaultWebpackConfigPath);
+		createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 		const mergeStrategies: MergeStrategies = {'blah': 'prepend'};
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {mergeStrategies}, baseWebpackConfig, {});
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, mergeStrategies, undefined);
 	});
 
 	it('Should pass on replaceDuplicatePlugins flag', () => {
-		createConfigFile(defaultWebpackConfigPath);
+		createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {replaceDuplicatePlugins: true}, baseWebpackConfig, {});
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
 	});
 
 	it('Should execute custom function on configuration', () => {
-		const fileName = 'custom-webpack.config.js';
-		createConfigFunction(fileName);
-		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {path: fileName}, baseWebpackConfig, {env: 'prod'});
-		 expect(mergedConfig).toEqual(customWebpackFunctionObj);
+		const spy = jest.fn((config, options) => config);
+		createConfigFile(defaultWebpackConfigPath, spy);
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {env: 'prod'});
+		expect(spy).toHaveBeenCalledWith(baseWebpackConfig, {env: 'prod'});
+	});
+
+	it('Should apply custom function on configuration', () => {
+		createConfigFile(defaultWebpackConfigPath, customWebpackFunction);
+		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {env: 'prod'});
+		expect(mergedConfig).toEqual(customWebpackFunctionObj);
 	});
 });
