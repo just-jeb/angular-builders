@@ -30,10 +30,7 @@ const customWebpackFunction = (config, options) => ({
 		rules: [
 			{
 				test: '.node',
-				user: 'node-loader',
-				options: {
-					prod: options.env === 'prod'
-				}
+				user: 'node-loader'
 			}
 		]
 	}
@@ -45,10 +42,7 @@ const customWebpackFunctionObj = {
 		rules: [
 			{
 				test: '.node',
-				user: 'node-loader',
-				options: {
-					prod: true
-				}
+				user: 'node-loader'
 			}
 		]
 	}
@@ -95,7 +89,7 @@ describe('CustomWebpackBuilder test', () => {
 
 	it('Should apply custom function on configuration', () => {
 		createConfigFile(defaultWebpackConfigPath, customWebpackFunction);
-		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, buildOptions);
+		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
 		expect(mergedConfig).toEqual(customWebpackFunctionObj);
 	});
 });
