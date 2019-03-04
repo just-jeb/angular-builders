@@ -9,6 +9,10 @@ const baseWebpackConfig = {
 	entry: 'blah'
 };
 
+const buildOptions = {
+	env: 'prod'
+};
+
 const customWebpackConfig = {
 	module: {
 		rules: [
@@ -82,16 +86,16 @@ describe('CustomWebpackBuilder test', () => {
 		expect(WebpackConfigMerger.merge).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
 	});
 
-	it('Should execute custom function on configuration', () => {
+	it('Should pass build options to the webpack config function', () => {
 		const spy = jest.fn((config, options) => config);
 		createConfigFile(defaultWebpackConfigPath, spy);
-		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {env: 'prod'});
-		expect(spy).toHaveBeenCalledWith(baseWebpackConfig, {env: 'prod'});
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, buildOptions);
+		expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions);
 	});
 
 	it('Should apply custom function on configuration', () => {
 		createConfigFile(defaultWebpackConfigPath, customWebpackFunction);
-		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {env: 'prod'});
+		const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, buildOptions);
 		expect(mergedConfig).toEqual(customWebpackFunctionObj);
 	});
 });
