@@ -54,6 +54,9 @@ function createConfigFile(fileName: string, content: any) {
 }
 
 describe('CustomWebpackBuilder test', () => {
+	it('Should return original config if no custom configuration object has been provided', () => {
+		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, null, baseWebpackConfig, {});
+	})
 	it('Should load webpack.config.js if no path specified', () => {
 		createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 		CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});

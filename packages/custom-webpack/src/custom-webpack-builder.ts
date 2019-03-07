@@ -10,6 +10,9 @@ export class CustomWebpackBuilder {
       config: CustomWebpackBuilderConfig,
       baseWebpackConfig: Configuration,
       buildOptions: any): Configuration {
+        if (!config) {
+            return baseWebpackConfig;
+        }
         const webpackConfigPath = config.path || defaultWebpackConfigPath;
         const customWebpackConfig = require(`${getSystemPath(root)}/${webpackConfigPath}`);
 
