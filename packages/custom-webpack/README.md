@@ -142,7 +142,8 @@ Builder options:
 ```
 
 # Custom webpack config object
-This object defines your custom webpack configuration. It is defined by the following properties:
+This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
+The following properties are available:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
     The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
     Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
