@@ -8,7 +8,7 @@ const defaultConfigResolver = new DefaultConfigResolver();
 describe('Resolve project default configuration', () => {
     it('Should resolve tsconfig relatively to project root', () => {
         const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-        expect(config.globals['ts-jest'].tsConfigFile).toEqual(getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)));
+        expect(config.globals['ts-jest'].tsConfig).toEqual(getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)));
     });
 
     it('Should resolve testMatch pattern relatively to project root', () => {
@@ -29,9 +29,6 @@ describe('Resolve global default configuration', () => {
                 getSystemPath(join(workSpaceRoot, `node_modules/jest-preset-angular/AngularSnapshotSerializer.js`)),
                 getSystemPath(join(workSpaceRoot, `node_modules/jest-preset-angular/HTMLCommentSerializer.js`))
             ],
-            transform: {
-                "^.+\\.(ts|js|html)$": getSystemPath(join(workSpaceRoot, `node_modules/jest-preset-angular/preprocessor.js`))
-            },
         })
     });
 });
