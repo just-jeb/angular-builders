@@ -24,7 +24,7 @@ export class CustomWebpackBrowserBuilder extends BrowserBuilder {
                      host: virtualFs.Host<fs.Stats>,
                      options: NormalizedCustomWebpackBrowserBuildSchema): Configuration {
 	  const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig);
+	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options);
   }
 }
 
