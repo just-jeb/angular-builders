@@ -2,13 +2,14 @@
  * Created by Evgeny Barabanov on 28/06/2018.
  */
 
-import {BuilderContext} from '@angular-devkit/architect';
-import {BrowserBuilder, NormalizedBrowserBuilderSchema} from '@angular-devkit/build-angular';
-import {Path, virtualFs} from '@angular-devkit/core';
+import { BuilderContext } from '@angular-devkit/architect';
+import { BrowserBuilder } from '@angular-devkit/build-angular';
+import { NormalizedBrowserBuilderSchema } from '@angular-devkit/build-angular/src/utils';
+import { Path, virtualFs } from '@angular-devkit/core';
 import * as fs from 'fs';
-import {CustomWebpackSchema} from "../custom-webpack-schema";
-import {CustomWebpackBuilder} from "../custom-webpack-builder";
-import {Configuration} from "webpack";
+import { Configuration } from "webpack";
+import { CustomWebpackBuilder } from "../custom-webpack-builder";
+import { CustomWebpackSchema } from "../custom-webpack-schema";
 
 export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema, CustomWebpackSchema {
 }

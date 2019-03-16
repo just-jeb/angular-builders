@@ -18,11 +18,9 @@ const testConfig = {test: 4};
 jest.mock('@angular-devkit/build-angular/src/angular-cli-files/models/webpack-configs', () => ({
   getCommonConfig: () => commonConfig,
   getStylesConfig: () => stylesConfig,
-  getNonAotTestConfig: () => nonAotTestConfig,
+  getNonAotConfig: () => nonAotTestConfig,
   getTestConfig: () => testConfig,
 }));
-
-
 
 describe('Custom webpack karma builder test', () => {
   let builder: CustomWebpackKarmaBuilder;

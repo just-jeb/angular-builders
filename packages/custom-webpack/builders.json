@@ -2,6 +2,7 @@
   "$schema": "@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "browser": {
+      "implementation": "./src/browser/index2",
       "class": "./src/browser",
       "schema": "./src/browser/schema.json",
       "description": "Build browser app extended with custom webpack config"

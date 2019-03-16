@@ -3,7 +3,8 @@
  */
 
 import {BuilderContext} from '@angular-devkit/architect';
-import {KarmaBuilder, NormalizedKarmaBuilderSchema} from '@angular-devkit/build-angular';
+import { NormalizedKarmaBuilderSchema} from '@angular-devkit/build-angular/src/utils';
+import {KarmaBuilder} from '@angular-devkit/build-angular/src/karma';
 import {Path, virtualFs} from '@angular-devkit/core';
 import * as fs from 'fs';
 import {CustomWebpackBuilder} from '../custom-webpack-builder';
