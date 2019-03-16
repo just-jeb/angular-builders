@@ -1,17 +1,14 @@
-import {Builder, BuilderConfiguration, BuilderContext, BuilderDescription, BuildEvent} from '@angular-devkit/architect';
-import {
-  BrowserBuilderSchema,
-  DevServerBuilder,
-  DevServerBuilderOptions,
-  NormalizedBrowserBuilderSchema
-} from '@angular-devkit/build-angular';
-import {Path, virtualFs} from '@angular-devkit/core';
-import {Observable} from 'rxjs';
-import {switchMap, tap} from 'rxjs/operators';
-import {Stats} from 'fs';
-import {WebpackConfigRetriever} from '../webpack-config-retriever';
-import {Configuration} from "webpack";
-import {merge} from 'lodash';
+import { Builder, BuilderConfiguration, BuilderContext, BuilderDescription, BuildEvent } from '@angular-devkit/architect';
+import { BrowserBuilderSchema, DevServerBuilder } from '@angular-devkit/build-angular';
+import { Schema as DevServerBuilderSchema } from '@angular-devkit/build-angular/src/dev-server/schema';
+import { NormalizedBrowserBuilderSchema } from '@angular-devkit/build-angular/src/utils';
+import { Path, virtualFs } from '@angular-devkit/core';
+import { Stats } from 'fs';
+import { merge } from 'lodash';
+import { Observable } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
+import { Configuration } from "webpack";
+import { WebpackConfigRetriever } from '../webpack-config-retriever';
 
 export class GenericDevServerBuilder extends DevServerBuilder {
 
@@ -21,7 +18,7 @@ export class GenericDevServerBuilder extends DevServerBuilder {
     super(context);
   }
 
-  run(builderConfig: BuilderConfiguration<DevServerBuilderOptions>): Observable<BuildEvent> {
+  run(builderConfig: BuilderConfiguration<DevServerBuilderSchema>): Observable<BuildEvent> {
 
     const architect = this.context.architect;
     const [project, target, configuration] = builderConfig.options.browserTarget.split(':');
@@ -51,7 +48,7 @@ export class GenericDevServerBuilder extends DevServerBuilder {
     return webpackConfig;
   }
 
-  buildServerConfig = (devServerConfig: any) => (root: Path, options: DevServerBuilderOptions, browserOptions: NormalizedBrowserBuilderSchema) => {
+  buildServerConfig = (devServerConfig: any) => (root: Path, options: DevServerBuilderSchema, browserOptions: NormalizedBrowserBuilderSchema) => {
     const angularDevServerConfig = DevServerBuilder.prototype['_buildServerConfig'].call(this, root, options, browserOptions);
     if (devServerConfig) {
       merge(angularDevServerConfig, devServerConfig);
