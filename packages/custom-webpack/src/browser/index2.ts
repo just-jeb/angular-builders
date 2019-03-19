@@ -13,6 +13,7 @@ interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBui
 
 export type CustomWebpackBrowserSchema = BrowserBuilderSchema & CustomWebpackSchema;
 
+//TODO: externalize this function to eliminate dependency from dev-server
 export const customWebpackConfigTransform: (options: CustomWebpackBrowserSchema) => BrowserConfigTransformFn = (options) => ({root}, browserWebpackConfig ) => {
     return of(CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options));
 }
