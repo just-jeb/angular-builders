@@ -10,5 +10,8 @@ export default {
   setupFilesAfterEnv: [`${__dirname}/setup.js`],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png)$': `${__dirname}/mock-module.js`
-  }
+  },
+  transform: {
+    '^.+\\.(ts|js|html)$': 'ts-jest'
+  },
 };
