@@ -3,6 +3,7 @@
   "builders": {
     "run": {
       "class": "./src/jest.builder.js",
+      "implementation": "./src/index",
       "schema": "./src/schema.json",
       "description": "Jest runner"
     }
