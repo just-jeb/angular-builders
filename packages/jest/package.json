@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/jest",
-  "version": "7.3.1",
+  "version": "7.4.0",
   "description": "Jest builder for Angular build facade. Allows ng test run with Jest instead of Karma",
   "repository": {
     "type": "git",
@@ -29,11 +29,11 @@
     "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js"
   },
   "dependencies": {
-    "jest-preset-angular": "^6.0.0",
+    "jest-preset-angular": "^7.0.1",
     "lodash": "^4.17.10"
   },
   "peerDependencies": {
     "@angular-devkit/build-angular": ">=0.13.2",
-    "jest": ">= 23"
+    "jest": ">=24"
   }
 }
