@@ -1,7 +1,7 @@
 export default {
   globals: {
     "ts-jest": {
-      stringifyContentPathRegex:  "\\.html$",
+      stringifyContentPathRegex: "\\.html$",
       astTransformers: ['jest-preset-angular/InlineHtmlStripStylesTransformer.js']
     }
   },
@@ -10,8 +10,5 @@ export default {
   setupFilesAfterEnv: [`${__dirname}/setup.js`],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png)$': `${__dirname}/mock-module.js`
-  },
-  transform: {
-    '^.+\\.(ts|js|html)$': 'ts-jest'
   },
 };
