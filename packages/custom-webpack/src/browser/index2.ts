@@ -4,7 +4,7 @@ import { Schema as BrowserBuilderSchema } from '@angular-devkit/build-angular/sr
 import { BuilderContext, BuilderOutput } from '@angular-devkit/architect/src/index2';
 import { NormalizedBrowserBuilderSchema } from '@angular-devkit/build-angular/src/utils';
 import { json, logging, Path } from '@angular-devkit/core';
-import {of} from 'rxjs';
+import {of, Observable} from 'rxjs';
 import { CustomWebpackBuilder } from '../custom-webpack-builder';
 import { CustomWebpackSchema } from '../custom-webpack-schema';
 
@@ -17,7 +17,8 @@ export type CustomWebpackBrowserSchema = BrowserBuilderSchema & CustomWebpackSch
 export const customWebpackConfigTransformFactory: (options: CustomWebpackBrowserSchema) => BrowserConfigTransformFn = (options) => ({root}, browserWebpackConfig ) => {
     return of(CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options));
 }
-export function buildCustomWebpackBrowser(options: CustomWebpackBrowserSchema, context: BuilderContext) {
+
+export function buildCustomWebpackBrowser(options: CustomWebpackBrowserSchema, context: BuilderContext): Observable<BuilderOutput> {
     return buildWebpackBrowser(options, context, {config: customWebpackConfigTransformFactory(options)});
 }
 
