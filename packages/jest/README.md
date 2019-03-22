@@ -1,6 +1,8 @@
 # Jest builder for Angular build facade
 [![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
+**Attention: use version 7.3.x with Jest 23 and version 7.4.x with Jest 24.**
+
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
