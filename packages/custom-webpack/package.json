@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/custom-webpack",
-  "version": "7.4.3",
+  "version": "8.0.0-beta.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "src/index.js",
   "typings": "typings/index.d.ts",
@@ -30,9 +30,11 @@
   },
   "builders": "builders.json",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "webpack-merge": "^4.2.1"
   },
   "peerDependencies": {
     "@angular-devkit/build-angular": ">=0.13.2"
-  }
+  },
+  "devDependencies": {}
 }

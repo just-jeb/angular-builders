@@ -12,6 +12,11 @@
       "schema": "./src/server/schema.json",
       "description": "Build server app extended with custom webpack config"
     },
+    "dev-server": {
+      "implementation": "./src/dev-server/index",
+      "schema": "./src/dev-server/schema.json",
+      "description": "Dev server extended with custom webpack config"
+    },
     "karma": {
       "class": "./src/karma",
       "schema": "./src/karma/schema.json",
