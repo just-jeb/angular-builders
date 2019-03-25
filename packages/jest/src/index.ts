@@ -6,13 +6,14 @@ import { from, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CustomConfigResolver } from "./custom-config.resolver";
 import { DefaultConfigResolver } from "./default-config.resolver";
-import { buildConfiguration } from "./jest-configuration-builder";
+import { JestConfigurationBuilder } from "./jest-configuration-builder";
 import { OptionsConverter } from "./options-converter";
 import { JestBuilderSchema } from "./schema";
 
 
 
-export async function getRoots(context: BuilderContext): Promise<{ workspaceRoot: Path, projectRoot: Path }> {
+export async function getRoots(context: BuilderContext):
+    Promise<{ workspaceRoot: Path, root: Path, sourceRoot: Path }> {
     const host = new NodeJsSyncHost();
     const registry = new schema.CoreSchemaRegistry();
     registry.addPostTransform(schema.transforms.addUndefinedDefaults);
@@ -27,11 +28,16 @@ export async function getRoots(context: BuilderContext): Promise<{ workspaceRoot
         throw new Error('Must either have a target from the context or a default project.');
     }
 
-    const projectRoot = resolve(
-        workspace.root,
-        normalize(workspace.getProject(projectName).root),
-    );
-    return { projectRoot, workspaceRoot: workspace.root };
+    // const projectRoot = resolve(
+    //     workspace.root,
+    //     normalize(workspace.getProject(projectName).root),
+    // );
+    const { root, sourceRoot } = workspace.getProject(projectName);
+    return {
+        root: normalize(root),
+        sourceRoot: normalize(sourceRoot),
+        workspaceRoot: workspace.root
+    };
 }
 
 export function runJest(
@@ -42,20 +48,20 @@ export function runJest(
     async function buildArgv(): Promise<string[]> {
         const optionsConverter = new OptionsConverter();
 
-        const { workspaceRoot: wroot, projectRoot } = await getRoots(context);
+        const { workspaceRoot, root, sourceRoot } = await getRoots(context);
 
-        const configuration = buildConfiguration(new DefaultConfigResolver(),
+        const configuration = new JestConfigurationBuilder(new DefaultConfigResolver(),
             new CustomConfigResolver(context.logger.createChild('Jest runner')))
-            (projectRoot, wroot);
+            .buildConfiguration(root, sourceRoot, workspaceRoot);
         delete options.configPath;
         const argv = optionsConverter.convertToCliArgs(options);
 
         argv.push('--config', JSON.stringify(configuration));
         return argv;
     }
-    async function runJestCLI (){
+    async function runJestCLI() {
         const argv = await buildArgv();
-    //TODO: use runCLI to better determine the outcome
+        //TODO: use runCLI to better determine the outcome
         return run(argv);
     }
 
