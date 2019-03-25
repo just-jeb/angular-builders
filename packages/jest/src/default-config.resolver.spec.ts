@@ -13,7 +13,7 @@ describe('Resolve project default configuration', () => {
 
     it('Should resolve testMatch pattern relatively to project root', () => {
         const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-        expect(config.testMatch).toEqual([getSystemPath(normalize(`/some/cool/directory/${testPattern}`))]);
+        expect(config.testMatch).toEqual([`${getSystemPath(normalize('/some/cool/directory'))}${testPattern}`]);
     });
 });
 

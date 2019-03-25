@@ -27,7 +27,7 @@ export class DefaultConfigResolver {
         }
       },
       testMatch: [
-        `${getSystemPath(join(projectRoot, testPattern))}`
+        `${getSystemPath(projectRoot)}${testPattern}`
       ]
     };
   }
