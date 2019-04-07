@@ -9,7 +9,7 @@ function installPackage() {
     pathToPackage=$1;
 
     yarn remove ${packageName};
-    yarn cache clean ${packageName};
+    [ ! $CI ] && yarn cache clean;
     yarn add -D file:${pathToPackage};
 }
 
