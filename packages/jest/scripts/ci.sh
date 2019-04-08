@@ -51,14 +51,15 @@ function validateAllTestRuns() {
 
 function ciApp() {
     appDir=$1;
-    e2eOptions=$2;
-    local -n testOptions=$3;
+    port=$2;
+    e2eOptions=$3;
+    local -n testOptions=$4;
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
         installPackage ${packagePath};
         validateAllTestRuns testOptions
-        yarn e2e ${e2eOptions};
+        yarn e2e ${port} ${e2eOptions};
     )
 }
 
