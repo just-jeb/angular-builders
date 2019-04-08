@@ -90,7 +90,8 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "projects/my-first-app-e2e/protractor.conf.js",
-            "devServerTarget": "my-first-app:serve"
+            "devServerTarget": "my-first-app:serve",
+            "port": 4202
           },
           "configurations": {
             "production": {
@@ -199,7 +200,8 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "projects/my-second-app-e2e/protractor.conf.js",
-            "devServerTarget": "my-second-app:serve"
+            "devServerTarget": "my-second-app:serve",
+            "port": 4201
           },
           "configurations": {
             "production": {
