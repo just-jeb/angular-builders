@@ -51,15 +51,14 @@ function validateAllTestRuns() {
 
 function ciApp() {
     appDir=$1;
-    port=$2;
-    e2eOptions=$3;
-    local -n testOptions=$4;
+    e2eOptions=$2;
+    local -n testOptions=$3;
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
         installPackage ${packagePath};
         validateAllTestRuns testOptions
-        yarn e2e ${port} ${e2eOptions};
+        yarn e2e ${e2eOptions};
     )
 }
 
@@ -87,6 +86,6 @@ multiAppTestOptions=(
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.component.spec.ts$,--testPathPattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2"
     "yarn test my-shared-library|--rootDir=`pwd`/examples/multiple-apps/projects/my-shared-library|2|2|2|2"
 )
-(ciApp ./examples/simple-app --port=4201 --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions)
-(ciApp ./examples/multiple-apps --port=4202 --configuration=ci multiAppTestOptions)
+(ciApp ./examples/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions)
+(ciApp ./examples/multiple-apps --configuration=ci multiAppTestOptions)
 
