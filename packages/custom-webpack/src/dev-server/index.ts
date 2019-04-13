@@ -1,9 +1,9 @@
-import { BuilderContext, targetFromTargetString, createBuilder } from '@angular-devkit/architect/src/index2';
-import { DevServerBuilderOutput, DevServerBuilderSchema, ServerConfigTransformFn, serveWebpackBrowser, buildServerConfig } from '@angular-devkit/build-angular/src/dev-server/index2';
+import { BuilderContext, targetFromTargetString, createBuilder } from '@angular-devkit/architect/src/index';
+import { DevServerBuilderOutput, DevServerBuilderSchema, ServerConfigTransformFn, serveWebpackBrowser, buildServerConfig } from '@angular-devkit/build-angular/src/dev-server/index';
 import { Observable, of, from } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Configuration } from 'webpack';
-import { customWebpackConfigTransformFactory, CustomWebpackBrowserSchema } from '../browser/index2';
+import { customWebpackConfigTransformFactory, CustomWebpackBrowserSchema } from '../browser';
 import { Configuration as WebpackDevServerConfig } from 'webpack-dev-server';
 import { mergeConfigs } from "../webpack-config-merger";
 

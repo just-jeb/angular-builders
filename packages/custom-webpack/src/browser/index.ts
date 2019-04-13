@@ -1,32 +1,26 @@
-/**
- * Created by Evgeny Barabanov on 28/06/2018.
- */
-
-import { BuilderContext } from '@angular-devkit/architect';
-import { BrowserBuilder } from '@angular-devkit/build-angular';
+import { createBuilder } from '@angular-devkit/architect/src/index';
+import {BrowserConfigTransformFn, buildWebpackBrowser} from '@angular-devkit/build-angular/src/browser/index';
+import { Schema as BrowserBuilderSchema } from '@angular-devkit/build-angular/src/browser/schema';
+import { BuilderContext, BuilderOutput } from '@angular-devkit/architect/src/index';
 import { NormalizedBrowserBuilderSchema } from '@angular-devkit/build-angular/src/utils';
-import { Path, virtualFs } from '@angular-devkit/core';
-import * as fs from 'fs';
-import { Configuration } from "webpack";
-import { CustomWebpackBuilder } from "../custom-webpack-builder";
-import { CustomWebpackSchema } from "../custom-webpack-schema";
+import { json } from '@angular-devkit/core';
+import {of, Observable} from 'rxjs';
+import { CustomWebpackBuilder } from '../custom-webpack-builder';
+import { CustomWebpackSchema } from '../custom-webpack-schema';
 
-export interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema, CustomWebpackSchema {
+interface NormalizedCustomWebpackBrowserBuildSchema extends NormalizedBrowserBuilderSchema, CustomWebpackSchema {
 }
 
-export class CustomWebpackBrowserBuilder extends BrowserBuilder {
+export type CustomWebpackBrowserSchema = BrowserBuilderSchema & CustomWebpackSchema;
 
-  constructor(context: BuilderContext) {
-    super(context);
-  }
-
-  buildWebpackConfig(root: Path,
-                     projectRoot: Path,
-                     host: virtualFs.Host<fs.Stats>,
-                     options: NormalizedCustomWebpackBrowserBuildSchema): Configuration {
-	  const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-	  return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options);
-  }
+//TODO: externalize this function to eliminate dependency from dev-server
+export const customWebpackConfigTransformFactory: (options: CustomWebpackSchema) => BrowserConfigTransformFn = (options) => ({root}, browserWebpackConfig ) => {
+    return of(CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options));
 }
 
-export default CustomWebpackBrowserBuilder;
+export function buildCustomWebpackBrowser(options: CustomWebpackBrowserSchema, context: BuilderContext): Observable<BuilderOutput> {
+    return buildWebpackBrowser(options, context, {config: customWebpackConfigTransformFactory(options)});
+}
+
+
+export default createBuilder<json.JsonObject & CustomWebpackBrowserSchema>(buildCustomWebpackBrowser);

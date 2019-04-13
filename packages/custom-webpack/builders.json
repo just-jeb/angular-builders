@@ -2,8 +2,7 @@
   "$schema": "@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "browser": {
-      "implementation": "./src/browser/index2",
-      "class": "./src/browser",
+      "implementation": "./src/browser",
       "schema": "./src/browser/schema.json",
       "description": "Build browser app extended with custom webpack config"
     },
@@ -13,12 +12,12 @@
       "description": "Build server app extended with custom webpack config"
     },
     "dev-server": {
-      "implementation": "./src/dev-server/index",
+      "implementation": "./src/dev-server",
       "schema": "./src/dev-server/schema.json",
       "description": "Dev server extended with custom webpack config"
     },
     "karma": {
-      "class": "./src/karma",
+      "implementation": "./src/karma",
       "schema": "./src/karma/schema.json",
       "description": "Karma server extended with custom webpack config"
     }
