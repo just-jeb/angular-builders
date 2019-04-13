@@ -13,7 +13,7 @@ cd ../append-webpack-plugins && yarn remove @angular-builders/custom-webpack
 [ ! $CI ] && yarn cache clean
 yarn add -D file:../../${filename}
 #check karma builder
-yarn test --browsers=ChromeHeadlessCI
+yarn test --browsers=ChromeHeadlessCI --single-run
 #check browser and dev-server
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js --prod
