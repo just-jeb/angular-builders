@@ -1,10 +1,10 @@
-import { buildServerConfig, DevServerBuilderSchema } from '@angular-devkit/build-angular/src/dev-server/index2';
+import { buildServerConfig, DevServerBuilderSchema } from '@angular-devkit/build-angular/src/dev-server';
 import { LoggerApi } from '@angular-devkit/core/src/logger';
 import { Configuration as WebpackDevServerConfig } from 'webpack-dev-server';
-import { serverConfigTransformFactory } from './index';
+import { serverConfigTransformFactory } from './';
 
-jest.mock('@angular-devkit/architect/src/index2');
-jest.mock('@angular-devkit/build-angular/src/dev-server/index2');
+jest.mock('@angular-devkit/architect/src');
+jest.mock('@angular-devkit/build-angular/src/dev-server');
 
 const mockOriginalDevServerConfig: WebpackDevServerConfig = {
     host: 'myhost',
