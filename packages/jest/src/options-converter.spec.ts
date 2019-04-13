@@ -15,8 +15,8 @@ describe("Convert options to Jest CLI arguments", () => {
   });
 
   it("Should handle different arguments types provided in single object", () => {
-    const argv = optionsConverter.convertToCliArgs({stringOption: 'some string', booleanOption: true});
-    expect(argv).toEqual(['--stringOption=some string', "--booleanOption"]);
+    const argv = optionsConverter.convertToCliArgs({stringOption: 'some string', booleanOption: true, numericalOption: 10});
+    expect(argv).toEqual(['--stringOption=some string', "--booleanOption", "--numericalOption=10"]);
   });
 
   it("Should convert array options into multiple arguments", () => {
