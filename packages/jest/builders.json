@@ -2,8 +2,7 @@
   "$schema": "@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "run": {
-      "class": "./src/jest.builder.js",
-      "implementation": "./src/index",
+      "implementation": "./src",
       "schema": "./src/schema.json",
       "description": "Jest runner"
     }

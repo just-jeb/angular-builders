@@ -1,5 +1,5 @@
-import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect/src/index2";
-import { experimental, normalize, Path, resolve, schema } from "@angular-devkit/core";
+import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect/src/index";
+import { experimental, normalize, Path, schema } from "@angular-devkit/core";
 import { NodeJsSyncHost } from "@angular-devkit/core/node";
 import { run } from 'jest-cli';
 import { from, Observable } from "rxjs";
