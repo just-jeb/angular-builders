@@ -1,8 +1,15 @@
 {
   "name": "@angular-builders/timestamp",
-  "version": "7.3.1",
+  "version": "8.0.0-beta.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meltedspark/angular-builders/tree/master/packages/timestamp"
+  },
+  "author": "JeB Barabanov",
   "license": "MIT",
-  "author": "Evgeny Barabanov",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "builders": "builders.json",
   "scripts": {
     "build": "../../node_modules/.bin/tsc"
@@ -11,7 +18,7 @@
     "@types/dateformat": "^3.0.0"
   },
   "peerDependencies": {
-    "@angular-devkit/build-angular": ">=0.13.2"
+    "@angular-devkit/build-angular": ">=0.800.0"
   },
   "dependencies": {
     "dateformat": "^3.0.3"

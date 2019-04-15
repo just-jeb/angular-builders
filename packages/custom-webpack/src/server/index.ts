@@ -2,30 +2,17 @@
  * Created by Evgeny Barabanov on 28/06/2018.
  */
 
-import {BuilderContext} from '@angular-devkit/architect';
-import {ServerBuilder} from '@angular-devkit/build-angular';
-import {Path, virtualFs} from '@angular-devkit/core';
-import * as fs from 'fs';
-import {NormalizedServerBuilderServerSchema} from '@angular-devkit/build-angular/src/server/schema';
-import {CustomWebpackBuilder} from "../custom-webpack-builder";
-import {CustomWebpackSchema} from "../custom-webpack-schema";
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { Schema as BuildWebpackServerSchema } from '@angular-devkit/build-angular/src/server/schema';
+import { json } from '@angular-devkit/core';
+import { Observable, throwError } from 'rxjs';
+import { CustomWebpackSchema } from "../custom-webpack-schema";
 
-export interface NormalizedCustomWebpackServerBuildSchema extends NormalizedServerBuilderServerSchema, CustomWebpackSchema {
+export interface CustomWebpackServerSchema extends BuildWebpackServerSchema, CustomWebpackSchema {
 }
 
-export class CustomWebpackServerBuilder extends ServerBuilder {
-
-	constructor(public context: BuilderContext) {
-		super(context);
-	}
-
-	buildWebpackConfig(root: Path,
-					   projectRoot: Path,
-					   host: virtualFs.Host<fs.Stats>,
-					   options: NormalizedCustomWebpackServerBuildSchema) {
-		const serverWebpackConfig = super.buildWebpackConfig(root, projectRoot, host, options);
-		return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, serverWebpackConfig, options) as any;
-	}
+export function buildCustomWebpackServer(options: CustomWebpackServerSchema, context: BuilderContext): Observable<BuilderOutput | never> {
+    return throwError('Not implemented');
 }
 
-export default CustomWebpackServerBuilder;
+export default createBuilder<json.JsonObject & CustomWebpackServerSchema>(buildCustomWebpackServer);

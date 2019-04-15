@@ -1,4 +1,4 @@
-import {WebpackConfigMerger} from "./webpack-config-merger";
+import {mergeConfigs} from "./webpack-config-merger";
 import * as webpack from "webpack";
 
 describe('Webpack config merger test', () => {
@@ -13,7 +13,7 @@ describe('Webpack config merger test', () => {
       requestTimeout: 500
     });
 
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       plugins: [plugin1]
     }, {
       plugins: [plugin2]
@@ -30,7 +30,7 @@ describe('Webpack config merger test', () => {
     const plugin1 = new webpack.HotModuleReplacementPlugin();
     const plugin2 = new webpack.ContextReplacementPlugin('1');
 
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       plugins: [plugin1]
     }, {
       plugins: [plugin2]
@@ -47,7 +47,7 @@ describe('Webpack config merger test', () => {
     const plugin1 = new webpack.HotModuleReplacementPlugin();
     const plugin2 = new webpack.ContextReplacementPlugin('1');
 
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       plugins: [plugin1]
     }, {
       plugins: [plugin2]
@@ -74,7 +74,7 @@ describe('Webpack config merger test', () => {
       requestTimeout: 500
     });
 
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       plugins: [plugin1, plugin2]
     }, {
       plugins: [plugin3]
@@ -100,7 +100,7 @@ describe('Webpack config merger test', () => {
     const plugin1 = new webpack.DefinePlugin({
       a: 1
     });
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       plugins: []
     }, {
       plugins: [plugin1]
@@ -128,7 +128,7 @@ describe('Webpack config merger test', () => {
       requestTimeout: 500
     });
 
-    const output = WebpackConfigMerger.merge({
+    const output = mergeConfigs({
       externals: ['a', 'b'],
       plugins: [plugin1]
     }, {
@@ -146,7 +146,7 @@ describe('Webpack config merger test', () => {
   });
 
   it('Should merge loader options', () => {
-      const output = WebpackConfigMerger.merge({
+      const output = mergeConfigs({
         module: {
           rules: [
             {

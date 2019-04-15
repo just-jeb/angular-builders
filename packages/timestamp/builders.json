@@ -1,8 +1,8 @@
 {
-  "$schema": "@angular-devkit/architect/src/builders-schema.json",
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "file": {
-      "class": "./src/timestamp.builder.js",
+      "implementation": "./src",
       "schema": "./src/schema.json",
       "description": "Builder that creates timestamp"
     }
