@@ -11,7 +11,7 @@ import { OptionsConverter } from "./options-converter";
 import { JestBuilderSchema } from "./schema";
 
 export async function getRoots(context: BuilderContext):
-    Promise<{ workspaceRoot: Path, root: Path, sourceRoot: Path }> {
+    Promise<{ workspaceRoot: Path, projectRoot: Path }> {
     const host = new NodeJsSyncHost();
     const registry = new schema.CoreSchemaRegistry();
     registry.addPostTransform(schema.transforms.addUndefinedDefaults);
@@ -30,10 +30,9 @@ export async function getRoots(context: BuilderContext):
     //     workspace.root,
     //     normalize(workspace.getProject(projectName).root),
     // );
-    const { root, sourceRoot } = workspace.getProject(projectName);
+    const { root } = workspace.getProject(projectName);
     return {
-        root: normalize(root),
-        sourceRoot: normalize(sourceRoot),
+        projectRoot: normalize(root),
         workspaceRoot: workspace.root
     };
 }
@@ -46,11 +45,11 @@ export function runJest(
     async function buildArgv(): Promise<string[]> {
         const optionsConverter = new OptionsConverter();
 
-        const { workspaceRoot, root, sourceRoot } = await getRoots(context);
+        const { workspaceRoot, projectRoot } = await getRoots(context);
 
         const configuration = new JestConfigurationBuilder(new DefaultConfigResolver(),
             new CustomConfigResolver(context.logger.createChild('Jest runner')))
-            .buildConfiguration(root, sourceRoot, workspaceRoot);
+            .buildConfiguration(projectRoot, workspaceRoot);
         delete options.configPath;
         const argv = optionsConverter.convertToCliArgs(options);
 

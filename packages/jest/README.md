@@ -24,7 +24,7 @@ Although you run your unit tests with Jest, Protractor (e2e tests) still [has to
 Due to this fact it's possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests or Jest types in e2e test.
 In order to avoid these problems you have to specify the types explicitly:
 
-1. In _tsconfig.spec.json_ (_src_ directory, used by Jest): 
+1. In _tsconfig.spec.json_ (root directory, used by Jest): 
 	```js
 	"compilerOptions": {
 		...
@@ -32,6 +32,8 @@ In order to avoid these problems you have to specify the types explicitly:
 		"types": ["jest"]
 	} 
 	```
+  Remove `test.ts` entry from `files` array 
+
 	Make sure the module is `commonjs`, otherwise tests will fail at imports.
 
 2. In _tsconfig.json_ (root directory, used by IDE): 
