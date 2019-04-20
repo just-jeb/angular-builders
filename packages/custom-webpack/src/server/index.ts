@@ -3,16 +3,18 @@
  */
 
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
-import { Schema as BuildWebpackServerSchema } from '@angular-devkit/build-angular/src/server/schema';
+import { executeServerBuilder, ServerBuilderOptions } from '@angular-devkit/build-angular';
 import { json } from '@angular-devkit/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { customWebpackConfigTransformFactory } from '../common';
 import { CustomWebpackSchema } from "../custom-webpack-schema";
 
-export interface CustomWebpackServerSchema extends BuildWebpackServerSchema, CustomWebpackSchema {
-}
+export type CustomWebpackServerSchema = ServerBuilderOptions & CustomWebpackSchema;
 
-export function buildCustomWebpackServer(options: CustomWebpackServerSchema, context: BuilderContext): Observable<BuilderOutput | never> {
-    return throwError('Not implemented');
+export function buildCustomWebpackServer(options: CustomWebpackServerSchema, context: BuilderContext): Observable<BuilderOutput> {
+    return executeServerBuilder(options, context,{
+        webpackConfiguration: customWebpackConfigTransformFactory(options, context)
+    })
 }
 
 export default createBuilder<json.JsonObject & CustomWebpackServerSchema>(buildCustomWebpackServer);

@@ -1,4 +1,4 @@
-import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect/src/index";
+import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect";
 import { experimental, normalize, Path, schema } from "@angular-devkit/core";
 import { NodeJsSyncHost } from "@angular-devkit/core/node";
 import { run } from 'jest-cli';
@@ -9,8 +9,6 @@ import { DefaultConfigResolver } from "./default-config.resolver";
 import { JestConfigurationBuilder } from "./jest-configuration-builder";
 import { OptionsConverter } from "./options-converter";
 import { JestBuilderSchema } from "./schema";
-
-
 
 export async function getRoots(context: BuilderContext):
     Promise<{ workspaceRoot: Path, root: Path, sourceRoot: Path }> {
@@ -64,8 +62,6 @@ export function runJest(
         //TODO: use runCLI to better determine the outcome
         return run(argv);
     }
-
-    const argv = buildArgv();
 
     return from(runJestCLI()).pipe(
         map(() => ({ success: true }))

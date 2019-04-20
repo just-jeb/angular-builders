@@ -16,7 +16,7 @@ class HelloWorldPlugin {
     compiler.hooks.emit.tapPromise('ExamplePlugin', (compilation) => {
 
       // Wait for the CLI to generate the index.html.
-      return this.waitForAsset(compilation, 'index.html').then((source) => {
+      return this.waitForAsset(compilation, 'src/index.html').then((source) => {
 
         // Find where the end of the body is.
         const insertionPoint = source.original().source().lastIndexOf('</body>');

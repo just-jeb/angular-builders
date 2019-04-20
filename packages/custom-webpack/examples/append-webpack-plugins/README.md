@@ -1,9 +1,6 @@
+# AppendWebpackPlugins
 
-# Example angular-cli-builders project.
-
-## AppendWebpackPlugins
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8 with the [angular-cli-builders](https://github.com/meltedspark/angular-cli-builders) projects to append an example BuildStampPlugin into the webpackConfig. The plugin will inject a simple date stamp into the index.html.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.0.
 
 ## Steps
 1. `ng new append-webpack-plugins`
