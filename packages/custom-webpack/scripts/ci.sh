@@ -13,7 +13,7 @@ yarn test --browsers=ChromeHeadlessCI
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 
 #Check scenarios with custom webpack config
-cd ../append-webpack-plugins && yarn remove @angular-builders/custom-webpack
+cd ../full-cycle-app && yarn remove @angular-builders/custom-webpack
 [ ! $CI ] && yarn cache clean
 yarn add -D file:../../${filename}
 #check karma builder
