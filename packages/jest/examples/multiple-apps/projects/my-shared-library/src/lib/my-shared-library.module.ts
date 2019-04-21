@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { MySharedLibraryComponent } from './my-shared-library.component';
 
 @NgModule({
+  declarations: [MySharedLibraryComponent],
   imports: [
   ],
-  declarations: [MySharedLibraryComponent],
   exports: [MySharedLibraryComponent]
 })
 export class MySharedLibraryModule { }

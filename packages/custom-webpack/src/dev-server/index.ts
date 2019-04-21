@@ -1,33 +1,20 @@
-import { BuilderContext, targetFromTargetString, createBuilder } from '@angular-devkit/architect/src/index';
-import { DevServerBuilderOutput, DevServerBuilderSchema, ServerConfigTransformFn, serveWebpackBrowser, buildServerConfig } from '@angular-devkit/build-angular/src/dev-server/index';
-import { Observable, of, from } from 'rxjs';
+import { BuilderContext, createBuilder, targetFromTargetString } from '@angular-devkit/architect';
+import { DevServerBuilderOptions, DevServerBuilderOutput, executeDevServerBuilder } from '@angular-devkit/build-angular';
+import { from, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { Configuration } from 'webpack';
-import { customWebpackConfigTransformFactory, CustomWebpackBrowserSchema } from '../browser';
-import { Configuration as WebpackDevServerConfig } from 'webpack-dev-server';
-import { mergeConfigs } from "../webpack-config-merger";
+import { customWebpackConfigTransformFactory } from '../common';
+import { CustomWebpackSchema } from '../custom-webpack-schema';
 
-type ServerConfigTransformFnFactory = (options: DevServerBuilderSchema,
-    browserOptions: CustomWebpackBrowserSchema, context: BuilderContext) => ServerConfigTransformFn
-
-export const serverConfigTransformFactory: ServerConfigTransformFnFactory = (options, browserOptions, context) =>
-    ({ root }, config: Configuration): Observable<WebpackDevServerConfig> => {
-        const originalConfig = buildServerConfig(root, options, browserOptions, context.logger);
-        const {devServer} = mergeConfigs(config, {devServer: originalConfig});
-        return of(devServer);
-    }
-
-export const serveCustomWebpackBrowser = (options: DevServerBuilderSchema, context: BuilderContext): Observable<DevServerBuilderOutput> => {
+export const serveCustomWebpackBrowser = (options: DevServerBuilderOptions, context: BuilderContext): Observable<DevServerBuilderOutput> => {
     async function setup() {
         const browserTarget = targetFromTargetString(options.browserTarget);
-        return context.getTargetOptions(browserTarget) as unknown as CustomWebpackBrowserSchema;
+        return context.getTargetOptions(browserTarget) as unknown as CustomWebpackSchema;
     }
 
     return from(setup())
-        .pipe(switchMap(browserOptions => serveWebpackBrowser(options, context, {
-            browserConfig: customWebpackConfigTransformFactory(browserOptions),
-            serverConfig: serverConfigTransformFactory(options, browserOptions, context)
+        .pipe(switchMap(customWebpackOptions => executeDevServerBuilder(options, context, {
+            webpackConfiguration: customWebpackConfigTransformFactory(customWebpackOptions, context),
         })))
 }
 
-export default createBuilder<DevServerBuilderSchema, DevServerBuilderOutput>(serveCustomWebpackBrowser);
+export default createBuilder<DevServerBuilderOptions, DevServerBuilderOutput>(serveCustomWebpackBrowser);

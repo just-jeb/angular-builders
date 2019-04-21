@@ -3,27 +3,31 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-app": {
+    "simple-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "projectType": "application",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/my-app",
+            "outputPath": "dist/simple-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -43,74 +47,67 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-app:build"
+            "browserTarget": "simple-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-app:build:production"
+              "browserTarget": "simple-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-app:build"
+            "browserTarget": "simple-app:build"
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+          }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "my-app-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "my-app:serve"
+            "devServerTarget": "simple-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "my-app:serve:production"
+              "devServerTarget": "simple-app:serve:production"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
-    }
-  },
-  "defaultProject": "my-app",
+    }},
+  "defaultProject": "simple-app",
   "cli": {
     "packageManager": "yarn"
   }

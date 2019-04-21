@@ -1,15 +1,12 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { MySharedLibraryService } from './my-shared-library.service';
 
 describe('MySharedLibraryService', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [MySharedLibraryService]
-    });
-  });
+  beforeEach(() => TestBed.configureTestingModule({}));
 
-  it('should be created', inject([MySharedLibraryService], (service: MySharedLibraryService) => {
+  it('should be created', () => {
+    const service: MySharedLibraryService = TestBed.get(MySharedLibraryService);
     expect(service).toBeTruthy();
-  }));
+  });
 });

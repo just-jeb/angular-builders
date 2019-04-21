@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>FullCycleApp</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        const element = document.getElementById("footer");
+        const footer = document.createElement('div');
+        footer.innerHTML = this.responseText;
+        element.parentNode.replaceChild(footer.querySelector('div'), element)
+      }
+    }
+    xhttp.open("GET", 'footer.html', true);
+    xhttp.send();
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+  <div id="footer"></div>
+</body>
+
+</html>

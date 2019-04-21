@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-cd examples/append-webpack-plugins && yarn
+cd examples/full-cycle-app && yarn
 cd ../sanity-app && yarn

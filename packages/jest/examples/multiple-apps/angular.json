@@ -4,11 +4,11 @@
   "newProjectRoot": "projects",
   "projects": {
     "my-first-app": {
+      "projectType": "application",
+      "schematics": {},
       "root": "projects/my-first-app/",
       "sourceRoot": "projects/my-first-app/src",
-      "projectType": "application",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -43,7 +43,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -66,59 +73,57 @@
         },
         "test": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+            "main": "projects/my-first-app/src/test.ts",
+            "polyfills": "projects/my-first-app/src/polyfills.ts",
+            "tsConfig": "projects/my-first-app/tsconfig.spec.json",
+            "karmaConfig": "projects/my-first-app/karma.conf.js",
+            "assets": [
+              "projects/my-first-app/src/favicon.ico",
+              "projects/my-first-app/src/assets"
+            ],
+            "styles": [
+              "projects/my-first-app/src/styles.css"
+            ],
+            "scripts": []
+          }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "projects/my-first-app/tsconfig.app.json",
-              "projects/my-first-app/tsconfig.spec.json"
+              "projects/my-first-app/tsconfig.spec.json",
+              "projects/my-first-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "my-first-app-e2e": {
-      "root": "projects/my-first-app-e2e/",
-      "projectType": "application",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/my-first-app-e2e/protractor.conf.js",
-            "devServerTarget": "my-first-app:serve",
-            "port": 4202
+            "protractorConfig": "projects/my-first-app/e2e/protractor.conf.js",
+            "devServerTarget": "my-first-app:serve"
           },
           "configurations": {
             "production": {
               "devServerTarget": "my-first-app:serve:production"
             },
             "ci": {
-              "protractorConfig": "projects/my-first-app-e2e/protractor-ci.conf.js"
+              "protractorConfig": "projects/my-first-app/e2e/protractor-ci.conf.js"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/my-first-app-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
     },
     "my-second-app": {
+      "projectType": "application",
+      "schematics": {},
       "root": "projects/my-second-app/",
       "sourceRoot": "projects/my-second-app/src",
-      "projectType": "application",
       "prefix": "app",
-      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -153,7 +158,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -176,30 +188,38 @@
         },
         "test": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+            "main": "projects/my-second-app/src/test.ts",
+            "polyfills": "projects/my-second-app/src/polyfills.ts",
+            "tsConfig": "projects/my-second-app/tsconfig.spec.json",
+            "karmaConfig": "projects/my-second-app/karma.conf.js",
+            "assets": [
+              "projects/my-second-app/src/favicon.ico",
+              "projects/my-second-app/src/assets"
+            ],
+            "styles": [
+              "projects/my-second-app/src/styles.css"
+            ],
+            "scripts": []
+          }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "projects/my-second-app/tsconfig.app.json",
-              "projects/my-second-app/tsconfig.spec.json"
+              "projects/my-second-app/tsconfig.spec.json",
+              "projects/my-second-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "my-second-app-e2e": {
-      "root": "projects/my-second-app-e2e/",
-      "projectType": "application",
-      "architect": {
+        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "projects/my-second-app-e2e/protractor.conf.js",
+            "protractorConfig": "projects/my-second-app/e2e/protractor.conf.js",
             "devServerTarget": "my-second-app:serve",
             "port": 4201
           },
@@ -208,25 +228,16 @@
               "devServerTarget": "my-second-app:serve:production"
             },
             "ci": {
-              "protractorConfig": "projects/my-second-app-e2e/protractor-ci.conf.js"
+              "protractorConfig": "projects/my-second-app/e2e/protractor-ci.conf.js"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/my-second-app-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }
     },
     "my-shared-library": {
+      "projectType": "library",
       "root": "projects/my-shared-library",
       "sourceRoot": "projects/my-shared-library/src",
-      "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
@@ -234,16 +245,15 @@
           "options": {
             "tsConfig": "projects/my-shared-library/tsconfig.lib.json",
             "project": "projects/my-shared-library/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "projects/my-shared-library/ng-package.prod.json"
-            }
           }
         },
         "test": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+            "main": "projects/my-shared-library/src/test.ts",
+            "tsConfig": "projects/my-shared-library/tsconfig.spec.json",
+            "karmaConfig": "projects/my-shared-library/karma.conf.js"
+          }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -258,9 +268,8 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "multiple-apps",
+    }},
+  "defaultProject": "my-first-app",
   "cli": {
     "packageManager": "yarn"
   }
