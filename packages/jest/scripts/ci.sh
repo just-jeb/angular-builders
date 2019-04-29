@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
-packageName=@angular-builders/jest
-filename=jest-builder.tgz
 set -eE;
 trap 'echo ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND >&2;' ERR
-yarn pack --filename ${filename}
-
-function installPackage() {
-    pathToPackage=$1;
-
-    yarn remove ${packageName};
-    [ ! $CI ] && yarn cache clean;
-    yarn add -D file:${pathToPackage};
-}
 
 function validateSingleTestRun() {
     testCommand=$1;
@@ -24,8 +13,9 @@ function validateSingleTestRun() {
     additionalStep=$8;
 
     IFS=',' read -ra testCommandArgs <<< "$testCommandArgsString";
-
+    set -x;
     ${testCommand} "${testCommandArgs[@]}" 2>&1 | tee tests.log;
+    set +x;
     if [[ ! -z ${additionalStep} ]]; then
         ${additionalStep}
     fi
@@ -56,9 +46,10 @@ function ciApp() {
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
-        installPackage ${packagePath};
         validateAllTestRuns testOptions
+        set -x;
         yarn e2e ${e2eOptions};
+        set +x
     )
 }
 

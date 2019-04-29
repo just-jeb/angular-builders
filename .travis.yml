@@ -12,6 +12,6 @@ addons:
 before_install:
   - npm i -g yarn@1
   - chmod +x -R ./scripts
-install: ./scripts/install_all.sh
+install: yarn && lerna bootstrap
 script:
-  - sh -x ./scripts/ci_all.sh
+  - lerna run build && lerna run ci

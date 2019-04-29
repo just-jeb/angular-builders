@@ -26,7 +26,8 @@
     "postbuild": "yarn test",
     "build": "../../node_modules/.bin/tsc",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
-    "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js"
+    "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
+    "ci": "./scripts/ci.sh"
   },
   "dependencies": {
     "jest-preset-angular": "^7.0.1",

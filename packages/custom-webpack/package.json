@@ -26,7 +26,8 @@
     "postbuild": "yarn test && yarn run e2e",
     "build": "../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
-    "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js"
+    "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
+    "ci": "./scripts/ci.sh"
   },
   "builders": "builders.json",
   "dependencies": {
