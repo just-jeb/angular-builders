@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "node --preserve-symlinks ./node_modules/@angular/cli/bin/ng",
-    "start": "npm run ng -- serve",
-    "build": "npm run ng -- build",
-    "test": "npm run ng -- test",
-    "lint": "npm run ng -- lint",
-    "e2e": "npm run ng -- e2e"
+    "start": "yarn ng serve",
+    "build": "yarn ng build",
+    "test": "yarn ng test",
+    "lint": "yarn ng lint",
+    "e2e": "yarn ng e2e"
   },
   "private": true,
   "dependencies": {
