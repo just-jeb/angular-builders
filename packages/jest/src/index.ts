@@ -49,7 +49,7 @@ export function runJest(
 
         const configuration = new JestConfigurationBuilder(new DefaultConfigResolver(),
             new CustomConfigResolver(context.logger.createChild('Jest runner')))
-            .buildConfiguration(projectRoot, workspaceRoot);
+            .buildConfiguration(projectRoot, workspaceRoot, options.configPath);
         delete options.configPath;
         const argv = optionsConverter.convertToCliArgs(options);
 

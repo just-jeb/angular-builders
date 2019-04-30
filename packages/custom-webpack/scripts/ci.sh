@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
 
-filename=custom-webpack-builder.tgz
-set -e;
-yarn pack --filename ${filename}
-
 #Check that it works the same way angular-devkit builders do when there is no custom webpack config provided
-cd ./examples/sanity-app && yarn remove @angular-builders/custom-webpack
-[ ! $CI ] && yarn cache clean
-yarn add -D file:../../${filename}
-yarn build
+cd ./examples/sanity-app
+#ng build is verified during lerna run
 yarn test --browsers=ChromeHeadlessCI
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 
 #Check scenarios with custom webpack config
-cd ../full-cycle-app && yarn remove @angular-builders/custom-webpack
-[ ! $CI ] && yarn cache clean
-yarn add -D file:../../${filename}
+cd ../full-cycle-app
+#ng build is verified during lerna run
 #check karma builder
 yarn test --browsers=ChromeHeadlessCI
 #check browser and dev-server

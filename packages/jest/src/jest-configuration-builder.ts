@@ -7,7 +7,7 @@ import { DefaultConfigResolver } from "./default-config.resolver";
 export const buildConfiguration = (defaultConfigResolver: DefaultConfigResolver,
   customConfigResolver: CustomConfigResolver) => 
   (projectRoot: Path,workspaceRoot: Path, configPath: string = 'jest.config.js') => {
-    const globalDefaultConfig = defaultConfigResolver.resolveGlobal(workspaceRoot);
+    const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
     const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
     const globalCustomConfig = customConfigResolver.resolveGlobal(workspaceRoot);
     const projectCustomConfig = customConfigResolver.resolveForProject(projectRoot, configPath);
@@ -24,7 +24,7 @@ export class JestConfigurationBuilder {
   buildConfiguration(projectRoot: Path, workspaceRoot: Path, configPath: string = 'jest.config.js'): any {
     const pathToProject: Path = resolve(workspaceRoot, projectRoot);
 
-    const globalDefaultConfig = this.defaultConfigResolver.resolveGlobal(workspaceRoot);
+    const globalDefaultConfig = this.defaultConfigResolver.resolveGlobal();
     const projectDefaultConfig = this.defaultConfigResolver.resolveForProject(pathToProject);
     const globalCustomConfig = this.customConfigResolver.resolveGlobal(workspaceRoot);
     const projectCustomConfig = this.customConfigResolver.resolveForProject(pathToProject, configPath);
