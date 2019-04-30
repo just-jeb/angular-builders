@@ -32,7 +32,7 @@
     "postbuild": "yarn copy && yarn test",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
     "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
-    "clean": "../../node_modules/.bin/rimraf dist",
+    "clean": "../../node_modules/.bin/rimraf dist src/schema.ts",
     "copy": "../../node_modules/.bin/cpy src/schema.json dist",
     "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts",
     "ci": "./scripts/ci.sh"
