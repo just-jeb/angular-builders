@@ -1,4 +1,4 @@
-import { TimestampBuilderSchema } from './schema';
+import { SchemaObject as TimestampBuilderSchema } from './schema';
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { Observable, bindNodeCallback, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
