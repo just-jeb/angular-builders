@@ -19,16 +19,6 @@ describe('Resolve project default configuration', () => {
 
 describe('Resolve global default configuration', () => {
     it('Should resolve default config from predefined config module', () => {
-        expect(defaultConfigResolver.resolveGlobal(normalize(''))).toMatchObject(defaultConfig);
-    });
-
-    it('Should resolve workspace root specific configs', () => {
-        const workSpaceRoot = normalize('my/workspace/root');
-        expect(defaultConfigResolver.resolveGlobal(workSpaceRoot)).toMatchObject({
-            snapshotSerializers: [
-                getSystemPath(join(workSpaceRoot, `node_modules/jest-preset-angular/AngularSnapshotSerializer.js`)),
-                getSystemPath(join(workSpaceRoot, `node_modules/jest-preset-angular/HTMLCommentSerializer.js`))
-            ],
-        })
+        expect(defaultConfigResolver.resolveGlobal()).toEqual(defaultConfig);
     });
 });

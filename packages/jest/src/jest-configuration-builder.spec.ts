@@ -89,9 +89,9 @@ describe("Build Jest configuration object", () => {
     })
   })
 
-  it('Should call the default config resolver resolveGlobal method with workspaceRoot parameter', () => {
+  it('Should call the default config resolver resolveGlobal method', () => {
     const workspaceRoot = normalize('my/workspace/root')
     jestConfigurationBuilder.buildConfiguration(normalize(''), workspaceRoot, normalize('./'));
-    expect(defaultConfigResolver.resolveGlobal.mock.calls[0][0]).toEqual(workspaceRoot);
+    expect(defaultConfigResolver.resolveGlobal).toHaveBeenCalledTimes(1);
   })
 });
