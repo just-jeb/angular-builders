@@ -7,12 +7,22 @@
   },
   "author": "JeB Barabanov",
   "license": "MIT",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "builders.json"
+  ],
   "engines": {
     "node": ">=10.0.0"
   },
   "builders": "builders.json",
   "scripts": {
-    "build": "../../node_modules/.bin/tsc"
+    "prebuild": "yarn clean && yarn generate",
+    "build": "../../node_modules/.bin/tsc",
+    "postbuild": "yarn copy",
+    "clean": "../../node_modules/.bin/rimraf dist src/schema.ts",
+    "copy": "../../node_modules/.bin/cpy src/schema.json dist",
+    "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "devDependencies": {
     "@types/dateformat": "^3.0.0"

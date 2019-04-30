@@ -2,8 +2,11 @@
   "name": "@angular-builders/custom-webpack",
   "version": "8.0.0-RC.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
-  "main": "src/index.js",
-  "typings": "typings/index.d.ts",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "builders.json"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack"
@@ -23,10 +26,12 @@
     "custom"
   ],
   "scripts": {
-    "postbuild": "yarn test && yarn run e2e",
+    "prebuild": "yarn clean",
     "build": "../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
+    "postbuild": "yarn test && yarn run e2e",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
     "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
+    "clean": "../../node_modules/.bin/rimraf dist",
     "ci": "./scripts/ci.sh"
   },
   "builders": "builders.json",

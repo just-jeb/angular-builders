@@ -6,7 +6,7 @@ describe('custom webpack karma builder test', () => {
 
 	beforeEach(() => {
 		jest.resetModules()
-		customWebpackBrowserSchema = require('../src/karma/schema.json');
+		customWebpackBrowserSchema = require('../dist/karma/schema.json');
 	});
 
 	it('Should fit the schema of @angular-devkit/build-angular:karma', () => {

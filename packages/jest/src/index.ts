@@ -1,5 +1,5 @@
 import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect";
-import { experimental, normalize, Path, schema } from "@angular-devkit/core";
+import { experimental, normalize, Path, schema, json } from "@angular-devkit/core";
 import { NodeJsSyncHost } from "@angular-devkit/core/node";
 import { run } from 'jest-cli';
 import { from, Observable } from "rxjs";
@@ -8,7 +8,7 @@ import { CustomConfigResolver } from "./custom-config.resolver";
 import { DefaultConfigResolver } from "./default-config.resolver";
 import { JestConfigurationBuilder } from "./jest-configuration-builder";
 import { OptionsConverter } from "./options-converter";
-import { JestBuilderSchema } from "./schema";
+import { SchemaObject as JestBuilderSchema } from "./schema";
 
 export async function getRoots(context: BuilderContext):
     Promise<{ workspaceRoot: Path, projectRoot: Path }> {
@@ -67,4 +67,4 @@ export function runJest(
     );
 }
 
-export default createBuilder<JestBuilderSchema>(runJest);
+export default createBuilder<JestBuilderSchema & json.JsonObject>(runJest);

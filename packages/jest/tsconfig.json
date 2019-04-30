@@ -1,9 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declarationDir": "typings"
+    "outDir": "dist",
+    "noImplicitAny": false
   },
   "files": [
     "src/index.ts"
-  ]
+  ],
+  "include": ["src/jest-config"]
 }

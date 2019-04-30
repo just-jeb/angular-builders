@@ -1,4 +1,4 @@
-import {JestBuilderSchema} from "./schema";
+import {SchemaObject as JestBuilderSchema} from "./schema";
 
 export class OptionsConverter {
   convertToCliArgs(options: Partial<JestBuilderSchema>): string[] {
