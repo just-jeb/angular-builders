@@ -26,8 +26,9 @@
     "custom"
   ],
   "scripts": {
+    "prebuild": "yarn clean",
+    "build": "../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
     "postbuild": "yarn test && yarn run e2e",
-    "build": "yarn clean && ../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
     "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
     "clean": "../../node_modules/.bin/rimraf dist",

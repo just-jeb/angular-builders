@@ -11,7 +11,11 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "typings": "typings",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "builders.json"
+  ],
   "keywords": [
     "jest",
     "testing",
@@ -23,10 +27,14 @@
   ],
   "builders": "builders.json",
   "scripts": {
-    "postbuild": "yarn test",
+    "prebuild": "yarn clean && yarn generate",
     "build": "../../node_modules/.bin/tsc",
+    "postbuild": "yarn copy && yarn test",
     "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
     "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
+    "clean": "../../node_modules/.bin/rimraf dist",
+    "copy": "../../node_modules/.bin/cpy src/schema.json dist",
+    "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts",
     "ci": "./scripts/ci.sh"
   },
   "dependencies": {
