@@ -1,3 +1,6 @@
+This is a fork from [meltedspark/angular-builders](https://github.com/meltedspark/angular-builders) that supports Ionic.
+You will be able to customize the Webpack build configuration with Ionic
+
 # @angular-builders [![Build Status](https://travis-ci.org/meltedspark/angular-builders.svg?branch=master)](https://travis-ci.org/meltedspark/angular-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-builders.svg)](https://greenkeeper.io/) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
