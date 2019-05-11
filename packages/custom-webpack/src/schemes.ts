@@ -13,5 +13,10 @@ module.exports = [
     originalSchemaPath: '@angular-devkit/build-angular/src/karma/schema.json',
     schemaExtensionPaths: [`${__dirname}/karma/schema.ext.json`, `${__dirname}/schema.ext.json`],
     newSchemaPath: `${__dirname}/karma/schema.json`
+  },
+	{
+    originalSchemaPath: '@angular-devkit/build-angular/src/extract-i18n/schema.json',
+    schemaExtensionPaths: [`${__dirname}/extract-i18n/schema.ext.json`, `${__dirname}/schema.ext.json`],
+    newSchemaPath: `${__dirname}/extract-i18n/schema.json`
   }
 ];
