@@ -19,7 +19,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
               "architect": {
                      ...
                      "[architect-target]": {
-                               "builder": "@angular-builders/custom-webpack:[browser|server|karma]"
+                               "builder": "@angular-builders/custom-webpack:[browser|server|karma|extract-i18n]"
                                "options": {
                                      ...
                                }
