@@ -27,7 +27,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [browser|server|karma] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server) or [karma](#Custom-webpack-Karma)
+    - [browser|server|karma|extract-i18n] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [karma](#Custom-webpack-Karma) or [extract-i18n](#Custom-webpack-extract-i18n)
  3. If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it with `ng [architect-target]`
@@ -54,6 +54,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
  - [@angular-builders/custom-webpack:browser](#Custom-webpack-browser)
  - [@angular-builders/custom-webpack:server](#Custom-webpack-server)
  - [@angular-builders/custom-webpack:karma](#Custom-webpack-Karma)
+ - [@angular-builders/custom-webpack:extract-i18n](#Custom-webpack-Extract-i18n)
 
 ## Custom webpack browser
 
@@ -140,6 +141,34 @@ Builder options:
                     ...
               }
 ```
+
+## Custom webpack Extract i18n
+
+Extended `@angular-devkit/build-angular:extract-i18n` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
+The builder will run the same build as `@angular-devkit/build-angular:extract-i18n` does with extra parameters that are specified in the provided webpack configuration.
+
+Builder options:
+ - All the `@angular-devkit/build-angular:extract-i18n` options
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+
+`angular.json` Example:
+```
+"architect": {
+    ...
+    "build": {
+              "builder": "@angular-builders/custom-webpack:extract-i18n"
+              "options": {
+                    "browserTarget": "my-cool-angular-app-arch:build",
+                    "customWebpackConfig": {
+                        "path": "./extra-webpack.config.js",
+                        "mergeStrategies": { "module.rules": "prepend" },
+                        "replaceDuplicatePlugins": true
+                     }
+              }
+```
+
+In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.  
+Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
 
 # Custom webpack config object
 This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
