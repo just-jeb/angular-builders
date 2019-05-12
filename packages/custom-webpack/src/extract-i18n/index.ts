@@ -17,15 +17,12 @@ export class CustomWebpackExtractI18nBuilder extends ExtractI18nBuilder {
 
   constructor(context: BuilderContext) {
 	  super(context);
-	  context.logger.log('info', 'CustomWebpackExtractI18nBuilder has been constructed');
   }
 
   buildWebpackConfig(root: Path,
                      projectRoot: Path,
                      options: NormalizedCustomWebpackExtractI18nBuildSchema): Configuration {
-		this.context.logger.log('info', 'This is a custom build');
 											 const browserWebpackConfig = super.buildWebpackConfig(root, projectRoot, options);
-											 this.context.logger.log('info', 'A browserWebpackConfig has been created');
 											 return CustomWebpackBuilder.buildWebpackConfig(root, options.customWebpackConfig, browserWebpackConfig, options);
   }
 }
