@@ -172,7 +172,7 @@ Builder options:
 ```json
 "architect": {
 	"build": {
-		"builder": "@angular-builders/custom-webpack:extract-i18n"
+		"builder": "@angular-builders/custom-webpack:extract-i18n",
 			"options": {
 				"browserTarget": "my-cool-angular-app-arch:build",
 				"customWebpackConfig": {
