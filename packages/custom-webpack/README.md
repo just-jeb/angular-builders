@@ -11,32 +11,37 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # Usage
 
-1.  `npm i -D @angular-builders/custom-webpack`
-2.  In your `angular.json`:
-    ```
-    "projects": {
-        ...
-        "[project]": {
-             ...
-             "architect": {
-                    ...
-                    "[architect-target]": {
-                              "builder": "@angular-builders/custom-webpack:[browser|server|karma|extract-i18n]"
-                              "options": {
-                                    ...
-                              }
-    ```
-    Where:
-    - [project] is the name of the project to which you want to add the builder
-    - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [browser|server|karma|extract-i18n] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [karma](#Custom-webpack-Karma) or [extract-i18n](#Custom-webpack-extract-i18n)
-3.  If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
-    `ng run [project]:[architect-target]`  
-    If it is one of the predefined targets, you can run it with `ng [architect-target]`
+1. `npm i -D @angular-builders/custom-webpack`
+2. In your `angular.json`:
+
+```
+"projects": {
+    ...
+    "[project]": {
+         ...
+         "architect": {
+                ...
+                "[architect-target]": {
+                          "builder": "@angular-builders/custom-webpack:[browser|server|karma|extract-i18n]"
+                          "options": {
+                                ...
+                          }
+```
+
+Where:
+
+- [project] is the name of the project to which you want to add the builder
+- [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
+- [browser|server|karma|extract-i18n] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [karma](#Custom-webpack-Karma) or [extract-i18n](#Custom-webpack-extract-i18n)
+
+- If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:<br>
+  `ng run [project]:[architect-target]`<br>
+  If it is one of the predefined targets, you can run it with `ng [architect-target]`
 
 ## For example
 
 - angular.json:
+
   ```
   "projects": {
       ...
@@ -50,6 +55,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
                                   ...
                             }
   ```
+
 - Run the build: `ng build`
 
 # Builders
@@ -61,8 +67,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Custom webpack browser
 
-Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood). The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
 
 Builder options:
 
@@ -93,8 +98,7 @@ In this example `externals` entry from `extra-webpack.config.js` will replace `e
 
 ## Custom webpack server
 
-Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood). The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
 
 Builder options:
 
@@ -120,13 +124,12 @@ Builder options:
               }
 ```
 
-In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.  
+In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.<br>
 Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
 
 ## Custom webpack Karma
 
-Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood). The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
 
 Builder options:
 
@@ -169,21 +172,23 @@ Builder options:
 
 `angular.json` Example:
 
-```json
-"architect": {
-	"build": {
-		"builder": "@angular-builders/custom-webpack:extract-i18n",
-			"options": {
-				"browserTarget": "my-cool-angular-app-arch:build",
-				"customWebpackConfig": {
-					"path": "./extra-webpack.config.js",
-					"mergeStrategies": {
-						"module.rules": "append"
-						},
-					"replaceDuplicatePlugins": true
-				}
+```
+{
+    "architect": {
+        "build": {
+            "builder": "@angular-builders/custom-webpack:extract-i18n",
+            "options": {
+              "browserTarget": "my-cool-angular-app-arch:build",
+              "customWebpackConfig": {
+                "path": "./extra-webpack.config.js",
+                "mergeStrategies": {
+                  "module.rules": "append"
+                },
+                "replaceDuplicatePlugins": true
+              }
       }
-		}
+    }
+  }
 }
 ```
 
@@ -220,51 +225,51 @@ In this example `module.rules` entry from `extra-webpack.config.js` will be appe
 
 # Custom webpack config object
 
-This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
+This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.<br>
 The following properties are available:
 
-- `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
-  The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
-   Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:
+- `path`: path to the extra webpack configuration, defaults to `webpack.config.js`. The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.<br>
+  Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:
 
-       {
-         test: /\.css$/,
-         use: [
-           {loader: 'style-loader', options: {...}}
-         ]
-       }
+  ```
+  {
+     test: /\.css$/,
+     use: [
+       {loader: 'style-loader', options: {...}}
+     ]
+   }
+  ```
 
-  The builder will take care of merging the delta with the existing configuration provided by Angular.  
-   In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
+  The builder will take care of merging the delta with the existing configuration provided by Angular.<br>
+  In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
 
 - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
+
   - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
   - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-  - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
-    See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-- `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
-  **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
+  - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry). See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
+
+- `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied. **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
 
 ## Merging plugins configuration:
 
-If in your custom configuration you specify a plugin that is already added by Angular CLI then by default the two instances will be merged.  
-In case of the conflicts your configuration will override the existing one.  
-Thus, if you'd like to modify an existing plugin configuration, all you have to do is specify the _delta_ you want to change.  
+If in your custom configuration you specify a plugin that is already added by Angular CLI then by default the two instances will be merged.<br>
+In case of the conflicts your configuration will override the existing one.<br>
+Thus, if you'd like to modify an existing plugin configuration, all you have to do is specify the _delta_ you want to change.<br>
 For example, if you'd like to add an additional entry in `excludeChunks` list of `HtmlWebpackPlugin` you only have to specify this single entry:
 
-```js
+```javascript
 new HtmlWebpackPlugin({
   excludeChunks: ["webworker"]
 });
 ```
 
-Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
+Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.<br>
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
 
 ## Custom Webpack config function
 
-If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function
-is called with the base Webpack configuration and must return the new configuration.
+If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function is called with the base Webpack configuration and must return the new configuration.
 
 The function is called with the base config and the builder options as parameters.
 
@@ -272,7 +277,7 @@ In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no ef
 
 `custom-webpack.config.js` example :
 
-```js
+```javascript
 const webpack = require("webpack");
 const pkg = require("./package.json");
 
@@ -289,4 +294,4 @@ module.exports = (config, options) => {
 
 # Further reading
 
-- [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
+- [Customizing Angular CLI 6 build - an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
