@@ -1329,7 +1329,7 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
-callsite@1.0.0:
+callsite@1.0.0, callsite@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callsite/-/callsite-1.0.0.tgz#280398e5d664bd74038b6f0905153e6e8af1bc20"
 
@@ -1935,6 +1935,13 @@ debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
   integrity sha512-mel+jf7nrtEl5Pn1Qx46zARXKDpBbvzezse7p7LqINmdoIk8PYP5SySaxEmYv6TZ0JyEKA1hsCId6DIhgITtWQ==
   dependencies:
     ms "^2.1.1"
+
+decache@^4.1.0:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/decache/-/decache-4.5.1.tgz#94a977a88a4188672c96550ec4889582ceecdf49"
+  integrity sha512-5J37nATc6FmOTLbcsr9qx7Nm28qQyg1SK4xyEHqM0IBkNhWFp0Sm+vKoWYHD8wq+OUEb9jLyaKFfzzd1A9hcoA==
+  dependencies:
+    callsite "^1.0.0"
 
 decamelize@^1.1.1, decamelize@^1.1.2:
   version "1.2.0"
@@ -3642,6 +3649,14 @@ js-base64@^2.1.8:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
   integrity sha512-M7kLczedRMYX4L8Mdh4MzyAMM9O5osx+4FcOQuTvr3A9F2D9S5JXheN0ewNbrvK2UatkTRhL5ejGmGSjNMiZuw==
+
+js-to-styles-var-loader@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/js-to-styles-var-loader/-/js-to-styles-var-loader-1.1.0.tgz#055a6701a63837e756c972937c6e689fa9cd7ab8"
+  integrity sha512-kk55siDoHeh7yOFN/EBVC73IBGAp07Z9C/WmHuFfJlIJPDZeunS9qgBBX4ZzES7KIT637P1lVR4cFiXSjaoBXg==
+  dependencies:
+    decache "^4.1.0"
+    squba "^0.1.4"
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -6202,6 +6217,11 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+
+squba@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/squba/-/squba-0.1.4.tgz#581a1420007d90e312c9db02040312fed42355eb"
+  integrity sha1-WBoUIAB9kOMSydsCBAMS/tQjVes=
 
 sshpk@^1.7.0:
   version "1.16.1"

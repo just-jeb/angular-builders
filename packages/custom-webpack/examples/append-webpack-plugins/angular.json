@@ -50,6 +50,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "i18n": {
+              "customWebpackConfig": {
+                "path": "./css-preprocessors-webpack.config.js"
+              }
             }
           }
         },
@@ -65,9 +70,9 @@
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
-            "browserTarget": "append-webpack-plugins:build"
+            "browserTarget": "append-webpack-plugins:build:i18n"
           }
         },
         "test": {
