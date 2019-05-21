@@ -1,21 +1,21 @@
 # Jest builder for Angular build facade
-[![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
+[![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/jest/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
-**Attention: use version 7.3.x with Jest 23 and version 7.4.x with Jest 24.**
+# This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/meltedspark/angular-builders/blob/7.x.x/packages/jest/README.md).
 
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
 ## Prerequisits
-  - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
-  - [Jest](https://www.npmjs.com/package/jest)
+  - [Angular CLI 8](https://www.npmjs.com/package/@angular/cli)
+  - [Jest 24](https://www.npmjs.com/package/jest)
   
 ## Installation
 1. Remove Karma related libraries and files:
    ```Shell
-     npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
-	 rm src/karma.conf.js
-	 rm src/test.ts
+	npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
+	rm src/karma.conf.js
+	rm src/test.ts
    ```
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
 
