@@ -95,7 +95,7 @@ Builder options:
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
-```
+```js
 "architect": {
   ...
   "build": {
@@ -125,7 +125,7 @@ Builder options:
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
-```
+```js
 "architect": {
   ...
   "test": {
