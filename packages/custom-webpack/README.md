@@ -13,42 +13,42 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
  1. ```npm i -D @angular-builders/custom-webpack```
  2. In your `angular.json`:
+    ```js
+    "projects": {
+      ...
+      "[project]": {
+        ...
+        "architect": {
+          ...
+          "[architect-target]": {
+            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server]"
+            "options": {
+                  ...
+            }
      ```
-     "projects": {
-         ...
-         "[project]": {
-              ...
-              "architect": {
-                     ...
-                     "[architect-target]": {
-                               "builder": "@angular-builders/custom-webpack:[browser|server|karma]"
-                               "options": {
-                                     ...
-                               }
-      ```
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [browser|server|karma] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server) or [karma](#Custom-webpack-Karma)
+    - [browser|server|karma|dev-server] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [karma](#Custom-webpack-Karma) or [dev-server](#Custom-webpack-dev-server)
  3. If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it with `ng [architect-target]`
 
  ## For example
   - angular.json:
+    ```js
+    "projects": {
+      ...
+      "example-app": {
+        ...
+        "architect": {
+          ...
+          "build": {
+            "builder": "@angular-builders/custom-webpack:browser"
+            "options": {
+                  ...
+            }
      ```
-     "projects": {
-         ...
-         "example-app": {
-              ...
-              "architect": {
-                     ...
-                     "build": {
-                               "builder": "@angular-builders/custom-webpack:browser"
-                               "options": {
-                                     ...
-                               }
-      ```
   - Run the build: `ng build`
 
 # Builders
@@ -56,6 +56,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
  - [@angular-builders/custom-webpack:browser](#Custom-webpack-browser)
  - [@angular-builders/custom-webpack:server](#Custom-webpack-server)
  - [@angular-builders/custom-webpack:karma](#Custom-webpack-Karma)
+ - [@angular-builders/custom-webpack:dev-server](#Custom-webpack-dev-server)
 
 ## Custom webpack browser
 
@@ -67,22 +68,22 @@ Builder options:
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
-```
+```js
 "architect": {
-    ...
-    "build": {
-              "builder": "@angular-builders/custom-webpack:browser"
-              "options": {
-                     "customWebpackConfig": {
-                        "path": "./extra-webpack.config.js",
-                        "mergeStrategies": { "externals": "replace" }
-                     }
-                     "outputPath": "dist/my-cool-client",
-                     "index": "src/index.html",
-                     "main": "src/main.ts",
-                     "polyfills": "src/polyfills.ts",
-                     "tsConfig": "src/tsconfig.app.json"
-              }
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:browser"
+    "options": {
+      "customWebpackConfig": {
+        "path": "./extra-webpack.config.js",
+        "mergeStrategies": { "externals": "replace" }
+      }
+      "outputPath": "dist/my-cool-client",
+      "index": "src/index.html",
+      "main": "src/main.ts",
+      "polyfills": "src/polyfills.ts",
+      "tsConfig": "src/tsconfig.app.json"
+    }
 ```
 In this example `externals` entry from `extra-webpack.config.js` will replace `externals` entry from Angular CLI underlying webpack config.
 
@@ -96,21 +97,21 @@ Builder options:
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
-```
+```js
 "architect": {
-    ...
-    "build": {
-              "builder": "@angular-builders/custom-webpack:server"
-              "options": {
-                     "customWebpackConfig": {
-                        "path": "./extra-webpack.config.js",
-                        "mergeStrategies": { "module.rules": "prepend" },
-                        "replaceDuplicatePlugins": true
-                     }
-                    "outputPath": "dist/my-cool-server",
-                    "main": "src/main.server.ts",
-                    "tsConfig": "src/tsconfig.server.json"
-              }
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:server"
+    "options": {
+      "customWebpackConfig": {
+        "path": "./extra-webpack.config.js",
+        "mergeStrategies": { "module.rules": "prepend" },
+        "replaceDuplicatePlugins": true
+      }
+     "outputPath": "dist/my-cool-server",
+     "main": "src/main.server.ts",
+     "tsConfig": "src/tsconfig.server.json"
+    }
 ```
 
 In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.  
@@ -126,22 +127,53 @@ Builder options:
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
 
 `angular.json` Example:
-```
+```js
 "architect": {
-    ...
-    "test": {
-              "builder": "@angular-builders/custom-webpack:karma"
-              "options": {
-                     "customWebpackConfig": {
-                        "path": "./extra-webpack.config.js"
-                     }
-                    "main": "src/test.ts",
-                    "polyfills": "src/polyfills.ts",
-                    "tsConfig": "src/tsconfig.spec.json",
-                    "karmaConfig": "src/karma.conf.js",
-                    ...
-              }
+  ...
+  "test": {
+    "builder": "@angular-builders/custom-webpack:karma"
+    "options": {
+      "customWebpackConfig": {
+        "path": "./extra-webpack.config.js"
+      }
+     "main": "src/test.ts",
+     "polyfills": "src/polyfills.ts",
+     "tsConfig": "src/tsconfig.spec.json",
+     "karmaConfig": "src/karma.conf.js",
+     ...
+    }
 ```
+
+## Custom webpack dev-server
+Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration.  
+
+Unlike the default `@angular-devkit/build-angular:dev-server` it doesn't use `@angular-devkit/build-angular:browser` configuration to run the dev server. Instead it uses `customWebpackConfiguration` from `browserTarget` and runs custom webpack dev server build.  
+
+Thus, if you use `@angular-builders/custom-webpack:dev-server` along with `@angular-builders/custom-webpack:browser`, `ng serve` will run with custom configuration provided in the latter.
+
+### Example
+`angular.json`:
+```js
+"architect": {
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:browser"
+    "options": {
+      "customWebpackConfig": {
+         path: "./extra-webpack.config.js"
+      }
+      ...
+    } 
+  },
+  "serve": {
+    "builder": "@angular-builders/custom-webpack:dev-server",
+    "options": {
+        "browserTarget": "my-project:build"
+    }
+  }
+```
+
+In this example `dev-server` will use `custom-webpack:browser` builder, hence modified webpack config, when invoking the serve target.
 
 # Custom webpack config object
 This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
@@ -149,14 +181,14 @@ The following properties are available:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
     The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
     Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:  
-
-        {
-          test: /\.css$/,
-          use: [
-            {loader: 'style-loader', options: {...}}
-          ]
-        }
-
+    ```js
+    {
+      test: /\.css$/,
+      use: [
+        {loader: 'style-loader', options: {...}}
+      ]
+    }
+    ```
     The builder will take care of merging the delta with the existing configuration provided by Angular.  
     In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
  - `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
@@ -174,11 +206,11 @@ Thus, if you'd like to modify an existing plugin configuration, all you have to 
 For example, if you'd like to add an additional entry in `excludeChunks` list of `HtmlWebpackPlugin` you only have to specify this single entry:
 
 ```js
- new HtmlWebpackPlugin({
-    "excludeChunks": [
-      "webworker"
-    ]
- })
+new HtmlWebpackPlugin({
+  "excludeChunks": [
+    "webworker"
+  ]
+})
 ```
 
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
