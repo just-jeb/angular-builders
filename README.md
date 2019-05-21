@@ -2,10 +2,13 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
+## The latest version of all the builders require Angular CLI 8 and incompatible with Angular CLI 7
+## [Documentation for version  7](https://github.com/meltedspark/angular-builders/tree/7.x.x)
+## [Migration guide from version 7 to version 8](./MIGRATION.MD)
+
 # Builders
 
  - [Custom webpack builders](./packages/custom-webpack) (an alternative to `ng eject`)  [![npm version](https://img.shields.io/npm/v/@angular-builders/custom-webpack.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
- - [Deprecated] [Dev server generic builder](https://github.com/meltedspark/angular-builders/tree/7.x.x/packages/dev-server) (allows running `ng serve` target with custom builder) [![npm version](https://img.shields.io/npm/v/@angular-builders/dev-server.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/dev-server.svg)](https://www.npmjs.com/package/@angular-builders/dev-server)
  - [Jest builder](./packages/jest) (allows running `ng test` with Jest) [![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
  - [Timestamp builder](./packages/timestamp) (an example builder from [this](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01) article) [![npm version](https://img.shields.io/npm/v/@angular-builders/timestamp.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/timestamp.svg)](https://www.npmjs.com/package/@angular-builders/timestamp)
 
