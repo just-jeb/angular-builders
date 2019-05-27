@@ -161,7 +161,7 @@ The Angular CLI provides tooling to manage [Internationalization & Localization]
 
 If this library is employed to provide a Custom webpack config these architect and builder targets will fail to observe the custom webpack configuration. Analogous to why one would need to use the [@angular-builders/custom-webpack:karma](#Custom-webpack-Karma) builder to generate a custom webpack build and have the `ng test` function correctly one would need to use the `@angular-builders/custom-webpack:extract-i18n` target to use the Custom webpack configuration and have the translation files generated accordingly.
 
-An example of this is whereby additional loaders are specificed in the "extra-webpack.config.js", which, when not present would yield a broken build.
+An example of this is whereby additional loaders/plugins are specificed in the "extra-webpack.config.js", which, when not present would yield a broken build.
 
 The builder will run the same build as `@angular-devkit/build-angular:extract-i18n` does with extra parameters that are specified in the provided webpack configuration.
 
@@ -195,33 +195,20 @@ Builder options:
 Supplemented by the `extra-webpack.config.js` Example:
 
 ```
-const path = require('path');
+const I18nXlfAnnotateAppVersionPlugin = require('./build/i18n-xlf-annotate-app-version.plugin.js');
 
+/**
+ * This is where you define your additional webpack configuration items to be appended to
+ * the end of the webpack config.
+ */
 module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: 'js-to-styles-var-loader',
-          },
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'js-to-styles-var-loader',
-          },
-        ],
-      },
-    ],
-  },
+  plugins: [
+    new I18nXlfAnnotateAppVersionPlugin()
+  ]
 };
 ```
 
-In this example `module.rules` entry from `extra-webpack.config.js` will be appended to `module.rules` entry from Angular CLI underlying webpack config forcing these loaders to run first, before any of the original loaders defined by the Angular CLI.
+In this example `module.rules` entry from `extra-webpack.config.js` will be appended to `module.rules` entry from Angular CLI's underlying webpack config.
 
 # Custom webpack config object
 

@@ -53,12 +53,19 @@
             },
             "i18n": {
               "customWebpackConfig": {
-                "path": "./css-preprocessors-webpack.config.js"
-              },
-              "styles": [
-                "src/assets/styles/scss/styles.scss",
-                "src/assets/styles/less/styles.less"
-              ]
+                "path": "./i18n-extra-webpack.config.js",
+                "mergeStrategies": {
+                  "module.rules": "append"
+                },
+                "replaceDuplicatePlugins": true
+              }
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/append-webpack-plugins-fr",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
             }
           }
         },
@@ -70,12 +77,22 @@
           "configurations": {
             "production": {
               "browserTarget": "append-webpack-plugins:build:production"
+            },
+            "fr": {
+              "browserTarget": "append-webpack-plugins:build:fr"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
+            "customWebpackConfig": {
+              "path": "./i18n-extra-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "append"
+              },
+              "replaceDuplicatePlugins": true
+            },
             "browserTarget": "append-webpack-plugins:build:i18n"
           }
         },
@@ -106,6 +123,21 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "xliffmerge": {
+          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
+          "options": {
+            "xliffmergeOptions": {
+              "i18nFormat": "xlf",
+              "srcDir": "src/i18n",
+              "genDir": "src/i18n",
+              "defaultLanguage": "en",
+              "languages": [
+                "en",
+                "fr"
+              ]
+            }
           }
         }
       }
