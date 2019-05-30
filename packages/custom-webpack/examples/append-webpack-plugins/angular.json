@@ -124,21 +124,6 @@
               "**/node_modules/**"
             ]
           }
-        },
-        "xliffmerge": {
-          "builder": "@ngx-i18nsupport/tooling:xliffmerge",
-          "options": {
-            "xliffmergeOptions": {
-              "i18nFormat": "xlf",
-              "srcDir": "src/i18n",
-              "genDir": "src/i18n",
-              "defaultLanguage": "en",
-              "languages": [
-                "en",
-                "fr"
-              ]
-            }
-          }
         }
       }
     },
