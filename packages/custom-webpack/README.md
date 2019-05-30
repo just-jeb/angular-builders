@@ -208,7 +208,7 @@ module.exports = {
 };
 ```
 
-In this example `module.rules` entry from `extra-webpack.config.js` will be appended to `module.rules` entry from Angular CLI's underlying webpack config.
+In this example our custom Webpack plugin (I18nXlfAnnotateAppVersionPlugin) will be appended to the Angular CLI's underlying webpack config.  When run will attribute the translations `file` node in the xml with the app version contained in the `package.json`.
 
 # Custom webpack config object
 
