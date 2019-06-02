@@ -1,9 +1,12 @@
 # Dev server [builders](#builders) for Angular build facade
-[![npm version](https://img.shields.io/npm/v/@angular-builders/dev-server.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/dev-server.svg)](https://www.npmjs.com/package/@angular-builders/dev-server)
+[![npm version](https://img.shields.io/npm/v/@angular-builders/dev-server/7.x.x.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/dev-server.svg)](https://www.npmjs.com/package/@angular-builders/dev-server)
+
+## This documentation is for version 7, which is compatible with Angular CLI 7 and incompatible with higher versions.
+## [Documentation for latest version](https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack/#Custom-webpack-dev-server)
 
 # Prerequisites:
- - [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
- - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.10.0
+ - [Angular CLI 7](https://www.npmjs.com/package/@angular/cli)
+ - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.13.0
 
 # Builders
  - [@angular-builders/dev-server:generic](#Dev-server-generic)

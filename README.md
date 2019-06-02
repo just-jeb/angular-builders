@@ -1,6 +1,10 @@
-# @angular-builders [![Build Status](https://travis-ci.org/meltedspark/angular-builders.svg?branch=master)](https://travis-ci.org/meltedspark/angular-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-builders.svg)](https://greenkeeper.io/) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
+# @angular-builders [![Build Status](https://travis-ci.org/meltedspark/angular-builders.svg?branch=7.x.x)](https://travis-ci.org/meltedspark/angular-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-builders.svg)](https://greenkeeper.io/) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
+
+## This documentation is for Angular Builders 7, which are compatible with Angular CLI 7 and incompatible with higher versions.
+## [Documentation for latest version](https://github.com/meltedspark/angular-builders/tree/master)
+## [Migration guide from version 7 to version 8](./MIGRATION.MD)
 
 # Builders
 
@@ -14,4 +18,4 @@ Have any questions? Would like to discuss something?
 [Join](https://join.slack.com/t/angular-builders/shared_invite/enQtNTk5MDE1Nzg2ODM3LTkzMzI5ODQwYzRkOGZhZDJkNWI3OGJjNTM4YzNlY2MxZGU0ZjQ3NzVjZGEzNzYzNDFlOWM2YmQwZGQ3NzlkOWY) @angular-builders on Slack!
 
 # Further reading
-[Angular CLI 6 under the hood - builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01)
+[Angular CLI under the hood - builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01)

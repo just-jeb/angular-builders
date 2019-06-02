@@ -1,13 +1,16 @@
 # Custom webpack [builders](#builders) for Angular build facade
 
-[![npm version](https://img.shields.io/npm/v/@angular-builders/custom-webpack.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
+[![npm (tag)](https://img.shields.io/npm/v/@angular-builders/custom-webpack/7.x.x.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
+## This documentation is for version 7, which is compatible with Angular CLI 7 and incompatible with higher versions.
+## [Documentation for latest version](https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack)
+
 # Prerequisites:
 
-- [Angular CLI 6](https://www.npmjs.com/package/@angular/cli)
-- [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.10.0
+- [Angular CLI 7](https://www.npmjs.com/package/@angular/cli)
+- [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.13.0
 
 # Usage
 

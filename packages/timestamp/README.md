@@ -1,7 +1,10 @@
 # Timestamp builder for Angular build facade
-[![npm version](https://img.shields.io/npm/v/@angular-builders/timestamp.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/timestamp.svg)](https://www.npmjs.com/package/@angular-builders/timestamp)  
+[![npm version](https://img.shields.io/npm/v/@angular-builders/timestamp/7.x.x.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/timestamp.svg)](https://www.npmjs.com/package/@angular-builders/timestamp)  
 
 This builder is an example from the Medium article [Angular CLI 6 under the hood — builders demystified](https://medium.com/@meltedspark/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01).
+
+## This documentation is for version 7, which is compatible with Angular CLI 7 and incompatible with higher versions.
+## [Documentation for latest version](https://github.com/meltedspark/angular-builders/tree/master/packages/timestamp)
 
 ## Usage
 
