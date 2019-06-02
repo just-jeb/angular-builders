@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "extract-i18n": "ng xi18n append-webpack-plugins --i18n-format xlf --output-path i18n --i18n-locale en",
+    "start-fr": "ng serve --configuration=fr"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +48,7 @@
     "protractor": "~5.4.1",
     "ts-node": "~8.0.2",
     "tslint": "~5.11.0",
-    "typescript": "3.2.4"
+    "typescript": "3.2.4",
+    "xmldom": "^0.1.27"
   }
 }

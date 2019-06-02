@@ -2,17 +2,15 @@
 # yarn lockfile v1
 
 
-"@angular-builders/custom-webpack@^7.4.3":
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/@angular-builders/custom-webpack/-/custom-webpack-7.4.3.tgz#c95e32f007ca956cbeac703206f7c3b573029aee"
-  integrity sha512-dizPcKBSdgM8ztVbhOdVxHnfV/FBkTi1ZirsxWaw1B0S0KuPTESnsJaZA15i8Y2l202hCPs5fJfqy5aCoRrs1Q==
+"@angular-builders/custom-webpack@file:../../custom-webpack-builder.tgz":
+  version "7.5.0"
+  resolved "file:../../custom-webpack-builder.tgz#509801ca6ea95cbab84f8808d6b70d6157e8444b"
   dependencies:
     lodash "^4.17.10"
 
-"@angular-builders/dev-server@^7.3.1":
+"@angular-builders/dev-server@file:../../../dev-server/dev-server-builder.tgz":
   version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-builders/dev-server/-/dev-server-7.3.1.tgz#a687dda691f921a236e6c9fc12985c2eaf4e8923"
-  integrity sha512-rFr0NyFcwTb4RkkboYQN5JeR9ZraOkfUrQYljMSe/O01MM3SJvE8LYJbsyMwGtp71Rc8T6JrpdxaNEeYCV/4PA==
+  resolved "file:../../../dev-server/dev-server-builder.tgz#08fdc992d288f3ec4675e34d9512baca09192853"
 
 "@angular-devkit/architect@0.13.8":
   version "0.13.8"
@@ -7096,6 +7094,11 @@ xml2js@^0.4.17:
 xmlbuilder@~9.0.1:
   version "9.0.7"
   resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-9.0.7.tgz#132ee63d2ec5565c557e20f4c22df9aca686b10d"
+
+xmldom@^0.1.27:
+  version "0.1.27"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.27.tgz#d501f97b3bdb403af8ef9ecc20573187aadac0e9"
+  integrity sha1-1QH5ezvbQDr4757MIFcxh6rawOk=
 
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"

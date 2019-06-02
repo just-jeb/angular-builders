@@ -50,6 +50,22 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "i18n": {
+              "customWebpackConfig": {
+                "path": "./i18n-extra-webpack.config.js",
+                "mergeStrategies": {
+                  "module.rules": "append"
+                },
+                "replaceDuplicatePlugins": true
+              }
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/append-webpack-plugins-fr",
+              "i18nFile": "src/i18n/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
             }
           }
         },
@@ -61,13 +77,23 @@
           "configurations": {
             "production": {
               "browserTarget": "append-webpack-plugins:build:production"
+            },
+            "fr": {
+              "browserTarget": "append-webpack-plugins:build:fr"
             }
           }
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "builder": "@angular-builders/custom-webpack:extract-i18n",
           "options": {
-            "browserTarget": "append-webpack-plugins:build"
+            "customWebpackConfig": {
+              "path": "./i18n-extra-webpack.config.js",
+              "mergeStrategies": {
+                "module.rules": "append"
+              },
+              "replaceDuplicatePlugins": true
+            },
+            "browserTarget": "append-webpack-plugins:build:i18n"
           }
         },
         "test": {

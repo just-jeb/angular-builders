@@ -23,5 +23,14 @@ yarn add -D file:../../../dev-server/${filename}
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js --prod
 
+echo "Extracting i18n translations"
+yarn extract-i18n
+
+echo "Verifying i18n extraction success"
+stat ./src/i18n/messages.xlf
+
+echo "i18n extraction completed successfully, cleaning up ..."
+rm -Rf ./src/i18n
+
 cd ../sanity-app && yarn build
 
