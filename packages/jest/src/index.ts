@@ -1,7 +1,7 @@
 import { BuilderContext, BuilderOutput, createBuilder } from "@angular-devkit/architect";
 import { experimental, normalize, Path, schema, json } from "@angular-devkit/core";
 import { NodeJsSyncHost } from "@angular-devkit/core/node";
-import { run } from 'jest-cli';
+import { run } from 'jest';
 import { from, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CustomConfigResolver } from "./custom-config.resolver";
