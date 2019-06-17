@@ -19,16 +19,15 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
 
 ## Updating Typescript configurations
-Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889).
-Due to this fact it's possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests or Jest types in e2e test.
-In order to avoid these problems you have to specify the types explicitly:
-
 1. In _tsconfig.spec.json_ (root directory, used by Jest): 
-	- Remove `types` array
-  - Remove `test.ts` entry from `files` array
+   - Remove `types` array  
+     _Jest 24 comes with built-in typings so don't have to install `@types/jest`. However, having `types` array in tsconfig will exclude any types that are not there from Typescrip compilation (for details see the [official documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#details))._
+   - Remove `test.ts` entry from `files` array  
+     _This file was responsible for Karma setup, you don't need it here anymore._
 
 2. In  _tsconfig.json_ (root directory, used by IDE): 
-  - Remove `typeRoots` array
+   - Remove `typeRoots` array  
+     _Again, since Jest typigns are packaged inside `jest` package and are not located under `node_modules/@types` you don't want the type roots to be limited to a specific folder._
 
 ## Running with Angular CLI
   - In your `angular.json`:
