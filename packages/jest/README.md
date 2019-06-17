@@ -27,7 +27,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 2. In  _tsconfig.json_ (root directory, used by IDE): 
    - Remove `typeRoots` array  
-     _Again, since Jest typigns are packaged inside `jest` package and are not located under `node_modules/@types` you don't want the type roots to be limited to a specific folder._
+     _Again, since Jest typings are packaged inside `jest` package and are not located under `node_modules/@types` you don't want the type roots to be limited to a specific folder._
 
 ## Running with Angular CLI
   - In your `angular.json`:
