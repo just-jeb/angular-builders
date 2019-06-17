@@ -20,7 +20,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 	 rm src/karma.conf.js
 	 rm src/test.ts
    ```
-2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
+2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest@7.x.x`
 
 ## Updating Typescript configurations
 Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889).
