@@ -14,8 +14,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 1. Remove Karma related libraries and files:
    ```Shell
 	npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
-	rm src/karma.conf.js
-	rm src/test.ts
+	rm ./karma.conf.js ./src/test.ts
    ```
 2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
 
@@ -25,24 +24,11 @@ Due to this fact it's possible that you favorite IDE will get confused with the 
 In order to avoid these problems you have to specify the types explicitly:
 
 1. In _tsconfig.spec.json_ (root directory, used by Jest): 
-	```js
-	"compilerOptions": {
-		...
-		"module": "commonjs",
-		"types": ["jest"]
-	} 
-	```
-  Remove `test.ts` entry from `files` array 
+	- Remove `types` array
+  - Remove `test.ts` entry from `files` array
 
-	Make sure the module is `commonjs`, otherwise tests will fail at imports.
-
-2. In _tsconfig.json_ (root directory, used by IDE): 
-	```js
-	"compilerOptions": {
-		...
-		"types": ["jest"]
-	} 
-	```
+2. In  _tsconfig.json_ (root directory, used by IDE): 
+  - Remove `typeRoots` array
 
 ## Running with Angular CLI
   - In your `angular.json`:
