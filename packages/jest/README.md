@@ -16,18 +16,20 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 	npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 	rm ./karma.conf.js ./src/test.ts
    ```
-2. Install the builder (and `jest` if you still haven't): `npm i -D jest @angular-builders/jest`
+2. Install the builder (and `jest` if you still haven't): `npm i -D jest @types/jest @angular-builders/jest`
 
 ## Updating Typescript configurations
 1. In _tsconfig.spec.json_ (root directory, used by Jest): 
-   - Remove `types` array  
-     _Jest 24 comes with built-in typings so don't have to install `@types/jest`. However, having `types` array in tsconfig will exclude any types that are not there from Typescrip compilation (for details see the [official documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html#details))._
+   - Replace `jasmine` in `types` array with `jest`  
+     _You want your tests to be type-checked against Jest typings and not Jasmine._
    - Remove `test.ts` entry from `files` array  
      _This file was responsible for Karma setup, you don't need it here anymore._
 
 2. In  _tsconfig.json_ (root directory, used by IDE): 
-   - Remove `typeRoots` array  
-     _Again, since Jest typings are packaged inside `jest` package and are not located under `node_modules/@types` you don't want the type roots to be limited to a specific folder._
+   - Add `jest` to `types` array  
+     _Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889). Due to this fact it’s possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests.  
+    `tsconfig.json` is the config file that your IDE uses so you have to instruct it explicitly to use Jest typings.  
+     Bear in mind that the other side of the coin is that your IDE will propose you Jest types in your e2e tests._
 
 ## Running with Angular CLI
   - In your `angular.json`:
