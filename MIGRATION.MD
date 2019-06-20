@@ -13,5 +13,3 @@ In the meanwhile it is suggested to prepare your setup for this change:
 
 ## Jest builder
 1. Update to Jest 24 if you still haven't.
-2. Remove `@types/jest`.
-3. Make sure your Typescript configuration is [right](https://github.com/meltedspark/angular-builders/tree/master/packages/jest#updating-typescript-configurations) (it has changed a bit).
