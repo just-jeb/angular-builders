@@ -1,8 +1,8 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
-import { executeBrowserBuilder, BrowserBuilderOptions } from '@angular-devkit/build-angular';
+import { BrowserBuilderOptions, executeBrowserBuilder } from '@angular-devkit/build-angular';
 import { json } from '@angular-devkit/core';
 import { Observable } from 'rxjs';
-import { customWebpackConfigTransformFactory, indexHtmlTransformFactory, getTransforms } from '../common';
+import { getTransforms } from '../common';
 import { CustomWebpackSchema } from '../custom-webpack-schema';
 
 export type CustomWebpackBrowserSchema = BrowserBuilderOptions & CustomWebpackSchema;
