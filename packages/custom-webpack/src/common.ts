@@ -19,9 +19,9 @@ export const customWebpackConfigTransformFactory:
 
 export const indexHtmlTransformFactory:
     (options: CustomWebpackSchema, context: BuilderContext) => IndexHtmlTransform =
-    ({ indexTransformFactory }, { workspaceRoot, target }) => {
-        if (!indexTransformFactory) return null;
-        const transformFactory = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransformFactory}`);
+    ({ indexTransform }, { workspaceRoot, target }) => {
+        if (!indexTransform) return null;
+        const transformFactory = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
         return transformFactory(target);
     }
 
