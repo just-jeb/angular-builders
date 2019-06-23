@@ -1,4 +1,5 @@
-module.exports = targetOptions => async indexHtml => {
+module.exports = (targetOptions, indexHtml) => {
+    console.log(targetOptions, indexHtml);
     const i = indexHtml.indexOf('</body>');
     const config = `<p>Configuration: ${targetOptions.configuration}</p>`
     return `${indexHtml.slice(0,i)}

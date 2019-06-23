@@ -21,8 +21,8 @@ export const indexHtmlTransformFactory:
     (options: CustomWebpackSchema, context: BuilderContext) => IndexHtmlTransform =
     ({ indexTransform }, { workspaceRoot, target }) => {
         if (!indexTransform) return null;
-        const transformFactory = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
-        return transformFactory(target);
+        const transform = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
+        return async (indexHtml: string) => transform(target, indexHtml);
     }
 
 export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({    
