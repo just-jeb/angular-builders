@@ -244,9 +244,10 @@ module.exports = (config, options) => {
 ```
 
 # Index transform
-___Important: requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`.  
+__Important__:  
+_Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`.  
 Until these versions are officially released you can install them by running:  
-`npm i -D @angular-devkit/build-angular@next @angular-builders/custom-webpack@next`.___
+`npm i -D @angular-devkit/build-angular@next @angular-builders/custom-webpack@next`._
 
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` file that exports transformation function for `index.html`.  
@@ -287,7 +288,8 @@ module.exports = targetOptions => async indexHtml => {
 }
 ```
 The example is very simple without any asynchronous code. It adds paragraph with build configuration to your `index.html`.  
-___Even if you don't perform any async operation, the function has to return Promise or Observable, otherwise the build will fail.___  
+__Important 2:__  
+_Even if you don't perform any async operation, the function has to return Promise or Observable, otherwise the build will fail._ 
 Full example [here](https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
 
 # Further reading
