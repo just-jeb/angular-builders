@@ -8,3 +8,5 @@ export const customWebpackConfig = {
 	},
 	"default": false
 };
+
+export const indexTransform = {"type": "string", "description": "Path to the file with index.html transform function" }

@@ -8,4 +8,8 @@ export class AppPage {
   getDivText() {
     return element(by.css('body>div')).getText();
   }
+
+  getParagraphText() {
+    return element(by.css('body>p')).getText();
+  }
 }
