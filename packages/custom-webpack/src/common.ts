@@ -1,9 +1,10 @@
 import { BuilderContext } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
-import { normalize } from '@angular-devkit/core';
+import { normalize, getSystemPath } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
+import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
 
 export const customWebpackConfigTransformFactory:
     (options: CustomWebpackSchema, context: BuilderContext) => ExecutionTransformer<Configuration> =
@@ -12,6 +13,19 @@ export const customWebpackConfigTransformFactory:
             normalize(workspaceRoot),
             options.customWebpackConfig,
             browserWebpackConfig,
-            options
+            options //TODO: pass Target options as well (configuration option in particular)
         );
     }
+
+export const indexHtmlTransformFactory:
+    (options: CustomWebpackSchema, context: BuilderContext) => IndexHtmlTransform =
+    ({ indexTransform }, { workspaceRoot, target }) => {
+        if (!indexTransform) return null;
+        const transform = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
+        return async (indexHtml: string) => transform(target, indexHtml);
+    }
+
+export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({    
+        webpackConfiguration: customWebpackConfigTransformFactory(options, context),
+        indexHtml: indexHtmlTransformFactory(options, context)    
+    })

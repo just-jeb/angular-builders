@@ -1,5 +1,5 @@
 # Custom webpack [builders](#builders) for Angular build facade
-[![npm version](https://img.shields.io/npm/v/@angular-builders/custom-webpack.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
+[![npm version](https://img.shields.io/npm/v/@angular-builders/custom-webpack.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/custom-webpack/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
@@ -60,12 +60,13 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Custom webpack browser
 
-Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
 
 Builder options:
  - All the `@angular-devkit/build-angular:browser` options
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+ - `indexTransform`: [see below](#index-transform)
 
 `angular.json` Example:
 ```js
@@ -78,6 +79,7 @@ Builder options:
         "path": "./extra-webpack.config.js",
         "mergeStrategies": { "externals": "replace" }
       }
+      "indexTransform": "./index-html-transform.js"
       "outputPath": "dist/my-cool-client",
       "index": "src/index.html",
       "main": "src/main.ts",
@@ -85,16 +87,17 @@ Builder options:
       "tsConfig": "src/tsconfig.app.json"
     }
 ```
-In this example `externals` entry from `extra-webpack.config.js` will replace `externals` entry from Angular CLI underlying webpack config.
+In this example `externals` entry from `extra-webpack.config.js` will replace `externals` entry from Angular CLI underlying webpack config while all the rest will be appended. In addition `index.html` will be modified by the function exported from `./index-html-transform.js`.
 
 ## Custom webpack server
 
-Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
 
 Builder options:
  - All the `@angular-devkit/build-angular:server` options
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+ - `indexTransform`: [see below](#index-transform)
 
 `angular.json` Example:
 ```js
@@ -114,17 +117,18 @@ Builder options:
     }
 ```
 
-In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config.  
+In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config while all the rest will be appended. 
 Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
 
 ## Custom webpack Karma
 
-Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood).
-The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
+Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
 
 Builder options:
  - All the `@angular-devkit/build-angular:karma` options
  - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+ - `indexTransform`: [see below](#index-transform)
 
 `angular.json` Example:
 ```js
@@ -198,18 +202,16 @@ The following properties are available:
       See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
  - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
     **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
-
+    
 ## Merging plugins configuration:
 If in your custom configuration you specify a plugin that is already added by Angular CLI then by default the two instances will be merged.  
 In case of the conflicts your configuration will override the existing one.  
 Thus, if you'd like to modify an existing plugin configuration, all you have to do is specify the *delta* you want to change.  
-For example, if you'd like to add an additional entry in `excludeChunks` list of `HtmlWebpackPlugin` you only have to specify this single entry:
+For example, if you'd like to allow cyclic dependencies that include dynamic imports you only have to specify this single entry:
 
 ```js
-new HtmlWebpackPlugin({
-  "excludeChunks": [
-    "webworker"
-  ]
+new CircularDependencyPlugin({
+  allowAsyncCycles: true,
 })
 ```
 
@@ -240,6 +242,56 @@ module.exports = (config, options) => {
   return config;
 };
 ```
+
+# Index transform
+
+### Important:  
+___Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`.___
+
+___Until these versions are officially released you can install them by running:  
+`npm i -D @angular-devkit/build-angular@next @angular-builders/custom-webpack@next`.___
+
+Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
+`indexTransform` is a path (relative to workspace root) to a `.js` file that exports transformation function for `index.html`.  
+Function signature is as following:
+```typescript
+(options: TargetOptions, indexHtmlContent: string) => string|Promise<string>;
+```
+or, in other words, the function receives target options and original `index.html` content (generated by Angular CLI) and returns a new content as `string` or `Promise`.  
+`TargetOptions` follows `target` definition from [this](https://github.com/angular/angular-cli/blob/master/packages/angular_devkit/architect/src/input-schema.json) schema and looks like this:
+```typescript
+export interface Target {
+    configuration?: string;
+    project: string;
+    target: string;
+}
+```
+It is useful when you want to transform your `index.html` according to the build options. 
+## Example
+`angular.json`:
+```js
+"architect": {
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:browser"
+    "options": {
+      "indexTransform": "./index-html-transform.js"
+      ...
+    }
+```
+`index-html-transform.js`:
+```js
+module.exports = (targetOptions, indexHtml) => {
+    const i = indexHtml.indexOf('</body>');
+    const config = `<p>Configuration: ${targetOptions.configuration}</p>`
+    return `${indexHtml.slice(0,i)}
+            ${config}
+            ${indexHtml.slice(i)}`
+}
+```
+The example adds paragraph with build configuration to your `index.html` .It is very simple without any asynchronous code but you can also return a `Promise` from this function.  
+
+Full example [here](https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
 
 # Further reading
 
