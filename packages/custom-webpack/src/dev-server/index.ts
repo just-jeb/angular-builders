@@ -2,7 +2,7 @@ import { BuilderContext, createBuilder, targetFromTargetString } from '@angular-
 import { DevServerBuilderOptions, DevServerBuilderOutput, executeDevServerBuilder } from '@angular-devkit/build-angular';
 import { from, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { customWebpackConfigTransformFactory } from '../common';
+import { getTransforms } from '../common';
 import { CustomWebpackSchema } from '../custom-webpack-schema';
 
 export const serveCustomWebpackBrowser = (options: DevServerBuilderOptions, context: BuilderContext): Observable<DevServerBuilderOutput> => {
@@ -12,9 +12,7 @@ export const serveCustomWebpackBrowser = (options: DevServerBuilderOptions, cont
     }
 
     return from(setup())
-        .pipe(switchMap(customWebpackOptions => executeDevServerBuilder(options, context, {
-            webpackConfiguration: customWebpackConfigTransformFactory(customWebpackOptions, context),
-        })))
+        .pipe(switchMap(customWebpackOptions => executeDevServerBuilder(options, context, getTransforms(customWebpackOptions, context))))
 }
 
 export default createBuilder<DevServerBuilderOptions, DevServerBuilderOutput>(serveCustomWebpackBrowser);
