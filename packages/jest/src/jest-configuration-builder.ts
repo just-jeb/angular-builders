@@ -4,7 +4,7 @@ import { CustomConfigResolver } from "./custom-config.resolver";
 import { DefaultConfigResolver } from "./default-config.resolver";
 
 /**
- * A whitelist of property names that are mean to be concat.
+ * A whitelist of property names that are meant to be concat.
  */
 const ARRAY_PROPERTIES_TO_CONCAT = [
   // From Jest Config
@@ -18,17 +18,12 @@ const ARRAY_PROPERTIES_TO_CONCAT = [
  * merge the data as lodash#merge would do it. 
  */
 function concatArrayProperties(objValue: unknown, srcValue: unknown, property: string) {
-  if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property)) {
+  if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property) || !Array.isArray(objValue)) {
     return;
   }
 
-  if (!Array.isArray(objValue)) {
-    return;
-  }
-  
   if (!Array.isArray(srcValue)) {
-    // This will make Jest to throw, as it is expecting an array, instead of silently fail.
-    return srcValue;
+    throw new TypeError(`Expected ${property} to be an array. Instead got ${typeof property}`);
   }
 
   return objValue.concat(srcValue);
