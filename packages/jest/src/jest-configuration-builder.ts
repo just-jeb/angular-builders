@@ -17,7 +17,7 @@ const ARRAY_PROPERTIES_TO_CONCAT = [
  * This function checks witch properties should be concat. Early return will
  * merge the data as lodash#merge would do it. 
  */
-function concatArrayProperties(objValue: unknown, srcValue: unknown, property: string) {
+function concatArrayProperties(objValue: any[], srcValue: unknown, property: string) {
   if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property)) {
     return;
   }
