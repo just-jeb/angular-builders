@@ -89,65 +89,6 @@ Builder options:
 ```
 In this example `externals` entry from `extra-webpack.config.js` will replace `externals` entry from Angular CLI underlying webpack config while all the rest will be appended. In addition `index.html` will be modified by the function exported from `./index-html-transform.js`.
 
-## Custom webpack server
-
-Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
-The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
-
-Builder options:
- - All the `@angular-devkit/build-angular:server` options
- - `customWebpackConfig`: [see below](#custom-webpack-config-object)
- - `indexTransform`: [see below](#index-transform)
-
-`angular.json` Example:
-```js
-"architect": {
-  ...
-  "build": {
-    "builder": "@angular-builders/custom-webpack:server"
-    "options": {
-      "customWebpackConfig": {
-        "path": "./extra-webpack.config.js",
-        "mergeStrategies": { "module.rules": "prepend" },
-        "replaceDuplicatePlugins": true
-      }
-     "outputPath": "dist/my-cool-server",
-     "main": "src/main.server.ts",
-     "tsConfig": "src/tsconfig.server.json"
-    }
-```
-
-In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config while all the rest will be appended. 
-Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
-
-## Custom webpack Karma
-
-Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
-The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
-
-Builder options:
- - All the `@angular-devkit/build-angular:karma` options
- - `customWebpackConfig`: [see below](#custom-webpack-config-object)
- - `indexTransform`: [see below](#index-transform)
-
-`angular.json` Example:
-```js
-"architect": {
-  ...
-  "test": {
-    "builder": "@angular-builders/custom-webpack:karma"
-    "options": {
-      "customWebpackConfig": {
-        "path": "./extra-webpack.config.js"
-      }
-     "main": "src/test.ts",
-     "polyfills": "src/polyfills.ts",
-     "tsConfig": "src/tsconfig.spec.json",
-     "karmaConfig": "src/karma.conf.js",
-     ...
-    }
-```
-
 ## Custom webpack dev-server
 Enhanced `@angular-devkit/build-angular:dev-server` builder that leverages the custom webpack builder to get webpack configuration.  
 
@@ -178,6 +119,63 @@ Thus, if you use `@angular-builders/custom-webpack:dev-server` along with `@angu
 ```
 
 In this example `dev-server` will use `custom-webpack:browser` builder, hence modified webpack config, when invoking the serve target.
+
+## Custom webpack server
+
+Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
+
+Builder options:
+ - All the `@angular-devkit/build-angular:server` options
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+
+`angular.json` Example:
+```js
+"architect": {
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:server"
+    "options": {
+      "customWebpackConfig": {
+        "path": "./extra-webpack.config.js",
+        "mergeStrategies": { "module.rules": "prepend" },
+        "replaceDuplicatePlugins": true
+      }
+     "outputPath": "dist/my-cool-server",
+     "main": "src/main.server.ts",
+     "tsConfig": "src/tsconfig.server.json"
+    }
+```
+
+In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config while all the rest will be appended. 
+Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
+
+## Custom webpack Karma
+
+Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
+
+Builder options:
+ - All the `@angular-devkit/build-angular:karma` options
+ - `customWebpackConfig`: [see below](#custom-webpack-config-object)
+
+`angular.json` Example:
+```js
+"architect": {
+  ...
+  "test": {
+    "builder": "@angular-builders/custom-webpack:karma"
+    "options": {
+      "customWebpackConfig": {
+        "path": "./extra-webpack.config.js"
+      }
+     "main": "src/test.ts",
+     "polyfills": "src/polyfills.ts",
+     "tsConfig": "src/tsconfig.spec.json",
+     "karmaConfig": "src/karma.conf.js",
+     ...
+    }
+```
 
 # Custom webpack config object
 This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
