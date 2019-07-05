@@ -1,8 +1,29 @@
 import { Path, resolve } from "@angular-devkit/core";
-import { merge } from 'lodash';
+import { mergeWith } from 'lodash';
 import { CustomConfigResolver } from "./custom-config.resolver";
 import { DefaultConfigResolver } from "./default-config.resolver";
 
+/**
+ * A whitelist of property names that are meant to be concat.
+ */
+const ARRAY_PROPERTIES_TO_CONCAT = [
+  // From Jest Config
+  'setupFilesAfterEnv',
+  // From ts-jest config
+  'astTransformers'
+];
+
+/**
+ * This function checks witch properties should be concat. Early return will
+ * merge the data as lodash#merge would do it. 
+ */
+function concatArrayProperties(objValue: any[], srcValue: unknown, property: string) {
+  if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property)) {
+    return;
+  }
+
+  return objValue.concat(srcValue);
+}
 
 export const buildConfiguration = (defaultConfigResolver: DefaultConfigResolver,
   customConfigResolver: CustomConfigResolver) => 
@@ -11,8 +32,8 @@ export const buildConfiguration = (defaultConfigResolver: DefaultConfigResolver,
     const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
     const globalCustomConfig = customConfigResolver.resolveGlobal(workspaceRoot);
     const projectCustomConfig = customConfigResolver.resolveForProject(projectRoot, configPath);
-
-    return merge(globalDefaultConfig, projectDefaultConfig, globalCustomConfig, projectCustomConfig);
+    
+    return mergeWith(globalDefaultConfig, projectDefaultConfig, globalCustomConfig, projectCustomConfig, concatArrayProperties);
 }
 
 export class JestConfigurationBuilder {
@@ -24,12 +45,7 @@ export class JestConfigurationBuilder {
   buildConfiguration(projectRoot: Path, workspaceRoot: Path, configPath: string = 'jest.config.js'): any {
     const pathToProject: Path = resolve(workspaceRoot, projectRoot);
 
-    const globalDefaultConfig = this.defaultConfigResolver.resolveGlobal();
-    const projectDefaultConfig = this.defaultConfigResolver.resolveForProject(pathToProject);
-    const globalCustomConfig = this.customConfigResolver.resolveGlobal(workspaceRoot);
-    const projectCustomConfig = this.customConfigResolver.resolveForProject(pathToProject, configPath);
-
-    return merge(globalDefaultConfig, projectDefaultConfig, globalCustomConfig, projectCustomConfig);
+    return buildConfiguration(this.defaultConfigResolver, this.customConfigResolver)(pathToProject, workspaceRoot, configPath);
   }
 
 
