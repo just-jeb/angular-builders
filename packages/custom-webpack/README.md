@@ -7,7 +7,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # Prerequisites:
  - [Angular CLI 8](https://www.npmjs.com/package/@angular/cli)
- - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.800.0
+ - [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.801.0
 
 # Usage
 
@@ -245,9 +245,6 @@ module.exports = (config, options) => {
 
 ### Important:  
 ___Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`.___
-
-___Until these versions are officially released you can install them by running:  
-`npm i -D @angular-devkit/build-angular@next @angular-builders/custom-webpack@next`.___
 
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` file that exports transformation function for `index.html`.  
