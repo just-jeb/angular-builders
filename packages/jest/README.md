@@ -16,7 +16,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 	npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
 	rm ./karma.conf.js ./src/test.ts
    ```
-2. Install the builder (and `jest` if you still haven't): `npm i -D jest @types/jest @angular-builders/jest`
+2. Install the builder (and `jest` if you still haven't): `npm i -D jest @types/jest @angular-builders/jest @angular-devkit/core`
 
 ## Updating Typescript configurations
 1. In _tsconfig.spec.json_ (root directory, used by Jest): 
