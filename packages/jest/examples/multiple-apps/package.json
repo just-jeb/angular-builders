@@ -7,8 +7,7 @@
     "build": "yarn ng build",
     "test": "yarn ng test",
     "lint": "yarn ng lint",
-    "e2e": "yarn ng e2e --webdriver-update=false",
-    "webdriver-update-ci": "webdriver-manager update --standalone false --gecko false --versions.chrome 2.45"
+    "e2e": "yarn ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -39,7 +38,7 @@
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "^24.8.0",
     "ng-packagr": "^5.5.0",
-    "protractor": "~5.4.0",
+    "protractor": "^5.4.2",
     "ts-node": "~8.2.0",
     "tslint": "~5.16.0",
     "typescript": "~3.5.3"
