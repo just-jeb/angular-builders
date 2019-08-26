@@ -78,8 +78,8 @@ Builder options:
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
         "mergeStrategies": { "externals": "replace" }
-      }
-      "indexTransform": "./index-html-transform.js"
+      },
+      "indexTransform": "./index-html-transform.js",
       "outputPath": "dist/my-cool-client",
       "index": "src/index.html",
       "main": "src/main.ts",
@@ -140,10 +140,10 @@ Builder options:
         "path": "./extra-webpack.config.js",
         "mergeStrategies": { "module.rules": "prepend" },
         "replaceDuplicatePlugins": true
-      }
-     "outputPath": "dist/my-cool-server",
-     "main": "src/main.server.ts",
-     "tsConfig": "src/tsconfig.server.json"
+      },
+      "outputPath": "dist/my-cool-server",
+      "main": "src/main.server.ts",
+      "tsConfig": "src/tsconfig.server.json"
     }
 ```
 
@@ -168,11 +168,11 @@ Builder options:
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js"
-      }
-     "main": "src/test.ts",
-     "polyfills": "src/polyfills.ts",
-     "tsConfig": "src/tsconfig.spec.json",
-     "karmaConfig": "src/karma.conf.js",
+      },
+      "main": "src/test.ts",
+      "polyfills": "src/polyfills.ts",
+      "tsConfig": "src/tsconfig.spec.json",
+      "karmaConfig": "src/karma.conf.js",
      ...
     }
 ```
