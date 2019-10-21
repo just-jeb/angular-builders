@@ -55,7 +55,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
  - `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. 
    The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
    The way the configurations are merged is as following:
-   1. Take the [default configuration](https://github.com/angular-builders/jest/blob/master/src/jest-config/default-config.ts) from the library
+   1. Take the [default configuration](https://github.com/just-jeb/angular-builders/blob/master/packages/jest/src/jest-config/default-config.ts) from the library
    2. Add on top of it default project specific config (that is dynamic due to different root directories). Used to scope single project test runs.
    3. Add on top of it _package.json_ jest config if exists (for **all** projects)
    **or** 
