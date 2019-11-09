@@ -5,6 +5,7 @@ export const testPattern = `/**/+(*.)+(spec|test).+(ts|js)?(x)`;
 export const tsConfigName = 'tsconfig.spec.json';
 
 export class DefaultConfigResolver {
+  constructor(private tsConfig?: string) {}
 
   resolveGlobal(): any {
     return defaultConfig;
@@ -14,7 +15,9 @@ export class DefaultConfigResolver {
     return {
       globals: {
         'ts-jest': {
-          tsConfig: getSystemPath(join(projectRoot, tsConfigName))
+          // Join with the default `tsConfigName` if the `tsConfig` option
+          // is not provided
+          tsConfig: getSystemPath(join(projectRoot, this.tsConfig || tsConfigName))
         }
       },
       testMatch: [
