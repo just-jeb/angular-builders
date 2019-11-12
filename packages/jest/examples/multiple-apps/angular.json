@@ -74,18 +74,7 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/my-first-app/src/test.ts",
-            "polyfills": "projects/my-first-app/src/polyfills.ts",
-            "tsConfig": "projects/my-first-app/tsconfig.spec.json",
-            "karmaConfig": "projects/my-first-app/karma.conf.js",
-            "assets": [
-              "projects/my-first-app/src/favicon.ico",
-              "projects/my-first-app/src/assets"
-            ],
-            "styles": [
-              "projects/my-first-app/src/styles.css"
-            ],
-            "scripts": []
+            "tsConfig": "./configs/tsconfig.spec.json"
           }
         },
         "lint": {
