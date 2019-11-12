@@ -179,18 +179,7 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/my-second-app/src/test.ts",
-            "polyfills": "projects/my-second-app/src/polyfills.ts",
-            "tsConfig": "projects/my-second-app/tsconfig.spec.json",
-            "karmaConfig": "projects/my-second-app/karma.conf.js",
-            "assets": [
-              "projects/my-second-app/src/favicon.ico",
-              "projects/my-second-app/src/assets"
-            ],
-            "styles": [
-              "projects/my-second-app/src/styles.css"
-            ],
-            "scripts": []
+            "tsConfig": "tsconfig.spec.json"
           }
         },
         "lint": {
@@ -240,9 +229,7 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "main": "projects/my-shared-library/src/test.ts",
-            "tsConfig": "projects/my-shared-library/tsconfig.spec.json",
-            "karmaConfig": "projects/my-shared-library/karma.conf.js"
+            "tsConfig": "tsconfig.spec.json"
           }
         },
         "lint": {
