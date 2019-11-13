@@ -1,25 +1,36 @@
-import {CustomWebpackBuilderConfig} from "./custom-webpack-builder-config";
-import {Configuration} from "webpack";
-import {getSystemPath, Path} from '@angular-devkit/core';
-import {mergeConfigs} from "./webpack-config-merger";
+import { getSystemPath, Path } from '@angular-devkit/core';
+import { Configuration } from 'webpack';
+
+import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
+import { mergeConfigs } from './webpack-config-merger';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
 export class CustomWebpackBuilder {
-    static buildWebpackConfig(root: Path,
-      config: CustomWebpackBuilderConfig,
-      baseWebpackConfig: Configuration,
-      buildOptions: any): Configuration {
+    static buildWebpackConfig(
+        root: Path,
+        config: CustomWebpackBuilderConfig,
+        baseWebpackConfig: Configuration,
+        buildOptions: any
+    ): Configuration | Promise<Configuration> {
         if (!config) {
             return baseWebpackConfig;
         }
+
         const webpackConfigPath = config.path || defaultWebpackConfigPath;
         const customWebpackConfig = require(`${getSystemPath(root)}/${webpackConfigPath}`);
-        //TODO: support function returning promise
-        if (typeof customWebpackConfig === "function") {
+
+        if (typeof customWebpackConfig === 'function') {
+            // That exported function can be synchronous either
+            // asynchronous. Angular is able to resolve `Promise<Configuration>` itself
             return customWebpackConfig(baseWebpackConfig, buildOptions);
-        } else {
-            return mergeConfigs(baseWebpackConfig, customWebpackConfig, config.mergeStrategies, config.replaceDuplicatePlugins);
         }
+
+        return mergeConfigs(
+            baseWebpackConfig,
+            customWebpackConfig,
+            config.mergeStrategies,
+            config.replaceDuplicatePlugins
+        );
     }
 }
