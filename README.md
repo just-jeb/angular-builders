@@ -1,4 +1,5 @@
 # @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
@@ -18,3 +19,19 @@ Have any questions? Would like to discuss something?
 
 # Further reading
 [Angular CLI under the hood - builders demystified](https://blog.angularindepth.com/angular-cli-under-the-hood-builders-demystified-v2-e73ee0f2d811)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://medium.com/@overthesanity"><img src="https://avatars1.githubusercontent.com/u/7337691?v=4" width="100px;" alt="Artur Androsovych"/><br /><sub><b>Artur Androsovych</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arturovt" title="Code">💻</a> <a href="#question-arturovt" title="Answering Questions">💬</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
