@@ -177,7 +177,7 @@ Builder options:
     }
 ```
 
-# Custom webpack config object
+# Custom Webpack config object
 This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
 The following properties are available:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
@@ -215,6 +215,27 @@ new CircularDependencyPlugin({
 
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
+
+## Custom Webpack promisified config
+
+Webpack config can also export `Promise` object that resolve custom config. Given the following example:
+
+```js
+// extra-webpack.config.js
+const fs = require('fs');
+const util = require('util');
+const webpack = require('webpack');
+
+const readFile = util.promisify(fs.readFile);
+
+module.exports = readFile('./LICENSE', {
+  encoding: 'utf-8'
+}).then(license => ({
+  plugins: [new webpack.BannerPlugin(license)]
+}));
+```
+
+In this case, the behavior will be the same as when exporting a plain object — the resolved configuration will be merged with the base one.
 
 ## Custom Webpack config function
 
