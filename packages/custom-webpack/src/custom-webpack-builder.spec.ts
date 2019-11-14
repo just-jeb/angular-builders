@@ -3,9 +3,8 @@ import { Configuration } from 'webpack';
 
 import { CustomWebpackBuilder, defaultWebpackConfigPath } from './custom-webpack-builder';
 import { MergeStrategies } from './custom-webpack-builder-config';
-import { mergeConfigs } from './webpack-config-merger';
+import * as webpackConfigMerger from './webpack-config-merger';
 
-jest.mock('./webpack-config-merger');
 const baseWebpackConfig = {
   entry: './main.ts'
 };
@@ -70,18 +69,24 @@ describe('CustomWebpackBuilder test', () => {
   });
 
   it('Should load webpack.config.js if no path specified', () => {
+    const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
     CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
 
-    expect(mergeConfigs).toHaveBeenCalledWith(
-      baseWebpackConfig,
-      customWebpackConfig,
-      undefined,
-      undefined
-    );
+    try {
+      expect(spy).toHaveBeenCalledWith(
+        baseWebpackConfig,
+        customWebpackConfig,
+        undefined,
+        undefined
+      );
+    } finally {
+      spy.mockRestore();
+    }
   });
 
   it('Should load the file specified in configuration', () => {
+    const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     const fileName = 'extra-webpack.config.js';
     createConfigFile(fileName, customWebpackConfig);
 
@@ -92,15 +97,20 @@ describe('CustomWebpackBuilder test', () => {
       {}
     );
 
-    expect(mergeConfigs).toHaveBeenCalledWith(
-      baseWebpackConfig,
-      customWebpackConfig,
-      undefined,
-      undefined
-    );
+    try {
+      expect(spy).toHaveBeenCalledWith(
+        baseWebpackConfig,
+        customWebpackConfig,
+        undefined,
+        undefined
+      );
+    } finally {
+      spy.mockRestore();
+    }
   });
 
   it('Should pass on merge strategies', () => {
+    const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
     const mergeStrategies: MergeStrategies = { blah: 'prepend' };
 
@@ -111,15 +121,20 @@ describe('CustomWebpackBuilder test', () => {
       {}
     );
 
-    expect(mergeConfigs).toHaveBeenCalledWith(
-      baseWebpackConfig,
-      customWebpackConfig,
-      mergeStrategies,
-      undefined
-    );
+    try {
+      expect(spy).toHaveBeenCalledWith(
+        baseWebpackConfig,
+        customWebpackConfig,
+        mergeStrategies,
+        undefined
+      );
+    } finally {
+      spy.mockRestore();
+    }
   });
 
   it('Should pass on replaceDuplicatePlugins flag', () => {
+    const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 
     CustomWebpackBuilder.buildWebpackConfig(
@@ -129,18 +144,27 @@ describe('CustomWebpackBuilder test', () => {
       {}
     );
 
-    expect(mergeConfigs).toHaveBeenCalledWith(
-      baseWebpackConfig,
-      customWebpackConfig,
-      undefined,
-      true
-    );
+    try {
+      expect(spy).toHaveBeenCalledWith(
+        baseWebpackConfig,
+        customWebpackConfig,
+        undefined,
+        true
+      );
+    } finally {
+      spy.mockRestore();
+    }
   });
 
   it('Should pass build options to the webpack config function', () => {
     const spy = jest.fn((config, options) => config);
     createConfigFile(defaultWebpackConfigPath, spy);
-    CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, buildOptions);
+    CustomWebpackBuilder.buildWebpackConfig(
+      __dirname as Path,
+      {},
+      baseWebpackConfig,
+      buildOptions
+    );
     expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions);
   });
 
@@ -156,9 +180,15 @@ describe('CustomWebpackBuilder test', () => {
 
     expect(mergedConfig).toEqual(customWebpackFunctionObj);
   });
+});
 
-  it('Should resolve webpack config asynchronously', async () => {
-    // On some project that would be `module.exports = async config => { ... }`
+describe('CustomWebpackBuilder asynchronous behavior', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
+  it('should resolve webpack config asynchronously', async () => {
+    // `module.exports = async config => { ... }`
     async function customAsyncWebpackFunction(config: Configuration): Promise<Configuration> {
       return {
         ...config,
@@ -169,6 +199,34 @@ describe('CustomWebpackBuilder test', () => {
     }
 
     createConfigFile(defaultWebpackConfigPath, customAsyncWebpackFunction);
+
+    const result = CustomWebpackBuilder.buildWebpackConfig(
+      __dirname as Path,
+      {},
+      baseWebpackConfig,
+      {}
+    );
+
+    expect(result).toBeInstanceOf(Promise);
+    expect(await result).toEqual({
+      entry: './main.ts',
+      output: {
+        libraryTarget: 'umd'
+      }
+    });
+  });
+
+  it('should resolve Promise exported by config', async () => {
+    // `module.exports = new Promise(...)`
+    const awaitableConfig = new Promise(resolve => {
+      resolve('umd');
+    }).then(libraryTarget => ({
+      output: {
+        libraryTarget
+      }
+    }));
+
+    createConfigFile(defaultWebpackConfigPath, awaitableConfig);
 
     const result = CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,

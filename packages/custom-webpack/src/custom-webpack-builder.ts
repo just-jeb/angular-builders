@@ -1,10 +1,16 @@
 import { getSystemPath, Path } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 
-import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { mergeConfigs } from './webpack-config-merger';
+import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
+
+type CustomWebpackConfig =
+    | Configuration
+    | Promise<Configuration>
+    | ((baseWebpackConfig: Configuration, buildOptions: any) => Configuration)
+    | ((baseWebpackConfig: Configuration, buildOptions: any) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
     static buildWebpackConfig(
@@ -18,17 +24,36 @@ export class CustomWebpackBuilder {
         }
 
         const webpackConfigPath = config.path || defaultWebpackConfigPath;
-        const customWebpackConfig = require(`${getSystemPath(root)}/${webpackConfigPath}`);
+        const configOrFactoryOrPromise: CustomWebpackConfig = require(`${getSystemPath(
+            root
+        )}/${webpackConfigPath}`);
 
-        if (typeof customWebpackConfig === 'function') {
-            // That exported function can be synchronous either
-            // asynchronous. Angular is able to resolve `Promise<Configuration>` itself
-            return customWebpackConfig(baseWebpackConfig, buildOptions);
+        if (configOrFactoryOrPromise instanceof Promise) {
+            // The user can also export a `Promise` that resolves `Configuration`
+            // object. Given the following example:
+            // `module.exports = new Promise(resolve => resolve({ ... }))`
+            return configOrFactoryOrPromise.then(customWebpackConfig =>
+                mergeConfigs(
+                    baseWebpackConfig,
+                    customWebpackConfig,
+                    config.mergeStrategies,
+                    config.replaceDuplicatePlugins
+                )
+            );
         }
 
+        if (typeof configOrFactoryOrPromise === 'function') {
+            // That exported function can be synchronous either
+            // asynchronous. Given the following example:
+            // `module.exports = async (config) => { ... }`
+            return configOrFactoryOrPromise(baseWebpackConfig, buildOptions);
+        }
+
+        // In this case the user has exported a plain object, like:
+        // `module.exports = { ... }`
         return mergeConfigs(
             baseWebpackConfig,
-            customWebpackConfig,
+            configOrFactoryOrPromise,
             config.mergeStrategies,
             config.replaceDuplicatePlugins
         );
