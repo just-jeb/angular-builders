@@ -177,7 +177,7 @@ Builder options:
     }
 ```
 
-# Custom Webpack config object
+# Custom webpack config object
 This option defines your custom webpack configuration. If not specified at all, plain Angular build will run.  
 The following properties are available:
  - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
@@ -218,7 +218,7 @@ You can check out an example for plugins merge in the [unit tests](./src/webpack
 
 ## Custom Webpack promisified config
 
-Webpack config can also export `Promise` object that resolve custom config. Given the following example:
+Webpack config can also export a `Promise` object that resolves custom config. Given the following example:
 
 ```js
 // extra-webpack.config.js
