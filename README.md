@@ -15,7 +15,7 @@ The purpose of this repository is to consolidate all the community builders for 
 
 # Get in touch
 Have any questions? Would like to discuss something? 
-[Join](https://join.slack.com/t/angular-builders/shared_invite/enQtNTk5MDE1Nzg2ODM3LTkzMzI5ODQwYzRkOGZhZDJkNWI3OGJjNTM4YzNlY2MxZGU0ZjQ3NzVjZGEzNzYzNDFlOWM2YmQwZGQ3NzlkOWY) @angular-builders on Slack!
+[Join](https://join.slack.com/t/angular-builders/shared_invite/enQtODM2MjU5MTYyMDk2LTcxODQ3NTExNDZkM2U0NWQ2NmVmZTAwZWNmOThhYjg4ZDlmMGFlNDZmYWQxYzU5ODIzYjdmZGFmNmUxNDBlY2E) @angular-builders on Slack!
 
 # Further reading
 [Angular CLI under the hood - builders demystified](https://blog.angularindepth.com/angular-cli-under-the-hood-builders-demystified-v2-e73ee0f2d811)
