@@ -52,13 +52,13 @@ function createConfigFile<T>(fileName: string, content: T) {
   jest.mock(`${__dirname}/${fileName}`, () => content, { virtual: true });
 }
 
-describe('CustomWebpackBuilder test', () => {
+describe('CustomWebpackBuilder', () => {
   beforeEach(() => {
     jest.resetModules();
   });
 
-  it('Should return original config if no custom configuration object has been provided', () => {
-    const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(
+  it('should return original config if no custom configuration object has been provided', async () => {
+    const mergedConfig = await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       null,
       baseWebpackConfig,
@@ -68,10 +68,10 @@ describe('CustomWebpackBuilder test', () => {
     expect(mergedConfig).toEqual(baseWebpackConfig);
   });
 
-  it('Should load webpack.config.js if no path specified', () => {
+  it('should load webpack.config.js if no path specified', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
-    CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
+    await CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
 
     try {
       expect(spy).toHaveBeenCalledWith(
@@ -85,12 +85,12 @@ describe('CustomWebpackBuilder test', () => {
     }
   });
 
-  it('Should load the file specified in configuration', () => {
+  it('should load the file specified in configuration', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     const fileName = 'extra-webpack.config.js';
     createConfigFile(fileName, customWebpackConfig);
 
-    CustomWebpackBuilder.buildWebpackConfig(
+    await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       { path: fileName },
       baseWebpackConfig,
@@ -109,12 +109,12 @@ describe('CustomWebpackBuilder test', () => {
     }
   });
 
-  it('Should pass on merge strategies', () => {
+  it('should pass on merge strategies', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
     const mergeStrategies: MergeStrategies = { blah: 'prepend' };
 
-    CustomWebpackBuilder.buildWebpackConfig(
+    await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       { mergeStrategies },
       baseWebpackConfig,
@@ -133,11 +133,11 @@ describe('CustomWebpackBuilder test', () => {
     }
   });
 
-  it('Should pass on replaceDuplicatePlugins flag', () => {
+  it('should pass on replaceDuplicatePlugins flag', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
 
-    CustomWebpackBuilder.buildWebpackConfig(
+    await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       { replaceDuplicatePlugins: true },
       baseWebpackConfig,
@@ -156,10 +156,10 @@ describe('CustomWebpackBuilder test', () => {
     }
   });
 
-  it('Should pass build options to the webpack config function', () => {
+  it('should pass build options to the webpack config function', async () => {
     const spy = jest.fn((config, options) => config);
     createConfigFile(defaultWebpackConfigPath, spy);
-    CustomWebpackBuilder.buildWebpackConfig(
+    await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       {},
       baseWebpackConfig,
@@ -168,10 +168,10 @@ describe('CustomWebpackBuilder test', () => {
     expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions);
   });
 
-  it('Should apply custom function on configuration', () => {
+  it('should apply custom function on configuration', async () => {
     createConfigFile(defaultWebpackConfigPath, customWebpackFunction);
 
-    const mergedConfig = CustomWebpackBuilder.buildWebpackConfig(
+    const mergedConfig = await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
       {},
       baseWebpackConfig,
@@ -179,12 +179,6 @@ describe('CustomWebpackBuilder test', () => {
     );
 
     expect(mergedConfig).toEqual(customWebpackFunctionObj);
-  });
-});
-
-describe('CustomWebpackBuilder asynchronous behavior', () => {
-  beforeEach(() => {
-    jest.resetModules();
   });
 
   it('should resolve webpack config asynchronously', async () => {

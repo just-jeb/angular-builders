@@ -262,6 +262,30 @@ module.exports = (config, options) => {
 };
 ```
 
+It's also possible to export an asynchronous factory (factory that returns a `Promise` object). Let's look at the following example:
+```js
+// extra-webpack.config.js
+const axios = require('axios');
+const webpack = require('webpack');
+
+async function getPortalVersion() {
+  const response = await axios.get('http://portal.com/version');
+  return response.data.version;
+}
+
+module.exports = async config => {
+  const version = await getPortalVersion();
+
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      APP_VERSION: JSON.stringify(version)
+    })
+  );
+
+  return config;
+};
+```
+
 # Index transform
 
 ### Important:  

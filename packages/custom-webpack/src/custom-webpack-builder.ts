@@ -13,12 +13,12 @@ type CustomWebpackConfig =
     | ((baseWebpackConfig: Configuration, buildOptions: any) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
-    static buildWebpackConfig(
+    static async buildWebpackConfig(
         root: Path,
         config: CustomWebpackBuilderConfig,
         baseWebpackConfig: Configuration,
         buildOptions: any
-    ): Configuration | Promise<Configuration> {
+    ): Promise<Configuration> {
         if (!config) {
             return baseWebpackConfig;
         }
@@ -28,20 +28,6 @@ export class CustomWebpackBuilder {
             root
         )}/${webpackConfigPath}`);
 
-        if (configOrFactoryOrPromise instanceof Promise) {
-            // The user can also export a `Promise` that resolves `Configuration`
-            // object. Given the following example:
-            // `module.exports = new Promise(resolve => resolve({ ... }))`
-            return configOrFactoryOrPromise.then(customWebpackConfig =>
-                mergeConfigs(
-                    baseWebpackConfig,
-                    customWebpackConfig,
-                    config.mergeStrategies,
-                    config.replaceDuplicatePlugins
-                )
-            );
-        }
-
         if (typeof configOrFactoryOrPromise === 'function') {
             // That exported function can be synchronous either
             // asynchronous. Given the following example:
@@ -49,11 +35,17 @@ export class CustomWebpackBuilder {
             return configOrFactoryOrPromise(baseWebpackConfig, buildOptions);
         }
 
-        // In this case the user has exported a plain object, like:
+        // The user can also export a `Promise` that resolves `Configuration`
+        // object. Given the following example:
+        // `module.exports = new Promise(resolve => resolve({ ... }))`
+        // If the user has exported a plain object, like:
         // `module.exports = { ... }`
+        // then it will promisified and awaited
+        const resolvedConfig = await configOrFactoryOrPromise;
+
         return mergeConfigs(
             baseWebpackConfig,
-            configOrFactoryOrPromise,
+            resolvedConfig,
             config.mergeStrategies,
             config.replaceDuplicatePlugins
         );
