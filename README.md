@@ -30,6 +30,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://medium.com/@overthesanity"><img src="https://avatars1.githubusercontent.com/u/7337691?v=4" width="100px;" alt="Artur Androsovych"/><br /><sub><b>Artur Androsovych</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arturovt" title="Code">💻</a> <a href="#question-arturovt" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://wesleygrimes.com"><img src="https://avatars0.githubusercontent.com/u/324308?v=4" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=wesleygrimes" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/michaeljota"><img src="https://avatars0.githubusercontent.com/u/10507776?v=4" width="100px;" alt="Michael De Abreu"/><br /><sub><b>Michael De Abreu</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michaeljota" title="Code">💻</a></td>
   </tr>
 </table>
 
