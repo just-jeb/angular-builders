@@ -6,7 +6,7 @@
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
-## Prerequisits
+## Prerequisites
   - [Angular CLI 8](https://www.npmjs.com/package/@angular/cli)
   - [Jest 24](https://www.npmjs.com/package/jest)
   
@@ -55,7 +55,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
  - `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. 
    The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
    The way the configurations are merged is as following:
-   1. Take the [default configuration](https://github.com/angular-builders/jest/blob/master/src/jest-config/default-config.ts) from the library
+   1. Take the [default configuration](https://github.com/just-jeb/angular-builders/blob/master/packages/jest/src/jest-config/default-config.ts) from the library
    2. Add on top of it default project specific config (that is dynamic due to different root directories). Used to scope single project test runs.
    3. Add on top of it _package.json_ jest config if exists (for **all** projects)
    **or** 
@@ -66,6 +66,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
 
    Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
    Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
+ - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
  - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
    ```js
    "options": {
