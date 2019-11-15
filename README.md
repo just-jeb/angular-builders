@@ -1,4 +1,4 @@
-# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)  
+# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)  
 
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
@@ -29,6 +29,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://medium.com/@overthesanity"><img src="https://avatars1.githubusercontent.com/u/7337691?v=4" width="100px;" alt="Artur Androsovych"/><br /><sub><b>Artur Androsovych</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arturovt" title="Code">💻</a> <a href="#question-arturovt" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://github.com/michaeljota"><img src="https://avatars0.githubusercontent.com/u/10507776?v=4" width="100px;" alt="Michael De Abreu"/><br /><sub><b>Michael De Abreu</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michaeljota" title="Code">💻</a></td>
   </tr>
 </table>
 
