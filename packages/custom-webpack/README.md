@@ -216,6 +216,27 @@ new CircularDependencyPlugin({
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
 
+## Custom Webpack promisified config
+
+Webpack config can also export a `Promise` object that resolves custom config. Given the following example:
+
+```js
+// extra-webpack.config.js
+const fs = require('fs');
+const util = require('util');
+const webpack = require('webpack');
+
+const readFile = util.promisify(fs.readFile);
+
+module.exports = readFile('./LICENSE', {
+  encoding: 'utf-8'
+}).then(license => ({
+  plugins: [new webpack.BannerPlugin(license)]
+}));
+```
+
+In this case, the behavior will be the same as when exporting a plain object — the resolved configuration will be merged with the base one.
+
 ## Custom Webpack config function
 
 If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function
@@ -235,6 +256,30 @@ module.exports = (config, options) => {
     new webpack.DefinePlugin({
       'APP_VERSION': JSON.stringify(pkg.version),
     }),
+  );
+
+  return config;
+};
+```
+
+It's also possible to export an asynchronous factory (factory that returns a `Promise` object). Let's look at the following example:
+```js
+// extra-webpack.config.js
+const axios = require('axios');
+const webpack = require('webpack');
+
+async function getPortalVersion() {
+  const response = await axios.get('http://portal.com/version');
+  return response.data.version;
+}
+
+module.exports = async config => {
+  const version = await getPortalVersion();
+
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      APP_VERSION: JSON.stringify(version)
+    })
   );
 
   return config;
