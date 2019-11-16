@@ -47,7 +47,7 @@ export function runJest(
 
         const { workspaceRoot, projectRoot } = await getRoots(context);
 
-        const configuration = new JestConfigurationBuilder(new DefaultConfigResolver(),
+        const configuration = new JestConfigurationBuilder(new DefaultConfigResolver(options.tsConfig),
             new CustomConfigResolver(context.logger.createChild('Jest runner')))
             .buildConfiguration(projectRoot, workspaceRoot, options.configPath);
         delete options.configPath;
