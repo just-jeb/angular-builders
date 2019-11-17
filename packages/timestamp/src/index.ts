@@ -7,20 +7,20 @@ import { writeFile } from 'fs';
 import * as dateFormat from 'dateformat';
 
 export function createTimestamp(
-    { path, format }: TimestampBuilderSchema,
-    { workspaceRoot, logger }: BuilderContext,
+  { path, format }: TimestampBuilderSchema,
+  { workspaceRoot, logger }: BuilderContext
 ): Observable<BuilderOutput> {
-    const timestampFileName = `${getSystemPath(normalize(workspaceRoot))}/${path}`;
-    const writeFileObservable = bindNodeCallback(writeFile);
-    const timestampLogger = logger.createChild('Timestamp');
-    return writeFileObservable(timestampFileName, dateFormat(new Date(), format)).pipe(
-        map(() => ({ success: true })),
-        tap(() => timestampLogger.info("Timestamp created")),
-        catchError(e => {
-            timestampLogger.error("Failed to create timestamp", e);
-            return of({ success: false });
-        })
-    );
+  const timestampFileName = `${getSystemPath(normalize(workspaceRoot))}/${path}`;
+  const writeFileObservable = bindNodeCallback(writeFile);
+  const timestampLogger = logger.createChild('Timestamp');
+  return writeFileObservable(timestampFileName, dateFormat(new Date(), format)).pipe(
+    map(() => ({ success: true })),
+    tap(() => timestampLogger.info('Timestamp created')),
+    catchError(e => {
+      timestampLogger.error('Failed to create timestamp', e);
+      return of({ success: false });
+    })
+  );
 }
 
 export default createBuilder<json.JsonObject & TimestampBuilderSchema>(createTimestamp);

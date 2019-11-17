@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
       my-shared-library works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class MySharedLibraryComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -6,11 +6,11 @@ import { MergeStrategies } from './custom-webpack-builder-config';
 import * as webpackConfigMerger from './webpack-config-merger';
 
 const baseWebpackConfig = {
-  entry: './main.ts'
+  entry: './main.ts',
 };
 
 const buildOptions = {
-  env: 'prod'
+  env: 'prod',
 };
 
 const customWebpackConfig = {
@@ -18,10 +18,10 @@ const customWebpackConfig = {
     rules: [
       {
         test: '.node',
-        use: 'node-loader'
-      }
-    ]
-  }
+        use: 'node-loader',
+      },
+    ],
+  },
 };
 
 const customWebpackFunction = (config: any, options: any) => ({
@@ -30,10 +30,10 @@ const customWebpackFunction = (config: any, options: any) => ({
     rules: [
       {
         test: '.node',
-        user: 'node-loader'
-      }
-    ]
-  }
+        user: 'node-loader',
+      },
+    ],
+  },
 });
 
 const customWebpackFunctionObj = {
@@ -42,10 +42,10 @@ const customWebpackFunctionObj = {
     rules: [
       {
         test: '.node',
-        user: 'node-loader'
-      }
-    ]
-  }
+        user: 'node-loader',
+      },
+    ],
+  },
 };
 
 function createConfigFile<T>(fileName: string, content: T) {
@@ -145,12 +145,7 @@ describe('CustomWebpackBuilder', () => {
     );
 
     try {
-      expect(spy).toHaveBeenCalledWith(
-        baseWebpackConfig,
-        customWebpackConfig,
-        undefined,
-        true
-      );
+      expect(spy).toHaveBeenCalledWith(baseWebpackConfig, customWebpackConfig, undefined, true);
     } finally {
       spy.mockRestore();
     }
@@ -187,8 +182,8 @@ describe('CustomWebpackBuilder', () => {
       return {
         ...config,
         output: {
-          libraryTarget: 'umd'
-        }
+          libraryTarget: 'umd',
+        },
       };
     }
 
@@ -205,8 +200,8 @@ describe('CustomWebpackBuilder', () => {
     expect(await result).toEqual({
       entry: './main.ts',
       output: {
-        libraryTarget: 'umd'
-      }
+        libraryTarget: 'umd',
+      },
     });
   });
 
@@ -216,8 +211,8 @@ describe('CustomWebpackBuilder', () => {
       resolve('umd');
     }).then(libraryTarget => ({
       output: {
-        libraryTarget
-      }
+        libraryTarget,
+      },
     }));
 
     createConfigFile(defaultWebpackConfigPath, awaitableConfig);
@@ -233,8 +228,8 @@ describe('CustomWebpackBuilder', () => {
     expect(await result).toEqual({
       entry: './main.ts',
       output: {
-        libraryTarget: 'umd'
-      }
+        libraryTarget: 'umd',
+      },
     });
   });
 });

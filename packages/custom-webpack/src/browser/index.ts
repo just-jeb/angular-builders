@@ -7,8 +7,13 @@ import { CustomWebpackSchema } from '../custom-webpack-schema';
 
 export type CustomWebpackBrowserSchema = BrowserBuilderOptions & CustomWebpackSchema;
 
-export function buildCustomWebpackBrowser(options: CustomWebpackBrowserSchema, context: BuilderContext): Observable<BuilderOutput> {
-    return executeBrowserBuilder(options, context, getTransforms(options, context));
+export function buildCustomWebpackBrowser(
+  options: CustomWebpackBrowserSchema,
+  context: BuilderContext
+): Observable<BuilderOutput> {
+  return executeBrowserBuilder(options, context, getTransforms(options, context));
 }
 
-export default createBuilder<json.JsonObject & CustomWebpackBrowserSchema>(buildCustomWebpackBrowser);
+export default createBuilder<json.JsonObject & CustomWebpackBrowserSchema>(
+  buildCustomWebpackBrowser
+);

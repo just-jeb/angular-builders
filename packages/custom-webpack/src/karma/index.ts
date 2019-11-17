@@ -11,10 +11,15 @@ import { CustomWebpackSchema } from '../custom-webpack-schema';
 
 export type CustomWebpackKarmaBuildSchema = KarmaBuilderOptions & CustomWebpackSchema;
 
-export function buildCustomWebpackKarma(options: CustomWebpackKarmaBuildSchema, context: BuilderContext): Observable<BuilderOutput> {
+export function buildCustomWebpackKarma(
+  options: CustomWebpackKarmaBuildSchema,
+  context: BuilderContext
+): Observable<BuilderOutput> {
   return executeKarmaBuilder(options, context, {
-    webpackConfiguration: customWebpackConfigTransformFactory(options, context)
+    webpackConfiguration: customWebpackConfigTransformFactory(options, context),
   });
 }
 
-export default createBuilder<json.JsonObject & CustomWebpackKarmaBuildSchema>(buildCustomWebpackKarma);
+export default createBuilder<json.JsonObject & CustomWebpackKarmaBuildSchema>(
+  buildCustomWebpackKarma
+);

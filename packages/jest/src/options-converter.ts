@@ -1,4 +1,4 @@
-import {SchemaObject as JestBuilderSchema} from "./schema";
+import { SchemaObject as JestBuilderSchema } from './schema';
 
 export class OptionsConverter {
   convertToCliArgs(options: Partial<JestBuilderSchema>): string[] {
@@ -10,8 +10,8 @@ export class OptionsConverter {
       } else if (typeof optionValue === 'string' || typeof optionValue === 'number') {
         argv.push(`--${option}=${optionValue}`);
       } else if (Array.isArray(optionValue)) {
-        for(const item of optionValue){
-          argv.push(`--${option}=${item}`)
+        for (const item of optionValue) {
+          argv.push(`--${option}=${item}`);
         }
       }
     }
