@@ -3,8 +3,7 @@ import { MySharedLibraryComponent } from './my-shared-library.component';
 
 @NgModule({
   declarations: [MySharedLibraryComponent],
-  imports: [
-  ],
-  exports: [MySharedLibraryComponent]
+  imports: [],
+  exports: [MySharedLibraryComponent],
 })
-export class MySharedLibraryModule { }
+export class MySharedLibraryModule {}

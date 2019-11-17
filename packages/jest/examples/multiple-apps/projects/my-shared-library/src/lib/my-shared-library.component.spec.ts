@@ -8,9 +8,8 @@ describe('MySharedLibraryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MySharedLibraryComponent ]
-    })
-    .compileComponents();
+      declarations: [MySharedLibraryComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -7,7 +7,7 @@ module.exports = cfg => {
   cfg.plugins.push(
     new HtmlWebpackPlugin({
       filename: 'footer.html',
-      template: 'src/footer-template.html'
+      template: 'src/footer-template.html',
     })
   );
 

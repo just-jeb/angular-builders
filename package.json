@@ -16,12 +16,15 @@
     "postbuild": "yarn test && yarn run e2e",
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
-    "e2e": "jest e2e"
+    "e2e": "jest e2e",
+    "format": "prettier --write \"**/*.{js,ts,html}\""
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.0",
     "@angular/compiler": "^8.2.2",
     "@angular/compiler-cli": "^8.2.2",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-angular": "^8.2.0",
     "@types/jest": "^24.0.0",
     "@types/lodash": "^4.14.118",
     "@types/node": "~12.12.4",
@@ -29,13 +32,38 @@
     "@types/webpack-dev-server": "^3.1.5",
     "@types/webpack-merge": "^4.1.3",
     "cpy-cli": "^2.0.0",
+    "husky": "^3.0.9",
     "jest": "^24.7.1",
     "lerna": "^3.18.3",
+    "lint-staged": "^9.4.3",
     "lodash": "^4.17.11",
+    "prettier": "^1.19.1",
     "quicktype": "^15.0.174",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.0.0",
     "ts-node": "~8.5.0",
     "typescript": "3.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "endOfLine": "lf",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "avoid",
+    "singleQuote": true
   }
 }

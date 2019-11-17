@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  */
 module.exports = {
   plugins: [
-    new HtmlWebpackPlugin({ 
+    new HtmlWebpackPlugin({
       filename: 'footer.html',
-      template: 'src/footer-template.html'
+      template: 'src/footer-template.html',
     }),
-  ]
+  ],
 };
