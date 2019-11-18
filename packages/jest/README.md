@@ -32,7 +32,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 2. In _tsconfig.json_ (root directory, used by IDE):
    - Add `jest` to `types` array  
-      _Although if you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889). Due to this fact it’s possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests.  
+      _Although you run your unit tests with Jest, Protractor (e2e tests) still [has to use Jasmine](https://github.com/angular/protractor/issues/3889). Due to this fact it’s possible that you favorite IDE will get confused with the typings and will propose you Jasmine types in unit tests.  
      `tsconfig.json` is the config file that your IDE uses so you have to instruct it explicitly to use Jest typings.  
       Bear in mind that the other side of the coin is that your IDE will propose you Jest types in your e2e tests._
 
