@@ -109,33 +109,6 @@ describe('CustomWebpackBuilder', () => {
     }
   });
 
-  it('should load the TS file specified in configuration', async () => {
-    const fileName = 'extra-webpack.config.ts';
-
-    createConfigFile(fileName, {
-      __esModule: true,
-      default: {
-        output: {
-          libraryTarget: 'umd',
-        },
-      },
-    });
-
-    const merged = await CustomWebpackBuilder.buildWebpackConfig(
-      __dirname as Path,
-      { path: fileName },
-      baseWebpackConfig,
-      {}
-    );
-
-    expect(merged).toEqual({
-      entry: './main.ts',
-      output: {
-        libraryTarget: 'umd',
-      },
-    });
-  });
-
   it('should pass on merge strategies', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
