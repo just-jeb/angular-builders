@@ -226,15 +226,15 @@ The following properties are available:
 
 Webpack configuration can be also written in TypeScript. Given the following example:
 
-```js
+```ts
 // extra-webpack.config.ts
 import * as webpack from 'webpack';
 
 export default {
   output: {
     library: 'shop',
-    libraryTarget: 'umd'
-  }
+    libraryTarget: 'umd',
+  },
 } as webpack.Configuration;
 ```
 
