@@ -24,9 +24,8 @@ export class CustomWebpackBuilder {
     }
 
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
-    const configOrFactoryOrPromise: CustomWebpackConfig = require(`${getSystemPath(
-      root
-    )}/${webpackConfigPath}`);
+    const path = `${getSystemPath(root)}/${webpackConfigPath}`;
+    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path);
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // That exported function can be synchronous either
@@ -50,4 +49,27 @@ export class CustomWebpackBuilder {
       config.replaceDuplicatePlugins
     );
   }
+}
+
+function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
+  if (path.endsWith('.ts')) {
+    // Register TS compiler lazily
+    require('ts-node').register({
+      compilerOptions: {
+        module: 'commonjs',
+      },
+    });
+  }
+
+  const customWebpackConfig = require(path);
+  // If the user provides a configuration in TS file
+  // then there are 2 cases for exporing an object. The first one is:
+  // `module.exports = { ... }`. And the second one is:
+  // `export default { ... }`. The ESM format is compiled into:
+  // `{ default: { ... } }`
+  if (typeof customWebpackConfig.default === 'object') {
+    return customWebpackConfig.default;
+  }
+
+  return customWebpackConfig;
 }
