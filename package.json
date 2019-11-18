@@ -17,7 +17,7 @@
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e",
-    "format": "prettier --write \"**/*.{js,ts,html}\""
+    "format": "prettier --write \"**/*.{js,ts,html,md}\""
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.0",
@@ -51,7 +51,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": [
+    "*.{js,ts,html,md}": [
       "prettier --write",
       "git add"
     ]
