@@ -4,7 +4,7 @@
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
-# This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/meltedspark/angular-builders/blob/7.x.x/packages/custom-webpack/README.md).
+# This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md).
 
 # Prerequisites:
 
@@ -264,7 +264,7 @@ module.exports = {
 ```
 
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
-You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/meltedspark/angular-builders/issues/13) issue.
+You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/just-jeb/angular-builders/issues/13) issue.
 
 ## Custom Webpack Promisified Config
 
@@ -394,8 +394,8 @@ module.exports = (targetOptions, indexHtml) => {
 
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
-Full example [here](https://github.com/meltedspark/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
+Full example [here](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
 
 # Further Reading
 
-- [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@meltedspark/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
+- [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@just-jeb/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
