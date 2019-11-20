@@ -1,0 +1,3910 @@
+{
+	"name": "yargs-parser",
+	"versions": {
+		"1.0.0": {
+			"name": "yargs-parser",
+			"version": "1.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.4.1",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.3.4",
+				"nyc": "^5.3.0",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.0.1"
+			},
+			"gitHead": "220bddc3f010f158703a0401234bea611cde49b9",
+			"_id": "yargs-parser@1.0.0",
+			"_shasum": "0a64d7fffaf2063ef1d817ffbb29b0a553e75f1d",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "0a64d7fffaf2063ef1d817ffbb29b0a553e75f1d",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "yargs-parser",
+			"version": "1.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.4.1",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.3.4",
+				"nyc": "^5.3.0",
+				"rimraf": "^2.5.1",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.0.1",
+				"find-up": "^1.1.0",
+				"pkg-conf": "^1.1.1"
+			},
+			"gitHead": "56a1e3b3f473b5111201bf3c024b7a823c764f4e",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@1.1.0",
+			"_shasum": "395ac847eb10c8298cb6c5547b4bc8484c3c0a9a",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "395ac847eb10c8298cb6c5547b4bc8484c3c0a9a",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.1-alpha": {
+			"name": "yargs-parser",
+			"version": "1.1.1-alpha",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.4.1",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.3.4",
+				"nyc": "^5.3.0",
+				"rimraf": "^2.5.1",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"app-root-path": "^1.0.0",
+				"camelcase": "^2.0.1",
+				"pkg-conf": "^1.1.1"
+			},
+			"gitHead": "6aa47d9b5a01f58eef52eeb03ff7dfbe38dee41c",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@1.1.1-alpha",
+			"_shasum": "cec04c7c9bd83630bc27a75f47a1200ea2a17a7d",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "cec04c7c9bd83630bc27a75f47a1200ea2a17a7d",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.1-alpha2": {
+			"name": "yargs-parser",
+			"version": "1.1.1-alpha2",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.4.1",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.3.4",
+				"nyc": "^5.3.0",
+				"rimraf": "^2.5.1",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.0.1",
+				"pkg-conf": "^1.1.1"
+			},
+			"gitHead": "56a1e3b3f473b5111201bf3c024b7a823c764f4e",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@1.1.1-alpha2",
+			"_shasum": "900e0893db36fff838457735550907a0e67d80e6",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "900e0893db36fff838457735550907a0e67d80e6",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.1-alpha3": {
+			"name": "yargs-parser",
+			"version": "1.1.1-alpha3",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.4.1",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.3.4",
+				"nyc": "^5.3.0",
+				"rimraf": "^2.5.1",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.0.1",
+				"pkg-conf": "^1.1.1",
+				"require-main-filename": "^1.0.0"
+			},
+			"gitHead": "7f957e37be87f2b70c33cf855c02cc5b19684856",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@1.1.1-alpha3",
+			"_shasum": "b2aa0257f333b15302818770d1b0c7eb6b80ce49",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "b2aa0257f333b15302818770d1b0c7eb6b80ce49",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha3.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "yargs-parser",
+			"version": "2.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.4.5",
+				"nyc": "^5.6.0",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.0",
+				"lodash.assign": "^4.0.2"
+			},
+			"gitHead": "1c5dcebaa87e28a00d50a9255ea5035549f96d1e",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.0.0",
+			"_shasum": "7fa0be0f4f48d6ffaa467dfbc8b1aa8f776ba5c2",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "7fa0be0f4f48d6ffaa467dfbc8b1aa8f776ba5c2",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-5-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.0.0.tgz_1454791157643_0.925775176146999"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "yargs-parser",
+			"version": "2.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.4.5",
+				"nyc": "^5.6.0",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.0",
+				"lodash.assign": "^4.0.2"
+			},
+			"gitHead": "78f49ffde9a3305facb66b2faeae862b33d0745e",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.1.0",
+			"_shasum": "5f214362f948a085389abf34a78d8b5eef0b1350",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "5f214362f948a085389abf34a78d8b5eef0b1350",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-9-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.1.0.tgz_1455440640589_0.058524578576907516"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.1": {
+			"name": "yargs-parser",
+			"version": "2.1.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.6",
+				"mocha": "^2.4.5",
+				"nyc": "^5.6.0",
+				"standard": "^5.4.1"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.0",
+				"lodash.assign": "^4.0.2"
+			},
+			"gitHead": "05c8df71668228f022c21c995a6cf281564313b1",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.1.1",
+			"_shasum": "6bbb36d28cc03e2d57d172b4017d612e5ff6a0b6",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "6bbb36d28cc03e2d57d172b4017d612e5ff6a0b6",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-9-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.1.1.tgz_1456210467734_0.12809900217689574"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.2": {
+			"name": "yargs-parser",
+			"version": "2.1.2",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.8",
+				"mocha": "^2.4.5",
+				"nyc": "^6.1.1",
+				"standard": "^6.0.8"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.1",
+				"lodash.assign": "^4.0.6"
+			},
+			"gitHead": "4ee3318d1420c97b0bd8b4e5d1641eb33cb122e6",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.1.2",
+			"_shasum": "e675aa728c72d9e95bd419c962c75a9e92f1c9da",
+			"_from": ".",
+			"_npmVersion": "3.3.0",
+			"_nodeVersion": "3.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "e675aa728c72d9e95bd419c962c75a9e92f1c9da",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.1.2.tgz_1458500649814_0.29023746121674776"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.2.0": {
+			"name": "yargs-parser",
+			"version": "2.2.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.8",
+				"mocha": "^2.4.5",
+				"nyc": "^6.1.1",
+				"standard": "^6.0.8"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.1",
+				"lodash.assign": "^4.0.6"
+			},
+			"gitHead": "48b1e6a338f80417b3fd0fc3e39ae181332fdcb5",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.2.0",
+			"_shasum": "29c4185b9c42c259f6ebbe054d1f46014e71d73b",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "29c4185b9c42c259f6ebbe054d1f46014e71d73b",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.2.0.tgz_1459318523723_0.7542532840743661"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.4.0-next": {
+			"name": "yargs-parser",
+			"version": "2.4.0-next",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"version": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.8",
+				"mocha": "^2.4.5",
+				"nyc": "^6.4.0",
+				"standard": "^6.0.8",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.1",
+				"lodash.assign": "^4.0.6"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "4a504775a708b270822511c25531db8d69119a04",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.4.0-next",
+			"_shasum": "537d617a12162a652c875eec7d3ea9df0fe12cf6",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "537d617a12162a652c875eec7d3ea9df0fe12cf6",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.0-next.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.4.0-next.tgz_1460343866053_0.5493791722692549"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.4.0": {
+			"name": "yargs-parser",
+			"version": "2.4.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"version": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.8",
+				"mocha": "^2.4.5",
+				"nyc": "^6.4.0",
+				"standard": "^6.0.8",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^2.1.1",
+				"lodash.assign": "^4.0.6"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "4a504775a708b270822511c25531db8d69119a04",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.4.0",
+			"_shasum": "1f367dc9c6cfa5660b6971230f3b277fc5e3adca",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "1f367dc9c6cfa5660b6971230f3b277fc5e3adca",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.4.0.tgz_1460354642776_0.13956820615567267"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.4.1": {
+			"name": "yargs-parser",
+			"version": "2.4.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"version": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.8",
+				"mocha": "^2.4.5",
+				"nyc": "^7.0.0",
+				"standard": "^7.1.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0",
+				"lodash.assign": "^4.0.6"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "e7c71d5b8e0088596aef17a4e2b0261a85fca713",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@2.4.1",
+			"_shasum": "85568de3cf150ff49fa51825f03a8c880ddcc5c4",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "85568de3cf150ff49fa51825f03a8c880ddcc5c4",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-2.4.1.tgz_1468709489453_0.7414652374573052"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "yargs-parser",
+			"version": "3.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^7.1.0",
+				"standard": "^7.1.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0",
+				"lodash.assign": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "948e1cde41adb6142f47c0ce38992f8d1f58e10f",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@3.1.0",
+			"_shasum": "5bc511dc1b0551275bfb15344874ded8d22d2604",
+			"_from": ".",
+			"_npmVersion": "3.10.6",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "5bc511dc1b0551275bfb15344874ded8d22d2604",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-3.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-3.1.0.tgz_1470723974935_0.08871294185519218"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.0": {
+			"name": "yargs-parser",
+			"version": "3.2.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^7.1.0",
+				"standard": "^7.1.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0",
+				"lodash.assign": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "a4c4f0c4e9417c968feec98caa39d69983bf31ec",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@3.2.0",
+			"_shasum": "5081355d19d9d0c8c5d81ada908cb4e6d186664f",
+			"_from": ".",
+			"_npmVersion": "3.10.6",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "5081355d19d9d0c8c5d81ada908cb4e6d186664f",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-3.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-3.2.0.tgz_1471118009225_0.3763321761507541"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "yargs-parser",
+			"version": "4.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0",
+				"lodash.assign": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "ec6df1ca43f110250dfaf8cc5660e8d827a72667",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.0.0",
+			"_shasum": "a36825f971a02bb6059797116d14e6588be586f0",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.5.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "a36825f971a02bb6059797116d14e6588be586f0",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.0.0.tgz_1474868319878_0.024560872232541442"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.1": {
+			"name": "yargs-parser",
+			"version": "4.0.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "b43b7c1b3d92307bf1ee4b319d30a07656d25617",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.0.1",
+			"_shasum": "7f6fbfa24bbf512846240529c68e88130c6c713b",
+			"_from": ".",
+			"_npmVersion": "2.15.1",
+			"_nodeVersion": "0.10.47",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "7f6fbfa24bbf512846240529c68e88130c6c713b",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.0.1.tgz_1475217375019_0.16979361232370138"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.2": {
+			"name": "yargs-parser",
+			"version": "4.0.2",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0",
+				"standard-version": "^2.1.2"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "466e38b97c1ead7b6b777500cf4392a2c7645921",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.0.2",
+			"_shasum": "7f7173a8c7cca1d81dc7c18692fc07c2c2e2b1e0",
+			"_from": ".",
+			"_npmVersion": "2.15.1",
+			"_nodeVersion": "0.10.47",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "7f7173a8c7cca1d81dc7c18692fc07c2c2e2b1e0",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.0.2.tgz_1475218337015_0.34343091025948524"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.1.0": {
+			"name": "yargs-parser",
+			"version": "4.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0",
+				"standard-version": "^3.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "a491feb6711a8b6eda11755bebf73ead8e182d30",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.1.0",
+			"_shasum": "313df030f20124124aeae8fbab2da53ec28c56d7",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.5.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "313df030f20124124aeae8fbab2da53ec28c56d7",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.1.0.tgz_1478500309828_0.6643792404793203"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.2.0": {
+			"name": "yargs-parser",
+			"version": "4.2.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^8.0.0",
+				"standard-version": "^3.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "941d8f3a5eaa008986816185c05b02a12ff0abeb",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.2.0",
+			"_shasum": "6ced869cd05a3dca6a1eaee38b68aeed4b0b4101",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.2.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "6ced869cd05a3dca6a1eaee38b68aeed4b0b4101",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.2.0.tgz_1480618162618_0.04404683620668948"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.2.1": {
+			"name": "yargs-parser",
+			"version": "4.2.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^8.0.0",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "924b014ac25ecbaa2a01f40c2100512a68bdba1d",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.2.1",
+			"_shasum": "29cceac0dc4f03c6c87b4a9f217dd18c9f74871c",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "29cceac0dc4f03c6c87b4a9f217dd18c9f74871c",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.2.1.tgz_1483386157947_0.938966978341341"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.2.1-candidate.0": {
+			"name": "yargs-parser",
+			"version": "4.2.1-candidate.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^8.0.0",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "924b014ac25ecbaa2a01f40c2100512a68bdba1d",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.2.1-candidate.0",
+			"_shasum": "182c95b17190db70c80c5cfb6dec3609acfe51ee",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "182c95b17190db70c80c5cfb6dec3609acfe51ee",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1-candidate.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.2.1-candidate.0.tgz_1483743098860_0.751906061777845"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.2.1-candidate.1": {
+			"name": "yargs-parser",
+			"version": "4.2.1-candidate.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^8.0.0",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "924b014ac25ecbaa2a01f40c2100512a68bdba1d",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@4.2.1-candidate.1",
+			"_shasum": "6982d85251771d897f9b96788e9fe9a53a42db32",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.1.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "6982d85251771d897f9b96788e9fe9a53a42db32",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1-candidate.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-4.2.1-candidate.1.tgz_1483744955649_0.30080202664248645"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"5.0.0": {
+			"name": "yargs-parser",
+			"version": "5.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^8.0.0",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^3.0.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "2c95ba9e5ad3b8bb6248bf41f013d9bd3700d56f",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@5.0.0",
+			"_shasum": "275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a",
+			"_from": ".",
+			"_npmVersion": "2.15.1",
+			"_nodeVersion": "0.10.48",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-5.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-5.0.0.tgz_1487447930908_0.674228576477617"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.0.0": {
+			"name": "yargs-parser",
+			"version": "6.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "4a383cf0902f4f7205847267ef0f2c4220ace660",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@6.0.0",
+			"_shasum": "d8c91626b560b3fd1173390c28b882aa4171920d",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.2",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "d8c91626b560b3fd1173390c28b882aa4171920d",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-6.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-6.0.0.tgz_1493599951495_0.06887614144943655"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.0.1": {
+			"name": "yargs-parser",
+			"version": "6.0.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "05522182f903a74e3458fb5adba92a4bfbf9653d",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@6.0.1",
+			"_shasum": "0026e672e284e7df459111d2e51462efad725350",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.2",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "0026e672e284e7df459111d2e51462efad725350",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-6.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-6.0.1.tgz_1493618237360_0.13729879376478493"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0": {
+			"name": "yargs-parser",
+			"version": "7.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^10.0.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "8ae91cddffc69f535e1d9ad1ce321444be84a483",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@7.0.0",
+			"_shasum": "8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9",
+			"_from": ".",
+			"_npmVersion": "4.2.0",
+			"_nodeVersion": "7.9.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-7.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "bcoe",
+					"email": "ben@npmjs.com"
+				},
+				{
+					"name": "nexdrew",
+					"email": "andrew@npmjs.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/yargs-parser-7.0.0.tgz_1493704782540_0.1645174971781671"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"8.0.0": {
+			"name": "yargs-parser",
+			"version": "8.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.2.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "c7eee910d73ad24970f3addbf884cfa47092b3f8",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@8.0.0",
+			"_shasum": "21d476330e5a82279a4b881345bf066102e219c6",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "6.11.4",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "21d476330e5a82279a4b881345bf066102e219c6",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-8.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				},
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser-8.0.0.tgz_1507184524796_0.6527229540515691"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"8.1.0": {
+			"name": "yargs-parser",
+			"version": "8.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "standard",
+				"test": "nyc mocha test/*.js",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0-candidate.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "29b02489b2111be89de94bf24f36e8ec8a6ba9e2",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@8.1.0",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "9.3.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-yP+6QqN8BmrgW2ggLtTbdrOyBNSI7zBa4IykmiV5R1wl1JWNxQvWhMfMdmzIYtKU7oP3OOInY/tl2ov3BDjnJQ==",
+				"shasum": "f1376a33b6629a5d063782944da732631e966950",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-8.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				},
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser-8.1.0.tgz_1513750813446_0.41336237522773445"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"9.0.0": {
+			"name": "yargs-parser",
+			"version": "9.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "9734d9c24d6f6aa94ebd7f1d5093e309ae1d2a0a",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@9.0.0",
+			"_shasum": "1026f0827af0567ad73a65cdebe60c5f11a6117a",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.7",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "1026f0827af0567ad73a65cdebe60c5f11a6117a",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				},
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser-9.0.0.tgz_1516488463416_0.8724576800595969"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"9.0.1": {
+			"name": "yargs-parser",
+			"version": "9.0.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "cf0d9d0b3e9e2565498c5ccf3c771828204dd88c",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@9.0.1",
+			"_npmVersion": "5.4.2",
+			"_nodeVersion": "8.8.1",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-1VhwM/pTsLJMm0eAksPV5yuvB7RkMb8gY0kYUieXA2IGCmDshu2w4Xgty/POmfzPLUtKFDLXiZTOnAwWQJ2XLw==",
+				"shasum": "d1feb4b244d2ccd04a2ed2a81f4998387ed81a68",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				},
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser-9.0.1.tgz_1516489420320_0.9541788336355239"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"9.0.2": {
+			"name": "yargs-parser",
+			"version": "9.0.2",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "523aecd52ac5aec7c1e4aabf0fbd4992ba660bd0",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@9.0.2",
+			"_shasum": "9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.7",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"shasum": "9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				},
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser-9.0.2.tgz_1516490623727_0.7419105849694461"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"10.0.0": {
+			"name": "yargs-parser",
+			"version": "10.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "8c9706ff2c16e415fed6a89336c6cbfde7779eb3",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@10.0.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "9.10.1",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-+DHejWujTVYeMHLff8U96rLc4uE4Emncoftvn5AjhB1Jw1pWxLzgBUT/WYbPrHmy6YPEBTZQx5myHhVcuuu64g==",
+				"shasum": "c737c93de2567657750cb1f2c00be639fd19c994",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-10.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 47232
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_10.0.0_1522807810210_0.12159316833474909"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"10.1.0": {
+			"name": "yargs-parser",
+			"version": "10.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^3.5.0",
+				"coveralls": "^2.11.12",
+				"mocha": "^3.0.1",
+				"nyc": "^11.4.1",
+				"standard": "^10.0.2",
+				"standard-version": "^4.3.0"
+			},
+			"dependencies": {
+				"camelcase": "^4.1.0"
+			},
+			"files": [
+				"lib",
+				"index.js"
+			],
+			"gitHead": "82f4ea5810ca36dbe934de593eb0d45cdcc724c2",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@10.1.0",
+			"_npmVersion": "6.1.0",
+			"_nodeVersion": "10.5.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-VCIyR1wJoEBZUqk5PA+oOBF6ypbwh5aNB3I50guxAL/quggdfs4TtNHQrSazFA3fYZ+tEqfs0zIGlv0c/rgjbQ==",
+				"shasum": "7202265b89f7e9e9f2e5765e0fe735a905edbaa8",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-10.1.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 48440,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbNcBKCRA9TVsSAnZWagAA7twP/jujSXkBJs7Lw44Pqk2z\ngCfoX/Ppfb9mqAvwrZxQCc9qQXUSQbxoaBQwt5J33W16eimw6vW7vrOaRTRE\nOzG5w1PwclKKoCFSx6/b+tzijg4DbsXeK6tr9i5W+xInB4YPDa3uUGtt8aiE\nzz3MEvs4No7gIeO8Ul448oIvQi3mfTNFiKAa8XLNuxqWJVdIPEuDVqo+SIv5\nrCuBjAHzNIUj3x1t7d76yf5Uug11TfNATtWdc3Z8cj6tSJrhaGE1IboJVn7e\n8nBknPSND7LArffjB48omgz0H/Kks3xjt7+8f7B+tLDJVOzqpxdEcsb85eqk\n2Ez+pPB+KpHX4bWN5tW8atSJgAzTF71qwwtwVbusQF6mgo7BKuFyo4lWbiEh\nM78FKcRffWZZUrsNLRLN6Is60DMDcdob805weBPemz/E7QEnW3uERth/GCio\nD/Wzb4ZLgxUDw84JdNjakxme+uQZSIy/1BM1k4BAUlslxu7aozdK11dZClqc\nMjOgpy4q46r8467D687b4VrU2mGUK85HeYjipoF/MqJa621zqFK/+U0RQFkZ\nfhnIgT3AGYpPMiaWHvpIYc24WhA4PSeRHKeEnh5PYAGb1KuJ7C8VwTKYhbFV\nfKNkX7Ti+P2k+iot9zhg0yRCLUO2mKSDxx4Zeb+ja9sZh05iCyKDEYXYdoeq\nGl7v\r\n=OGds\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_10.1.0_1530249290353_0.47473899653433116"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"11.0.0": {
+			"name": "yargs-parser",
+			"version": "11.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "68dd3a18f04b819c25b48f523a861c81c17c82b8",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@11.0.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.10.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-dvsafRjM45h79WOTvS/dP35Sb31SlGAKz6tFjI97kGC4MJFBuzTZY6TTYHrz0QSMQdkyd8Y+RsOMLr+JY0nPFQ==",
+				"shasum": "d9fd0f0cd551a2a2ef9bbf42606ffb6211634232",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 50922,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbuTysCRA9TVsSAnZWagAAK+QP/AsMdMYiSl536Prv+ima\nokxa5FzL6Yb3Qm4Z7sUNHba+eSSagQlheSDERuaAWb42Pt8fdk0/XTxOphHP\nRqMrOeNtnYnnAvZjnzjUjKfkuz7KZTiu+OiHeugwGMiVEsx+YxSZHFj1WwY+\nLQuxeiHs0PC03S8PHv02UHithuWvYX1WbzcFHjb151h1WpaCQpS4/crlt6a3\ne6FfoM7zjJ/wRJHA+85Vuyetex3q5uC/9D62uBIvvK1URyilRveiXTIdue3Z\nXXdFVfxDfiK5OXHKlFlMBUMjCvS8Gu2Zez2ERYw7WiWdHFRg9rzkZJdbpkHZ\nN7GEepm1q/H8tkP6IJ1tPwsro3DygxXoAzn/bneP49yfEHGVbyP/f50RlKEZ\nUUGDW/PPNZgxG5wRme4JQCFEdbphYUAzlYl/vF6mKi08dDuLNXss2YXftakc\n/FbcR6CBEGvun/5Hk4opAj2FKXfkrD8oKQEd/oYtJlEJChjxkCgpalJcvb2z\ntMwXtnBW4rYfOryDUux86Bfur33ijiiKKdxKYBo7EDb+wqnXBHGFL6H3mk8d\n4NjrXmGfhl06janaWOvuYOF+S1wO7XjmkbI02LZXpVLrLxv0+po4fejdqBfZ\ny/SY+I6+rhhL58/wh8pDfNoCu9Gzbih75YYzcCgkIrulfaBFdrLsvDDMZHkl\n20/9\r\n=kcNw\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_11.0.0_1538866348083_0.0617863942875192"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"11.1.0": {
+			"name": "yargs-parser",
+			"version": "11.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "1eb726b30e78f6f76c1ba66dbcb49a92cbc4b6ff",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@11.1.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.11.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-lGA5HsbjkpCfekDBHAhgE5OE8xEoqiUDylowr+BvhRCwG1xVYTsd8hx2CYC0NY4k9RIgJeybFTG2EZW4P2aN1w==",
+				"shasum": "0b8104116367bf663089b24e5801438ab50396a3",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.1.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 51709,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb5iaMCRA9TVsSAnZWagAAvnAQAI+c3D1ikLTJyCrDhrKV\nKW+oJU96aDtkgwILS/3QIxs8Kbm1RubpkhZdPUiG0ZIfBFWKbv5wMFmpbmZT\n83dbPq0P7H98K6vWkjVwG5E8vyYVHVSizudfnfeYo3/aXmu+iy6cplqXpukC\njDTbzgXaP6l99xnI4k69RdPS1+/xMMDdpDxAlenixeV6aHjBWg88saUY6/Ao\nFhURySohjhN7DjTKQVUc6jf8ZYlE+Tv8qlZwlofTSo5n0/rdeL1iDOt6Q6yi\nhn7dJjLPJdslVdEOdsEcHHDpCvw/mBjHaO27yewDoxfdRZT1Zu9dSXmDg8LE\nVeOS2Fct2LKAo1Jv12GF+swJG4JyhrzQDWccmBQWcX9nF7Zq4Ol5Qug7fV5p\nXITcFG0gJiLFs3/R2HoQhC/cGHDOzGKLs6yV3jk2KDN0+g7Y8g67d/nxhN2V\npSTI7ZJmqyuDhugT5LSP6uXOa3EDMudGwhS5KlQ0gNSwGJmF1C844GMhBI7b\nOb4e3q6EJizDsKxz4+nzJvf4E64n6OkCXU7zXLX41/9qVumXpjDnT9m3nM7D\nwXAZq9iegN8+V3uusLBnZ3Y1YXMVxq379pHqPbDJ4g8O5hEpc5+St8MqGcUi\nSAjYit8f7uDDb9Xb0kA9XH+I3t3b0gFzB44ky/t8NTdMpN/8OSVkLfyEf5lK\nIzqV\r\n=9CHh\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_11.1.0_1541809804088_0.014179245602807145"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"11.1.1": {
+			"name": "yargs-parser",
+			"version": "11.1.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "ee122f89ab9417241b06c6b3ce6aabb2ac8ce5f2",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@11.1.1",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.11.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-C6kB/WJDiaxONLJQnF8ccx9SEeoTTLek8RVbaOIsrAUS8VrBEXfmeSnCZxygc+XC2sNMBIwOOnfcxiynjHsVSQ==",
+				"shasum": "879a0865973bca9f6bab5cbdf3b1c67ec7d3bcf4",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.1.1.tgz",
+				"fileCount": 6,
+				"unpackedSize": 52233,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb80iACRA9TVsSAnZWagAAxs0QAIRQ2lljZeAf38/jR/2I\nRRkUHNxY9KOCKuprpUeTgpKEVd3XLNHhra9K7/HegBZJM1vVYv6PJGHBBNwa\neTDdbZqS5+f96xAg8IrzOeiFIdxB0YRYZKb2CWVhXmMiM/bkF8hZik7OyD9H\nFv+iOdnVTPaJkN2jfNgTV6HJPWz9nqjoRSXgiPCdBTP+F9aNedL1iuXkBkm+\nUesV4A6iV8tvEK/tR27hv6ddS+S9nOKiRDoxQPdpKb2CdGc5mibwvcGpaWYO\nJXuqbIJ6z11Y8vEX0+mMO8CcDqjeK9NhGupPyndNLpDThiykvvMsNXWWtsOI\nVcax/maPi1UOCCA++1q5Ln7x7vJIkvhfNrXWSgs0Swf/l19MIm6NfE7eSc/s\nqzq9WT/CqDTV04YD0fk657nundlY+CRKufKbBFgcHUBG8i7xXQMzz6VJl8hX\nkgL/kz9ihMJCCrWkkg3YzCwiuzwhvt4PXzFbHUlTyIgZKrNkN/UBxXWIqg5Z\nqrkIANPjzoFQTGcQR3zugRCMPudWmxiOgys5h+Z8D4VdSBr8ZuVNfVna6ckx\nNKPztRUckneWlS06+DDbgxtzi0YzKIt7S2l33RyAv4i1oQt8hAQ44yp0zLH1\nz8HgMP/Z8bHOG4UvemudHi6pY5vAxvmf/69x8BAp6ycGbRsIaZ0LzptLzbya\nvhlx\r\n=9XdU\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_11.1.1_1542670464133_0.8836926394269116"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"12.0.0": {
+			"name": "yargs-parser",
+			"version": "12.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "ea6ce0572b32797e965c620ee93a47a9a02201ee",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@12.0.0",
+			"_npmVersion": "6.5.0",
+			"_nodeVersion": "11.8.0",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"dist": {
+				"integrity": "sha512-WQM8GrbF5TKiACr7iE3I2ZBNC7qC9taKPMfjJaMD2LkOJQhIctASxKXdFAOPim/m47kgAQBVIaPlFjnRdkol7w==",
+				"shasum": "18aa348854747dfe1002d01bd87d65df10d40a84",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-12.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 53259,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcT6MgCRA9TVsSAnZWagAAvVMP/iWJvhv782eOzAovDFCV\n+bNfRXFBzZxj+4TRV+gt3BIOkVXGEkJRsfKpHkJGUiS8CLdtfMrmvo38r0LB\nb+VANq1VMCK8VinReDHgzfGMr8FvGjnxgrZLDmU/qj+G7bOuF3hVUV73BEJw\nf7rt8aEmPcKMbSXESZxYJ5LUUjkklvxJKRYuwOwDkTNX1N6CqspFYpwUCMU1\nw2V0B0Lx5kwvra+HafCRRadooTj6AwO/Yu4NfCx9eMq2IEgM+HobVbgUCB2l\nTAMASc2K6fr1Cuj855MKTtUfZfy2EUIXOWLkOk752veFE/oB/On8u/9A2UqK\nxBr4ijb6NsiNPCH1NA9YpYnzGzgVhlXdTHzzg22E3pROLeyNC0g+0Ahyrk/d\ntIG/lJyGJd9hPrRRYk2cW/Gb5NijHAz+65jIY0/B2Y2p8IhjdTY3uRAM5QNt\ngVHVRGn02zC72GE/03eoz4sRM9n+0CKBhUPGlqAjfGE/uQZDa/TkqF2TbTHQ\nvx/AbZEjpDkwIJtfrTv4/wBwQihm0p12uUnLPjffKWkhyN4lzk//d+aeB0Ni\nHs97FsCwuYqIjA7w/DFfpp4wlXtLk0iDB4LAJzpE2TuroX17X5azTb+NRWFK\nPBRRcstdXi/iv3Us1qAuoiye2OoN0y9baxv/mTDbNIo83IpDhNFzpO2F9sv1\n0CYH\r\n=zn6L\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_12.0.0_1548722976357_0.9759821039563321"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"13.0.0-candidate.0": {
+			"name": "yargs-parser",
+			"version": "13.0.0-candidate.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"readmeFilename": "README.md",
+			"gitHead": "3cb7ce250ee4be1de80b6d4cb51586bfeae54c96",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@13.0.0-candidate.0",
+			"_nodeVersion": "10.12.0",
+			"_npmVersion": "6.6.0",
+			"dist": {
+				"integrity": "sha512-TP9wKVkaqhvHIf2Y6UMGBZN1Ipm5XUJhy0Iz+GUGkFz/s+QFI9n19EvjGy8WxW325s5xL+yejdQ8BWLleTaPDA==",
+				"shasum": "b7257bfab97e63007bb8e41a62aed9f509a5e64b",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.0.0-candidate.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 53273,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcVgEBCRA9TVsSAnZWagAA/O0P/iaRrz318YkvSg5qJYsB\n0fydeD7YHE2xNHmR1CxdO3smZ8r8Y4jr5XE2Ko/Mn6WxtLFI9h4K7iDay69R\ny47LGjFJed9U6bCcyc1ROCdgerIiu+ndLaHQlGMyeE8OWBFsfo4y/M9LstGG\nmvACQX9KFsqAt9Dc7I9lLiF+U9NPTSppBf6iy/ymW5b/RBy5PkhyAzQjKKlN\nCy+RDVYQTc8m+B3kdT1YqN25f1EgHZ8AlrG0SwZpH5m4exq/+7efpwbujesi\ntAQaDccdiXwCB4tVegTMKKCZP5Bp8l/VD1mdk37PSSwnXxAmQlLHMXGHrRHC\n+93Rf2TRU/NzB5kyX1ijqXTCY/eBwJvO3MuUg61rYdojSEWEYr4mdw78nWvG\nTPGROAAz88LSuh9nfQP9Lagxb4M4WAzaodzcWgVdi05cgymaBCLPNu8PaRj3\n2wyprOXP6y+9Q0yMd8xVPJkZvydnwT3ubfHB0C+7hwWNJuCcGDEHMNQnbrjm\nVi2YS2x5WWMFQfRsSNAe04n9k/Vsy1WyRcJwvQQBzkgZTB6R6HaoBmD98My5\n78Lg+B8gRMpzyZCbYbD85BX8ia+K/WhdFxcCZBU2FC+i7VBAHLgAm1UlpkAZ\nrGEBBuOQDf3/9WPuAcEeQeEknee4T2oqTsUqCGDyMDC3cJek8hHJxrTnhCY7\nTB5b\r\n=1w9r\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_13.0.0-candidate.0_1549140225376_0.7639099993697989"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"13.0.0": {
+			"name": "yargs-parser",
+			"version": "13.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^13.0.1",
+				"standard": "^12.0.1",
+				"standard-version": "^4.4.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "1404f79dd9bfda5fbab3d4474e3132e1bfff31a7",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@13.0.0",
+			"_nodeVersion": "10.12.0",
+			"_npmVersion": "6.6.0",
+			"dist": {
+				"integrity": "sha512-w2LXjoL8oRdRQN+hOyppuXs+V/fVAYtpcrRxZuF7Kt/Oc+Jr2uAcVntaUTNT6w5ihoWfFDpNY8CPx1QskxZ/pw==",
+				"shasum": "3fc44f3e76a8bdb1cc3602e860108602e5ccde8b",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 53893,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcVgwSCRA9TVsSAnZWagAAiNoP/2lufBp/ShQWvz8NVP7M\nyjTqle1y2mHeUU7i5ZP5VTSArHwJnr6iIQ8FnWKuTdvRAYMCyLCBbSkidl9L\ngUUrhYAo/QxlF2RC8EHwfNIUaJEmLaukYl8VNNOm2NO3NAnX+PR91koQ2WRL\n72fMQvrk+QJcFUMEzdxKcjTPjnXKxKP02N/oMYka0F9i5kEyLwyGTHrxXaa1\nEfPxP0qRzwu4R+ftkM8QVw0qpon7E5NACCxNpV2Jksvp5g1hwCVlJ8W46ZxP\nuJxUbB+ZELlPOlBy01OX14e2COeEEY+fKBQOtcdEFHGjTOGULCqhIeLZ6V6L\nY3ndKWj1yYIY1p22q/FSrvzqrAWrh6bwDVMy3bdoS6o/e8ueMyzOI7PRZ7RR\na8gmxH2F1zsSEZcktq8tOoRZCi9JFKCKkQ8dncotSfdq8wdcjZ2wFn/3C2MS\nnds9de3wW9k2EE/iu7hTncz6nmc0XDqR1qeK7cG73c9//bwn7oJktAKpFs0R\nOj3kYkzztBTvTexpZo4GuKtqv63ZzIVKWg67JnCmN6kMx1jcOeeZ2qGzXjXi\nwliK3w9MazW3aMc7kj+pD3BfqLJ3nLXlaeBQe5cG5jZ9/+bPFGLn9/XC4P3F\ng768Rn7AvY595UdTTgyrvnGIXFBuDgD3rPq/6Mca16wP/zepTwdgwYIfrZu7\nyst+\r\n=LhQA\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "ben@npmjs.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_13.0.0_1549143058131_0.7755253777302005"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"13.1.0": {
+			"name": "yargs-parser",
+			"version": "13.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^14.1.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "69ddfedf03024ac0e9e45d0a18daa0964e4c1c34",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@13.1.0",
+			"_nodeVersion": "11.15.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-Yq+32PrijHRri0vVKQEm+ys8mbqWjLiwQkMFNXEENutzLPP0bE4Lcd4iA3OQY5HF+GD3xXxf0MEHb8E4/SA3AA==",
+				"shasum": "7016b6dd03e28e1418a510e258be4bff5a31138f",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.1.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 55362,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcz1aRCRA9TVsSAnZWagAAtpMP/jACleJupqg3CZdCqSxG\n0jSvwBTvTIKZ0eHVRAH6KMN7rZcx2JLwgJ3Ac9qwZBNO4Fzvt+FEqPUuvX+6\nOsU/zRB//K7aGRuvESaZQPcyIFwMzo/6PwmhXvvwYnEzN5EmePLTkRP+H30w\nnFdTW1zC+JXEp32C2ggKE6PAqo+6j9A/+YSpcaMx2DHFuxxyhFOG1asrtCYj\n6OsXnShPUlCdT3/CyackvK+9eNEruWPBRjlgizz2gsC/63jVhzWtNNSo0TPT\nQYqgeXfuLgsLqChF6OxeZ91qsHJK6lkx5A6JeO2jOvYiZdPp3ZLAtc98Tg1G\nvW0NeiZCkPLNkhLwBl5E9DVDMwlLSjdTTY29KGNHgYkV18pPKwmeYxC1oBgG\n+pL/Za4qlv28cHx5JIznrFtOp6cps0BbM5NCI0UQqzetWQdw+uqAyXs6+6kV\nVJpJtvcSRArVS11NR7YnIOTd4V8sFudLOKvKxlFM69Eqp4pDMmpnPPU/d8yE\nTyIr8mvvAO6twabpxlI14zhSfmxCV9a8tSNWvQyGvBWHyYMKK33eBfMafrGu\n/BfoFugYTFgkR8joEjVe32uW8deJoMvk7ApdUZViM1x+uq/LPbTpjGioEx73\n1NSdoWFzrVqg0+pG8deBxMtE+6929Rgu4v3TncrbWFhBoL+JQCbKhV/79/Yi\nbIy0\r\n=P+yU\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_13.1.0_1557091985001_0.36882552076158537"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"13.1.1": {
+			"name": "yargs-parser",
+			"version": "13.1.1",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^14.1.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "7e01a2c8d1ba75d9d5472e5839e2852bdf2af3db",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@13.1.1",
+			"_nodeVersion": "11.15.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-oVAVsHz6uFrg3XQheFII8ESO2ssAf9luWuAd6Wexsu4F3OtIW0o8IribPXYrD4WC24LWtPrJlGy87y5udK+dxQ==",
+				"shasum": "d26058532aa06d365fe091f6a1fc06b2f7e5eca0",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.1.1.tgz",
+				"fileCount": 6,
+				"unpackedSize": 56619,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/a/HCRA9TVsSAnZWagAAT1MP/0Jd8mvdED68tv36sBfV\nAfRFtdrw+eU3tI0UFs+bWSFu70TDS3b78GL/Wu5RbMtRvH/9B0Y6kAKAnPQc\nAkOtAyQoEP3dwR63A829WMg0qvosxiip0IciIwpj5qx7gIijixJl72VDrfJl\n8+AiZym6RVl+nuV8Dl7a1WZJyy0XTGGELXZSWOHHEPzQY7BzNm4rU+V82BoZ\nkNaOfj2QWwWIxYacl3rYGULY6Me1Oik2oWRdfsj+JP5Nh03apJ+NW2snPPT5\nTEU8jZDTzMk7PXSABQaf4Py2gWPbxskCi9/zmHqhvFj8KYPL0ImsO4nXbUkt\n5exPB/c5XLWBm1fQfRdbKfkp2NFRXIIwYh4mwp5t+bwvUIbwqcFVleuIruWK\nFmyE4NjaKtaRuGj3vs/OyLWbhSFegozbMQ8tb22Ekusewp8XfGRcEgDwmG9H\nCvWbgPZqad1+I/L02Jo52oFA0L0CIuww9F9a5fcRIljLv0bZMmYZp7CQO/du\nplM0vuck4R0yAUrs3n/f8cccLj2BybHE+/zdKiNYpwU8SmTZc3lRFybBgV5w\nEcEukyWs8/XkBrPuKLjDLutUuONrmIjq7Y9dlaTMIlzTzV/4LdZ4+kpUFFSv\nTQfyZMBmpFonQ2TdXWWP9ztvc06MYHclZsFOXhBKg1lSzd1S2usPr2BE5wGY\nyqYU\r\n=m06t\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_13.1.1_1560129478957_0.3540378163143141"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"14.0.0": {
+			"name": "yargs-parser",
+			"version": "14.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^14.1.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "ac11361ab90204698499ca06e292fac47088971a",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@14.0.0",
+			"_nodeVersion": "12.9.1",
+			"_npmVersion": "6.10.2",
+			"dist": {
+				"integrity": "sha512-zn/Mnx+tbFjkCFUodEpjXckNS65NfpB5oyqOkDDEG/8uxlfLZJu2IoBLQFjukUkn9rBbGkVYNzrDh6qy4NUd3g==",
+				"shasum": "42e25777b06718ec99eac2c3a98ad3de73b6818f",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-14.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 61025,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcrU9CRA9TVsSAnZWagAA1TwP/1wgn1MME3UlYTEiib45\naQ8ZJOJ/Yr1z9kcbiRKhUfWI+YaSPG6rNaxLuEzPH97K48f178emhp+biXV9\nPQb/Ssm+hr51Grw2EP1CcXLn4zLkXl1ypw8FMwzQwjH8iueFhC6DFXoXq3sb\nl9blWhOSTOAv+Ib+QxJCJtm5AwIldGNR5H3WfUoWdHiK55aHk02KN9+T64qn\nL5ju9dcRpoQSA4b4Xpfg4fd0wzWrhawx4z0v+jqdLa30uVhfRasXI9t5Q9Q/\n1hhqnnL7RV4M8fVZwgf33JrtIT7wNiVyMw9hh4xSN+Yz51tDXHFIGGgiZaHh\nMvyymjARsygqYtOACeoBUHBgoRijpIj22+FZO+DYSyP6urgPtUdYVH4qPA2t\nd8maE8FUd3zBu5qk1JKEcB3guybT6hzlSqmZVXjwlpes7+ORTY8IODvJh5Fd\nAfe772ALQD+uSpXpn5Pqr0DbIBU1J7pJu4aoZXAFarxSnGnny4H/G0vX84XO\nzX/d2QjQfsZHh8Q1pCTYnT8jDzlFnTxjVHSMgCKOM+5XPheBoOE3uEC6R7YY\nXMs3ClPCupT+6qVDKPZ+2H+JvgB+z83Fb6dGhqUmr2SavMfbRywHqDkrLSs/\nE4goE3uWIcqKDjvDU7ldjm8XAFOwoVyNkSJc16pZSMbSgPIbTm93AEi3JoM9\n1xFz\r\n=QjNO\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_14.0.0_1567798588617_0.6216679368978903"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"15.0.0": {
+			"name": "yargs-parser",
+			"version": "15.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "nyc mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "nyc report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"nyc": "^14.1.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "eab0cb6511adcf8db9405307fc082493b4709bba",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@15.0.0",
+			"_nodeVersion": "12.11.1",
+			"_npmVersion": "6.11.3",
+			"dist": {
+				"integrity": "sha512-xLTUnCMc4JhxrPEPUYD5IBR1mWCK/aT6+RJ/K29JY2y1vD+FhtgKK0AXRWvI262q3QSffAQuTouFIKUuHX89wQ==",
+				"shasum": "cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-15.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 61655,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmoIvCRA9TVsSAnZWagAAKa0QAIRfC8WxIrBv0uw7HmAc\nWEVGuA4klCHcvc6PEHo8iLZ+psJW8eAJYUHGgGfzhKU9zh1jl2LHTPAwzcBw\nLHvK38lTNDcC4CGiBveHGb4PaXTLaTULefD11QkSUIwVkHstdcIF19cT8EKJ\nPzviBYLhj9thys3SPWXNJFoet7y4/eRfLUE1f8kYwd4fO8bV8JR6clz30X0N\nlbUrLlIEUi7x+yXv23cqL3ZyZWCSWmkoXeE1o0Y+kldU/6XdE2amDz4PjEah\nnvOmoVj+G1AL6xPqdzYbLd9kUdAnJNKbM5c1nc2SpSQhIQFuYGEJdeQ1HB9O\nBvVc0baNpTxiKOhQVclA6F5Eod2JmBH/NDKZ1APUXvQpGEAEVq6NdUxDb9uK\nFasMhOK7Al9nqdCldiw+8IIXYDCOgvF/x14isXWAri6Vsre2Y+T42WnisKou\n0Qpacbl08SAV+Hv5k0fvm06FdFZ7ZVoqwBK7sP4kIJhTUx0D6xIqAdYCP+N2\nxRdu0wwRBhEcMb//nUzIY2BCFp1HzTVfp9KMSV8BF49T7p93VcAeiellp8BF\nNmImrNfkJ29Sj+mF1eU9qGljT33up7p0i8kNfGj8meL9ZnQomP4YkR0NAmJf\newzn6B0yFjdNxhMnsghnxzL6Um49pd7sAPJ0MpENh+yolNokXZgdT77DeKIO\nbeu6\r\n=RciI\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_15.0.0_1570406958777_0.6645281426519596"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"16.0.0": {
+			"name": "yargs-parser",
+			"version": "16.0.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "c8 --reporter=text --reporter=html  mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "c8 report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"c8": "^6.0.0",
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "212814fe5219d0033abffac90aecc908f2f399ec",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@16.0.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "8.16.2",
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-WyNdFYED0penIaLqLSDSeFksC5lVjrjp9vNkG7IKfgQNiAYa6FfHuJXjuaQgt0eOVN2z+gJhHJSX7uRhJKPc7Q==",
+				"shasum": "534baab6f1c1c0c80adc2f57d1bcd55117a56bb2",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-16.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 63013,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdtQbhCRA9TVsSAnZWagAALzQP/RbK0iSt5A0GPbEh10X5\nrxD5J4vU5VFZURKjgIYJv3Ndl22FSnmJTXZ2hmchd1f7AwgrgFjfAJpI3VN6\nYCRwbD2XQCnF3Zpvx+8051lnAIngJflLDcQjdbMG9owd1SvZVOQ9B0q6oEMf\nbcPf65LKTQzUFblrTOGUPiYThnY/cjt7g/fXFDafsVs69vuhIQ/qieZUWd0R\nq0/Gy19hDhoJeErL5L1x53wCu9mEtGkkt9sBLxuNTBVYskQl3+JJvCeYb49Y\nz+sY88x+dGpRWbtXuieqymtUss1DYjZN0qPASWPBNKdSdiSbHQi48wgP4rpZ\n23CGfcA/rKSzn1jjF8u58Vxm59CPBKDJ8/GD58w8C9r9vt1ZTVCiAVrwQUS4\nWOYk2mp3Gjmhd+piHavE/AbZxK2uLkkqGlbA+biVWDXJI8t98WnNZGtD+QTP\n/1K5N6iZTE7IyxJAdM75hBAZkZ2BlV+xdc6KxHyiVK7vouBXUDokVCtMaOSb\nDfruoxGduqGWbMPdydQnM93izKYoe9YvMDEp6vN1GRflnIdFuNvScHo2QIp6\nioYQOJePA6xQk56Bx8al7ftn3Va5/wpK2W5Yyhb7H4YhhCIg3w/TlMNUYgWv\nZSFaVyc3M55dx0rlMxaZycDKbyJTNqr+1LBzt++4rrVLeh6WVEi8F5T+Qlyd\njjwG\r\n=qxzu\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_16.0.0_1572144865121_0.8044309101457034"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"16.1.0": {
+			"name": "yargs-parser",
+			"version": "16.1.0",
+			"description": "the mighty option parser used by yargs",
+			"main": "index.js",
+			"scripts": {
+				"test": "c8 --reporter=text --reporter=html  mocha test/*.js",
+				"posttest": "standard",
+				"coverage": "c8 report --reporter=text-lcov | coveralls",
+				"release": "standard-version"
+			},
+			"repository": {
+				"url": "git+ssh://git@github.com/yargs/yargs-parser.git"
+			},
+			"keywords": [
+				"argument",
+				"parser",
+				"yargs",
+				"command",
+				"cli",
+				"parsing",
+				"option",
+				"args",
+				"argument"
+			],
+			"author": {
+				"name": "Ben Coe",
+				"email": "ben@npmjs.com"
+			},
+			"license": "ISC",
+			"devDependencies": {
+				"c8": "^6.0.0",
+				"chai": "^4.2.0",
+				"coveralls": "^3.0.2",
+				"mocha": "^5.2.0",
+				"standard": "^12.0.1",
+				"standard-version": "^6.0.0"
+			},
+			"dependencies": {
+				"camelcase": "^5.0.0",
+				"decamelize": "^1.2.0"
+			},
+			"engine": {
+				"node": ">=6"
+			},
+			"gitHead": "36d31b6666b634c056a04ab52b352b6077b30a56",
+			"bugs": {
+				"url": "https://github.com/yargs/yargs-parser/issues"
+			},
+			"homepage": "https://github.com/yargs/yargs-parser#readme",
+			"_id": "yargs-parser@16.1.0",
+			"_nodeVersion": "11.15.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-H/V41UNZQPkUMIT5h5hiwg4QKIY1RPvoBV4XcjUbRM8Bk2oKqqyZ0DIEbTFZB0XjbtSPG8SAa/0DxCQmiRgzKg==",
+				"shasum": "73747d53ae187e7b8dbe333f95714c76ea00ecf1",
+				"tarball": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-16.1.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 63609,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvLSBCRA9TVsSAnZWagAAg5YP/19x1Ih5H1Zups4O2rac\n03ir+PGK3jSUJf3YdFtBbJ7jMkTKkEYeduRSFUsA71jZzkZon2X1XGYznwt9\nobNPtPJl7reh1GcxFEatT4kR/0h/e4xORGs4KGu0ehmNcV0tMVD9LsopJtiY\nneB7uEV5AVLxK8Kf3B2+/shpH6W8KJMFjc3zvDPyiKS9E5+4PPhGw7T524d+\nfxsULi04vgwSGO07Lp898CBphstydV95CTJYsS8FBsEFHguTo3tNBHKa+Mfq\n6SRyhfdpJYeyRb3TmSBVRoA95VjC0TExWD16mv5VtFTYjaFT5TVgLEGEHTyi\npXTaAcOnW6FaG6uvnO+oeyH9lZvnH4vc0vmRXlzWEXtW+XRPckiQPZ+wbhn/\nBR1F05lFmRtYm6E8EOxI8KQHdkXxWpJwiJPq685U4PZmACKjg5+xk0edbIea\nvbrRk6xcmDB0mK6/X1dnrRjOZofdXQWWL1Xd1FRQ9nPHEnYRSgG4cwcKCJgk\n6IipYpbsCU0Vn41fkMT5S2+OF9UrtiTAzwdkuS/8QQoBJrElVpTlwdORiPEb\nvLe++PwTufdnR4FijVWrg6y/CuzTrC/2QMB2YVBVyFKtOVysSqgCCKO56QO1\nUXKRsv4ge/zPTOVJeWPS6gw7QHp1SfCjog2lBWWyxWlA3cWMfhI7qQpxItaT\nqRUa\r\n=BS8T\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ben@npmjs.com",
+					"name": "bcoe"
+				},
+				{
+					"email": "andrewbgoode@gmail.com",
+					"name": "nexdrew"
+				}
+			],
+			"_npmUser": {
+				"name": "bcoe",
+				"email": "bencoe@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/yargs-parser_16.1.0_1572648065317_0.8458569388254156"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-01T22:41:07.830Z",
+		"created": "2016-01-23T21:12:29.644Z",
+		"1.0.0": "2016-01-23T21:12:29.644Z",
+		"1.1.0": "2016-01-24T22:43:03.382Z",
+		"1.1.1-alpha": "2016-01-29T06:18:15.006Z",
+		"1.1.1-alpha2": "2016-01-30T20:29:52.493Z",
+		"1.1.1-alpha3": "2016-02-01T06:13:57.343Z",
+		"2.0.0": "2016-02-06T20:39:19.897Z",
+		"2.1.0": "2016-02-14T09:04:02.449Z",
+		"2.1.1": "2016-02-23T06:54:30.923Z",
+		"2.1.2": "2016-03-20T19:04:12.726Z",
+		"2.2.0": "2016-03-30T06:15:24.185Z",
+		"2.4.0-next": "2016-04-11T03:04:27.243Z",
+		"2.4.0": "2016-04-11T06:04:03.901Z",
+		"2.4.1": "2016-07-16T22:51:31.076Z",
+		"3.1.0": "2016-08-09T06:26:17.564Z",
+		"3.2.0": "2016-08-13T19:53:29.492Z",
+		"4.0.0": "2016-09-26T05:38:41.527Z",
+		"4.0.1": "2016-09-30T06:36:16.800Z",
+		"4.0.2": "2016-09-30T06:52:18.892Z",
+		"4.1.0": "2016-11-07T06:31:50.418Z",
+		"4.2.0": "2016-12-01T18:49:23.364Z",
+		"4.2.1": "2017-01-02T19:42:38.707Z",
+		"4.2.1-candidate.0": "2017-01-06T22:51:40.976Z",
+		"4.2.1-candidate.1": "2017-01-06T23:22:35.884Z",
+		"5.0.0": "2017-02-18T19:58:51.724Z",
+		"6.0.0": "2017-05-01T00:52:33.251Z",
+		"6.0.1": "2017-05-01T05:57:19.165Z",
+		"7.0.0": "2017-05-02T05:59:44.561Z",
+		"8.0.0": "2017-10-05T06:22:05.819Z",
+		"8.1.0": "2017-12-20T06:20:14.482Z",
+		"9.0.0": "2018-01-20T22:47:43.499Z",
+		"9.0.1": "2018-01-20T23:03:40.481Z",
+		"9.0.2": "2018-01-20T23:23:44.868Z",
+		"10.0.0": "2018-04-04T02:10:11.110Z",
+		"10.1.0": "2018-06-29T05:14:50.431Z",
+		"11.0.0": "2018-10-06T22:52:28.232Z",
+		"11.1.0": "2018-11-10T00:30:04.238Z",
+		"11.1.1": "2018-11-19T23:34:24.250Z",
+		"12.0.0": "2019-01-29T00:49:36.441Z",
+		"13.0.0-candidate.0": "2019-02-02T20:43:45.492Z",
+		"13.0.0": "2019-02-02T21:30:58.258Z",
+		"13.1.0": "2019-05-05T21:33:05.139Z",
+		"13.1.1": "2019-06-10T01:17:59.099Z",
+		"14.0.0": "2019-09-06T19:36:28.730Z",
+		"15.0.0": "2019-10-07T00:09:18.911Z",
+		"16.0.0": "2019-10-27T02:54:25.234Z",
+		"16.1.0": "2019-11-01T22:41:05.473Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "16.1.0",
+		"next": "13.0.0-candidate.0",
+		"alpha": "1.1.1-alpha3"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"000f088ad57b0fb96270ca9f8ad49403\"",
+			"fetched": 1577117259719
+		}
+	},
+	"_distfiles": {
+		"yargs-parser-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.0.0.tgz",
+			"sha": "0a64d7fffaf2063ef1d817ffbb29b0a553e75f1d",
+			"registry": "npmjs"
+		},
+		"yargs-parser-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.0.tgz",
+			"sha": "395ac847eb10c8298cb6c5547b4bc8484c3c0a9a",
+			"registry": "npmjs"
+		},
+		"yargs-parser-1.1.1-alpha.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha.tgz",
+			"sha": "cec04c7c9bd83630bc27a75f47a1200ea2a17a7d",
+			"registry": "npmjs"
+		},
+		"yargs-parser-1.1.1-alpha2.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha2.tgz",
+			"sha": "900e0893db36fff838457735550907a0e67d80e6",
+			"registry": "npmjs"
+		},
+		"yargs-parser-1.1.1-alpha3.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-1.1.1-alpha3.tgz",
+			"sha": "b2aa0257f333b15302818770d1b0c7eb6b80ce49",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.0.0.tgz",
+			"sha": "7fa0be0f4f48d6ffaa467dfbc8b1aa8f776ba5c2",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.0.tgz",
+			"sha": "5f214362f948a085389abf34a78d8b5eef0b1350",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.1.tgz",
+			"sha": "6bbb36d28cc03e2d57d172b4017d612e5ff6a0b6",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.1.2.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.1.2.tgz",
+			"sha": "e675aa728c72d9e95bd419c962c75a9e92f1c9da",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.2.0.tgz",
+			"sha": "29c4185b9c42c259f6ebbe054d1f46014e71d73b",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.4.0-next.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.0-next.tgz",
+			"sha": "537d617a12162a652c875eec7d3ea9df0fe12cf6",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.4.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.0.tgz",
+			"sha": "1f367dc9c6cfa5660b6971230f3b277fc5e3adca",
+			"registry": "npmjs"
+		},
+		"yargs-parser-2.4.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-2.4.1.tgz",
+			"sha": "85568de3cf150ff49fa51825f03a8c880ddcc5c4",
+			"registry": "npmjs"
+		},
+		"yargs-parser-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-3.1.0.tgz",
+			"sha": "5bc511dc1b0551275bfb15344874ded8d22d2604",
+			"registry": "npmjs"
+		},
+		"yargs-parser-3.2.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-3.2.0.tgz",
+			"sha": "5081355d19d9d0c8c5d81ada908cb4e6d186664f",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.0.tgz",
+			"sha": "a36825f971a02bb6059797116d14e6588be586f0",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.0.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.1.tgz",
+			"sha": "7f6fbfa24bbf512846240529c68e88130c6c713b",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.0.2.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.0.2.tgz",
+			"sha": "7f7173a8c7cca1d81dc7c18692fc07c2c2e2b1e0",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.1.0.tgz",
+			"sha": "313df030f20124124aeae8fbab2da53ec28c56d7",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.2.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.0.tgz",
+			"sha": "6ced869cd05a3dca6a1eaee38b68aeed4b0b4101",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.2.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1.tgz",
+			"sha": "29cceac0dc4f03c6c87b4a9f217dd18c9f74871c",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.2.1-candidate.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1-candidate.0.tgz",
+			"sha": "182c95b17190db70c80c5cfb6dec3609acfe51ee",
+			"registry": "npmjs"
+		},
+		"yargs-parser-4.2.1-candidate.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-4.2.1-candidate.1.tgz",
+			"sha": "6982d85251771d897f9b96788e9fe9a53a42db32",
+			"registry": "npmjs"
+		},
+		"yargs-parser-5.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-5.0.0.tgz",
+			"sha": "275ecf0d7ffe05c77e64e7c86e4cd94bf0e1228a",
+			"registry": "npmjs"
+		},
+		"yargs-parser-6.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-6.0.0.tgz",
+			"sha": "d8c91626b560b3fd1173390c28b882aa4171920d",
+			"registry": "npmjs"
+		},
+		"yargs-parser-6.0.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-6.0.1.tgz",
+			"sha": "0026e672e284e7df459111d2e51462efad725350",
+			"registry": "npmjs"
+		},
+		"yargs-parser-7.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-7.0.0.tgz",
+			"sha": "8d0ac42f16ea55debd332caf4c4038b3e3f5dfd9",
+			"registry": "npmjs"
+		},
+		"yargs-parser-8.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-8.0.0.tgz",
+			"sha": "21d476330e5a82279a4b881345bf066102e219c6",
+			"registry": "npmjs"
+		},
+		"yargs-parser-8.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-8.1.0.tgz",
+			"sha": "f1376a33b6629a5d063782944da732631e966950",
+			"registry": "npmjs"
+		},
+		"yargs-parser-9.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.0.tgz",
+			"sha": "1026f0827af0567ad73a65cdebe60c5f11a6117a",
+			"registry": "npmjs"
+		},
+		"yargs-parser-9.0.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.1.tgz",
+			"sha": "d1feb4b244d2ccd04a2ed2a81f4998387ed81a68",
+			"registry": "npmjs"
+		},
+		"yargs-parser-9.0.2.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-9.0.2.tgz",
+			"sha": "9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077",
+			"registry": "npmjs"
+		},
+		"yargs-parser-10.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-10.0.0.tgz",
+			"sha": "c737c93de2567657750cb1f2c00be639fd19c994",
+			"registry": "npmjs"
+		},
+		"yargs-parser-10.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-10.1.0.tgz",
+			"sha": "7202265b89f7e9e9f2e5765e0fe735a905edbaa8",
+			"registry": "npmjs"
+		},
+		"yargs-parser-11.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.0.0.tgz",
+			"sha": "d9fd0f0cd551a2a2ef9bbf42606ffb6211634232",
+			"registry": "npmjs"
+		},
+		"yargs-parser-11.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.1.0.tgz",
+			"sha": "0b8104116367bf663089b24e5801438ab50396a3",
+			"registry": "npmjs"
+		},
+		"yargs-parser-11.1.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-11.1.1.tgz",
+			"sha": "879a0865973bca9f6bab5cbdf3b1c67ec7d3bcf4",
+			"registry": "npmjs"
+		},
+		"yargs-parser-12.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-12.0.0.tgz",
+			"sha": "18aa348854747dfe1002d01bd87d65df10d40a84",
+			"registry": "npmjs"
+		},
+		"yargs-parser-13.0.0-candidate.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.0.0-candidate.0.tgz",
+			"sha": "b7257bfab97e63007bb8e41a62aed9f509a5e64b",
+			"registry": "npmjs"
+		},
+		"yargs-parser-13.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.0.0.tgz",
+			"sha": "3fc44f3e76a8bdb1cc3602e860108602e5ccde8b",
+			"registry": "npmjs"
+		},
+		"yargs-parser-13.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.1.0.tgz",
+			"sha": "7016b6dd03e28e1418a510e258be4bff5a31138f",
+			"registry": "npmjs"
+		},
+		"yargs-parser-13.1.1.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-13.1.1.tgz",
+			"sha": "d26058532aa06d365fe091f6a1fc06b2f7e5eca0",
+			"registry": "npmjs"
+		},
+		"yargs-parser-14.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-14.0.0.tgz",
+			"sha": "42e25777b06718ec99eac2c3a98ad3de73b6818f",
+			"registry": "npmjs"
+		},
+		"yargs-parser-15.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-15.0.0.tgz",
+			"sha": "cdd7a97490ec836195f59f3f4dbe5ea9e8f75f08",
+			"registry": "npmjs"
+		},
+		"yargs-parser-16.0.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-16.0.0.tgz",
+			"sha": "534baab6f1c1c0c80adc2f57d1bcd55117a56bb2",
+			"registry": "npmjs"
+		},
+		"yargs-parser-16.1.0.tgz": {
+			"url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-16.1.0.tgz",
+			"sha": "73747d53ae187e7b8dbe333f95714c76ea00ecf1",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-9d21091542f33405",
+	"_id": "yargs-parser",
+	"readme": "# yargs-parser\n\n[![Build Status](https://travis-ci.org/yargs/yargs-parser.svg)](https://travis-ci.org/yargs/yargs-parser)\n[![Coverage Status](https://coveralls.io/repos/yargs/yargs-parser/badge.svg?branch=)](https://coveralls.io/r/yargs/yargs-parser?branch=master)\n[![NPM version](https://img.shields.io/npm/v/yargs-parser.svg)](https://www.npmjs.com/package/yargs-parser)\n[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)\n\n\nThe mighty option parser used by [yargs](https://github.com/yargs/yargs).\n\nvisit the [yargs website](http://yargs.js.org/) for more examples, and thorough usage instructions.\n\n<img width=\"250\" src=\"https://raw.githubusercontent.com/yargs/yargs-parser/master/yargs-logo.png\">\n\n## Example\n\n```sh\nnpm i yargs-parser --save\n```\n\n```js\nvar argv = require('yargs-parser')(process.argv.slice(2))\nconsole.log(argv)\n```\n\n```sh\nnode example.js --foo=33 --bar hello\n{ _: [], foo: 33, bar: 'hello' }\n```\n\n_or parse a string!_\n\n```js\nvar argv = require('yargs-parser')('--foo=99 --bar=33')\nconsole.log(argv)\n```\n\n```sh\n{ _: [], foo: 99, bar: 33 }\n```\n\nConvert an array of mixed types before passing to `yargs-parser`:\n\n```js\nvar parse = require('yargs-parser')\nparse(['-f', 11, '--zoom', 55].join(' '))   // <-- array to string\nparse(['-f', 11, '--zoom', 55].map(String)) // <-- array of strings\n```\n\n## API\n\n### require('yargs-parser')(args, opts={})\n\nParses command line arguments returning a simple mapping of keys and values.\n\n**expects:**\n\n* `args`: a string or array of strings representing the options to parse.\n* `opts`: provide a set of hints indicating how `args` should be parsed:\n  * `opts.alias`: an object representing the set of aliases for a key: `{alias: {foo: ['f']}}`.\n  * `opts.array`: indicate that keys should be parsed as an array: `{array: ['foo', 'bar']}`.<br>\n    Indicate that keys should be parsed as an array and coerced to booleans / numbers:<br>\n    `{array: [{ key: 'foo', boolean: true }, {key: 'bar', number: true}]}`.\n  * `opts.boolean`: arguments should be parsed as booleans: `{boolean: ['x', 'y']}`.\n  * `opts.coerce`: provide a custom synchronous function that returns a coerced value from the argument provided\n    (or throws an error). For arrays the function is called only once for the entire array:<br>\n    `{coerce: {foo: function (arg) {return modifiedArg}}}`.\n  * `opts.config`: indicate a key that represents a path to a configuration file (this file will be loaded and parsed).\n  * `opts.configObjects`: configuration objects to parse, their properties will be set as arguments:<br>\n    `{configObjects: [{'x': 5, 'y': 33}, {'z': 44}]}`.\n  * `opts.configuration`: provide configuration options to the yargs-parser (see: [configuration](#configuration)).\n  * `opts.count`: indicate a key that should be used as a counter, e.g., `-vvv` = `{v: 3}`.\n  * `opts.default`: provide default values for keys: `{default: {x: 33, y: 'hello world!'}}`.\n  * `opts.envPrefix`: environment variables (`process.env`) with the prefix provided should be parsed.\n  * `opts.narg`: specify that a key requires `n` arguments: `{narg: {x: 2}}`.\n  * `opts.normalize`: `path.normalize()` will be applied to values set to this key.\n  * `opts.number`: keys should be treated as numbers.\n  * `opts.string`: keys should be treated as strings (even if they resemble a number `-x 33`).\n\n**returns:**\n\n* `obj`: an object representing the parsed value of `args`\n  * `key/value`: key value pairs for each argument and their aliases.\n  * `_`: an array representing the positional arguments.\n  * [optional] `--`:  an array with arguments after the end-of-options flag `--`.\n\n### require('yargs-parser').detailed(args, opts={})\n\nParses a command line string, returning detailed information required by the\nyargs engine.\n\n**expects:**\n\n* `args`: a string or array of strings representing options to parse.\n* `opts`: provide a set of hints indicating how `args`, inputs are identical to `require('yargs-parser')(args, opts={})`.\n\n**returns:**\n\n* `argv`: an object representing the parsed value of `args`\n  * `key/value`: key value pairs for each argument and their aliases.\n  * `_`: an array representing the positional arguments.\n  * [optional] `--`:  an array with arguments after the end-of-options flag `--`.\n* `error`: populated with an error object if an exception occurred during parsing.\n* `aliases`: the inferred list of aliases built by combining lists in `opts.alias`.\n* `newAliases`: any new aliases added via camel-case expansion:\n  * `boolean`: `{ fooBar: true }`\n* `defaulted`: any new argument created by `opts.default`, no aliases included.\n  * `boolean`: `{ foo: true }`\n* `configuration`: given by default settings and `opts.configuration`.\n\n<a name=\"configuration\"></a>\n\n### Configuration\n\nThe yargs-parser applies several automated transformations on the keys provided\nin `args`. These features can be turned on and off using the `configuration` field\nof `opts`.\n\n```js\nvar parsed = parser(['--no-dice'], {\n  configuration: {\n    'boolean-negation': false\n  }\n})\n```\n\n### short option groups\n\n* default: `true`.\n* key: `short-option-groups`.\n\nShould a group of short-options be treated as boolean flags?\n\n```sh\nnode example.js -abc\n{ _: [], a: true, b: true, c: true }\n```\n\n_if disabled:_\n\n```sh\nnode example.js -abc\n{ _: [], abc: true }\n```\n\n### camel-case expansion\n\n* default: `true`.\n* key: `camel-case-expansion`.\n\nShould hyphenated arguments be expanded into camel-case aliases?\n\n```sh\nnode example.js --foo-bar\n{ _: [], 'foo-bar': true, fooBar: true }\n```\n\n_if disabled:_\n\n```sh\nnode example.js --foo-bar\n{ _: [], 'foo-bar': true }\n```\n\n### dot-notation\n\n* default: `true`\n* key: `dot-notation`\n\nShould keys that contain `.` be treated as objects?\n\n```sh\nnode example.js --foo.bar\n{ _: [], foo: { bar: true } }\n```\n\n_if disabled:_\n\n```sh\nnode example.js --foo.bar\n{ _: [], \"foo.bar\": true }\n```\n\n### parse numbers\n\n* default: `true`\n* key: `parse-numbers`\n\nShould keys that look like numbers be treated as such?\n\n```sh\nnode example.js --foo=99.3\n{ _: [], foo: 99.3 }\n```\n\n_if disabled:_\n\n```sh\nnode example.js --foo=99.3\n{ _: [], foo: \"99.3\" }\n```\n\n### boolean negation\n\n* default: `true`\n* key: `boolean-negation`\n\nShould variables prefixed with `--no` be treated as negations?\n\n```sh\nnode example.js --no-foo\n{ _: [], foo: false }\n```\n\n_if disabled:_\n\n```sh\nnode example.js --no-foo\n{ _: [], \"no-foo\": true }\n```\n\n### combine arrays\n\n* default: `false`\n* key: `combine-arrays`\n\nShould arrays be combined when provided by both command line arguments and\na configuration file.\n\n### duplicate arguments array\n\n* default: `true`\n* key: `duplicate-arguments-array`\n\nShould arguments be coerced into an array when duplicated:\n\n```sh\nnode example.js -x 1 -x 2\n{ _: [], x: [1, 2] }\n```\n\n_if disabled:_\n\n```sh\nnode example.js -x 1 -x 2\n{ _: [], x: 2 }\n```\n\n### flatten duplicate arrays\n\n* default: `true`\n* key: `flatten-duplicate-arrays`\n\nShould array arguments be coerced into a single array when duplicated:\n\n```sh\nnode example.js -x 1 2 -x 3 4\n{ _: [], x: [1, 2, 3, 4] }\n```\n\n_if disabled:_\n\n```sh\nnode example.js -x 1 2 -x 3 4\n{ _: [], x: [[1, 2], [3, 4]] }\n```\n\n### negation prefix\n\n* default: `no-`\n* key: `negation-prefix`\n\nThe prefix to use for negated boolean variables.\n\n```sh\nnode example.js --no-foo\n{ _: [], foo: false }\n```\n\n_if set to `quux`:_\n\n```sh\nnode example.js --quuxfoo\n{ _: [], foo: false }\n```\n\n### populate --\n\n* default: `false`.\n* key: `populate--`\n\nShould unparsed flags be stored in `--` or `_`.\n\n_If disabled:_\n\n```sh\nnode example.js a -b -- x y\n{ _: [ 'a', 'x', 'y' ], b: true }\n```\n\n_If enabled:_\n\n```sh\nnode example.js a -b -- x y\n{ _: [ 'a' ], '--': [ 'x', 'y' ], b: true }\n```\n\n### set placeholder key\n\n* default: `false`.\n* key: `set-placeholder-key`.\n\nShould a placeholder be added for keys not set via the corresponding CLI argument?\n\n_If disabled:_\n\n```sh\nnode example.js -a 1 -c 2\n{ _: [], a: 1, c: 2 }\n```\n\n_If enabled:_\n\n```sh\nnode example.js -a 1 -c 2\n{ _: [], a: 1, b: undefined, c: 2 }\n```\n\n### halt at non-option\n\n* default: `false`.\n* key: `halt-at-non-option`.\n\nShould parsing stop at the first positional argument? This is similar to how e.g. `ssh` parses its command line.\n\n_If disabled:_\n\n```sh\nnode example.js -a run b -x y\n{ _: [ 'b' ], a: 'run', x: 'y' }\n```\n\n_If enabled:_\n\n```sh\nnode example.js -a run b -x y\n{ _: [ 'b', '-x', 'y' ], a: 'run' }\n```\n\n### strip aliased\n\n* default: `false`\n* key: `strip-aliased`\n\nShould aliases be removed before returning results?\n\n_If disabled:_\n\n```sh\nnode example.js --test-field 1\n{ _: [], 'test-field': 1, testField: 1, 'test-alias': 1, testAlias: 1 }\n```\n\n_If enabled:_\n\n```sh\nnode example.js --test-field 1\n{ _: [], 'test-field': 1, testField: 1 }\n```\n\n### strip dashed\n\n* default: `false`\n* key: `strip-dashed`\n\nShould dashed keys be removed before returning results?  This option has no effect if\n`camel-case-expansion` is disabled.\n\n_If disabled:_\n\n```sh\nnode example.js --test-field 1\n{ _: [], 'test-field': 1, testField: 1 }\n```\n\n_If enabled:_\n\n```sh\nnode example.js --test-field 1\n{ _: [], testField: 1 }\n```\n\n### unknown options as args\n\n* default: `false`\n* key: `unknown-options-as-args`\n\nShould unknown options be treated like regular arguments?  An unknown option is one that is not\nconfigured in `opts`.\n\n_If disabled_\n\n```sh\nnode example.js --unknown-option --known-option 2 --string-option --unknown-option2\n{ _: [], unknownOption: true, knownOption: 2, stringOption: '', unknownOption2: true }\n```\n\n_If enabled_\n\n```sh\nnode example.js --unknown-option --known-option 2 --string-option --unknown-option2\n{ _: ['--unknown-option'], knownOption: 2, stringOption: '--unknown-option2' }\n```\n\n## Special Thanks\n\nThe yargs project evolves from optimist and minimist. It owes its\nexistence to a lot of James Halliday's hard work. Thanks [substack](https://github.com/substack) **beep** **boop** \\o/\n\n## License\n\nISC"
+}

@@ -1,0 +1,421 @@
+{
+	"name": "map-age-cleaner",
+	"versions": {
+		"0.1.0": {
+			"name": "map-age-cleaner",
+			"version": "0.1.0",
+			"description": "Cleanup expired items in a Map",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SamVerschueren/map-age-cleaner.git"
+			},
+			"author": {
+				"name": "Sam Verschueren",
+				"email": "sam.verschueren@gmail.com",
+				"url": "github.com/SamVerschueren"
+			},
+			"main": "dist/index.js",
+			"engines": {
+				"node": ">=6"
+			},
+			"scripts": {
+				"prepublishOnly": "npm run build",
+				"pretest": "npm run build -- --sourceMap",
+				"test": "npm run lint && nyc ava dist/test.js",
+				"lint": "tslint --format stylish --project .",
+				"build": "npm run clean && tsc",
+				"clean": "del-cli dist"
+			},
+			"files": [
+				"dist/index.js",
+				"dist/index.d.ts"
+			],
+			"keywords": [
+				"map",
+				"age",
+				"cleaner",
+				"maxage",
+				"expire",
+				"expiration",
+				"expiring"
+			],
+			"dependencies": {
+				"p-defer": "^1.0.0"
+			},
+			"devDependencies": {
+				"@types/delay": "^2.0.1",
+				"@types/node": "^10.7.1",
+				"ava": "^0.25.0",
+				"codecov": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"delay": "^3.0.0",
+				"nyc": "^12.0.0",
+				"tslint": "^5.11.0",
+				"tslint-xo": "^0.9.0",
+				"typescript": "^3.0.1"
+			},
+			"typings": "dist/index.d.ts",
+			"sideEffects": false,
+			"nyc": {
+				"exclude": [
+					"dist/test.js"
+				]
+			},
+			"gitHead": "26336d68ab8faf00c7d54c7f1b195b6417cedc97",
+			"bugs": {
+				"url": "https://github.com/SamVerschueren/map-age-cleaner/issues"
+			},
+			"homepage": "https://github.com/SamVerschueren/map-age-cleaner#readme",
+			"_id": "map-age-cleaner@0.1.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "samverschueren",
+				"email": "sam.verschueren@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-hXqiVfbf709tuoLxXPx9VG7nPC026xX6x3ZlVPqqihAgcIaqK6Yg1mhm+4RDhXH8MwS9nxbmMWa3uRH88MXSrA==",
+				"shasum": "225e0400bb63c181dd9cfd39c05d4772ef30cfa5",
+				"tarball": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 8054,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfFhECRA9TVsSAnZWagAAibgQAJkRioz/8cHKEsNKShMw\nlelceDKXmbHbqu0TiEi5GVSihMDhHKx+ORCThSVZ9rlczonvyxGokz8xPF1Z\n07lKXLA5S798Lil6lQRKXdjQSdB9HcNZjbHSEW78UY1MR7qKYd27bYmSDj00\nQE1WD68nkT6JLOt7qrhqCAW0m7FOtsCQZH2mqS3Y70YxD/4Joht/QxJHxdKB\nAmOyN4JnSA72Q/gXClomOb+exFtQqhpRCcxz6OzOY5BGyZ+VkzvTaWck/deG\nn6FnjkiHJgqkSGh7sJo0DWqe391yNUv5o7/oSnCGQ1t1rddRncBROQMWvRi+\n9ZDFmnCeWbl+vy5mprmnYVZmVX/MyloZmtIa2WTvVy/gkNJ1dT+3cbJBX8y1\n60usl7ROvLFCkdV9d/4T/bM+lyjf2nXl9nee4x6M1rYam1RZhbLjv5SoGWC0\nBEpSAzdZCbJ36EYUNC+ZYEoCZWcXH1nykVYfthc2qNX0cblIegNsIppZ59z9\n6Ro7s4dQ12J0ymOff6owzaJHI+W3JL8EZav52keetPPt2ovWhCpbmaNJCJ1p\nACQMOucEnOQFc7UYw/tVq7C74sZThGQ5ofKsUo2p2X9ZtyD+DcKb1/AEsoHj\nRAOy9UBcKiru9IP+/wumP7SK4Yire3MyUw7b6aLz+M/bmt1tHanLqP6Ve3JC\n7HaH\r\n=PzPX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "samverschueren",
+					"email": "sam.verschueren@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/map-age-cleaner_0.1.0_1534875715612_0.029706993657249603"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.1.1": {
+			"name": "map-age-cleaner",
+			"version": "0.1.1",
+			"description": "Automatically cleanup expired items in a Map",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SamVerschueren/map-age-cleaner.git"
+			},
+			"author": {
+				"name": "Sam Verschueren",
+				"email": "sam.verschueren@gmail.com",
+				"url": "github.com/SamVerschueren"
+			},
+			"main": "dist/index.js",
+			"engines": {
+				"node": ">=6"
+			},
+			"scripts": {
+				"prepublishOnly": "npm run build",
+				"pretest": "npm run build -- --sourceMap",
+				"test": "npm run lint && nyc ava dist/test.js",
+				"lint": "tslint --format stylish --project .",
+				"build": "npm run clean && tsc",
+				"clean": "del-cli dist"
+			},
+			"files": [
+				"dist/index.js",
+				"dist/index.d.ts"
+			],
+			"keywords": [
+				"map",
+				"age",
+				"cleaner",
+				"maxage",
+				"expire",
+				"expiration",
+				"expiring"
+			],
+			"dependencies": {
+				"p-defer": "^1.0.0"
+			},
+			"devDependencies": {
+				"@types/delay": "^2.0.1",
+				"@types/node": "^10.7.1",
+				"ava": "^0.25.0",
+				"codecov": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"delay": "^3.0.0",
+				"nyc": "^12.0.0",
+				"tslint": "^5.11.0",
+				"tslint-xo": "^0.9.0",
+				"typescript": "^3.0.1"
+			},
+			"typings": "dist/index.d.ts",
+			"sideEffects": false,
+			"nyc": {
+				"exclude": [
+					"dist/test.js"
+				]
+			},
+			"gitHead": "403f779421efb729933cdc17f31abe52ec45abd1",
+			"bugs": {
+				"url": "https://github.com/SamVerschueren/map-age-cleaner/issues"
+			},
+			"homepage": "https://github.com/SamVerschueren/map-age-cleaner#readme",
+			"_id": "map-age-cleaner@0.1.1",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "samverschueren",
+				"email": "sam.verschueren@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-gnVTtoqlv7NkGG+wBarZAi6CBwRpJfSvGfWnWHzoUExXKIjXMEHQnrt0ZknH+NmDPK8OdJGTU1Mid/KdZDeMnw==",
+				"shasum": "4ccb0eb60bf5b96bbe8ee3dc2c7e3e497efc7b1a",
+				"tarball": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.1.tgz",
+				"fileCount": 5,
+				"unpackedSize": 8177,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfPu8CRA9TVsSAnZWagAAZ1sQAJXPqHKvYDcZtwMpiG4f\nB+wROLCCb9PLblYwwRfLYvSN2EdWGci1z3hOlN0yQxjH8Pn3UwgOrl98gOBa\npmFtQoIKfICHXEDq7iKM8lGkvO0EjajdclkyO5fxYSU+zW/Byl6OwTTkvbH+\norYjoFzkEF1w0EAZuwYDkTmwqJhuuwOGkmfQZV+/HwalKRnJuL+MS3jo3VgH\nlB4O1mA4HZGfrrDKR2zsKm7VXyjTsd/RksbiQze2ku4bh7wsE9x5NQOlOE2j\naznUM02UAJGTzLT9KWXRDYOCI6C9u03oyqekelRuxS186ifkt1d0PxvoLS7/\nbx5CbMXU5t4sl6Pi5ylmBqD3bVAD/8OzoKqXz59mPccs25JJGFTJlTocruXt\nqdzk8x1Zmfmn4ZrJTZg6V5A8RIkAl6U4yKJC2y3J6lfhEsnbqMJGZyQi1k/M\noTrN0N09oJLsQWDdAZT6XM/qH9dwdnZMSh1dq0wvLY11cqGpLWyYD26dZdZe\nQxfXpq5Z+VDlPOT3swmDLIYCrskO0FhvBbnejXqgUH01muw/7LOHFVlH2vxo\nMNr7udRp5yellPj3aVYnltB5QkGq4e+4Lw3RPDvpGVZXxWwdkMpVE+DxNcHG\nPKhmv+nw6DLr6CySQREgB/EG7jL+R7W9LyRUPrvLN3oQx7i8bC1yf4j1vE68\nSTxy\r\n=1GKP\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "samverschueren",
+					"email": "sam.verschueren@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/map-age-cleaner_0.1.1_1534917563676_0.012036050134123899"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.1.2": {
+			"name": "map-age-cleaner",
+			"version": "0.1.2",
+			"description": "Automatically cleanup expired items in a Map",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SamVerschueren/map-age-cleaner.git"
+			},
+			"author": {
+				"name": "Sam Verschueren",
+				"email": "sam.verschueren@gmail.com",
+				"url": "github.com/SamVerschueren"
+			},
+			"main": "dist/index.js",
+			"engines": {
+				"node": ">=6"
+			},
+			"scripts": {
+				"prepublishOnly": "npm run build",
+				"pretest": "npm run build -- --sourceMap",
+				"test": "npm run lint && nyc ava dist/test.js",
+				"lint": "tslint --format stylish --project .",
+				"build": "npm run clean && tsc",
+				"clean": "del-cli dist"
+			},
+			"keywords": [
+				"map",
+				"age",
+				"cleaner",
+				"maxage",
+				"expire",
+				"expiration",
+				"expiring"
+			],
+			"dependencies": {
+				"p-defer": "^1.0.0"
+			},
+			"devDependencies": {
+				"@types/delay": "^2.0.1",
+				"@types/node": "^10.7.1",
+				"ava": "^0.25.0",
+				"codecov": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"delay": "^3.0.0",
+				"nyc": "^12.0.0",
+				"tslint": "^5.11.0",
+				"tslint-xo": "^0.9.0",
+				"typescript": "^3.0.1"
+			},
+			"typings": "dist/index.d.ts",
+			"sideEffects": false,
+			"nyc": {
+				"exclude": [
+					"dist/test.js"
+				]
+			},
+			"gitHead": "e6cb1808735f53e460ef03f8defe8a2785dcfa1d",
+			"bugs": {
+				"url": "https://github.com/SamVerschueren/map-age-cleaner/issues"
+			},
+			"homepage": "https://github.com/SamVerschueren/map-age-cleaner#readme",
+			"_id": "map-age-cleaner@0.1.2",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "samverschueren",
+				"email": "sam.verschueren@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-UN1dNocxQq44IhJyMI4TU8phc2m9BddacHRPRjKGLYaF0jqd3xLz0jS0skpAU9WgYyoR4gHtUpzytNBS385FWQ==",
+				"shasum": "098fb15538fd3dbe461f12745b0ca8568d4e3f74",
+				"tarball": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.2.tgz",
+				"fileCount": 5,
+				"unpackedSize": 8169,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkPXyCRA9TVsSAnZWagAA6moP/3gRQBJ7IAKGvaecTAZn\nRXAeXIY6pdFqJHIEncCR/4TraTHiHfzLPcMGsZks/1hb2D65DLWtBOA0uNQT\nOqRLZclxJIOw35m8cEpbpSgqKBcQKz1VKB2dEk2MgXFbLHSOvO+fhWMbP6y+\nONSR76mpe6MgbhTdKNqsm8bbKg+mLQA8/wnpGhEG6pN/kIWHAI2UAgvxi0sF\nSLxcRJfvOxoj16SATHOzH26EntV8HqQYsZ23Y6q8PfG6Dpdz5czLgkfQ5xC7\nK5T3/Ce5Hu/7Bi8VXHpQFfY7D1/AkoZpzTdU8XziZ4yjg93OxE7AnILnvSqP\n6UK7Sgk/eRkWMjIisg7PRudpkSILeaWZH2uXhL2/ASnoQdeoMpSRd30K20EQ\n6a7AWS0nVJNNSgZhCxQ6IWAgzeZRQTtbDo6/3R9SooiGK7edI9KJIw5vR+mx\nc8QMg8P6hp4TcI0klHmtNW8VdzN2Z4ZU1M3ZdZRuDaNPmxgSeP3N+G0+6e0N\nc2BTF6tBe5r6pBLWS2g1BcXK3azCUd/Nhaxarwa62gf8UnuMD86kzdJ/GhZn\n2XTcNq94+8zNd6QdMmf3OApVmyVMRMHhMt1oZWnQnaIszKCEZo6Wyk8aZHgp\nWI/B6MBYDvRsh8TT9TQcwO9Z60x57oipvaGBVCQmt0LCz6DGjZuVGNSgMcV2\nzroX\r\n=oSzB\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "samverschueren",
+					"email": "sam.verschueren@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/map-age-cleaner_0.1.2_1536226801733_0.6184748509416897"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.1.3": {
+			"name": "map-age-cleaner",
+			"version": "0.1.3",
+			"description": "Automatically cleanup expired items in a Map",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SamVerschueren/map-age-cleaner.git"
+			},
+			"author": {
+				"name": "Sam Verschueren",
+				"email": "sam.verschueren@gmail.com",
+				"url": "github.com/SamVerschueren"
+			},
+			"main": "dist/index.js",
+			"engines": {
+				"node": ">=6"
+			},
+			"scripts": {
+				"prepublishOnly": "npm run build",
+				"pretest": "npm run build -- --sourceMap",
+				"test": "npm run lint && nyc ava dist/test.js",
+				"lint": "tslint --format stylish --project .",
+				"build": "npm run clean && tsc",
+				"clean": "del-cli dist"
+			},
+			"keywords": [
+				"map",
+				"age",
+				"cleaner",
+				"maxage",
+				"expire",
+				"expiration",
+				"expiring"
+			],
+			"dependencies": {
+				"p-defer": "^1.0.0"
+			},
+			"devDependencies": {
+				"@types/delay": "^2.0.1",
+				"@types/node": "^10.7.1",
+				"ava": "^0.25.0",
+				"codecov": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"delay": "^3.0.0",
+				"nyc": "^12.0.0",
+				"tslint": "^5.11.0",
+				"tslint-xo": "^0.9.0",
+				"typescript": "^3.0.1"
+			},
+			"typings": "dist/index.d.ts",
+			"sideEffects": false,
+			"nyc": {
+				"exclude": [
+					"dist/test.js"
+				]
+			},
+			"gitHead": "4583ef67c78be004e80ad9b67bf43c770ff810b2",
+			"bugs": {
+				"url": "https://github.com/SamVerschueren/map-age-cleaner/issues"
+			},
+			"homepage": "https://github.com/SamVerschueren/map-age-cleaner#readme",
+			"_id": "map-age-cleaner@0.1.3",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "samverschueren",
+				"email": "sam.verschueren@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-bJzx6nMoP6PDLPBFmg7+xRKeFZvFboMrGlxmNj9ClvX53KrmvM5bXFXEWjbz4cz1AFn+jWJ9z/DJSz7hrs0w3w==",
+				"shasum": "7d583a7306434c055fe474b0f45078e6e1b4b92a",
+				"tarball": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz",
+				"fileCount": 5,
+				"unpackedSize": 8408,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb6wPYCRA9TVsSAnZWagAAUMIP/RnSU7mnn0v2lXO72iJ+\necS3ntUy+fE2Ad04TrcCjYiaBpy5Lj2r2eGcda+qjM6agr3PMgA2lYuVVCT5\noB7S18wFnbWjqT9jloUFoxfl7d4yWVlmhuCEvfN7d3nEJMueWDwtoePeoejH\n7Ll27A/nBaja0FSsBIUChf4gzGKZAl1S9Uuz+pZLsOTmCk4ToPVWvmTcmSEW\n+8CiScr7JP810oq3eqYqhLeH46o4FhTd2fkChRKsvogzZmV4lCCiq4DAAggV\nU8Q+ojzadDeEIWuvBkIyoszO9Nlt5da1jncX8YIeJc/+IqZmLhREgMqRzNlK\n0QxqgmzqFHg6cJAqBJvUWT/i+n5A2GmqVVUcRW+uB6jjvbAGOJ3SOYldQEZ8\nStEgyERsmSdL0cRI9rdKOycGRHfVYn5te4TL8mnWQG4iCFk7EmJmf3b4cGEp\nnK5HJ/W5hFenMsLs39NPHwK4LY3JBhi0Vix/xdq+SbpzDNIG92xDWC3l7khz\nq1dC3EwSTzXEMK9PwHjjcSHHdM9KIgl+D1Q3KjRrEXMWBN5hZQZwvH8k63cM\ntlMWf0sb+mIE6gWGDhNAMkOv2uhkojB+pnBPIVvAmDNV0Ft3vQSkdmcLL+ij\nIkUxNzOk6jWxoMcUttB9pAszO/QyNVYGWOc+Rt+KHvnH27oRoFSnVS51/xG4\nPCHf\r\n=lXzg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "samverschueren",
+					"email": "sam.verschueren@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/map-age-cleaner_0.1.3_1542128600104_0.44162900083517775"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2018-08-21T18:21:55.611Z",
+		"0.1.0": "2018-08-21T18:21:55.740Z",
+		"modified": "2018-11-13T17:03:22.809Z",
+		"0.1.1": "2018-08-22T05:59:23.783Z",
+		"0.1.2": "2018-09-06T09:40:01.941Z",
+		"0.1.3": "2018-11-13T17:03:20.204Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "0.1.3"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"dc21ee6c62712686e218693e3f8bb705\"",
+			"fetched": 1577117285448
+		}
+	},
+	"_distfiles": {
+		"map-age-cleaner-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.0.tgz",
+			"sha": "225e0400bb63c181dd9cfd39c05d4772ef30cfa5",
+			"registry": "npmjs"
+		},
+		"map-age-cleaner-0.1.1.tgz": {
+			"url": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.1.tgz",
+			"sha": "4ccb0eb60bf5b96bbe8ee3dc2c7e3e497efc7b1a",
+			"registry": "npmjs"
+		},
+		"map-age-cleaner-0.1.2.tgz": {
+			"url": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.2.tgz",
+			"sha": "098fb15538fd3dbe461f12745b0ca8568d4e3f74",
+			"registry": "npmjs"
+		},
+		"map-age-cleaner-0.1.3.tgz": {
+			"url": "https://registry.npmjs.org/map-age-cleaner/-/map-age-cleaner-0.1.3.tgz",
+			"sha": "7d583a7306434c055fe474b0f45078e6e1b4b92a",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-6dd8e90981114a83",
+	"_id": "map-age-cleaner",
+	"readme": "# map-age-cleaner\n\n[![Build Status](https://travis-ci.org/SamVerschueren/map-age-cleaner.svg?branch=master)](https://travis-ci.org/SamVerschueren/map-age-cleaner) [![codecov](https://codecov.io/gh/SamVerschueren/map-age-cleaner/badge.svg?branch=master)](https://codecov.io/gh/SamVerschueren/map-age-cleaner?branch=master)\n\n> Automatically cleanup expired items in a Map\n\n\n## Install\n\n```\n$ npm install map-age-cleaner\n```\n\n\n## Usage\n\n```js\nimport mapAgeCleaner from 'map-age-cleaner';\n\nconst map = new Map([\n\t['unicorn', {data: '🦄', maxAge: Date.now() + 1000}]\n]);\n\nmapAgeCleaner(map);\n\nmap.has('unicorn');\n//=> true\n\n// Wait for 1 second...\n\nmap.has('unicorn');\n//=> false\n```\n\n> **Note**: Items have to be ordered ascending based on the expiry property. This means that the item which will be expired first, should be in the first position of the `Map`.\n\n\n## API\n\n### mapAgeCleaner(map, [property])\n\nReturns the `Map` instance.\n\n#### map\n\nType: `Map`\n\nMap instance which should be cleaned up.\n\n#### property\n\nType: `string`<br>\nDefault: `maxAge`\n\nName of the property which olds the expiry timestamp.\n\n\n## Related\n\n- [expiry-map](https://github.com/SamVerschueren/expiry-map) - A `Map` implementation with expirable items\n- [expiry-set](https://github.com/SamVerschueren/expiry-set) - A `Set` implementation with expirable keys\n- [mem](https://github.com/sindresorhus/mem) - Memoize functions\n\n\n## License\n\nMIT © [Sam Verschueren](https://github.com/SamVerschueren)"
+}

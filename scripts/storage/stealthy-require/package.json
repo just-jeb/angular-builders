@@ -1,0 +1,356 @@
+{
+	"name": "stealthy-require",
+	"versions": {
+		"0.1.0": {
+			"name": "stealthy-require",
+			"version": "0.1.0",
+			"description": "The closest you can get to require something with bypassing the require cache",
+			"keywords": [
+				"require",
+				"bypass",
+				"no",
+				"cache",
+				"fresh"
+			],
+			"main": "./lib/index.js",
+			"scripts": {
+				"test": "gulp ci"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/analog-nico/stealthy-require.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/analog-nico/stealthy-require/issues"
+			},
+			"homepage": "https://github.com/analog-nico/stealthy-require#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {
+				"lodash": "^4.13.1"
+			},
+			"devDependencies": {
+				"bcrypt": "^0.8.6",
+				"chai": "^3.5.0",
+				"chalk": "^1.1.3",
+				"gulp": "^3.9.1",
+				"gulp-coveralls": "^0.1.4",
+				"gulp-eslint": "^2.0.0",
+				"gulp-istanbul": "^0.10.4",
+				"gulp-mocha": "^2.2.0",
+				"rimraf": "^2.5.2",
+				"run-sequence": "^1.2.1"
+			},
+			"gitHead": "b48dd99c9ceeb3bf46aaf79ac456d3a19be17d11",
+			"_id": "stealthy-require@0.1.0",
+			"_shasum": "042b6af7d09a84274e2755106c8591eb2e5758d1",
+			"_from": ".",
+			"_npmVersion": "3.8.6",
+			"_nodeVersion": "6.1.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "042b6af7d09a84274e2755106c8591eb2e5758d1",
+				"tarball": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-0.1.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/stealthy-require-0.1.0.tgz_1464247398314_0.17817728826776147"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "stealthy-require",
+			"version": "1.0.0",
+			"description": "The closest you can get to require something with bypassing the require cache",
+			"keywords": [
+				"require",
+				"bypass",
+				"no",
+				"cache",
+				"fresh"
+			],
+			"main": "./lib/index.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/analog-nico/stealthy-require.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/analog-nico/stealthy-require/issues"
+			},
+			"homepage": "https://github.com/analog-nico/stealthy-require#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {},
+			"devDependencies": {
+				"bcrypt": "~0.8.7",
+				"browserify": "~13.0.1",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"mkdirp": "~0.5.1",
+				"publish-please": "~2.1.4",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2",
+				"webpack": "~1.13.1"
+			},
+			"gitHead": "60ef2cdc606c407d916762dae57ceb8d139ab5ec",
+			"_id": "stealthy-require@1.0.0",
+			"_shasum": "1a8ed8fc19a8b56268f76f5a1a3e3832b0c26200",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "1a8ed8fc19a8b56268f76f5a1a3e3832b0c26200",
+				"tarball": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.0.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/stealthy-require-1.0.0.tgz_1468866375627_0.1984098854009062"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "stealthy-require",
+			"version": "1.1.0",
+			"description": "The closest you can get to require something with bypassing the require cache",
+			"keywords": [
+				"require",
+				"bypass",
+				"no",
+				"cache",
+				"fresh"
+			],
+			"main": "./lib/index.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/analog-nico/stealthy-require.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/analog-nico/stealthy-require/issues"
+			},
+			"homepage": "https://github.com/analog-nico/stealthy-require#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {},
+			"devDependencies": {
+				"bcrypt": "~1.0.2",
+				"browserify": "~14.3.0",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.1.1",
+				"gulp-mocha": "~3.0.1",
+				"mkdirp": "~0.5.1",
+				"publish-please": "~2.3.1",
+				"rimraf": "~2.6.1",
+				"run-sequence": "~1.2.2",
+				"webpack": "~1.15.0"
+			},
+			"gitHead": "3219fc7f5207ce0e3298d0fab621ed9551810b6c",
+			"_id": "stealthy-require@1.1.0",
+			"_shasum": "ca61cf38766158ea819a0a1b0070b35de957f9b0",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "ca61cf38766158ea819a0a1b0070b35de957f9b0",
+				"tarball": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/stealthy-require-1.1.0.tgz_1493105092089_0.14611042547039688"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.1": {
+			"name": "stealthy-require",
+			"version": "1.1.1",
+			"description": "The closest you can get to require something with bypassing the require cache",
+			"keywords": [
+				"require",
+				"bypass",
+				"no",
+				"cache",
+				"fresh"
+			],
+			"main": "./lib/index.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/analog-nico/stealthy-require.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/analog-nico/stealthy-require/issues"
+			},
+			"homepage": "https://github.com/analog-nico/stealthy-require#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {},
+			"devDependencies": {
+				"bcrypt": "~1.0.2",
+				"browserify": "~14.3.0",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.1.1",
+				"gulp-mocha": "~3.0.1",
+				"mkdirp": "~0.5.1",
+				"publish-please": "~2.3.1",
+				"rimraf": "~2.6.1",
+				"run-sequence": "~1.2.2",
+				"webpack": "~1.15.0"
+			},
+			"gitHead": "80489389e74c6877c49a916bf87826bf2b4ba1c8",
+			"_id": "stealthy-require@1.1.1",
+			"_shasum": "35b09875b4ff49f26a777e509b3090a3226bf24b",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "35b09875b4ff49f26a777e509b3090a3226bf24b",
+				"tarball": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/stealthy-require-1.1.1.tgz_1494301911395_0.9998155683279037"
+			},
+			"directories": {},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2017-05-09T03:51:53.868Z",
+		"created": "2016-05-26T07:23:21.178Z",
+		"0.1.0": "2016-05-26T07:23:21.178Z",
+		"1.0.0": "2016-07-18T18:26:17.957Z",
+		"1.1.0": "2017-04-25T07:24:52.400Z",
+		"1.1.1": "2017-05-09T03:51:53.868Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.1.1"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"9a6666cb89985ee31a358eb71ccac7d6\"",
+			"fetched": 1577117261533
+		}
+	},
+	"_distfiles": {
+		"stealthy-require-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-0.1.0.tgz",
+			"sha": "042b6af7d09a84274e2755106c8591eb2e5758d1",
+			"registry": "npmjs"
+		},
+		"stealthy-require-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.0.0.tgz",
+			"sha": "1a8ed8fc19a8b56268f76f5a1a3e3832b0c26200",
+			"registry": "npmjs"
+		},
+		"stealthy-require-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.0.tgz",
+			"sha": "ca61cf38766158ea819a0a1b0070b35de957f9b0",
+			"registry": "npmjs"
+		},
+		"stealthy-require-1.1.1.tgz": {
+			"url": "https://registry.npmjs.org/stealthy-require/-/stealthy-require-1.1.1.tgz",
+			"sha": "35b09875b4ff49f26a777e509b3090a3226bf24b",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-dde363b4dded7ea2",
+	"_id": "stealthy-require",
+	"readme": "# Stealthy-Require\n\n[![Build Status](https://img.shields.io/travis/analog-nico/stealthy-require/master.svg?style=flat-square)](https://travis-ci.org/analog-nico/stealthy-require)\n[![Coverage Status](https://img.shields.io/coveralls/analog-nico/stealthy-require.svg?style=flat-square)](https://coveralls.io/r/analog-nico/stealthy-require)\n[![Dependency Status](https://img.shields.io/david/analog-nico/stealthy-require.svg?style=flat-square)](https://david-dm.org/analog-nico/stealthy-require)\n\nThis is probably the closest you can currently get to require something in node.js with completely bypassing the require cache.\n\n`stealthy-require` works like this:\n\n1. It clears the require cache.\n2. It calls a callback in which you require your module(s) without the cache kicking in.\n3. It clears the cache again and restores its old state.\n\nThe restrictions are:\n\n- [Native modules cannot be required twice.](https://github.com/nodejs/node/issues/5016) Thus this module bypasses the require cache only for non-native (e.g. JS) modules.\n- The require cache is only bypassed for all operations that happen synchronously when a module is required. If a module lazy loads another module at a later time that require call will not bypass the cache anymore.\n\nThis means you should have a close look at all internal require calls before you decide to use this library.\n\n## Installation\n\n[![NPM Stats](https://nodei.co/npm/stealthy-require.png?downloads=true)](https://npmjs.org/package/stealthy-require)\n\nThis is a module for node.js and is installed via npm:\n\n``` bash\nnpm install stealthy-require --save\n```\n\n## Usage\n\nLet's say you want to bypass the require cache for this require call:\n\n``` js\nvar request = require('request');\n```\n\nWith `stealthy-require` you can do that like this:\n\n``` js\nvar stealthyRequire = require('stealthy-require');\n\nvar requestFresh = stealthyRequire(require.cache, function () {\n    return require('request');\n});\n```\n\nThe require cache is bypassed for the module you require (i.e. `request`) as well as all modules the module requires (i.e. `http` and many more).\n\nSometimes the require cache shall not be bypassed for specific modules. E.g. `request` is required but `tough-cookie` – on which `request` depends on – shall be required using the regular cache. For that you can pass two extra arguments to `stealthyRequire(...)`:\n\n- A callback that requires the modules that shall be required without bypassing the cache\n- The `module` variable\n\n``` js\nvar stealthyRequire = require('stealthy-require');\n\nvar requestFresh = stealthyRequire(require.cache, function () {\n    return require('request');\n},\nfunction () {\n    require('tough-cookie'); // No return needed\n    // You can require multiple modules here\n}, module);\n```\n\n## Usage with Module Bundlers\n\n- [Webpack](https://webpack.github.io) works out-of-the-box like described in the [Usage section](#usage) above.\n- [Browserify](http://browserify.org) does not expose `require.cache`. However, as of `browserify@13.0.1` the cache is passed as the 6th argument to CommonJS modules. Thus you can pass this argument instead:\n\n``` js\n// Tweak for Browserify - using arguments[5] instead of require.cache\nvar requestFresh = stealthyRequire(arguments[5], function () {\n    return require('request');\n});\n```\n\n## Preventing a Memory Leak When Repeatedly Requiring Fresh Module Instances in Node.js\n\nIf you are using `stealthy-require` in node.js and repeatedly require fresh module instances the `module.children` array will hold all module instances which prevents unneeded instances to be garbage collected.\n\nAssume your code calls `doSomething()` repeatedly.\n\n``` js\nvar stealthyRequire = require('stealthy-require');\n\nfunction doSomething() {\n\n    var freshInstance = stealthyRequire(require.cache, function () {\n        return require('some-module');\n    });\n    \n    return freshInstance.calc();\n\n}\n```\n\nAfter `doSomething()` returns `freshInstance` is not used anymore but won’t be garbage collected because `module.children` still holds a reference. The solution is to truncate `module.children` accordingly:\n\n``` js\nvar stealthyRequire = require('stealthy-require');\n\nfunction doSomething() {\n\n    var initialChildren = module.children.slice(); // Creates a shallow copy of the array\n\n    var freshInstance = stealthyRequire(require.cache, function () {\n        return require('some-module');\n    });\n\n    module.children = initialChildren;\n\n    return freshInstance.calc();\n\n}\n```\n\nThe `slice` operation removes all new `module.children` entries created during the `stealthyRequire(...)` call and thus `freshInstance` gets garbage collected after `doSomething()` returns.\n\n\n## Technical Walkthrough\n\n``` js\n// 1. Load stealthy-require\nvar stealthyRequire = require('stealthy-require');\n// This does nothing but loading the code.\n// It has no side-effects like patching the module loader or anything.\n\n// Any regular require works as always.\nvar request1 = require('request');\n\n// 2. Call stealthyRequire with passing the require cache and a callback.\nvar requestFresh = stealthyRequire(require.cache, function () {\n\n    // 2a. Before this callback gets called the require cache is cleared.\n\n    // 2b. Any require taking place here takes place on a clean require cache.\n    // Since the require call is part of the user's code it also works with module bundlers.\n    return require('request');\n    // Anything returned here will be returned by stealthyRequire(...).\n\n    // 2c. After this callback gets called the require cache is\n    // - cleared again and\n    // - restored to its old state before step 2.\n\n});\n\n// Any regular require again works as always.\n// In this case require returns the cached request module instance.\nvar request2 = require('request');\n\n// And voilà:\nrequest1 === request2 // -> true\nrequest1 === requestFresh // -> false\n```\n\n## Contributing\n\nTo set up your development environment for `stealthy-require`:\n\n1. Clone this repo to your desktop,\n2. in the shell `cd` to the main folder,\n3. hit `npm install`,\n4. hit `npm install gulp -g` if you haven't installed gulp globally yet, and\n5. run `gulp dev`. (Or run `node ./node_modules/.bin/gulp dev` if you don't want to install gulp globally.)\n\n`gulp dev` watches all source files and if you save some changes it will lint the code and execute all tests. The test coverage report can be viewed from `./coverage/lcov-report/index.html`.\n\nIf you want to debug a test you should use `gulp test-without-coverage` to run all tests without obscuring the code by the test coverage instrumentation.\n\n## Change History\n\n- v1.1.1 (2017-05-08)\n    - Fix that stops `undefined` entries from appearing in `require.cache` *(Thanks to @jasperjn from reporting this in [issue #4](https://github.com/analog-nico/stealthy-require/issues/4))*\n- v1.1.0 (2017-04-25)\n    - Added ability to disable bypassing the cache for certain modules *(Thanks to @novemberborn for suggesting this in [issue #3](https://github.com/analog-nico/stealthy-require/issues/3))*\n    - Added section in README about a [potential memory leak](#preventing-a-memory-leak-when-repeatedly-requiring-fresh-module-instances-in-nodejs) *(Thanks to @Flarna and @novemberborn for bringing that up in [issue #2](https://github.com/analog-nico/stealthy-require/issues/2))*\n    - Performance optimizations *(Thanks to @jcready for [pull request #1](https://github.com/analog-nico/stealthy-require/pull/1))*\n- v1.0.0 (2016-07-18)\n    - **Breaking Change:** API completely changed. Please read the [Usage section](#usage) again.\n    - Redesigned library to support module bundlers like [Webpack](https://webpack.github.io) and [Browserify](http://browserify.org)\n- v0.1.0 (2016-05-26)\n    - Initial version\n\n## License (ISC)\n\nIn case you never heard about the [ISC license](http://en.wikipedia.org/wiki/ISC_license) it is functionally equivalent to the MIT license.\n\nSee the [LICENSE file](LICENSE) for details."
+}

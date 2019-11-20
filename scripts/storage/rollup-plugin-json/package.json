@@ -1,0 +1,913 @@
+{
+	"name": "rollup-plugin-json",
+	"versions": {
+		"1.0.0": {
+			"name": "rollup-plugin-json",
+			"version": "1.0.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-json.es6.js",
+			"devDependencies": {
+				"eslint": "^1.7.3",
+				"gobble": "^0.10.2",
+				"gobble-cli": "^0.6.0",
+				"gobble-rollup": "^0.11.0",
+				"mocha": "^2.3.3",
+				"rollup-plugin-babel": "^1.0.0"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "gobble build -f dist",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"gitHead": "ee943a232eb19a57c24a0e92dfee081f6531cb93",
+			"description": "Convert .json files to ES6 modules:",
+			"_id": "rollup-plugin-json@1.0.0",
+			"_shasum": "f4cb0a8e158d34eefbc412c0dd60aa89b4ab5e54",
+			"_from": ".",
+			"_npmVersion": "2.5.1",
+			"_nodeVersion": "4.1.2",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"dist": {
+				"shasum": "f4cb0a8e158d34eefbc412c0dd60aa89b4ab5e54",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-1.0.0.tgz"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "rollup-plugin-json",
+			"version": "2.0.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-json.es6.js",
+			"devDependencies": {
+				"eslint": "^1.7.3",
+				"mocha": "^2.3.3",
+				"rollup": "^0.20.5",
+				"rollup-plugin-babel": "^1.0.0",
+				"source-map-support": "^0.3.3"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c -f cjs -o dist/rollup-plugin-json.cjs.js && rollup -c -f es6 -o dist/rollup-plugin-json.es6.js",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"rollup-pluginutils": "^1.2.0"
+			},
+			"gitHead": "7e3722e4553d03f569ea6d1baac25f864e5cac28",
+			"description": "Convert .json files to ES6 modules:",
+			"_id": "rollup-plugin-json@2.0.0",
+			"_shasum": "09219b4ccf8d4285029e503bd4c64223f9b9361a",
+			"_from": ".",
+			"_npmVersion": "2.14.4",
+			"_nodeVersion": "4.1.1",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "09219b4ccf8d4285029e503bd4c64223f9b9361a",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "rollup-plugin-json",
+			"version": "2.0.1",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-json.es6.js",
+			"devDependencies": {
+				"eslint": "^1.7.3",
+				"mocha": "^2.3.3",
+				"rollup": "^0.20.5",
+				"rollup-plugin-babel": "^1.0.0",
+				"rollup-plugin-buble": "^0.12.1",
+				"rollup-plugin-node-resolve": "^1.5.0",
+				"source-map-support": "^0.3.3"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c -f cjs -o dist/rollup-plugin-json.cjs.js && rollup -c -f es6 -o dist/rollup-plugin-json.es6.js",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"rollup-pluginutils": "^1.2.0"
+			},
+			"gitHead": "ea863d0d16dba182ec5ffdc084dd42f03bf1fa6b",
+			"description": "Convert .json files to ES6 modules:",
+			"_id": "rollup-plugin-json@2.0.1",
+			"_shasum": "83e45e9e3c0eeae2991a8ae70aba6cc53996c1bd",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "83e45e9e3c0eeae2991a8ae70aba6cc53996c1bd",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-json-2.0.1.tgz_1466712643737_0.35982289002276957"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.0.2": {
+			"name": "rollup-plugin-json",
+			"version": "2.0.2",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.34.13",
+				"rollup-plugin-buble": "^0.13.0",
+				"rollup-plugin-node-resolve": "^2.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"rollup-pluginutils": "^1.5.2"
+			},
+			"gitHead": "4646390162692d4058724b3641cda792b82a46c7",
+			"description": "Convert .json files to ES6 modules:",
+			"_id": "rollup-plugin-json@2.0.2",
+			"_shasum": "de2ed32fe056ee00f13bfc6f56466d3564f4a6f3",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.4.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "de2ed32fe056ee00f13bfc6f56466d3564f4a6f3",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-json-2.0.2.tgz_1473209118433_0.7650696584023535"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "rollup-plugin-json",
+			"version": "2.1.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"eslint-plugin-import": "^2.2.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.37.0",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-node-resolve": "^2.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^1.5.2"
+			},
+			"gitHead": "8f753fa894aa41b1a7ec8b4def5d655c69f7731c",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@2.1.0",
+			"_shasum": "7f8e1b2b156932dd934b938dc5547e4118d4121f",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.7.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "7f8e1b2b156932dd934b938dc5547e4118d4121f",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-json-2.1.0.tgz_1481840124602_0.45574343646876514"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.1.1": {
+			"name": "rollup-plugin-json",
+			"version": "2.1.1",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"eslint-plugin-import": "^2.2.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.37.0",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-node-resolve": "^2.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^1.5.2"
+			},
+			"gitHead": "9893e534b50bd3fdaad135ecfc44732f4a1c1b7c",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@2.1.1",
+			"_shasum": "933390dff3c9e3e654157d61304c5e167fc58623",
+			"_from": ".",
+			"_npmVersion": "4.2.0",
+			"_nodeVersion": "7.8.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "933390dff3c9e3e654157d61304c5e167fc58623",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.1.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-json-2.1.1.tgz_1491745314082_0.8888735498767346"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.2.0": {
+			"name": "rollup-plugin-json",
+			"version": "2.2.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"eslint-plugin-import": "^2.2.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.37.0",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-node-resolve": "^2.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^1.5.2"
+			},
+			"gitHead": "5f2606017cb0092343b7131e8ff945fabdda3d8b",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@2.2.0",
+			"_npmVersion": "5.0.0",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-zT7CyxN/OD7SZitBDtLW+Bh9ZAcyrcgjT6zUIFGbb0fYDcp++NzHP1dCYanaT1qJsjiJM+/zBPNzBH/NX2htsA==",
+				"shasum": "9246322b1257134a43d70a2ce2de27e7a24fe2f8",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json-2.2.0.tgz_1496497671650_0.6489081413019449"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.3.0": {
+			"name": "rollup-plugin-json",
+			"version": "2.3.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"eslint-plugin-import": "^2.2.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-node-resolve": "^3.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^2.0.1"
+			},
+			"gitHead": "6d98045971d9f1845bbc850705b4cf8e93b5601e",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@2.3.0",
+			"_npmVersion": "5.0.0",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-W45nZH7lmXgkSR/DkeyF4ks0YWFrMysdjUT049gTuAg+lwUEDBKI2+PztqW8UDSMlXCAeEONsLzpDDyBy9m+9A==",
+				"shasum": "3c07a452c1b5391be28006fbfff3644056ce0add",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.3.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json-2.3.0.tgz_1496498841412_0.56632334087044"
+			},
+			"directories": {},
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"2.3.1": {
+			"name": "rollup-plugin-json",
+			"version": "2.3.1",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^3.4.0",
+				"eslint-plugin-import": "^2.2.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-node-resolve": "^3.0.0",
+				"source-map-support": "^0.4.2"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^2.0.1"
+			},
+			"peerDependencies": {
+				"rollup": "< 0.59.0"
+			},
+			"gitHead": "50db997530e1a4b20377ceb78632a7c1bdcce725",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@2.3.1",
+			"_npmVersion": "6.0.1",
+			"_nodeVersion": "8.7.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-alQQQVPo2z9pl6LSK8QqyDlWwCH5KeE8YxgQv7fa/SeTxz+gQe36jBjcha7hQW68MrVh9Ms71EQaMZDAG3w2yw==",
+				"shasum": "9759d27f33dcd2c896de18b6235df162b88edd77",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.3.1.tgz",
+				"fileCount": 8,
+				"unpackedSize": 34547,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9Yy8CRA9TVsSAnZWagAA6I0P/RhidYZQDPITw83WQ1rv\nmA6a70LFDfBfs6fIwkPeCci3OLvL4Us4CUycjCyesH3rPizi8OKcV1VrcGIJ\ntXt4PkgNGHRIIkPYs32LhvQPUBVceDgpyKete+En/BcEFVf/Oc1vZieakRgd\nhHTbR6GrlglzK+JJE/6gtxVA8+Ouhhjgh3bQG04X4wd7xoW9wRveB2s5i5ML\nNCTyh53G3YKMrUv19oO0nqRAW2ff7XaKAgZqD5MYkYxVRj/Zvi3pl3sJi6JQ\nyl4LH0e1W0pkYCyim2S6/yl1ZW/C/llLwZkg+ynQ5iNaoIdRDKQLWrOKp8x8\nJY2AgGahOMbjgeJDity8RNTOHr/KDV0pCSwL/Hv/xODnqSyIhURf0cvglvL5\nybihOYQNNS1XrAq7lCyAhLOV5vwdkCZLmIE66bGeYVejugBLbPXIgDVKjWIs\naS7wFMQO15rmYzEw1fIGqj0OqWYJ4y+V2R0HMZ78cHDA9ZlFimDFHnMJx8JR\nKXx1zW0u9n8w4YisWsNspQyiJxMZOGAxJNBj8qOzoqsdUQJOcY77MX7/0XnQ\nt18pjrigoczjnI8E1y5H4iB2sasbLI06fU+oWADOViCRXbAPxUJS1U86aWqh\nbYg7Af2IIr6i9ilWkWAe+++MFEwNfQrMj6An25l6PWKQo3qzESrnsiveNk2p\ngTIl\r\n=ujOR\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "guybedford@gmail.com",
+					"name": "guybedford"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json_2.3.1_1526041787341_0.9359862476304659"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "rollup-plugin-json",
+			"version": "3.0.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"eslint-plugin-import": "^2.11.0",
+				"husky": "^0.14.3",
+				"lint-staged": "^7.1.0",
+				"mocha": "^5.1.1",
+				"rollup": "^0.58.2",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-node-resolve": "^3.3.0",
+				"source-map-support": "^0.5.5"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build",
+				"precommit": "lint-staged",
+				"postcommit": "git reset",
+				"lint": "eslint --fix src test/test.js"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^2.2.0"
+			},
+			"gitHead": "2b2fd1cfe5b7e5c17831e240f75b859baa05efaa",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@3.0.0",
+			"_npmVersion": "6.0.1",
+			"_nodeVersion": "8.7.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-WUAV9/I/uFWvHhyRTqFb+3SIapjISFJS7R1xN/cXxWESrfYo9I8ncHI7AxJHflKRXhBVSv7revBVJh2wvhWh5w==",
+				"shasum": "aeed2ff36e6c4fd0c60c4a8fc3d0884479e9dfce",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-3.0.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 9093,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9ZEKCRA9TVsSAnZWagAAbfwP/jaaxPb6GBlj9OILViBo\nLdrsdPnSCrnJT4dCTnYJew75K2xhC3pXFov+1fsxo0onHdS2m6s6fmnkzriv\nGv5I7yMR5MWqPpQWMCBefGz205XzE6lNG68IotFxjPw2JHTBPgKQLIOO+YHt\nPqJrFvWT0osbfUmtuHp/0ZrqP1Hc1BnQNKqSj2Y0r8U/l/9SJqpFbp+91fUr\n/kIrMTcVhGtrQtp5uUzdKE5fmwAxXL3RF3Whn3krAoc/fgtLl4UVbRPn1iNu\nyzhYmTvZJO4Kugb+49lou2D+im+Fd9hcTQ/VHshrgZ6lGt2V+OBY8LVzn+KN\nWb0NX/+rAVrOz3PTfjig/GaVa73gndFqStGKiixrrIEiXK53hDj0BvPn4Lca\nEr6RjtqTuzSq3YmjzQAZCara0W67FIzSrOcjPCSdzOwejieL71kQ1P9a9VzN\nFPVBpRVzcMehnh/UyjfkCKABThd+sg2Z1M/LD+LGm5FfxDFYRotD2Sltd8jc\nVtoTf0l/Ob3NWPatki3P+/s8a0p1bRQOB9O03j85+Ub13rb/YyWDN/Dv8N31\nkbgXNn7UayVSTvL3E3O29zAapooFCP1iMKglXHt9R+a96Nns9bS5i8Z9ofQG\nG41Cwqf5Wij5Ep8djN4UgCJ1GtoHUnKCiGMxMy0gDcSu93/fG4Yg6NAYBbsn\nD6lT\r\n=Nb11\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "guybedford@gmail.com",
+					"name": "guybedford"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json_3.0.0_1526042889497_0.46734436471041896"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "rollup-plugin-json",
+			"version": "3.1.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^5.5.0",
+				"eslint-plugin-import": "^2.14.0",
+				"husky": "^0.14.3",
+				"lint-staged": "^7.2.2",
+				"mocha": "^5.2.0",
+				"rollup": "^0.65.2",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-node-resolve": "^3.4.0",
+				"source-map-support": "^0.5.9"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build",
+				"precommit": "lint-staged",
+				"postcommit": "git reset",
+				"lint": "eslint --fix src test/test.js"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^2.3.1"
+			},
+			"gitHead": "bb64f6536ec6155dfea94771076cc88d19f3c049",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@3.1.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.7.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-BlYk5VspvGpjz7lAwArVzBXR60JK+4EKtPkCHouAWg39obk9S61hZYJDBfMK+oitPdoe11i69TlxKlMQNFC/Uw==",
+				"shasum": "7c1daf60c46bc21021ea016bd00863561a03321b",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-3.1.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 10305,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbmo2jCRA9TVsSAnZWagAA1tMP/iKf7i33Df+6+rsRnNTt\nV84zfzFY7qdE5iv06qNvFNp1UXQhiknA0Q6oAr+SYVZkbaCdp/5cESBKkMdt\nBgqfQZZdooHlFfiffzmf7fL4wyHrh23LlS2yZ04G3PsA+vzSStkerjpdIO3D\nie2V3RVjpB0ynK8wBcGhljnkN6AoggTA+Dk4m5UAN8elRlqyhfJGTAw0KVHn\ns1mBLIRTAICYZmRhgS06RHlWuUVk5/B/WFqSK7vKslPaCVYBZsO4pbGOEmll\nI+BLoKgUT9i66xtfwZH3pEbzcdbmEy60sK3lbu5k4kZXGt29DfdOD+jbPfg2\nWZOzdPnRS8b8lIITN61mVPstclU7ND3dDgZylaXJAWJf7PZaBEx/faQnjwsC\nuhlHUNe1bLlxT2Ga5GnMhoMmvWqZA9isjh7CkVVagQ5wzByV17G2Soz3ehN4\nYHYzT5dow3ESabOd7ejaFjZ3rTNC/cDsilqLojEYemmZlH2st+I341NYEjCc\nEFb7FvEm1v/9+NtGN9rYsvuftNMmnJ5r6VzxQEEGiaNqMOpG00jemil49xRs\nFdPe/UjWvapifGaoiDWqG+Vgem3IFDgd6H8EX38suzvio8mgGfVTclYbajXI\niheXO7AKpGXT4xRYzGCKQlVohbc8TlaEMlQXeOCjn1OFkf2r9ueRggqOznFx\nxT8W\r\n=WwT3\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "guybedford@gmail.com",
+					"name": "guybedford"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json_3.1.0_1536855458932_0.6811237112352528"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "rollup-plugin-json",
+			"version": "4.0.0",
+			"main": "dist/rollup-plugin-json.cjs.js",
+			"module": "dist/rollup-plugin-json.es.js",
+			"jsnext:main": "dist/rollup-plugin-json.es.js",
+			"devDependencies": {
+				"eslint": "^5.15.3",
+				"eslint-plugin-import": "^2.16.0",
+				"husky": "^1.3.1",
+				"lint-staged": "^8.1.5",
+				"mocha": "^6.0.2",
+				"prettier": "^1.16.4",
+				"rollup": "^1.6.0",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-node-resolve": "^4.0.1",
+				"source-map-support": "^0.5.11"
+			},
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prebuild": "rm -rf dist/*",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build",
+				"lint": "eslint --fix src test/test.js"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-json.git"
+			},
+			"dependencies": {
+				"rollup-pluginutils": "^2.5.0"
+			},
+			"gitHead": "476dc4c34e25bcfd4d6fd00e65747287f6fe2bd0",
+			"description": "Convert .json files to ES6 modules:",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-json/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-json#readme",
+			"_id": "rollup-plugin-json@4.0.0",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.8.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-hgb8N7Cgfw5SZAkb3jf0QXii6QX/FOkiIq2M7BAQIEydjHvTyxXHQiIzZaTFgx1GK0cRCHOCBHIyEkkLdWKxow==",
+				"shasum": "a18da0a4b30bf5ca1ee76ddb1422afbb84ae2b9e",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-4.0.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 9081,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcj8oWCRA9TVsSAnZWagAAaQYP/jfOx8oBDLAyCrFHXl7c\nbnUvRdB22jHGKDYAKBOSZby/VUxkZH7g1oa9E0jRPzqnbhe4Qi4+P9aaIKSj\nKxoTWzmVq4UkwqWKoBBsdApaXhB6c+EQusNfosKBX5Y3gMgRpzPEbWSUmgcR\nuQNQiPLXviK6ejpe4WzHJzry83APRY0psLX+dkLRuy8/fD/FrTiydh5oMIdl\nc8qX2LSvi+dIY0CA0MoADCLIcGTDeD2Qs15ZaFr5kgImbQQ3KnCt3TvDMwdN\n+kXFxmPV9xOrzH5UfeCIlyYw+3UxS4VgSRrc7pl3n600yM2V9PL9HOCAmgn3\n0Xnm6iIFBGgNiLI6DtHBaifWaKjRFwJJc78MrFuBMgGj/Ux7R+tS7zu4zX5W\nxL6gxfp+futofQX0WtBAJLV44QK1GUDhpcnzrFg4CHXhziw67LXUq1rfmXRA\nG7+HjYM84veaR0WpcNrBfrzHb2NjvN6oUvTsanuLF+xgbXhK2Gt7mXAjHKOR\n9Jg8nsVsCzv8PDPXiaYpA1zM7gaTOaE+l+ZZYRhZzZNpRY/hujZhKyVWLPZc\n8b6VjpnJYARpMX4uH2a6KtZ6h8tZVyLZb/ClTsVG8D5AnsT7XvpmmlcsTVxU\nIOOb3P7j5e8fNRDQHEv+b0QEQQ7M5akPaA0LjG+S8aUUVdEHCtByjnKMuUgP\nAsPG\r\n=9+hy\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "guybedford@gmail.com",
+					"name": "guybedford"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-json_4.0.0_1552927253786_0.6860694884982776"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This module has been deprecated and is no longer maintained. Please use @rollup/plugin-json.",
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-10T14:52:48.348Z",
+		"created": "2015-10-25T23:02:37.160Z",
+		"1.0.0": "2015-10-25T23:02:37.160Z",
+		"2.0.0": "2015-11-05T23:02:33.553Z",
+		"2.0.1": "2016-06-23T20:10:45.998Z",
+		"2.0.2": "2016-09-07T00:45:20.029Z",
+		"2.1.0": "2016-12-15T22:15:25.296Z",
+		"2.1.1": "2017-04-09T13:41:54.634Z",
+		"2.2.0": "2017-06-03T13:47:52.554Z",
+		"2.3.0": "2017-06-03T14:07:23.777Z",
+		"2.3.1": "2018-05-11T12:29:47.470Z",
+		"3.0.0": "2018-05-11T12:48:09.550Z",
+		"3.1.0": "2018-09-13T16:17:39.098Z",
+		"4.0.0": "2019-03-18T16:40:53.908Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "4.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"49b32aa93121ac7570f2ff5551da65b7\"",
+			"fetched": 1577117296797
+		}
+	},
+	"_distfiles": {
+		"rollup-plugin-json-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-1.0.0.tgz",
+			"sha": "f4cb0a8e158d34eefbc412c0dd60aa89b4ab5e54",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.0.tgz",
+			"sha": "09219b4ccf8d4285029e503bd4c64223f9b9361a",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.1.tgz",
+			"sha": "83e45e9e3c0eeae2991a8ae70aba6cc53996c1bd",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.0.2.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.0.2.tgz",
+			"sha": "de2ed32fe056ee00f13bfc6f56466d3564f4a6f3",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.1.0.tgz",
+			"sha": "7f8e1b2b156932dd934b938dc5547e4118d4121f",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.1.1.tgz",
+			"sha": "933390dff3c9e3e654157d61304c5e167fc58623",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.2.0.tgz",
+			"sha": "9246322b1257134a43d70a2ce2de27e7a24fe2f8",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.3.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.3.0.tgz",
+			"sha": "3c07a452c1b5391be28006fbfff3644056ce0add",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-2.3.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-2.3.1.tgz",
+			"sha": "9759d27f33dcd2c896de18b6235df162b88edd77",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-3.0.0.tgz",
+			"sha": "aeed2ff36e6c4fd0c60c4a8fc3d0884479e9dfce",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-3.1.0.tgz",
+			"sha": "7c1daf60c46bc21021ea016bd00863561a03321b",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-json-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-json/-/rollup-plugin-json-4.0.0.tgz",
+			"sha": "a18da0a4b30bf5ca1ee76ddb1422afbb84ae2b9e",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-4f963a00163e53ca",
+	"_id": "rollup-plugin-json",
+	"readme": "# rollup-plugin-json\n\nConvert .json files to ES6 modules:\n\n```js\n// import a single property from a JSON file,\n// discarding the rest\nimport { version } from './package.json';\nconsole.log( `running version ${version}` );\n\n// import the whole file as an object\nimport pkg from './package.json';\nconsole.log( `running version ${pkg.version}` );\n```\n\n\n## Installation\n\n```bash\nnpm install --save-dev rollup-plugin-json\n```\n\n\n## Usage\n\n```js\n// rollup.config.js\nimport json from 'rollup-plugin-json';\n\nexport default {\n  input: 'src/main.js',\n  output: {\n    file: 'dist/bundle.js',\n    format: 'iife'\n  },\n\n  plugins: [\n    json({\n      // All JSON files will be parsed by default,\n      // but you can also specifically include/exclude files\n      include: 'node_modules/**',\n      exclude: [ 'node_modules/foo/**', 'node_modules/bar/**' ],\n\n      // for tree-shaking, properties will be declared as\n      // variables, using either `var` or `const`\n      preferConst: true, // Default: false\n\n      // specify indentation for the generated default export —\n      // defaults to '\\t'\n      indent: '  ',\n\n      // ignores indent and generates the smallest code\n      compact: true, // Default: false\n\n      // generate a named export for every property of the JSON object\n      namedExports: true // Default: true\n    })\n  ]\n};\n```\n\n\n## License\n\nMIT"
+}

@@ -1,0 +1,340 @@
+{
+	"name": "data-urls",
+	"versions": {
+		"1.0.0": {
+			"name": "data-urls",
+			"description": "Parses data: URLs",
+			"keywords": [
+				"data url",
+				"data uri",
+				"data:",
+				"http",
+				"fetch",
+				"whatwg"
+			],
+			"version": "1.0.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/data-urls.git"
+			},
+			"main": "lib/parser.js",
+			"files": [
+				"lib/"
+			],
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^4.13.0",
+				"jest": "^21.2.1",
+				"request": "^2.83.0"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"dependencies": {
+				"abab": "^1.0.4",
+				"whatwg-mimetype": "^2.0.0",
+				"whatwg-url": "^6.4.0"
+			},
+			"gitHead": "bd0705722c8992f48c9a9e2aa15e24189164a9ed",
+			"bugs": {
+				"url": "https://github.com/jsdom/data-urls/issues"
+			},
+			"homepage": "https://github.com/jsdom/data-urls#readme",
+			"_id": "data-urls@1.0.0",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.2.1",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-ai40PPQR0Fn1lD2PPie79CibnlMN2AYiDhwFX/rZHVsxbs5kNJSjegqXIprhouGXlRdEnfybva7kqRGnB6mypA==",
+				"shasum": "24802de4e81c298ea8a9388bb0d8e461c774684f",
+				"tarball": "https://registry.npmjs.org/data-urls/-/data-urls-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/data-urls-1.0.0.tgz_1517437914250_0.16816337523050606"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "data-urls",
+			"description": "Parses data: URLs",
+			"keywords": [
+				"data url",
+				"data uri",
+				"data:",
+				"http",
+				"fetch",
+				"whatwg"
+			],
+			"version": "1.0.1",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/data-urls.git"
+			},
+			"main": "lib/parser.js",
+			"files": [
+				"lib/"
+			],
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^5.4.0",
+				"jest": "^23.5.0",
+				"request": "^2.88.0"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"dependencies": {
+				"abab": "^2.0.0",
+				"whatwg-mimetype": "^2.1.0",
+				"whatwg-url": "^7.0.0"
+			},
+			"gitHead": "ef1f61395cf0afdbbf04274509332becdd7eb4e1",
+			"bugs": {
+				"url": "https://github.com/jsdom/data-urls/issues"
+			},
+			"homepage": "https://github.com/jsdom/data-urls#readme",
+			"_id": "data-urls@1.0.1",
+			"_npmVersion": "6.2.0",
+			"_nodeVersion": "10.8.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-0HdcMZzK6ubMUnsMmQmG0AcLQPvbvb47R0+7CCZQCYgcd8OUWG91CG7sM6GoXgjz+WLl4ArFzHtBMy/QqSF4eg==",
+				"shasum": "d416ac3896918f29ca84d81085bc3705834da579",
+				"tarball": "https://registry.npmjs.org/data-urls/-/data-urls-1.0.1.tgz",
+				"fileCount": 5,
+				"unpackedSize": 7944,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeI4SCRA9TVsSAnZWagAAag4P/jZ9Q8burJHBtUaco0Yk\naKXIRXZBHSxCRwC2w7Vm2AuAK/oXqlHVxXcgQmaCodTZHuw48ssXVWzuEhLn\n13TCxbGhsvEfn95j6vJY8z51DQRjTw0iM/Gc2ShLl6nCO0WWsgKX+8ocPbCq\n5TcCj/5QsVvEfTUAuKs7/6HOTBycTJ90qfImiEx+bRRt6NaGwzSy7/46ugTE\njMzTBZHosOlfzpvI+nJ2FAjl0AUNAhH5uH+rYEsaKUOfKYldCEYe9oDRf9GN\n2KPuBLjkTNd3bLFnZLlefuFYmu8mNhfjGuJf0IpanecXr5/9EH1iF9+kAzqE\nAIpiKo1/+AYLoUXeyp0d7qjUPcGQ2OA2JJkS47EJXmJlBiXsIY7p2XG0ey3u\n8988l3qU6xzl5aID6fUSm7ExIelClko//FVURY5gi7gq/sQH3fRuhn0D/KB9\nQQuP8FfJsYxHQWkTOHmLVfc6FC0p7egW3VbUwTjLyXbY5G6UFdiKDmIIAZxb\nj8X0lukofmWKwmJfemPOnaAop9cx2Isi8vB9KnOhoH25ytpL3tVo/cjdkilb\n0yvxPmLfhAJzM+6FcLB6xm6CPGUJLdfhSa4WHBrt/v1JEQth9ka4iAIJCYpA\nMCcdwqpLqO32XmT16sNXSI8J3z/FUqoV7Q+egyXRJRhTNjpVJQO0ZJ+H+VBG\n/VGc\r\n=r1Ht\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/data-urls_1.0.1_1534627346113_0.8636024731783971"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "data-urls",
+			"description": "Parses data: URLs",
+			"keywords": [
+				"data url",
+				"data uri",
+				"data:",
+				"http",
+				"fetch",
+				"whatwg"
+			],
+			"version": "1.1.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/data-urls.git"
+			},
+			"main": "lib/parser.js",
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^5.7.0",
+				"jest": "^23.6.0",
+				"request": "^2.88.0"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"coveragePathIgnorePatterns": [
+					"<rootDir>/node_modules/(?!(abab/lib/atob.js))"
+				]
+			},
+			"dependencies": {
+				"abab": "^2.0.0",
+				"whatwg-mimetype": "^2.2.0",
+				"whatwg-url": "^7.0.0"
+			},
+			"gitHead": "f42daf4c31a7ed00295993990ebbd2901bee168f",
+			"bugs": {
+				"url": "https://github.com/jsdom/data-urls/issues"
+			},
+			"homepage": "https://github.com/jsdom/data-urls#readme",
+			"_id": "data-urls@1.1.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.12.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-YTWYI9se1P55u58gL5GkQHW4P6VJBJ5iBT+B5a7i2Tjadhv52paJG0qHX4A0OR6/t52odI64KP2YvFpkDOi3eQ==",
+				"shasum": "15ee0582baa5e22bb59c77140da8f9c76963bbfe",
+				"tarball": "https://registry.npmjs.org/data-urls/-/data-urls-1.1.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 8042,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb0xEZCRA9TVsSAnZWagAARWkP/R3pUS9sPJmYgzW/lkwu\nIvGEdJMr2Fq9qd5Jh+U2++gHrh1lse+95cvlebiHxSNcmf84IvfVZ5J9Zlun\nSU/+kkA9mlGZNb72SEUsQIEl6qyYCH5moGboH3zoEuu+1h3vel9l897Z66w4\ngWXa2N6HOZrVL8h3ILcq2egmbiUZ1lJ6VF94ggecFrHBkssUlZYKur1jM2eJ\nNo5t7Aasyi+StqbudS5177QP4LxbmOuFBwRW1fMPDo7Yv82gPqbAirj5vQnA\nVKG1pL8qu/4bZH2PgicIfERxQLPo4IkTTobf/WMBZ0OKVd8FuVKMZdEfZVcG\n7WE9FnL1TjNFlm1waP6DCXApZt5dWD4wbniuIy4iO3e1VzsWwyj5ZwOeeobp\nQiqHnKCsqLi2EmEHHt5F6vVdpyYW46tZUlXOzCUzAWCv0IWlR+8Hw1i9C7D0\n+l+RAC2XMmC/1LC7+5E4BGkN4ItkHZ9brsGAJk2/VBBU9F1ebueNwZiy1fi5\nIVafv/7Xd5vB/XZCDQc+pArXxVzooWIHGRol1U/CpJe0A1GaDPRSd4mmLumP\nuVjgeJdm4c+9x2KMUeAnVDXYD107cK1xkaaF5huMB6iFxs3q+AxfzFcKyHm3\nsQiQJ6dH+05hX5X9nVW028Ww+8auHpmAmA1zFpskFQaxMBAYGrfdgnHO0qOp\nRlEb\r\n=pfzp\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/data-urls_1.1.0_1540559128977_0.9896566440878478"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2018-10-26T13:05:31.817Z",
+		"created": "2018-01-31T22:31:54.529Z",
+		"1.0.0": "2018-01-31T22:31:54.529Z",
+		"1.0.1": "2018-08-18T21:22:26.198Z",
+		"1.1.0": "2018-10-26T13:05:29.091Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.1.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"86a689012bd9935bb7e8e1f1bc75c3d3\"",
+			"fetched": 1577117260349
+		}
+	},
+	"_distfiles": {
+		"data-urls-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/data-urls/-/data-urls-1.0.0.tgz",
+			"sha": "24802de4e81c298ea8a9388bb0d8e461c774684f",
+			"registry": "npmjs"
+		},
+		"data-urls-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/data-urls/-/data-urls-1.0.1.tgz",
+			"sha": "d416ac3896918f29ca84d81085bc3705834da579",
+			"registry": "npmjs"
+		},
+		"data-urls-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/data-urls/-/data-urls-1.1.0.tgz",
+			"sha": "15ee0582baa5e22bb59c77140da8f9c76963bbfe",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-e16a13c204fa08dc",
+	"_id": "data-urls",
+	"readme": "# Parse `data:` URLs\n\nThis package helps you parse `data:` URLs [according to the WHATWG Fetch Standard](https://fetch.spec.whatwg.org/#data-urls):\n\n```js\nconst parseDataURL = require(\"data-url\");\n\nconst textExample = parseDataURL(\"data:,Hello%2C%20World!\");\nconsole.log(textExample.mimeType.toString()); // \"text/plain;charset=US-ASCII\"\nconsole.log(textExample.body.toString());     // \"Hello, World!\"\n\nconst htmlExample = dataURL(\"data:text/html,%3Ch1%3EHello%2C%20World!%3C%2Fh1%3E\");\nconsole.log(htmlExample.mimeType.toString()); // \"text/html\"\nconsole.log(htmlExample.body.toString());     // <h1>Hello, World!</h1>\n\nconst pngExample = parseDataURL(\"data:image/png;base64,iVBORw0KGgoAAA\" +\n                                \"ANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4\" +\n                                \"//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU\" +\n                                \"5ErkJggg==\");\nconsole.log(pngExample.mimeType.toString()); // \"image/png\"\nconsole.log(pngExample.body);                // <Buffer 89 50 4e 47 0d ... >\n```\n\n## API\n\nThis package's main module's default export is a function that accepts a string and returns a `{ mimeType, body }` object, or `null` if the result cannot be parsed as a `data:` URL.\n\n- The `mimeType` property is an instance of [whatwg-mimetype](https://www.npmjs.com/package/whatwg-mimetype)'s `MIMEType` class.\n- The `body` property is a Node.js [`Buffer`](https://nodejs.org/docs/latest/api/buffer.html) instance.\n\nAs shown in the examples above, both of these have useful `toString()` methods for manipulating them as string values. However…\n\n### A word of caution on string decoding\n\nBecause Node.js's `Buffer.prototype.toString()` assumes a UTF-8 encoding, simply doing `dataURL.body.toString()` may not work correctly if the `data:` URL's contents were not originally written in UTF-8. This includes if the encoding is \"US-ASCII\", [aka windows-1252](https://encoding.spec.whatwg.org/#names-and-labels), which is notable for being the default in many cases.\n\nA more complete decoding example would use the [whatwg-encoding](https://www.npmjs.com/package/whatwg-encoding) package as follows:\n\n```js\nconst parseDataURL = require(\"data-url\");\nconst { labelToName, decode } = require(\"whatwg-encoding\");\n\nconst dataURL = parseDataURL(arbitraryString);\nconst encodingName = labelToName(dataURL.mimeType.parameters.get(\"charset\"));\nconst bodyDecoded = decode(dataURL.body, encodingName);\n```\n\nFor example, given an `arbitraryString` of `data:,Hello!`, this will produce a `bodyDecoded` of `\"Hello!\"`, as expected. But given an `arbitraryString` of `\"data:,Héllo!\"`, this will correctly produce a `bodyDecoded` of `\"Héllo!\"`, whereas just doing `dataURL.body.toString()` will give back `\"HÃ©llo!\"`.\n\nIn summary, only use `dataURL.body.toString()` when you are very certain your data is inside the ASCII range (i.e. code points within the range U+0000 to U+007F).\n\n### Advanced functionality: parsing from a URL record\n\nIf you are using the [whatwg-url](https://github.com/jsdom/whatwg-url) package, you may already have a \"URL record\" object on hand, as produced by that package's `parseURL` export. In that case, you can use this package's `fromURLRecord` export to save a bit of work:\n\n```js\nconst { parseURL } = require(\"whatwg-url\");\nconst dataURLFromURLRecord = require(\"data-url\").fromURLRecord;\n\nconst urlRecord = parseURL(\"data:,Hello%2C%20World!\");\nconst dataURL = dataURLFromURLRecord(urlRecord);\n```\n\nIn practice, we expect this functionality only to be used by consumers like [jsdom](https://www.npmjs.com/package/jsdom), which are using these packages at a very low level."
+}

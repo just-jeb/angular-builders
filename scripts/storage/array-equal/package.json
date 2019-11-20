@@ -1,0 +1,69 @@
+{
+	"name": "array-equal",
+	"versions": {
+		"1.0.0": {
+			"name": "array-equal",
+			"description": "check if two arrays are equal",
+			"version": "1.0.0",
+			"author": {
+				"name": "Jonathan Ong",
+				"email": "me@jongleberry.com",
+				"url": "http://jongleberry.com"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/component/array-equal"
+			},
+			"bugs": {
+				"url": "https://github.com/component/array-equal/issues"
+			},
+			"homepage": "https://github.com/component/array-equal",
+			"_id": "array-equal@1.0.0",
+			"dist": {
+				"shasum": "8c2a5ef2472fd9ea742b04c77a75093ba2757c93",
+				"tarball": "https://registry.npmjs.org/array-equal/-/array-equal-1.0.0.tgz"
+			},
+			"_from": ".",
+			"_npmVersion": "1.4.6",
+			"_npmUser": {
+				"name": "jongleberry",
+				"email": "jonathanrichardong@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "jongleberry",
+					"email": "jonathanrichardong@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-01-01T05:44:30.547Z",
+		"created": "2014-04-29T09:17:37.982Z",
+		"1.0.0": "2014-04-29T09:17:37.982Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"7f24cbfd356702607b97beae9f6edf4b\"",
+			"fetched": 1577117260204
+		}
+	},
+	"_distfiles": {
+		"array-equal-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/array-equal/-/array-equal-1.0.0.tgz",
+			"sha": "8c2a5ef2472fd9ea742b04c77a75093ba2757c93",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-1b82d2d0639ffd88",
+	"_id": "array-equal",
+	"readme": "# Array Equal\n\nCheck if two arrays are equal:\n\n```js\nvar equals = require('array-equal')\n\nassert(equals([1, 2, 3], [1, 2, 3])) // => true\nassert(equals([1, 2, 3], [1, 2, 3, 4])) // => false\n```"
+}

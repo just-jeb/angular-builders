@@ -1,0 +1,864 @@
+{
+	"name": "is-plain-object",
+	"versions": {
+		"0.1.0": {
+			"name": "is-plain-object",
+			"description": "Return `true` if the given `value` is an object created by the `Object` constructor.",
+			"version": "0.1.0",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"licenses": [
+				{
+					"type": "MIT",
+					"url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE-MIT"
+				}
+			],
+			"keywords": [
+				"object",
+				"is",
+				"is-object",
+				"isobject",
+				"plain",
+				"value",
+				"typeof",
+				"javascript",
+				"check",
+				"type"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"test": "mocha -R spec"
+			},
+			"devDependencies": {
+				"verb": "~0.2.6",
+				"chai": "~1.9.1",
+				"mocha": "*"
+			},
+			"_id": "is-plain-object@0.1.0",
+			"_shasum": "3ca7db022de72fd12007f1957beb59ea596b979c",
+			"_from": ".",
+			"_npmVersion": "1.4.9",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				}
+			],
+			"dist": {
+				"shasum": "3ca7db022de72fd12007f1957beb59ea596b979c",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-0.1.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "1.0.0",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": {
+				"type": "MIT",
+				"url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE"
+			},
+			"files": [
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"test": "mocha"
+			},
+			"dependencies": {
+				"isobject": "^0.2.0"
+			},
+			"devDependencies": {
+				"mocha": "*"
+			},
+			"keywords": [
+				"object",
+				"is",
+				"is-object",
+				"isobject",
+				"plain",
+				"value",
+				"typeof",
+				"javascript",
+				"check",
+				"type"
+			],
+			"gitHead": "48f326d18bcf8776c60cdf7c7859d2dc514e6257",
+			"_id": "is-plain-object@1.0.0",
+			"_shasum": "ff5f752db71c3328afd5e685eb6adddd3eaffab7",
+			"_from": ".",
+			"_npmVersion": "2.5.1",
+			"_nodeVersion": "0.12.0",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				}
+			],
+			"dist": {
+				"shasum": "ff5f752db71c3328afd5e685eb6adddd3eaffab7",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-1.0.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "2.0.0",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": {
+				"type": "MIT",
+				"url": "https://github.com/jonschlinkert/is-plain-object/blob/master/LICENSE"
+			},
+			"files": [
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+				"test_browser": "mocha-phantomjs test/browser.html",
+				"test_node": "mocha test",
+				"test": "npm run test_node && npm run browserify && npm run test_browser"
+			},
+			"dependencies": {
+				"isobject": "^0.2.0"
+			},
+			"devDependencies": {
+				"browserify": "*",
+				"chai": "*",
+				"mocha": "*",
+				"mocha-phantomjs": "*",
+				"phantomjs": "*",
+				"uglify-js": "*"
+			},
+			"keywords": [
+				"object",
+				"is",
+				"is-object",
+				"isobject",
+				"plain",
+				"value",
+				"typeof",
+				"javascript",
+				"check",
+				"type"
+			],
+			"gitHead": "b96e86b84e78e21108b1ea824a3e91af1e00164b",
+			"_id": "is-plain-object@2.0.0",
+			"_shasum": "8612587fa90279dc1b6e1cec2056f6c1df7abb2a",
+			"_from": "git://github.com/jonschlinkert/is-plain-object.git",
+			"_resolved": "git://github.com/jonschlinkert/is-plain-object.git#b96e86b84e78e21108b1ea824a3e91af1e00164b",
+			"_fromGithub": true,
+			"_npmVersion": "2.7.4",
+			"_nodeVersion": "0.12.2",
+			"_npmUser": {
+				"name": "stevenvachon",
+				"email": "contact@svachon.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				},
+				{
+					"name": "stevenvachon",
+					"email": "contact@svachon.com"
+				}
+			],
+			"dist": {
+				"shasum": "8612587fa90279dc1b6e1cec2056f6c1df7abb2a",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "2.0.1",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/jonschlinkert/is-plain-object"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": "MIT",
+			"files": [
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+				"test_browser": "mocha-phantomjs test/browser.html",
+				"test_node": "mocha",
+				"test": "npm run test_node && npm run browserify && npm run test_browser"
+			},
+			"dependencies": {
+				"isobject": "^1.0.0"
+			},
+			"devDependencies": {
+				"browserify": "*",
+				"chai": "*",
+				"mocha": "*",
+				"mocha-phantomjs": "*",
+				"phantomjs": "*",
+				"uglify-js": "*"
+			},
+			"keywords": [
+				"object",
+				"is",
+				"is-object",
+				"isobject",
+				"plain",
+				"value",
+				"type",
+				"kind",
+				"kind-of",
+				"typeof",
+				"javascript",
+				"check",
+				"type"
+			],
+			"gitHead": "b96e86b84e78e21108b1ea824a3e91af1e00164b",
+			"_id": "is-plain-object@2.0.1",
+			"_shasum": "4d7ca539bc9db9b737b8acb612f2318ef92f294f",
+			"_from": ".",
+			"_npmVersion": "2.5.1",
+			"_nodeVersion": "0.12.0",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				},
+				{
+					"name": "stevenvachon",
+					"email": "contact@svachon.com"
+				}
+			],
+			"dist": {
+				"shasum": "4d7ca539bc9db9b737b8acb612f2318ef92f294f",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.2": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "2.0.2",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"contributors": [
+				{
+					"name": "Jon Schlinkert",
+					"url": "http://twitter.com/jonschlinkert"
+				},
+				{
+					"name": "Steven Vachon",
+					"url": "https://svachon.com"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": "MIT",
+			"files": [
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+				"test_browser": "mocha-phantomjs test/browser.html",
+				"test_node": "mocha",
+				"test": "npm run test_node && npm run browserify && npm run test_browser"
+			},
+			"dependencies": {
+				"isobject": "^3.0.0"
+			},
+			"devDependencies": {
+				"browserify": "^14.3.0",
+				"gulp-format-md": "^0.1.12",
+				"mocha": "^3.4.2",
+				"mocha-phantomjs": "^4.1.0",
+				"phantomjs": "^2.1.7",
+				"uglify-js": "^3.0.12"
+			},
+			"keywords": [
+				"check",
+				"is",
+				"is-object",
+				"isobject",
+				"javascript",
+				"kind",
+				"kind-of",
+				"object",
+				"plain",
+				"type",
+				"typeof",
+				"value"
+			],
+			"verb": {
+				"toc": false,
+				"layout": "default",
+				"tasks": [
+					"readme"
+				],
+				"plugins": [
+					"gulp-format-md"
+				],
+				"related": {
+					"list": [
+						"isobject",
+						"is-number",
+						"kind-of"
+					]
+				},
+				"lint": {
+					"reflinks": true
+				}
+			},
+			"gitHead": "e6ffcb78603dc3a3826e75852c449639bca627ef",
+			"_id": "is-plain-object@2.0.2",
+			"_shasum": "1d9ab795669937de31998071ca1f701770b375a4",
+			"_from": ".",
+			"_npmVersion": "4.6.1",
+			"_nodeVersion": "7.7.3",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				},
+				{
+					"name": "stevenvachon",
+					"email": "contact@svachon.com"
+				}
+			],
+			"dist": {
+				"shasum": "1d9ab795669937de31998071ca1f701770b375a4",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.2.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/is-plain-object-2.0.2.tgz_1495914809154_0.5315580435562879"
+			},
+			"directories": {}
+		},
+		"2.0.3": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "2.0.3",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"contributors": [
+				{
+					"name": "Jon Schlinkert",
+					"url": "http://twitter.com/jonschlinkert"
+				},
+				{
+					"name": "Steven Vachon",
+					"url": "https://svachon.com"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": "MIT",
+			"files": [
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+				"test_browser": "mocha-phantomjs test/browser.html",
+				"test_node": "mocha",
+				"test": "npm run test_node && npm run browserify && npm run test_browser"
+			},
+			"dependencies": {
+				"isobject": "^3.0.0"
+			},
+			"devDependencies": {
+				"browserify": "^14.3.0",
+				"chai": "^4.0.0",
+				"gulp-format-md": "^0.1.12",
+				"mocha": "^3.4.2",
+				"mocha-phantomjs": "^4.1.0",
+				"phantomjs": "^2.1.7",
+				"uglify-js": "^3.0.12"
+			},
+			"keywords": [
+				"check",
+				"is",
+				"is-object",
+				"isobject",
+				"javascript",
+				"kind",
+				"kind-of",
+				"object",
+				"plain",
+				"type",
+				"typeof",
+				"value"
+			],
+			"verb": {
+				"toc": false,
+				"layout": "default",
+				"tasks": [
+					"readme"
+				],
+				"plugins": [
+					"gulp-format-md"
+				],
+				"related": {
+					"list": [
+						"isobject",
+						"is-number",
+						"kind-of"
+					]
+				},
+				"lint": {
+					"reflinks": true
+				}
+			},
+			"gitHead": "6616250bedd50e6f2378b44637875f22178f7506",
+			"_id": "is-plain-object@2.0.3",
+			"_shasum": "c15bf3e4b66b62d72efaf2925848663ecbc619b6",
+			"_from": ".",
+			"_npmVersion": "4.6.1",
+			"_nodeVersion": "7.7.3",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				},
+				{
+					"name": "stevenvachon",
+					"email": "contact@svachon.com"
+				}
+			],
+			"dist": {
+				"shasum": "c15bf3e4b66b62d72efaf2925848663ecbc619b6",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.3.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/is-plain-object-2.0.3.tgz_1496153207864_0.18937807087786496"
+			},
+			"directories": {}
+		},
+		"2.0.4": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "2.0.4",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"contributors": [
+				{
+					"name": "Jon Schlinkert",
+					"url": "http://twitter.com/jonschlinkert"
+				},
+				{
+					"name": "Osman Nuri Okumuş",
+					"url": "http://onokumus.com"
+				},
+				{
+					"name": "Steven Vachon",
+					"url": "https://svachon.com"
+				},
+				{
+					"url": "https://github.com/wtgtybhertgeghgtwtg"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": "MIT",
+			"files": [
+				"index.d.ts",
+				"index.js"
+			],
+			"main": "index.js",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"browserify": "browserify index.js --standalone isPlainObject | uglifyjs --compress --mangle -o browser/is-plain-object.js",
+				"test_browser": "mocha-phantomjs test/browser.html",
+				"test_node": "mocha",
+				"test": "npm run test_node && npm run browserify && npm run test_browser"
+			},
+			"dependencies": {
+				"isobject": "^3.0.1"
+			},
+			"devDependencies": {
+				"browserify": "^14.4.0",
+				"chai": "^4.0.2",
+				"gulp-format-md": "^1.0.0",
+				"mocha": "^3.4.2",
+				"mocha-phantomjs": "^4.1.0",
+				"phantomjs": "^2.1.7",
+				"uglify-js": "^3.0.24"
+			},
+			"keywords": [
+				"check",
+				"is",
+				"is-object",
+				"isobject",
+				"javascript",
+				"kind",
+				"kind-of",
+				"object",
+				"plain",
+				"type",
+				"typeof",
+				"value"
+			],
+			"types": "index.d.ts",
+			"verb": {
+				"toc": false,
+				"layout": "default",
+				"tasks": [
+					"readme"
+				],
+				"plugins": [
+					"gulp-format-md"
+				],
+				"related": {
+					"list": [
+						"is-number",
+						"isobject",
+						"kind-of"
+					]
+				},
+				"lint": {
+					"reflinks": true
+				}
+			},
+			"gitHead": "81345df0d1700a5c285f379cbdca0e273388910d",
+			"_id": "is-plain-object@2.0.4",
+			"_npmVersion": "5.2.0",
+			"_nodeVersion": "7.7.3",
+			"_npmUser": {
+				"name": "jonschlinkert",
+				"email": "github@sellside.com"
+			},
+			"maintainers": [
+				{
+					"name": "jonschlinkert",
+					"email": "github@sellside.com"
+				},
+				{
+					"name": "stevenvachon",
+					"email": "contact@svachon.com"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-h5PpgXkWitc38BBMYawTYMWJHFZJVnBquFE57xFpjB8pJFiF6gZ+bU+WyI/yqXiFR5mdLsgYNaPe8uao6Uv9Og==",
+				"shasum": "2c163b3fafb1b606d9d17928f05c2a1c38e07677",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.4.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/is-plain-object-2.0.4.tgz_1499812869259_0.27965074591338634"
+			},
+			"directories": {}
+		},
+		"3.0.0": {
+			"name": "is-plain-object",
+			"description": "Returns true if an object was created by the `Object` constructor.",
+			"version": "3.0.0",
+			"homepage": "https://github.com/jonschlinkert/is-plain-object",
+			"author": {
+				"name": "Jon Schlinkert",
+				"url": "https://github.com/jonschlinkert"
+			},
+			"contributors": [
+				{
+					"name": "Jon Schlinkert",
+					"url": "http://twitter.com/jonschlinkert"
+				},
+				{
+					"name": "Osman Nuri Okumuş",
+					"url": "http://onokumus.com"
+				},
+				{
+					"name": "Steven Vachon",
+					"url": "https://svachon.com"
+				},
+				{
+					"url": "https://github.com/wtgtybhertgeghgtwtg"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jonschlinkert/is-plain-object.git"
+			},
+			"bugs": {
+				"url": "https://github.com/jonschlinkert/is-plain-object/issues"
+			},
+			"license": "MIT",
+			"main": "index.cjs.js",
+			"module": "index.js",
+			"types": "index.d.ts",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"scripts": {
+				"build": "rollup -c",
+				"test_browser": "mocha-headless-chrome --args=disable-web-security -f test/browser.html",
+				"test_node": "mocha -r esm",
+				"test": "npm run test_node && npm run build && npm run test_browser",
+				"prepare": "rollup -c"
+			},
+			"dependencies": {
+				"isobject": "^4.0.0"
+			},
+			"devDependencies": {
+				"chai": "^4.2.0",
+				"esm": "^3.2.22",
+				"gulp-format-md": "^1.0.0",
+				"mocha": "^6.1.4",
+				"mocha-headless-chrome": "^2.0.2",
+				"rollup": "^1.10.1",
+				"rollup-plugin-node-resolve": "^4.2.3"
+			},
+			"keywords": [
+				"check",
+				"is",
+				"is-object",
+				"isobject",
+				"javascript",
+				"kind",
+				"kind-of",
+				"object",
+				"plain",
+				"type",
+				"typeof",
+				"value"
+			],
+			"verb": {
+				"toc": false,
+				"layout": "default",
+				"tasks": [
+					"readme"
+				],
+				"plugins": [
+					"gulp-format-md"
+				],
+				"related": {
+					"list": [
+						"is-number",
+						"isobject",
+						"kind-of"
+					]
+				},
+				"lint": {
+					"reflinks": true
+				}
+			},
+			"gitHead": "340bc4ee0eba9322b85bbf732603c3f7fe67851c",
+			"_id": "is-plain-object@3.0.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "8.15.0",
+			"_npmUser": {
+				"name": "trysound",
+				"email": "trysound@yandex.ru"
+			},
+			"dist": {
+				"integrity": "sha512-tZIpofR+P05k8Aocp7UI/2UTa9lTJSebCXpFFoR9aibpokDj/uXBsJ8luUu0tTVYKkMU6URDUuOfJZ7koewXvg==",
+				"shasum": "47bfc5da1b5d50d64110806c199359482e75a928",
+				"tarball": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-3.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 9185,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyLXkCRA9TVsSAnZWagAAd2IP+wfkoxXYjoEkwNWIUrfy\nzjhbQ5xnTwlZuNoPWZuVdQSYDwufCyh/zWeuiJjsCEkNT/z0QegPdK4PZFIi\n6BNti78yVazpcsonD3njnmoyrV5/8iXyI+C1PRo6nOO6kNHXx0JjAoLRAoVC\nDguYquTDhdo2WlQJ01ln8dSx9ueWQx5QMLE9lBXPzYmrtXbQcLd5Z8uXE4P/\n0vrkIuteL/p7I5RF2iFYjz4sEShk9W+ZNqlAf8Xsaa7yT2B5RRiy/ron5/+g\nLrnPAPn4954fWupxRuivAqgj3CfoOxx6Pl1D+ksK6sNywn6zB2fqTQm8vSLe\nsh6+BrX4ML34PA+2GSMmsv2+pU9Ksc2MwVJYzvIRQYlxMIza6rSMpfoJFiqW\nbiGyVf5+NSozNOnNpqxrv2OYIZnsKk+4ZL8kM5VrMnMAtB0IO8dgPO7uG/pf\n/CpqXJ9b9YKit5JnvuVksepqBIj+j2e40Od4E/wjsNKrIN0J06NksaVTmexo\njebkKSgAqGqqTPeeShtj44dF+Mdu8ChtBE5NYPLzJMDK5gslVb3/IdICzAwg\ncUXCgDR7KfoSio/4bCBB3sx+B4rCwcP3Eoi139qrQeXnl/OVCgINbd7U0u4A\nNIBq4uhTTb7ylFxJAcDBGPfqohPzoUc93pj+tClmPfF/+Bl7KBjZPKdhFI9u\nudtk\r\n=3ByD\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "github@sellside.com",
+					"name": "jonschlinkert"
+				},
+				{
+					"email": "contact@svachon.com",
+					"name": "stevenvachon"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/is-plain-object_3.0.0_1556657636003_0.8407783091812069"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"time": {
+		"modified": "2019-04-30T20:53:59.478Z",
+		"created": "2014-09-21T22:41:50.073Z",
+		"0.1.0": "2014-09-21T22:41:50.073Z",
+		"1.0.0": "2015-02-25T07:49:39.188Z",
+		"2.0.0": "2015-04-29T12:57:28.225Z",
+		"2.0.1": "2015-05-28T08:02:18.730Z",
+		"2.0.2": "2017-05-27T19:53:30.152Z",
+		"2.0.3": "2017-05-30T14:06:48.757Z",
+		"2.0.4": "2017-07-11T22:41:10.371Z",
+		"3.0.0": "2019-04-30T20:53:56.159Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "3.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"bcca45d5cd57d92db13b903b283a46e8\"",
+			"fetched": 1577117264754
+		}
+	},
+	"_distfiles": {
+		"is-plain-object-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-0.1.0.tgz",
+			"sha": "3ca7db022de72fd12007f1957beb59ea596b979c",
+			"registry": "npmjs"
+		},
+		"is-plain-object-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-1.0.0.tgz",
+			"sha": "ff5f752db71c3328afd5e685eb6adddd3eaffab7",
+			"registry": "npmjs"
+		},
+		"is-plain-object-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.0.tgz",
+			"sha": "8612587fa90279dc1b6e1cec2056f6c1df7abb2a",
+			"registry": "npmjs"
+		},
+		"is-plain-object-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.1.tgz",
+			"sha": "4d7ca539bc9db9b737b8acb612f2318ef92f294f",
+			"registry": "npmjs"
+		},
+		"is-plain-object-2.0.2.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.2.tgz",
+			"sha": "1d9ab795669937de31998071ca1f701770b375a4",
+			"registry": "npmjs"
+		},
+		"is-plain-object-2.0.3.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.3.tgz",
+			"sha": "c15bf3e4b66b62d72efaf2925848663ecbc619b6",
+			"registry": "npmjs"
+		},
+		"is-plain-object-2.0.4.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.4.tgz",
+			"sha": "2c163b3fafb1b606d9d17928f05c2a1c38e07677",
+			"registry": "npmjs"
+		},
+		"is-plain-object-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-3.0.0.tgz",
+			"sha": "47bfc5da1b5d50d64110806c199359482e75a928",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-a8afa294a2de6962",
+	"_id": "is-plain-object",
+	"readme": "# is-plain-object [![NPM version](https://img.shields.io/npm/v/is-plain-object.svg?style=flat)](https://www.npmjs.com/package/is-plain-object) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-plain-object.svg?style=flat)](https://npmjs.org/package/is-plain-object) [![NPM total downloads](https://img.shields.io/npm/dt/is-plain-object.svg?style=flat)](https://npmjs.org/package/is-plain-object) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-plain-object.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-plain-object)\n\n> Returns true if an object was created by the `Object` constructor.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-plain-object\n```\n\nUse [isobject](https://github.com/jonschlinkert/isobject) if you only want to check if the value is an object and not an array or null.\n\n## Usage\n\n```js\nimport isPlainObject from 'is-plain-object';\n```\n\n**true** when created by the `Object` constructor.\n\n```js\nisPlainObject(Object.create({}));\n//=> true\nisPlainObject(Object.create(Object.prototype));\n//=> true\nisPlainObject({foo: 'bar'});\n//=> true\nisPlainObject({});\n//=> true\n```\n\n**false** when not created by the `Object` constructor.\n\n```js\nisPlainObject(1);\n//=> false\nisPlainObject(['foo', 'bar']);\n//=> false\nisPlainObject([]);\n//=> false\nisPlainObject(new Foo);\n//=> false\nisPlainObject(null);\n//=> false\nisPlainObject(Object.create(null));\n//=> false\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-number](https://www.npmjs.com/package/is-number): Returns true if a number or string value is a finite number. Useful for regex… [more](https://github.com/jonschlinkert/is-number) | [homepage](https://github.com/jonschlinkert/is-number \"Returns true if a number or string value is a finite number. Useful for regex matches, parsing, user input, etc.\")\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \"Returns true if the value is an object and not an array or null.\")\n* [kind-of](https://www.npmjs.com/package/kind-of): Get the native type of a value. | [homepage](https://github.com/jonschlinkert/kind-of \"Get the native type of a value.\")\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 19 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 6  | [TrySound](https://github.com/TrySound) |  \n| 6  | [stevenvachon](https://github.com/stevenvachon) |  \n| 3  | [onokumus](https://github.com/onokumus) |  \n| 1  | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2019, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on April 28, 2019._"
+}

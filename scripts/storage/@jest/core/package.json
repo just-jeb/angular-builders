@@ -1,0 +1,1609 @@
+{
+	"name": "@jest/core",
+	"versions": {
+		"24.2.0-alpha.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.2.0-alpha.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.2.0-alpha.0",
+				"@jest/reporters": "^24.2.0-alpha.0",
+				"@jest/test-result": "^24.2.0-alpha.0",
+				"@jest/transform": "^24.2.0-alpha.0",
+				"@jest/types": "^24.2.0-alpha.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.2.0-alpha.0",
+				"jest-config": "^24.2.0-alpha.0",
+				"jest-haste-map": "^24.2.0-alpha.0",
+				"jest-message-util": "^24.2.0-alpha.0",
+				"jest-regex-util": "^24.2.0-alpha.0",
+				"jest-resolve-dependencies": "^24.2.0-alpha.0",
+				"jest-runner": "^24.2.0-alpha.0",
+				"jest-runtime": "^24.2.0-alpha.0",
+				"jest-snapshot": "^24.2.0-alpha.0",
+				"jest-util": "^24.2.0-alpha.0",
+				"jest-validate": "^24.2.0-alpha.0",
+				"jest-watcher": "^24.2.0-alpha.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.0",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800f2f803d01c8ae194d71b251e4965dd70e5bf2",
+			"_id": "@jest/core@24.2.0-alpha.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-Rd9wgkhfoVlUAJ9lRdVeHt/xSfWzUUoW9aW0Jw0HL23CTDVMmJicwK/nCtvgmJWveVDvmo2o/1ImhdA3irIyWw==",
+				"shasum": "2331ac36d3049f35af11032636f320ebc93ded8f",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.2.0-alpha.0.tgz",
+				"fileCount": 112,
+				"unpackedSize": 178831,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfo6/CRA9TVsSAnZWagAACv4P/22GphxI1ngDzBnW1YDg\n0aezSIF/iMsUXrzLF4SYj1WLKYX40zRMw/TJzzKD8+y8+bhApOxzjrVhJ8eQ\nNJyg2gNpXv1lvwuVQwjxYY6qdvHG38rdbhH/MoweIn9SeWfBQsHi42YXlO7O\n1ocni3ENeW8riiZWuLfGwG7nl3dESD4nUYARFvnmIRSqvIbWn/Di1yw/MG1e\nFOG93m6OWFeHKd0/OozPxiklH9n2JVEnNwL6gGMg3elasowfK340xWUhRu/s\niqOV1RGFUxFVOCaMjMhoxihJv23yAp8akNctGWC9HQdrIgM4fKvm6DwYMzpR\n9ypHX1ZG01RI5iNJ0p1KKb3gOlZzrW2Fvta3ALCzTkcDUU7/gUZNfd9c9xeK\nTMcbKMqCf6xMKFbWGx306Up5GIVTOUNyJ/ak7J0bK8U/VGn8ATn6RWGtErDK\n0guAcbxhW7F0vRF4tvKzN54qpqcaOOc5HHVn3Ig995/QhfZOQu4V8AfRFFEk\nLxLdL/sz1zCq8GB+HNOfVTG6X/NrxUv1KAsyPMGXTxoFRbCJT+392SWOiewA\noPbkL4p5zB60/aA1mY9JvCyHhWbY3gcFdVQPDg55avvSrEPZ78+pGUY7ZCHc\nQNAIwvrD4UEB0CJ5ds+br7LN0/237YrxdpLOc5MLGRMrsNv2jxuxl6OUwtel\nsVWv\r\n=/UC1\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.2.0-alpha.0_1551797950687_0.28120560088659663"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.3.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.3.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.3.0",
+				"@jest/reporters": "^24.3.0",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.3.0",
+				"@jest/types": "^24.3.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.3.0",
+				"jest-config": "^24.3.0",
+				"jest-haste-map": "^24.3.0",
+				"jest-message-util": "^24.3.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.3.0",
+				"jest-runner": "^24.3.0",
+				"jest-runtime": "^24.3.0",
+				"jest-snapshot": "^24.3.0",
+				"jest-util": "^24.3.0",
+				"jest-validate": "^24.3.0",
+				"jest-watcher": "^24.3.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.0",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "3a7a4f3a3f5489ac8e07dcddf76bb949c482ec87",
+			"_id": "@jest/core@24.3.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-kGnyXAEjFPK4SfikxyrugXZ/SpWYmA09jMOvZRxeRfarVy+yIE6NkilRA85MRqR2qOcQhWgZ48T3KXEVPZC1zw==",
+				"shasum": "ae5732af96567205d79ed97dc0b9b9033acea298",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.3.0.tgz",
+				"fileCount": 113,
+				"unpackedSize": 179786,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgRXhCRA9TVsSAnZWagAASxcP/R4L3VvXJCOKU/3BpQBK\naMFBRt+VjtcvIRV45jb8JPLheDMiYVuwHjAa/HAQTe/aWk3Q6nZj/+WZVAME\nA52aJ35xe6pBCOqVPFhagTWdM81wxsmx9H1oRCW+rmtPs/+a8MESs/oG5971\n162yxbZnClGd/8eX5T0E9lgj2oCEyFoWpbm8kkEkNPO3w7u9SGbe63wFxpYR\nP0+E+73D5qfuF7GtNAYCv587zUevGarjwUa2adKtRuIxKvuv6MtbgcuLrgbv\nxk9kbsREWmE98bQJF8jKgArKC3B337IHoNStO08BhXNqhdraTEdfZ/RvnyJG\nqewxjdWazzAjOgiWrGwBk3R9N9Oe+yD1ejKIqNfURyWgxnai2j6eK6i27kQM\n7v6d9x4iyqFeHat2qXK4F7RAhBFHAnc79pMJrkwFCqXD9D/s3ggIiBqcb4gT\njF/u4CnrprLfpX7lyr/pbpPw9i+8jnzahYGAU9FXRR0cc0HV47ONCeXVd4xq\n2nwJs+WN6NMDKd54bn3T46W5jcA5uwbnfQ2u6YeWxWpASaYqlOKLmF32Nnrg\nSvyUTdqxYe1mnDnI2xrUkY949WHX4VpSfH8UogWnbgnKht/KqQerNUkXTFni\nPJfQ8kAn9R4nZ1OIYm1/JOBZlcJbjLTZL1ai22ymcefZnNk4MIFGqxIjuaXG\nHqGz\r\n=O5Px\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.3.0_1551963617151_0.04985248014964805"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.3.1": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.3.1",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.3.0",
+				"@jest/reporters": "^24.3.1",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.3.1",
+				"@jest/types": "^24.3.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.3.0",
+				"jest-config": "^24.3.1",
+				"jest-haste-map": "^24.3.1",
+				"jest-message-util": "^24.3.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.3.1",
+				"jest-runner": "^24.3.1",
+				"jest-runtime": "^24.3.1",
+				"jest-snapshot": "^24.3.1",
+				"jest-util": "^24.3.0",
+				"jest-validate": "^24.3.1",
+				"jest-watcher": "^24.3.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "65c6e9d5e398711c011078bb72648c77fc8a8cb3",
+			"_id": "@jest/core@24.3.1",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-orucOIBKfXgm1IJirtPT0ToprqDVGYKUNJKNc9a6v1Lww6qLPq+xj5OfxyhpJb2rWOgzEkATW1bfZzg3oqV70w==",
+				"shasum": "9811596d9fcc6dbb3d4062c67e4c4867bc061585",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.3.1.tgz",
+				"fileCount": 113,
+				"unpackedSize": 179614,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgaV4CRA9TVsSAnZWagAA/yIQAISz+JE4mCaT6Myzs4XF\n6eMfGjIiNyKS1F/KG0a2/aBIpyaD5mt4nR25HW4WWzBJjwIeeVbL66KTOCdA\nQEhfIrV/z0i8+PNfNCxX+VSCXBt3cHP6d2Fsc4f7PW0vGDAbvXWZWUqQty+w\n6sCTT7H9V8yQjVB+9jwWR97WnrKdykCV/JjQYQF1vA6EjmudgvBmAtl37iIu\n5Hh3ceRM8nvHDEMNw6FSxapAoWAq1CqBijoLtqnU8izw2+ljt0YbXeaSjPsq\nwt9o3coxuKJ1v1hwGXTvEsnbb+QQhBr+S9aEC5gnM2Tvqhbxl1vCkCvbALbJ\n8NWQSpHtkdbq68Np41f9oUKfgyPL4BeMmKqlBRlU8tlfZmdSy4hKXRkMdzQp\nAGdbPRAXMC7Ayir7WL0sYTLZ8f8a1WhK/QSiqh7KiS6BImXO44s0ahqBLE99\n5Whr4IHmTS98llN+sXzc5tko12alQ2oxp80p0OzuVJ+YigJVrVGQuvd0cDqg\nq49Z9Mo60gLLzFa59WOkb9OUW15CSxxjWrMgawuxapxG90u120ylt0kXm4pR\nkKVyRWKGdClPu40gdhktDjr2FB3xwwilJFEFrPKcYcxlB3/y+7ioRbIfL0Lf\nxKpoy9nZDxGZGgPS00ZoluNKq7cYtAuHYCll+gkP5hCMirNFVnjxKm6jLYk1\n4FYc\r\n=LgoW\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.3.1_1552000375925_0.04138802201448599"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.4.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.4.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.3.0",
+				"@jest/reporters": "^24.4.0",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.4.0",
+				"@jest/types": "^24.3.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.3.0",
+				"jest-config": "^24.4.0",
+				"jest-haste-map": "^24.4.0",
+				"jest-message-util": "^24.3.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.4.0",
+				"jest-runner": "^24.4.0",
+				"jest-runtime": "^24.4.0",
+				"jest-snapshot": "^24.4.0",
+				"jest-util": "^24.3.0",
+				"jest-validate": "^24.4.0",
+				"jest-watcher": "^24.3.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "a018000fc162db3cfd0ebf9f23fdb734f05821a6",
+			"_id": "@jest/core@24.4.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-S48krBwigVm3DwLSEtMiiWnWz+G3uGii192LIZYbWULYSOCwQeG7hWb6a3yWBLYuZnATh3W6QMxs7whS0/hQMQ==",
+				"shasum": "ec53510f19dde5aaf4e9e28a3c3426fc0f2a41d6",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.4.0.tgz",
+				"fileCount": 113,
+				"unpackedSize": 179614,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchneRCRA9TVsSAnZWagAAO+MP/1qSz/uqu1gmhvL8xTy3\n88++/xT2wczOzbiK10OgCLxWM2Wj4J+EwC9DnIhFAvWeacsRdO668Py7RbDO\nFkWcKPSTRCExNWMmz6IWEGZeTZtauNeQtXdn1xZY2dIrlFAS/k3wFeJxXCt2\nX64NxN7MI5RzaEQQ0TG+L8TXuWSZlrf5AI7dIXc1v7pRd+sBkNfQOYiEtWvv\ncqA6itPtJh44Mdh8ViXOatX+Z+KUq8eqY0tHv3WTx2jLXEqcfe/j1Sw5O8eq\neepwfxvoznYte2FxDdqhB0gXhONxtesDNBkY9t1+5lGddKBevio14HG6sjBF\nBp9su2EGGVJvk3aynjvgLs/TlemUEmJn5HBgPJRYu74S0428dmN+Z4ooJamm\n2qaBCNw1XqDJUW0asnbDHAS/g67UdN/eb8rHrq2LJojCkMD6vVrbCiLD72Ja\nN2JEdrhK04k3ihvP+9IZDI2prHPuId3V5O3/x0ppqBi5PZCagCDyfwERpGOq\no0EtQCTmTh7P+Ck+bHYLlpHeVvp/KfMMvTkMm7WOC2a8OqmNd4+vZ8COES8/\naHdd6FaIYgmUCg3LHHZ75LiuiO+y7nTd9R9VFvw7BAOcjNYRA00Wp1c0nh0I\njbihyiW6DJEJxo2ziIAQMw3NrRht4lenbmxqfJDWCGsAnlrcABPZPojrbM5t\nG0PU\r\n=hU+V\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.4.0_1552316304076_0.3119372124570754"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.5.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.5.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.3.0",
+				"@jest/reporters": "^24.5.0",
+				"@jest/test-result": "^24.5.0",
+				"@jest/transform": "^24.5.0",
+				"@jest/types": "^24.5.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.5.0",
+				"jest-config": "^24.5.0",
+				"jest-haste-map": "^24.5.0",
+				"jest-message-util": "^24.5.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.5.0",
+				"jest-runner": "^24.5.0",
+				"jest-runtime": "^24.5.0",
+				"jest-snapshot": "^24.5.0",
+				"jest-util": "^24.5.0",
+				"jest-validate": "^24.5.0",
+				"jest-watcher": "^24.5.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800533020f5b2f153615c821ed7cb12fd868fa6f",
+			"_id": "@jest/core@24.5.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-RDZArRzAs51YS7dXG1pbXbWGxK53rvUu8mCDYsgqqqQ6uSOaTjcVyBl2Jce0exT2rSLk38ca7az7t2f3b0/oYQ==",
+				"shasum": "2cefc6a69e9ebcae1da8f7c75f8a257152ba1ec0",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.5.0.tgz",
+				"fileCount": 113,
+				"unpackedSize": 179614,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch+BMCRA9TVsSAnZWagAAX+YP/A46G3coUvtN6ylHwRdY\nBYh5ErFC6IYfygf29TZ6NEThmAHSABUH9LxvFNYY7hY05/dFCVjmpdHp6bMu\nbF+ca1v73Bn6mCpBDXGj3X2PZe3RSs8bjol4G+0tTRDwPCC0WYBStfv4C67f\n5p4HG3h1Sc1ARnP1mcRBSuExMPAnI0yprIdoAw805+YW6zhUYoj3M5PG2YCS\nTuq40eVl29W+RanT6uG/EG6RwC2k460IE6Nv7a8Mv1USFu7pN59ticxUwg1V\nSdmmgsdFiBzxhQWwbk/FK+hcYZlAR03Kw6Le5HhsGv80SPJvtPF+gNV8zSrj\nIwrWlqLCew9ZGrcPpCvDO67LeIjem9XKoTiq371AHVhwgYxL0hHMGntQKFkV\nP1fhSW2mJzz2S2e/o6qS3JJmNghuFVo04HJU/s7FcJIUM/UeP+47HsO3TbuM\nrHv4J2L3DceX8UN8Zng4DWtxbsKBBtFD24VEf7VIZl4i/RjP8bPBeTnxjiJ9\n3DsRDY43rJsrE9ydYyU8ZAys0B23bO7XrEXBfXspLfdWuBo7EZdombazGDaP\nEWF+W/JBIPtnI7aIh0QuqL8nAQp4kkCGRxT+/vwxpTbr48I4Td224SoKIqs+\nFzevBafbuqkZP3M9dwyH5iyWtc1JeVHlc+Vb1vmBwfikFKpKWf6X9Ftm+Fvm\nuzQl\r\n=7PqZ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.5.0_1552408651405_0.739397318540757"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.6.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.6.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.6.0",
+				"@jest/reporters": "^24.6.0",
+				"@jest/test-result": "^24.6.0",
+				"@jest/transform": "^24.6.0",
+				"@jest/types": "^24.6.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.6.0",
+				"jest-config": "^24.6.0",
+				"jest-haste-map": "^24.6.0",
+				"jest-message-util": "^24.6.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.6.0",
+				"jest-runner": "^24.6.0",
+				"jest-runtime": "^24.6.0",
+				"jest-snapshot": "^24.6.0",
+				"jest-util": "^24.6.0",
+				"jest-validate": "^24.6.0",
+				"jest-watcher": "^24.6.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "04e6a66d2ba8b18bee080bb28547db74a255d2c7",
+			"_id": "@jest/core@24.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-rZ/5295Geou6o1+vp2+G+p7nV6wITrCR7KSnZc+Dru8QbWAR+M9SPb0BHiRTzQvfVQFkk0AkbTw1GWjCRUX/GA==",
+				"shasum": "148c2dc60be7daef1e148bf8c0a01bb1391609df",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.6.0.tgz",
+				"fileCount": 114,
+				"unpackedSize": 522415,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcopA0CRA9TVsSAnZWagAAuDAQAIAJCvUfBlQKnyEnOORM\nmV0aqwb5C6PpZA7VUR1SqFPL7skQv/Z6TV2hU2BeDQeACL0sXqhJ3tKvS9/a\nejZw0G5smsk2ao1syN7XogXrXQQdtf8g566FN5qbBEfgsdLWvUu3YYmpeymd\nz4qkOZXKYmkDquA+owbB+wZFGENF99Qve5i3+j9ey1w8H/y+TB3uxF48sF+R\nZZAYSoGZISwGTiJiGjU4cT75c3p/FlC+nwImhjwu9ryzFzRCWvBUCjtGK0+X\nl6JVTbTbrlStbIYpLZTd/bKynYW1N6GnD1nNZBHuBwBUIJnTi8rQ4VRQl1/m\nqiLRtB5WuZhrYxTuCATw+ZD//wPRAtO5Qlfu8IKGVrcw7X7Kvz/ZaHFQCsCD\nYNJ0SiqxKAJjalBXwn3dlZc6kiW6CO+VIQ3THApzBZEykF6dSA2knbItQ57h\n8PDSgugtljORU5I1vgZiCTHQgipilSxQd7cyAkoeww8vAlDcHJDdR9BqYRqX\n2Afr1cOIegzV+SXg2RV4zqri5fkt71Sbq3UFUpyoeWF4BPSzUGCLpwiZA43l\nsXMzzwR3LKNK6bsiBnZ44sZjZ4ltglYxI6wnjVkmgF5s4MMuFW8e1H6dQYs6\nxBX9PXj6LCVZcTnj7j24KBzb+m4TxV8QZ7WBpbVsSDjfD/XHU4YMCG5THbJj\nKHzn\r\n=3FL2\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.6.0_1554157619762_0.6732336749315877"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.7.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.6.0",
+				"@jest/reporters": "^24.7.0",
+				"@jest/test-result": "^24.7.0",
+				"@jest/transform": "^24.7.0",
+				"@jest/types": "^24.7.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.7.0",
+				"jest-config": "^24.7.0",
+				"jest-haste-map": "^24.7.0",
+				"jest-message-util": "^24.7.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.7.0",
+				"jest-runner": "^24.7.0",
+				"jest-runtime": "^24.7.0",
+				"jest-snapshot": "^24.7.0",
+				"jest-util": "^24.7.0",
+				"jest-validate": "^24.7.0",
+				"jest-watcher": "^24.7.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@jest/test-sequencer": "^24.7.0",
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "eb0413622542bc0f70c32950d9daeeab9f6802ac",
+			"_id": "@jest/core@24.7.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-Ub8+TYkhYSTeQTUrrlDgfidpkVPjN8oZawagHlyJRrtITtR+FivmpqlfqmWziBgeJ3EuaWxF9Ctb55WvA95loA==",
+				"shasum": "7fd599fa89e7fcd0109a9f6d33fcce2da17a7f98",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.7.0.tgz",
+				"fileCount": 111,
+				"unpackedSize": 479406,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpC7KCRA9TVsSAnZWagAAW94P/jsFweddRcZZV9dGrdg6\nZRmRKdw7p/PSJv6JWIum27kxMRAUwRI+BFlhhknDFXPFXdgVRurtzguEih8J\nDyv38gy1OetErmrMSKWi/7cOIh0N9zKhAQOoyuGaEoVn2xICG14MUrajpgcE\nm6XxGeucrsOVM3tWdEw5O0ug6BZie6OwRy+HSQg1Fx7qNLD9ONkzRpgYhq1k\nEECvTBTQmddCOshw0p/1y6bRCJUhIVkRh+NzW7gM9t99renA2Vg7bXfhE5Rm\n3Qm7uuzQfrKLqMb4tW1TRD5A00Gwqsim7Jtw38JPdIt1gROGSpUGwaICivjy\nIM80KGNFA44tMeBDfpQQjPFmVLpAGQBUkAP/2A82MebSi2z3ZOGCgt56ZsOJ\nGrKo6hGrBGIIe77QK21wD6XiXH8ZYq12lvCvvrz3A5iaWprFKSCmKVtRrXiI\nvwk0nNct2mpsd2TjAPSBJgWNaztDyfNPtSBovRNaZ/6n5EIwe+AquZfu5Oo/\n2JbYQHqKhL0z7qyuydglhom4OlsSKk4438ZrLUWQrKtGeIZjNmDaNd7TDZoo\nrd5Y7N9yEhdDHZ4bol8KhOFP9DpnCAkZzDyfL4nLBuFxrBnK2dH3263gXZKB\nITuBSRjWrPRwlW1gdQNKxnGgqOMdOffr9XTk920WBxp1wZKlaIrnUXzlUcty\nkmV6\r\n=2DVr\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.7.0_1554263753962_0.7474403593436485"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.1": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.7.1",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.7.1",
+				"@jest/reporters": "^24.7.1",
+				"@jest/test-result": "^24.7.1",
+				"@jest/transform": "^24.7.1",
+				"@jest/types": "^24.7.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.7.0",
+				"jest-config": "^24.7.1",
+				"jest-haste-map": "^24.7.1",
+				"jest-message-util": "^24.7.1",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.7.1",
+				"jest-runner": "^24.7.1",
+				"jest-runtime": "^24.7.1",
+				"jest-snapshot": "^24.7.1",
+				"jest-util": "^24.7.1",
+				"jest-validate": "^24.7.0",
+				"jest-watcher": "^24.7.1",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@jest/test-sequencer": "^24.7.1",
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "0efb1d7809cb96ae87a7601e7802f1dab3774280",
+			"_id": "@jest/core@24.7.1",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-ivlZ8HX/FOASfHcb5DJpSPFps8ydfUYzLZfgFFqjkLijYysnIEOieg72YRhO4ZUB32xu40hsSMmaw+IGYeKONA==",
+				"shasum": "6707f50db238d0c5988860680e2e414df0032024",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.7.1.tgz",
+				"fileCount": 111,
+				"unpackedSize": 479406,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpVuOCRA9TVsSAnZWagAAFc4P/2r7w4sjNRODpWeyltFp\nQLGgcBSW5r1DQCQijQu3jXiboWkHQveoWGQFbbO+aAFkHOYh4on2AwsNManD\nP6gMyylDYOt+MtR31dlWw0JfLN3tDSrNHmzKbhBH9GU19pzGq5mVgfJkZ/O+\n3M4Tr60NttiMC7mBn4oXq02fHT0madetmXvYtOzYWwjbIWqSE8u/CrUiNNK1\nnGe3573E/jtMkoQB9Jj40zvwwJCOylgJCTFBrLanV4lzXUJZQT2+Jyz8J5Qa\nLiOR9XwFW5wdq9hMpNpv6i40GHAAv8zyZ8wLQbY68Ha0BBNPb/M93O7K4DsU\nzKUvYiFNZqmMJpfYqaSeouCAU6kzy0fIyzsZagFeObf5uptTpWa9FccFumAS\nZicu+i6UPjOdZxny4OplYOh7DLfb5n7M8R3yYvcnQyHI5CDta/ob896IwlTY\ntiz6qnEc9U5cdFwVEugLBPYi3kcgoSX0IPav1+y7rxe/239CFQDrjUmQAy+W\nmB62UHLiK0iRO090l2td8FBkHJh4J1CeR+6wmKkSOHZDTPqJm+rWDLjv0GGw\n+t6Z41mV8Cg/2B1kXJ8ZSlkFFuKhes5z1nhDnL2S+o3FcQ1vdWaCC7lzOZiw\n5O25MmLs7IwnKKirONN0GNXerf4OPB1ur/ZUPXpD5eixBVEnBi4QxioVVDK+\nr8ni\r\n=qf+7\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.7.1_1554340749560_0.3380942311215758"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.8.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.8.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.7.1",
+				"@jest/reporters": "^24.8.0",
+				"@jest/test-result": "^24.8.0",
+				"@jest/transform": "^24.8.0",
+				"@jest/types": "^24.8.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.8.0",
+				"jest-config": "^24.8.0",
+				"jest-haste-map": "^24.8.0",
+				"jest-message-util": "^24.8.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve-dependencies": "^24.8.0",
+				"jest-runner": "^24.8.0",
+				"jest-runtime": "^24.8.0",
+				"jest-snapshot": "^24.8.0",
+				"jest-util": "^24.8.0",
+				"jest-validate": "^24.8.0",
+				"jest-watcher": "^24.8.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"pirates": "^4.0.1",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@jest/test-sequencer": "^24.8.0",
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "^1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "845728f24b3ef41e450595c384e9b5c9fdf248a4",
+			"_id": "@jest/core@24.8.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-R9rhAJwCBQzaRnrRgAdVfnglUuATXdwTRsYqs6NMdVcAl5euG8LtWDe+fVkN27YfKVBW61IojVsXKaOmSnqd/A==",
+				"shasum": "fbbdcd42a41d0d39cddbc9f520c8bab0c33eed5b",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.8.0.tgz",
+				"fileCount": 111,
+				"unpackedSize": 482546,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJczkRMCRA9TVsSAnZWagAAgXwP/006VzN70NpWut6mjS3C\nSEfxs4ItwWChpKXFytLT84GHGFwRLv4RH5EJA0s/JEO4Ol3GUuiPk3z+5V1F\nXQHDrfX4mPEq6X/tSP3ciap4TI5BY4FScI17u76J+bH/9E78E61Ts4fDtMiA\ngIV8QrV7soSAYr9HHUJsyZyqu+3R/UBisE+KsnKYBJ8cko/W0jYnO9OEEnJp\nS2gHvk7FJuyUqztmFkUC084D2z3c3t0oHnkWpgngeZ0h78yiegEbjs4nJ3eq\nYKEjDkYo/GyGRpvrTM4fUO9V28S4e8qbyPiPxEZA4FQkZgAFoHxFW241/2mU\nYxQIKOFosElFl/PDVvEI/iXx7SzGIt53ZLBoPXv/ayKdvQLrr09jTjcilsrz\n2dcrHv3sXf80GhYa7PznM/3atLvJeZAaW8Jqs6ifplASIN6b8iLF1r/kIZfm\nJUtiHIOlvWxtOPTjUlfgAhm+zviNNICT6BqWDMZH0vK2uOR8ahkUZdjsAdYv\nQuvfR5qNwgNJp096mwDd+01iQSu4en96TwprwKclpHKOBgfedkV2aaL9Lx7R\ns/E9uGGbCFeYghqlSMWc6XqOkl27BPtdB5O7R6o6unJ3FgH+DggnqorTx1ZR\n5OOrkm+L9LQ3tRY/Ihd7/VDrrKBXVZ/dwxeucTAkG34IeAiAWdfCKmuwmuap\nEw36\r\n=RRro\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.8.0_1557021772328_0.7316649327237397"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.9.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "24.9.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^24.7.1",
+				"@jest/reporters": "^24.9.0",
+				"@jest/test-result": "^24.9.0",
+				"@jest/transform": "^24.9.0",
+				"@jest/types": "^24.9.0",
+				"ansi-escapes": "^3.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^24.9.0",
+				"jest-config": "^24.9.0",
+				"jest-haste-map": "^24.9.0",
+				"jest-message-util": "^24.9.0",
+				"jest-regex-util": "^24.3.0",
+				"jest-resolve": "^24.9.0",
+				"jest-resolve-dependencies": "^24.9.0",
+				"jest-runner": "^24.9.0",
+				"jest-runtime": "^24.9.0",
+				"jest-snapshot": "^24.9.0",
+				"jest-util": "^24.9.0",
+				"jest-validate": "^24.9.0",
+				"jest-watcher": "^24.9.0",
+				"micromatch": "^3.1.10",
+				"p-each-series": "^1.0.0",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^2.5.4",
+				"slash": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@jest/test-sequencer": "^24.9.0",
+				"@types/ansi-escapes": "^3.0.1",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/p-each-series": "1.0.0",
+				"@types/rimraf": "^2.0.2",
+				"@types/slash": "^2.0.0",
+				"@types/strip-ansi": "^3.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/facebook/jest",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "9ad0f4bc6b8bdd94989804226c28c9960d9da7d1",
+			"_id": "@jest/core@24.9.0",
+			"dist": {
+				"shasum": "2ceccd0b93181f9c4850e74f2a9ad43d351369c4",
+				"integrity": "sha512-Fogg3s4wlAr1VX7q+rhV9RVnUv5tD7VuWfYy1+whMiWUrvl7U3QJSJyWcDio9Lq2prqYsZaeTv2Rz24pWGkJ2A==",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-24.9.0.tgz",
+				"fileCount": 120,
+				"unpackedSize": 179982,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdVkmlCRA9TVsSAnZWagAA0vYP/1gUlZEZeVlfr3ikAx0P\n8g6ol1cO+P3W+yvMIdbrvd/0BsgP5EOTwjpNsoL3qYSboIkhAhUPnlN6BHb7\noAhtxLZWWd9ee/Ctes9z43ZpHUp+RmnyQDnOHoshK/CtE6KVEcUN75VHdWg6\n5kHhB0KxUlw+Prx2ovRw3/Jy20AyM3QuVJWaZiKXUn2cd17bC4pWaxtUHDdm\nBA6M0KzfmvWE1G6fwZiSpU1ykMV8OQ1b09AAtoD2rso1ltrqJl1uZoN6OwyF\n1w5bhhACwnca39GQpzkONzK0PepM9RdQ37HDvI/pvusGTAHUXneRA8a92mWv\n4iGEbBi8nEJ5dkbTcIcYgw4me8WirPmipBdwcGKAQZfhtl9LEv46e6Ig7GRy\nH2qU9le4ryPhm1WkkrqMQnFtuP4c6E6FR/NeXTXKHST2oneLsFgf9gm9oqeS\n53VKHB4zlRXET9wE+X2SS3IVItf4pLd1EadQPvug66R7F7KGyjKPEO2pf/3C\nkHr2rhBeMJtpbAcDx/bLQN/nJWNpHOBLh59Gtv1yiDjnmusZ9en63pBh7cKU\nPbtDUGTlcQ0M/nXk7eLy4FVA+J59yGBvcuW/bcpe0MH/1lq2avs0B1uRRD/N\n/70iCSc71kEFq0wdXJGwnLEp48kXnzeY4vgsRit8I8mSZzFjn2gf2ePrU24X\nGwbY\r\n=6rCQ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_24.9.0_1565936036546_0.7903660299702111"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"25.0.0": {
+			"name": "@jest/core",
+			"description": "Delightful JavaScript Testing.",
+			"version": "25.0.0",
+			"main": "build/jest.js",
+			"types": "build/jest.d.ts",
+			"dependencies": {
+				"@jest/console": "^25.0.0",
+				"@jest/reporters": "^25.0.0",
+				"@jest/test-result": "^25.0.0",
+				"@jest/transform": "^25.0.0",
+				"@jest/types": "^25.0.0",
+				"ansi-escapes": "^4.2.1",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"graceful-fs": "^4.1.15",
+				"jest-changed-files": "^25.0.0",
+				"jest-config": "^25.0.0",
+				"jest-haste-map": "^25.0.0",
+				"jest-message-util": "^25.0.0",
+				"jest-regex-util": "^25.0.0",
+				"jest-resolve": "^25.0.0",
+				"jest-resolve-dependencies": "^25.0.0",
+				"jest-runner": "^25.0.0",
+				"jest-runtime": "^25.0.0",
+				"jest-snapshot": "^25.0.0",
+				"jest-util": "^25.0.0",
+				"jest-validate": "^25.0.0",
+				"jest-watcher": "^25.0.0",
+				"micromatch": "^4.0.2",
+				"p-each-series": "^2.1.0",
+				"realpath-native": "^1.1.0",
+				"rimraf": "^3.0.0",
+				"slash": "^3.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"devDependencies": {
+				"@jest/test-sequencer": "^25.0.0",
+				"@types/exit": "^0.1.30",
+				"@types/graceful-fs": "^4.1.2",
+				"@types/micromatch": "^3.1.0",
+				"@types/rimraf": "^2.0.2"
+			},
+			"engines": {
+				"node": ">= 8"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-core"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"keywords": [
+				"ava",
+				"babel",
+				"coverage",
+				"easy",
+				"expect",
+				"facebook",
+				"immersive",
+				"instant",
+				"jasmine",
+				"jest",
+				"jsdom",
+				"mocha",
+				"mocking",
+				"painless",
+				"qunit",
+				"runner",
+				"sandboxed",
+				"snapshot",
+				"tap",
+				"tape",
+				"test",
+				"testing",
+				"typescript",
+				"watch"
+			],
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "ff9269be05fd8316e95232198fce3463bf2f270e",
+			"readmeFilename": "README.md",
+			"_id": "@jest/core@25.0.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-pzYp2vZWPP0CGy/63rV37BcKSxTO64jox4Er7GUACHTUmOPmLar4/kb0DgFxDHhiHnRdMlLWVbGYHWdfDyZhBA==",
+				"shasum": "caefa93d0d13ef7b1301bfd5bde3dd49b6db8bbd",
+				"tarball": "https://registry.npmjs.org/@jest/core/-/core-25.0.0.tgz",
+				"fileCount": 115,
+				"unpackedSize": 166127,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXgsDCRA9TVsSAnZWagAAnKIP/i8PlhFeA3OI8wP2gRTb\nKmdiRu3rAXJVGS8VPMzVT9M54YoadPYkQsjt9D5o4uKlcMLRVKREiDgevbZ7\naArtrWRyGmNNqMjQzu0FdbRcwbc9WR4gL14M3dVS1i4EU37jgCaF53Nr1SZ+\nr2Sb2gpBXtg4DkHhkhybnINd666+hwBHtiqU+JNZL9DNEeyztpGuimH2ojiY\nNul1aZq5OwWJettswi8+C9lBj7TWsQsHzI481HKEc6yYejYSQLoGFlNaTbAj\nCsHwM8P/Y4lKHrRvuKZyccT4W7btO/4OJ+K59SLcZAwI1rDUmqCFiRykC/y8\nCso/cv/UQvOfZvRQrca6trbOytFEpiBImdC5G2qe4sfg84HWEyJ0/wZQBU/g\nAzye3GOCtaHmsTtLt2qKGDuBlwMYlFuTsAHgXOLwSO9mRuGJcBXIWg2COfkB\n8/jpbBQYsbh5rlETCaqtV4HnutJEPlF9bebQBTdAiZucY1akpPM62DooQFSd\n6YgeVzDeu+A+Thy8xPVUscXeSGNlu/5h+tr7JRFM665G49qiAgD3HvkBML9X\nxD8Kp40W7hB0viZ+ld5C+GW4+6QrvboNnBfXGIp/qQhQRLjkzK7MFrEDK/xN\n0PtMiSrqXTloFTd0pkFjQANkkOr5ur0meWD1YwzcqvnqaoMlQgczAHOHS8Dm\nLrdd\r\n=WH09\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/core_25.0.0_1566444291039_0.45740297561239274"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2019-03-05T14:59:10.507Z",
+		"24.2.0-alpha.0": "2019-03-05T14:59:10.858Z",
+		"modified": "2019-09-24T20:36:53.789Z",
+		"24.3.0": "2019-03-07T13:00:17.304Z",
+		"24.3.1": "2019-03-07T23:12:56.080Z",
+		"24.4.0": "2019-03-11T14:58:24.248Z",
+		"24.5.0": "2019-03-12T16:37:31.604Z",
+		"24.6.0": "2019-04-01T22:26:59.928Z",
+		"24.7.0": "2019-04-03T03:55:54.093Z",
+		"24.7.1": "2019-04-04T01:19:09.749Z",
+		"24.8.0": "2019-05-05T02:02:52.489Z",
+		"24.9.0": "2019-08-16T06:13:56.690Z",
+		"25.0.0": "2019-08-22T03:24:51.235Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"beta": "24.2.0-alpha.0",
+		"latest": "24.9.0",
+		"next": "25.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"71c36bb5a4b30c0940617cd602387bc2\"",
+			"fetched": 1577117291767
+		}
+	},
+	"_distfiles": {
+		"core-24.2.0-alpha.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.2.0-alpha.0.tgz",
+			"sha": "2331ac36d3049f35af11032636f320ebc93ded8f",
+			"registry": "npmjs"
+		},
+		"core-24.3.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.3.0.tgz",
+			"sha": "ae5732af96567205d79ed97dc0b9b9033acea298",
+			"registry": "npmjs"
+		},
+		"core-24.3.1.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.3.1.tgz",
+			"sha": "9811596d9fcc6dbb3d4062c67e4c4867bc061585",
+			"registry": "npmjs"
+		},
+		"core-24.4.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.4.0.tgz",
+			"sha": "ec53510f19dde5aaf4e9e28a3c3426fc0f2a41d6",
+			"registry": "npmjs"
+		},
+		"core-24.5.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.5.0.tgz",
+			"sha": "2cefc6a69e9ebcae1da8f7c75f8a257152ba1ec0",
+			"registry": "npmjs"
+		},
+		"core-24.6.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.6.0.tgz",
+			"sha": "148c2dc60be7daef1e148bf8c0a01bb1391609df",
+			"registry": "npmjs"
+		},
+		"core-24.7.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.7.0.tgz",
+			"sha": "7fd599fa89e7fcd0109a9f6d33fcce2da17a7f98",
+			"registry": "npmjs"
+		},
+		"core-24.7.1.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.7.1.tgz",
+			"sha": "6707f50db238d0c5988860680e2e414df0032024",
+			"registry": "npmjs"
+		},
+		"core-24.8.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.8.0.tgz",
+			"sha": "fbbdcd42a41d0d39cddbc9f520c8bab0c33eed5b",
+			"registry": "npmjs"
+		},
+		"core-24.9.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-24.9.0.tgz",
+			"sha": "2ceccd0b93181f9c4850e74f2a9ad43d351369c4",
+			"registry": "npmjs"
+		},
+		"core-25.0.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/core/-/core-25.0.0.tgz",
+			"sha": "caefa93d0d13ef7b1301bfd5bde3dd49b6db8bbd",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-4335e8d27a4acddf",
+	"_id": "@jest/core",
+	"readme": "# @jest/core\n\nJest is currently working on providing a programmatic API. This is under development, and usage of this package directly is currently not supported."
+}

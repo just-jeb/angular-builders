@@ -1,0 +1,3433 @@
+{
+	"name": "whatwg-url",
+	"versions": {
+		"0.0.1": {
+			"name": "whatwg-url",
+			"version": "0.0.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "Sebastian Mayr <github@smayr.name"
+			},
+			"devDependencies": {
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "d0a5301f866909b3be599eb8aef790f6d1cde6eb",
+			"_id": "whatwg-url@0.0.1",
+			"_shasum": "7c9f44c05a635f63387b030bce0e71238da9e06d",
+			"_from": ".",
+			"_npmVersion": "2.11.0",
+			"_nodeVersion": "2.2.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"dist": {
+				"shasum": "7c9f44c05a635f63387b030bce0e71238da9e06d",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.0.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"0.1.0": {
+			"name": "whatwg-url",
+			"version": "0.1.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "Sebastian Mayr <github@smayr.name"
+			},
+			"devDependencies": {
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "d0a5301f866909b3be599eb8aef790f6d1cde6eb",
+			"_id": "whatwg-url@0.1.0",
+			"_shasum": "b5d7fc37ae3f65a987f9367b8662624999da39f3",
+			"_from": ".",
+			"_npmVersion": "2.11.0",
+			"_nodeVersion": "2.2.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"dist": {
+				"shasum": "b5d7fc37ae3f65a987f9367b8662624999da39f3",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.1.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"0.2.0": {
+			"name": "whatwg-url",
+			"version": "0.2.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "Sebastian Mayr <github@smayr.name"
+			},
+			"dependencies": {
+				"guid": "0.0.12",
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "7c5ef8bf8c8b0bafc58b5ecb919eb89382325a14",
+			"_id": "whatwg-url@0.2.0",
+			"_shasum": "8e0c163bfbbba16f437532bc4dd1451f8da366c3",
+			"_from": ".",
+			"_npmVersion": "2.11.0",
+			"_nodeVersion": "2.2.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"dist": {
+				"shasum": "8e0c163bfbbba16f437532bc4dd1451f8da366c3",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.2.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"0.2.1": {
+			"name": "whatwg-url",
+			"version": "0.2.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "Sebastian Mayr <github@smayr.name"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "dd73f062bc913df1be52a8f7e8a0d394e1650f27",
+			"_id": "whatwg-url@0.2.1",
+			"_shasum": "1a871c1f0564ae7292a7f7ba876af39e782f504e",
+			"_from": ".",
+			"_npmVersion": "2.11.0",
+			"_nodeVersion": "2.2.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"dist": {
+				"shasum": "1a871c1f0564ae7292a7f7ba876af39e782f504e",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.2.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"0.3.0": {
+			"name": "whatwg-url",
+			"version": "0.3.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "acc107353ccb97a0f78798766111e781b0b30c4e",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.3.0",
+			"_shasum": "6e6e0b3d73b7c225966dd1658cf214e45d3ea958",
+			"_from": ".",
+			"_npmVersion": "2.12.1",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "6e6e0b3d73b7c225966dd1658cf214e45d3ea958",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.3.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.3.1": {
+			"name": "whatwg-url",
+			"version": "0.3.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "20fce5f42c3310140647ac63db8114f6b6fe1423",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.3.1",
+			"_shasum": "912234fb70244cb3f519b2ce6f0b66e2c7a76031",
+			"_from": ".",
+			"_npmVersion": "2.12.1",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "912234fb70244cb3f519b2ce6f0b66e2c7a76031",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.3.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.4.0": {
+			"name": "whatwg-url",
+			"version": "0.4.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "49253dc0341cdd9e9a4bf037ef22a86d170c50b7",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.4.0",
+			"_shasum": "cf0b6b216c42a81affbc6eac64264e075ca6b68c",
+			"_from": ".",
+			"_npmVersion": "2.12.1",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "cf0b6b216c42a81affbc6eac64264e075ca6b68c",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.4.1": {
+			"name": "whatwg-url",
+			"version": "0.4.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "13049590acb88a8b230094e5934da45a312a96c2",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.4.1",
+			"_shasum": "ab9358c434094a20ee6ebf7faf514d6a43caccf4",
+			"_from": ".",
+			"_npmVersion": "2.12.1",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "ab9358c434094a20ee6ebf7faf514d6a43caccf4",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.4.2": {
+			"name": "whatwg-url",
+			"version": "0.4.2",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "e54f2332c1a9b738cdcdc87a59601a860e045621",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.4.2",
+			"_shasum": "8f18660325c58c94d5916d1ac1b8ccaba315659b",
+			"_from": ".",
+			"_npmVersion": "2.13.2",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "8f18660325c58c94d5916d1ac1b8ccaba315659b",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.5.0": {
+			"name": "whatwg-url",
+			"version": "0.5.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "57fba4f5204e6f686b4a225d1497a69f79c51066",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.5.0",
+			"_shasum": "0758fa133a953ff4653772b408f039e0306e3cf4",
+			"_from": ".",
+			"_npmVersion": "2.13.2",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "0758fa133a953ff4653772b408f039e0306e3cf4",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.5.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.6.0": {
+			"name": "whatwg-url",
+			"version": "0.6.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "14129c5759b67c0f9e2c6e4323fc2271878e0e14",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.6.0",
+			"_shasum": "9dd9b57e9623b7bff264d21a2c7e4783ccbf36ea",
+			"_from": ".",
+			"_npmVersion": "2.13.2",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "9dd9b57e9623b7bff264d21a2c7e4783ccbf36ea",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.6.1": {
+			"name": "whatwg-url",
+			"version": "0.6.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "83dcf28cd02c96ef48ccb4015f921a6b97c1533e",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.6.1",
+			"_shasum": "454168d5efb8f53b6760f84a23d50e50ea10adcf",
+			"_from": ".",
+			"_npmVersion": "2.13.2",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "454168d5efb8f53b6760f84a23d50e50ea10adcf",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.6.2": {
+			"name": "whatwg-url",
+			"version": "0.6.2",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "660e4e8c9365c51958726b3e504584bc75dbff8f",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.6.2",
+			"_shasum": "758c0596a2b0b93cec96667800359946f022af5f",
+			"_from": ".",
+			"_npmVersion": "2.13.2",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "758c0596a2b0b93cec96667800359946f022af5f",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.6.4": {
+			"name": "whatwg-url",
+			"version": "0.6.4",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0",
+				"recast": "~0.10.29"
+			},
+			"scripts": {
+				"build": "iojs bin/transform.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs src/ test/ scripts/ && jshint src/ test/ scripts/",
+				"prepublish": "npm run build",
+				"pretest": "iojs scripts/get-latest-platform-tests.js && npm run build",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "0b26d11e44891cd82ae45f8fb04f5fc4c71ee7c8",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.6.4",
+			"_shasum": "6a60829d03104b36645045726b2e7fcb557f674c",
+			"_from": ".",
+			"_npmVersion": "2.13.5",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "6a60829d03104b36645045726b2e7fcb557f674c",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.4.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.6.5": {
+			"name": "whatwg-url",
+			"version": "0.6.5",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/url.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.1"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"request": "^2.55.0"
+			},
+			"scripts": {
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs lib/ test/ scripts/ && jshint lib/ test/ scripts/",
+				"pretest": "iojs scripts/get-latest-platform-tests.js",
+				"test": "npm run lint && mocha"
+			},
+			"gitHead": "765cb383fe05b04d444ca59dd166e4f7b199ecbe",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@0.6.5",
+			"_shasum": "a6f8f1a98fd4a3bf6d85af6744745c16c4a9bf79",
+			"_from": ".",
+			"_npmVersion": "2.13.5",
+			"_nodeVersion": "2.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "a6f8f1a98fd4a3bf6d85af6744745c16c4a9bf79",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.5.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "whatwg-url",
+			"version": "1.0.0",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs src/ test/ scripts/ && jshint src/ test/ scripts/",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "143e69a83770ca33ad3145beff722b3b0abd398d",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@1.0.0",
+			"_shasum": "8cde8928f56c0e830fed076818fb54e18a25bbb0",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "8cde8928f56c0e830fed076818fb54e18a25bbb0",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "whatwg-url",
+			"version": "1.0.1",
+			"description": "An implementation of the WHATWG URL algorithm",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"istanbul": "~0.3.14",
+				"jscs": "^1.13.0",
+				"jshint": "^2.7.0",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "jscs src/ test/ scripts/ && jshint src/ test/ scripts/",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "51a93d1497dfa3666b5afe1ad3dc5e69ea3c8052",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@1.0.1",
+			"_shasum": "2ad742fc419d671026376f84c80fe4f69f55ccc7",
+			"_from": ".",
+			"_npmVersion": "3.7.2",
+			"_nodeVersion": "5.5.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "2ad742fc419d671026376f84c80fe4f69f55ccc7",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-1.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-5-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-1.0.1.tgz_1455127633394_0.16841055802069604"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "whatwg-url",
+			"version": "2.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.3.14",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "93b140f24699397d3f39cdb49b6d7ece021d6375",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@2.0.0",
+			"_shasum": "5980883353c93607113cbe8c1ab5a58a656070e2",
+			"_from": ".",
+			"_npmVersion": "3.8.3",
+			"_nodeVersion": "5.10.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "5980883353c93607113cbe8c1ab5a58a656070e2",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-2.0.0.tgz_1459979359048_0.7188771087676287"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "whatwg-url",
+			"version": "2.0.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.3.14",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "8a94299bb044e46c553e8e0d90ecf338102c2296",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@2.0.1",
+			"_shasum": "5396b2043f020ee6f704d9c45ea8519e724de659",
+			"_from": ".",
+			"_npmVersion": "3.8.3",
+			"_nodeVersion": "5.10.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "5396b2043f020ee6f704d9c45ea8519e724de659",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-2.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-2.0.1.tgz_1460758356720_0.45845040353015065"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "whatwg-url",
+			"version": "3.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "15547ead082b2434331a73d003a71e6923f5783e",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@3.0.0",
+			"_shasum": "b9033c50c7ce763e91d78777ce825a6d7f56dac5",
+			"_from": ".",
+			"_npmVersion": "3.8.6",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "b9033c50c7ce763e91d78777ce825a6d7f56dac5",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-3.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-3.0.0.tgz_1464463943614_0.6469055290799588"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "whatwg-url",
+			"version": "3.1.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "96da223b1b36c9028af67dea5911f993420968ae",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@3.1.0",
+			"_shasum": "7bdcae490f921aef6451fb6739ec6bbd8e907bf6",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.1.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "7bdcae490f921aef6451fb6739ec6bbd8e907bf6",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-3.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-3.1.0.tgz_1479612162307_0.29943900532089174"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "whatwg-url",
+			"version": "4.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "ab443c4b4b581fce6661e883f3844bbbafedf451",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.0.0",
+			"_shasum": "5be362f0b6e2f8760f7260df6e0e1df536f5479c",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "7.1.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "5be362f0b6e2f8760f7260df6e0e1df536f5479c",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.0.0.tgz_1479612610671_0.005820423131808639"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.1.0": {
+			"name": "whatwg-url",
+			"version": "4.1.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "bc1fe214fac5da6b418ab7d46cae7ca879d6d251",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.1.0",
+			"_shasum": "7a2863c15805020b37d0c17ed4091f7ce9d1c634",
+			"_from": ".",
+			"_npmVersion": "3.10.9",
+			"_nodeVersion": "6.9.2",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "7a2863c15805020b37d0c17ed4091f7ce9d1c634",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.1.0.tgz_1481305588580_0.8640300696715713"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.1.1": {
+			"name": "whatwg-url",
+			"version": "4.1.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "43e343837b713353d7bde690c407f571b7c670cb",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.1.1",
+			"_shasum": "567074923352de781e3500d64a86aa92a971b4a4",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "7.2.1",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "567074923352de781e3500d64a86aa92a971b4a4",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.1.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.1.1.tgz_1482106170404_0.012135676108300686"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.2.0": {
+			"name": "whatwg-url",
+			"version": "4.2.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "2556e463883639ea74e61d518bf53fb5816b1099",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.2.0",
+			"_shasum": "abf1a3f5ff4bc2005b3f0c2119382631789d8e44",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "7.2.1",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "abf1a3f5ff4bc2005b3f0c2119382631789d8e44",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.2.0.tgz_1483481566169_0.0977134327404201"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.3.0": {
+			"name": "whatwg-url",
+			"version": "4.3.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "0f228168cb3aa31366c182f4114ec4d821fb351d",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.3.0",
+			"_shasum": "92aaee21f4f2a642074357d70ef8500a7cbb171a",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "92aaee21f4f2a642074357d70ef8500a7cbb171a",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.3.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.3.0.tgz_1484181629024_0.38307241164147854"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.4.0": {
+			"name": "whatwg-url",
+			"version": "4.4.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "8d2df0a2dfe24cbabf72bb4dbd3088481f01236f",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.4.0",
+			"_shasum": "594f95781545c13934a62db40897c818cafa2e04",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "594f95781545c13934a62db40897c818cafa2e04",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.4.0.tgz_1487277003155_0.2883491162210703"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.5.0": {
+			"name": "whatwg-url",
+			"version": "4.5.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "f280010cdc26b016d9c8f785d0ac61fea41e1f39",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.5.0",
+			"_shasum": "79bb6f0e370a4dda1cbc8f3062a490cf8bbb09ea",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "79bb6f0e370a4dda1cbc8f3062a490cf8bbb09ea",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.5.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.5.0.tgz_1487785438418_0.1314921067096293"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.5.1": {
+			"name": "whatwg-url",
+			"version": "4.5.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "0a1403bcc0a66ec6dc3efedf3c3947ac690a5c24",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.5.1",
+			"_shasum": "ba634f630ff0778212c52ea9055d2d061380b1bb",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "ba634f630ff0778212c52ea9055d2d061380b1bb",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.5.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.5.1.tgz_1489346471258_0.9136115643195808"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.6.0": {
+			"name": "whatwg-url",
+			"version": "4.6.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "084105d1b524c58d816a57602004c9d1403e99c5",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.6.0",
+			"_shasum": "ef98da442273be04cf9632e176f257d2395a1ae4",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "ef98da442273be04cf9632e176f257d2395a1ae4",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.6.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.6.0.tgz_1489608567954_0.9198021700140089"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.7.0": {
+			"name": "whatwg-url",
+			"version": "4.7.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "6e0f00c6c020a81c9b918e64c757ba6a727743f6",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.7.0",
+			"_shasum": "202035ac1955b087cdd20fa8b58ded3ab1cd2af5",
+			"_from": ".",
+			"_npmVersion": "4.5.0",
+			"_nodeVersion": "7.2.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "202035ac1955b087cdd20fa8b58ded3ab1cd2af5",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.7.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.7.0.tgz_1491196642007_0.7352425667922944"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.7.1": {
+			"name": "whatwg-url",
+			"version": "4.7.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "08f7c219053825e78aabeb622e9eefeab499a802",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.7.1",
+			"_shasum": "df4dc2e3f25a63b1fa5b32ed6d6c139577d690de",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "df4dc2e3f25a63b1fa5b32ed6d6c139577d690de",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.7.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.7.1.tgz_1493066682277_0.8912100386805832"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.8.0": {
+			"name": "whatwg-url",
+			"version": "4.8.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "0a7f2fbd14aa99a1bcbebe5449e3ecc839af1281",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@4.8.0",
+			"_shasum": "d2981aa9148c1e00a41c5a6131166ab4683bbcc0",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "d2981aa9148c1e00a41c5a6131166ab4683bbcc0",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.8.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/whatwg-url-4.8.0.tgz_1494442601895_0.890925264917314"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"5.0.0": {
+			"name": "whatwg-url",
+			"version": "5.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^2.6.0",
+				"istanbul": "~0.4.3",
+				"mocha": "^2.2.4",
+				"recast": "~0.10.29",
+				"request": "^2.55.0",
+				"webidl2js": "^3.0.2"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "d34854a7af6ed1204f55d7da7761497bad350a7b",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@5.0.0",
+			"_shasum": "966454e8765462e37644d3626f6742ce8b70965d",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "966454e8765462e37644d3626f6742ce8b70965d",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-5.0.0.tgz_1495832200994_0.4803313452284783"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.0.0": {
+			"name": "whatwg-url",
+			"version": "6.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"stable": "^0.1.6",
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jsdom": "^11.0.0",
+				"mocha": "^3.4.2",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "4d52fa4f6bb5d07a3aa34335f59873096b70a3bb",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.0.0",
+			"_npmVersion": "5.0.4",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-qkcSNAzyC8cvp1NHmJUmhzyFV+6wBa9zkVSwulGYEO01cofdRnSvKQdrSbr4Z5uSRfdJQSpMlqXoGOOpzCemSQ==",
+				"shasum": "b4fabb090b68685e2cdc7f6bae330162814e7173",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.0.0.tgz_1498704193079_0.08849321026355028"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.0.1": {
+			"name": "whatwg-url",
+			"version": "6.0.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jsdom": "^11.0.0",
+				"mocha": "^3.4.2",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "5738b3effd2307d12683bd7fd5dc5a6391ce1147",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.0.1",
+			"_npmVersion": "5.0.4",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-zC0Q3WsTebgwcOd9dNgeXJ/j2ZuUuAXE5i3ugG7GdpT6RTKR5U4iJdNwMxyXyHQ1sTkdOKYeNAp1Yr+9yFNDIw==",
+				"shasum": "e8c88d2c028c4a463d4a0f78e6bb421e4082b323",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.0.1.tgz_1498707863242_0.6493291836231947"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.1.0": {
+			"name": "whatwg-url",
+			"version": "6.1.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "~0.0.3",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jsdom": "^11.0.0",
+				"mocha": "^3.4.2",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+				"lint": "eslint .",
+				"prepublish": "npm run build",
+				"pretest": "node scripts/get-latest-platform-tests.js && npm run build",
+				"test": "mocha"
+			},
+			"gitHead": "ebc0b39f5d24ad4ac22cd10a8e25840cff852f8c",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.1.0",
+			"_shasum": "5fc8279b93d75483b9ced8b26239854847a18578",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"shasum": "5fc8279b93d75483b9ced8b26239854847a18578",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.1.0.tgz_1498781749852_0.31180791836231947"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.2.0": {
+			"name": "whatwg-url",
+			"version": "6.2.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.0",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"domexception": "^1.0.0",
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jest": "^21.0.2",
+				"jsdom": "^11.0.0",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "8cd6fe99047b0435d97123adfcc6b500de6e6cc0",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.2.0",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.4.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-9sOJZPQEVV7P1HVLQqJQnqO79KoH1hr3z5vvc0Uxq78f4Hn5Y2ddnjeEKfokJCeeDCC1+wxJh4KtYHNXzzf00Q==",
+				"shasum": "36a5fee54c32b9f926000031e5526c72ad22ede6",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.2.0.tgz_1505175805052_0.049473063088953495"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.2.1": {
+			"name": "whatwg-url",
+			"version": "6.2.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.0",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"domexception": "^1.0.0",
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jest": "^21.0.2",
+				"jsdom": "^11.0.0",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "be9038b00a2a1da7a5b4717cee13e4c734e10d8a",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.2.1",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.4.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-+WH1K7dyXmt9a3U1Nt1GcsQsmnnHWfl/D8VTSK30ltddZukygZh691yNmydWcyzn0aDwc9+OFpDHYwzRgBEZTQ==",
+				"shasum": "db8fb96d7f02661af266e3cefc18425923900a00",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.2.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.2.1.tgz_1505176449662_0.3377517997287214"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.3.0": {
+			"name": "whatwg-url",
+			"version": "6.3.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.0",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"domexception": "^1.0.0",
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jest": "^21.0.2",
+				"jsdom": "^11.0.0",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "18d92e92de5c052b90694bae9be0a89002f2412f",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.3.0",
+			"_npmVersion": "5.4.2",
+			"_nodeVersion": "8.5.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-rM+hE5iYKGPAOu05mIdJR47pYSR2vDzfrTEFRc/S8D3L60yW8BuXmUJ7Kog7x/DrokFN7JNaHKadpzjouKRRAw==",
+				"shasum": "597ee5488371abe7922c843397ddec1ae94c048d",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.3.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.3.0.tgz_1506300938920_0.32468617195263505"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.4.0": {
+			"name": "whatwg-url",
+			"version": "6.4.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.0",
+				"webidl-conversions": "^4.0.1"
+			},
+			"devDependencies": {
+				"domexception": "^1.0.0",
+				"eslint": "^4.1.1",
+				"istanbul": "~0.4.3",
+				"jest": "^21.0.2",
+				"jsdom": "^11.0.0",
+				"recast": "~0.12.6",
+				"request": "^2.55.0",
+				"webidl2js": "^7.1.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "6bb04c76f48ff5d6eee9776edbc66c648d840179",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.4.0",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.2.1",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-Z0CVh/YE217Foyb488eo+iBv+r7eAQ0wSTyApi9n06jhcA3z6Nidg/EGvl0UFkg7kMdKxfBzzr+o9JF+cevgMg==",
+				"shasum": "08fdf2b9e872783a7a1f6216260a1d66cc722e08",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url-6.4.0.tgz_1512513561005_0.5477508250623941"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"6.4.1": {
+			"name": "whatwg-url",
+			"version": "6.4.1",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.1",
+				"webidl-conversions": "^4.0.2"
+			},
+			"devDependencies": {
+				"domexception": "^1.0.1",
+				"eslint": "^4.19.1",
+				"istanbul": "~0.4.5",
+				"jest": "^22.4.3",
+				"jsdom": "^11.8.0",
+				"recast": "~0.14.7",
+				"request": "^2.85.0",
+				"webidl2js": "^7.4.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "cb9f0dd5f01cedcbc81df3f8faeaffae714e9fd2",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.4.1",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-FwygsxsXx27x6XXuExA/ox3Ktwcbf+OAvrKmLulotDAiO1Q6ixchPFaHYsis2zZBZSJTR0+dR+JVtf7MlbqZjw==",
+				"shasum": "fdb94b440fd4ad836202c16e9737d511f012fd67",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.4.1.tgz",
+				"fileCount": 12,
+				"unpackedSize": 76827,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3N9TCRA9TVsSAnZWagAA9A0P/3MAd7hVynyzMgGRqu3S\n8c16+RiQNp374FkedWFrum4R23UoMf9bHd6UFNxk1hXIPO50W8oEu4Pojpvh\nvAxYAkY2kUW1/50U1Bsrxa+3xepLhsuRwKQBrXUngJpzllBqUEhqgk1BjlER\nmXvOflrTKMF18unJUQg5PVH1ccevsvrPYjcr2ODqVJZ7IRhMWe1bPyxR5ACJ\nxmMgANDq/G3p5IvV/sjunRFyTe6lZ+3RNbbHGDc0UANTvraEctrAMHzJGoLp\nAwrKDvTlsPxujGUc8Ew9K5Z6SHYy7tRAZRgfuyWC9IWL2m8M4CU95bviey7v\n+G3Udg/6uXPELhDAGrAaF3itOLazijg8nER0wr9TDj6HsawKmJPsdyhQNRt2\nayS/AV3t1lnDXXjKLJ014fTLAxLPU2g5SYXuLSfZ9HVF0kha5stxiOL9Gp7H\nZsmG6Av2XwAn1xuUKCuUVb1oeuwI/tntitDj25Zvy6FEUIxBZm0jBS/JsDLP\n7ZpCIRNHIxjaCfsftIZqd3GTSj8ph/UgeVcmeM15Nw/LI87pjkyi9Ns9UwZL\n3dUjjxALqyTYj07XGXiWSwHAJE1brIR7Ptb+fkMxZ5UsBN443ZutKnlzJ+ev\na7GUzFq1awF7cdKto7DWepeZtqy3/1ZiYfGqP0lC4IMJ44PfYJhD9ktyebyq\n1zoK\r\n=ctEg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url_6.4.1_1524424529474_0.5994462621079473"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"6.5.0": {
+			"name": "whatwg-url",
+			"version": "6.5.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.1",
+				"webidl-conversions": "^4.0.2"
+			},
+			"devDependencies": {
+				"browserify": "^16.2.2",
+				"domexception": "^1.0.1",
+				"eslint": "^4.19.1",
+				"istanbul": "~0.4.5",
+				"jest": "^22.4.3",
+				"jsdom": "^11.8.0",
+				"recast": "~0.14.7",
+				"request": "^2.85.0",
+				"webidl2js": "^7.4.0"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"build-live-viewer": "browserify lib/public-api.js --standalone whatwgURL > live-viewer/whatwg-url.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "4a073d8641307c377ef736d320616018c17c25e4",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@6.5.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "10.1.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-rhRZRqx/TLJQWUpQ6bmrt2UV4f0HCQ463yQuONJqC6fO2VoEb1pTYddbe59SkYq87aoM5A3bdhMZiUiVws+fzQ==",
+				"shasum": "f2df02bff176fd65070df74ad5ccbb5a199965a8",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.5.0.tgz",
+				"fileCount": 12,
+				"unpackedSize": 77124,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbGukMCRA9TVsSAnZWagAAuxgQAJcuS32R2OwcRgbBamBf\nsXbTFoyiLkTEvHUOxf5NXgYRemXmc10+0wyF6tNrprwaZwdxLpvVTOVY+dfy\nUT19eFW+Svt78Qa5J+n+zKHQyPWmVIa96E3zvLuHRcC81/wZ+Hx89EilLboJ\n1uSsv8EjyrjR32aNSf1Z7hdNdiY+LpvZXugjILRMqVCXyQJb6YBLCV3StxWu\n6AQjps6nRtkPMDq1B1+JF7q/27W3Tw+R0NDFYWkfH9eVeMnGNTWcXwAwgG9w\nbX7sUGAGddTnatkoceW1xfZSD8ObQl01gtG4jvFK5b7Hr1zMfSzOmCauinZ0\n/uW/tarU4IWuodAS7/2PZIH3korOlMtRif58aD5jAZcCXuN0b16bCbuD0oz7\nzmsSoIduJJiGImzoLpaRC2Uw5N3lFSLdIYkW7MQXYnJf3vHOIYjBcUq29pwV\n6pzp6yezlwoaI+bEsvX+KUROZb68hHqsHQpNrDAFMVEMRiz9MwmYrCTAZlSh\nMN+Rb+fLo2XVn+qJlUc8T1HDaag03poepkelo8tI9ELCdyiB0m/MRBzxK1cc\nolucD4MB/MEGSeUDQpoJdOLO4OtrwpTs8JO4Gd/QN9qS2aQdHU5dCYybxRQr\nPW9sioc8rH6YcjYiaaPZAf0cdo06hdnUJy29w2r2+Xloh4TNXDYEzNWtVCsq\nGMN1\r\n=RyzT\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				},
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url_6.5.0_1528490251889_0.8751875236451687"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0": {
+			"name": "whatwg-url",
+			"version": "7.0.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"files": [
+				"lib/"
+			],
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.1",
+				"webidl-conversions": "^4.0.2"
+			},
+			"devDependencies": {
+				"browserify": "^16.2.2",
+				"domexception": "^1.0.1",
+				"eslint": "^5.4.0",
+				"jest": "^23.5.0",
+				"jsdom": "^11.12.0",
+				"recast": "^0.15.3",
+				"request": "^2.88.0",
+				"webidl2js": "^9.0.1"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"build-live-viewer": "browserify lib/public-api.js --standalone whatwgURL > live-viewer/whatwg-url.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "a7ca3cad23d5c4cb263c751492f4a1f867dfafca",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@7.0.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "9.4.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-37GeVSIJ3kn1JgKyjiYNmSLP1yzbpb29jdmwBSgkD9h40/hyrR/OifpVUndji3tmwGgD8qpw7iQu3RSbCrBpsQ==",
+				"shasum": "fde926fa54a599f3adf82dff25a9f7be02dc6edd",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-7.0.0.tgz",
+				"fileCount": 12,
+				"unpackedSize": 77922,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeHTPCRA9TVsSAnZWagAAuVAP/1jFnEAG6pv1D9ieOgVP\nnXfT8Y/cxmm6Ztlvrl0vPEoifDnbAGKvI4IwHLRbgu54n8Iz1x0hg+6I6RKY\nyi12yVbJZd8S98cT0OjffKL2L1jPNLyQeEAvC8to/NgIiHfpjPPpeA6i9X5c\nvIkbYYCA6d7a/bpqIgpNf5rpiTsOQDtrejdbsvrNP1kox17yAoY1b96NzDtJ\n66UQRlFCuS6MgkZeDyzqST1q/gF+UwxpaKvDNnXS3JRdlfl5IjgC+0bNZDuo\nBLCnk2OLAoFzPgkUI3cZVsH4QAUFwA86YnLcG2FPO8FzanAi4nrCOj7Xd2/V\nF9xjzRUcu6kIwmKtGloyE1cDlzJJvEWtrsesA5vy4Chxx0BL8quIxHneFXrD\nOWPeCkuh/jAZOfdit9ORUaPY2DUxfF2LCnTMKletAm7ANppGUgS8uomF/ktg\nFpr7sE/tXwfOccTCLN0VOouLdoGuavtZThfWj5s9VjjAOASxjqnTH/7SJYIT\nHJi/gjIGVGaqu4CDsk9YYGb1i5nZcnv3hRKGT+wSwYl4zCryEq7WQAnGxGYJ\nlJNvOeN/kFHRERs/4yVH6szybwFBKEepwii6IXFU+qNeO5b3c4/91CiWcPhi\nSQoCLv48nmt2+7pg+7hJf1I1+imIDT2PWTYfQk4yPz6dZLTqcg43vnOrOWjQ\n3eFw\r\n=468P\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url_7.0.0_1534620878844_0.5401327223354646"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.0": {
+			"name": "whatwg-url",
+			"version": "7.1.0",
+			"description": "An implementation of the WHATWG URL Standard's URL API and parsing machinery",
+			"main": "lib/public-api.js",
+			"author": {
+				"name": "Sebastian Mayr",
+				"email": "github@smayr.name"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-url.git"
+			},
+			"dependencies": {
+				"lodash.sortby": "^4.7.0",
+				"tr46": "^1.0.1",
+				"webidl-conversions": "^4.0.2"
+			},
+			"devDependencies": {
+				"browserify": "^16.2.2",
+				"domexception": "^1.0.1",
+				"eslint": "^5.4.0",
+				"got": "^9.2.2",
+				"jest": "^23.5.0",
+				"recast": "^0.15.3",
+				"webidl2js": "^9.0.1"
+			},
+			"scripts": {
+				"build": "node scripts/transform.js && node scripts/convert-idl.js",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"prepublish": "node scripts/transform.js && node scripts/convert-idl.js",
+				"pretest": "node scripts/get-latest-platform-tests.js && node scripts/transform.js && node scripts/convert-idl.js",
+				"build-live-viewer": "browserify lib/public-api.js --standalone whatwgURL > live-viewer/whatwg-url.js",
+				"test": "jest"
+			},
+			"jest": {
+				"collectCoverageFrom": [
+					"lib/**/*.js",
+					"!lib/utils.js"
+				],
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				],
+				"testPathIgnorePatterns": [
+					"^<rootDir>/test/testharness.js$",
+					"^<rootDir>/test/web-platform-tests/"
+				]
+			},
+			"gitHead": "d1c8d31465924aaf654a55254c9c63526b73c9dd",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-url/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-url#readme",
+			"_id": "whatwg-url@7.1.0",
+			"_nodeVersion": "12.9.1",
+			"_npmVersion": "6.10.2",
+			"dist": {
+				"integrity": "sha512-WUu7Rg1DroM7oQvGWfOiAK21n74Gg+T4elXEQYkOhtyLeWiJFoOGLXPKI/9gzIie9CtwVLm8wtw6YJdKyxSjeg==",
+				"shasum": "c2c492f1eca612988efd3d2266be1b9fc6170d06",
+				"tarball": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-7.1.0.tgz",
+				"fileCount": 12,
+				"unpackedSize": 78428,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdrdcOCRA9TVsSAnZWagAAf5cP/jEQ5+b+XCaQCswxck5d\npGWmqPPj1jWO74AjH+lWDpUjJTRKSKft/n+t1/Pj6WRU12Mi9CQPxKmIzoO7\nf9vetmggkYHNU9FlH835F4U2hG2yOtU0mtfOjrEr5dw/aUwrhmBtfq1M89IL\nIPaatHdNiZpz/AeIKiewG8vUHjXNVaR9QWmj3TmXWPvi+snSi3X9gBH/CbCt\nno6Z+QMxLW7UVwUY2rYZ2NiVo9s7Pdo96buou/0WoGb83VxZ13IZo1gR99QE\nAfb/y9UxfY4klDAZYhcJL6S1P7k08kADn8tVJommDXHIT/UR246o038MX7MF\nKpiB6af3XXzP1tG1R7YOyX54m095cRS+MISJsY+8EUVGltzwCDG3IGOSkYiU\nnbDz4u0j5nESpFozwHpyJWfmRvXeE7+/3h9pdGcnu35SIGYoOXVVG2LZWxDu\njrz7QJB3MARhvJKNWGAAXm+81sShzzzVRbV0ngVNNATdX0HCQ1CdpsYE93YR\nASl/buzfNU5wPQ+dz7JjfrjHtakVg5Ebhnqn6sE0mCGLVBzwpRd5LyW2vtMR\nLAvRy/ORWAv74BIJGJV4jFAD0divLlFZRLqtPgwvD2GiyidwFN3o8LnXlLcL\nb2EA0GNyxFbG4u+Wu/ACEAo8uGDMTfKy3A9ZgjI0w4R5GftPVVwd12eFmUFG\nWAar\r\n=RS9J\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-url_7.1.0_1571673869527_0.6964578719490482"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-10-21T16:04:34.280Z",
+		"created": "2015-06-04T13:09:58.924Z",
+		"0.0.1": "2015-06-04T13:09:58.924Z",
+		"0.1.0": "2015-06-04T13:49:20.087Z",
+		"0.2.0": "2015-06-07T13:27:26.272Z",
+		"0.2.1": "2015-06-08T03:00:29.433Z",
+		"0.3.0": "2015-07-21T08:32:04.766Z",
+		"0.3.1": "2015-07-21T11:07:58.642Z",
+		"0.4.0": "2015-07-23T09:45:41.021Z",
+		"0.4.1": "2015-07-23T16:20:48.729Z",
+		"0.4.2": "2015-07-31T20:07:08.825Z",
+		"0.5.0": "2015-08-01T19:13:35.551Z",
+		"0.6.0": "2015-08-01T21:44:09.517Z",
+		"0.6.1": "2015-08-02T23:10:21.150Z",
+		"0.6.2": "2015-08-13T01:35:41.324Z",
+		"0.6.3": "2015-08-29T02:44:57.335Z",
+		"0.6.4": "2015-08-29T02:47:13.953Z",
+		"0.6.5": "2015-08-30T13:58:56.358Z",
+		"1.0.0": "2016-01-27T22:03:42.087Z",
+		"1.0.1": "2016-02-10T18:07:15.148Z",
+		"2.0.0": "2016-04-06T21:49:21.279Z",
+		"2.0.1": "2016-04-15T22:12:37.778Z",
+		"3.0.0": "2016-05-28T19:32:27.252Z",
+		"3.1.0": "2016-11-20T03:22:42.852Z",
+		"4.0.0": "2016-11-20T03:30:12.579Z",
+		"4.1.0": "2016-12-09T17:46:30.354Z",
+		"4.1.1": "2016-12-19T00:09:32.418Z",
+		"4.2.0": "2017-01-03T22:12:46.910Z",
+		"4.3.0": "2017-01-12T00:40:31.291Z",
+		"4.4.0": "2017-02-16T20:30:05.197Z",
+		"4.5.0": "2017-02-22T17:43:59.019Z",
+		"4.5.1": "2017-03-12T19:21:11.865Z",
+		"4.6.0": "2017-03-15T20:09:29.895Z",
+		"4.7.0": "2017-04-03T05:17:23.819Z",
+		"4.7.1": "2017-04-24T20:44:44.321Z",
+		"4.8.0": "2017-05-10T18:56:43.181Z",
+		"5.0.0": "2017-05-26T20:56:41.955Z",
+		"6.0.0": "2017-06-29T02:43:14.188Z",
+		"6.0.1": "2017-06-29T03:44:24.331Z",
+		"6.1.0": "2017-06-30T00:15:50.961Z",
+		"6.2.0": "2017-09-12T00:23:26.069Z",
+		"6.2.1": "2017-09-12T00:34:10.664Z",
+		"6.3.0": "2017-09-25T00:55:39.030Z",
+		"6.4.0": "2017-12-05T22:39:22.006Z",
+		"6.4.1": "2018-04-22T19:15:29.579Z",
+		"6.5.0": "2018-06-08T20:37:32.015Z",
+		"7.0.0": "2018-08-18T19:34:38.926Z",
+		"7.1.0": "2019-10-21T16:04:29.957Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "7.1.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"8ba8c3094f6e864b94d244d71821feea\"",
+			"fetched": 1577117261224
+		}
+	},
+	"_distfiles": {
+		"whatwg-url-0.0.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.0.1.tgz",
+			"sha": "7c9f44c05a635f63387b030bce0e71238da9e06d",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.1.0.tgz",
+			"sha": "b5d7fc37ae3f65a987f9367b8662624999da39f3",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.2.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.2.0.tgz",
+			"sha": "8e0c163bfbbba16f437532bc4dd1451f8da366c3",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.2.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.2.1.tgz",
+			"sha": "1a871c1f0564ae7292a7f7ba876af39e782f504e",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.3.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.3.0.tgz",
+			"sha": "6e6e0b3d73b7c225966dd1658cf214e45d3ea958",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.3.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.3.1.tgz",
+			"sha": "912234fb70244cb3f519b2ce6f0b66e2c7a76031",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.4.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.0.tgz",
+			"sha": "cf0b6b216c42a81affbc6eac64264e075ca6b68c",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.4.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.1.tgz",
+			"sha": "ab9358c434094a20ee6ebf7faf514d6a43caccf4",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.4.2.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.4.2.tgz",
+			"sha": "8f18660325c58c94d5916d1ac1b8ccaba315659b",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.5.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.5.0.tgz",
+			"sha": "0758fa133a953ff4653772b408f039e0306e3cf4",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.6.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.0.tgz",
+			"sha": "9dd9b57e9623b7bff264d21a2c7e4783ccbf36ea",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.6.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.1.tgz",
+			"sha": "454168d5efb8f53b6760f84a23d50e50ea10adcf",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.6.2.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.2.tgz",
+			"sha": "758c0596a2b0b93cec96667800359946f022af5f",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.6.4.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.4.tgz",
+			"sha": "6a60829d03104b36645045726b2e7fcb557f674c",
+			"registry": "npmjs"
+		},
+		"whatwg-url-0.6.5.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-0.6.5.tgz",
+			"sha": "a6f8f1a98fd4a3bf6d85af6744745c16c4a9bf79",
+			"registry": "npmjs"
+		},
+		"whatwg-url-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-1.0.0.tgz",
+			"sha": "8cde8928f56c0e830fed076818fb54e18a25bbb0",
+			"registry": "npmjs"
+		},
+		"whatwg-url-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-1.0.1.tgz",
+			"sha": "2ad742fc419d671026376f84c80fe4f69f55ccc7",
+			"registry": "npmjs"
+		},
+		"whatwg-url-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-2.0.0.tgz",
+			"sha": "5980883353c93607113cbe8c1ab5a58a656070e2",
+			"registry": "npmjs"
+		},
+		"whatwg-url-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-2.0.1.tgz",
+			"sha": "5396b2043f020ee6f704d9c45ea8519e724de659",
+			"registry": "npmjs"
+		},
+		"whatwg-url-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-3.0.0.tgz",
+			"sha": "b9033c50c7ce763e91d78777ce825a6d7f56dac5",
+			"registry": "npmjs"
+		},
+		"whatwg-url-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-3.1.0.tgz",
+			"sha": "7bdcae490f921aef6451fb6739ec6bbd8e907bf6",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.0.0.tgz",
+			"sha": "5be362f0b6e2f8760f7260df6e0e1df536f5479c",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.1.0.tgz",
+			"sha": "7a2863c15805020b37d0c17ed4091f7ce9d1c634",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.1.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.1.1.tgz",
+			"sha": "567074923352de781e3500d64a86aa92a971b4a4",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.2.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.2.0.tgz",
+			"sha": "abf1a3f5ff4bc2005b3f0c2119382631789d8e44",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.3.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.3.0.tgz",
+			"sha": "92aaee21f4f2a642074357d70ef8500a7cbb171a",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.4.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.4.0.tgz",
+			"sha": "594f95781545c13934a62db40897c818cafa2e04",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.5.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.5.0.tgz",
+			"sha": "79bb6f0e370a4dda1cbc8f3062a490cf8bbb09ea",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.5.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.5.1.tgz",
+			"sha": "ba634f630ff0778212c52ea9055d2d061380b1bb",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.6.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.6.0.tgz",
+			"sha": "ef98da442273be04cf9632e176f257d2395a1ae4",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.7.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.7.0.tgz",
+			"sha": "202035ac1955b087cdd20fa8b58ded3ab1cd2af5",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.7.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.7.1.tgz",
+			"sha": "df4dc2e3f25a63b1fa5b32ed6d6c139577d690de",
+			"registry": "npmjs"
+		},
+		"whatwg-url-4.8.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-4.8.0.tgz",
+			"sha": "d2981aa9148c1e00a41c5a6131166ab4683bbcc0",
+			"registry": "npmjs"
+		},
+		"whatwg-url-5.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz",
+			"sha": "966454e8765462e37644d3626f6742ce8b70965d",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.0.0.tgz",
+			"sha": "b4fabb090b68685e2cdc7f6bae330162814e7173",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.0.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.0.1.tgz",
+			"sha": "e8c88d2c028c4a463d4a0f78e6bb421e4082b323",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.1.0.tgz",
+			"sha": "5fc8279b93d75483b9ced8b26239854847a18578",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.2.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.2.0.tgz",
+			"sha": "36a5fee54c32b9f926000031e5526c72ad22ede6",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.2.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.2.1.tgz",
+			"sha": "db8fb96d7f02661af266e3cefc18425923900a00",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.3.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.3.0.tgz",
+			"sha": "597ee5488371abe7922c843397ddec1ae94c048d",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.4.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.4.0.tgz",
+			"sha": "08fdf2b9e872783a7a1f6216260a1d66cc722e08",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.4.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.4.1.tgz",
+			"sha": "fdb94b440fd4ad836202c16e9737d511f012fd67",
+			"registry": "npmjs"
+		},
+		"whatwg-url-6.5.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-6.5.0.tgz",
+			"sha": "f2df02bff176fd65070df74ad5ccbb5a199965a8",
+			"registry": "npmjs"
+		},
+		"whatwg-url-7.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-7.0.0.tgz",
+			"sha": "fde926fa54a599f3adf82dff25a9f7be02dc6edd",
+			"registry": "npmjs"
+		},
+		"whatwg-url-7.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-7.1.0.tgz",
+			"sha": "c2c492f1eca612988efd3d2266be1b9fc6170d06",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-067448a42fafea2c",
+	"_id": "whatwg-url",
+	"readme": "# whatwg-url\n\nwhatwg-url is a full implementation of the WHATWG [URL Standard](https://url.spec.whatwg.org/). It can be used standalone, but it also exposes a lot of the internal algorithms that are useful for integrating a URL parser into a project like [jsdom](https://github.com/tmpvar/jsdom).\n\n## Specification conformance\n\nwhatwg-url is currently up to date with the URL spec up to commit [7ae1c69](https://github.com/whatwg/url/commit/7ae1c691c96f0d82fafa24c33aa1e8df9ffbf2bc).\n\nFor `file:` URLs, whose [origin is left unspecified](https://url.spec.whatwg.org/#concept-url-origin), whatwg-url chooses to use a new opaque origin (which serializes to `\"null\"`).\n\n## API\n\n### The `URL` and `URLSearchParams` classes\n\nThe main API is provided by the [`URL`](https://url.spec.whatwg.org/#url-class) and [`URLSearchParams`](https://url.spec.whatwg.org/#interface-urlsearchparams) exports, which follows the spec's behavior in all ways (including e.g. `USVString` conversion). Most consumers of this library will want to use these.\n\n### Low-level URL Standard API\n\nThe following methods are exported for use by places like jsdom that need to implement things like [`HTMLHyperlinkElementUtils`](https://html.spec.whatwg.org/#htmlhyperlinkelementutils). They mostly operate on or return an \"internal URL\" or [\"URL record\"](https://url.spec.whatwg.org/#concept-url) type.\n\n- [URL parser](https://url.spec.whatwg.org/#concept-url-parser): `parseURL(input, { baseURL, encodingOverride })`\n- [Basic URL parser](https://url.spec.whatwg.org/#concept-basic-url-parser): `basicURLParse(input, { baseURL, encodingOverride, url, stateOverride })`\n- [URL serializer](https://url.spec.whatwg.org/#concept-url-serializer): `serializeURL(urlRecord, excludeFragment)`\n- [Host serializer](https://url.spec.whatwg.org/#concept-host-serializer): `serializeHost(hostFromURLRecord)`\n- [Serialize an integer](https://url.spec.whatwg.org/#serialize-an-integer): `serializeInteger(number)`\n- [Origin](https://url.spec.whatwg.org/#concept-url-origin) [serializer](https://html.spec.whatwg.org/multipage/origin.html#ascii-serialisation-of-an-origin): `serializeURLOrigin(urlRecord)`\n- [Set the username](https://url.spec.whatwg.org/#set-the-username): `setTheUsername(urlRecord, usernameString)`\n- [Set the password](https://url.spec.whatwg.org/#set-the-password): `setThePassword(urlRecord, passwordString)`\n- [Cannot have a username/password/port](https://url.spec.whatwg.org/#cannot-have-a-username-password-port): `cannotHaveAUsernamePasswordPort(urlRecord)`\n- [Percent decode](https://url.spec.whatwg.org/#percent-decode): `percentDecode(buffer)`\n\nThe `stateOverride` parameter is one of the following strings:\n\n- [`\"scheme start\"`](https://url.spec.whatwg.org/#scheme-start-state)\n- [`\"scheme\"`](https://url.spec.whatwg.org/#scheme-state)\n- [`\"no scheme\"`](https://url.spec.whatwg.org/#no-scheme-state)\n- [`\"special relative or authority\"`](https://url.spec.whatwg.org/#special-relative-or-authority-state)\n- [`\"path or authority\"`](https://url.spec.whatwg.org/#path-or-authority-state)\n- [`\"relative\"`](https://url.spec.whatwg.org/#relative-state)\n- [`\"relative slash\"`](https://url.spec.whatwg.org/#relative-slash-state)\n- [`\"special authority slashes\"`](https://url.spec.whatwg.org/#special-authority-slashes-state)\n- [`\"special authority ignore slashes\"`](https://url.spec.whatwg.org/#special-authority-ignore-slashes-state)\n- [`\"authority\"`](https://url.spec.whatwg.org/#authority-state)\n- [`\"host\"`](https://url.spec.whatwg.org/#host-state)\n- [`\"hostname\"`](https://url.spec.whatwg.org/#hostname-state)\n- [`\"port\"`](https://url.spec.whatwg.org/#port-state)\n- [`\"file\"`](https://url.spec.whatwg.org/#file-state)\n- [`\"file slash\"`](https://url.spec.whatwg.org/#file-slash-state)\n- [`\"file host\"`](https://url.spec.whatwg.org/#file-host-state)\n- [`\"path start\"`](https://url.spec.whatwg.org/#path-start-state)\n- [`\"path\"`](https://url.spec.whatwg.org/#path-state)\n- [`\"cannot-be-a-base-URL path\"`](https://url.spec.whatwg.org/#cannot-be-a-base-url-path-state)\n- [`\"query\"`](https://url.spec.whatwg.org/#query-state)\n- [`\"fragment\"`](https://url.spec.whatwg.org/#fragment-state)\n\nThe URL record type has the following API:\n\n- [`scheme`](https://url.spec.whatwg.org/#concept-url-scheme)\n- [`username`](https://url.spec.whatwg.org/#concept-url-username)\n- [`password`](https://url.spec.whatwg.org/#concept-url-password)\n- [`host`](https://url.spec.whatwg.org/#concept-url-host)\n- [`port`](https://url.spec.whatwg.org/#concept-url-port)\n- [`path`](https://url.spec.whatwg.org/#concept-url-path) (as an array)\n- [`query`](https://url.spec.whatwg.org/#concept-url-query)\n- [`fragment`](https://url.spec.whatwg.org/#concept-url-fragment)\n- [`cannotBeABaseURL`](https://url.spec.whatwg.org/#url-cannot-be-a-base-url-flag) (as a boolean)\n\nThese properties should be treated with care, as in general changing them will cause the URL record to be in an inconsistent state until the appropriate invocation of `basicURLParse` is used to fix it up. You can see examples of this in the URL Standard, where there are many step sequences like \"4. Set context object’s url’s fragment to the empty string. 5. Basic URL parse _input_ with context object’s url as _url_ and fragment state as _state override_.\" In between those two steps, a URL record is in an unusable state.\n\nThe return value of \"failure\" in the spec is represented by `null`. That is, functions like `parseURL` and `basicURLParse` can return _either_ a URL record _or_ `null`.\n\n## Development instructions\n\nFirst, install [Node.js](https://nodejs.org/). Then, fetch the dependencies of whatwg-url, by running from this directory:\n\n    npm install\n\nTo run tests:\n\n    npm test\n\nTo generate a coverage report:\n\n    npm run coverage\n\nTo build and run the live viewer:\n\n    npm run build\n    npm run build-live-viewer\n\nServe the contents of the `live-viewer` directory using any web server.\n\n## Supporting whatwg-url\n\nThe jsdom project (including whatwg-url) is a community-driven project maintained by a team of [volunteers](https://github.com/orgs/jsdom/people). You could support us by:\n\n- [Getting professional support for whatwg-url](https://tidelift.com/subscription/pkg/npm-whatwg-url?utm_source=npm-whatwg-url&utm_medium=referral&utm_campaign=readme) as part of a Tidelift subscription. Tidelift helps making open source sustainable for us while giving teams assurances for maintenance, licensing, and security.\n- Contributing directly to the project."
+}

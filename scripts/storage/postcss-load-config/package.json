@@ -1,0 +1,1147 @@
+{
+	"name": "postcss-load-config",
+	"versions": {
+		"1.0.0-alpha": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-alpha",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=4"
+			},
+			"main": "index.js",
+			"scripts": {
+				"clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage test/node_modules",
+				"pretest": "echo '=> Linting' && npm run clean && standard",
+				"test": "echo '=> Testing' && nyc ava './test/index.js'",
+				"start": "echo '=> Starting' && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "^0.15.1",
+				"babel-core": "^6.9.1",
+				"babel-preset-es2015": "^6.9.0",
+				"babel-register": "^6.9.0",
+				"coveralls": "^2.11.9",
+				"nyc": "^6.4.4",
+				"postcss": "^5.0.21",
+				"postcss-bem": "^0.4.1",
+				"postcss-import": "^8.1.2",
+				"postcss-less": "^0.12.0",
+				"postcss-nested": "^1.0.0",
+				"postcss-scss": "^0.1.8",
+				"standard": "^7.1.1",
+				"sugarss": "^0.1.3"
+			},
+			"ava": {
+				"babel": "inherit"
+			},
+			"nyc": {
+				"all": true,
+				"require": "babel-register",
+				"include": [
+					"lib",
+					"test"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"standard": {
+				"ignore": []
+			},
+			"babel": {
+				"env": {
+					"development": {
+						"sourceMaps": "inline"
+					}
+				},
+				"presets": [
+					"es2015"
+				]
+			},
+			"keywords": [
+				"PostCSS",
+				"Autoload",
+				"Config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "5088f1535cdbd8255a3ab1ad767ae88ca6497039",
+			"_id": "postcss-load-config@1.0.0-alpha",
+			"_shasum": "593ca9197c9e0ebce5697d1325a5c5efb0139efd",
+			"_from": ".",
+			"_npmVersion": "3.9.5",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "593ca9197c9e0ebce5697d1325a5c5efb0139efd",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-alpha.tgz_1464792383282_0.15225055231712759"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0-alpha2": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-alpha2",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=4"
+			},
+			"main": "index.js",
+			"scripts": {
+				"clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage",
+				"pretest": "echo '=> Linting' && npm run clean && standard",
+				"test": "echo '=> Testing' && nyc ava 'test/index.js'",
+				"start": "echo '=> Starting' && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^1.1.0",
+				"postcss-load-options": "^1.0.0-alpha2",
+				"postcss-load-plugins": "^2.0.0-alpha2"
+			},
+			"devDependencies": {
+				"ava": "^0.15.2",
+				"coveralls": "^2.11.9",
+				"nyc": "^6.6.1",
+				"postcss": "^5.0.21",
+				"postcss-bem": "^0.4.1",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"standard": "^7.1.2",
+				"sugarss": "^0.1.3"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"test"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcssconfig"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "8fe486ef58a6a5b0f43b000fcc13c5a5e784b6be",
+			"_id": "postcss-load-config@1.0.0-alpha2",
+			"_shasum": "d296fa4f3366cc36c59e833aaa305a4a403ad63c",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.3.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "d296fa4f3366cc36c59e833aaa305a4a403ad63c",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-alpha2.tgz_1467905735891_0.5539679552894086"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0-alpha3": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-alpha3",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=4"
+			},
+			"main": "index.js",
+			"scripts": {
+				"clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage",
+				"pretest": "echo '=> Linting' && npm run clean && standard",
+				"test": "echo '=> Testing' && nyc ava 'test/index.js'",
+				"start": "echo '=> Starting' && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^1.1.0",
+				"postcss-load-options": "^1.0.0-alpha3",
+				"postcss-load-plugins": "^2.0.0-alpha3"
+			},
+			"devDependencies": {
+				"ava": "^0.15.2",
+				"coveralls": "^2.11.9",
+				"nyc": "^6.6.1",
+				"postcss": "^5.0.21",
+				"postcss-bem": "^0.4.1",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"standard": "^7.1.2",
+				"sugarss": "^0.1.3"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"test"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcssconfig"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "6a6446893e160e836c4382e940eeb9cfe0b85db4",
+			"_id": "postcss-load-config@1.0.0-alpha3",
+			"_shasum": "f9918b736a8d2b951807edd8b522dc58828c8be7",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.3.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "f9918b736a8d2b951807edd8b522dc58828c8be7",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha3.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-alpha3.tgz_1468018560313_0.7030459686648101"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0-alpha4": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-alpha4",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=4"
+			},
+			"main": "index.js",
+			"scripts": {
+				"clean": "echo '=> Cleaning' && rm -rf .nyc_output coverage",
+				"pretest": "echo '=> Linting' && npm run clean && standard",
+				"test": "echo '=> Testing' && nyc ava 'test/index.js'",
+				"start": "echo '=> Starting' && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^1.1.0",
+				"postcss-load-options": "^1.0.0-alpha4",
+				"postcss-load-plugins": "^2.0.0-alpha4"
+			},
+			"devDependencies": {
+				"ava": "^0.15.2",
+				"coveralls": "^2.11.9",
+				"nyc": "^6.6.1",
+				"postcss": "^5.0.21",
+				"postcss-bem": "^0.4.1",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"standard": "^7.1.2",
+				"sugarss": "^0.1.3"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"test"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcssconfig"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "c17d86ff96a7b80100b9ffad566451efe1496566",
+			"_id": "postcss-load-config@1.0.0-alpha4",
+			"_shasum": "a3117468cf8a650635df0a8c0cc3b042bc5c235f",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.3.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "a3117468cf8a650635df0a8c0cc3b042bc5c235f",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha4.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-alpha4.tgz_1468072434778_0.28771781944669783"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0-beta": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-beta",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=4",
+				"npm": ">=3"
+			},
+			"main": "index.js",
+			"scripts": {
+				"lint": "standard",
+				"test": "nyc ava test/pkg/index.js test/rc/index.js test/js/index.js",
+				"logs": "standard-changelog > CHANGELOG.md",
+				"docs": "jsdoc2md index.js > INDEX.md",
+				"clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+				"start": "sudo npm run clean && npm run lint && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^2.0.2",
+				"postcss-load-options": "^1.0.1",
+				"postcss-load-plugins": "^2.0.0-beta"
+			},
+			"devDependencies": {
+				"ava": "^0.16.0",
+				"coveralls": "^2.11.14",
+				"cssnano": "^3.7.7",
+				"jsdoc-to-markdown": "^2.0.0",
+				"nyc": "^8.3.1",
+				"postcss": "^5.2.4",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"postcss-scss": "^0.3.1",
+				"standard": "^8.4.0",
+				"sugarss": "^0.2.0"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"index.js"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcss-config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Mateusz Derks",
+					"url": "http://ertrzyiks.me"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "db19af442594c6c058301b574d7fbfb0f1b7508b",
+			"_id": "postcss-load-config@1.0.0-beta",
+			"_shasum": "5a91188f834d4f8ed4b26381f51c92a570163e3b",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "6.7.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "5a91188f834d4f8ed4b26381f51c92a570163e3b",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-beta.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-beta.tgz_1476249755926_0.550744533771649"
+			},
+			"directories": {}
+		},
+		"1.0.0-rc": {
+			"name": "postcss-load-config",
+			"version": "1.0.0-rc",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=0.12",
+				"npm": ">=3"
+			},
+			"main": "index.js",
+			"scripts": {
+				"lint": "standard",
+				"test": "nyc ava test/pkg/index.js test/rc/index.js test/js/index.js",
+				"logs": "standard-changelog > CHANGELOG.md",
+				"docs": "jsdoc2md index.js > INDEX.md",
+				"clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+				"start": "sudo npm run clean && npm run lint && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^2.1.0",
+				"object-assign": "^4.1.0",
+				"postcss-load-options": "^1.0.2",
+				"postcss-load-plugins": "^2.0.0-rc"
+			},
+			"devDependencies": {
+				"ava": "^0.16.0",
+				"coveralls": "^2.11.14",
+				"cssnano": "^3.7.7",
+				"jsdoc-to-markdown": "^2.0.0",
+				"nyc": "^8.3.1",
+				"postcss": "^5.2.4",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"postcss-scss": "^0.3.1",
+				"standard": "^8.4.0",
+				"sugarss": "^0.2.0"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"index.js"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcss-config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Mateusz Derks",
+					"url": "http://ertrzyiks.me"
+				},
+				{
+					"name": "Ryan Dunckel",
+					"email": "sparty02@gmail.com"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "5e7e3073368d9172b5beecd7f2efc6a75b9e624e",
+			"_id": "postcss-load-config@1.0.0-rc",
+			"_shasum": "8aed0d0fb94afe2c1ab0ba2ca69da3af5079e2cc",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "6.8.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "8aed0d0fb94afe2c1ab0ba2ca69da3af5079e2cc",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-rc.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0-rc.tgz_1476466351756_0.5997516601346433"
+			},
+			"directories": {}
+		},
+		"1.0.0": {
+			"name": "postcss-load-config",
+			"version": "1.0.0",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=0.12",
+				"npm": ">=3"
+			},
+			"main": "index.js",
+			"scripts": {
+				"lint": "standard",
+				"test": "nyc ava test/err/index.js test/pkg/index.js test/rc/index.js test/js/index.js",
+				"logs": "standard-changelog > CHANGELOG.md",
+				"docs": "jsdoc2md index.js > INDEX.md",
+				"clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+				"start": "sudo npm run clean && npm run lint && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^2.1.0",
+				"object-assign": "^4.1.0",
+				"postcss-load-options": "^1.0.2",
+				"postcss-load-plugins": "^2.0.0"
+			},
+			"devDependencies": {
+				"ava": "^0.16.0",
+				"coveralls": "^2.11.14",
+				"cssnano": "^3.7.7",
+				"jsdoc-to-markdown": "^2.0.0",
+				"nyc": "^8.3.1",
+				"postcss": "^5.2.4",
+				"postcss-import": "^8.1.2",
+				"postcss-nested": "^1.0.0",
+				"postcss-sprites": "^4.0.0",
+				"postcss-scss": "^0.3.1",
+				"standard": "^8.4.0",
+				"sugarss": "^0.2.0"
+			},
+			"ava": {
+				"verbose": "true"
+			},
+			"nyc": {
+				"all": true,
+				"include": [
+					"index.js"
+				],
+				"extension": [
+					".js"
+				]
+			},
+			"keywords": [
+				"postcss",
+				"postcss-config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Mateusz Derks",
+					"url": "http://ertrzyiks.me"
+				},
+				{
+					"name": "Ryan Dunckel",
+					"email": "sparty02@gmail.com"
+				},
+				{
+					"name": "Patrick Gilday"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "cb3cfb13b4ebd5595552c032ffb18d30a863b3fc",
+			"_id": "postcss-load-config@1.0.0",
+			"_shasum": "1399f60dcd6bd9c3124b2eb22960f77f9dc08b3d",
+			"_from": ".",
+			"_npmVersion": "4.0.1",
+			"_nodeVersion": "7.0.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "1399f60dcd6bd9c3124b2eb22960f77f9dc08b3d",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.0.0.tgz_1477582028872_0.905647398903966"
+			},
+			"directories": {}
+		},
+		"1.1.0": {
+			"name": "postcss-load-config",
+			"version": "1.1.0",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=0.12"
+			},
+			"main": "index.js",
+			"scripts": {
+				"lint": "standard",
+				"test": "nyc ava -v test/err/index.js test/pkg/index.js test/rc/index.js test/js/**/index.js",
+				"logs": "standard-changelog -i CHANGELOG.md -w",
+				"docs": "jsdoc2md index.js > INDEX.md",
+				"clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+				"start": "sudo npm run clean && npm run lint && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^2.1.0",
+				"object-assign": "^4.1.0",
+				"postcss-load-options": "^1.1.0",
+				"postcss-load-plugins": "^2.2.0"
+			},
+			"devDependencies": {
+				"ava": "^0.17.0",
+				"coveralls": "^2.11.15",
+				"cssnano": "^3.10.0",
+				"jsdoc-to-markdown": "^2.0.0",
+				"nyc": "^10.0.0",
+				"postcss": "^5.2.8",
+				"postcss-cssnext": "^2.8.0",
+				"postcss-import": "^9.1.0",
+				"postcss-nested": "^1.0.0",
+				"postcss-scss": "^0.4.0",
+				"postcss-sprites": "^4.1.1",
+				"standard": "^8.6.0",
+				"standard-changelog": "0.0.1",
+				"sugarss": "^0.2.0"
+			},
+			"files": [
+				"index.js"
+			],
+			"keywords": [
+				"postcss",
+				"postcss-config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Mateusz Derks",
+					"url": "http://ertrzyiks.me"
+				},
+				{
+					"name": "Ryan Dunckel",
+					"email": "sparty02@gmail.com"
+				},
+				{
+					"name": "Patrick Gilday"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "67f825b3a91941a06c75d8d5e3b116272a1620e9",
+			"_id": "postcss-load-config@1.1.0",
+			"_shasum": "1c3c217608642448c03bebf3c32b1b28985293f9",
+			"_from": ".",
+			"_npmVersion": "4.0.5",
+			"_nodeVersion": "7.4.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "1c3c217608642448c03bebf3c32b1b28985293f9",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.1.0.tgz_1484135079099_0.9944926460739225"
+			},
+			"directories": {}
+		},
+		"1.2.0": {
+			"name": "postcss-load-config",
+			"version": "1.2.0",
+			"description": "Autoload Config for PostCSS",
+			"engines": {
+				"node": ">=0.12"
+			},
+			"main": "index.js",
+			"scripts": {
+				"lint": "standard",
+				"test": "nyc ava -v test/err/index.js test/pkg/index.js test/rc/index.js test/js/**/index.js",
+				"logs": "standard-changelog -i CHANGELOG.md -w",
+				"docs": "jsdoc2md index.js > INDEX.md",
+				"clean": "rm -rf .nyc_output coverage jsdoc-api dmd",
+				"start": "sudo npm run clean && npm run lint && sudo npm test"
+			},
+			"dependencies": {
+				"cosmiconfig": "^2.1.0",
+				"object-assign": "^4.1.0",
+				"postcss-load-options": "^1.2.0",
+				"postcss-load-plugins": "^2.3.0"
+			},
+			"devDependencies": {
+				"ava": "^0.18.1",
+				"coveralls": "^2.11.16",
+				"cssnano": "^3.10.0",
+				"jsdoc-to-markdown": "^3.0.0",
+				"nyc": "^10.1.0",
+				"postcss": "^5.2.12",
+				"postcss-cssnext": "^2.8.0",
+				"postcss-import": "^9.1.0",
+				"postcss-nested": "^1.0.0",
+				"postcss-scss": "^0.4.0",
+				"postcss-sprites": "^4.2.0",
+				"standard": "^8.6.0",
+				"standard-changelog": "0.0.1",
+				"sugarss": "^0.2.0"
+			},
+			"files": [
+				"index.js"
+			],
+			"keywords": [
+				"postcss",
+				"postcss-config"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Mateusz Derks",
+					"url": "http://ertrzyiks.me"
+				},
+				{
+					"name": "Ryan Dunckel",
+					"email": "sparty02@gmail.com"
+				},
+				{
+					"name": "Patrick Gilday"
+				},
+				{
+					"name": "Dalton Santos"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "a97396c6c9ede81a05e6dceab1a9c2aa896803bf",
+			"_id": "postcss-load-config@1.2.0",
+			"_shasum": "539e9afc9ddc8620121ebf9d8c3673e0ce50d28a",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"shasum": "539e9afc9ddc8620121ebf9d8c3673e0ce50d28a",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "michael-ciniawsky",
+					"email": "michael.ciniawsky@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/postcss-load-config-1.2.0.tgz_1486952724378_0.6930401120334864"
+			},
+			"directories": {}
+		},
+		"2.0.0": {
+			"name": "postcss-load-config",
+			"version": "2.0.0",
+			"description": "Autoload Config for PostCSS",
+			"main": "src/index.js",
+			"files": [
+				"src"
+			],
+			"engines": {
+				"node": ">= 4"
+			},
+			"scripts": {
+				"lint": "standard --env jest",
+				"test": "jest --verbose --coverage",
+				"docs": "jsdoc2md src/*.js > DOCS.md",
+				"clean": "del-cli coverage",
+				"release": "standard-version"
+			},
+			"dependencies": {
+				"cosmiconfig": "^4.0.0",
+				"import-cwd": "^2.0.0"
+			},
+			"devDependencies": {
+				"cssnano": "^4.0.0",
+				"del-cli": "^1.0.0",
+				"jest": "^22.0.0",
+				"jsdoc-to-markdown": "^4.0.0",
+				"postcss": "^6.0.0",
+				"postcss-import": "^11.0.0",
+				"postcss-nested": "^3.0.0",
+				"standard": "^11.0.0",
+				"standard-version": "4.0.0",
+				"sugarss": "^1.0.0"
+			},
+			"keywords": [
+				"postcss",
+				"postcssrc",
+				"postcss.config.js"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Ryan Dunckel"
+				},
+				{
+					"name": "Mateusz Derks"
+				},
+				{
+					"name": "Dalton Santos"
+				},
+				{
+					"name": "Patrick Gilday"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "dbf546926e6c791a2475e12daac80f6783e23036",
+			"_id": "postcss-load-config@2.0.0",
+			"_npmVersion": "6.1.0",
+			"_nodeVersion": "10.6.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-V5JBLzw406BB8UIfsAWSK2KSwIJ5yoEIVFb4gVkXci0QdKgA24jLmHZ/ghe/GgX0lJ0/D1uUK1ejhzEY94MChQ==",
+				"shasum": "f1312ddbf5912cd747177083c5ef7a19d62ee484",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-2.0.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 19683,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbRL5NCRA9TVsSAnZWagAAA1YP/0T+gQFqqx1NGN3l7KRp\nAgiUunkOukMIoN/V6xqc3kukDrYX/EvQFKVFO4ToaKmbsxd98+JMHFjRU2U5\nMf70M8jPdtmRvPh/7h1u0wolUVuu/wMw1B/LcIJFSoZA7/9ocbww3oG5+wii\nL+RAUE6lexFMRhqC9BUYwJLtVChiICS01ySt6BMgQu830BX11y/nzctPemBK\nfHHMvP7o6qOcHSvoKGzKtjEvNbCaJudhGQaytACexzcCUVDUWBCeEVkKMbgS\nN5rnJiublgLJwgll6ntab89qmo+Dt0ZpnfjbdtHRG8QrkanEjIi6ieTa2acG\nUPFGdoyQ0ZCyMqAEWMLLASr3FOYgYhVnGaYhE5XoyLg3JOlKs6q7hU1sosDy\nz+fj/4kfQP0O/tNmVnaf0BzvEdEx/Ls8PPbj/gASvba35c3+UI+G6SSIaetT\ngbsvFdxBWLx+ChC3HusnkAYjm80LAtTJK5z7zdF7iCgRrw4BFCr7kJGt+Kc8\njKZ6GXdnzHCqIpe4+IQuHxrDfxtDQykM/ZnamzZbDcq96WvB7MjvhU2bSwSv\n7pOTuP3E/re2GlQjYCnR5lsC73YZv95eXzOIz2vb9Tu+/JmVDrlgBtOXZSdO\n1QMfz51P9bB2fqv0/SqeF0DKEBb+MTnJTZX77Azoevjpotai5seO2X9WgzyV\ns0kV\r\n=Vi5O\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "andrey@sitnik.ru",
+					"name": "ai"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/postcss-load-config_2.0.0_1531231821724_0.4794748561750535"
+			},
+			"_hasShrinkwrap": false
+		},
+		"2.1.0": {
+			"name": "postcss-load-config",
+			"version": "2.1.0",
+			"description": "Autoload Config for PostCSS",
+			"main": "src/index.js",
+			"engines": {
+				"node": ">= 4"
+			},
+			"scripts": {
+				"lint": "standard --env jest",
+				"test": "jest --verbose --coverage",
+				"docs": "jsdoc2md src/*.js > DOCS.md",
+				"clean": "npx rimraf ./coverage",
+				"release": "standard-version"
+			},
+			"dependencies": {
+				"cosmiconfig": "^5.0.0",
+				"import-cwd": "^2.0.0"
+			},
+			"devDependencies": {
+				"cssnano": "^4.0.0",
+				"jest": "^24.0.0",
+				"jsdoc-to-markdown": "^5.0.0",
+				"postcss": "^7.0.0",
+				"postcss-import": "^12.0.0",
+				"postcss-nested": "^4.0.0",
+				"standard": "^12.0.0",
+				"standard-version": "6.0.0",
+				"sugarss": "^2.0.0"
+			},
+			"keywords": [
+				"postcss",
+				"postcssrc",
+				"postcss.config.js"
+			],
+			"author": {
+				"name": "Michael Ciniawky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Ryan Dunckel"
+				},
+				{
+					"name": "Mateusz Derks"
+				},
+				{
+					"name": "Dalton Santos"
+				},
+				{
+					"name": "Patrick Gilday"
+				}
+			],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/michael-ciniawsky/postcss-load-config.git"
+			},
+			"bugs": {
+				"url": "https://github.com/michael-ciniawsky/postcss-load-config/issues"
+			},
+			"homepage": "https://github.com/michael-ciniawsky/postcss-load-config#readme",
+			"license": "MIT",
+			"gitHead": "bdaf431ef1142b5d0253aeb534aad8f42e46877e",
+			"_id": "postcss-load-config@2.1.0",
+			"_nodeVersion": "12.0.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-4pV3JJVPLd5+RueiVVB+gFOAa7GWc25XQcMp86Zexzke69mKf6Nx9LRcQywdz7yZI9n1udOxmLuAwTBypypF8Q==",
+				"shasum": "c84d692b7bb7b41ddced94ee62e8ab31b417b003",
+				"tarball": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-2.1.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 21101,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/psICRA9TVsSAnZWagAAQSUP/3CbuveDh2vv6gUieXvQ\nujl1uUPG79i+G/4wVrH9EqD6vCEjhcn8zjdlve0kogkXmLqwSlOR2GTpHobR\nBljT089AIMHMUct1+OwUDXLDNd2/vnJt+JonxFG6tXcjexhq1h3PqTr4HO7n\ndyMjndWHxAuMNYY8eKvG7/IxjQTmhSEVHjCLFwDIwIBm7ogi8RO5ufPXcjli\nyuIOQtOsmsD3d3C1ahCnSIPbXq0Bl98HrhbrrT2bZzakMdBmhXldSLMz7EVI\nOGmY20KUqaf2Ovt632lQJauqsvuncsR7PJchSsmhfj5eW5lUDL8fbRxQfgok\nIRgwvtF4L1TrNmFwVkZNnw/fjcOOGKz1ekJfbnNxuPor/ONZ71Gx5sDK94md\nGfTxpLBKbzvHmhUIKgA9Hmh/GWNuIzWBz4RtqKB4w267bzydZj/29MqbDx/o\n0XgtYLLtrzApoQ3sHpUP6aXkVWxg4rFTQTkXBo8Ese67239KN1C7XHDAJH7P\nkWBtiY9LMdmffcvD/TQ9jrDV0TNWz2Q+xWRchcx+YCf90or4GKZRgy/HS4j8\nm1UasBvF8q+F/afxYTDRnd/Yvf6he5I6tckcWomFU1AgpDDD7T7EJqgCJ+ss\n6JkK7A2LPPWCHfFy4iXrlMau7yQh5IIJQw++8DZNCdUYmjXLbl0DV2D6LYTf\ndGTL\r\n=7zE6\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "andrey@sitnik.ru",
+					"name": "ai"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				}
+			],
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/postcss-load-config_2.1.0_1560189703870_0.2705529956820891"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"time": {
+		"modified": "2019-06-10T18:01:46.641Z",
+		"created": "2016-06-01T14:46:24.520Z",
+		"1.0.0-alpha": "2016-06-01T14:46:24.520Z",
+		"1.0.0-alpha2": "2016-07-07T15:35:38.087Z",
+		"1.0.0-alpha3": "2016-07-08T22:56:02.737Z",
+		"1.0.0-alpha4": "2016-07-09T13:53:56.209Z",
+		"1.0.0-beta": "2016-10-12T05:22:36.656Z",
+		"1.0.0-rc": "2016-10-14T17:32:33.283Z",
+		"1.0.0": "2016-10-27T15:27:11.270Z",
+		"1.1.0": "2017-01-11T11:44:41.046Z",
+		"1.2.0": "2017-02-13T02:25:26.387Z",
+		"2.0.0": "2018-07-10T14:10:21.789Z",
+		"2.1.0": "2019-06-10T18:01:44.116Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "2.1.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"719c8a1163fa62e9a1599042ea28b62f\"",
+			"fetched": 1577117267415
+		}
+	},
+	"_distfiles": {
+		"postcss-load-config-1.0.0-alpha.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha.tgz",
+			"sha": "593ca9197c9e0ebce5697d1325a5c5efb0139efd",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0-alpha2.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha2.tgz",
+			"sha": "d296fa4f3366cc36c59e833aaa305a4a403ad63c",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0-alpha3.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha3.tgz",
+			"sha": "f9918b736a8d2b951807edd8b522dc58828c8be7",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0-alpha4.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-alpha4.tgz",
+			"sha": "a3117468cf8a650635df0a8c0cc3b042bc5c235f",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0-beta.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-beta.tgz",
+			"sha": "5a91188f834d4f8ed4b26381f51c92a570163e3b",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0-rc.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0-rc.tgz",
+			"sha": "8aed0d0fb94afe2c1ab0ba2ca69da3af5079e2cc",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.0.0.tgz",
+			"sha": "1399f60dcd6bd9c3124b2eb22960f77f9dc08b3d",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.1.0.tgz",
+			"sha": "1c3c217608642448c03bebf3c32b1b28985293f9",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-1.2.0.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-1.2.0.tgz",
+			"sha": "539e9afc9ddc8620121ebf9d8c3673e0ce50d28a",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-2.0.0.tgz",
+			"sha": "f1312ddbf5912cd747177083c5ef7a19d62ee484",
+			"registry": "npmjs"
+		},
+		"postcss-load-config-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-2.1.0.tgz",
+			"sha": "c84d692b7bb7b41ddced94ee62e8ab31b417b003",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-ee94c204d34ad789",
+	"_id": "postcss-load-config",
+	"readme": "[![npm][npm]][npm-url]\n[![node][node]][node-url]\n[![deps][deps]][deps-url]\n[![test][test]][test-url]\n[![coverage][cover]][cover-url]\n[![code style][style]][style-url]\n[![chat][chat]][chat-url]\n\n<div align=\"center\">\n  <img width=\"100\" height=\"100\" title=\"Load Options\" src=\"http://michael-ciniawsky.github.io/postcss-load-options/logo.svg\">\n  <a href=\"https://github.com/postcss/postcss\">\n    <img width=\"110\" height=\"110\" title=\"PostCSS\"           src=\"http://postcss.github.io/postcss/logo.svg\" hspace=\"10\">\n  </a>\n  <img width=\"100\" height=\"100\" title=\"Load Plugins\" src=\"http://michael-ciniawsky.github.io/postcss-load-plugins/logo.svg\">\n  <h1>Load Config</h1>\n</div>\n\n<h2 align=\"center\">Install</h2>\n\n```bash\nnpm i -D postcss-load-config\n```\n\n<h2 align=\"center\">Usage</h2>\n\n```bash\nnpm i -S|-D postcss-plugin\n```\n\nInstall all required postcss plugins and save them to your **package.json** `dependencies`/`devDependencies`\n\nThen create a postcss config file by choosing one of the following formats\n\n### `package.json`\n\nCreate a **`postcss`** section in your projects **`package.json`**\n\n```\nProject (Root)\n  |– client\n  |– public\n  |\n  |- package.json\n```\n\n```json\n{\n  \"postcss\": {\n    \"parser\": \"sugarss\",\n    \"map\": false,\n    \"plugins\": {\n      \"postcss-plugin\": {}\n    }\n  }\n}\n```\n\n### `.postcssrc`\n\nCreate a **`.postcssrc`** file in JSON or YAML format\n\n> ℹ️ It's recommended to use an extension (e.g **`.postcssrc.json`** or **`.postcssrc.yml`**) instead of `.postcssrc`\n\n```\nProject (Root)\n  |– client\n  |– public\n  |\n  |- (.postcssrc|.postcssrc.json|.postcssrc.yml)\n  |- package.json\n```\n\n**`.postcssrc.json`**\n```json\n{\n  \"parser\": \"sugarss\",\n  \"map\": false,\n  \"plugins\": {\n    \"postcss-plugin\": {}\n  }\n}\n```\n\n**`.postcssrc.yml`**\n```yaml\nparser: sugarss\nmap: false\nplugins:\n  postcss-plugin: {}\n```\n\n### `.postcssrc.js` or `postcss.config.js`\n\nYou may need some logic within your config. In this case create JS file named **`.postcssrc.js`** or **`postcss.config.js`**\n\n```\nProject (Root)\n  |– client\n  |– public\n  |\n  |- (.postcssrc.js|postcss.config.js)\n  |- package.json\n```\n\nYou can export the config as an `{Object}`\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  parser: 'sugarss',\n  map: false,\n  plugins: {\n    'postcss-plugin': {}\n  }\n}\n```\n\nOr export a `{Function}` that returns the config (more about the `ctx` param below)\n\n**.postcssrc.js**\n```js\nmodule.exports = (ctx) => ({\n  parser: ctx.parser ? 'sugarss' : false,\n  map: ctx.env === 'development' ? ctx.map : false,\n  plugins: {\n    'postcss-plugin': ctx.options.plugin\n  }\n})\n```\n\nPlugins can be loaded either using an `{Object}` or an `{Array}`\n\n#### `{Object}`\n\n**.postcssrc.js**\n```js\nmodule.exports = ({ env }) => ({\n  ...options\n  plugins: {\n    'postcss-plugin': env === 'production' ? {} : false\n  }\n})\n```\n\n#### `{Array}`\n\n**.postcssrc.js**\n```js\nmodule.exports = ({ env }) => ({\n  ...options\n  plugins: [\n    env === 'production' ? require('postcss-plugin')() : false\n  ]\n})\n```\n> :warning: When using an `{Array}`, make sure to `require()` each plugin\n\n<h2 align=\"center\">Options</h2>\n\n|Name|Type|Default|Description|\n|:--:|:--:|:-----:|:----------|\n|[**`to`**](#to)|`{String}`|`undefined`|Destination File Path|\n|[**`map`**](#map)|`{String\\|Object}`|`false`|Enable/Disable Source Maps|\n|[**`from`**](#from)|`{String}`|`undefined`|Source File Path|\n|[**`parser`**](#parser)|`{String\\|Function}`|`false`|Custom PostCSS Parser|\n|[**`syntax`**](#syntax)|`{String\\|Function}`|`false`|Custom PostCSS Syntax|\n|[**`stringifier`**](#stringifier)|`{String\\|Function}`|`false`|Custom PostCSS Stringifier|\n\n### `parser`\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  parser: 'sugarss'\n}\n```\n\n### `syntax`\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  syntax: 'postcss-scss'\n}\n```\n\n### `stringifier`\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  stringifier: 'midas'\n}\n```\n\n### [**`map`**](https://github.com/postcss/postcss/blob/master/docs/source-maps.md)\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  map: 'inline'\n}\n```\n\n> :warning: In most cases `options.from` && `options.to` are set by the third-party which integrates this package (CLI, gulp, webpack). It's unlikely one needs to set/use `options.from` && `options.to` within a config file. Unless you're a third-party plugin author using this module and its Node API directly **dont't set `options.from` && `options.to` yourself**\n\n### `to`\n\n```js\nmodule.exports = {\n  to: 'path/to/dest.css'\n}\n```\n\n### `from`\n\n```js\nmodule.exports = {\n  from: 'path/to/src.css'\n}\n```\n\n<h2 align=\"center\">Plugins</h2>\n\n### `{} || null`\n\nThe plugin will be loaded with defaults\n\n```js\n'postcss-plugin': {} || null\n```\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  plugins: {\n    'postcss-plugin': {} || null\n  }\n}\n```\n\n> :warning: `{}` must be an **empty** `{Object}` literal\n\n### `{Object}`\n\nThe plugin will be loaded with given options\n\n```js\n'postcss-plugin': { option: '', option: '' }\n```\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  plugins: {\n    'postcss-plugin': { option: '', option: '' }\n  }\n}\n```\n\n### `false`\n\nThe plugin will not be loaded\n\n```js\n'postcss-plugin': false\n```\n\n**.postcssrc.js**\n```js\nmodule.exports = {\n  plugins: {\n    'postcss-plugin': false\n  }\n}\n```\n\n### `Ordering`\n\nPlugin **execution order** is determined by declaration in the plugins section (**top-down**)\n\n```js\n{\n  plugins: {\n    'postcss-plugin': {}, // [0]\n    'postcss-plugin': {}, // [1]\n    'postcss-plugin': {}  // [2]\n  }\n}\n```\n\n<h2 align=\"center\">Context</h2>\n\nWhen using a `{Function}` (`postcss.config.js` or `.postcssrc.js`), it's possible to pass context to `postcss-load-config`, which will be evaluated while loading your config. By default `ctx.env (process.env.NODE_ENV)` and `ctx.cwd (process.cwd())` are available on the `ctx` `{Object}`\n\n> ℹ️ Most third-party integrations add additional properties to the `ctx` (e.g `postcss-loader`). Check the specific module's README for more information about what is available on the respective `ctx`\n\n<h2 align=\"center\">Examples</h2>\n\n**postcss.config.js**\n\n```js\nmodule.exports = (ctx) => ({\n  parser: ctx.parser ? 'sugarss' : false,\n  map: ctx.env === 'development' ? ctx.map : false,\n  plugins: {\n    'postcss-import': {},\n    'postcss-nested': {},\n    cssnano: ctx.env === 'production' ? {} : false\n  }\n})\n```\n\n<div align=\"center\">\n  <img width=\"80\" height=\"80\" src=\"https://worldvectorlogo.com/logos/nodejs-icon.svg\">\n</div>\n\n```json\n\"scripts\": {\n  \"build\": \"NODE_ENV=production node postcss\",\n  \"start\": \"NODE_ENV=development node postcss\"\n}\n```\n\n### `Async`\n\n```js\nconst { readFileSync } = require('fs')\n\nconst postcss = require('postcss')\nconst postcssrc = require('postcss-load-config')\n\nconst css = readFileSync('index.sss', 'utf8')\n\nconst ctx = { parser: true, map: 'inline' }\n\npostcssrc(ctx).then(({ plugins, options }) => {\n  postcss(plugins)\n    .process(css, options)\n    .then((result) => console.log(result.css))\n})\n```\n\n### `Sync`\n\n```js\nconst { readFileSync } = require('fs')\n\nconst postcss = require('postcss')\nconst postcssrc = require('postcss-load-config')\n\nconst css = readFileSync('index.sss', 'utf8')\n\nconst ctx = { parser: true, map: 'inline' }\n\nconst { plugins, options } = postcssrc.sync(ctx)\n```\n\n<div align=\"center\">\n  <img width=\"80\" height=\"80\" halign=\"10\" src=\"https://worldvectorlogo.com/logos/gulp.svg\">\n</div>\n\n```json\n\"scripts\": {\n  \"build\": \"NODE_ENV=production gulp\",\n  \"start\": \"NODE_ENV=development gulp\"\n}\n```\n\n```js\nconst { task, src, dest, series, watch } = require('gulp')\n\nconst postcss = require('gulp-postcssrc')\n\nconst css = () => {\n  src('src/*.css')\n    .pipe(postcss())\n    .pipe(dest('dest'))\n})\n\ntask('watch', () => {\n  watch(['src/*.css', 'postcss.config.js'], css)\n})\n\ntask('default', series(css, 'watch'))\n```\n\n<div align=\"center\">\n  <img width=\"80\" height=\"80\" src=\"https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon.svg\">\n</div>\n\n```json\n\"scripts\": {\n  \"build\": \"NODE_ENV=production webpack\",\n  \"start\": \"NODE_ENV=development webpack-dev-server\"\n}\n```\n\n**webpack.config.js**\n```js\nmodule.exports = (env) => ({\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [\n          'style-loader',\n          'css-loader',\n          'postcss-loader'\n        ]\n      }\n    ]\n  }\n})\n```\n\n<h2 align=\"center\">Maintainers</h2>\n\n<table>\n  <tbody>\n   <tr>\n    <td align=\"center\">\n      <img width=\"150\" height=\"150\"\n        src=\"https://github.com/michael-ciniawsky.png?v=3&s=150\">\n      <br />\n      <a href=\"https://github.com/michael-ciniawsky\">Michael Ciniawsky</a>\n    </td>\n    <td align=\"center\">\n      <img width=\"150\" height=\"150\"\n        src=\"https://github.com/ertrzyiks.png?v=3&s=150\">\n      <br />\n      <a href=\"https://github.com/ertrzyiks\">Mateusz Derks</a>\n    </td>\n  </tr>\n  <tbody>\n</table>\n\n<h2 align=\"center\">Contributors</h2>\n\n<table>\n  <tbody>\n   <tr>\n    <td align=\"center\">\n      <img width=\"150\" height=\"150\"\n        src=\"https://github.com/sparty02.png?v=3&s=150\">\n      <br />\n      <a href=\"https://github.com/sparty02\">Ryan Dunckel</a>\n    </td>\n    <td align=\"center\">\n      <img width=\"150\" height=\"150\"\n        src=\"https://github.com/pcgilday.png?v=3&s=150\">\n      <br />\n      <a href=\"https://github.com/pcgilday\">Patrick Gilday</a>\n    </td>\n    <td align=\"center\">\n      <img width=\"150\" height=\"150\"\n        src=\"https://github.com/daltones.png?v=3&s=150\">\n      <br />\n      <a href=\"https://github.com/daltones\">Dalton Santos</a>\n    </td>\n  </tr>\n  <tbody>\n</table>\n\n\n[npm]: https://img.shields.io/npm/v/postcss-load-config.svg\n[npm-url]: https://npmjs.com/package/postcss-load-config\n\n[node]: https://img.shields.io/node/v/postcss-load-plugins.svg\n[node-url]: https://nodejs.org/\n\n[deps]: https://david-dm.org/michael-ciniawsky/postcss-load-config.svg\n[deps-url]: https://david-dm.org/michael-ciniawsky/postcss-load-config\n\n[test]: http://img.shields.io/travis/michael-ciniawsky/postcss-load-config.svg\n[test-url]: https://travis-ci.org/michael-ciniawsky/postcss-load-config\n\n[cover]: https://coveralls.io/repos/github/michael-ciniawsky/postcss-load-config/badge.svg\n[cover-url]: https://coveralls.io/github/michael-ciniawsky/postcss-load-config\n\n[style]: https://img.shields.io/badge/code%20style-standard-yellow.svg\n[style-url]: http://standardjs.com/\n\n[chat]: https://img.shields.io/gitter/room/postcss/postcss.svg\n[chat-url]: https://gitter.im/postcss/postcss"
+}

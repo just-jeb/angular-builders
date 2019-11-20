@@ -1,0 +1,492 @@
+{
+	"name": "whatwg-mimetype",
+	"versions": {
+		"2.0.0": {
+			"name": "whatwg-mimetype",
+			"description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
+			"keywords": [
+				"content-type",
+				"mime type",
+				"mimesniff",
+				"http",
+				"whatwg"
+			],
+			"version": "2.0.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-mimetype.git"
+			},
+			"main": "lib/mime-type.js",
+			"files": [
+				"lib/"
+			],
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^4.12.1",
+				"jest": "^21.2.1",
+				"printable-string": "^0.3.0",
+				"request": "^2.83.0",
+				"whatwg-encoding": "^1.0.3"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"gitHead": "4f9c1e4119bea535cb91c76fead464db82cf2d67",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-mimetype/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-mimetype#readme",
+			"_id": "whatwg-mimetype@2.0.0",
+			"_npmVersion": "5.4.2",
+			"_nodeVersion": "8.6.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-YqhELyFq4ERam1LyM9VnXH9d0UiaT05sCC1CbmDAk7bq3j4QAO4DjAVaPwi4y/4D2mXjLGYlIhdyCs0GC/w3MQ==",
+				"shasum": "552b7b120f98d93b0f1477a757ad1451aadb9cc1",
+				"tarball": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-mimetype-2.0.0.tgz_1512887351332_0.5732134545687586"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "whatwg-mimetype",
+			"description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
+			"keywords": [
+				"content-type",
+				"mime type",
+				"mimesniff",
+				"http",
+				"whatwg"
+			],
+			"version": "2.0.1",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-mimetype.git"
+			},
+			"main": "lib/mime-type.js",
+			"files": [
+				"lib/"
+			],
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^4.12.1",
+				"jest": "^21.2.1",
+				"printable-string": "^0.3.0",
+				"request": "^2.83.0",
+				"whatwg-encoding": "^1.0.3"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"gitHead": "341d94b03efd3ba17bf6c0d9043872c05e405ff4",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-mimetype/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-mimetype#readme",
+			"_id": "whatwg-mimetype@2.0.1",
+			"_npmVersion": "5.4.2",
+			"_nodeVersion": "8.6.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-Y/NmdK9OCq2XSLzh9dHY4FOnvONFom9nZu3mCS4X4JgG2Hdp8ZFFDb8nN4jqZBvi2cg0+svIWg91Hxo/v5Wrog==",
+				"shasum": "781d925257d973e720ea0001779b2ea86a03caae",
+				"tarball": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-mimetype-2.0.1.tgz_1512925111943_0.3966343451756984"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "whatwg-mimetype",
+			"description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
+			"keywords": [
+				"content-type",
+				"mime type",
+				"mimesniff",
+				"http",
+				"whatwg"
+			],
+			"version": "2.1.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-mimetype.git"
+			},
+			"main": "lib/mime-type.js",
+			"files": [
+				"lib/"
+			],
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^4.12.1",
+				"jest": "^21.2.1",
+				"printable-string": "^0.3.0",
+				"request": "^2.83.0",
+				"whatwg-encoding": "^1.0.3"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"gitHead": "220d674c39e75ac5a3afacc6003bfb5e34c88485",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-mimetype/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-mimetype#readme",
+			"_id": "whatwg-mimetype@2.1.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-FKxhYLytBQiUKjkYteN71fAUA3g6KpNXoho1isLiLSB3N1G4F35Q5vUxWfKFhBwi5IWF27VE6WxhrnnC+m0Mew==",
+				"shasum": "f0f21d76cbba72362eb609dbed2a30cd17fcc7d4",
+				"tarball": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "domenic",
+					"email": "d@domenic.me"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-mimetype-2.1.0.tgz_1517774551100_0.22127527836710215"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.2.0": {
+			"name": "whatwg-mimetype",
+			"description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
+			"keywords": [
+				"content-type",
+				"mime type",
+				"mimesniff",
+				"http",
+				"whatwg"
+			],
+			"version": "2.2.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-mimetype.git"
+			},
+			"main": "lib/mime-type.js",
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^5.5.0",
+				"jest": "^23.6.0",
+				"printable-string": "^0.3.0",
+				"request": "^2.88.0",
+				"whatwg-encoding": "^1.0.4"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"gitHead": "426bf68a22d51f9647d57c05f038e310c1444e98",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-mimetype/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-mimetype#readme",
+			"_id": "whatwg-mimetype@2.2.0",
+			"_npmVersion": "6.2.0",
+			"_nodeVersion": "10.8.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-5YSO1nMd5D1hY3WzAQV3PzZL83W3YeyR1yW9PcH26Weh1t+Vzh9B6XkDh7aXm83HBZ4nSMvkjvN2H2ySWIvBgw==",
+				"shasum": "a3d58ef10b76009b042d03e25591ece89b88d171",
+				"tarball": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.2.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 16215,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbnABJCRA9TVsSAnZWagAARJUQAJQdcSBrMpO38O2R+f4V\nCYxD/Qc2GiuGhb7fX2iUMtVPSL3ygrjT789kEDhs3UomWYQ0pG+///UkOEpp\n9sj37Af0a90ZA2g6RBFujdgwuhUWNuPSCUVCWOp7jbY5Gi1TH1VBP1a3H+vv\nHNgRpxicxRTWYxKayOKc70jzpjBx3y6Gd4rofk08dZHMyG5eBDSjAUwZnIIX\niSE+QgYaba8jRZczxTQiV0eDJnBnnQnVKkKT1+OYO5Dpgs3k61LTCjSc/xgp\nlyFoVo+AGkper0/EYfDYVl4A54labwE3EADLnRR5Gt5Z0xRu4VgAFiQv3S8o\n4+msTvz4J0L9hVJZxcEUvEB4xJQEORo0nVz7hCSgcYfUOAfAzkojkWrthtt2\nNzVtCF1CG436euKRXDehZLZ/KudKbSC0zYoqkzGIOKZAVH71LfV+4BsROKxE\n+seQgNNTxO3QSvOcvxUi/uSu5mBlSRi3WHRTuuJpJlZg6SnYJARRZVxnRO8m\nmssqk70n5cHHr0P7Jd1fLdsxU9YyocQzI12zbU8MyZ9ineX3tipXxntlPTzY\ngMKlDVNuuNde2f3KwQvc0gLg078HnfQtET5P9By4peVrFcFX+QcJrKr5fVCr\naWVBAy+n25ro4gNmHJBhtObk3JqEERG/bT7Fm3iTVgwL3Xb8VFRYS2K90m7l\nvuBa\r\n=lrFr\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-mimetype_2.2.0_1536950345140_0.7309741373150824"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.3.0": {
+			"name": "whatwg-mimetype",
+			"description": "Parses, serializes, and manipulates MIME types, according to the WHATWG MIME Sniffing Standard",
+			"keywords": [
+				"content-type",
+				"mime type",
+				"mimesniff",
+				"http",
+				"whatwg"
+			],
+			"version": "2.3.0",
+			"author": {
+				"name": "Domenic Denicola",
+				"email": "d@domenic.me",
+				"url": "https://domenic.me/"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/whatwg-mimetype.git"
+			},
+			"main": "lib/mime-type.js",
+			"scripts": {
+				"test": "jest",
+				"coverage": "jest --coverage",
+				"lint": "eslint .",
+				"pretest": "node scripts/get-latest-platform-tests.js"
+			},
+			"devDependencies": {
+				"eslint": "^5.9.0",
+				"jest": "^23.6.0",
+				"printable-string": "^0.3.0",
+				"request": "^2.88.0",
+				"whatwg-encoding": "^1.0.5"
+			},
+			"jest": {
+				"coverageDirectory": "coverage",
+				"coverageReporters": [
+					"lcov",
+					"text-summary"
+				],
+				"testEnvironment": "node",
+				"testMatch": [
+					"<rootDir>/test/**/*.js"
+				]
+			},
+			"gitHead": "7eadb26d8e02f9d95bc2f6e272df7eb653d7a903",
+			"bugs": {
+				"url": "https://github.com/jsdom/whatwg-mimetype/issues"
+			},
+			"homepage": "https://github.com/jsdom/whatwg-mimetype#readme",
+			"_id": "whatwg-mimetype@2.3.0",
+			"_npmVersion": "6.2.0",
+			"_nodeVersion": "10.8.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-M4yMwr6mAnQz76TbJm914+gPpB/nCwvZbJU28cUD6dR004SAxDLOOSUaB1JDRqLtaOV/vi0IC5lEAGFgrjGv/g==",
+				"shasum": "3d4b1e0312d2079879f826aff18dbeeca5960fbf",
+				"tarball": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 16182,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb9J9FCRA9TVsSAnZWagAAiREP/1kUJJBOp0xUEgU8RJV/\nqj3qs2mEreN4NBrKGuaQlssQPlrMa83VqMbv7Ai25wLkXVmEN+4AyOSTn5QG\naybziFTZxV+F22YjAJc3sxEmFK9y7iaZKEqyuts7W/aXKhGokMLWOqCk7qNB\nH4OQN4IXk6e8gKd5m9Fk+zUvYS8YVHRSHDMzkPnfujxqGjoTte7XAM8x68t/\nqgFc/0Svy3lfufg3gkT/QMI4XKWhXH+tzumCqYDQAQOLS2oETJWVCK26TFqs\nd+D0RpY+bXKVe4GkMagw0KSpWkwXLxf0RIaMdkqSr9hLcdYTJgfMY3s33bpi\nGBxMBzlAZtLXlFETFLKW06TRAoZ3l5Crp9AHLlLsyKil/SJAYNkSqbSpsxIy\neowxBmmgdLIOs5SOFj59zggBYO6QK+boai8eqEZW5SuRWa/MdzrHbbCv5OC/\nLjtK3LTsKYwQRXlyILqnhXiUhD4ztOsKhQ+8yTrbCraPRvoG+MzyslvVCl6I\nxmP5GTIXHD3F5gXsfFrlSZ6Yo15QrtL8liB9BSIFJ0pDKTHE8Xs/ce/feAkW\n4mbEdq8N8/WLQcK02zHqSuVoYEU6g2XAfDh1cXq6/aPTUmuc1PrH3Vpy+SQk\njsZLhbwdkuo/3GCkbBd3Erqt1mY61tf34vPhjSQeuEvpis6m70fqnmRDdpbE\n/leO\r\n=dQ5P\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/whatwg-mimetype_2.3.0_1542758213289_0.1704504739378121"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2018-11-20T23:56:55.926Z",
+		"created": "2017-12-10T06:29:12.340Z",
+		"2.0.0": "2017-12-10T06:29:12.340Z",
+		"2.0.1": "2017-12-10T16:58:32.866Z",
+		"2.1.0": "2018-02-04T20:02:32.142Z",
+		"2.2.0": "2018-09-14T18:39:05.267Z",
+		"2.3.0": "2018-11-20T23:56:53.400Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "2.3.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"d27f7b60a66efc46a8ac6c13424fcd17\"",
+			"fetched": 1577117261986
+		}
+	},
+	"_distfiles": {
+		"whatwg-mimetype-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.0.0.tgz",
+			"sha": "552b7b120f98d93b0f1477a757ad1451aadb9cc1",
+			"registry": "npmjs"
+		},
+		"whatwg-mimetype-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.0.1.tgz",
+			"sha": "781d925257d973e720ea0001779b2ea86a03caae",
+			"registry": "npmjs"
+		},
+		"whatwg-mimetype-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.1.0.tgz",
+			"sha": "f0f21d76cbba72362eb609dbed2a30cd17fcc7d4",
+			"registry": "npmjs"
+		},
+		"whatwg-mimetype-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.2.0.tgz",
+			"sha": "a3d58ef10b76009b042d03e25591ece89b88d171",
+			"registry": "npmjs"
+		},
+		"whatwg-mimetype-2.3.0.tgz": {
+			"url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-2.3.0.tgz",
+			"sha": "3d4b1e0312d2079879f826aff18dbeeca5960fbf",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-a0314aa3b2194c6d",
+	"_id": "whatwg-mimetype",
+	"readme": "# Parse, serialize, and manipulate MIME types\n\nThis package will parse [MIME types](https://mimesniff.spec.whatwg.org/#understanding-mime-types) into a structured format, which can then be manipulated and serialized:\n\n```js\nconst MIMEType = require(\"whatwg-mimetype\");\n\nconst mimeType = new MIMEType(`Text/HTML;Charset=\"utf-8\"`);\n\nconsole.assert(mimeType.toString() === \"text/html;charset=utf-8\");\n\nconsole.assert(mimeType.type === \"text\");\nconsole.assert(mimeType.subtype === \"html\");\nconsole.assert(mimeType.essence === \"text/html\");\nconsole.assert(mimeType.parameters.get(\"charset\") === \"utf-8\");\n\nmimeType.parameters.set(\"charset\", \"windows-1252\");\nconsole.assert(mimeType.parameters.get(\"charset\") === \"windows-1252\");\nconsole.assert(mimeType.toString() === \"text/html;charset=windows-1252\");\n\nconsole.assert(mimeType.isHTML() === true);\nconsole.assert(mimeType.isXML() === false);\n```\n\nParsing is a fairly complex process; see [the specification](https://mimesniff.spec.whatwg.org/#parsing-a-mime-type) for details (and similarly [for serialization](https://mimesniff.spec.whatwg.org/#serializing-a-mime-type)).\n\nThis package's algorithms conform to those of the WHATWG [MIME Sniffing Standard](https://mimesniff.spec.whatwg.org/), and is aligned up to commit [126286a](https://github.com/whatwg/mimesniff/commit/126286ab2dcf3e2d541349ed93539a88bf394ad5).\n\n## `MIMEType` API\n\nThis package's main module's default export is a class, `MIMEType`. Its constructor takes a string which it will attempt to parse into a MIME type; if parsing fails, an `Error` will be thrown.\n\n### The `parse()` static factory method\n\nAs an alternative to the constructor, you can use `MIMEType.parse(string)`. The only difference is that `parse()` will return `null` on failed parsing, whereas the constructor will throw. It thus makes the most sense to use the constructor in cases where unparseable MIME types would be exceptional, and use `parse()` when dealing with input from some unconstrained source.\n\n### Properties\n\n- `type`: the MIME type's [type](https://mimesniff.spec.whatwg.org/#mime-type-type), e.g. `\"text\"`\n- `subtype`: the MIME type's [subtype](https://mimesniff.spec.whatwg.org/#mime-type-subtype), e.g. `\"html\"`\n- `essence`: the MIME type's [essence](https://mimesniff.spec.whatwg.org/#mime-type-essence), e.g. `\"text/html\"`\n- `parameters`: an instance of `MIMETypeParameters`, containing this MIME type's [parameters](https://mimesniff.spec.whatwg.org/#mime-type-parameters)\n\n`type` and `subtype` can be changed. They will be validated to be non-empty and only contain [HTTP token code points](https://mimesniff.spec.whatwg.org/#http-token-code-point).\n\n`essence` is only a getter, and cannot be changed.\n\n`parameters` is also a getter, but the contents of the `MIMETypeParameters` object are mutable, as described below.\n\n### Methods\n\n- `toString()` serializes the MIME type to a string\n- `isHTML()`: returns true if this instance represents [a HTML MIME type](https://mimesniff.spec.whatwg.org/#html-mime-type)\n- `isXML()`: returns true if this instance represents [an XML MIME type](https://mimesniff.spec.whatwg.org/#xml-mime-type)\n- `isJavaScript({ allowParameters })`: returns true if this instance represents [a JavaScript MIME type](https://html.spec.whatwg.org/multipage/scripting.html#javascript-mime-type); `allowParameters` can be set to true to allow arbitrary parameters, instead of their presence causing the method to return `false`\n\n_Note: the `isHTML()`, `isXML()`, and `isJavaScript()` methods are speculative, and may be removed or changed in future major versions. See [whatwg/mimesniff#48](https://github.com/whatwg/mimesniff/issues/48) for brainstorming in this area. Currently we implement these mainly because they are useful in jsdom._\n\n## `MIMETypeParameters` API\n\nThe `MIMETypeParameters` class, instances of which are returned by `mimeType.parameters`, has equivalent surface API to a [JavaScript `Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map).\n\nHowever, `MIMETypeParameters` methods will always interpret their arguments as appropriate for MIME types, so e.g. parameter names will be lowercased, and attempting to set invalid characters will throw.\n\nSome examples:\n\n```js\nconst mimeType = new MIMEType(`x/x;a=b;c=D;E=\"F\"`);\n\n// Logs:\n// a b\n// c D\n// e F\nfor (const [name, value] of mimeType.parameters) {\n  console.log(name, value);\n}\n\nconsole.assert(mimeType.parameters.has(\"a\"));\nconsole.assert(mimeType.parameters.has(\"A\"));\nconsole.assert(mimeType.parameters.get(\"A\") === \"b\");\n\nmimeType.parameters.set(\"Q\", \"X\");\nconsole.assert(mimeType.parameters.get(\"q\") === \"X\");\nconsole.assert(mimeType.toString() === \"x/x;a=b;c=d;e=F;q=X\");\n\n// Throws:\nmimeType.parameters.set(\"@\", \"x\");\n```\n\n## Raw parsing/serialization APIs\n\nIf you want primitives on which to build your own API, you can get direct access to the parsing and serialization algorithms as follows:\n\n```js\nconst parse = require(\"whatwg-mimetype/parser\");\nconst serialize = require(\"whatwg-mimetype/serialize\");\n```\n\n`parse(string)` returns an object containing the `type` and `subtype` strings, plus `parameters`, which is a `Map`. This is roughly our equivalent of the spec's [MIME type record](https://mimesniff.spec.whatwg.org/#mime-type). If parsing fails, it instead returns `null`.\n\n`serialize(record)` operates on the such an object, giving back a string according to the serialization algorithm."
+}

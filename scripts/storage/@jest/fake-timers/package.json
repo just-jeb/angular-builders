@@ -1,0 +1,784 @@
+{
+	"name": "@jest/fake-timers",
+	"versions": {
+		"24.2.0-alpha.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.2.0-alpha.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.2.0-alpha.0",
+				"@types/node": "*",
+				"jest-message-util": "^24.2.0-alpha.0",
+				"jest-mock": "^24.2.0-alpha.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800f2f803d01c8ae194d71b251e4965dd70e5bf2",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.2.0-alpha.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-4PNjzgZytBLWA+PZLttVmbCaWu4/oPKERBEurimOZ+jPcK9Qb7hgt5GfNWId75TjF6AElBMjV46Qy7nHIq+ADA==",
+				"shasum": "6ba610c02319a39e91272373fb52ab0653290a38",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.2.0-alpha.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 19388,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfo8ECRA9TVsSAnZWagAA6AQP/j59sZc9nC+gd2R8eGDp\n0z6ivjRgQy7kMnyMBKf9j8GzEAEPp2dUYuYcLQzoRB+PRShuD7/mdy+TJkpt\nrM/KKpewm/mxnb/0Ge8JPHHI9Ww8donLhfOrMU7MWUkooAGjsoYae34qid+z\n9DTzrWBkmtU4x2ISRn3Tt2wX6M6zht0cdN+GWJCNyGhGD9jtedTX0ZJH/vpj\nP9B8Sc1cpGxX4S5kyoq+Nt8W1qUyMkSWyBw6483kCxbGfVT6Z8zrwfxP79I6\nOT5c8lCNpKjrij7Bdz1TH66n+K1QUgV9pHL/X2WVtZ2RXEWk9n9xyUP94prv\nfwiRQwbXaBNKwO3dP4yBUBTjKD1VK1ClFUKkqg5HM21DlvJbhrYLdV7eEov7\nw6M2IJuRw6ZjptZubVny8PddXoicGQtkAD06SlCJZixh6CtdRV/MHFG0OrOu\nhmXdZmMPcWysOFcNlXsfYTfKR4aWBFF4MB0d7SPO/ALwzKPIxedP7xyynO9r\niQ+muayw+50WH7jHMzY7PsjPMkPqDIsn0u/S/1KrYjES7aLY8pLE9gIiAkQL\nbwMpT/xm2Xg9rzvbTHRPScAuEjCdApgqB4sY97DLNO1kzwVFm9rh/Eg4oewE\n5qV7YyMaIZ++pRzw1BGNWZlT/JtM4WYk6nGoT3Ix/e6DoWVwnltruv7Jt5uM\nphw9\r\n=y1B7\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.2.0-alpha.0_1551798019478_0.6925445895010915"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.3.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.3.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.3.0",
+				"@types/node": "*",
+				"jest-message-util": "^24.3.0",
+				"jest-mock": "^24.3.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "3a7a4f3a3f5489ac8e07dcddf76bb949c482ec87",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.3.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-rHwVI17dGMHxHzfAhnZ04+wFznjFfZ246QugeBnbiYr7/bDosPD2P1qeNjWnJUUcfl0HpS6kkr+OB/mqSJxQFg==",
+				"shasum": "0a7f8b877b78780c3fa5c3f8683cc0aaf9488331",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.3.0.tgz",
+				"fileCount": 9,
+				"unpackedSize": 20455,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgRXOCRA9TVsSAnZWagAANA0P/R+Cu1atHFKD9ko4rod2\nrfltj07dbQxYNTTdTDKZVJ1x5plvH8084KwutUan0coXEEEr5o91chwXRHcY\n5JNTl8zGQ8RyR57odj5RAK/SFmsoRFoex9bTVqkT8U8IOC+rd62tYXBUJHpn\noaE5XaVnn8r+glyRndBjI/LFo06frr551LZOAopPmfecoxPcTC232V7UGcsT\nKJgzjha+R+wR5MChOV5vJGbvpESm9nX/Tvblxc6UvflueewTSd6iLvcZp36z\noYfsg/NYjqakFG0OeA6MDycKa2AuXcTTRxLWX/9tVZiju9N+DGvk3+PEZKZl\nfH5SuskCngteZChNLJ091z2hyfFxyCJfIiZliCsp5vW5QPWh3BRDFMxGONm0\nyo9dHkJv7WNX3yFYv5bHUv4pfhann4IiL99XDIKTCE32NJDYsobUlvwKQJ/q\nLla7DvUmQ/q/fj10Ig3dFg/vgmubN12nhLMJ+ogwAbelFe5YacQw5c+P5TBz\nT0ZtnnyZDGoUr3/m9JTnYfKyCgMgqGf/9xjtcDBtAd5QxtIrVFThzvY7wbUw\nhBRUpHaBfdszUL5ueotmS5m9riUjojqYSMxRxnRUqpsfatQ6tqmYgw/95J+f\n7G4lkENX7+MEq3aChIgk8psS/hZ3Awhb4qcn4lfNH++YNh/n0Kg3mCV2Phx4\nQeLR\r\n=+24n\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.3.0_1551963598064_0.11045513850168209"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.5.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.5.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.5.0",
+				"@types/node": "*",
+				"jest-message-util": "^24.5.0",
+				"jest-mock": "^24.5.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800533020f5b2f153615c821ed7cb12fd868fa6f",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.5.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-i59KVt3QBz9d+4Qr4QxsKgsIg+NjfuCjSOWj3RQhjF5JNy+eVJDhANQ4WzulzNCHd72srMAykwtRn5NYDGVraw==",
+				"shasum": "4a29678b91fd0876144a58f8d46e6c62de0266f0",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.5.0.tgz",
+				"fileCount": 9,
+				"unpackedSize": 20455,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch+AdCRA9TVsSAnZWagAASmUQAIzc+fqVH/OowSeE15bW\ncgyWlsT01qXSxGywddOXpLg4Rl8NdSu2D9d+ZNJ0jjNkfXSo0xE0h511s4LR\nPdopiMMXjLe1uTUDzBLsOGTdjLrYpPV/YaFXnv3zz8SCV5JaZUE/pw7upP2g\n8KvTeTFdm3LZY4HTO+HDFNhidrhOGnRaRr+OuXfkW8pSUvSGF6l/kkqntyGt\nZ1ZhEsmsY+cKqMu0JmnvxtBxjojxGjRxNFZg8qpa85n8NTyPxbtG2Qt++cCi\nGHIdE3GQPf56SpRNyK8nLN6Pe56AjM4ucLpTFZcaXB81QwoNxWSMZBtxQ12s\nkngTLuwmj5xxGzS7o9De/bZ8P7hvWSIqoXnwWTByB/ukhsoqjFv2edbBZvin\nccjBYVWS0OVzATRcD0kuw8u36E9MEZ4hHdLCYwNt1T8Cp9ycmhLBkgBpvK0h\nzEZubcJZbGtJbBXZFM7wXL51FGN8qVBklw2DaDffCCBh7gT4BgPV1l1OI2Rd\ne45vJU6EHyJnRW6NisGOv0Dm6tu0Hvljs4v7dhGwUoJjaGpZBFUzYYt5+OBr\nz3W8uO3Xnhc4rjxY9iUofsrxdeilVPOAqchB1BEkKjKcNzXl0/1D9pSjhWSX\nKN83JBDsLNFh2BQ/ljEa+TpYhhmZMoOPBE/K0SjghH7hDKe/EcHgzFZKXmuk\nP3KC\r\n=WQPb\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.5.0_1552408604454_0.8603439844506309"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.6.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.6.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.6.0",
+				"jest-message-util": "^24.6.0",
+				"jest-mock": "^24.6.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "04e6a66d2ba8b18bee080bb28547db74a255d2c7",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-92nYqkZceki6knls7F6/FrPxKXnQl0QjYXbjLk/EFfp6xcg4ETLQSAur7pMZsiAzazAgQag/XDvMmKwMbunAeg==",
+				"shasum": "4eb0b47539883742e9f969e983770230f5a57d7b",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.6.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 203037,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcopAfCRA9TVsSAnZWagAAnOAP/1x57YhZGUTYIUiMtWeY\nILl+o10nsAwOAoJTRp4nXqkkQdhVAgB58JQmo6s8hXKaMYblvxjwhQ8llYK6\n0UU2M8Z8xaSXQ4/oq09hFFDrhdsL7v2VUx5Fy2P3s+1uyXm81j1txiYMn2R3\n8F4uqFCbdY0F6QsC4YG3UPQdTknFsom8cIN56jeVT3liX4v9wqvqp+KFsG0x\nTqw8Ql8ddaiR8KWHMHaE/J17iuldN+5seylHv7sQyVKox88PYWGFHag13o7A\ntRh8870pT99P5YT8JLkBZeM1y8GpuUcAL2zRRGLpQhuHn+h3ZGqlFsIHTwi/\nMd60XPbmPf/qikAlKnZ+gwoq5/m05f8ShRJFfV+I+NuOI3EUwNk8Q3Fde+Ep\n4ERFBTaVuslM27msEmThukTLEo5TowjhhWDHG3uJmg+/Jfdq2gkpX/oW2379\n8KZnyb2GjrPjlUuxavceklUP693ZbtrJaFF3I4xqAOQL4R8TwaX0ZEw2mJ00\nTUijF9NNBxeGrAHizuSH/10cKNrDJwwukQUKznS9Dv5c/u0qCJ8XTxx1I56X\nzvyToLHiEHvXCueKz+DifdliygpKDj+YCfBVr26CALMflitVR4vEz9LiLcOb\nNZf7WqQBzdZocGeq9iJP8pw59+NhcWyUWxIYYuItyEUYf/7t9nWJk2GomN+h\n5wtb\r\n=xY68\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.6.0_1554157598973_0.038301784229627156"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.7.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.7.0",
+				"jest-message-util": "^24.7.0",
+				"jest-mock": "^24.7.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "eb0413622542bc0f70c32950d9daeeab9f6802ac",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.7.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-wwq54UIqxC0JsKNQcwJyD4JjSkUYV9rZ1qz2lGGG1iMrFgn6ls37GBo/Cay2qCcnmdyVy+kQ5RE1+7Un7Kw4ew==",
+				"shasum": "6735c6d88ee096a6303f369fa5fddef12f79779c",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.7.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 185067,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpC63CRA9TVsSAnZWagAAqYoQAJqM1dyCf7WcISS+ZG1b\nd5jN1wV4QqMANOn0wP/wztm/wwWQLkNjiJ+pbiOqqZZbPiTLJ0vJDzQwDkrQ\n1jzVNUveNoQkK3Rs/bR4AI0OcVI4phznSRnTySQWokqk1VC1lSCbA2e9H7xT\nlxxqFqTDerPVyMwSXUIPd/9H8PjveIL8bc1CsayhzXK5fLAKE9/9Aug8TU2c\nJP0VNLaw5XU6ULAbSAllQak564U6Ks0BY1Ds4cdjkO0p0wjG4+HOXiZiT7Wp\nWZgRvBTKC82hwi/SWFb056Yi+uvC+uHjpQ6MXh46ci0uo/rl5/UfpmLlH3MQ\nmC2nJnr6WrKXz6flH6YftyEmLjlOcbdLHjWsusxLxZvDmsh4gFZb9aUf2Cyr\nf5eEzJa6GWDL+sweMr3KQRoqOuJU+27+pdLocW26v+i1UeCe9kFF+NK1gXhu\np6nmKecMgYlcwq+C58K9nxFkFKFuR7uIPNrckCnpN2AQ/OSxdgvqrpJtTM1n\nNMWJOzBkRtjCinu87QFS0Tf/B8s6T3C1GrSTGGj/vvwJyISRFJc79U7wV8/c\no1feJgg4ErqSU8tXz3l4TJd/oQ4zXPgVzpyB04WOCQKsHWFr+bvC7lL0SkSj\n0qPGSqvQp5FvSlgV8xXHdHPeTomJHx/r0SdSyPnqsOfz8jyR+yXBP2HuKX+M\n05l1\r\n=thlA\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.7.0_1554263734822_0.3425294136046826"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.1": {
+			"name": "@jest/fake-timers",
+			"version": "24.7.1",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.7.0",
+				"jest-message-util": "^24.7.1",
+				"jest-mock": "^24.7.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "0efb1d7809cb96ae87a7601e7802f1dab3774280",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.7.1",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-4vSQJDKfR2jScOe12L9282uiwuwQv9Lk7mgrCSZHA9evB9efB/qx8i0KJxsAKtp8fgJYBJdYY7ZU6u3F4/pyjA==",
+				"shasum": "56e5d09bdec09ee81050eaff2794b26c71d19db2",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.7.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 185067,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpVt+CRA9TVsSAnZWagAAk/MP/R9bbJEq+8oNhtlP9cNS\nlSeu1zqDvHYZE75ipST8twhouCSLeDBqbU4kfvQSznZ/3nWJofJVkKgqX1WJ\n6qdVjZxUjeMT2pG8C8HLgSUP3GnrygnV7e6EBfvN/930HWKf5HDEfqv+eHGd\n9pRlBKwqAsFNm4d+eDPDT8a8omm65W7plAVgUQhrZSRTHVG4TlC2R2MynH23\nWS8jdtwlBW6/nFX34NrQQCpGYrXXF67fdgyhMTMNMsLgwfBKmQM/d3PYj8W3\nZ5LHXcqJLXOq6OBJI1E9bGrunwefBxE9PPZsi1amXFaQNIx1Gdruh1fmtwfg\njaIZ+8gWXTxhEqgeg6oEX1Q19q10lQNDnY58AtHnGI1ggp2H9Jby2DaSGj2I\n/IEzAddtwYIFhkuWUzCQxxYMAahOJxmcmzV99Qea1NpPwtC8YT5M/t91JjQh\n1rfk6+uAx4g95EhzhtDJoHxNnfbN/hxbFpsHN0b5dZca2UTaHH6mv7Q6UuMg\nS24ytruMou7/7tIYMb7vz3H70G2kdFr68+3HeGL5UDGBw7Q/viQWLR9NvR+X\nn/hnEsgqDcb3L/GEKOXvdAFTSwf7P+lJZdLMEFV9tJr45Gi4dRFUT1ZFJn2f\nZDNFWnDJ4E+JoeAhd8ez8rbw4dpCgrYZQbBAdqG1eFS/RZUhp42u/DUrKc3J\nl+Tp\r\n=xzDb\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.7.1_1554340733338_0.04944648758666759"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.8.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.8.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.8.0",
+				"jest-message-util": "^24.8.0",
+				"jest-mock": "^24.8.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "845728f24b3ef41e450595c384e9b5c9fdf248a4",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.8.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-2M4d5MufVXwi6VzZhJ9f5S/wU4ud2ck0kxPof1Iz3zWx6Y+V2eJrES9jEktB6O3o/oEyk+il/uNu9PvASjWXQw==",
+				"shasum": "2e5b80a4f78f284bcb4bd5714b8e10dd36a8d3d1",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.8.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 188755,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJczkQ6CRA9TVsSAnZWagAA2yUP/RvmqLwaNYUckbA9+zH4\nW6gX+gfF7+f7tiH0SZOhleI4z+057hjm/rIBg6NcnYEduVK6+a66NLftAWuM\nc/eBVOHhF4uKypu6nsynQA+WOkmzHV1QOJh9ii7vVxORvBi7uTXpXvJk36DM\nkaTOwydx5US7s3iqRnVyw/sKSXFwrYnMA15WWN5Ymr6veMvsXUNckNyOE919\nW6rs5TngCiv6bATU3mm0P3GPxJWf+EESLo6gc+KtZj0wbnrRYBMg3FWzTYOq\njB2ZYo0ZceWSHt/bd2QKP484Z6rTGxKMzLKxn4THZPf5oKdEh6Nsm7cW8fy9\nvNuA03OQcTD4nK+wj+wJwWkT54rDz29S1PZcV1ONdwE5aItUnJCsmAfDg2Kw\nY37HXYx1lVOF5QUUKZxThNwVLNSJIlNAYYnkODPUGEbLiYsUVLTQTgbXRg9M\nW7WbEqFsV1W/7W0XkCCxHjBTQtfAebDZ37/Z5rAu1tnbV/9oqewUtElfU9yo\n5LkPwM+ce0fwYS6CrlM5B9wrLpLGw6NloRDBiEvPk2zLa3zGOLITVV/gS0hO\nZZu57jPicz5uNwqD+6csETWsnGs0HHlH8fVdWPXvqlwSeC03uWj14KY/aTOG\nVrfK1Ez4DrRmMLlBJBBT/N/kHy9++rsorHHHGd8WjqBt+MxKMtvQ8gQ8iOem\nDlv6\r\n=Gfj/\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.8.0_1557021753441_0.8545235708453591"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.9.0": {
+			"name": "@jest/fake-timers",
+			"version": "24.9.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^24.9.0",
+				"jest-message-util": "^24.9.0",
+				"jest-mock": "^24.9.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "9ad0f4bc6b8bdd94989804226c28c9960d9da7d1",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@24.9.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.15.0/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-eWQcNa2YSwzXWIMC5KufBh3oWRIijrQFROsIqt6v/NS9Io/gknw1jsAC9c+ih/RQX4A3O7SeWAhQeN0goKhT9A==",
+				"shasum": "ba3e6bf0eecd09a636049896434d306636540c93",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.9.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 21250,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdVkV6CRA9TVsSAnZWagAApuoQAJhz3roXBVTKqjI6AaEu\n1QQPRfez2GQwrYx8JBnImM4iGrOTZNBD9oSJY904Q7FDbpX5w0qbOGWbhaw8\nAk8ugvLAn7btYlubWxXtA7FpimK2owsFvR1f/Obih+KHAqo/VJexBYYF5VQT\nk5Xy5uQl85dDpmSrGXH+dyIN+YoR5yVPMHMS6ruzO+XLjCQ1xyGjHQE3ZhYr\n+Eh+pdMnVU00a/Hppesx3Ocg3jwT+/aYVFeuaFOo0/0BjR7i+WYguMtQTAvn\nvIq12/I8nboiFk8sV95XNgAQiMIjmxwnMelFC1Y4MVLdV3//G8o235L58fDZ\nkIT18DMoC7mKxhAr0RDmznTiIMQB6nc0Wyi3GBB6QOvxkUADwKlv605dEe0l\nCA9P4TjG5qLb9HZscSnRR6SavFcxBGSfEqEs+DgMLaY8bB01sJb+RiS2hS5o\nIvg+uloSpK/KybbvuNxGNn2OVkhfrtYRzOiiBS7/9syUwzsBRxWZQiyy4hOw\n7rPYO7lQeuZSnJ1Fq225oPIRV57dZjdDxXk57vNL12CLTVv+sQV413rFKO1N\nKo5fwTgEksColOxolW9F/2MMRoj6D07bWbcBrnM0VsSSHsMib/+Of6V+54jD\nqIDHZhlDlL4VuoYZkJEougdyzyuDw7gA7MLgNNEIEDm3FOAlodRZ68cVBc8f\nh76p\r\n=v6uy\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_24.9.0_1565934970160_0.9042037707582158"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"25.0.0": {
+			"name": "@jest/fake-timers",
+			"version": "25.0.0",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-fake-timers"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/types": "^25.0.0",
+				"jest-message-util": "^25.0.0",
+				"jest-mock": "^25.0.0"
+			},
+			"engines": {
+				"node": ">= 8"
+			},
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "ff9269be05fd8316e95232198fce3463bf2f270e",
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://github.com/facebook/jest#readme",
+			"_id": "@jest/fake-timers@25.0.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-b/v/phUcZtwmQK7ttqsPHn+TmwhS75RNS7AILTkTKTeYOCc+aM0BrPrGrNFJnXglehvUJQ+U5q2axYN/1VFt5A==",
+				"shasum": "fb408322ff0798ad6fae94b001e10c76d42d4a38",
+				"tarball": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-25.0.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 19875,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXgrZCRA9TVsSAnZWagAA/zsQAIuy+wkfwQmRt3MV/l9W\nhi6ieoIC7N+ojzcZDFazUS7Ww07ejgPZQubGdoIiO92Z/RM3kd/BArn2SlyB\nb2oSYJ683U7RP3+GowSbrgTMQhymI4GZvcf/lQQEjvxNoNODKxVY/xVJzZY7\nxzCev8ib7Ma5jLF4LxBxzrcElxDrENyEpvS1xPPuKBq8TKnI4t9jSzvK0BYS\nqfcqEIAvPHoVq1rVj6MZslcXZ9mVvTSlItICJJJ6XVdNSpiuf/0Y49esAW3L\nfzzC3a0ExHm9e0KpFzuSl8dpZaSDCX1CSs8Sv/ON9R3EowVa6KYsP5ZRjLJZ\nmHM7ylAlK79oegKp0JTej68O6AyoZk336CYz2Eevx2GcmvaVsO0lXQPQxPLW\nwABvZA3zjKEO9jksEW8UpepqWPicj345kSKeSS+cqJl9+HKN7zEymRsWLpBI\nhesa9zXpXI8Yr/oq0b63+2fd8WfcQbCC9pufxI8Z0PUPZBaqGL1BubrgemTK\n/yllMDecH0wxMNlifM38NOVmsgBxhOiWy+E7btYM6itDNAyW5Fa4/9UvOF2g\nnv3gv3+mq0iri7+8Sw0frAzMsSMkcopD1zpXPMe6AwBvBvHQFjmu2CMETWSZ\nBZKBqu6Fvaa/sLp52tNSy1XtclsSHurYngwap4KMr/Htk5BN392iAvqGHskE\n4Z2x\r\n=GLR5\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/fake-timers_25.0.0_1566444249200_0.04234976053198469"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2019-03-05T15:00:19.298Z",
+		"24.2.0-alpha.0": "2019-03-05T15:00:19.610Z",
+		"modified": "2019-09-24T20:36:56.388Z",
+		"24.3.0": "2019-03-07T12:59:58.290Z",
+		"24.5.0": "2019-03-12T16:36:44.592Z",
+		"24.6.0": "2019-04-01T22:26:39.122Z",
+		"24.7.0": "2019-04-03T03:55:34.915Z",
+		"24.7.1": "2019-04-04T01:18:53.576Z",
+		"24.8.0": "2019-05-05T02:02:33.638Z",
+		"24.9.0": "2019-08-16T05:56:10.407Z",
+		"25.0.0": "2019-08-22T03:24:09.283Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"beta": "24.2.0-alpha.0",
+		"latest": "24.9.0",
+		"next": "25.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"313cd9552993968bcbe3dfa29e0b8679\"",
+			"fetched": 1577117259188
+		}
+	},
+	"_distfiles": {
+		"fake-timers-24.2.0-alpha.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.2.0-alpha.0.tgz",
+			"sha": "6ba610c02319a39e91272373fb52ab0653290a38",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.3.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.3.0.tgz",
+			"sha": "0a7f8b877b78780c3fa5c3f8683cc0aaf9488331",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.5.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.5.0.tgz",
+			"sha": "4a29678b91fd0876144a58f8d46e6c62de0266f0",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.6.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.6.0.tgz",
+			"sha": "4eb0b47539883742e9f969e983770230f5a57d7b",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.7.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.7.0.tgz",
+			"sha": "6735c6d88ee096a6303f369fa5fddef12f79779c",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.7.1.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.7.1.tgz",
+			"sha": "56e5d09bdec09ee81050eaff2794b26c71d19db2",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.8.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.8.0.tgz",
+			"sha": "2e5b80a4f78f284bcb4bd5714b8e10dd36a8d3d1",
+			"registry": "npmjs"
+		},
+		"fake-timers-24.9.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-24.9.0.tgz",
+			"sha": "ba3e6bf0eecd09a636049896434d306636540c93",
+			"registry": "npmjs"
+		},
+		"fake-timers-25.0.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/fake-timers/-/fake-timers-25.0.0.tgz",
+			"sha": "fb408322ff0798ad6fae94b001e10c76d42d4a38",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-d13af1901072df28",
+	"_id": "@jest/fake-timers",
+	"readme": "ERROR: No README data found!"
+}

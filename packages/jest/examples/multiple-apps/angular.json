@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/my-first-app",
             "index": "projects/my-first-app/src/index.html",
             "main": "projects/my-first-app/src/main.ts",
@@ -49,6 +50,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -118,6 +123,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/my-second-app",
             "index": "projects/my-second-app/src/index.html",
             "main": "projects/my-second-app/src/main.ts",
@@ -154,6 +160,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -222,7 +232,12 @@
             "tsConfig": "projects/my-shared-library/tsconfig.lib.json",
             "project": "projects/my-shared-library/ng-package.json"
           }
-        },
+        ,          "configurations": {
+            "production": {
+              "tsConfig": "projects/my-shared-library/tsconfig.lib.prod.json"
+            }
+          }
+},
         "test": {
           "builder": "@angular-builders/jest:run"
         },

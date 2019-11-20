@@ -1,0 +1,143 @@
+{
+	"name": "semver-dsl",
+	"versions": {
+		"1.0.0": {
+			"name": "semver-dsl",
+			"version": "1.0.0",
+			"description": "Tiny internal DSL which allows invocation of different functionality depending on SemVer match.",
+			"main": "index.js",
+			"types": "index.d.ts",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/mgechev/semver-dsl.git"
+			},
+			"keywords": [
+				"semver",
+				"dsl"
+			],
+			"author": {
+				"name": "Minko Gechev",
+				"email": "mgechev@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/mgechev/semver-dsl/issues"
+			},
+			"homepage": "https://github.com/mgechev/semver-dsl#readme",
+			"dependencies": {
+				"semver": "^5.3.0"
+			},
+			"_id": "semver-dsl@1.0.0",
+			"scripts": {},
+			"_shasum": "462ce8159950ef8def4e0d797caee19cb6ad94cf",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "mgechev",
+				"email": "mgechev@gmail.com"
+			},
+			"dist": {
+				"shasum": "462ce8159950ef8def4e0d797caee19cb6ad94cf",
+				"tarball": "https://registry.npmjs.org/semver-dsl/-/semver-dsl-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "mgechev",
+					"email": "mgechev@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/semver-dsl-1.0.0.tgz_1487534483579_0.9880718332715333"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "semver-dsl",
+			"version": "1.0.1",
+			"description": "Tiny internal DSL which allows invocation of different functionality depending on SemVer match.",
+			"main": "index.js",
+			"types": "index.d.ts",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/mgechev/semver-dsl.git"
+			},
+			"keywords": [
+				"semver",
+				"dsl"
+			],
+			"author": {
+				"name": "Minko Gechev",
+				"email": "mgechev@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/mgechev/semver-dsl/issues"
+			},
+			"homepage": "https://github.com/mgechev/semver-dsl#readme",
+			"dependencies": {
+				"semver": "^5.3.0"
+			},
+			"_id": "semver-dsl@1.0.1",
+			"scripts": {},
+			"_shasum": "d3678de5555e8a61f629eed025366ae5f27340a0",
+			"_from": ".",
+			"_npmVersion": "4.1.2",
+			"_nodeVersion": "7.5.0",
+			"_npmUser": {
+				"name": "mgechev",
+				"email": "mgechev@gmail.com"
+			},
+			"dist": {
+				"shasum": "d3678de5555e8a61f629eed025366ae5f27340a0",
+				"tarball": "https://registry.npmjs.org/semver-dsl/-/semver-dsl-1.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "mgechev",
+					"email": "mgechev@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/semver-dsl-1.0.1.tgz_1487535052203_0.6580891811754555"
+			},
+			"directories": {},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2017-02-19T20:10:53.919Z",
+		"created": "2017-02-19T20:01:25.371Z",
+		"1.0.0": "2017-02-19T20:01:25.371Z",
+		"1.0.1": "2017-02-19T20:10:53.919Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.1"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"10797ce6ee4932dcac51fad23310e32f\"",
+			"fetched": 1577117288865
+		}
+	},
+	"_distfiles": {
+		"semver-dsl-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/semver-dsl/-/semver-dsl-1.0.0.tgz",
+			"sha": "462ce8159950ef8def4e0d797caee19cb6ad94cf",
+			"registry": "npmjs"
+		},
+		"semver-dsl-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/semver-dsl/-/semver-dsl-1.0.1.tgz",
+			"sha": "d3678de5555e8a61f629eed025366ae5f27340a0",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-89c52c176328240e",
+	"_id": "semver-dsl",
+	"readme": "[![Build Status](https://travis-ci.org/mgechev/semver-dsl.svg?branch=master)](https://travis-ci.org/mgechev/semver-dsl)\n\n# SemVer DSL\n\nA simple internal DSL which allows you to invoke different functionality depending on version match. Used in codelyzer for keeping the code compatible across different versions of the Angular compiler.\n\n# Demo\n\n```bash\n$ npm i semver-dsl --save\n```\n\n```ts\nimport {SemVerDSL} from 'semver-dsl';\n\nconst base = () => {};\nconst elseIf1 = () => {};\nconst elseIf2 = () => {};\nconst else = () => console.log('I will be invoked!');\n\nSemVerDSL('3.0.0')\n  .gt('3.2.1', base)\n  .elseIf.gt('3.0.1', elseIf1)\n  .elseIf.between('3.0.1', '3.1.8', elseIf2)\n  .else(else);\n```\n\nIn the example above will be invoked `else`.\n\n# API\n\n- `SemDSL(version: string)` - factory which accepts a version and returns an object.\n- `gte(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `lte(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `gt(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `lt(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `eq(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `neq(version: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` and `else` properties.\n- `between(v1: string, v2: string, callback?: Function): ISemContextualDSL` - returns an object with `elseIf` properties.\n- `elseIf` - returns an object of type `ISemVerDSL` bound to the previous predicate.\n- `else` - invokes given callback if all of the previous conditions have failed.\n\n```ts\nexport interface ISemVerDSL {\n  gte(version: string, callback: Function): ISemContextualDSL;\n  lte(version: string, callback: Function): ISemContextualDSL;\n  gt(version: string, callback: Function): ISemContextualDSL;\n  lt(version: string, callback: Function): ISemContextualDSL;\n  eq(version: string, callback: Function): ISemContextualDSL;\n  neq(version: string, callback: Function): ISemContextualDSL;\n  between(v1: string, v2: string, callback: Function): ISemContextualDSL;\n}\n```\n\n```ts\nexport interface ISemVerContextBoundDSL {\n  elseIf: ISemVerDSL;\n  else(callback: Function): void;\n}\n```\n\n# License\n\nMIT"
+}

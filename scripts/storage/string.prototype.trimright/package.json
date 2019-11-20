@@ -1,0 +1,454 @@
+{
+	"name": "string.prototype.trimright",
+	"versions": {
+		"1.0.1": {
+			"name": "string.prototype.trimright",
+			"version": "1.0.1",
+			"author": {
+				"name": "Jordan Harband"
+			},
+			"description": "ES7 spec-compliant String.prototype.trimRight shim.",
+			"license": "MIT",
+			"main": "index.js",
+			"scripts": {
+				"test": "npm run lint && npm run test:shimmed && npm run test:module && npm run security",
+				"test:shimmed": "node test/shimmed.js",
+				"test:module": "node test/index.js",
+				"coverage": "covert test/*.js",
+				"coverage-quiet": "covert test/*.js --quiet",
+				"lint": "npm run jscs && npm run eslint",
+				"eslint": "eslint test/*.js *.js",
+				"jscs": "jscs test/*.js *.js",
+				"security": "nsp package"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/es-shims/String.prototype.trimRight.git"
+			},
+			"keywords": [
+				"String.prototype.trimRight",
+				"string",
+				"ES7",
+				"shim",
+				"trim",
+				"trimLeft",
+				"trimRight",
+				"polyfill"
+			],
+			"dependencies": {
+				"define-properties": "^1.1.1",
+				"function-bind": "^1.0.2"
+			},
+			"devDependencies": {
+				"tape": "^4.0.1",
+				"covert": "^1.1.0",
+				"jscs": "^1.13.1",
+				"nsp": "^1.0.3",
+				"eslint": "^1.0.0-rc-3",
+				"@ljharb/eslint-config": "^1.0.3"
+			},
+			"testling": {
+				"files": "test/index.js",
+				"browsers": [
+					"iexplore/9.0..latest",
+					"firefox/4.0..6.0",
+					"firefox/15.0..latest",
+					"firefox/nightly",
+					"chrome/4.0..10.0",
+					"chrome/20.0..latest",
+					"chrome/canary",
+					"opera/11.6..latest",
+					"opera/next",
+					"safari/5.0..latest",
+					"ipad/6.0..latest",
+					"iphone/6.0..latest",
+					"android-browser/4.2"
+				]
+			},
+			"engines": {
+				"node": ">= 0.4"
+			},
+			"gitHead": "9ea53172b3bc16c7c33591569e655c2280984bad",
+			"bugs": {
+				"url": "https://github.com/es-shims/String.prototype.trimRight/issues"
+			},
+			"homepage": "https://github.com/es-shims/String.prototype.trimRight#readme",
+			"_id": "string.prototype.trimright@1.0.1",
+			"_shasum": "b8dedf42fcb98670bf90a8a6ec3281dbd61819fa",
+			"_from": ".",
+			"_npmVersion": "2.13.0",
+			"_nodeVersion": "2.4.0",
+			"_npmUser": {
+				"name": "ljharb",
+				"email": "ljharb@gmail.com"
+			},
+			"dist": {
+				"shasum": "b8dedf42fcb98670bf90a8a6ec3281dbd61819fa",
+				"tarball": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-1.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "ljharb",
+					"email": "ljharb@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "string.prototype.trimright",
+			"version": "2.0.0",
+			"author": {
+				"name": "Jordan Harband"
+			},
+			"description": "ES7 spec-compliant String.prototype.trimRight shim.",
+			"license": "MIT",
+			"main": "index.js",
+			"scripts": {
+				"test": "npm run lint && es-shim-api --bound && npm run tests-only && npm run security",
+				"tests-only": "npm run test:shimmed && npm run test:module",
+				"test:shimmed": "node test/shimmed.js",
+				"test:module": "node test/index.js",
+				"coverage": "covert test/*.js",
+				"coverage-quiet": "covert test/*.js --quiet",
+				"lint": "npm run jscs && npm run eslint",
+				"eslint": "eslint test/*.js *.js",
+				"jscs": "jscs test/*.js *.js",
+				"security": "nsp check"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/es-shims/String.prototype.trimRight.git"
+			},
+			"keywords": [
+				"String.prototype.trimRight",
+				"string",
+				"ES7",
+				"shim",
+				"trim",
+				"trimLeft",
+				"trimRight",
+				"polyfill",
+				"es-shim API"
+			],
+			"dependencies": {
+				"define-properties": "^1.1.2",
+				"function-bind": "^1.0.2"
+			},
+			"devDependencies": {
+				"tape": "^4.4.0",
+				"covert": "^1.1.0",
+				"jscs": "^2.9.0",
+				"nsp": "^2.2.0",
+				"eslint": "^1.10.3",
+				"@ljharb/eslint-config": "^1.6.1",
+				"@es-shims/api": "^1.1.0"
+			},
+			"testling": {
+				"files": "test/index.js",
+				"browsers": [
+					"iexplore/9.0..latest",
+					"firefox/4.0..6.0",
+					"firefox/15.0..latest",
+					"firefox/nightly",
+					"chrome/4.0..10.0",
+					"chrome/20.0..latest",
+					"chrome/canary",
+					"opera/11.6..latest",
+					"opera/next",
+					"safari/5.0..latest",
+					"ipad/6.0..latest",
+					"iphone/6.0..latest",
+					"android-browser/4.2"
+				]
+			},
+			"engines": {
+				"node": ">= 0.4"
+			},
+			"gitHead": "0df2b83b28b705004b88868f2970a274584516d1",
+			"bugs": {
+				"url": "https://github.com/es-shims/String.prototype.trimRight/issues"
+			},
+			"homepage": "https://github.com/es-shims/String.prototype.trimRight#readme",
+			"_id": "string.prototype.trimright@2.0.0",
+			"_shasum": "ab4a56d802a01fbe7293e11e84f24dc8164661dd",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.5.0",
+			"_npmUser": {
+				"name": "ljharb",
+				"email": "ljharb@gmail.com"
+			},
+			"dist": {
+				"shasum": "ab4a56d802a01fbe7293e11e84f24dc8164661dd",
+				"tarball": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "ljharb",
+					"email": "ljharb@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-5-east.internal.npmjs.com",
+				"tmp": "tmp/string.prototype.trimright-2.0.0.tgz_1454824795643_0.04415615135803819"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "string.prototype.trimright",
+			"version": "2.1.0",
+			"author": {
+				"name": "Jordan Harband"
+			},
+			"description": "ES7 spec-compliant String.prototype.trimRight shim.",
+			"license": "MIT",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "npm run lint && es-shim-api --bound",
+				"test": "npm run tests-only",
+				"posttest": "npx aud",
+				"tests-only": "npm run test:shimmed && npm run test:module",
+				"test:shimmed": "node test/shimmed",
+				"test:module": "node test",
+				"coverage": "covert test/*.js",
+				"lint": "eslint ."
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/es-shims/String.prototype.trimRight.git"
+			},
+			"keywords": [
+				"String.prototype.trimRight",
+				"string",
+				"ES7",
+				"shim",
+				"trim",
+				"trimLeft",
+				"trimRight",
+				"polyfill",
+				"es-shim API"
+			],
+			"dependencies": {
+				"define-properties": "^1.1.3",
+				"function-bind": "^1.1.1"
+			},
+			"devDependencies": {
+				"@es-shims/api": "^2.1.2",
+				"@ljharb/eslint-config": "^14.1.0",
+				"covert": "^1.1.1",
+				"eslint": "^6.3.0",
+				"functions-have-names": "^1.1.1",
+				"tape": "^4.11.0"
+			},
+			"testling": {
+				"files": "test/index.js",
+				"browsers": [
+					"iexplore/9.0..latest",
+					"firefox/4.0..6.0",
+					"firefox/15.0..latest",
+					"firefox/nightly",
+					"chrome/4.0..10.0",
+					"chrome/20.0..latest",
+					"chrome/canary",
+					"opera/11.6..latest",
+					"opera/next",
+					"safari/5.0..latest",
+					"ipad/6.0..latest",
+					"iphone/6.0..latest",
+					"android-browser/4.2"
+				]
+			},
+			"engines": {
+				"node": ">= 0.4"
+			},
+			"gitHead": "cc5ac7d9e2dcafc6394ebdfd3d601dc5f5abb2f9",
+			"bugs": {
+				"url": "https://github.com/es-shims/String.prototype.trimRight/issues"
+			},
+			"homepage": "https://github.com/es-shims/String.prototype.trimRight#readme",
+			"_id": "string.prototype.trimright@2.1.0",
+			"_nodeVersion": "12.10.0",
+			"_npmVersion": "6.10.3",
+			"dist": {
+				"integrity": "sha512-fXZTSV55dNBwv16uw+hh5jkghxSnc5oHq+5K/gXgizHwAvMetdAJlHqqoFC1FSDVPYWLkAKl2cxpUT41sV7nSg==",
+				"shasum": "669d164be9df9b6f7559fa8e89945b168a5a6c58",
+				"tarball": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.1.0.tgz",
+				"fileCount": 15,
+				"unpackedSize": 20527,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJddyuQCRA9TVsSAnZWagAAdHUQAJo93AjQ0yiH6tQtWsAA\ngXMwUzc5nxlR5E5WjlyOToQ2LenZSAjtjgM35eqh9k4ztbPUaLnNK5kOJZ58\nnzoEX9ch7OT095ikW1r8qRmtGUjinri74CTNarJX08KSbgnX6qeEa/MjqxW0\ncsl/ybK+9ISq6OoyUdgsUkXWpa4mM/sJXKEAppJSHSboGej8p0Fk0/TPka1o\nLY7EbYXsX8Paw4SqwGCrz3sO5EQhuSIpLgwVRhiZC62HB3L+sPz9j0cMAKph\nhqW6Ww/58uYT4otSzsFrwkIERCm9qcAQGV9C3I+lWV88NNc2Nte6q1c0+KrN\nQ55cEd9rCaQrfl2fX8f8LGF2xcgRmUG9Qnhdoqb6o2ATr5tJvvfuAbev8uRt\njSJXByQpKGt58PKfw9gkE63VQ+X+u5Z+DTd/57naq/FVqqa/Jx7j14XrTbtE\ntsT0T5iug5jxgfvk6cKf2kAIz/QTL2JBkMdwRNPpAhAcvRgw3twkXqmoV3nk\n+e/XnWP+BGA30p99GFNXOo7X3/d2eecLDlYmtDLygZTxnfBORky6PnaS27ak\n3czmnYg6N0tquqbPakgGeYNp7azza2bCpBVIvEiEwCG/O/mhQv8vpWg963eP\nDbEuBemrZxgEOvlj2XYSY7R+gBwbKeIgrdv6W7aRZ4jy7MIWwbpKChDMxkkH\n55yj\r\n=HvDb\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "ljharb",
+					"email": "ljharb@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "ljharb",
+				"email": "ljharb@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/string.prototype.trimright_2.1.0_1568091023545_0.6012024758007699"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.1.1": {
+			"name": "string.prototype.trimright",
+			"version": "2.1.1",
+			"author": {
+				"name": "Jordan Harband"
+			},
+			"funding": {
+				"url": "https://github.com/sponsors/ljharb"
+			},
+			"description": "ES7 spec-compliant String.prototype.trimRight shim.",
+			"license": "MIT",
+			"main": "index.js",
+			"scripts": {
+				"pretest": "npm run lint && es-shim-api --bound",
+				"test": "npm run tests-only",
+				"posttest": "npx aud",
+				"tests-only": "npm run test:shimmed && npm run test:module",
+				"test:shimmed": "node test/shimmed",
+				"test:module": "node test",
+				"coverage": "covert test/*.js",
+				"lint": "eslint ."
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/es-shims/String.prototype.trimRight.git"
+			},
+			"keywords": [
+				"String.prototype.trimRight",
+				"string",
+				"ES7",
+				"shim",
+				"trim",
+				"trimLeft",
+				"trimRight",
+				"polyfill",
+				"es-shim API"
+			],
+			"dependencies": {
+				"define-properties": "^1.1.3",
+				"function-bind": "^1.1.1"
+			},
+			"devDependencies": {
+				"@es-shims/api": "^2.1.2",
+				"@ljharb/eslint-config": "^15.0.2",
+				"covert": "^1.1.1",
+				"eslint": "^6.7.2",
+				"functions-have-names": "^1.2.0",
+				"tape": "^4.12.0"
+			},
+			"testling": {
+				"files": "test/index.js",
+				"browsers": [
+					"iexplore/9.0..latest",
+					"firefox/4.0..6.0",
+					"firefox/15.0..latest",
+					"firefox/nightly",
+					"chrome/4.0..10.0",
+					"chrome/20.0..latest",
+					"chrome/canary",
+					"opera/11.6..latest",
+					"opera/next",
+					"safari/5.0..latest",
+					"ipad/6.0..latest",
+					"iphone/6.0..latest",
+					"android-browser/4.2"
+				]
+			},
+			"engines": {
+				"node": ">= 0.4"
+			},
+			"gitHead": "e38a0d277fb07788a84989499f154d1f83cbda07",
+			"bugs": {
+				"url": "https://github.com/es-shims/String.prototype.trimRight/issues"
+			},
+			"homepage": "https://github.com/es-shims/String.prototype.trimRight#readme",
+			"_id": "string.prototype.trimright@2.1.1",
+			"_nodeVersion": "13.3.0",
+			"_npmVersion": "6.13.1",
+			"dist": {
+				"integrity": "sha512-qFvWL3/+QIgZXVmJBfpHmxLB7xsUXz6HsUmP8+5dRaC3Q7oKUv9Vo6aMCRZC1smrtyECFsIT30PqBJ1gTjAs+g==",
+				"shasum": "440314b15996c866ce8a0341894d45186200c5d9",
+				"tarball": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.1.1.tgz",
+				"fileCount": 15,
+				"unpackedSize": 11502,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+qGvCRA9TVsSAnZWagAAofwP/AgJx/N+sOvW4CxFfQ2/\nnUei46qDZX6LIc93668rt7r8WdS0gSoTP7h/iAUOogQX2dITR4VizMIihwhp\naOA9toO69Hboq0bXlKayEQC6kX0+qrOeXgq+rQ56LJHWuHe297u8Hho9yBsP\nd+8p02m865GyeIUa54kOn5oqMVNZVSyB+2ek89+rLojCwJpr0vZ7W7bNRvKQ\n/X0Sfw5dNH0yAUDBaohh1O4G68Q17+Au08xn2Uuk3N8Xrka8mbP+GXOj5GRs\n92GClIYXIG+26rhho6IJDsQ/ZOmmzmZegxiOaSdRpLwhWQHOf/JqtOgx29Vq\nrKM2MkLGYibjDCeZ1NHwS9sj6IHDB1JAYx3dr//AyxVe1lnQw9/BxLhZz+5q\nk6fT4Qu9rEZj15D6J+el384sW9pIkFSVn5PnFtv6q5x5oOiHPQGaYPihUAk/\nz+Soc91uKL6rtRBWi6pEyOFaVg8o45phE7ZxSBJ+Rv5Ohm07IwWukwWYR0SK\nV+HkwVhHD/CSBxrQnHNWuD6MORTQQA9/VFd0luOJ7QXfEh3Uvw1RielM161v\npkREGu1d+L5HAJG2MQNhSQqx7J7h86ZVy67rgjZTCZCEmMZXVLQ+33icfHv1\nYFAvL6HCA4NHLVcywYkihLYYNpcuGViLuxqoAAmLBGz/F0PyaFPmaBAaXii0\npJ7I\r\n=naZP\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "ljharb+esshims@gmail.com",
+					"name": "es-shims-owner"
+				},
+				{
+					"email": "ljharb@gmail.com",
+					"name": "ljharb"
+				}
+			],
+			"_npmUser": {
+				"name": "ljharb",
+				"email": "ljharb@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/string.prototype.trimright_2.1.1_1576706478760_0.44108023368441707"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-12-18T22:01:21.340Z",
+		"created": "2015-07-29T22:10:03.953Z",
+		"1.0.0": "2015-07-29T22:10:03.953Z",
+		"1.0.1": "2015-07-29T22:40:09.615Z",
+		"2.0.0": "2016-02-07T05:59:57.738Z",
+		"2.1.0": "2019-09-10T04:50:23.715Z",
+		"2.1.1": "2019-12-18T22:01:18.888Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "2.1.1"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"cb2ffb5c819ada1db302e41d187cebb7\"",
+			"fetched": 1577117285320
+		}
+	},
+	"_distfiles": {
+		"string.prototype.trimright-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-1.0.1.tgz",
+			"sha": "b8dedf42fcb98670bf90a8a6ec3281dbd61819fa",
+			"registry": "npmjs"
+		},
+		"string.prototype.trimright-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.0.0.tgz",
+			"sha": "ab4a56d802a01fbe7293e11e84f24dc8164661dd",
+			"registry": "npmjs"
+		},
+		"string.prototype.trimright-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.1.0.tgz",
+			"sha": "669d164be9df9b6f7559fa8e89945b168a5a6c58",
+			"registry": "npmjs"
+		},
+		"string.prototype.trimright-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/string.prototype.trimright/-/string.prototype.trimright-2.1.1.tgz",
+			"sha": "440314b15996c866ce8a0341894d45186200c5d9",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "3-4ee7ab3b95755240",
+	"_id": "string.prototype.trimright",
+	"readme": "String.prototype.trimRight <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\n[![browser support][testling-svg]][testling-url]\n\nA spec-proposal-compliant `String.prototype.trimRight` shim. Invoke its \"shim\" method to shim `String.prototype.trimRight` if it is unavailable.\n\nThis package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign). In an ES6 environment, it will also work properly with `Symbol`s.\n\nMost common usage:\n```js\nvar trimRight = require('string.prototype.trimright');\n\nassert(trimRight(' \\t\\na \\t\\n') === 'a \\t\\n');\n\nif (!String.prototype.trimRight) {\n\ttrimRight.shim();\n}\n\nassert(trimRight(' \\t\\na \\t\\n ') === ' \\t\\na \\t\\n '.trimRight());\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[package-url]: https://npmjs.com/package/string.prototype.trimright\n[npm-version-svg]: http://vb.teelaun.ch/es-shims/String.prototype.trimRight.svg\n[travis-svg]: https://travis-ci.org/es-shims/String.prototype.trimRight.svg\n[travis-url]: https://travis-ci.org/es-shims/String.prototype.trimRight\n[deps-svg]: https://david-dm.org/es-shims/String.prototype.trimRight.svg\n[deps-url]: https://david-dm.org/es-shims/String.prototype.trimRight\n[dev-deps-svg]: https://david-dm.org/es-shims/String.prototype.trimRight/dev-status.svg\n[dev-deps-url]: https://david-dm.org/es-shims/String.prototype.trimRight#info=devDependencies\n[testling-svg]: https://ci.testling.com/es-shims/String.prototype.trimRight.png\n[testling-url]: https://ci.testling.com/es-shims/String.prototype.trimRight\n[npm-badge-png]: https://nodei.co/npm/string.prototype.trimright.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/string.prototype.trimright.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/string.prototype.trimright.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=string.prototype.trimright"
+}

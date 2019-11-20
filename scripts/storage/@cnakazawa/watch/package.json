@@ -1,0 +1,102 @@
+{
+	"name": "@cnakazawa/watch",
+	"versions": {
+		"1.0.3": {
+			"name": "@cnakazawa/watch",
+			"description": "Utilities for watching file trees.",
+			"scripts": {
+				"release:major": "bash scripts/release.sh major",
+				"release:minor": "bash scripts/release.sh minor",
+				"release:patch": "bash scripts/release.sh patch"
+			},
+			"keywords": [
+				"util",
+				"utility",
+				"fs",
+				"files"
+			],
+			"bin": {
+				"watch": "./cli.js"
+			},
+			"version": "1.0.3",
+			"homepage": "https://github.com/mikeal/watch",
+			"bugs": {
+				"url": "https://github.com/mikeal/watch/issues"
+			},
+			"license": "Apache-2.0",
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/mikeal/watch.git"
+			},
+			"author": {
+				"name": "Mikeal Rogers",
+				"email": "mikeal.rogers@gmail.com"
+			},
+			"directories": {
+				"lib": "lib"
+			},
+			"engines": {
+				"node": ">=0.1.95"
+			},
+			"main": "./main",
+			"dependencies": {
+				"exec-sh": "^0.3.2",
+				"minimist": "^1.2.0"
+			},
+			"gitHead": "e2a11c53cc7235160575cf39ebdfa5df2c811826",
+			"_id": "@cnakazawa/watch@1.0.3",
+			"_npmVersion": "6.5.0",
+			"_nodeVersion": "11.6.0",
+			"_npmUser": {
+				"name": "cpojer",
+				"email": "christoph.pojer@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-r5160ogAvGyHsal38Kux7YYtodEKOj89RGb28ht1jh3SJb08VwRwAKKJL0bGb04Zd/3r9FL3BFIc3bBidYffCA==",
+				"shasum": "099139eaec7ebf07a27c1786a3ff64f39464d2ef",
+				"tarball": "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.3.tgz",
+				"fileCount": 11,
+				"unpackedSize": 27291,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdM7fCRA9TVsSAnZWagAAoIcP/1xth6+UpvQgs3mcURoE\ndllW9XLKWEn/E3M0Di1fx8zd5DwK3aN0SWW4jhUChIcDifQLJ/LHAH2NIdVg\nV4cm4sTgrYxRI/WBvltML8dJm9ltxQmleeCPdIdTGsgTu97TEHz06CSl01UR\nyh9PaZi0spBXXw8XpDAGxU4N/Y13hUhXeEHJess9SokB9xxv8KpF5Ls+NP3F\nn/3EYwcTImfk8O+eMqMPyLNbK/2TX3ddaFrt0n9O1yLxgFGnquTl/k+O/BHs\nPldenBIjRFDVzQnTCWjkuh5+2eOcLXyTSN82veWwfwEwoF3Pip+oRJTsUlMT\nuiZApk2iLOcG5LHEuSQBg6ZPkAU9V2y5o8rtoki1x7bYoLZkPOKSkdrlYTDS\ngBFZMGCl2hGU1BSalXRZZBoiLWebXww5OE5Cboo+Q1gOjLkE1JjuylI6CmhC\nJF3b0QZ1jCTucfFZ3Gm42DNDq2bsHYx1qdAASzlYqJupDomQlncnAPHBgXJX\nP47QXrKLdIb1VxZh9GLHVo6wONdsSW2PJ4l0zkHLsC7L6o7K+A31gySyzd0s\njyzMi1vKrJPWzxjUZqhiQ75GMlKZ9doUfkv20MH11nkiilXc89RLrerX3xYk\n1v8zEqxpzGNmn8T8DbuDDEFeVSvtitZKngJTrIo8sewrfV8kevYKh7StQZXw\ndyM6\r\n=n457\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/watch_1.0.3_1551159006586_0.7028121779019034"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2019-02-26T05:30:06.391Z",
+		"1.0.3": "2019-02-26T05:30:06.793Z",
+		"modified": "2019-02-26T05:30:09.569Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.3"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"5287f6822024f2f36ede38cb6c082b6a\"",
+			"fetched": 1577117293251
+		}
+	},
+	"_distfiles": {
+		"watch-1.0.3.tgz": {
+			"url": "https://registry.npmjs.org/@cnakazawa/watch/-/watch-1.0.3.tgz",
+			"sha": "099139eaec7ebf07a27c1786a3ff64f39464d2ef",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-5e0869e343b8e42a",
+	"_id": "@cnakazawa/watch",
+	"readme": "# watch -- Utilities for watching file trees in node.js\n\n## Install\n\n<pre>\n  npm install watch\n</pre>\n\n## Purpose\n\nThe intention of this module is provide tools that make managing the watching of file & directory trees easier.\n\n#### watch.watchTree(root, [options,] callback)\n\nThe first argument is the directory root you want to watch.\n\nThe options object is passed to fs.watchFile but can also be used to provide two additional watchTree specific options:\n\n* `'ignoreDotFiles'` - When true this option means that when the file tree is walked it will ignore files that being with \".\"\n* `'filter'` - You can use this option to provide a function that returns true or false for each file and directory to decide whether or not that file/directory is included in the watcher.\n* `'interval'` - Specifies the interval duration in seconds, the time period between polling for file changes.\n* `'ignoreUnreadableDir'` - When true, this options means that when a file can't be read, this file is silently skipped.\n* `'ignoreNotPermitted'` - When true, this options means that when a file can't be read due to permission issues, this file is silently skipped.\n* `'ignoreDirectoryPattern'` - When a regex pattern is set, e.g. /node_modules/, these directories are silently skipped.\n\nThe callback takes 3 arguments. The first is the file that was modified. The second is the current stat object for that file and the third is the previous stat object.\n\nWhen a file is new the previous stat object is null.\n\nWhen watchTree is finished walking the tree and adding all the listeners it passes the file hash (keys are the file/directory names and the values are the current stat objects) as the first argument and null as both the previous and current stat object arguments.\n\n<pre>\n  watch.watchTree('/home/mikeal', function (f, curr, prev) {\n    if (typeof f == \"object\" && prev === null && curr === null) {\n      // Finished walking the tree\n    } else if (prev === null) {\n      // f is a new file\n    } else if (curr.nlink === 0) {\n      // f was removed\n    } else {\n      // f was changed\n    }\n  })\n</pre>\n\n### watch.unwatchTree(root)\n\nUnwatch a previously watched directory root using `watch.watchTree`.\n\n### watch.createMonitor(root, [options,] callback)\n\nThis function creates an EventEmitter that gives notifications for different changes that happen to the file and directory tree under the given root argument.\n\nThe options object is passed to watch.watchTree.\n\nThe callback receives the monitor object.\n\nThe monitor object contains a property, `files`, which is a hash of files and directories as keys with the current stat object as the value.\n\nThe monitor has the following events.\n\n* `'created'` - New file has been created. Two arguments, the filename and the stat object.\n* `'removed'` - A file has been moved or deleted. Two arguments, the filename and the stat object for the fd.\n* `'changed'` - A file has been changed. Three arguments, the filename, the current stat object, and the previous stat object.\n\nThe monitor can be stopped using `.stop` (calls `unwatchTree`).\n\n<pre>\n  var watch = require('watch')\n  watch.createMonitor('/home/mikeal', function (monitor) {\n    monitor.files['/home/mikeal/.zshrc'] // Stat object for my zshrc.\n    monitor.on(\"created\", function (f, stat) {\n      // Handle new files\n    })\n    monitor.on(\"changed\", function (f, curr, prev) {\n      // Handle file changes\n    })\n    monitor.on(\"removed\", function (f, stat) {\n      // Handle removed files\n    })\n    monitor.stop(); // Stop watching\n  })\n</pre>\n\n### CLI\n\nThis module includes a simple command line interface, which you can install with `npm install watch -g`.\n\n\n```\nUsage: watch <command> [...directory] [OPTIONS]\n\nOPTIONS:\n    --wait=<seconds>\n        Duration, in seconds, that watching will be disabled\n        after running <command>. Setting this option will\n        throttle calls to <command> for the specified duration.\n\n    --filter=<file>\n        Path to a require-able .js file that exports a filter\n        function to be passed to watchTreeOptions.filter.\n        Path is resolved relative to process.cwd().\n\n    --interval=<seconds>\n        Specifies the interval duration in seconds, the time period between polling for file changes.\n\n    --ignoreDotFiles, -d\n        Ignores dot or hidden files in the watch [directory].\n\n     --ignoreUnreadable, -u\n        Silently ignores files that cannot be read within the\n        watch [directory].\n\n     --ignoreDirectoryPattern=<regexp>, -p\n        Silently skips directories that match the regular\n        expression.\n```\n\nIt will watch the given directories (defaults to the current working directory) with `watchTree` and run the given command every time a file changes.\n\n### Examples\n\nAs stated above the pattern is:\n\n    watch <command> [...directory] [OPTIONS]\n\nTo run the watch command in the terminal you have to write the following:\n\n    watch 'npm run test -s' directory\n\nAs the command has to be written in quotation marks Windows users may need to use double quotes rather than single quotes\n\n    watch \"npm run test -s\" directory\n\nNote: Because Windows users may need to use double quotes rather than single quotes they need to escape the them in npm scripts\n\n    \"scripts\": {\n        \"watch:osx\": \"watch 'npm run test -s' source\"\n        \"watch:windows\": \"watch \\\"npm run test -s\\\" source\",\n    }\n\n\n## Contributing\n\n### Releasing\n\nOn the latest clean `master`:\n\n```\nnpm run release:major\nnpm run release:minor\nnpm run release:patch\n```"
+}
