@@ -1,0 +1,4493 @@
+{
+	"name": "@babel/generator",
+	"versions": {
+		"7.0.0-beta.4": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.4",
+				"babylon": "^7.0.0-beta.30"
+			},
+			"_id": "@babel/generator@7.0.0-beta.4",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-aLpZzf79oGT1bxnsadapfUWErDTcxVKrhvR5F8G27JFgH37+/ATrODMJ0/1D2CgQ/WStDX5B5znnWRv0NzW2JQ==",
+				"shasum": "99606c425fc6614e6386f9330efb48370f200fc3",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.4.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "hzoo",
+					"email": "hi@henryzoo.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.4.tgz_1509388500974_0.10766214807517827"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.5": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.5",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.5",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.5",
+				"babylon": "^7.0.0-beta.30"
+			},
+			"_id": "@babel/generator@7.0.0-beta.5",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-ykIosz5pjYZ2jAbc4keVXqFnQkIv7MpnOAwNGsPZC2Y8V/uD3ga9/e1hrFvrBJMGgHQpMhc6jM+xjfyL2GjZmg==",
+				"shasum": "ad90d90b521f82ce5763be644903003f6da0685c",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.5.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.5.tgz_1509397000542_0.6743148185778409"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.31": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.31",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.31",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.31",
+				"babylon": "7.0.0-beta.31"
+			},
+			"_id": "@babel/generator@7.0.0-beta.31",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-Y4waeBHwWySZWt1O7sm4Ym+4aGa1I7bLCQb3Bw6xEgvRxkJzACP3mDVVzW8T1U9p//JkkwCO5bvjUBhcG36F8Q==",
+				"shasum": "c9be74c20ab21ce8c623246c64c2d8f9905b26fd",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.31.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.31.tgz_1509739419330_0.08306208555586636"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.32": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.32",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.32",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.32",
+				"babylon": "7.0.0-beta.32"
+			},
+			"_id": "@babel/generator@7.0.0-beta.32",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-JQrG+5JQmaDwyj+VL01eE9dX6PSVBfvDyRbA1AXwzk0+BcQ71++M64K2HzbVyD3sti/yjh0EUJAg0Yw9Fn7ZuQ==",
+				"shasum": "37d8124ea7770b4555da28be0917b47f365aca97",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.32.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.32.tgz_1510493610903_0.16813884885050356"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.33": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.33",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.33",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.33",
+				"babylon": "7.0.0-beta.33"
+			},
+			"_id": "@babel/generator@7.0.0-beta.33",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-BcnfFgfJ4shTYBKoY6IG2JlbBix0c4JiGiQtcrqm3DEeAPPOhwmgltIAQjHFNTCn7nIyHjPTLRye/zCGgRn1vA==",
+				"shasum": "412662df70948c7087b5128a713acefe84395a20",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.33.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.33.tgz_1512138517157_0.9602218335494399"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.34": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.34",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.34",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.34",
+				"babylon": "7.0.0-beta.34"
+			},
+			"_id": "@babel/generator@7.0.0-beta.34",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-2ymX/4tB4JzuLIpv2iYzWlMGz55Ixs/YjMVjtZ49qXaKvVhkJ0+a2p3rg0Nq98/1ngI1mTRtOzGnR6Or01Qc8A==",
+				"shasum": "1a98992f3ef9e61a6007830883dfa2dbb26c622d",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.34.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.34.tgz_1512225577898_0.4069888168014586"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.35": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.35",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.35",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.35",
+				"babylon": "7.0.0-beta.35"
+			},
+			"_id": "@babel/generator@7.0.0-beta.35",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-5QO6oYlc5xpbZEBFcxdUfzNvtjTwKfttfqkkZZ8FCs7CQwmtqzZMzFvYc+pa8QmMxUF5D8c1+XI/mOy3lYjK7Q==",
+				"shasum": "09798d7e714ef8a3cd6ac27afb140e21c2794cef",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.35.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.35.tgz_1513288080357_0.6554676676169038"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.36": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.36",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.36",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.36",
+				"babylon": "7.0.0-beta.36"
+			},
+			"_id": "@babel/generator@7.0.0-beta.36",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-lsFehk83UlzT+5ZTC+4p8WI16zkWYGgGQGqQFgdhCdcvt9yLHZ3bUORHC0H9+Wyp/7cJ68xjlYMDsTf48EcbDQ==",
+				"shasum": "669c39ffdeb75521ad43b5c627743658a3f1dc5b",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.36.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "james@henry.sc",
+					"name": "jameshenry"
+				},
+				{
+					"email": "kent@doddsfamily.us",
+					"name": "kentcdodds"
+				},
+				{
+					"email": "kaicataldo@gmail.com",
+					"name": "kaicataldo"
+				},
+				{
+					"email": "teddy.katz@gmail.com",
+					"name": "not-an-aardvark"
+				},
+				{
+					"email": "star.ctor@gmail.com",
+					"name": "mysticatea"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.36.tgz_1514228697622_0.9167013845872134"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.37": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.37",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.37",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.37",
+				"babylon": "7.0.0-beta.37"
+			},
+			"_id": "@babel/generator@7.0.0-beta.37",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-IXxBvA+df/CXcvpvlRpi6eWx7B/rXrTcqcs0QraCauhBH488YZoAU75ZNpvJldlwLGdPQrsTB0LKA2VN+yWyYg==",
+				"shasum": "df5183995f20af4afe3bd5499a4c1336355fc163",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.37.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.37.tgz_1515427361574_0.8515464782249182"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.38": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.38",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.38",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.38",
+				"babylon": "7.0.0-beta.38"
+			},
+			"_id": "@babel/generator@7.0.0-beta.38",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-aOHQPhsEyaB6p2n+AK981+onHoc+Ork9rcAQVSUJR33wUkGiWRpu6/C685knRyIZVsKeSdG5Q4xMiYeFUhuLzA==",
+				"shasum": "6115a66663e3adfd1d6844029ffb2354680182eb",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.38.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.38.tgz_1516206729802_0.8417271552607417"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.39": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.39",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.39",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.39",
+				"babylon": "7.0.0-beta.39"
+			},
+			"_id": "@babel/generator@7.0.0-beta.39",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-fjKbJxdvzmTxpZPDrXxSMrzzJ+qUEjVNXmJuXwMTupPVBAIr13EGE+VauHXp/14AcXAXqX1/XvFK9cf/tB3OMA==",
+				"shasum": "d2c9f0a9c47d5ff288f0306aedd0cf89983cb6ed",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.39.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator-7.0.0-beta.39.tgz_1517344063550_0.17312948335893452"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.40": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.40",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.40",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.40",
+				"babylon": "7.0.0-beta.40"
+			},
+			"_id": "@babel/generator@7.0.0-beta.40",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-c91BQcXyTq/5aFV4afgOionxZS1dxWt8OghEx5Q52SKssdGRFSiMKnk9tGkev1pYULPJBqjSDZU2Pcuc58ffZw==",
+				"shasum": "ab61f9556f4f71dbd1138949c795bb9a21e302ea",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.40.tgz",
+				"fileCount": 21,
+				"unpackedSize": 106590
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.40_1518453713937_0.9614778915644844"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.41": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.41",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.41",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.41",
+				"babylon": "7.0.0-beta.41"
+			},
+			"_id": "@babel/generator@7.0.0-beta.41",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-j1hBM7K53RqAwPzPkS3GK9ggxJUBaUHevkpnt9iKBPHVlTrO3owMMlT8wH/GmOjr0HyBGFlL8cSlygx8RLdD7A==",
+				"shasum": "5fce0676cea5acc1d493480d9fb7317ea2164d3f",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.41.tgz",
+				"fileCount": 21,
+				"unpackedSize": 106958
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.41_1521044742103_0.7138530712331883"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.42": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.42",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.42",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.42",
+				"babylon": "7.0.0-beta.42"
+			},
+			"_id": "@babel/generator@7.0.0-beta.42",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-9x3zS4nG/6GAvJWB8fAK+5g/Di36xdubB43dMNSucNJTwPvmyfCippir/0I8zyG+ID66hLCLi8V9bomlWRYaHA==",
+				"shasum": "777bb50f39c94a7e57f73202d833141f8159af33",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.42.tgz",
+				"fileCount": 21,
+				"unpackedSize": 106958
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.42_1521147016388_0.7140943323862943"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.43": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.43",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.43",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.43",
+				"babylon": "7.0.0-beta.43"
+			},
+			"_id": "@babel/generator@7.0.0-beta.43",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-ZzwakIcwsWEL9DpKgUg6SxTbObME+U8TvEqWlKvdRbrTp/Z/kNUnNHbSmWbPNEq0Min8I3mMdh16DE7rcpui7g==",
+				"shasum": "9f32baf9fe6a4a79872d1825bb7541ed992573ca",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.43.tgz",
+				"fileCount": 21,
+				"unpackedSize": 104766
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.43_1522687686797_0.778636609205325"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.44": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.44",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.44",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.44",
+				"babylon": "7.0.0-beta.44"
+			},
+			"_id": "@babel/generator@7.0.0-beta.44",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-5xVb7hlhjGcdkKpMXgicAVgx8syK5VJz193k0i/0sLP6DzE6lRrU1K3B/rFefgdo9LPGMAOOOAWW4jycj07ShQ==",
+				"shasum": "c7e67b9b5284afcf69b309b50d7d37f3e5033d42",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.44.tgz",
+				"fileCount": 21,
+				"unpackedSize": 110677
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.44_1522707589079_0.5922532035430448"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.45": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.45",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.45",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.45",
+				"babylon": "7.0.0-beta.45"
+			},
+			"_id": "@babel/generator@7.0.0-beta.45",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-/XXnZFGSf1fJtFxZrTGKjxYcRNHWoO6880xuWRPj3mgy8PpT6SIglTJ41aeP6IWdNHBSVl9SOos/hcVSlyAzHQ==",
+				"shasum": "a4008808303f80e8f46c1bca2fd44f557ce246d1",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.45.tgz",
+				"fileCount": 21,
+				"unpackedSize": 111311,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T0hCRA9TVsSAnZWagAA5qkP+wTiTXoo31leuGzsxAiZ\nVGDfN71skQsQjoiNyX3mzdX89xcuqP5UQVP0Ridhpow+Z4qyJV4nA3rnlpw2\nBVzXuzCWOL0clwWiVz+S+4WFiLZKRqcietf6gZh1Boc8Vzc0To6O/NAE73e4\nm3sbqnXzmotVN8i9s53srhebjaCU39IvGf+dMQzPVVTBZCm4Ym+c3Qq/NSTM\n9YPHaNXSs4ElwsGF5DO4r8shQAEZfciPu9Tdk6ddR0Jzl+KCE62OfliWIapO\ngmpCDS9MooBZqDIhhAFtjTvN8HC6V+UUNvRUaCVVfKZJ/6n/h/HofZw7IHsO\nooJJQ54GXWFsPaCK6VCFx8VcdVnwkYU5UU/9TdJD6uQQviqegj0GD7y4Dcqg\nmsmF0yEzo6+bIpCR94QoB+tCd699kF15irJ/c+M7sdRUvEL8dkOSrky4pB+R\nKiHyASwemJs/helg/PaL7AOmEhGpvgZmjAeB5lb/29C159W6IdRR+sUPbdZV\na8m9fMybCJcHlCN1RuqrhVzVRxAzLkNbnod/v+t7zgtKdOuND2GElzE2VoiN\ngPgvPF5FyUbZyVqmPluCP0AFAggnjPnAxrMBEr3ognMq3kKDKaznQZEYadiC\nqpOeeUIfk8LFiBC+Tqsxct56NK/aEMMpy4hig1bhPQS1RJQoviZdQSGGDjNJ\nyc1S\r\n=pyr4\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.45_1524448542869_0.8888351862944004"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.46": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.46",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.46",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.2.0",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.46",
+				"babylon": "7.0.0-beta.46"
+			},
+			"_id": "@babel/generator@7.0.0-beta.46",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "9.4.0",
+			"_npmUser": {
+				"name": "loganfsmyth",
+				"email": "loganfsmyth@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-5VfaEVkPG0gpNSTcf70jvV+MjbMoNn4g2iluwM7MhciedkolEtmG7PcdoUj5W1EmMfngz5cF65V7UMZXJO6y8Q==",
+				"shasum": "6f57159bcc28bf8c3ed6b549789355cebfa3faa7",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.46.tgz",
+				"fileCount": 21,
+				"unpackedSize": 111311,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WFQCRA9TVsSAnZWagAAhLwP/i8u0EGOc87VxDvxMNRS\nRshwtTgX8kG1Knrc3EGbOkFYqYO68YaFCwTxHBAalKzSKVgEHP9qVOOxUhS+\nwoC8txSwPNqw0cV2DYc6KQyEBYPDWPd8MD1JOKUaV4r3x9S0t2UYFEMxm0GQ\nRxrFO3CNVT3RV6Ko2/1GcsJ20Ld0HL2DPzDi0aZpAMpiTwMk3IDH6AbrFid5\nvtEgbSWhNw0ifo/thBz0oIZGJLq0+Voj0yUQUPNKkY9bzUknr1O36X8JgaQN\nCIU6Qoqlh9tTcAUmWOsC/9/C1gy6DCz1UNhl8Y9Q6jLuiqAzxRoi0pLYij4F\nmA3ckaKyP+ZHJDLDV/xDg0QOoZGp2NNJebvXPgO7/DIAzhORfJmUOkLYb7ae\neic/XeSiRSDNVHBlZ9uChL/Ow3sfKoBzdp6trTpf3VYSEaeU4VJb3OP36DpU\nWcfXnj7u+3hOpK03AAA3RuDag2q9fMDKTvvDRi2LZqrW3zLtOy7rAvwexi81\nv/dzOJcOLEZdjgh2bqe3rXY7NWqxvCLivKwFzZU7GJfQXN2A0RDB/hD61nYj\nFcmP4+UjyptOLZHYNpJJCBURBdvQWI9Xsxi31JGxIzMx2ZFechju2lKmG1cb\n68cARuH8NUCzS1YBwNBd0p/sWyRFX4qJ6rv+5ogHdx4QGda7fALSbjQPKEO+\nOC3q\r\n=PW0B\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.46_1524457808362_0.4803428707099102"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.47": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.47",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.47",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.47",
+				"babylon": "7.0.0-beta.47"
+			},
+			"_id": "@babel/generator@7.0.0-beta.47",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-fJP+9X+gqgTTZzTqrKJHwebPwt6S/e/4YuyRyKyWHAIirGgUwjRoZgbFci24wwGYMJW7nlkCSwWG7QvCVsG0eg==",
+				"shasum": "1835709f377cc4d2a4affee6d9258a10bbf3b9d1",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.47.tgz",
+				"fileCount": 21,
+				"unpackedSize": 107628,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iTICRA9TVsSAnZWagAARFoP/RNEQIuMg/d/Bt7wcr6V\njuUfibj7ZHRh7qEHfqBBkAHr0hVq0X//NhBAfzowN4R553+SX/IdWkleu9Kd\nacA1KjSDzUp6PGOSwSH1YH4fqAb/aookK7VBpuTY5kOMGilVt4USz3lIXV0k\nKOtfajGsHEHAtQfu0it2GXmi6iTQbsEgHFnNRNGkV+SrQLjrb9TObPWubuPH\nd/W4GKSnsD9jY/x9Q0A3kBnv3xfdWcfL13rKBAgVOLvyugmAogqkztX+FOfI\n/1dL3xW124YsZ5jFq6tLOCwCj/FT+m0+V2zFSd2wAAfMGz9wIGJX9n1ul3aa\nljV6VccsBxPLbt715zR3OOpFJLp9Isr0PDS1Fl8dHVVQDE15hi4xc1DUrW6I\n/afZ1feWFu6qgy69U7Eiode80T7CclAdPBJb41140S1lf9zJ0Y/QCI8tfJpw\nge+5XEC+Zetq/K2A5VV9Djj9Z4CH4d8ZW/G8L7z9gBDhNg+7tzvAue1B85ft\nEMu89etKGyp6wi0jhqpm7pvuWzV+NeVR8FRvqkp93KpdhVBMTKRcw5ayKwqC\nlWLWhhVvm/S4qeebra/9tRtElvpMPd23vJeDBl/23rzi29iEt//Lh6zFkCG9\nTM+f4AG6Ady0rCruTq4YTfdKJr5ydhbjFSCAhDeOT7jcvYGE08WZSga8Oeq1\nQJTX\r\n=CeY+\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.47_1526342854452_0.24764683815435862"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.48": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.48",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.48",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.48",
+				"@babel/parser": "7.0.0-beta.48"
+			},
+			"_id": "@babel/generator@7.0.0-beta.48",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-RPS4dHg3wVmivvMIHW9N/ZHPZ5vc7runskURDqz3xamcFlUXSVxoziaS9VOJeivKXGzFPqr/wY03u9wDc+4A1g==",
+				"shasum": "53d1c359f66a25b8c1e82bc6642fe0a62d22d1ce",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.48.tgz",
+				"fileCount": 21,
+				"unpackedSize": 107048,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxCXCRA9TVsSAnZWagAAS5QP/3Cu3Pj/b7Ann9RBhVzf\nrx1Yr1zsO4sjqZhi1vdALCDspF9P5woMMfBMYwY6Kl8Rlk9iLwTlo84giG9+\nXmKDp8lCtgkTjWbKAlgZwZ3u8OqoSs8aHbGjn40EA/CbKwawzziWA/80lQYP\nkFwwCB6XAKPFkwdcR6ERsBzZo3riDvomwfhE4ix4CiBs+4QQ2Cj3lE7XbYGK\nivLy8SKkDneb0p6r+c5ZcF7ftO+1thxGp2Vu+Ae++5887Z13vkQQH53rSvfs\nVo/L/auZpFearJ6kB9KE3yaZtp6bJip4QfyWDpVAqZBTMcJHlptBsoiA+Mcq\nWFiBvsKxtQB2nMicmb9OQg+FMS6PoeeHd3zAAw3zJm8SdGqHM0Ov56pvzLRj\n4/TeTHe40XksWlR+ZgI2iWCSMSSBcz9K5AZA9sjva6piq/s+SI+tOWyEZ1/B\nfqgs7Ra5YZV1WF2D9DOf/PCLwFI0hL7yp0vPsOzMXehXv4wI6pBeL34cbcEe\nDIPce6tmILWxe9RQgh9M51sn3yqr/r3DQF7nQU/0xuvGb6WywYzFmbdEx3D6\nUISfY5TwQhV1MCx3aXTB5yxEdfFTRI1eRMpEIcDmKsEWa41X5Qs3bUDqD/pB\n2FD5HWUuCfIMS5ZeaaP4lPNTOHmKfpkakTCpR/jSdzVkxvAzKjYXiee1kyMz\nGWAq\r\n=JSaH\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.48_1527189654612_0.01624314860981646"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.49": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.49",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.49",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.49",
+				"@babel/parser": "7.0.0-beta.49"
+			},
+			"_id": "@babel/generator@7.0.0-beta.49",
+			"scripts": {},
+			"_shasum": "e9cffda913996accec793bbc25ab91bc19d0bf7a",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "6.12.3",
+			"_npmUser": {
+				"name": "loganfsmyth",
+				"email": "loganfsmyth@gmail.com"
+			},
+			"dist": {
+				"shasum": "e9cffda913996accec793bbc25ab91bc19d0bf7a",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.49.tgz",
+				"fileCount": 21,
+				"unpackedSize": 107048,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDMmCRA9TVsSAnZWagAAmAkP/1EYSoaF5nRcd7P5u3x5\nQ/LK0XmbUazfmyezS5dNIGeomqSTXju7qWnYb+XCRGEemZqsBqzeTkzirV2V\n+RhewRMbQaRd4tk1rq7QM6+Yptdly6BkfK0nP7XPU+L1c8Wu0hT/mBKPqrES\nwa0JvH+Cixzzb5Am1Mbap8XjKfIM3DLj+nsbEsbZbQDf0O5fgqieOdOHApjR\nECi1mN4ukisMa27raOFSVVz9hLeeaBVKAQQ1a2SOk5tfOgafDySQVRTkpxbC\nygv4gdtdz08HYtMLbOJ39xEWe6NEajDc9lOkbRv8Fex4P6bTMrMNc1HYkFOK\n3ndAPSLy9e3xl/H9uWjyGmezTt7HNsfWO6+jnPck50gu6wDJxx74kZpaUwmU\nhYJiJBfqF1auqrGEaJEJ4MIeUCYzi70Y5Jl+ykTuREBoLSOd1Es16WXkr9ck\n8wqvJQGfwLKl+kXTcpc+NqvkqBRbaUsJfKIwpvixpqRRDg8mJKECtEl5Twvs\noh1LsJMeSifCfIbIbZ8RuiUFvaGYDSaJ0tIB78g7MwW8mXCS3cgwI3nxumAE\nFsPW11JnnrDG2wPviszn3mnBqqPjJ1PcI2xYjFuNXko3PK8fvaypIEINuy8M\nIerVF6rw0fY2G1xAFws4YmlFh4xexPB+uvYtslUqqy7B9/DU/5iXqpfc7VtG\nTbyA\r\n=zjsE\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.49_1527264037194_0.9901878290925281"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.50": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.50",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.50",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.50",
+				"@babel/parser": "7.0.0-beta.50"
+			},
+			"_id": "@babel/generator@7.0.0-beta.50",
+			"dist": {
+				"shasum": "0c5cda176aeb0beb41ff270e9741aa60c4fdba25",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.50.tgz",
+				"fileCount": 25,
+				"unpackedSize": 104116
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.50_1528832809623_0.06543150101596829"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.51": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.51",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.51",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.51",
+				"@babel/parser": "7.0.0-beta.51"
+			},
+			"_id": "@babel/generator@7.0.0-beta.51",
+			"dist": {
+				"shasum": "6c7575ffde761d07485e04baedc0392c6d9e30f6",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.51.tgz",
+				"fileCount": 25,
+				"unpackedSize": 104116
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.51_1528838355980_0.861397094776162"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.52": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.52",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.52",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.52",
+				"@babel/parser": "7.0.0-beta.52"
+			},
+			"_id": "@babel/generator@7.0.0-beta.52",
+			"dist": {
+				"shasum": "26968f12fad818cd974c849b286b437e1e8ccd91",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.52.tgz",
+				"fileCount": 25,
+				"unpackedSize": 104115
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.52_1530838752224_0.4148148998920935"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.53": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.53",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.53",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.53",
+				"@babel/parser": "7.0.0-beta.53"
+			},
+			"_id": "@babel/generator@7.0.0-beta.53",
+			"dist": {
+				"shasum": "b8cad72c572be3234affde22be6dacc4250e034b",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.53.tgz",
+				"fileCount": 25,
+				"unpackedSize": 104156
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.53_1531316401675_0.08928619579570873"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.54": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.54",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.54",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.5",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.54",
+				"@babel/parser": "7.0.0-beta.54"
+			},
+			"_id": "@babel/generator@7.0.0-beta.54",
+			"dist": {
+				"shasum": "c043c7eebeebfd7e665d95c281a4aafc83d4e1c9",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.54.tgz",
+				"fileCount": 25,
+				"unpackedSize": 104156
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.54_1531763991878_0.698656668452778"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.55": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.55",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.55",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.55",
+				"@babel/parser": "7.0.0-beta.55"
+			},
+			"_id": "@babel/generator@7.0.0-beta.55",
+			"dist": {
+				"shasum": "8ec11152dcc398bae35dd181122704415c383a01",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.55.tgz",
+				"fileCount": 25,
+				"unpackedSize": 105775
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.55_1532815615833_0.1486913975511639"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.56": {
+			"name": "@babel/generator",
+			"version": "7.0.0-beta.56",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-beta.56",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-beta.56",
+				"@babel/parser": "7.0.0-beta.56"
+			},
+			"_id": "@babel/generator@7.0.0-beta.56",
+			"dist": {
+				"shasum": "07d9c2f45990c453130e080eddcd252a9cbd8d66",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.56.tgz",
+				"integrity": "sha512-d+Ls/Vr5OU5FBDYQToXSqAluI3r2UaSoNZ41zD3sxdoVoaT8K5Bdh4So4eG4o//INGM7actValXGfb+5J1+r8w==",
+				"fileCount": 25,
+				"unpackedSize": 105816,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPtjCRA9TVsSAnZWagAAvrYP/AjxDBh6HWmt9p9K19Wh\nRUzq0bkXAXUUYxVuNExujj58R8+L+iapL33+hbwe/0n9P7HN9PU+OG+LGZ9w\nBF5lGGwC7MxAgqx+DylEVln1vKkbfuLumBGEqZDcwYe7S78yoM/s+zBAQw3m\nX/0mlepMIhAqZI1En65P9Ko/G3iq/qXp0TdDDsnZDNOMbpXzxMfRMpWcp0ai\nty7xu6L2QdAU0eDPGEUXnw7CZypZ1i+8/khuzUVQwWo4YI+28tl/VfwL33cD\ni3dEve8ae5AVI2F1VDwKorpDi58IOnTZZCRBfeTsMo4chvhKNtrrMq1XZva7\n9OaM+iy1XN7SWQj1VlbNsbkpcet2n1SF74+ptwI3gKmeHGdeQgsYKX4Mwo9A\nez8GnpbVngB3K6AtBa3VuJl53US3ORC+10giULFitB0Xf15S5TywyxD1TIqS\ne/eebB0jviogb7vWcTzg6kE2Qeyatu8IHOzZYi0pqxRb0FmZzzqV7jx80uHo\npgzXsLjVuhOlfIki7SdgY5UVrMusH+F8Owf9OrCBSyQKOyAud1SmOUWRMXI9\nxKWkavRqF4rfRp3/48c2Wm4DzRCZNWjUJ7L+UcyTmlesHo0oGjG7MEgsHKq6\nVkoC4+h7Av1+IkRHvSXu1bUtW2cCS+B9E+bXBg3w2/bQnwzjt3lQK/44KBCZ\nUE1E\r\n=FudI\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-beta.56_1533344611140_0.19306091735857955"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.0": {
+			"name": "@babel/generator",
+			"version": "7.0.0-rc.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-rc.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-rc.0",
+				"@babel/parser": "7.0.0-rc.0"
+			},
+			"_id": "@babel/generator@7.0.0-rc.0",
+			"dist": {
+				"shasum": "79c3a248ae3a1ae2ea959ed59496b75d68fcf07d",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.0.tgz",
+				"integrity": "sha512-sV1q//NXax7OxIJSnD8TR0yT9/IIsyHQ5OrKSyhS2S4IgaKm/tw80JduIgiN0I+Ggo4uNdQQjJpeXj/Q3TzriQ==",
+				"fileCount": 25,
+				"unpackedSize": 105804,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGRBCRA9TVsSAnZWagAAtqIP/2di3035X5mbVsqHeO5v\nkEER1e2vjJAvO4E3nVeClVJ9ycJbiaQJxed+Ni8gkMCwFOzKbCXkHwDRt/+M\n3GV5VIzSLaEhYZ6g8KOoeLv8L1Gd0UGMaw0HhSafe33h+fG5V8E/YmtFMmr6\n44cQAmr7l0mjbmvoMl/GLcYqM+tiZtvz58Jpc6I5o7MyW8RRW3wEd2ChvSC4\nxkkawkubMByunSF1+ajHYdI2PlORHdo5KiaPus2FdX0hMYRxwajg7R9heiXo\nhTBARlqv42odGRGZgCUkLJoZt7WOAIh5irAtz8hzNlZY7x4yh0HrJdN/l4ac\nf+obeTMYELw2S1zUbRLHRBS7gXU+MBmtkNzshBOSvgvoBDF8u2qVZOFLtsl3\nE6hW+9M1vKeUoMZJKSqPAeINHQ5RL8XOxguxPqV2Pr9dW3jdRDq2lmCO/a5l\n3vIDUKhJkKEqhMXgvsuHrzN1YAm7Us/4oGbvA1E0x/rhKiMyViLwXDvqF50S\nqG6tra4wz2QSaxTjR6DqpK1j0bAgawO64mRhd9GG0kRCeycGyYViyfWN8qXy\nrlNTmkqj1p2IY2RV80jKZ5mvA2FpO2tN+cJ1QQuQX/p0kEpEvK0G3kwQlUC9\nZaUem8leCXfVIklqd83b1GdOqqpupTR14fl3O0XmklMI/FR0Jqr+zl55H+k6\nFUsQ\r\n=uL2F\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-rc.0_1533830209093_0.3099786279688308"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.1": {
+			"name": "@babel/generator",
+			"version": "7.0.0-rc.1",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-rc.1",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-rc.1",
+				"@babel/parser": "7.0.0-rc.1"
+			},
+			"_id": "@babel/generator@7.0.0-rc.1",
+			"dist": {
+				"shasum": "739c87d70b31aeed802bd6bc9fd51480065c45e8",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.1.tgz",
+				"integrity": "sha512-Ak4n780/coo+L9GZUS7V/IGJilP11t4UoWl0J9cG3jso4KkDGQcqdx4Y6gJAiXng+sDfvzUmvWfM1hZwH82J0A==",
+				"fileCount": 25,
+				"unpackedSize": 105804,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ7QCRA9TVsSAnZWagAA2VoP/2tEehq7SGhbgtbjqDKV\noo1Jx2ikBUiZPQqE5/U1j4yyxden0rzg5u/NLne1L8p0fvwKroU2+Zr6dLoe\nNOL4VNF4SV/kZshpQrS8K4O8NPdOfOAXWdIQQekNJu8DYddPg9iZc7sE7Mi7\nmXFpQa9bMMVu2B3DKRYaWeS8/SGJzJYmSVbCiQvURzt+t2JOQb9UKnQYpaMn\njnlnd76ZUD2EL4Z6gxHxvXOG4Xr3gi8DGDMOqNjxA/3YHuvujR1Wpip68kju\n4tHHDja7SLLH7PxGA6PYpLm0kzSRZ0emM3BNOkXo1+9wL2rVHgi442gm30gS\naN5vwohoIpk5SubBqzvH7nPHRMEqifKTN7uoShk+ZgnKsdjdpSrr+6O35QAi\n8w4L+cH4wqOYZyFDR9FNcSRwT7vgTYW8UBRrjx/HfRw3FFZrTbIjes3BeCws\n/f7vKwE0Gbeu9sn24ynWJrc1jUde1b35Npa2NiNSZEA4oKmIHOa0iuLmc/iR\nSkE3kRvJpwXKB6UlP89hWCMKJoQ8Gzl34lZx9atGY0/a7TbdLS2+Qkf41tqI\nXFwSZZFtNgNqVUUm98lPEofBdQRQPg99UhkEx/8J6WnH1qSVvbW0VIpkF2i4\nryoW9xFfkbyzLlwloDVzxQDTqJneSG9n29soRv+rLc1HtNu35So6VPge9BIf\nihPd\r\n=hyyg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-rc.1_1533845199683_0.26418838104773656"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.2": {
+			"name": "@babel/generator",
+			"version": "7.0.0-rc.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-rc.2",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-rc.2",
+				"@babel/parser": "7.0.0-rc.2"
+			},
+			"_id": "@babel/generator@7.0.0-rc.2",
+			"dist": {
+				"shasum": "7aed8fb4ef1bdcc168225096b5b431744ba76bf8",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.2.tgz",
+				"integrity": "sha512-kD6hlprDaBy17V8qd9uXJbYC5ZYyCggieT+tiGzCwayA7oyT5ynPec3MNkWQHkLyhB7IP2n3c/Ep329jOPQY/g==",
+				"fileCount": 25,
+				"unpackedSize": 105804,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGaDCRA9TVsSAnZWagAAZ28P/0fxRASkOTw60JZTzAH8\nwroiQA60cA0RIH1mdlMZk4cmNQEtaEtivg7C663QHqvqeRRifaDs9+pKHZVS\naD+rZJcLDTnhPBZq/0MYRlWIjN9RaJZVB+EYEk/o7acXZWPq2MwiwCFGmcNi\nchZJt5oTjNm8pwUGcdWgoR3GYudw7YSlCH0D/0lftgTuvDkxpaM3NllH/4wn\nrdPvsBSkEz5UbWsonNAK0ifNyzKx7gzuU4LEAGrSuCPg7SmgB6wkGtxMkYQ2\nc74W2P2YRoq0ADt4wewA91Iw+EegDLU04w0nhlhEhHEBWDMyzmhBaBmpnHPR\ngsREhbEodmnVbWmJsKvieKmf7M7XbCBaQAhWV1uVsLCByYgmgZT3rX0bFwXB\nqC3xWxSHeyt3XVcqdglulx+5/DLVHpE2gfTvCzNWuEeqSx2xYa16ajV+y7Bi\nJekycKYVrHZmwDWyy03bZjl2UDBor/h3H/2vpSiXDcFzHr4g36aY4h5KvqBn\njHU573wa1ryM3//RJh+anGLr+zPvDA+cqJ6tS2Z9o1cN1k8At8BysE/1b/cB\nzpm6sx62VUdzMaEkEkqSSV5X6OE9wrw7kgwmXRlOPcc/vTOd6qGDkvac13MP\nkFDDs7af39f4rMmVh9t2qn/alGc6T9J3VlEuhwVSwppe2B/h6bqK0C2+SsgU\nF9I6\r\n=hNAM\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-rc.2_1534879363137_0.6858596988258816"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.3": {
+			"name": "@babel/generator",
+			"version": "7.0.0-rc.3",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "7.0.0-rc.3",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "7.0.0-rc.3",
+				"@babel/parser": "7.0.0-rc.3"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.0.0-rc.3",
+			"dist": {
+				"shasum": "3267085de2d9b8779bde79052ee5f7070d99a5ab",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.3.tgz",
+				"integrity": "sha512-vTpLY/3fV5ML2DxvrvU1/n6cV9+yEj9Do9zrb8UopKSa5WVyjo4tzH0Gp9Ka7zThn5kp4XB3DH385eHOVbwN9g==",
+				"fileCount": 26,
+				"unpackedSize": 106903,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEkvCRA9TVsSAnZWagAAy/EP/jlFFoap61yAmBzfnzSh\nDtu5VBkVp9mO1EjbK/GAmFuO9aGDX99eMLsoGB8xWoRt3wJ72N1EqB5Sxn1n\nVLjr4X0UZjoHlIxYJxS3DToeR9TYs3+sJFah14GU9YXntQte9wrP9nY7/W7H\nNYCjYuWY4lcJ85MPuiBX3RNUR4hvs2sIEm3LajvzHP42FeDfdwDLJ8ddwflh\nTUtuBsEzKzzG8Aj96ywJMG3cshPfkeikJ+9wtbSHzKeOy2A3ISPMXu05zg51\n/jq4SONeCNe4lPCq9UJqSKPZ58dniUYFKg71byrI5AqNzOUWtUa8JpVXUD3V\n8XQsgNod7Z3QLIPdKJLEsZ1YQeVfrmICV/e/JS1PUn2rBwKsuKdrhyM0YFzl\ntjQn+U0JoZrjNAwi6lOMp54MuISOINg5IwO/MOK6NCB8FBS4r2wifBJxbc9M\nkpGZq+sUXCLcotHm1sqTZUd/qm9S4om2rXBYR8KwAZMgH75RYtf3nKCUYHdz\n9wN7ANqM5IibgHkpKw8gmavDFdqe7FM18eSHAWNxbsV1GUVyxAObZigzTbm0\nmqXJ6QyaimKhG16yVszIQSMHS7qYFQoFqJj/Y3wYoP/gkaIKzR0ZePJBBjKL\n4kEU4Sy4NCV2sWhGBlhdcpnNKpnRAiNcoyHkt6oxI+ROZXr9lnjY1SmFxzHB\nZ6Qy\r\n=Fdgf\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-rc.3_1535133999213_0.07120459454114925"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.4": {
+			"name": "@babel/generator",
+			"version": "7.0.0-rc.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "^7.0.0-rc.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0-rc.4",
+				"@babel/parser": "^7.0.0-rc.4"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.0.0-rc.4",
+			"dist": {
+				"shasum": "8f9ee78db28ae3225f5c143266dd211262febc5f",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.4.tgz",
+				"integrity": "sha512-xyfV9AVUVaacmJ2nuA+HzwxIE9fK9DKH7dVTKdf9IcXGwCVnaicbvqPXyJinJWIp3d9txHJaPU+jUosjRPtihg==",
+				"fileCount": 26,
+				"unpackedSize": 106906,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCoKCRA9TVsSAnZWagAAzXkQAIbaj7EwzBof5mUw1/hm\nZ2Z/YunV4sFuK7H1yGTy6cybyH1mhG3gtV8H9q9CWFnJ1kk1f/GPNg6CqUUw\nNM+xzTuzyfDqGazmOX98BxscsNy/0Dm7g8fZW8nHQuCWXmd87u5yOuy4Z7kv\nBYL0U+VAJazQzekAqgQYyxLHITcIvzVxcG0cgmQZn7LWhHSmsTbJJoQSJMi9\nSubarboEaPfkv7uC7UliVlc22xmOrT1R6HYuL9BN3eEARhSNsCeJNSYB0m9u\nZ0H6bp5YYVFgIj4PUfOZpKuGAF3Oy5qj5WXaYI/8rXqnx9Gqox42fZ4+A3tV\nAv9qxUJMUD0HLpaqWbSonlF2AkFuN2ueMARftWHHry6mL5qp77bSNll40zY6\n23MebO0TDsIoHPxk6q/vxZZi6jEPl9my2oeUngJ0eb/HiHAy5u67bo4BBgyy\nmVz/eezRp7YlURpiCwWn3QYGKLGW7BXtGOcmLZIuNul6y5rebSqzTTi4+Mh0\nuH0KoLC2588ICtCvjhq+xF2KWN6FfjoXvTZicd8IJ65X5AL0AQN0c7pTR7qE\nfj0mSDZUmA4fbgi6iFdZTtsSeljt5teu2ws05AhKqVS4sh2/u7A8rMeycoAG\n291c6YqD0L6N2qsyY9wjrwnmY4KH5YgtMWnsGoOJIPjAG/XkZ7YeTAZ9wcK9\nOv6Z\r\n=n313\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0-rc.4_1535388169706_0.8862834208359984"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0": {
+			"name": "@babel/generator",
+			"version": "7.0.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"files": [
+				"lib"
+			],
+			"dependencies": {
+				"@babel/types": "^7.0.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.0.0"
+			},
+			"readmeFilename": "README.md",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.0.0",
+			"dist": {
+				"shasum": "1efd58bffa951dc846449e58ce3a1d7f02d393aa",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0.tgz",
+				"integrity": "sha512-/BM2vupkpbZXq22l1ALO7MqXJZH2k8bKVv8Y+pABFnzWdztDB/ZLveP5At21vLz5c2YtSE6p7j2FZEsqafMz5Q==",
+				"fileCount": 26,
+				"unpackedSize": 106886,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHApCRA9TVsSAnZWagAAWPoQAKBDwM9sDvea9ffYv3xq\n0osE3r1yZVR8hLHFyAVyCYv/D6XK5sGwf8YC5ESjEyZlQxdmf0xmyuEFC6qH\n5cmykROszDII1rSfKwNv2tCcE/iKjpxcfTxqHA3dbjfXQ1HxQW8wkRkovAVQ\nl4/3xLVJdweM8Tre+gO/+LRGxALH/IUBpP4QI5QNU1swOWbUSjLUW1fyo6ZE\nKfPnC6Ekeg8+6DBTop6cLOM+xefFczUm3GHla4yw7i50vDal5xj91l9TKRyP\n8b0jru+A362mQUehnTv7wbQwkD4uoFIrK9kOBNLmqyS66e1Ez4c1XA0jadTz\nx3kdeSO8ULzF1vPWzCSyG10oBVjlH41VTNoEJ7yZie3dQZzCZLFIbNnUjCYC\nMDNASIwaRvIa2gauQUO+woyzOzLNiIAzfcNeV2dC1T8nWHPD3mbBebddMEZV\npF4ID4OelvKmhAlj0shRp8Q7f8Irq/0vVYvMwA3Pr7umthWJiIs3Td9d1C5S\nAiX0V72+C3RgrphtSL9/YIBAeLMFD+eMo8oQMbiF89pDnCD7/r53+B8av9Z9\nj5ogR7WdijfnTBLmE1fnxEBSm8yz1NRHCaya89sdLjBtdap7zfsTKHeS1/Br\np53rA0Sb8mUBkZAVI6TRjZKlx2S7j+DFqDeDlJsWB5/PowYfcHTykkZbJn9q\nttIz\r\n=jurB\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.0.0_1535406120460_0.1487502983427058"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.1": {
+			"name": "@babel/generator",
+			"version": "7.1.1",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.1.1",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.1.1",
+			"dist": {
+				"shasum": "4a5d2b7ab9b7c75a5aa56bf0750224f41e4eae41",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.1.tgz",
+				"integrity": "sha512-Lz4XtS67TiePhGdjf+mXW6HgvrZT06+cKArd0+o7JrDo9pEKzRUehLpSsArbIg7I83ZGmduWHVN/m/OqXTb0bw==",
+				"fileCount": 26,
+				"unpackedSize": 107299,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbroj3CRA9TVsSAnZWagAAtykQAJHLdwUqEpBia/c+hXOh\nxb6ZahEtGK7bBJI5WO39foYgXWZk847+KnHQEqmpi+4SD7VxTrvMViI5CHxn\ntjllYShyncnQNKbFK6C8Cvey16zhTLUYY95mMFH+F6LxVL8+6/y9Tw+otwT1\nXDmIXoyM2O5OVNDJmbncQcWlhln4lR4HgNM3vZprhzU0QhxzwUmDO36fam/U\ncgPU5Go5zvRUFrBoeni749UfpFTiDp0HQF/HNI3HWllDy4+I9DNqT4LAVbxf\nu7jkjdcXbJsjt06nlVA2h+J/lEMFt+OZ4iuyaFpWAZEAzOLdMlQkmCexhzKK\n+xQepaxGM+yNdAnPsEXJ4Wulrn/MJmvPcPgI3EK/raHDmn7TmCOOQdPp3BTq\nYkoB8GY+J5DXa6DYPBVHjjd/QDuNOJwTuitOWVoB4KgpuBVr4Gs/ppzIEgP7\nBKLsoYny4rS7lAoHn2P+hVUZRG7wetR8sfys7tR0Q8ggS7BCONhNL6CGMq+w\n3rZaQK7vfXgdbj3+Oqgv/DgX5caqPBWCdVynFDzwk1eVSOV2LvNo7BCuu1Mq\nv8Bcj06nai+F2sMbUmr2lPjGkH7DhiebDoioIOh7h5fIALjXfw25dzSpF2WW\nHxGPzRC3CewaWpi7hAHZCBe0oT+okioQIgO2JgPvdBCsDQRcoRMM4shxmrXh\nsijX\r\n=9+rH\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.1.1_1538164982595_0.3029699561135104"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.2": {
+			"name": "@babel/generator",
+			"version": "7.1.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.1.2",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.1.2",
+			"dist": {
+				"shasum": "fde75c072575ce7abbd97322e8fef5bae67e4630",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.2.tgz",
+				"integrity": "sha512-70A9HWLS/1RHk3Ck8tNHKxOoKQuSKocYgwDN85Pyl/RBduss6AKxUR7RIZ/lzduQMSYfWEM4DDBu6A+XGbkFig==",
+				"fileCount": 26,
+				"unpackedSize": 107299,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbrqkOCRA9TVsSAnZWagAATrAP/2VuuXZE3IF+MLa/oroz\n1oDzvb4W3nQxThZBgEU8MfkLxx4IDMCml2llEe2/iJmyrlDyLXp8wY9/ulq5\nEorDVnQ0qaSH3FXDfrs48XZDjx3P36DCnWk4FX9e3FjghIAr3n1cd0XrmknM\nFxWwYM58gwjV/IX9Qg5VXXEx/M/8rfp3/kl5IEhsB9DLGjX22upWz0L84UzT\nNqGzGh+7JOCfpBKrouem4+C8rBWJsbs3vnYwB4i7qZCwFGpfv2XtrFG2q7GE\nd2xS0wSIPW2b0pM6pEj/3aI8dxcEN0PBeEL5oPzRH6h/wnOW6EN5w8BAzWvN\nzkf2m3f2U/F7N2H2K59Rnj/tmd40ixsn66QZqPpdqMFM/o4TlqYpOnL97kRW\nkBNcCPm44WZazaXtpsogH7oXcFdUfvpifUv8x2TikgD2UfibwlSPDr6ousIL\nJkoSHAWwCtKem7yR98zCSq0edaIfRbwJjMo1t3eUr/jgDkWZ47/DsiQX0vuq\n58rgw/kpWNxFY7k7jpR6cAko6g4k8r6gM8lWVzi0YSyrZWbN1oNr3y0e0FQx\nJ1b/4+YJ23F6PrBjglofNhtWPVNi5wd+opTIW7VRlo6SzQF7yhjWXkjJqIs3\nGcC40IEkcCrjUOKAp8LUz5vdHwM5LfLx81YhaETufszpIVTNI84W9zkh2DZJ\n5Kqc\r\n=sLwG\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.1.2_1538173197736_0.0831364457311039"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.3": {
+			"name": "@babel/generator",
+			"version": "7.1.3",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.1.3",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.1.3",
+			"dist": {
+				"shasum": "2103ec9c42d9bdad9190a6ad5ff2d456fd7b8673",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.3.tgz",
+				"integrity": "sha512-ZoCZGcfIJFJuZBqxcY9OjC1KW2lWK64qrX1o4UYL3yshVhwKFYgzpWZ0vvtGMNJdTlvkw0W+HR1VnYN8q3QPFQ==",
+				"fileCount": 26,
+				"unpackedSize": 107561,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbv3HCCRA9TVsSAnZWagAAwPEP/RazeNDHY1ZY6X8LC4or\nkvPkb95ZGW1MkEe2qMLgMcAgiScUuPeFqORtTIxQiP9RgNp69XIuXqx/5dT8\nIiRBMok1HqwfHQuCZxp+NETx2ApQp+tqMkpVrmaj5rWmHM08a/yFiROW3WkY\n0LUGBNQqE70SDSEvHf18qQJxY5I9kktMDIdtznJy2N8TsQCQBjA7GF7EQPl9\nSAQuBYUkpkQOwy4N/D2EeVDPHk7l8dXlSFa7Cn4VqjkLI+FbJAY2Mp3x5WE+\nwO/RBTTz+kihi++vDzSyRflSP0/5b37aealwW5RUPyVtRGALs+1pxs2lzbRD\njV18/tWHoUeGOLOsBet10Q5RljnegIGNMk0eiIVfMUXbzqNOhPpLyyJRLotY\nh2x6H2xPQgjSidh1V8WpDTkFXCMa73nN0AjKozdhzJNHclUHRhRYMCd0Lch3\nTmfXCYJEMYY/h4XZUlwFZMzyWlXNXfXX+lVXw02vXaUZn4OApb1KwmS3yiil\nGDMCM3OpgD+l87f8MWBDXeYiyhUWFN0bPHDiK33wrYnvL6HmReZn4uVkGEIr\ncLRAqctGNRzQwxDBKKxi7oVMe0EVtEFkfyjSU80nnzjukEZ1VarY5/rd0YyR\nUOwTmobZPhT/Zr78YVJnZhT3ZvruLRr1Mo2ZQOdsA45406d9gMj6fnn49wh6\n8WAZ\r\n=4hKE\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.1.3_1539273154108_0.7972881623988144"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.5": {
+			"name": "@babel/generator",
+			"version": "7.1.5",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.1.5",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.1.5"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.1.5",
+			"dist": {
+				"shasum": "615f064d13d95f8f9157c7261f68eddf32ec15b3",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.5.tgz",
+				"integrity": "sha512-IO31r62xfMI+wBJVmgx0JR9ZOHty8HkoYpQAjRWUGG9vykBTlGHdArZ8zoFtpUu2gs17K7qTl/TtPpiSi6t+MA==",
+				"fileCount": 26,
+				"unpackedSize": 107969,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb4hPzCRA9TVsSAnZWagAAFDcP/Ru9CaWIN/30xiWHsRvS\n9s27HQ4oTM6pcnL2XcDvXcGIZN0OHq0p5zCKqq5EZttMi5FZLEK19EuGpj1L\ndrIvPih59pYsh+QbsQh/LM3P3oSZ4ZTNBWsnOSbLih4mbd1o9PKdhXZeCEMY\nLn+395GgiBZlLr8GB9Ex1ymvKqfJCBBjmb9fMx+0IIpmaRZDnautJu1iCjhH\n6100soDMYMq8SkIfH91NUwHjVcWLDJZBpIYPmcC5JyaWe6rXlbjn4Tl1FVb0\n0RieIfD2lHAecr8qy+P9K5p7dWkcu1Bgz9ZOhlExI1eNB3e6hYgFOBgmvOfI\nRLPMhXy4aBmnfPxSY79P/BsQNU8kSHQcgJrfe2dlKZheaQp0Zn0a4dnhPQnk\n/FD4iRIJIozzxbbQD0AWd0Uz6poMn12RxUNKuCDXlDlFePty+TdVDKsDhIzm\nLQxWmcA/KcUn+q7KLiVXehmkN1Wrj3/7r/D/YxuMaXD9TIfyb+5sBEtFKTSU\nf2aw7lULvNkiAicFRThu3sGd6OSgVUgBoLeN5JKvxLmQy5+2NJl2fsNu1fis\nz01K0CvPmdd7eRGqH+tg2ZyxVdhVfPD6NIQpowipFzmMUBRmJQvvk0A/zaW9\nW1rxvvT68gzRpvl8STVNXtcMjott1Z1dFY8lEd77bOMf9xzd7zjRGY06oPHD\nG4bQ\r\n=HC0v\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.1.5_1541542899250_0.06026721234728449"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.6": {
+			"name": "@babel/generator",
+			"version": "7.1.6",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.1.6",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.0.0",
+				"@babel/parser": "^7.1.6"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.1.6",
+			"dist": {
+				"shasum": "001303cf87a5b9d093494a4bf251d7b5d03d3999",
+				"integrity": "sha512-brwPBtVvdYdGxtenbQgfCdDPmtkmUBZPjUoK5SXJEBuHaA5BCubh9ly65fzXz7R6o5rA76Rs22ES8Z+HCc0YIQ==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.6.tgz",
+				"fileCount": 26,
+				"unpackedSize": 108016,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb6z3WCRA9TVsSAnZWagAAgAgP/RnsufQ8+wMmrNNguFRd\nWpRUaFXbMpIDwXZb/jJPrVrpa/CNko4zvDaAP3eSFzz5ICmjac76GtNnKP7W\nWruNv5JZ3QMe/LZI4QCC2GuxpMeDLDjrCRrzFObwyqbT6sRG0fcftH9InZC2\nqaAlgDJHAu2MuA1nqQqAMOW3u7Qag3eC3+d8uQfLv0VjVPrPFzlSs6Y3xz1J\nZyTFlNl+RP+H1tHGO8xFLHHlumEgS40HnIqQCFEpDUzREYDHuJbstJslUldb\nqvlr+QoO1KRtgMdcx67x3pwfwqIhsCWrXwgk2cNu+WGLJsyoRK2blNyQiJtE\nBRVkkdxYesW0EHc69t058XMbnnzBxh62HdpIw9VR4QQAWj2ZmGAPhFedrGeu\nvhfafqQ6bUwH5TQg/KrZpQoe3DWWcv8AjC+izzUXs6mWEx8qP9qhJjcIBK9Z\nboRpr//L7do9HO66cH+c6Aryhqq7mtOPlVbEVmi6JybLYPWCz35fWu2yzlrH\nIecdOGuH9DsMUBB0+l8T9XQRcz+mkC06o4TKRo80YwhOOj9erHtlDaz+ruVU\nlNKB0YCesz7R7rh1F+OOmaNVzqIQC6LoKiWVvmvORJv+vVU21XSyZjYTdtwL\nK2yBsQAbpdI31DwCUwWGMS1N6d6Px1UwhRe0cR9702bMZ6J3XsqCN+75v3+3\nZxLx\r\n=K/aV\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.1.6_1542143445601_0.1643575964382602"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.2.0": {
+			"name": "@babel/generator",
+			"version": "7.2.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.2.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.2.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.2.0",
+			"dist": {
+				"shasum": "eaf3821fa0301d9d4aef88e63d4bcc19b73ba16c",
+				"integrity": "sha512-BA75MVfRlFQG2EZgFYIwyT1r6xSkwfP2bdkY/kLZusEYWiJs4xCowab/alaEaT0wSvmVuXGqiefeBlP+7V1yKg==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.2.0.tgz",
+				"fileCount": 26,
+				"unpackedSize": 108199,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX25CRA9TVsSAnZWagAAuNYP/2XjXMuWZfBJIzvGRxyE\nxCbpi82fZBgFQrqF/cxJPic46L9LPSUqpYV/zNUUH72RphhIef+yBjejHuST\ntt08IKEVvXPjtoPVUC97h4Rzs2xTq9bIPENAAW8jqkCJ9hGlIUUb6F+DFwv5\nYbETHLKfBV/yXfjjb70uf2tJHhOokV08FkXMYpfgR5IB//sIOaS1ULRRRFnX\nODn+UBT4KhzYhfkk3t0chNA50S94oo3fJ+iePqphXBO0hIjZL6RfEg3Dx5XS\ntXPXjm7lrCmhLGdJA7wZ46XcIWnGxFJ/wShXOyDNW53o0mlGs0I3DtYO/MNU\nYyUhpV3Oxf5SovaqIxu7NYRhyaYLYqBGckBC9lTyNGjIhUBlNS373OSlsNK8\nWpW/y5ih5OIrNJjnDWMsRp0m0KUAbPZD/e7z5MAzLCFWRK8Rmk5FiOcN4p8C\nM/7+95sO78A+OdmPe0ma6C25gLVyKsztIMc0txHqNWyIz1mLOaTAe9GLyl5O\nJBtqCim8lDiKzhsKnrrW71JyhaIL+VwYeOE+0F5kboBVMawiO7PCCG/PGivd\nX10muqrz1Ayi7916DgJ709s+u24ipdBBNP/NAgNKizUa4/igcsELFghjyy7D\nO9OQqbIFvJPpBSOagkVeaV6DAt4iFXGdiCqOa7LETu0hTDHNk/HhSH210AU8\nshVj\r\n=x+vL\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.2.0_1543863736913_0.06988590841406284"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.2.2": {
+			"name": "@babel/generator",
+			"version": "7.2.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.2.2",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.2.2"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.2.2",
+			"dist": {
+				"shasum": "18c816c70962640eab42fe8cae5f3947a5c65ccc",
+				"integrity": "sha512-I4o675J/iS8k+P38dvJ3IBGqObLXyQLTxtrR4u9cSUJOURvafeEWb/pFMOTwtNrmq73mJzyF6ueTbO1BtN0Zeg==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.2.2.tgz",
+				"fileCount": 26,
+				"unpackedSize": 108602,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcFNHzCRA9TVsSAnZWagAA/RIP/A1ut4JAXRtVylg2pQNa\nqjZTDvmvOtzHj4aRiUnTtkbJEwDDOVA3XDdk4m2eLDXvHxxgEIyhFn8vEM0G\nIPjmfyCpbXXzHYN+PxJMQ0nTxCy2yfP0SbgBzOxd2TjEAvVariWLNxoP3Knw\nzQ8GUq5ZtjEd0GX3uibfv/7VuzDsC23+3JV6lgHMcc9gRtRCGuzrnYAkueRv\nIB3nkzmCarRuWzOwfUhOj387qDrZvM2Xv4S0yv0iEfz/rM8F/BbWMHZRwFUI\n+2PD05gU/ii5xw6ytvB7sZLqi+/yRwjWGDQF8vHZphp1OurlQi9eOsJCenvH\nldOXZ7mysRnndUBjE7nJcKhoWJo/xSzG9fE1CbtpIs2N2bz3ADRvgYp8TEHk\nrU4RiEeCrUk67b8Vg+WCVEuj5JL97zBbprYgsFQLKGUL7ebWn5vz8L1rI/7m\nzOWthgnk0pC92LmJf0HWvuHrgpf98nyiHBd/ufzqaIXhNLkjeBlDiafuHxE8\n1A0WYSkGTRBI5ImO+96JF3ZlRddTvv4fDcJGSwrhfuFQetx4e/vIaCaHrx3E\nc+BDv+BmbFt7QCxlraAq6EBHj2m99CjeL6Zg6tXEMA21wNxelHi8amnzjH+G\nhyKaetlHFZol5x9ljRSYi+5HToUb2oTcpr0f9lkvpMSgcl8jh/lysaLF1sTQ\nvfni\r\n=B45O\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.2.2_1544868339217_0.32264632127016046"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.0": {
+			"name": "@babel/generator",
+			"version": "7.3.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.3.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.3.0"
+			},
+			"gitHead": "f6ee26c3da4c903818fd61fd9e5e8e1970185f77",
+			"_id": "@babel/generator@7.3.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.14.2",
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-dZTwMvTgWfhmibq4V9X+LMf6Bgl7zAodRn9PvcPdhlzFMbvUutx74dbEv7Atz3ToeEpevYEJtAwfxq/bDCzHWg==",
+				"shasum": "f663838cd7b542366de3aa608a657b8ccb2a99eb",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.0.tgz",
+				"fileCount": 22,
+				"unpackedSize": 109038,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcRjtmCRA9TVsSAnZWagAAYmMP/1A1iSzxB8y5kTxg48I+\nT57rpAQu6BxJYx5BfSWKVaUoCzl7IIV51o8DtjfKSqNq7tsZq6dc7seWbgyH\n2GdPhiOP7rNh9/pMiI+XI6l/qHMe5FivFK+szdo3w89963RwLqhKKwBl8n/5\n7nYBlkNRXYWr1hfDoPxoXX+nnXLc8VUILt1auPknVJsqdkjQg7b82nwlJniC\ngq3MiveP3Lt+O2PdW1W2/+JsFpN5jLiXFbE/89ZJEs2U1ye9B/ljDkcApkXv\nFkqG9WOX3u5OdFsOOKoC9WIRqi+rKet1yxPoVVVD6V0xR3RibjXW56abesf7\nSbUDRmsn/t/jvo99TYZe59lGN7eVyFfJGnlqKwANnuzrIzBGXxs5KQxfgWKt\ndgmzVtvknJsql6zdaTTExzXYCk+OHpPXbvyy2Xrvun3DPzHemQsvtKeb5WHk\nBJi4FIoi7BHZCm0iZbJdq87kPRfgq1529+NA717nIbyNf+S9bb8MUmJt+VAj\nasBXKiS1Z1mrCzdbxi0HM4071YTltTNJ2eR3uAPxl8zmSkzhLdgrN2InBaBu\n3WmozTl5XWKF/3Vmbv6wo/sZG+27jG+iFBNPLBkmN5DiiDBGZadaXoPneZJO\nmouoGjVpAJjdgU1cGTBh+Tg8BT02WuDHgNbxbUFDTHYBCE/L9kQUzP/EBiLq\nLva8\r\n=8j2y\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.3.0_1548106597624_0.7758453964286762"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.2": {
+			"name": "@babel/generator",
+			"version": "7.3.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.3.2",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.10",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.3.2"
+			},
+			"gitHead": "d896ce2b53f64742feeea27dd33ee45934cd041a",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.3.2",
+			"dist": {
+				"shasum": "fff31a7b2f2f3dad23ef8e01be45b0d5c2fc0132",
+				"integrity": "sha512-f3QCuPppXxtZOEm5GWPra/uYUjmNQlu9pbAD8D/9jze4pTY83rTtB1igTBSwvkeNlC5gR24zFFkz+2WHLFQhqQ==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.2.tgz",
+				"fileCount": 22,
+				"unpackedSize": 109038,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWLtWCRA9TVsSAnZWagAAoeMP/3Y1k5s8ndxbASS43KeI\nverRhGh1u46xsOriqJhHgSgqEuSuNCBdYgw/UN+A9Mdo2F6nGU0pXtYET6CT\noWVbI1/RfvZ4ywKgdhhsyeKdTeN4iqNA0JdKXQ/bvjHVzRiIa2/38ul5MiLd\nD/5c7/tYnth2PqzYXKkrySPmVECWF9wY42UY1rwMSFsPWeyQnWaJ0ak7EPnC\n0uRYg8QRYGD0qlQLcaj1Jz1VQlGsqgnt1xJEfIMuNOwJpjJIMNZApApHIYIx\nazOfhnfw8/qoBJfyiBAQw1lbLfC4TyRpHTLQDNdQfxdPXIZaEVwo990m6z3w\njvuZZxXNsDyqsYREsoPNFutXvjqQtjuTcHizBgU+OCPKr+cxIjEApySEmUMZ\nqBBTCC3Pecxxw2vnPLL0D2LsMndiwg3zC4a17VSvfbVfCgpEznpQesuwn0bN\nGs1wcvxC4qFArXMJCfts4f2BOBQFv+2CBhcmz/C/1PBb6TqnkIdY0sBSH955\nI5ngVWVIH3q6MQ9PdvbUt/JcDZqth80VFgHw26gpCDiWhZwzLXmWl4/RHe8w\nNpSfSXZAI8tThIu8TjXlY+MK5UiyQahdRyq/qQjafrs6mr/ETNAR1mS69pyF\nk6KOxCnl0vU4iXQATYLIBpap1LA0hTeUc6ISNxk2F7ZeALDfEwUvLArl0hW1\nMgeL\r\n=r0um\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.3.2_1549318998375_0.2570812834877463"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.3": {
+			"name": "@babel/generator",
+			"version": "7.3.3",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.3.3",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.11",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.3.3"
+			},
+			"gitHead": "d1fe2d05f4c468640facf40565e30f7110757f2d",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.3.3",
+			"dist": {
+				"shasum": "185962ade59a52e00ca2bdfcfd1d58e528d4e39e",
+				"integrity": "sha512-aEADYwRRZjJyMnKN7llGIlircxTCofm3dtV5pmY6ob18MSIuipHpA2yZWkPlycwu5HJcx/pADS3zssd8eY7/6A==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.3.tgz",
+				"fileCount": 22,
+				"unpackedSize": 109506,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZyvLCRA9TVsSAnZWagAAAW4P/31LmfpY7zPAZvjIULMk\nUxI3GBe9/67Rec66rk3UEbzARTq60yb0EwGb0liuOY3ZUMEYcuul/S+iaOCS\nXEPOoJV9CDiqb9hJW/p2tumgUjFeSvaN//2u2XHVnOJMH8/D9bsTkRTTK3BJ\n4ngmyMCjdAtI1OOw+E4Hkh/SoFbnyOI+tlYTjXa2t8pKbSG7lQZHfn3iOZMw\nLTqVT+f3QlEdpRRmKxSexbSPB9ekEfGWnPKgmbbdzJPzs/mGmVp7BqFrnhCS\nyJbViLXLnOmKfqQjSeGjT9ZBtTffQejjm9sPh6YogTkU7zPfvcgbfhn5YWg5\nOV7ZAQ4iKr6PjjhJJw3NxInTWWh2IQnI6AF7GfTVaHEHzA2R5xbXYHRIKFJ0\nVyx9e3vwNhQv3HbRyTl3qnv3FQl7qPUPLQqlAjwy9ywgTwX7F42zkEWHefnK\nUeDucEtzr1MsNyKw3354HxF/VO2oXS/j9LLJHwLkLyTNTbZ9ZwvZ/0IylSUZ\norKqFvJgBtXIMTzgbKRCvvsS0orts767BlqbCZs1Pc8eci6skrHUiD6J28uC\n049bI0Zi1HEo+tXsv78dY/MVxvKghZjnJJ4+OX7TIZd1w2DQoTOB09+b02xj\nKyq0IFy+7HOoMTP4jS69DkvPzxQrxc7+IZ7vLKTX6belPKyeVfknDeXJ/a7x\nR0Tz\r\n=2Qv8\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.3.3_1550265290558_0.9709474912455571"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.4": {
+			"name": "@babel/generator",
+			"version": "7.3.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.3.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.11",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.3.4"
+			},
+			"gitHead": "1f6454cc90fe33e0a32260871212e2f719f35741",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.3.4",
+			"dist": {
+				"shasum": "9aa48c1989257877a9d971296e5b73bfe72e446e",
+				"integrity": "sha512-8EXhHRFqlVVWXPezBW5keTiQi/rJMQTg/Y9uVCEZ0CAF3PKtCCaVRnp64Ii1ujhkoDhhF1fVsImoN4yJ2uz4Wg==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.4.tgz",
+				"fileCount": 22,
+				"unpackedSize": 109977,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdDV8CRA9TVsSAnZWagAAAegP/1GFs3/9cjI3onmNz/A5\nICWflOqzho81b400U2obu4f77+7Zqh9VHbglbJpUV2QswPaYqs8+AviJhrE3\nae8hWb6shhhItVz8Zu6EIC3PmLdAdx03+evLbjdBhheE/ngBUpZ+0nPFkUoM\nvPIIkhUekBqJZQR2U1S29HiBY0uhDM7fG9hzPnzJpXygiS9tU7EmV4XinNTb\nC+4l5q7AemjCHD3Yg+hiqoucsVbsoTrdgI1d9g7Qlnvgfli6jBLvrL4uwS2f\n70QoM0JqnafXRp7HcJRkWOgQBR1ylnOD09h1Fw/+BZJZxBziA3Z7EVFlOBQH\nkFrsW08OUXCbFGFuV521Cn9lQ1A3oTzw50zBsJY+KpMvDNcJogtLelOelQGV\nAWh1RlbzR0eqX+/enojZrKoiMNb3UG9bx7dQcVE1qdYUXPtgqTSd8t7pivMR\nW8RYkXb5f2OI4FNSZ/poNJpfGZO91lsPEMGdr3I0OPz/uVUEVRwpa2lkgzox\n2VolIZ6W8tdWgtpx0JHGXW66e7SgI+kWxk4uRf2PB/Cd/sm1EdiSe1tT3h/v\nRVhmKcT7z5qIaqHXg96WpkbmhpH6YO6pRG40Pvc/6YQVSiTuorJR5uO7/Fg3\nLaZ33V+sm66rp9SS6pRJgc7PY3dHaxb/op2vvlvLRNEDxbV9bpUz8u0q6biT\n6Ues\r\n=Vyl3\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.3.4_1551119740128_0.12650970273691264"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.4.0": {
+			"name": "@babel/generator",
+			"version": "7.4.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.4.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.11",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.2.0",
+				"@babel/parser": "^7.4.0"
+			},
+			"gitHead": "f1328fb913b5a93d54dfc6e3728b1f56c8f4a804",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.4.0",
+			"dist": {
+				"shasum": "c230e79589ae7a729fd4631b9ded4dc220418196",
+				"integrity": "sha512-/v5I+a1jhGSKLgZDcmAUZ4K/VePi43eRkUs3yePW1HB1iANOD5tqJXwGSG4BZhSksP8J9ejSlwGeTiiOFZOrXQ==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.4.0.tgz",
+				"fileCount": 22,
+				"unpackedSize": 110292,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckVTLCRA9TVsSAnZWagAAj3MQAKCAJLqO5fTLn0U9zHiL\nCM8tkjJpO1jZfuktouycHwqFjydMBuTMSSjaE/1KcY/lMmw2lJKTu6RjrhpB\nSHNw5Kc4KDgPcll4V32e+A16cvW9s+I8Ku6f5ErvLCazw4yO4q4ry+BwLc1V\nH/eXLRvXt+8sQCX0bG4QqjmWS0vxvnrJq9ozrpU41J98C0XwbzXCEBfghb5I\n2vjvPAqyMCVb8Vu+YFfMwVqWSASUR6AbYE9XPQ/pV9c09qfN5qI9q9pvuf1b\n/V4+XIBpkH0eN1KrJ1TjKNpzDA0GpRbNxYGLiYKB+jcFa9xUJx3GfezM0L5u\nYcEkO1xdz5z+70TI+xiVeBAuC+OYpsl/OAHCedM/WFnqJ2uIrdw5035bJN+4\nJe6L3Bg0Nh76LrwGaFmxeO5QG6i+DX5pMDjzzRO2zhkkfSdknG+caNtgbW1M\ndXFJ3azNd0HP+4bnOexdzRroUnGqlUkUmf9Jgf7h9X3eZEfbTWdLWfpn5Dfk\njxk1PYHNlEBww3WyIT6m1sAvkJZnIQeGvo8R5YgjTXwVoLyiwvt6BFhPjnHe\n1/KU4WP+vKCbyK5Pdm9M1V2v58h2ZgAl4FtkIr9dTaAUNj+OU20soUyvea29\nwF0T//rIcbSD0jNGNIvt/Tivuj8OupnfrRQ0rr78Z/bVUH0ooVwuhdGK6uv4\nz3E0\r\n=Qf5b\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.4.0_1553028299068_0.7557125822895621"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.4.4": {
+			"name": "@babel/generator",
+			"version": "7.4.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.4.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.11",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.4.4",
+				"@babel/parser": "^7.4.4"
+			},
+			"gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/generator@7.4.4",
+			"dist": {
+				"shasum": "174a215eb843fc392c7edcaabeaa873de6e8f041",
+				"integrity": "sha512-53UOLK6TVNqKxf7RUh8NE851EHRxOOeVXKbK2bivdb+iziMyk03Sr4eaE9OELCbyZAAafAKPDwF2TPUES5QbxQ==",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.4.4.tgz",
+				"fileCount": 22,
+				"unpackedSize": 110292,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3JdCRA9TVsSAnZWagAA97cP/0c30Ct3H8Q4p37Irc0t\nOnvcE5RIO4yNOrccpOkZPPUp09l21Cl/9I/oOJtU2G8TQ9j0ZvYBd7FehgQV\n5ZmRNgS7arp5I2bkW0rrzLuVSNkxEE8PE0b94dp00IMi8V1gY5hKZu1iPrOS\np65WGtlmi0HIjOx4gvPkgx3ufQvtPOI87BCeQP5X4FPvTyiOKbLhk6W3EYIU\nBVMH78scVqvobPK0A5HWyQJkJuAyqSEuljY2eioSo6aUW8eBh3xqBhFNQDgw\n/mdiIS08fMUQZLmRlEECyDuKEqoyY+/H+2OsdKJzmV8bYfp/qGXl4F+WUXGp\nwpXlldMz8f32Q88fnpmv+V+RSTiG+EBWuxWuoIzPJPqETfmWiuX2NmG1MUk0\nn8BZYrbrXua7RMBapte4US9FmAtkVkBtKN63dczGu3BZXSnlnWhgyC9ftSju\nIW4bm97AQ1anDEpoBTU9peApTsr/J3UxUPm0iYUPtw5bCXL5gjsvCM5hpa25\nxxhmiS/bMsLNV9fRQS+aIHG8F4st4WgdXSc+LPis9K1LawHsj81b7FUv8QZ7\nLyFz9KaNW+TObrWL8Wcr/DghLpnpUuXEpkABWKgxWycwND0cGxamOLjSOqpw\nCAI8xejjmJ1VCYhXUzCVDI4MA4SaIIBnzWLMk4BgO3SnCxQqjX4DtmzgeeOY\nwyEQ\r\n=SjMz\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.4.4_1556312668511_0.05590685410629748"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.5.0": {
+			"name": "@babel/generator",
+			"version": "7.5.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.5.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.11",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.4.4",
+				"@babel/parser": "^7.5.0"
+			},
+			"gitHead": "49da9a07c81156e997e60146eb001ea77b7044c4",
+			"_id": "@babel/generator@7.5.0",
+			"_nodeVersion": "12.6.0",
+			"_npmVersion": "lerna/3.14.0/node@v12.6.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-1TTVrt7J9rcG5PMjvO7VEG3FrEoEJNHxumRq66GemPmzboLWtIjjcJgk8rokuAS7IiRSpgVSu5Vb9lc99iJkOA==",
+				"shasum": "f20e4b7a91750ee8b63656073d843d2a736dca4a",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.5.0.tgz",
+				"fileCount": 22,
+				"unpackedSize": 110450,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHffoCRA9TVsSAnZWagAAl00P/jP6X5GDYvy0pR4A5PNh\n8UmSvHUeue+ighBqO07XENXMBZkenTjgPYTREQOdWuJHLFPHRYqnqH+CYDv7\n9f2MgmYCdwIQ58ZvQPtQlrrQwdXuagd4FGw2VSrlo5LiinABpimyDsVg9sLv\nATXy6259q86BpDUI41gnPQ3sBVNS15Zc8u0x/Zy6V1H/IjksC27m6tWkPE5Y\nn3zhXBCBbj8bLJP1BIpOa5U77gadR3vf/Snj8WIPwVDQCKXdEVD232MhCW/m\na4q/GwH1EqJZBGPg0Txyef4yM1MvwCu2FzPQ8CcK8t3G2sO+sCBcraxwZUZn\n2ABusgb/Tp17RTH5mjMhPx2qrMJKbk0/47OzZkOkBvZTCLoqRcvMn7aO+8h3\n3k3L8IcILoXPFpHa6O5RWswutilrvGH3xniCqOKMcWVgVTyPwH9ow78nCxOC\nmfJfcjCMGunkafemTk1Bf9YN1zhWkC4fCppW6dFEl+jwJ0ABMlLwCQPZ6EzN\ntCGCGSbMsD/9er7RQwk5PilgY+bzncwM+VNXuFtyXmEyrF/xlCDPAFOqpn57\n0jeqwET3/6V0oabXOw8eCh2d+gW6Ss4RqJTJBWYA9leoqFyZGrAABsi9BVcJ\n1HbFywrLWYUlnb/5NLFy0VldXFy/93l1G2/RO79iv9v9VDoUCleb1biqjQxT\nphzG\r\n=AAiH\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.5.0_1562245095561_0.9250804971130204"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.5.5": {
+			"name": "@babel/generator",
+			"version": "7.5.5",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.5.5",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.5.5",
+				"@babel/parser": "^7.5.5"
+			},
+			"gitHead": "0407f034f09381b95e9cabefbf6b176c76485a43",
+			"_id": "@babel/generator@7.5.5",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.15.0/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-ETI/4vyTSxTzGnU2c49XHv2zhExkv9JHLTwDAFz85kmcwuShvYG2H08FwgIguQf4JC75CBnXAUM5PqeF4fj0nQ==",
+				"shasum": "873a7f936a3c89491b43536d12245b626664e3cf",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.5.5.tgz",
+				"fileCount": 22,
+				"unpackedSize": 110450,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdL5FlCRA9TVsSAnZWagAA2QEP/2teCMY7TtNh9fWim4Cy\noZPJXkHtGlfQWGk18FaeB3h1Gln6QYzqRRhyI0VMkKOSamC/nzFvs/teSemn\nXvcFYxSKUoVZXjmd+i8Mc4vb77a1lr8DFDpE6j68TcnFq/DXEMM5HzP65b/U\nWdDnw7B0slw7AXRN3VkhI6jOyyLSGf2AsE8YlO+5I/5pSTTvOXIhAcNQKyay\n5DjZhpaRj11b4JD6ZFa6cV4xgWpKy6cVTGfe4AejO40x9pWM61VYVt0cFhu0\ngYOEJDJr8vIpQ4Jm1OB6tMBAAC9aP4b6Yo6lneBPz4n7VXIPRmIt6cms8pqg\ntRLWZXekIjqMWjcNcoHKaI5bqembF4ZgnORa4+CJZLaBN89top48yfyfSJWg\nIB6d8wcLHZZEgaYuA1tfz6yfsnN9eNM0IkqBQX7nBz203sV+gfa9jsBshEIN\nGDasoJ/rFGxvQ3EHs4SvSN0MKgDfs1SjEG34ph1MFjRkUMUMuiaSxGb2iii2\nP6WZ32UJzfELeqF0p4iDaOHyn+HsKgB3irvBc/1a85LFE41OeGwb7KdihSW3\nRnzN0G/imnrkt9jhwKalJJrS0rhIG0L8L+cE/BjgIz/zFOJoYilf0b6whUBK\n+RwFHPQHAFMSyA3q+PiD/UPW2eML82PMNBrSv4AE+TtxpNsJat7hIeCfUMw6\nkal+\r\n=VoyK\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.5.5_1563398501008_0.09000875904427086"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.6.0": {
+			"name": "@babel/generator",
+			"version": "7.6.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.6.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0",
+				"trim-right": "^1.0.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.0",
+				"@babel/parser": "^7.6.0"
+			},
+			"gitHead": "cbd5a26e57758e3f748174ff84aa570e8780e85d",
+			"_id": "@babel/generator@7.6.0",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-Ms8Mo7YBdMMn1BYuNtKuP/z0TgEIhbcyB8HVR6PPNYp4P61lMsABiS4A3VG1qznjXVCf3r+fVHhm4efTYVsySA==",
+				"shasum": "e2c21efbfd3293ad819a2359b448f002bfdfda56",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.0.tgz",
+				"fileCount": 22,
+				"unpackedSize": 110804,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcpiBCRA9TVsSAnZWagAAUrkP/09qFXDdM0tgAOTWrEjh\naAJEojmO2u8Y18JFptRdiFlCCju2e7eT+H7K6DbxOkoZMYa0SZCfG+vkYz4t\n8UN/RLavdtPwSuknHRTrZKfUvJhxnClWmEh96wHKVVkORNkESYK4/YcM+wnD\n/Eg+oJbySBpqsI6gcli8i8ui7JWOLDKJ5tU/t8oz/IAoJbKk3tWnzhUSpPT3\nf8kxQYnP/uNXhsZ5Z+j0BGNX6ntxbXV0DSX2He0nvSuQImf3krF+8mBGQ2d+\nxUTTNFrQ1MnBY+5lQN4x5AEZpKq4rQKF1ML80hqeK8inT7zJZyQUI3JfHttL\ni6oVq6AxqzMZdM7MRGatSWAxbYSEzbUqUc8a1eVMXLwnktxNuZjx+095qiFX\n0Nv/dQoromv9CCCZYOXEbF02a8lILpsfYe2VA5H9C3EVP3r2aUXFJHlTRPTn\nM4k7brm66ruqEH5UGYurgbnLHteFXN41LwhGQ/xKMHM7ekDz8uNrCC3/NUhm\nA549Fa2fHwPyVfbc5nMD4TnuFJxvT5pVrjU+tngPtTR4nKPVj+bPJ/FKCE04\n1ttxjSUm4bmtxZaPtuWSRzBkirTzVktAeOZmo9jZczCtjPbq00ere1wdO0YW\nZ582l3d4Yl9WjQICPxxiVqXbYA3DiQDg3Ytntcn72HUqX/AQDR9hANBLHcnn\nd611\r\n=KemB\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.6.0_1567791232609_0.2814134080275843"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.6.2": {
+			"name": "@babel/generator",
+			"version": "7.6.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.6.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.2",
+				"@babel/parser": "^7.6.2"
+			},
+			"gitHead": "b9cb4af953afb1a5aeed9b18526192ab15bb45c1",
+			"_id": "@babel/generator@7.6.2",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-j8iHaIW4gGPnViaIHI7e9t/Hl8qLjERI6DcV9kEpAIDJsAOrcnXqRS7t+QbhL76pwbtqP+QCQLL0z1CyVmtjjQ==",
+				"shasum": "dac8a3c2df118334c2a29ff3446da1636a8f8c03",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.2.tgz",
+				"fileCount": 22,
+				"unpackedSize": 114653,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiTdgCRA9TVsSAnZWagAAwKAP/1C2++f05S4WXEIyfJUf\nD1wOtCQdqLsT47AUp6WRxMJbBFJ0g/mW/E/PdwS3z3AtW7Zqr04CMPvbKpYf\nSFP1EM277n4fs3Bp+LAm4Vt8mrjCHw2rPYZ2Txm92P+QQ4IY1z5WKP75gyZj\nbToXNFNxN8tHbP4upf188Smgmh6OfkkGrjEgoJlzbFxCHxj7mnjN7MB3SQPO\nzAEOZJw+0EwDUrvKnAFA6k51HI+BTNrPlx+BLSGtwyXlge9PKmYSSacGbypF\ncVwq0CPkWpH+sFIc+5fMv9Zp4IQ0nYJ1cAGGND1AAtxLxBJBk/3Wx4q5HotW\nF2qamOClkZ24HKMQMEqBuAXLaYUe1LvuV7n5Z4c+xt5EjkgG1v8R2qK6+rg3\nSrb6XQFdFhjojMarJRX0YXxZwlGraJ5Ln3cVSEw6rLUoignmNqixOahzWRpM\n1n05CQiyLgu/xSxWPA7ZvLFt8LhBJi2CixdppE9YUtRFNBdRtSbC8bzMyyN/\n1qckaeKlXrq2oeyub9LKHFHoIgkH4z/+rfaA5Q8WwkeBE9EZpK6uxNtmRIjt\nWP+CRGTMwApyZlYNM8ENtixzw2X0J+mIaODTYCpwx5qL4jA/QYFL1YBuArDW\nXVsir3oiIW51TTJl1bfDK6BLLphU+ZAZiAQQnChKHTerAfu2Lse1TV7B4JCZ\nxGeM\r\n=oX+C\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.6.2_1569273695483_0.8315668111296024"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.6.3": {
+			"name": "@babel/generator",
+			"version": "7.6.3",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.6.3",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.6.1"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.6.3"
+			},
+			"gitHead": "d329156ebc17da01382acb83e212cb4328534ebc",
+			"_id": "@babel/generator@7.6.3",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-hLhYbAb3pHwxjlijC4AQ7mqZdcoujiNaW7izCT04CIowHK8psN0IN8QjDv0iyFtycF5FowUOTwDloIheI25aMw==",
+				"shasum": "71d5375264f93ec7bac7d9f35a67067733f5578e",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.3.tgz",
+				"fileCount": 22,
+				"unpackedSize": 113187,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnOhZCRA9TVsSAnZWagAADJIQAJ30JmKc/DeL99O2ZpZ/\ng5MZtOLFj4d1QPBofvGjZfruqyO8+iqfvgeElRKq8sDFfgfUIrkmPTw3zHv7\n9hYNEAqg5Yih1oqlRw1bxd4rpeUDb1DLLgGNCTSIDHmvwBLrllFCztw47lYc\nKtRaODnaz0p8jjAlbXfy4kjeIlm/QTYZ5kCqZQijKoMv3KkNqNqSJ3Ccw3hI\nSvDuL/pq4twp8zTnM8FPBsv8C2g7D5Xm/+2p5RtpM2y/8Toz4xb0I8CK/cGA\nYRgyMicUnvHoWEuBNvFVHhYYzp1tQFfHaau4TuupGpg40TQqG4q12Lr4a4FH\n3QANNJqKjxqCwhmwRPryAwA0SP0byqag7TTZ/dd28uXesB0MMmtK1KQXuhlJ\niAWdH0fonQ7dax495YiMtpIQxpc07OBBGHOZLxc9x62nwA5go7Dj6imFeP87\n9hixRfh+1hB7KE79oRAeyzotMV4FJ+RONP7uyDvhxRsPwBaYBxo8THmeSxZx\nBvbp0qCB4N27jvrZEzrSWTMfJcqqrkwwVFIhFh7JICR6i7XSQx6Inmk7l9F9\neS3sPpUw7qB7VSOjOuPnL2fOwQaYSR16ZpGTGGNXqV29+/i3AuUkqNI/mZ49\nJRRbjz9pG2GzL56HEudw8naEn6R6GAaKNCiuEMeGjRPWVKtq6eHLo9I1BJtk\n6W+a\r\n=nEeq\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.6.3_1570564184976_0.24541815505666498"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.6.4": {
+			"name": "@babel/generator",
+			"version": "7.6.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.6.3",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.6.4"
+			},
+			"gitHead": "a422ea64ee2208a55dda33f990a422e14b917f5b",
+			"_id": "@babel/generator@7.6.4",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-jsBuXkFoZxk0yWLyGI9llT9oiQ2FeTASmRFE32U+aaDTfoE92t78eroO7PTpU/OrYq38hlcDM6vbfLDaOLy+7w==",
+				"shasum": "a4f8437287bf9671b07f483b76e3bb731bc97671",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.4.tgz",
+				"fileCount": 22,
+				"unpackedSize": 113187,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdn0A9CRA9TVsSAnZWagAAhKMQAKAoDmK+Rdll2GTuFjs2\n8zuETLWt5FT7h7CgtekXkY9Pj3ltQjSf6tZPLLq7di5rD7M4iJZmqZbFAurd\nglDpWZnD49yLqn90qBXW2MYoac/MlVYeITQfjZxP2epgpUalBSwTrbUqOHfM\nlf0vhq6y2B1mfwWXkLeaGw28wNAfMM31K7HoGWqPvTcXOwNN+k1UEVgj2+Qo\nU2LPsI1Ru3LKrF5WDBtG7JS7uBCvuPtQArhCAoio3JNHkU6gafbK7MQni9dO\nujK+/wSL7kQMUwO6CCjMlMECb12jF2orWGQn8AJvC+29vqZwQOHgLyec7hi0\nz5bi4kpPBb1Jc7UwSyHdNo6LPwuNCw+0yS2m2MdRj/DlKqfX0WrLQbwC/V0E\nRnhjI3XPoxSPoxAyK5Vlsc38O9e76tUB0Vgcc745jk0o4YPS03yJyvGEZP5U\nbBxN+8WMFE7F1cjYscopciAtZfiqaM4ZxdUM71R507pc7eUdev0iL7ptVRzk\nxUxwGFbXF/KzR3bx8KxV3ZsEEPt4EJNyg7JOBAyvyMYC/XzJzwLiXstCYajU\n9CXgm7Hw41woNjuDpzACSojJ/Xp5rDdhCIq0NxANci4tnrdUQwX7hqC58++2\nkYdSqVnpOnFVxVyDgbntHQMTgXiZSJn3Pvl3rHY00skqVz3I4XWp3Dhmwmqm\nBa1N\r\n=4Sm4\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.6.4_1570717756161_0.5767853165618524"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.0": {
+			"name": "@babel/generator",
+			"version": "7.7.0",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.7.0",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.7.0"
+			},
+			"gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+			"_id": "@babel/generator@7.7.0",
+			"_nodeVersion": "13.0.1",
+			"_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-1wdJ6UxHyL1XoJQ119JmvuRX27LRih7iYStMPZOWAjQqeAabFg3dYXKMpgihma+to+0ADsTVVt6oRyUxWZw6Mw==",
+				"shasum": "c6d4d1f7a0d6e139cbd01aca73170b0bff5425b4",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.0.tgz",
+				"fileCount": 22,
+				"unpackedSize": 115637,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVSqCRA9TVsSAnZWagAAz58P/jUUFWSnie5FhDCuzNY9\nk+2oG25V8sAa4eR99d1iYBsRe/GlqWm902eOqipj1QA3NwNp7YjyX3HYvTrm\nkxvr9EWkFSP/ZihoXNissGNekAOmhvOAS2TZddEz87xTFOgeYcDEY+b+v7xY\nkHGiptTfYBbkDY2/S1JfUvys1WrMi1BiRg3769R2S6nkwiyoGLP4Jdf4pzD1\nJWDxSoUPOG5LlQWqcMNZ5beUl+9tzoerounhDAxok2xVxic4zs5kEmsi+57w\nbaTn2qvabmpa+XrnTpQqi5ZYWgrE1a0mpKbNXU0togreJtlgVZOiu8+gPDiE\nHH/Ef9QaHQtRUfoFH7ZxtWbP0FRQiZ+2K+jClBHDko5KrJ/crTXZw5efTJgf\n4s0Uy9SlYNhj8BSeYVAFX2oQ+YNIIgqqd/DqkrqIdHjPwIWVmYLzQKmzQK1M\nmSQ7yq7bXH2LcHaCbIngHTH1aeCZQpDnr4hpUYzA5n5dUdc4Gep4FEHN8cov\nOJ/8nGj/r4DN9lAM32RNDoJfhco0R0oiLSmEZ2CGvHpyh01dLH8eg6Ta313B\nJntxFNiiJrauTeur+Hta75Qzf1ow82ZjUSR3IDJHCmxPyfoG1VzKJcZ9wpzL\nF8WGqraJTRGJILgg8dM571sAC4UdProaDVMjsHQkTLVSWFg1CL1zyIVFotOM\nhS61\r\n=Xq9e\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.7.0_1572951209414_0.0774122104917776"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.2": {
+			"name": "@babel/generator",
+			"version": "7.7.2",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.7.2",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.7.2"
+			},
+			"gitHead": "35f4d1276310bac6fede4a6f86a5c76f951e179e",
+			"_id": "@babel/generator@7.7.2",
+			"_nodeVersion": "13.0.1",
+			"_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-WthSArvAjYLz4TcbKOi88me+KmDJdKSlfwwN8CnUYn9jBkzhq0ZEPuBfkAWIvjJ3AdEV1Cf/+eSQTnp3IDJKlQ==",
+				"shasum": "2f4852d04131a5e17ea4f6645488b5da66ebf3af",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.2.tgz",
+				"fileCount": 22,
+				"unpackedSize": 115637,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdw1bkCRA9TVsSAnZWagAA50EP/20JlclDSY2X69z5dST/\nY2N/JZCKHRxAInLmKtNINhXLISlu8Glcu2fvcHsgWC4j7Sx4Jv6UoedbQW+y\n92CkhMna+Tzha7FDEghIoCnd/y8AuqXukP3tu6thkDHvzYEfL+3wJKVCCpM+\n9CVsWQW0JKcrs8ewJPXGdmGobl5iAIQBx5G6/+9z+/lGBmWRQylh1aE/n9DS\n+WmR4kSBMOIaDS3EAZUjtxdgq1fSqT9P9ejLweyBqDKSFeqmPY2JqY3n3kZm\ndz6n0ery2T7cz7RJ01h342I2CJ1cJhTmaB6W1EenM7Y1vrTq23RXTYq2v2hU\nrzrzZ9XgWLJXDpG59QR4vD+PHcUzG64uQ8dyjekUO4BO27NVx8xGcA7sQ5/O\n9/5JlsLfoCewMif+B+ezWWXCCdGiqAeSZ3y/YlrSgu8cllQmgMs7Nj1yrYTS\nQ7RUpRaFCvXlYSp8E00PMDHH1vCmdNyraz4ikyWi9RDdZ3f9VQGdoqBQSoq7\nFrIshfu1YHzUsqqMazp+d07qefKmh/roCPvoqiahCbEAuGERjZjd+E2BbyjY\nBy466k0HkBBlu1F4JK62hLakcvzyvVLh1iGlKf1gjFj2uEh0PI4yEbwTGcLi\n6rGR8PSvOLlU4ydvFfWuHpynQRIal0V36QygJZ6qj8rbmSC2c0B20DOF0WWj\nxoXu\r\n=pLwt\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.7.2_1573082852420_0.6643442277480396"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.4": {
+			"name": "@babel/generator",
+			"version": "7.7.4",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.7.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.7.4"
+			},
+			"gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+			"_id": "@babel/generator@7.7.4",
+			"_nodeVersion": "13.1.0",
+			"_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-m5qo2WgdOJeyYngKImbkyQrnUN1mPceaG5BV+G0E3gWsa4l/jCSryWJdM2x8OuGAOyh+3d5pVYfZWCiNFtynxg==",
+				"shasum": "db651e2840ca9aa66f327dcec1dc5f5fa9611369",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.4.tgz",
+				"fileCount": 22,
+				"unpackedSize": 116539,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HA6CRA9TVsSAnZWagAAxk8P/2CNvUgjxdWnM4yrjqHW\nFa2vx9BkSPGz+oFboqhpjkCOoknN3+qRqZl0S3pJk6ODTyTGtBU+G7r2/cJw\nHYyjkoemFINyxTaQRVmxdQIPSxp7plgE6JgOIVtaK00XrsJAJmZ4Sjl2NI3l\ny6VVt0uG9b5KAQ/ooLyM0gHvfSi7cx0LxtIcGdPlKMtUwOr1nkkKdWgRSyQ2\nvGt5rmtUuUxOLCFbm45yFokgNTbtkREkemBC1KYX/VOb+kkexee71bnisLbp\nNQxmIxPQ00K6VNwhHm1QT+yNSg10z/5eB95VXH39877um0SHw3L9wD9PD36p\nXKC6SwzlD8TBjLRkGsPAfCJf6mC2oum/4ayk/tr8JXatpCgSJk8KdrEEb5qL\nt5Psmw7qoseiLzw1ZUYgrk71tqThOCRMBHClvmp2U+4smjOW7NEnqXScL6jt\nwod0jaeiydkSIPqSuXDuCS9xzqtaITY73CgHi7U7FY9A0zDQkVfq69oCkuqd\nbD/R69dp3HyK1ifTSFgP/D65Y65Pq+ouIjlQP2jlzeRXEqhFWuEkApoO74OK\nW/0iW/x31j6ZJkN5bm5EhqcBb2/ZRid80tOvFf392Jvqe3HGNfwb3vrYJOIs\nbGTjE40bckQoYj50re7TXjX5HK4j00ApcpyEQWlKP7EJi2lrvzoZGZWu05UD\nSpI9\r\n=7/bP\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "jason@developit.ca",
+					"name": "developit"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.7.4_1574465594455_0.38453075795568115"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.7": {
+			"name": "@babel/generator",
+			"version": "7.7.7",
+			"description": "Turns an AST into code.",
+			"author": {
+				"name": "Sebastian McKenzie",
+				"email": "sebmck@gmail.com"
+			},
+			"homepage": "https://babeljs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-generator"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/types": "^7.7.4",
+				"jsesc": "^2.5.1",
+				"lodash": "^4.17.13",
+				"source-map": "^0.5.0"
+			},
+			"devDependencies": {
+				"@babel/helper-fixtures": "^7.6.3",
+				"@babel/parser": "^7.7.7"
+			},
+			"gitHead": "12da0941c898987ae30045a9da90ed5bf58ecaf9",
+			"_id": "@babel/generator@7.7.7",
+			"_nodeVersion": "13.4.0",
+			"_npmVersion": "lerna/3.19.0/node@v13.4.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-/AOIBpHh/JU1l0ZFS4kiRCBnLi6OTHzh0RPk3h9isBxkkqELtQNFi1Vr/tiG9p1yfoUdKVwISuXWQR+hwwM4VQ==",
+				"shasum": "859ac733c44c74148e1a72980a64ec84b85f4f45",
+				"tarball": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.7.tgz",
+				"fileCount": 22,
+				"unpackedSize": 116539,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+sn6CRA9TVsSAnZWagAACLEQAJoFNcw5LU24GvESmu0u\niM8UBS52E36afMkUBs5GDtUrrrPj2YZzvcccRgkUX5QdF2U34Uxb304RBnyV\ndNAuHHVaWuknqy5qNvt2pXtMYZDrZ7IC5zFOC4EhpFBQ7EfU08yD7Sv6caOi\nySyHbLp80E0WqYfmMzwdBsPYFVYfpzOqMKftnkRB+UKG4BtuWxOHwP1bFNmh\nnxDP1rUu6XIpJ3LHqdh/ClchlSZpSgRYTt8rmlvtj9tDyxN0SWQ9Dxd70y7j\nFEozYPktcZNEost/FYobrEuZeqtqDjFkwfs7InKLCmrkGOypPBbFpHg8KRvk\nR2vxoEQlZw7sm4OJWPDvq9JrZE6TTw5b7EgHcuVTucyyosxnFtkxtKYfDpRV\nxbWGcTxLsejpSr8rsJO0W5+l2jnTa72bO+Ut6yctVwpms3buOvugvExYX4z/\nsMcE5f90YSBjcWvjwEOFVELo6AyGjMJNTuTIY44FNlk8QHv2i8Kaw6HMAOvs\nRjgRMfyGWOWEtijzd+WtUrmY76BCLGnoeD7RROtPxyaIO1pXICXFMhcTn3U1\nBaRV0awvnthv+Jg5SFvwvARKtLWtseMTnWCZOOzTIW+r56HPX/hf5D00WEXs\nNgQQMq6hK5sjM4+6+4TmMKTTzsC22pCU44ryVWAmMKHPlIOd/cVDTwgXkh/G\n/Pgb\r\n=FF8u\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "jason@developit.ca",
+					"name": "developit"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/generator_7.7.7_1576716793334_0.582107696040916"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-12-19T00:53:20.760Z",
+		"created": "2017-10-30T18:35:01.103Z",
+		"7.0.0-beta.4": "2017-10-30T18:35:01.103Z",
+		"7.0.0-beta.5": "2017-10-30T20:56:40.615Z",
+		"7.0.0-beta.31": "2017-11-03T20:03:39.475Z",
+		"7.0.0-beta.32": "2017-11-12T13:33:31.929Z",
+		"7.0.0-beta.33": "2017-12-01T14:28:38.077Z",
+		"7.0.0-beta.34": "2017-12-02T14:39:38.899Z",
+		"7.0.0-beta.35": "2017-12-14T21:48:00.416Z",
+		"7.0.0-beta.36": "2017-12-25T19:04:59.099Z",
+		"7.0.0-beta.37": "2018-01-08T16:02:41.664Z",
+		"7.0.0-beta.38": "2018-01-17T16:32:09.895Z",
+		"7.0.0-beta.39": "2018-01-30T20:27:43.645Z",
+		"7.0.0-beta.40": "2018-02-12T16:41:54.077Z",
+		"7.0.0-beta.41": "2018-03-14T16:25:42.240Z",
+		"7.0.0-beta.42": "2018-03-15T20:50:16.433Z",
+		"7.0.0-beta.43": "2018-04-02T16:48:07.198Z",
+		"7.0.0-beta.44": "2018-04-02T22:19:49.180Z",
+		"7.0.0-beta.45": "2018-04-23T01:55:44.265Z",
+		"7.0.0-beta.46": "2018-04-23T04:30:08.463Z",
+		"7.0.0-beta.47": "2018-05-15T00:07:35.619Z",
+		"7.0.0-beta.48": "2018-05-24T19:20:54.701Z",
+		"7.0.0-beta.49": "2018-05-25T16:00:37.279Z",
+		"7.0.0-beta.50": "2018-06-12T19:46:49.676Z",
+		"7.0.0-beta.51": "2018-06-12T21:19:16.094Z",
+		"7.0.0-beta.52": "2018-07-06T00:59:12.299Z",
+		"7.0.0-beta.53": "2018-07-11T13:40:01.755Z",
+		"7.0.0-beta.54": "2018-07-16T17:59:51.976Z",
+		"7.0.0-beta.55": "2018-07-28T22:06:55.904Z",
+		"7.0.0-beta.56": "2018-08-04T01:03:31.380Z",
+		"7.0.0-rc.0": "2018-08-09T15:56:49.205Z",
+		"7.0.0-rc.1": "2018-08-09T20:06:39.779Z",
+		"7.0.0-rc.2": "2018-08-21T19:22:43.224Z",
+		"7.0.0-rc.3": "2018-08-24T18:06:39.271Z",
+		"7.0.0-rc.4": "2018-08-27T16:42:49.846Z",
+		"7.0.0": "2018-08-27T21:42:00.539Z",
+		"7.1.1": "2018-09-28T20:03:02.693Z",
+		"7.1.2": "2018-09-28T22:19:57.869Z",
+		"7.1.3": "2018-10-11T15:52:34.213Z",
+		"7.1.5": "2018-11-06T22:21:39.361Z",
+		"7.1.6": "2018-11-13T21:10:45.723Z",
+		"7.2.0": "2018-12-03T19:02:17.070Z",
+		"7.2.2": "2018-12-15T10:05:39.468Z",
+		"7.3.0": "2019-01-21T21:36:37.773Z",
+		"7.3.2": "2019-02-04T22:23:18.519Z",
+		"7.3.3": "2019-02-15T21:14:50.706Z",
+		"7.3.4": "2019-02-25T18:35:40.269Z",
+		"7.4.0": "2019-03-19T20:44:59.167Z",
+		"7.4.4": "2019-04-26T21:04:28.911Z",
+		"7.5.0": "2019-07-04T12:58:15.740Z",
+		"7.5.5": "2019-07-17T21:21:41.176Z",
+		"7.6.0": "2019-09-06T17:33:52.816Z",
+		"7.6.2": "2019-09-23T21:21:35.622Z",
+		"7.6.3": "2019-10-08T19:49:45.251Z",
+		"7.6.4": "2019-10-10T14:29:16.863Z",
+		"7.7.0": "2019-11-05T10:53:29.873Z",
+		"7.7.2": "2019-11-06T23:27:32.574Z",
+		"7.7.4": "2019-11-22T23:33:14.664Z",
+		"7.7.7": "2019-12-19T00:53:13.484Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "7.7.7"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"49f5d22b0382a142a7e1703d02d74889\"",
+			"fetched": 1577117254366
+		}
+	},
+	"_distfiles": {
+		"generator-7.0.0-beta.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.4.tgz",
+			"sha": "99606c425fc6614e6386f9330efb48370f200fc3",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.5.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.5.tgz",
+			"sha": "ad90d90b521f82ce5763be644903003f6da0685c",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.31.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.31.tgz",
+			"sha": "c9be74c20ab21ce8c623246c64c2d8f9905b26fd",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.32.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.32.tgz",
+			"sha": "37d8124ea7770b4555da28be0917b47f365aca97",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.33.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.33.tgz",
+			"sha": "412662df70948c7087b5128a713acefe84395a20",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.34.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.34.tgz",
+			"sha": "1a98992f3ef9e61a6007830883dfa2dbb26c622d",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.35.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.35.tgz",
+			"sha": "09798d7e714ef8a3cd6ac27afb140e21c2794cef",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.36.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.36.tgz",
+			"sha": "669c39ffdeb75521ad43b5c627743658a3f1dc5b",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.37.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.37.tgz",
+			"sha": "df5183995f20af4afe3bd5499a4c1336355fc163",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.38.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.38.tgz",
+			"sha": "6115a66663e3adfd1d6844029ffb2354680182eb",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.39.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.39.tgz",
+			"sha": "d2c9f0a9c47d5ff288f0306aedd0cf89983cb6ed",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.40.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.40.tgz",
+			"sha": "ab61f9556f4f71dbd1138949c795bb9a21e302ea",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.41.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.41.tgz",
+			"sha": "5fce0676cea5acc1d493480d9fb7317ea2164d3f",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.42.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.42.tgz",
+			"sha": "777bb50f39c94a7e57f73202d833141f8159af33",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.43.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.43.tgz",
+			"sha": "9f32baf9fe6a4a79872d1825bb7541ed992573ca",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.44.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.44.tgz",
+			"sha": "c7e67b9b5284afcf69b309b50d7d37f3e5033d42",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.45.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.45.tgz",
+			"sha": "a4008808303f80e8f46c1bca2fd44f557ce246d1",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.46.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.46.tgz",
+			"sha": "6f57159bcc28bf8c3ed6b549789355cebfa3faa7",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.47.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.47.tgz",
+			"sha": "1835709f377cc4d2a4affee6d9258a10bbf3b9d1",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.48.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.48.tgz",
+			"sha": "53d1c359f66a25b8c1e82bc6642fe0a62d22d1ce",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.49.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.49.tgz",
+			"sha": "e9cffda913996accec793bbc25ab91bc19d0bf7a",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.50.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.50.tgz",
+			"sha": "0c5cda176aeb0beb41ff270e9741aa60c4fdba25",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.51.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.51.tgz",
+			"sha": "6c7575ffde761d07485e04baedc0392c6d9e30f6",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.52.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.52.tgz",
+			"sha": "26968f12fad818cd974c849b286b437e1e8ccd91",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.53.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.53.tgz",
+			"sha": "b8cad72c572be3234affde22be6dacc4250e034b",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.54.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.54.tgz",
+			"sha": "c043c7eebeebfd7e665d95c281a4aafc83d4e1c9",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.55.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.55.tgz",
+			"sha": "8ec11152dcc398bae35dd181122704415c383a01",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-beta.56.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-beta.56.tgz",
+			"sha": "07d9c2f45990c453130e080eddcd252a9cbd8d66",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-rc.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.0.tgz",
+			"sha": "79c3a248ae3a1ae2ea959ed59496b75d68fcf07d",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-rc.1.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.1.tgz",
+			"sha": "739c87d70b31aeed802bd6bc9fd51480065c45e8",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-rc.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.2.tgz",
+			"sha": "7aed8fb4ef1bdcc168225096b5b431744ba76bf8",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-rc.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.3.tgz",
+			"sha": "3267085de2d9b8779bde79052ee5f7070d99a5ab",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0-rc.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0-rc.4.tgz",
+			"sha": "8f9ee78db28ae3225f5c143266dd211262febc5f",
+			"registry": "npmjs"
+		},
+		"generator-7.0.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.0.0.tgz",
+			"sha": "1efd58bffa951dc846449e58ce3a1d7f02d393aa",
+			"registry": "npmjs"
+		},
+		"generator-7.1.1.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.1.tgz",
+			"sha": "4a5d2b7ab9b7c75a5aa56bf0750224f41e4eae41",
+			"registry": "npmjs"
+		},
+		"generator-7.1.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.2.tgz",
+			"sha": "fde75c072575ce7abbd97322e8fef5bae67e4630",
+			"registry": "npmjs"
+		},
+		"generator-7.1.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.3.tgz",
+			"sha": "2103ec9c42d9bdad9190a6ad5ff2d456fd7b8673",
+			"registry": "npmjs"
+		},
+		"generator-7.1.5.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.5.tgz",
+			"sha": "615f064d13d95f8f9157c7261f68eddf32ec15b3",
+			"registry": "npmjs"
+		},
+		"generator-7.1.6.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.1.6.tgz",
+			"sha": "001303cf87a5b9d093494a4bf251d7b5d03d3999",
+			"registry": "npmjs"
+		},
+		"generator-7.2.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.2.0.tgz",
+			"sha": "eaf3821fa0301d9d4aef88e63d4bcc19b73ba16c",
+			"registry": "npmjs"
+		},
+		"generator-7.2.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.2.2.tgz",
+			"sha": "18c816c70962640eab42fe8cae5f3947a5c65ccc",
+			"registry": "npmjs"
+		},
+		"generator-7.3.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.0.tgz",
+			"sha": "f663838cd7b542366de3aa608a657b8ccb2a99eb",
+			"registry": "npmjs"
+		},
+		"generator-7.3.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.2.tgz",
+			"sha": "fff31a7b2f2f3dad23ef8e01be45b0d5c2fc0132",
+			"registry": "npmjs"
+		},
+		"generator-7.3.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.3.tgz",
+			"sha": "185962ade59a52e00ca2bdfcfd1d58e528d4e39e",
+			"registry": "npmjs"
+		},
+		"generator-7.3.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.3.4.tgz",
+			"sha": "9aa48c1989257877a9d971296e5b73bfe72e446e",
+			"registry": "npmjs"
+		},
+		"generator-7.4.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.4.0.tgz",
+			"sha": "c230e79589ae7a729fd4631b9ded4dc220418196",
+			"registry": "npmjs"
+		},
+		"generator-7.4.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.4.4.tgz",
+			"sha": "174a215eb843fc392c7edcaabeaa873de6e8f041",
+			"registry": "npmjs"
+		},
+		"generator-7.5.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.5.0.tgz",
+			"sha": "f20e4b7a91750ee8b63656073d843d2a736dca4a",
+			"registry": "npmjs"
+		},
+		"generator-7.5.5.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.5.5.tgz",
+			"sha": "873a7f936a3c89491b43536d12245b626664e3cf",
+			"registry": "npmjs"
+		},
+		"generator-7.6.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.0.tgz",
+			"sha": "e2c21efbfd3293ad819a2359b448f002bfdfda56",
+			"registry": "npmjs"
+		},
+		"generator-7.6.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.2.tgz",
+			"sha": "dac8a3c2df118334c2a29ff3446da1636a8f8c03",
+			"registry": "npmjs"
+		},
+		"generator-7.6.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.3.tgz",
+			"sha": "71d5375264f93ec7bac7d9f35a67067733f5578e",
+			"registry": "npmjs"
+		},
+		"generator-7.6.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.6.4.tgz",
+			"sha": "a4f8437287bf9671b07f483b76e3bb731bc97671",
+			"registry": "npmjs"
+		},
+		"generator-7.7.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.0.tgz",
+			"sha": "c6d4d1f7a0d6e139cbd01aca73170b0bff5425b4",
+			"registry": "npmjs"
+		},
+		"generator-7.7.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.2.tgz",
+			"sha": "2f4852d04131a5e17ea4f6645488b5da66ebf3af",
+			"registry": "npmjs"
+		},
+		"generator-7.7.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.4.tgz",
+			"sha": "db651e2840ca9aa66f327dcec1dc5f5fa9611369",
+			"registry": "npmjs"
+		},
+		"generator-7.7.7.tgz": {
+			"url": "https://registry.npmjs.org/@babel/generator/-/generator-7.7.7.tgz",
+			"sha": "859ac733c44c74148e1a72980a64ec84b85f4f45",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-95eba2f58010c22f",
+	"_id": "@babel/generator",
+	"readme": "# @babel/generator\n\n> Turns an AST into code.\n\nSee our website [@babel/generator](https://babeljs.io/docs/en/next/babel-generator.html) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20generator%22+is%3Aopen) associated with this package.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/generator\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/generator --dev\n```"
+}

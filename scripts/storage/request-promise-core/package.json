@@ -1,0 +1,316 @@
+{
+	"name": "request-promise-core",
+	"versions": {
+		"1.1.1": {
+			"name": "request-promise-core",
+			"version": "1.1.1",
+			"description": "Core Promise support implementation for the simplified HTTP request client 'request'.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"core"
+			],
+			"main": "./lib/plumbing.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/promise-core.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/promise-core/issues"
+			},
+			"homepage": "https://github.com/request/promise-core#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {
+				"lodash": "^4.13.1"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"@request/api": "^0.6.0",
+				"@request/client": "^0.1.0",
+				"bluebird": "~3.4.1",
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"node-version": "~1.0.0",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2",
+				"stealthy-require": "~1.0.0"
+			},
+			"gitHead": "0e1cc64e5adf09aac5523bcf34ba76baefb96a70",
+			"_id": "request-promise-core@1.1.1",
+			"_shasum": "3eee00b2c5aa83239cfb04c5700da36f81cd08b6",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "3eee00b2c5aa83239cfb04c5700da36f81cd08b6",
+				"tarball": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.1.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/request-promise-core-1.1.1.tgz_1470653050030_0.3952387892641127"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.1.2": {
+			"name": "request-promise-core",
+			"version": "1.1.2",
+			"description": "Core Promise support implementation for the simplified HTTP request client 'request'.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"core"
+			],
+			"main": "./lib/plumbing.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/promise-core.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/promise-core/issues"
+			},
+			"homepage": "https://github.com/request/promise-core#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {
+				"lodash": "^4.17.11"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"@request/api": "^0.6.0",
+				"@request/client": "^0.1.0",
+				"bluebird": "~3.4.1",
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"node-version": "~1.0.0",
+				"publish-please": "~5.4.3",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2",
+				"stealthy-require": "~1.0.0"
+			},
+			"gitHead": "e36a060bdbb55886d59e4f5e88917a50231ee818",
+			"_id": "request-promise-core@1.1.2",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.15.1",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-UHYyq1MO8GsefGEt7EprS8UrXsm1TxEvFUX1IMTuSLU2Rh7fTIdFtl8xD7JiEYiWU2dl+NYAjCTksTehQUxPag==",
+				"shasum": "339f6aababcafdb31c799ff158700336301d3346",
+				"tarball": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.2.tgz",
+				"fileCount": 8,
+				"unpackedSize": 19166,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZegeCRA9TVsSAnZWagAA7FoP/0x6KjloNoo1NC0ApVHO\n5LpxQBBqHb2UKgYuwQoT+X5vFSAduKsbQvoTt5oDFJqkf66v6ymW8Q4WrTyg\n8ZmGBydAv0oiANIh7u0cphJCipusoUAGtW7lSkAucO+hR66MQkjRGRd+IODe\ngGBAKQPLdqLmR3DIP6190CeIqSu29RqLdNhQhZVTqgKekSNZukONGzAw1ahv\nFAweAEdn1X7QuWIErQjn69lxNJUrqS1aWD6kRSxoTI411hjS7nIlyY0NG9q2\nltueGUc70G2M26i7I4p4t6bMMcsITEMYoFGSacSmdO/lLVN4yBWstC9nl9Af\nkQ9DEE/OOlnZx7nvQVsBl2OBDdmtwTSMDLr+V5Sujia1mW8mnq8u8xsVdoE3\nHTNaztq9o7mgck1GfXO3r31caTA3LMcoFOv7SdTskkuQNYdRiLrWx1uj7Q9c\n5o7rp1DXgpO1wyqIogb/QEWx1bqt/N22Ukw7uQ25Ud53r1BKkS6blsvrwQP8\nyhm+5oeGdqB1ZnpHCrbycM2o3jsEhcjtzdBOKcAH+ZkEt/4RdhxKvjNBotqa\n2KyNSpLWuH7ZJZVkOXrhfTDaMdCGHTEubdB2VRE39jEs+KCkyDucwWD1tBsl\nhOs5i7YoXrzBrX7NEtkYeLOiqzVaJxRPX2MNT2jOiIq1LSJX+SZIQatFAc4Y\njH9x\r\n=lXMg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-core_1.1.2_1550182429815_0.7762455263920238"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.3": {
+			"name": "request-promise-core",
+			"version": "1.1.3",
+			"description": "Core Promise support implementation for the simplified HTTP request client 'request'.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"core"
+			],
+			"main": "./lib/plumbing.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/promise-core.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/promise-core/issues"
+			},
+			"homepage": "https://github.com/request/promise-core#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"dependencies": {
+				"lodash": "^4.17.15"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"@request/api": "^0.6.0",
+				"@request/client": "^0.1.0",
+				"bluebird": "~3.4.1",
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"node-version": "~1.0.0",
+				"publish-please": "~2.4.1",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2",
+				"stealthy-require": "~1.0.0"
+			},
+			"gitHead": "45c01b70d8cdbf8f662d1b6ce5754d9838a2e5ad",
+			"_id": "request-promise-core@1.1.3",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.15.1",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-QIs2+ArIGQVp5ZYbWD5ZLCY29D5CfWizP8eWnm8FoGD1TX61veauETVQbrV60662V0oFBkrDOuaBI8XgtuyYAQ==",
+				"shasum": "e9a3c081b51380dfea677336061fea879a829ee9",
+				"tarball": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.3.tgz",
+				"fileCount": 8,
+				"unpackedSize": 19529,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvyEnCRA9TVsSAnZWagAAbckP/3Asn5ipRuAzbO4bUNom\nlQezBzzZJzChR2SiXbgogjal6FjcVZw5vupfh5iTCWTbNA1ozKJOfwW0onig\np1HmJR9Duzj2llE2g7UNAG0BBu2pL3i8TTooO23AtMwZrXDh+h3VB2afKjRu\nUtZlFVhtE7jCUqyTxZRayacqLQH/TQafGn5bcIUyzYrXI2C9WNYj7bH5c7ZH\n2TPIJWrGOGZx0yYznxRE/KxG3U+VkbCsdV1B4Ox5V1hMIHNx09DJbk09a0I9\nSUdNl6IKq9unaz/c84gZTQuEyhAV9uHWDvb1kfaySRopPa4Azed2lm7Lfh+T\nfpBKXszp7oqG9eRo6EqrkPOUKbsQxP1biMbAEHjU/+tSwLL/2xR5yZmgbElI\nFFX3Rw36WwbaxenrsLryqqhynnfGu+47Q7QwlXjJQRznTGo6BRYOzqlqdUNz\nQ2BX7TvvM2Nqp/qBWyNvF80wUG+xlthH5mzx0rPbkXHkxNHEKzacpEScZs7N\n/ZE2CJpyGLgj4+5ybcX/M9hyCRstSYBQuhkx3VrH5v+DWfxzNt5JW+RzTQDq\nJbvIXBzv+YPBZbK1n0z+EG05nfqDGprzh+OzM1APk0rlPt40N0eUGlOheVne\nb8PAMGf9iCu3bZi4frH/hDEtn25jBkSPIDXt/D+g+qVVgHSiBDX3J4Cje8Yu\nDxUR\r\n=6DqX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-core_1.1.3_1572806951137_0.7017731812334251"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-03T18:49:13.578Z",
+		"created": "2016-08-08T10:44:13.206Z",
+		"1.1.1": "2016-08-08T10:44:13.206Z",
+		"1.1.2": "2019-02-14T22:13:50.189Z",
+		"1.1.3": "2019-11-03T18:49:11.265Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.1.3"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"ebd986dc9fc55ff1cf13a2417088aa9e\"",
+			"fetched": 1577117261491
+		}
+	},
+	"_distfiles": {
+		"request-promise-core-1.1.1.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.1.tgz",
+			"sha": "3eee00b2c5aa83239cfb04c5700da36f81cd08b6",
+			"registry": "npmjs"
+		},
+		"request-promise-core-1.1.2.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.2.tgz",
+			"sha": "339f6aababcafdb31c799ff158700336301d3346",
+			"registry": "npmjs"
+		},
+		"request-promise-core-1.1.3.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-core/-/request-promise-core-1.1.3.tgz",
+			"sha": "e9a3c081b51380dfea677336061fea879a829ee9",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-0d9c91a60d705338",
+	"_id": "request-promise-core",
+	"readme": "<a href=\"http://promisesaplus.com/\">\n    <img src=\"https://promises-aplus.github.io/promises-spec/assets/logo-small.png\" align=\"right\" alt=\"Promises/A+ logo\" />\n</a>\n\n# request-promise-core\n\n[![Gitter](https://img.shields.io/badge/gitter-join_chat-blue.svg?style=flat-square&maxAge=2592000)](https://gitter.im/request/request-promise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n[![Build Status](https://img.shields.io/travis/request/promise-core/master.svg?style=flat-square&maxAge=2592000)](https://travis-ci.org/request/promise-core)\n[![Coverage Status](https://img.shields.io/coveralls/request/promise-core.svg?style=flat-square&maxAge=2592000)](https://coveralls.io/r/request/promise-core)\n[![Dependency Status](https://img.shields.io/david/request/promise-core.svg?style=flat-square&maxAge=2592000)](https://david-dm.org/request/promise-core)\n[![Known Vulnerabilities](https://snyk.io/test/npm/promise-core/badge.svg?style=flat-square&maxAge=2592000)](https://snyk.io/test/npm/promise-core)\n\n\nThis package is the core for the following packages:\n\n- [`request-promise`](https://github.com/request/request-promise)\n- [`request-promise-any`](https://github.com/request/request-promise-any)\n- [`request-promise-bluebird`](https://github.com/request/request-promise-bluebird)\n- [`request-promise-native`](https://github.com/request/request-promise-native)\n\n`request-promise-core` contains the core logic to add Promise support to [`request`](https://github.com/request/request).\n\nPlease use one of the libraries above. It is only recommended to use this library directly, if you have very specific requirements.\n\n## Installation for `request@^2.34`\n\nThis module is installed via npm:\n\n```\nnpm install --save request\nnpm install --save request-promise-core\n```\n\n`request` is defined as a peer-dependency and thus has to be installed separately.\n\n## Usage for `request@^2.34`\n\n``` js\n// 1. Load the request library\n\n// Only use a direct require if you are 100% sure that:\n// - Your project does not use request directly. That is without the Promise capabilities by calling require('request').\n// - Any of the installed libraries use request.\n// ...because Request's prototype will be patched in step 2.\n/* var request = require('request'); */\n\n// Instead use:\nvar stealthyRequire = require('stealthy-require');\nvar request = stealthyRequire(require.cache, function () {\n    return require('request');\n});\n\n\n// 2. Add Promise support to request\n\nvar configure = require('request-promise-core/configure/request2');\n\nconfigure({\n    request: request,\n\t// Pass your favorite ES6-compatible promise implementation\n    PromiseImpl: Promise,\n\t// Expose all methods of the promise instance you want to call on the request(...) call\n    expose: [\n        'then',   // Allows to use request(...).then(...)\n        'catch',  // Allows to use request(...).catch(...)\n        'promise' // Allows to use request(...).promise() which returns the promise instance\n    ],\n    // Optional: Pass a callback that is called within the Promise constructor\n    constructorMixin: function (resolve, reject) {\n        // `this` is the request object\n        // Additional arguments may be passed depending on the PromiseImpl used\n    }\n});\n\n\n// 3. Use request with its promise capabilities\n\n// E.g. crawl a web page:\nrequest('http://www.google.com')\n    .then(function (htmlString) {\n        // Process html...\n    })\n    .catch(function (err) {\n        // Crawling failed...\n    });\n```\n\n## Installation and Usage for `request@next`\n\n[Request Next](https://github.com/request/request/issues/1982) is still in alpha. However, `request-promise-core` is already designed to be compatible and ships with a configuration helper – `require('request-promise-core/configure/request-next')` – that is [used by `request-promise`](https://github.com/request/request-promise/blob/next/lib/rp.js) in its \"next\" branch.\n\n## Contributing\n\nTo set up your development environment:\n\n1. clone the repo to your desktop,\n2. in the shell `cd` to the main folder,\n3. hit `npm install`,\n4. hit `npm install gulp -g` if you haven't installed gulp globally yet, and\n5. run `gulp dev`. (Or run `node ./node_modules/.bin/gulp dev` if you don't want to install gulp globally.)\n\n`gulp dev` watches all source files and if you save some changes it will lint the code and execute all tests. The test coverage report can be viewed from `./coverage/lcov-report/index.html`.\n\nIf you want to debug a test you should use `gulp test-without-coverage` to run all tests without obscuring the code by the test coverage instrumentation.\n\n## Change History\n\n- 1.1.3 (2019-11-03)\n    - Security fix: bumped `lodash` to `^4.17.15`. See [vulnerabilty reports](https://snyk.io/vuln/search?q=lodash&type=npm).\n      *(Thanks to @daniel-nagy for pull request [#20](https://github.com/request/promise-core/pull/20) and thanks to @quetzaluz for reporting this in issue [#21](https://github.com/request/promise-core/issues/21).)*\n- 1.1.2 (2019-02-14)\n    - Security fix: bumped `lodash` to `^4.17.11`. See [vulnerabilty reports](https://snyk.io/vuln/search?q=lodash&type=npm).\n      *(Thanks to @lucaswillering and @sam-warren-finnair for reporting this in issues [#12](https://github.com/request/promise-core/issues/12) and [#13](https://github.com/request/promise-core/issues/13) and thanks to @Alec321 for pull request [#14](https://github.com/request/promise-core/pull/14).)*\n- 1.1.1 (2016-08-08)\n    - Renamed package to `request-promise-core` because there were [too](https://github.com/request/request-promise/issues/137) [many](https://github.com/request/request-promise/issues/141) issues with the scoped package name `@request/promise-core`\n- 1.1.0 (2016-07-30)\n    - Added `constructorMixin` option to enable [request/request-promise#123](https://github.com/request/request-promise/pull/123)\n- 1.0.0 (2016-07-15)\n    - All tests green, ready for prime time\n- 1.0.0-rc.1 (2016-07-10)\n    - Reimplementation of core logic based on `request-promise@3.0.0`\n    - Plus `transform2xxOnly` option (fixes [request/request-promise#131](https://github.com/request/request-promise/issues/131))\n\n## License (ISC)\n\nIn case you never heard about the [ISC license](http://en.wikipedia.org/wiki/ISC_license) it is functionally equivalent to the MIT license.\n\nSee the [LICENSE file](LICENSE) for details."
+}

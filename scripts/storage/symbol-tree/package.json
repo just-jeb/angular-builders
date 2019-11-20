@@ -1,0 +1,1630 @@
+{
+	"name": "symbol-tree",
+	"versions": {
+		"1.1.0": {
+			"name": "symbol-tree",
+			"version": "1.1.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "mkdir -p jsdoc && jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "74ebd362e848ccd05ea5bf90ffc5b8c013c0b3b8",
+			"_id": "symbol-tree@1.1.0",
+			"_shasum": "4423128c85d5aa1c0c492c04524bcb92561e36af",
+			"_from": ".",
+			"_npmVersion": "2.12.1",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "4423128c85d5aa1c0c492c04524bcb92561e36af",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.1.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.2.0": {
+			"name": "symbol-tree",
+			"version": "1.2.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "881ec1839c4c991d938694dc0a7549530bb2e6ba",
+			"_id": "symbol-tree@1.2.0",
+			"_shasum": "5f743b5606946d988ab70356d9389e9570870e22",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "5f743b5606946d988ab70356d9389e9570870e22",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.2.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.3.1": {
+			"name": "symbol-tree",
+			"version": "1.3.1",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "20048896a0c520535cfc9be5066dfc56d56c72d2",
+			"_id": "symbol-tree@1.3.1",
+			"_shasum": "639d3d1cb24bf4760e4453c020e940c9d176182e",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "639d3d1cb24bf4760e4453c020e940c9d176182e",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.3.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.4.0": {
+			"name": "symbol-tree",
+			"version": "1.4.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "79affe9d48e2671d69ab68fbc51684fb5f739336",
+			"_id": "symbol-tree@1.4.0",
+			"_shasum": "d9c25a97daf02d9ba213105bbd7a98dc668b9713",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "d9c25a97daf02d9ba213105bbd7a98dc668b9713",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.4.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.5.0": {
+			"name": "symbol-tree",
+			"version": "1.5.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "314b4658d0a346aacb65582030417d600f05df74",
+			"_id": "symbol-tree@1.5.0",
+			"_shasum": "6bb451201b67f833b56145d115c2e0d01ae2b674",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "6bb451201b67f833b56145d115c2e0d01ae2b674",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.5.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.5.1": {
+			"name": "symbol-tree",
+			"version": "1.5.1",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "938d337b2df02a6e7b02f01b7c3d319ff8714699",
+			"_id": "symbol-tree@1.5.1",
+			"_shasum": "62f4424285b1bf5eda237ad9e884e5333456524c",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "62f4424285b1bf5eda237ad9e884e5333456524c",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.5.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "symbol-tree",
+			"version": "2.0.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "01e4a460b8fe5f2001e972634d8c0fb0e1cda4ea",
+			"_id": "symbol-tree@2.0.0",
+			"_shasum": "10baac3ac4ce3e10869eaf89e4dd51db9e7f9b5b",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "10baac3ac4ce3e10869eaf89e4dd51db9e7f9b5b",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-2.0.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "symbol-tree",
+			"version": "3.0.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "52d3988dee23d8edffaef522135de1bf0b9834c8",
+			"_id": "symbol-tree@3.0.0",
+			"_shasum": "59749fd72c1a82a4f6ab90d35c85eaad730ed8a7",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "59749fd72c1a82a4f6ab90d35c85eaad730ed8a7",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.0.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "symbol-tree",
+			"version": "3.1.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/Joris-van-der-Wel/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/Joris-van-der-Wel/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/Joris-van-der-Wel/js-symbol-tree#readme",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "5aee58b8fd516dae13b43859ea43e32cc9d4846d",
+			"_id": "symbol-tree@3.1.0",
+			"_shasum": "e24c5a9de4b1b3b48fd37292d4420cf268f6cef3",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "e24c5a9de4b1b3b48fd37292d4420cf268f6cef3",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.1": {
+			"name": "symbol-tree",
+			"version": "3.1.1",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "77d615a952fec17b790779b97caf6533c0d5b035",
+			"_id": "symbol-tree@3.1.1",
+			"_shasum": "58912d8c2db5e5f6a3635bdf4eaf9fe11ff66a06",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "58912d8c2db5e5f6a3635bdf4eaf9fe11ff66a06",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.2": {
+			"name": "symbol-tree",
+			"version": "3.1.2",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "312b62eac0c86f118347e8a82612dff32be0f409",
+			"_id": "symbol-tree@3.1.2",
+			"_shasum": "1fdbd68b8b49219042662024df68d60426433e5f",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "2.3.4",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "1fdbd68b8b49219042662024df68d60426433e5f",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.2.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.3": {
+			"name": "symbol-tree",
+			"version": "3.1.3",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "80dfaaa00b79f8678184624d35f54e14fb9f54d8",
+			"_id": "symbol-tree@3.1.3",
+			"_shasum": "0e1ee2bf3eaada16cf275b9315a0b7d94f3df0e6",
+			"_from": ".",
+			"_npmVersion": "2.14.4",
+			"_nodeVersion": "4.1.1",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"dist": {
+				"shasum": "0e1ee2bf3eaada16cf275b9315a0b7d94f3df0e6",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.3.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.4": {
+			"name": "symbol-tree",
+			"version": "3.1.4",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "jshint lib test && jscs lib test",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"istanbul": "^0.3.17",
+				"jscs": "^1.13.1",
+				"jsdoc-to-markdown": "^1.1.1",
+				"jshint": "^2.8.0",
+				"tape": "^4.0.0"
+			},
+			"jshintConfig": {
+				"esnext": true,
+				"node": true,
+				"bitwise": true,
+				"camelcase": true,
+				"curly": true,
+				"eqeqeq": true,
+				"forin": true,
+				"freeze": true,
+				"immed": true,
+				"indent": 8,
+				"latedef": true,
+				"newcap": true,
+				"noarg": true,
+				"nonbsp": true,
+				"nonew": true,
+				"quotmark": "single",
+				"undef": true,
+				"unused": "vars",
+				"strict": true,
+				"laxbreak": true,
+				"varstmt": true
+			},
+			"gitHead": "9786f06c16b18105deb57a186f1f20e03f2ab59a",
+			"_id": "symbol-tree@3.1.4",
+			"_shasum": "02b279348d337debc39694c5c95f882d448a312a",
+			"_from": ".",
+			"_npmVersion": "3.3.6",
+			"_nodeVersion": "5.0.0",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"dist": {
+				"shasum": "02b279348d337debc39694c5c95f882d448a312a",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.4.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.0": {
+			"name": "symbol-tree",
+			"version": "3.2.0",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"lint": "eslint lib test",
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "npm run lint",
+				"documentation": "jsdoc2md --src lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"files": [
+				"lib",
+				"api.md"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"babel-eslint": "^7.1.1",
+				"eslint": "^3.12.0",
+				"eslint-plugin-import": "^2.2.0",
+				"istanbul": "^0.3.17",
+				"jsdoc-to-markdown": "^1.1.1",
+				"tape": "^4.0.0"
+			},
+			"gitHead": "e5ca0fafcbab90557ea78a3ed627ef78cf01f2f7",
+			"_id": "symbol-tree@3.2.0",
+			"_shasum": "2183fcd165fc30048b3421aad29ada7a339ea566",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.3.1",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"dist": {
+				"shasum": "2183fcd165fc30048b3421aad29ada7a339ea566",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/symbol-tree-3.2.0.tgz_1481398196361_0.11004819511435926"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.1": {
+			"name": "symbol-tree",
+			"version": "3.2.1",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"lint": "eslint lib test",
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "npm run lint",
+				"ci": "istanbul cover test/SymbolTree.js --report lcovonly && cat ./coverage/lcov.info | coveralls",
+				"postci": "npm run posttest",
+				"documentation": "jsdoc2md --files lib/SymbolTree.js > ./jsdoc/api.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"files": [
+				"lib",
+				"api.md"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"babel-eslint": "^7.1.1",
+				"coveralls": "^2.11.15",
+				"eslint": "^3.12.0",
+				"eslint-plugin-import": "^2.2.0",
+				"istanbul": "^0.4.5",
+				"jsdoc-to-markdown": "^2.0.1",
+				"tape": "^4.0.0"
+			},
+			"gitHead": "cc4e8bb9ce83db900d13216c3d9697e8c6862e07",
+			"_id": "symbol-tree@3.2.1",
+			"_shasum": "8549dd1d01fa9f893c18cc9ab0b106b4d9b168cb",
+			"_from": ".",
+			"_npmVersion": "3.10.3",
+			"_nodeVersion": "6.3.1",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"dist": {
+				"shasum": "8549dd1d01fa9f893c18cc9ab0b106b4d9b168cb",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/symbol-tree-3.2.1.tgz_1482080580269_0.5037843270692974"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.2": {
+			"name": "symbol-tree",
+			"version": "3.2.2",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"lint": "eslint lib test",
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "npm run lint",
+				"ci": "istanbul cover test/SymbolTree.js --report lcovonly && cat ./coverage/lcov.info | coveralls",
+				"postci": "npm run posttest",
+				"predocumentation": "cp readme-header.md README.md",
+				"documentation": "jsdoc2md --files lib/SymbolTree.js >> README.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"files": [
+				"lib",
+				"api.md"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"babel-eslint": "^7.1.1",
+				"coveralls": "^2.11.15",
+				"eslint": "^3.12.0",
+				"eslint-plugin-import": "^2.2.0",
+				"istanbul": "^0.4.5",
+				"jsdoc-to-markdown": "^3.0.0",
+				"tape": "^4.0.0"
+			},
+			"gitHead": "1e213a3f820f79c083859cce601ed091154449b5",
+			"_id": "symbol-tree@3.2.2",
+			"_shasum": "ae27db38f660a7ae2e1c3b7d1bc290819b8519e6",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "7.2.1",
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"dist": {
+				"shasum": "ae27db38f660a7ae2e1c3b7d1bc290819b8519e6",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/symbol-tree-3.2.2.tgz_1486847058094_0.6699730809777975"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.3": {
+			"name": "symbol-tree",
+			"version": "3.2.3",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"lint": "eslint lib test",
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "npm run lint",
+				"ci": "istanbul cover test/SymbolTree.js --report lcovonly && cat ./coverage/lcov.info | coveralls",
+				"postci": "npm run posttest",
+				"predocumentation": "cp readme-header.md README.md",
+				"documentation": "jsdoc2md --files lib/SymbolTree.js >> README.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"babel-eslint": "^10.0.1",
+				"coveralls": "^3.0.0",
+				"eslint": "^5.16.0",
+				"eslint-plugin-import": "^2.2.0",
+				"istanbul": "^0.4.5",
+				"jsdoc-to-markdown": "^3.0.0",
+				"tape": "^4.0.0"
+			},
+			"gitHead": "e8c775130d2cf60c0555aa93c4d62153464204d4",
+			"_id": "symbol-tree@3.2.3",
+			"_nodeVersion": "10.8.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-ljdId+u/BBU3lP93qTT5JNNwd7hWfZGypRd5IA/r+9fZ79vX4pBmxbQUMm2PnAWrm1T3qxlB5SrPf5DhXHXA8Q==",
+				"shasum": "924232e97ca8fa11c5b396e770eb0e82203cd35f",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.3.tgz",
+				"fileCount": 7,
+				"unpackedSize": 56917,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdAT5kCRA9TVsSAnZWagAActIP+wZ2N0PEvWbGTI00THAZ\n3Z/Rslztl1xItgYxnn7Pj2coeKah1qPJfhW5GyCuzgPPX60cyPxrPD5tbqyV\n1J4rcmkGOCGfAeAz6zlJcCaiwi6VOHAUwUlp+JUh96S+Js4986RkF27Ut+Vo\nIAwTWH5UzBXBFOtkfw/C/VDG14KrXmLuYhOMCxoNyCb+fPDLjAGgwP0inLlh\n3F7tzm32cEtMRiQHKN80mk3J2TKJ4Zt99xtSdO/BNQf1bSx4NvOlVLcLyy3+\nvWoY9zsS/MqHmtOagwPaQoOJR5aT6fhz2RZEiSnOJiU1Cv2G4mWNFLO+GvzK\nnAmp6UvtGKPCh8pVSqhg6pXCssvOZTDC/kM4CQLqZHxY2cVFo7FVvX8dtg/k\n9OG3tpdxGM6oaqassMgK6Rh1rSeHQzu3xkw8UioQYnGC9hlknfyKVjV4627K\nqpZbUfdUYlL4zb47Gu7VvlbwBV45nmHQMwiXksQCq8emqfCejozj2eoh6y1N\nIicWnvOE7GlXeRGI9+qps0YLSAc2+VgYkJd6H3BFfQkB+62T7pg97+s8Xyg5\ngqGtJ+JlnM3lQS0hT1NiPERX03uB7nsFOb15AN4wfPGdsKoG5nUFjjTpyIOW\nTq6e1Xg5OlztthsVgtXotSn5DJkCBTlFFQCM0nUCgsFyBbar6W13tydMSaqq\n/NPM\r\n=3Nwe\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/symbol-tree_3.2.3_1560362595048_0.1410353133874771"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"3.2.4": {
+			"name": "symbol-tree",
+			"version": "3.2.4",
+			"description": "Turn any collection of objects into its own efficient tree or linked list using Symbol",
+			"main": "lib/SymbolTree.js",
+			"scripts": {
+				"lint": "eslint lib test",
+				"test": "istanbul cover test/SymbolTree.js",
+				"posttest": "npm run lint",
+				"ci": "istanbul cover test/SymbolTree.js --report lcovonly && cat ./coverage/lcov.info | coveralls",
+				"postci": "npm run posttest",
+				"predocumentation": "cp readme-header.md README.md",
+				"documentation": "jsdoc2md --files lib/SymbolTree.js >> README.md"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/js-symbol-tree.git"
+			},
+			"keywords": [
+				"list",
+				"queue",
+				"stack",
+				"linked-list",
+				"tree",
+				"es6",
+				"dom",
+				"symbol"
+			],
+			"author": {
+				"name": "Joris van der Wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/jsdom/js-symbol-tree/issues"
+			},
+			"homepage": "https://github.com/jsdom/js-symbol-tree#symbol-tree",
+			"devDependencies": {
+				"babel-eslint": "^10.0.1",
+				"coveralls": "^3.0.0",
+				"eslint": "^5.16.0",
+				"eslint-plugin-import": "^2.2.0",
+				"istanbul": "^0.4.5",
+				"jsdoc-to-markdown": "^5.0.0",
+				"tape": "^4.0.0"
+			},
+			"gitHead": "693669568538887e75181628c392668f8ff4a6d6",
+			"_id": "symbol-tree@3.2.4",
+			"_nodeVersion": "10.8.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==",
+				"shasum": "430637d248ba77e078883951fb9aa0eed7c63fa2",
+				"tarball": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz",
+				"fileCount": 7,
+				"unpackedSize": 57073,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdAUANCRA9TVsSAnZWagAAk84QAKFByTiC48Bfia1c3+bI\n+l6Bsi3Nc/RKxI9AwhJSrV57589VsqTgW7Scw9Kyhbh3Bpmln1R+1NSdp/Yp\nesSENi5Iy4OilFndzTUw0hLUQCyNy5WFEkYuCnpPJG5hlxpNzGg0zv+qNFG4\nS/thNAhO3hWGqL9+elFjz9u/YfIrQRCNYqdMqCYiaRE9Q1FHGifHGZ/Yerqo\nsDTys8ZfPAJfO+MwYOcaZMAiG/hDM8BO2DzgU7I+nCT8qfcxJe64VkBYTCwC\nIlCYPOvdS5sENxMtZ2TKdFxPQBNvh9B/55xKIGuv+Rj1vhJguCAjlYZx0yYM\nB7Q4yM4O+O9lJbPc52/afJttWp7ID94VBxCnhuZJaF/iUFkzLRLnoNhisnST\n4fOlOCU9/QYloaJxhqo7Z7dS47YNG3orC30BNhbmu+0il73nAeL5bn+558yW\nCBiweg6CJyssgv8pibgFbWIUNLM2/y1IYyyzDiBHsSjQUbxfJt2Ai9I7QvGN\nPjlkLCnvSLhhV5kHVvuL4U/oOUw7ShSOLfMJFWo3TXIRwpNlaJaPj93nXWmu\n0GYQ56M8mlu9GC/VHLceZ9FpRSXOCr5Tn7lJ7P8AXrpRPiD7UIC8QVTVMMSf\n8yemDBGXjBZg5JX0L/yr1+cxwuS3GrUWdEm8f2c3KnAttYi7oZfVrAJViQIH\n9LdS\r\n=ppAT\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "joris-van-der-wel",
+					"email": "joris@jorisvanderwel.com"
+				}
+			],
+			"_npmUser": {
+				"name": "joris-van-der-wel",
+				"email": "joris@jorisvanderwel.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/symbol-tree_3.2.4_1560363021174_0.577137467745565"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-06-12T18:10:23.982Z",
+		"created": "2015-07-14T12:03:12.855Z",
+		"1.0.0": "2015-07-14T12:03:12.855Z",
+		"1.1.0": "2015-07-14T17:37:14.594Z",
+		"1.2.0": "2015-07-16T18:42:48.571Z",
+		"1.3.1": "2015-07-18T16:54:27.206Z",
+		"1.4.0": "2015-07-18T23:14:14.808Z",
+		"1.5.0": "2015-07-19T15:21:18.858Z",
+		"1.5.1": "2015-07-19T23:15:46.586Z",
+		"2.0.0": "2015-07-25T14:48:15.056Z",
+		"3.0.0": "2015-07-25T15:34:00.465Z",
+		"3.1.0": "2015-07-26T19:01:35.971Z",
+		"3.1.1": "2015-08-06T17:40:29.379Z",
+		"3.1.2": "2015-08-06T18:28:12.732Z",
+		"3.1.3": "2015-10-09T18:43:43.613Z",
+		"3.1.4": "2015-11-09T10:03:37.769Z",
+		"3.2.0": "2016-12-10T19:29:58.563Z",
+		"3.2.1": "2016-12-18T17:03:02.333Z",
+		"3.2.2": "2017-02-11T21:04:18.947Z",
+		"3.2.3": "2019-06-12T18:03:15.196Z",
+		"3.2.4": "2019-06-12T18:10:21.305Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "3.2.4"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"577952d665eb85dbb96c2d18848847cb\"",
+			"fetched": 1577117260985
+		}
+	},
+	"_distfiles": {
+		"symbol-tree-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.1.0.tgz",
+			"sha": "4423128c85d5aa1c0c492c04524bcb92561e36af",
+			"registry": "npmjs"
+		},
+		"symbol-tree-1.2.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.2.0.tgz",
+			"sha": "5f743b5606946d988ab70356d9389e9570870e22",
+			"registry": "npmjs"
+		},
+		"symbol-tree-1.3.1.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.3.1.tgz",
+			"sha": "639d3d1cb24bf4760e4453c020e940c9d176182e",
+			"registry": "npmjs"
+		},
+		"symbol-tree-1.4.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.4.0.tgz",
+			"sha": "d9c25a97daf02d9ba213105bbd7a98dc668b9713",
+			"registry": "npmjs"
+		},
+		"symbol-tree-1.5.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.5.0.tgz",
+			"sha": "6bb451201b67f833b56145d115c2e0d01ae2b674",
+			"registry": "npmjs"
+		},
+		"symbol-tree-1.5.1.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-1.5.1.tgz",
+			"sha": "62f4424285b1bf5eda237ad9e884e5333456524c",
+			"registry": "npmjs"
+		},
+		"symbol-tree-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-2.0.0.tgz",
+			"sha": "10baac3ac4ce3e10869eaf89e4dd51db9e7f9b5b",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.0.0.tgz",
+			"sha": "59749fd72c1a82a4f6ab90d35c85eaad730ed8a7",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.0.tgz",
+			"sha": "e24c5a9de4b1b3b48fd37292d4420cf268f6cef3",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.1.1.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.1.tgz",
+			"sha": "58912d8c2db5e5f6a3635bdf4eaf9fe11ff66a06",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.1.2.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.2.tgz",
+			"sha": "1fdbd68b8b49219042662024df68d60426433e5f",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.1.3.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.3.tgz",
+			"sha": "0e1ee2bf3eaada16cf275b9315a0b7d94f3df0e6",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.1.4.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.1.4.tgz",
+			"sha": "02b279348d337debc39694c5c95f882d448a312a",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.2.0.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.0.tgz",
+			"sha": "2183fcd165fc30048b3421aad29ada7a339ea566",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.2.1.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.1.tgz",
+			"sha": "8549dd1d01fa9f893c18cc9ab0b106b4d9b168cb",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.2.2.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.2.tgz",
+			"sha": "ae27db38f660a7ae2e1c3b7d1bc290819b8519e6",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.2.3.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.3.tgz",
+			"sha": "924232e97ca8fa11c5b396e770eb0e82203cd35f",
+			"registry": "npmjs"
+		},
+		"symbol-tree-3.2.4.tgz": {
+			"url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz",
+			"sha": "430637d248ba77e078883951fb9aa0eed7c63fa2",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-7dbb14335d3dd40e",
+	"_id": "symbol-tree",
+	"readme": "symbol-tree\n===========\n[![Travis CI Build Status](https://api.travis-ci.org/jsdom/js-symbol-tree.svg?branch=master)](https://travis-ci.org/jsdom/js-symbol-tree) [![Coverage Status](https://coveralls.io/repos/github/jsdom/js-symbol-tree/badge.svg?branch=master)](https://coveralls.io/github/jsdom/js-symbol-tree?branch=master)\n\nTurn any collection of objects into its own efficient tree or linked list using `Symbol`.\n\nThis library has been designed to provide an efficient backing data structure for DOM trees. You can also use this library as an efficient linked list. Any meta data is stored on your objects directly, which ensures any kind of insertion or deletion is performed in constant time. Because an ES6 `Symbol` is used, the meta data does not interfere with your object in any way.\n\nNode.js 4+, io.js and modern browsers are supported.\n\nExample\n-------\nA linked list:\n\n```javascript\nconst SymbolTree = require('symbol-tree');\nconst tree = new SymbolTree();\n\nlet a = {foo: 'bar'}; // or `new Whatever()`\nlet b = {foo: 'baz'};\nlet c = {foo: 'qux'};\n\ntree.insertBefore(b, a); // insert a before b\ntree.insertAfter(b, c); // insert c after b\n\nconsole.log(tree.nextSibling(a) === b);\nconsole.log(tree.nextSibling(b) === c);\nconsole.log(tree.previousSibling(c) === b);\n\ntree.remove(b);\nconsole.log(tree.nextSibling(a) === c);\n```\n\nA tree:\n\n```javascript\nconst SymbolTree = require('symbol-tree');\nconst tree = new SymbolTree();\n\nlet parent = {};\nlet a = {};\nlet b = {};\nlet c = {};\n\ntree.prependChild(parent, a); // insert a as the first child\ntree.appendChild(parent,c ); // insert c as the last child\ntree.insertAfter(a, b); // insert b after a, it now has the same parent as a\n\nconsole.log(tree.firstChild(parent) === a);\nconsole.log(tree.nextSibling(tree.firstChild(parent)) === b);\nconsole.log(tree.lastChild(parent) === c);\n\nlet grandparent = {};\ntree.prependChild(grandparent, parent);\nconsole.log(tree.firstChild(tree.firstChild(grandparent)) === a);\n```\n\nSee [api.md](api.md) for more documentation.\n\nTesting\n-------\nMake sure you install the dependencies first:\n\n    npm install\n\nYou can now run the unit tests by executing:\n\n    npm test\n\nThe line and branch coverage should be 100%.\n\nAPI Documentation\n-----------------\n<a name=\"module_symbol-tree\"></a>\n\n## symbol-tree\n**Author**: Joris van der Wel <joris@jorisvanderwel.com>  \n\n* [symbol-tree](#module_symbol-tree)\n    * [SymbolTree](#exp_module_symbol-tree--SymbolTree) ⏏\n        * [new SymbolTree([description])](#new_module_symbol-tree--SymbolTree_new)\n        * [.initialize(object)](#module_symbol-tree--SymbolTree+initialize) ⇒ <code>Object</code>\n        * [.hasChildren(object)](#module_symbol-tree--SymbolTree+hasChildren) ⇒ <code>Boolean</code>\n        * [.firstChild(object)](#module_symbol-tree--SymbolTree+firstChild) ⇒ <code>Object</code>\n        * [.lastChild(object)](#module_symbol-tree--SymbolTree+lastChild) ⇒ <code>Object</code>\n        * [.previousSibling(object)](#module_symbol-tree--SymbolTree+previousSibling) ⇒ <code>Object</code>\n        * [.nextSibling(object)](#module_symbol-tree--SymbolTree+nextSibling) ⇒ <code>Object</code>\n        * [.parent(object)](#module_symbol-tree--SymbolTree+parent) ⇒ <code>Object</code>\n        * [.lastInclusiveDescendant(object)](#module_symbol-tree--SymbolTree+lastInclusiveDescendant) ⇒ <code>Object</code>\n        * [.preceding(object, [options])](#module_symbol-tree--SymbolTree+preceding) ⇒ <code>Object</code>\n        * [.following(object, [options])](#module_symbol-tree--SymbolTree+following) ⇒ <code>Object</code>\n        * [.childrenToArray(parent, [options])](#module_symbol-tree--SymbolTree+childrenToArray) ⇒ <code>Array.&lt;Object&gt;</code>\n        * [.ancestorsToArray(object, [options])](#module_symbol-tree--SymbolTree+ancestorsToArray) ⇒ <code>Array.&lt;Object&gt;</code>\n        * [.treeToArray(root, [options])](#module_symbol-tree--SymbolTree+treeToArray) ⇒ <code>Array.&lt;Object&gt;</code>\n        * [.childrenIterator(parent, [options])](#module_symbol-tree--SymbolTree+childrenIterator) ⇒ <code>Object</code>\n        * [.previousSiblingsIterator(object)](#module_symbol-tree--SymbolTree+previousSiblingsIterator) ⇒ <code>Object</code>\n        * [.nextSiblingsIterator(object)](#module_symbol-tree--SymbolTree+nextSiblingsIterator) ⇒ <code>Object</code>\n        * [.ancestorsIterator(object)](#module_symbol-tree--SymbolTree+ancestorsIterator) ⇒ <code>Object</code>\n        * [.treeIterator(root, options)](#module_symbol-tree--SymbolTree+treeIterator) ⇒ <code>Object</code>\n        * [.index(child)](#module_symbol-tree--SymbolTree+index) ⇒ <code>Number</code>\n        * [.childrenCount(parent)](#module_symbol-tree--SymbolTree+childrenCount) ⇒ <code>Number</code>\n        * [.compareTreePosition(left, right)](#module_symbol-tree--SymbolTree+compareTreePosition) ⇒ <code>Number</code>\n        * [.remove(removeObject)](#module_symbol-tree--SymbolTree+remove) ⇒ <code>Object</code>\n        * [.insertBefore(referenceObject, newObject)](#module_symbol-tree--SymbolTree+insertBefore) ⇒ <code>Object</code>\n        * [.insertAfter(referenceObject, newObject)](#module_symbol-tree--SymbolTree+insertAfter) ⇒ <code>Object</code>\n        * [.prependChild(referenceObject, newObject)](#module_symbol-tree--SymbolTree+prependChild) ⇒ <code>Object</code>\n        * [.appendChild(referenceObject, newObject)](#module_symbol-tree--SymbolTree+appendChild) ⇒ <code>Object</code>\n\n<a name=\"exp_module_symbol-tree--SymbolTree\"></a>\n\n### SymbolTree ⏏\n**Kind**: Exported class  \n<a name=\"new_module_symbol-tree--SymbolTree_new\"></a>\n\n#### new SymbolTree([description])\n\n| Param | Type | Default | Description |\n| --- | --- | --- | --- |\n| [description] | <code>string</code> | <code>&quot;&#x27;SymbolTree data&#x27;&quot;</code> | Description used for the Symbol |\n\n<a name=\"module_symbol-tree--SymbolTree+initialize\"></a>\n\n#### symbolTree.initialize(object) ⇒ <code>Object</code>\nYou can use this function to (optionally) initialize an object right after its creation,\nto take advantage of V8's fast properties. Also useful if you would like to\nfreeze your object.\n\n`O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - object  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+hasChildren\"></a>\n\n#### symbolTree.hasChildren(object) ⇒ <code>Boolean</code>\nReturns `true` if the object has any children. Otherwise it returns `false`.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+firstChild\"></a>\n\n#### symbolTree.firstChild(object) ⇒ <code>Object</code>\nReturns the first child of the given object.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+lastChild\"></a>\n\n#### symbolTree.lastChild(object) ⇒ <code>Object</code>\nReturns the last child of the given object.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+previousSibling\"></a>\n\n#### symbolTree.previousSibling(object) ⇒ <code>Object</code>\nReturns the previous sibling of the given object.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+nextSibling\"></a>\n\n#### symbolTree.nextSibling(object) ⇒ <code>Object</code>\nReturns the next sibling of the given object.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+parent\"></a>\n\n#### symbolTree.parent(object) ⇒ <code>Object</code>\nReturn the parent of the given object.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+lastInclusiveDescendant\"></a>\n\n#### symbolTree.lastInclusiveDescendant(object) ⇒ <code>Object</code>\nFind the inclusive descendant that is last in tree order of the given object.\n\n* `O(n)` (worst case) where `n` is the depth of the subtree of `object`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+preceding\"></a>\n\n#### symbolTree.preceding(object, [options]) ⇒ <code>Object</code>\nFind the preceding object (A) of the given object (B).\nAn object A is preceding an object B if A and B are in the same tree\nand A comes before B in tree order.\n\n* `O(n)` (worst case)\n* `O(1)` (amortized when walking the entire tree)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| object | <code>Object</code> |  |\n| [options] | <code>Object</code> |  |\n| [options.root] | <code>Object</code> | If set, `root` must be an inclusive ancestor        of the return value (or else null is returned). This check _assumes_        that `root` is also an inclusive ancestor of the given `object` |\n\n<a name=\"module_symbol-tree--SymbolTree+following\"></a>\n\n#### symbolTree.following(object, [options]) ⇒ <code>Object</code>\nFind the following object (A) of the given object (B).\nAn object A is following an object B if A and B are in the same tree\nand A comes after B in tree order.\n\n* `O(n)` (worst case) where `n` is the amount of objects in the entire tree\n* `O(1)` (amortized when walking the entire tree)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type | Default | Description |\n| --- | --- | --- | --- |\n| object | <code>Object</code> |  |  |\n| [options] | <code>Object</code> |  |  |\n| [options.root] | <code>Object</code> |  | If set, `root` must be an inclusive ancestor        of the return value (or else null is returned). This check _assumes_        that `root` is also an inclusive ancestor of the given `object` |\n| [options.skipChildren] | <code>Boolean</code> | <code>false</code> | If set, ignore the children of `object` |\n\n<a name=\"module_symbol-tree--SymbolTree+childrenToArray\"></a>\n\n#### symbolTree.childrenToArray(parent, [options]) ⇒ <code>Array.&lt;Object&gt;</code>\nAppend all children of the given object to an array.\n\n* `O(n)` where `n` is the amount of children of the given `parent`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type | Default | Description |\n| --- | --- | --- | --- |\n| parent | <code>Object</code> |  |  |\n| [options] | <code>Object</code> |  |  |\n| [options.array] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> |  |\n| [options.filter] | <code>function</code> |  | Function to test each object before it is added to the array.                            Invoked with arguments (object). Should return `true` if an object                            is to be included. |\n| [options.thisArg] | <code>\\*</code> |  | Value to use as `this` when executing `filter`. |\n\n<a name=\"module_symbol-tree--SymbolTree+ancestorsToArray\"></a>\n\n#### symbolTree.ancestorsToArray(object, [options]) ⇒ <code>Array.&lt;Object&gt;</code>\nAppend all inclusive ancestors of the given object to an array.\n\n* `O(n)` where `n` is the amount of ancestors of the given `object`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type | Default | Description |\n| --- | --- | --- | --- |\n| object | <code>Object</code> |  |  |\n| [options] | <code>Object</code> |  |  |\n| [options.array] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> |  |\n| [options.filter] | <code>function</code> |  | Function to test each object before it is added to the array.                            Invoked with arguments (object). Should return `true` if an object                            is to be included. |\n| [options.thisArg] | <code>\\*</code> |  | Value to use as `this` when executing `filter`. |\n\n<a name=\"module_symbol-tree--SymbolTree+treeToArray\"></a>\n\n#### symbolTree.treeToArray(root, [options]) ⇒ <code>Array.&lt;Object&gt;</code>\nAppend all descendants of the given object to an array (in tree order).\n\n* `O(n)` where `n` is the amount of objects in the sub-tree of the given `object`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type | Default | Description |\n| --- | --- | --- | --- |\n| root | <code>Object</code> |  |  |\n| [options] | <code>Object</code> |  |  |\n| [options.array] | <code>Array.&lt;Object&gt;</code> | <code>[]</code> |  |\n| [options.filter] | <code>function</code> |  | Function to test each object before it is added to the array.                            Invoked with arguments (object). Should return `true` if an object                            is to be included. |\n| [options.thisArg] | <code>\\*</code> |  | Value to use as `this` when executing `filter`. |\n\n<a name=\"module_symbol-tree--SymbolTree+childrenIterator\"></a>\n\n#### symbolTree.childrenIterator(parent, [options]) ⇒ <code>Object</code>\nIterate over all children of the given object\n\n* `O(1)` for a single iteration\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - An iterable iterator (ES6)  \n\n| Param | Type | Default |\n| --- | --- | --- |\n| parent | <code>Object</code> |  | \n| [options] | <code>Object</code> |  | \n| [options.reverse] | <code>Boolean</code> | <code>false</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+previousSiblingsIterator\"></a>\n\n#### symbolTree.previousSiblingsIterator(object) ⇒ <code>Object</code>\nIterate over all the previous siblings of the given object. (in reverse tree order)\n\n* `O(1)` for a single iteration\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - An iterable iterator (ES6)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+nextSiblingsIterator\"></a>\n\n#### symbolTree.nextSiblingsIterator(object) ⇒ <code>Object</code>\nIterate over all the next siblings of the given object. (in tree order)\n\n* `O(1)` for a single iteration\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - An iterable iterator (ES6)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+ancestorsIterator\"></a>\n\n#### symbolTree.ancestorsIterator(object) ⇒ <code>Object</code>\nIterate over all inclusive ancestors of the given object\n\n* `O(1)` for a single iteration\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - An iterable iterator (ES6)  \n\n| Param | Type |\n| --- | --- |\n| object | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+treeIterator\"></a>\n\n#### symbolTree.treeIterator(root, options) ⇒ <code>Object</code>\nIterate over all descendants of the given object (in tree order).\n\nWhere `n` is the amount of objects in the sub-tree of the given `root`:\n\n* `O(n)` (worst case for a single iteration)\n* `O(n)` (amortized, when completing the iterator)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - An iterable iterator (ES6)  \n\n| Param | Type | Default |\n| --- | --- | --- |\n| root | <code>Object</code> |  | \n| options | <code>Object</code> |  | \n| [options.reverse] | <code>Boolean</code> | <code>false</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+index\"></a>\n\n#### symbolTree.index(child) ⇒ <code>Number</code>\nFind the index of the given object (the number of preceding siblings).\n\n* `O(n)` where `n` is the amount of preceding siblings\n* `O(1)` (amortized, if the tree is not modified)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Number</code> - The number of preceding siblings, or -1 if the object has no parent  \n\n| Param | Type |\n| --- | --- |\n| child | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+childrenCount\"></a>\n\n#### symbolTree.childrenCount(parent) ⇒ <code>Number</code>\nCalculate the number of children.\n\n* `O(n)` where `n` is the amount of children\n* `O(1)` (amortized, if the tree is not modified)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| parent | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+compareTreePosition\"></a>\n\n#### symbolTree.compareTreePosition(left, right) ⇒ <code>Number</code>\nCompare the position of an object relative to another object. A bit set is returned:\n\n<ul>\n    <li>DISCONNECTED : 1</li>\n    <li>PRECEDING : 2</li>\n    <li>FOLLOWING : 4</li>\n    <li>CONTAINS : 8</li>\n    <li>CONTAINED_BY : 16</li>\n</ul>\n\nThe semantics are the same as compareDocumentPosition in DOM, with the exception that\nDISCONNECTED never occurs with any other bit.\n\nwhere `n` and `m` are the amount of ancestors of `left` and `right`;\nwhere `o` is the amount of children of the lowest common ancestor of `left` and `right`:\n\n* `O(n + m + o)` (worst case)\n* `O(n + m)` (amortized, if the tree is not modified)\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n\n| Param | Type |\n| --- | --- |\n| left | <code>Object</code> | \n| right | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+remove\"></a>\n\n#### symbolTree.remove(removeObject) ⇒ <code>Object</code>\nRemove the object from this tree.\nHas no effect if already removed.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - removeObject  \n\n| Param | Type |\n| --- | --- |\n| removeObject | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+insertBefore\"></a>\n\n#### symbolTree.insertBefore(referenceObject, newObject) ⇒ <code>Object</code>\nInsert the given object before the reference object.\n`newObject` is now the previous sibling of `referenceObject`.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - newObject  \n**Throws**:\n\n- <code>Error</code> If the newObject is already present in this SymbolTree\n\n\n| Param | Type |\n| --- | --- |\n| referenceObject | <code>Object</code> | \n| newObject | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+insertAfter\"></a>\n\n#### symbolTree.insertAfter(referenceObject, newObject) ⇒ <code>Object</code>\nInsert the given object after the reference object.\n`newObject` is now the next sibling of `referenceObject`.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - newObject  \n**Throws**:\n\n- <code>Error</code> If the newObject is already present in this SymbolTree\n\n\n| Param | Type |\n| --- | --- |\n| referenceObject | <code>Object</code> | \n| newObject | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+prependChild\"></a>\n\n#### symbolTree.prependChild(referenceObject, newObject) ⇒ <code>Object</code>\nInsert the given object as the first child of the given reference object.\n`newObject` is now the first child of `referenceObject`.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - newObject  \n**Throws**:\n\n- <code>Error</code> If the newObject is already present in this SymbolTree\n\n\n| Param | Type |\n| --- | --- |\n| referenceObject | <code>Object</code> | \n| newObject | <code>Object</code> | \n\n<a name=\"module_symbol-tree--SymbolTree+appendChild\"></a>\n\n#### symbolTree.appendChild(referenceObject, newObject) ⇒ <code>Object</code>\nInsert the given object as the last child of the given reference object.\n`newObject` is now the last child of `referenceObject`.\n\n* `O(1)`\n\n**Kind**: instance method of [<code>SymbolTree</code>](#exp_module_symbol-tree--SymbolTree)  \n**Returns**: <code>Object</code> - newObject  \n**Throws**:\n\n- <code>Error</code> If the newObject is already present in this SymbolTree\n\n\n| Param | Type |\n| --- | --- |\n| referenceObject | <code>Object</code> | \n| newObject | <code>Object</code> |"
+}

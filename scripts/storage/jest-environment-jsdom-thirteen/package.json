@@ -1,0 +1,393 @@
+{
+	"name": "jest-environment-jsdom-thirteen",
+	"versions": {
+		"0.0.1": {
+			"name": "jest-environment-jsdom-thirteen",
+			"version": "0.0.1",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/theneva/jest-environment-jsdom-thirteen"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"dependencies": {
+				"jest-mock": "^23.2.0",
+				"jest-util": "^23.4.0",
+				"jsdom": "^13.0.0"
+			},
+			"scripts": {
+				"test": "jest",
+				"build": "mkdirp build && babel src/index.js -o build/index.js"
+			},
+			"description": "JSDOM environment for Jest with JSDOM 13 (which doesn't support Node 6)",
+			"author": {
+				"name": "Martin Lehmann"
+			},
+			"private": false,
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+				"babel-plugin-transform-async-to-generator": "^6.24.1",
+				"babel-plugin-transform-es2015-destructuring": "^6.23.0",
+				"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+				"babel-plugin-transform-es2015-parameters": "^6.24.1",
+				"babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+				"babel-plugin-transform-es2015-spread": "^6.22.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"babel-plugin-transform-strict-mode": "^6.24.1",
+				"babel-preset-flow": "^6.23.0",
+				"flow-bin": "^0.82.0",
+				"jest": "^23.6.0",
+				"mkdirp": "^0.5.1"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2018 Martin Lehmann\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+			"_id": "jest-environment-jsdom-thirteen@0.0.1",
+			"dist": {
+				"shasum": "4fa872b6c23b0d80209dac996554cac006a051e4",
+				"integrity": "sha512-Fy90v0SNVMVbBiYgbtOdfHX2G2vWfPn0ajoL24SwcYbyVizcGouW713JN6IZ8Lp/ZDl/yvquqG5GN5cdxkih9A==",
+				"tarball": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.1.tgz",
+				"fileCount": 15,
+				"unpackedSize": 19003,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2vSuCRA9TVsSAnZWagAA//EP/2v+P9MSZR2oQE/FJgyg\n0MUOPyE2vcJxwKmsFkIFsJD09E8CGHnHCZHa5JeGgJGwYX34R8B67vPig70D\n9Zg0iJhIsOsVa++M/Gma6iQdKruE1+biniFZkwFdQpr4INxdgksaT5PMaRQI\nf3XJlcleGpLPTlN7vM2TWPVmtiMCTJX4cD8/ybWYDW9P8ye7b6wfQ1/LHd49\nFsb++lJkNeVs+1XsNuLzw9PWjDBzLRaI3AG9poCLo3liG1Tksv2O1uP7st9/\nATaq7mXumL/NGCfj7tMaYIDJ+gLLa30HULpiOiLab9Dzr64wWqCu3lPJLbrD\nIHYF9Rcti7D5bI4A8dZLzTh4sQItC/cS+84hS2ysX0ZeuCHUeEL0UV7pl5NP\nXBDPXU96FrGUWKWPCdprgaoUJsZ8MZcnLLZVz1xI3ZaJp5oOWaMIdQzzJAWR\ni8En6rLH9zMIYAgYvabG56H1qdH8FskUQhNMN+L1RU+LnOUarHgmf/a32wHe\nbT/QFEJovLH2hDc0Ie/j0cs/RJ8g/U67ZIRYT6JhsM4t4BihPHao2EzA9KpR\nqgi6FcdgFqGXzV/GE1NQ3Rp/nXY6TJohmvl2VKgWflchAi/hSj01F0Y8I0GD\ny0UrBKW1pEPAr+Ne9Awj9O+xBDZU46ZH9dLqGxxFB/FHLT1NVagHmvg/2vNj\nMMG1\r\n=uz/W\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "theneva",
+					"email": "martin@lehmann.tech"
+				}
+			],
+			"_npmUser": {
+				"name": "theneva",
+				"email": "martin@lehmann.tech"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/jest-environment-jsdom-thirteen_0.0.1_1541076141546_0.9103458598591143"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.0.2": {
+			"name": "jest-environment-jsdom-thirteen",
+			"version": "0.0.2",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/theneva/jest-environment-jsdom-thirteen"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"dependencies": {
+				"jest-mock": "^23.2.0",
+				"jest-util": "^23.4.0",
+				"jsdom": "^13.0.0"
+			},
+			"scripts": {
+				"test": "jest",
+				"build": "mkdirp build && babel src/index.js -o build/index.js"
+			},
+			"description": "JSDOM environment for Jest with JSDOM 13 (which doesn't support Node 6)",
+			"author": {
+				"name": "Martin Lehmann"
+			},
+			"private": false,
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+				"babel-plugin-transform-async-to-generator": "^6.24.1",
+				"babel-plugin-transform-es2015-destructuring": "^6.23.0",
+				"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+				"babel-plugin-transform-es2015-parameters": "^6.24.1",
+				"babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+				"babel-plugin-transform-es2015-spread": "^6.22.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"babel-plugin-transform-strict-mode": "^6.24.1",
+				"babel-preset-flow": "^6.23.0",
+				"flow-bin": "^0.82.0",
+				"jest": "^23.6.0",
+				"mkdirp": "^0.5.1"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2018 Martin Lehmann\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+			"_id": "jest-environment-jsdom-thirteen@0.0.2",
+			"dist": {
+				"shasum": "8de6a9cc178cb585adfaf2d58a646c514502df9f",
+				"integrity": "sha512-NH7b44aUdSjSzIYogJS9WkymmJNA+Q3na6XebsxZmP70NzW++/WD1Ky8E6PVxTqKuEnYzxFA/5Of2VxoreugGg==",
+				"tarball": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.2.tgz",
+				"fileCount": 17,
+				"unpackedSize": 22244,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2vbRCRA9TVsSAnZWagAA6J0P/Avfow/27J2Y5hNZEn4u\nVhKNEXm9xXHNJaB2NTdByq9yBtsDcwg+FLEN16nV16HyUUtGEV+OEP6v2MmB\n2DWW2fBd4EuSQBasuroFpDG6YzgkJkWJOfSM48OpIfdqUA5kcN9dqSxraxWm\n3NUelSbzKQhFnhnd+Hwhyq3ihuKgO+VbhRdfgfiZ2s9NaC5lzhRCC6EZ1qXi\nczsQdtRuFaJQaHRG6/AiSw4tU1V1y6G9DG7Q0HGppmeK1vF6bwmJQzoJyrST\nDwFXKtFPVgriD/oxOEe9IhlVa/U32j7L9SRn5ka/T98DRPByF8hezAQDihgZ\nFPgEvN46tkWx+R6EOswjTZhI3YXPEq6jII+LOHYDKMQXA9NIFD9f0aZnrxec\nZWTl2wvKTQjDq2Zp1T76jxthnehhz5tmKlpcsGwkm/AzvfCsmIv2lTMyZoPg\nu1SGhweRbQT4Njb12xgw5dVgGWx7bJVuBpjuPnGP9MF96PZtNRGauwN94aAf\nrMl5mF6+it1BAi7VckNpwUqXdsMrSC30Lg1A8wFfRT+9pY9gS+HsVfxElyP5\n2GY3724wChxw0gb8Zkjk0HI8QsKBvl0eBK/Eu+ad11eYSI0a/VWyDkb7g++1\nukUXNIjtj+2xNnCGd1HdDGjOq0C75DQy0Zq4n/Hjlv16n36a9X6o1CkEZ+ZV\nvI7y\r\n=+tC2\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "theneva",
+					"email": "martin@lehmann.tech"
+				}
+			],
+			"_npmUser": {
+				"name": "theneva",
+				"email": "martin@lehmann.tech"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/jest-environment-jsdom-thirteen_0.0.2_1541076688680_0.048730109322374204"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.0.3": {
+			"name": "jest-environment-jsdom-thirteen",
+			"version": "0.0.3",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/theneva/jest-environment-jsdom-thirteen"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"dependencies": {
+				"jest-mock": "^23.2.0",
+				"jest-util": "^23.4.0",
+				"jsdom": "^13.0.0"
+			},
+			"scripts": {
+				"test": "jest",
+				"build": "mkdirp build && babel src/index.js -o build/index.js"
+			},
+			"description": "JSDOM environment for Jest with JSDOM 13 (which doesn't support Node 6)",
+			"author": {
+				"name": "Martin Lehmann"
+			},
+			"private": false,
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+				"babel-plugin-transform-async-to-generator": "^6.24.1",
+				"babel-plugin-transform-es2015-destructuring": "^6.23.0",
+				"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+				"babel-plugin-transform-es2015-parameters": "^6.24.1",
+				"babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+				"babel-plugin-transform-es2015-spread": "^6.22.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"babel-plugin-transform-strict-mode": "^6.24.1",
+				"babel-preset-flow": "^6.23.0",
+				"flow-bin": "^0.82.0",
+				"jest": "^23.6.0",
+				"mkdirp": "^0.5.1"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2018 Martin Lehmann\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+			"_id": "jest-environment-jsdom-thirteen@0.0.3",
+			"dist": {
+				"shasum": "72bf7d04923baccf243f4f1690c6df96001135d8",
+				"integrity": "sha512-BmsIWuBEHUH7V/1VU8NmI2g1tcrvhShEtdOe2iCTa8J0Sp1rgS3Vm/FFAEK3ddgy/AFwzFYy43jXEQE/XpjtjQ==",
+				"tarball": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.3.tgz",
+				"fileCount": 17,
+				"unpackedSize": 22358,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcb0YrCRA9TVsSAnZWagAAeqIP/3sQ5UTjh9wSS0/cUxxv\nEPrF1A1poHCImPtNgcDKTgKO622pQNEHX4zPK4MFOwZUdhLq6DwixIQJ/Q9J\nNxgajcP2K7Vw+9SHl8KJptLL7cSpOm4WKCxsi9URdZNh+B50sgDHtCkB0ANm\nVgHNm6eCgbsc1xuQQZDWgHGo3Roy2OYBoZLmWvwO/BNF8ZkmocETYMfIntWa\nJ6mBLLaFNHiHeP6jCK2GKJspppQJvjAEdfMqHZ8l84efu/OxPGFjZarZp2Ss\nA0dYu3I5Zd5ts/HIn1RIN7w+r1X0lUo4pYxlcbBy79KZJatwtU1yxlFA/Ggi\nKmmlp3of5V3FQkEKLNEtCclsJ1WcnDofxRDrcIyaherW/GMzGVhBInBQZmLV\nYWmE06X5J/dqpmhLnLv2aLfFjh6HRmTECGKlibMBrszI7zVqJ57PdNstZYo6\n6LAcpqIUXaZiLZS/NxvNc6FyaScRoyhPw8jHpvrvUj+aylliCbudR3udGXTP\nLvckYsfW8vx2BKiIAV8W92pzBZVlOxn0EAmn+vgejkluKVQnqG8jBvLKZiDi\noowTDarF7gXZ/hRWHE6bKTkst3xYkOggQ+UCjdW13mAndrCwgR/66A+mKQEy\nJJncZwdLxiZL0RySj1DgxkmguXC/6lP/6+jSn2t1xRNSlWSfovTaGzu2lSVQ\nuTo/\r\n=NQ+P\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "theneva",
+					"email": "martin@lehmann.tech"
+				}
+			],
+			"_npmUser": {
+				"name": "theneva",
+				"email": "martin@lehmann.tech"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/jest-environment-jsdom-thirteen_0.0.3_1550796330971_0.043820454921075"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "jest-environment-jsdom-thirteen",
+			"version": "1.0.0",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/theneva/jest-environment-jsdom-thirteen"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"dependencies": {
+				"jest-mock": "^24.0.0",
+				"jest-util": "^24.0.0",
+				"jsdom": "^13.0.0"
+			},
+			"scripts": {
+				"test": "jest",
+				"build": "mkdirp build && babel src/index.js -o build/index.js",
+				"prepublish": "yarn build"
+			},
+			"description": "JSDOM environment for Jest with JSDOM 13 (which doesn't support Node 6)",
+			"author": {
+				"name": "Martin Lehmann"
+			},
+			"private": false,
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+				"babel-plugin-transform-async-to-generator": "^6.24.1",
+				"babel-plugin-transform-es2015-destructuring": "^6.23.0",
+				"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+				"babel-plugin-transform-es2015-parameters": "^6.24.1",
+				"babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+				"babel-plugin-transform-es2015-spread": "^6.22.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"babel-plugin-transform-strict-mode": "^6.24.1",
+				"babel-preset-flow": "^6.23.0",
+				"flow-bin": "^0.82.0",
+				"jest": "^24.1.0",
+				"mkdirp": "^0.5.1"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2018 Martin Lehmann\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+			"_id": "jest-environment-jsdom-thirteen@1.0.0",
+			"dist": {
+				"shasum": "24eac0718c5792edef269232b5bac3cf82b18911",
+				"integrity": "sha512-DOlBE/tUgb8okcOcehf8Yt5U9o/QlkLoGS9HwKZtzKiKrntyCAb12FTmuBfEpjZXsA/p559Kuw0PbSh5GzEcjw==",
+				"tarball": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-1.0.0.tgz",
+				"fileCount": 17,
+				"unpackedSize": 22390,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcd82nCRA9TVsSAnZWagAAbpMP/idR3zoC6NIZwh/yWmez\nPex1pWwMpHHlOms8dOH7TZAOOa3YXnO1I2bGvKpk9/M0YPanIzVpVZM3L0MM\nkwK4FYkA4Si6lNOrZXUeJcbltB8U1lxM3j5rGoPODJd/t180xuDPtZ1dcYOu\nYvoeahe/BMG2Eycp7ypMEpEYnWONnS18QdNqPaD292Fk4WMV7ff55kOxt9Ky\nrQ6dyx5WTgX34EzLD8zf2oj8efKWL9syh9TirFgfOTB2sRDl1MEM9kr06CmV\no735QfK6y2EqqKmZX3JPdrVI4jIZii4JHvMlZe8Iy9htaIZ21SORzOhuc6ZZ\n08zlu8VE+8yTWJQFRsYBTH+JnUSTsqQ6cAzP/hQi0XYhu2D/sUsPt45uVgo6\nYLpiQmb6L77Px9wtbLi5yCO7MBIa5wvbWQ7RzvlKJl70qXJ4thSk1/uwX9zS\nhoUO7o3dmKNfic06g8S6Z2ZZsxG9KAF6NIHnFSVdp4oV+FY+PTlzsNymxlEy\nz6wTjZJaXBc/yA0FtCMiHKqTQh3FW2FXNZvynAIwxGZryyoVOzYzt8kF0z0B\nLqHLU0zDKo2CAqLDLGzypApDEjQ+KBKvki/iLMXHCabFC13MT21/9OXkfUA0\nzLhX5xslLR5JJ4SOaECzOb1Q79DBHxav6YvYvDXA2hqzh9tBac8OK38lUbfn\nQ205\r\n=gJ/A\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "theneva",
+					"email": "martin@lehmann.tech"
+				}
+			],
+			"_npmUser": {
+				"name": "theneva",
+				"email": "martin@lehmann.tech"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/jest-environment-jsdom-thirteen_1.0.0_1551355303228_0.04440942973217865"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "jest-environment-jsdom-thirteen",
+			"version": "1.0.1",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/theneva/jest-environment-jsdom-thirteen"
+			},
+			"license": "MIT",
+			"main": "build/index.js",
+			"dependencies": {
+				"jest-mock": "^24.0.0",
+				"jest-util": "^24.0.0",
+				"jsdom": "^13.0.0"
+			},
+			"scripts": {
+				"test": "jest",
+				"build": "mkdirp build && babel src/index.js -o build/index.js",
+				"prepublish": "yarn build"
+			},
+			"description": "JSDOM environment for Jest with JSDOM 13 (which doesn't support Node 6)",
+			"author": {
+				"name": "Martin Lehmann"
+			},
+			"private": false,
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-plugin-syntax-trailing-function-commas": "^6.22.0",
+				"babel-plugin-transform-async-to-generator": "^6.24.1",
+				"babel-plugin-transform-es2015-destructuring": "^6.23.0",
+				"babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+				"babel-plugin-transform-es2015-parameters": "^6.24.1",
+				"babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+				"babel-plugin-transform-es2015-spread": "^6.22.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"babel-plugin-transform-strict-mode": "^6.24.1",
+				"babel-preset-flow": "^6.23.0",
+				"flow-bin": "^0.82.0",
+				"jest": "^24.1.0",
+				"mkdirp": "^0.5.1"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2018 Martin Lehmann\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+			"_id": "jest-environment-jsdom-thirteen@1.0.1",
+			"dist": {
+				"shasum": "113e3c8aed945dadbc826636fa21139c69567bb5",
+				"integrity": "sha512-Zi7OuKF7HMLlBvomitd5eKp5Ykc4Wvw0d+i+cpbCaE+7kmvL24SO4ssDmKrT++aANXR4T8+pmoJIlav5gr2peQ==",
+				"tarball": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-1.0.1.tgz",
+				"fileCount": 17,
+				"unpackedSize": 22538,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckl1mCRA9TVsSAnZWagAA4oAP/3orrPV+3tofSFV34btB\nuGJwirqCGh8RoXSxTk7wDs03017Ly7oW1LEa3METdNY0GYB9mwu9K1GQz766\nh2KC27y72QCNHi9hAYWFTo/4JiHirye/ZLW+UdLhg2E03Jl4dT9hvD0FmoE6\nRQ+HVUDlgdDSZTiGy73j88Nz72TwWtU1YsORf3yYIRmf+BvJgvxfweyDiuF0\n4AijOtLX09mlFLaLd8m2ACWb+I1jmph1Fo4vGjLJow/9p7TjrrY3aFEGFtiq\nv+xFCWCYnYP6QI/ZGl7eKtlQIJultYMank0K5GN05d3SlN3NQYrce8h+00lM\nrjqEkI1GOvy7NB61gZiCJ9AIDQvAuzKvT/eU/GJL3awqezhXir6UBGCfkQsy\njZ9jYoGJEe/67M1SRGXWaFpg9yWaaoxDbwL/ktqPcdw6+x8PLeYmAq0D8N94\n/JPymDfrOlv/gfVaP2eEkaJTQnYcfBnMLNTDFXNxh9DAoy9RTi8+T+4n9dCo\n1MJP6CJ/smaWP03AvxPjaX7qzA/vswh0iQV0iwXV2xRwQ7dCj3rE8MfJdXRz\nx54Cl8x7xnRexsMU7dGowxW7EBgjoYTqUM/l21Mrqgy1bPzkR2Lrw3co/G2O\n8VvFN7xYoSqpKddOZkS1IW/HCGkigmrUr3Bg3E0yNZKCPv58q4ytiRvDaGTD\nRnHp\r\n=q/6M\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "theneva",
+					"email": "martin@lehmann.tech"
+				}
+			],
+			"_npmUser": {
+				"name": "theneva",
+				"email": "martin@lehmann.tech"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/jest-environment-jsdom-thirteen_1.0.1_1553096037898_0.7540932655600716"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"13.0.0": "2018-10-31T02:51:04.296Z",
+		"created": "2018-11-01T12:42:21.545Z",
+		"0.0.1": "2018-11-01T12:42:21.683Z",
+		"modified": "2019-03-20T15:34:02.056Z",
+		"0.0.2": "2018-11-01T12:51:28.857Z",
+		"0.0.3": "2019-02-22T00:45:31.198Z",
+		"1.0.0": "2019-02-28T12:01:43.384Z",
+		"1.0.1": "2019-03-20T15:33:58.118Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.1"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"d9c7feb324140399750e7a276669e24e\"",
+			"fetched": 1577117258372
+		}
+	},
+	"_distfiles": {
+		"jest-environment-jsdom-thirteen-0.0.1.tgz": {
+			"url": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.1.tgz",
+			"sha": "4fa872b6c23b0d80209dac996554cac006a051e4",
+			"registry": "npmjs"
+		},
+		"jest-environment-jsdom-thirteen-0.0.2.tgz": {
+			"url": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.2.tgz",
+			"sha": "8de6a9cc178cb585adfaf2d58a646c514502df9f",
+			"registry": "npmjs"
+		},
+		"jest-environment-jsdom-thirteen-0.0.3.tgz": {
+			"url": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-0.0.3.tgz",
+			"sha": "72bf7d04923baccf243f4f1690c6df96001135d8",
+			"registry": "npmjs"
+		},
+		"jest-environment-jsdom-thirteen-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-1.0.0.tgz",
+			"sha": "24eac0718c5792edef269232b5bac3cf82b18911",
+			"registry": "npmjs"
+		},
+		"jest-environment-jsdom-thirteen-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/jest-environment-jsdom-thirteen/-/jest-environment-jsdom-thirteen-1.0.1.tgz",
+			"sha": "113e3c8aed945dadbc826636fa21139c69567bb5",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-63ec6652020aca89",
+	"_id": "jest-environment-jsdom-thirteen",
+	"readme": "# jest-environment-jsdom-thirteen\n\n**JSDOM 14 is out, so please check out https://github.com/ianschmitz/jest-environment-jsdom-fourteen unless you _need_ JSDOM 13 for some reason.**\n\nJest environment using JSDOM 13, which does not support Node 6 ([and will therefore not be used in Jest any time soon][simen-comment]).\n\nIf you need a newer JSDOM than the one that ships with Jest, add this to your `package.json`:\n\n```js\n{\n  // …,\n  \"jest\": {\n    // …\n    \"testEnvironment\": \"jest-environment-jsdom-thirteen\",\n    // …\n  },\n  // …\n}\n```\n\n[simen-comment]: https://github.com/kentcdodds/dom-testing-library/issues/115#issuecomment-428314737"
+}

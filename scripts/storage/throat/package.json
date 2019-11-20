@@ -1,0 +1,812 @@
+{
+	"name": "throat",
+	"versions": {
+		"0.0.0": {
+			"name": "throat",
+			"version": "0.0.0",
+			"description": "Throttle a collection of promise returning functions",
+			"main": "index.js",
+			"scripts": {
+				"test": "mocha -R spec"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ForbesLindesay/throat.git"
+			},
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"limit"
+			],
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"dependencies": {
+				"promises-a": "~2"
+			},
+			"devDependencies": {
+				"mocha": "~1",
+				"better-assert": "~0.1.0"
+			},
+			"_id": "throat@0.0.0",
+			"dist": {
+				"shasum": "2bf638b8824510e14b1348f318deb01c06bd9478",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-0.0.0.tgz"
+			},
+			"_npmVersion": "1.1.59",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "throat",
+			"version": "1.0.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {
+				"promise": "~3.2.0"
+			},
+			"devDependencies": {
+				"mocha": "*"
+			},
+			"scripts": {
+				"test": "mocha -R spec"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"_id": "throat@1.0.0",
+			"dist": {
+				"shasum": "04c9e0f9ce88e250db630fdeabc2e5bb152a0625",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-1.0.0.tgz"
+			},
+			"_from": ".",
+			"_npmVersion": "1.2.10",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "throat",
+			"version": "2.0.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {},
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"istanbul": "^0.3.5",
+				"promise": "^6.1.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.0.2"
+			},
+			"scripts": {
+				"test": "node test/index.js && node test/browser.js",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "77a3106be863d0167d30317e8efd87ed40230161",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat",
+			"_id": "throat@2.0.0",
+			"_shasum": "720d03e0f270e4452d87a345025412e35883e24c",
+			"_from": ".",
+			"_npmVersion": "2.5.1",
+			"_nodeVersion": "0.12.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"shasum": "720d03e0f270e4452d87a345025412e35883e24c",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-2.0.0.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "throat",
+			"version": "2.0.1",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {},
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"istanbul": "^0.3.5",
+				"promise": "^6.1.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.0.2"
+			},
+			"scripts": {
+				"test": "node test/index.js && node test/browser.js",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "e6881d62970a8d4abef4ea9e34815b2ba3d5f067",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat",
+			"_id": "throat@2.0.1",
+			"_shasum": "ae9034aeb023cfee3c2d080653f20936b15711e8",
+			"_from": ".",
+			"_npmVersion": "2.5.1",
+			"_nodeVersion": "0.12.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"shasum": "ae9034aeb023cfee3c2d080653f20936b15711e8",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-2.0.1.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.2": {
+			"name": "throat",
+			"version": "2.0.2",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {},
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"istanbul": "^0.3.5",
+				"promise": "^6.1.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.0.2"
+			},
+			"scripts": {
+				"test": "node test/index.js && node test/browser.js",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "4cb485f83e0521d661aaaac02162138686bc3908",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat",
+			"_id": "throat@2.0.2",
+			"_shasum": "a9fce808b69e133a632590780f342c30a6249b02",
+			"_from": ".",
+			"_npmVersion": "1.4.28",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"shasum": "a9fce808b69e133a632590780f342c30a6249b02",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-2.0.2.tgz"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "throat",
+			"version": "3.0.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {},
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"istanbul": "^0.3.5",
+				"promise": "^6.1.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.0.5"
+			},
+			"scripts": {
+				"test": "node test/index.js && node test/browser.js",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "d77de8defd2d8049c06ccf314587890f9e620ac3",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@3.0.0",
+			"_shasum": "e7c64c867cbb3845f10877642f7b60055b8ec0d6",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"dist": {
+				"shasum": "e7c64c867cbb3845f10877642f7b60055b8ec0d6",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-3.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/throat-3.0.0.tgz_1464777827074_0.20422574575059116"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "throat",
+			"version": "3.1.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"dependencies": {
+				"double-ended-queue": "^2.1.0-0"
+			},
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"istanbul": "^0.4.5",
+				"promise": "^7.1.1",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.0.5"
+			},
+			"scripts": {
+				"test": "node test/index.js && node test/browser.js",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "600dc43cd7adef1528d8bfbfc4d6d298c776499e",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@3.1.0",
+			"_npmVersion": "5.0.1",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-AvehafrUS8C2PWA4YgPsPV6qrM5e7yU7o7jpuRzXVjRcPrPQgBsL6lVFxHXZEtRjZTdF+J9S2dIUxbheUrxAHA==",
+				"shasum": "ef22d8855963b3fdc626d043508f24c4cdf7d3c3",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-3.1.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/throat-3.1.0.tgz_1496604657022_0.10021370113827288"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.0": {
+			"name": "throat",
+			"version": "3.2.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"files": [
+				"index.d.ts",
+				"index.js",
+				"index.js.flow"
+			],
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"flow-bin": "^0.48.0",
+				"istanbul": "^0.4.5",
+				"jest": "^20.0.4",
+				"promise": "^7.1.1",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.1.3",
+				"typescript": "^2.3.4"
+			},
+			"scripts": {
+				"tsc": "tsc --noEmit",
+				"flow": "flow",
+				"test": "node test/index.js && npm run test:types && node test/browser.js",
+				"test:types": "jest",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "d3160f52514dda47b52a35295f0d98423da84814",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@3.2.0",
+			"_npmVersion": "5.0.3",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-/EY8VpvlqJ+sFtLPeOgc8Pl7kQVOWv0woD87KTXVHPIAE842FGT+rokxIhe8xIUP1cfgrkt0as0vDLjDiMtr8w==",
+				"shasum": "50cb0670edbc40237b9e347d7e1f88e4620af836",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-3.2.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/throat-3.2.0.tgz_1497359089265_0.8259152092505246"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "throat",
+			"version": "4.0.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"files": [
+				"index.d.ts",
+				"index.js",
+				"index.js.flow"
+			],
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"flow-bin": "^0.48.0",
+				"istanbul": "^0.4.5",
+				"jest": "^20.0.4",
+				"promise": "^8.0.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.1.3",
+				"typescript": "^2.3.4"
+			},
+			"scripts": {
+				"tsc": "tsc --noEmit",
+				"flow": "flow",
+				"test": "node test/index.js && npm run test:types && node test/browser.js",
+				"test:types": "jest",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "17cf240b143c8307238c43664519e34b4ff3b9f1",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@4.0.0",
+			"_npmVersion": "5.0.3",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-p1ADLOUqnmSbl7lDRSeAKee9pRZrpbZPqidJ0mbZSf3sfSNte5PJVTV03pVmeav75BvZz1MFmhtF71zw8bRoFg==",
+				"shasum": "e8d397aeb3f335c3bae404a83dc264b813a41e1b",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-4.0.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/throat-4.0.0.tgz_1497953196327_0.8288967153057456"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.1.0": {
+			"name": "throat",
+			"version": "4.1.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"files": [
+				"index.d.ts",
+				"index.js",
+				"index.js.flow"
+			],
+			"devDependencies": {
+				"coveralls": "^2.11.2",
+				"flow-bin": "^0.49.1",
+				"istanbul": "^0.4.5",
+				"jest": "^20.0.4",
+				"promise": "^8.0.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^2.1.3",
+				"typescript": "^2.3.4"
+			},
+			"scripts": {
+				"tsc": "tsc --noEmit",
+				"flow": "flow",
+				"test": "node test/index.js && npm run test:types && node test/browser.js",
+				"test:types": "jest",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "185faa1a7cf19b2dde8d1f5acaa1fed23b576107",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@4.1.0",
+			"_shasum": "89037cbc92c56ab18926e6ba4cbb200e15672a6a",
+			"_from": ".",
+			"_npmVersion": "4.6.1",
+			"_nodeVersion": "8.0.0",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"dist": {
+				"shasum": "89037cbc92c56ab18926e6ba4cbb200e15672a6a",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-4.1.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/throat-4.1.0.tgz_1499385711702_0.8979995066765696"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"5.0.0": {
+			"name": "throat",
+			"version": "5.0.0",
+			"description": "Throttle the parallelism of an asynchronous (promise returning) function / functions",
+			"keywords": [
+				"promise",
+				"aplus",
+				"then",
+				"throttle",
+				"concurrency",
+				"parallelism",
+				"limit"
+			],
+			"devDependencies": {
+				"coveralls": "^3.0.0",
+				"flow-bin": "^0.73.0",
+				"istanbul": "^0.4.5",
+				"jest": "^22.1.4",
+				"promise": "^8.0.0",
+				"sauce-test": "^1.0.0",
+				"test-result": "^2.0.0",
+				"testit": "^3.1.0",
+				"typescript": "^3.4.5"
+			},
+			"jest": {
+				"testEnvironment": "node"
+			},
+			"scripts": {
+				"tsc": "tsc --noEmit",
+				"flow": "flow",
+				"test": "node test/index.js && npm run test:types && node test/browser.js",
+				"test:types": "jest",
+				"coverage": "istanbul cover test/index.js",
+				"coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ForbesLindesay/throat.git"
+			},
+			"author": {
+				"name": "ForbesLindesay"
+			},
+			"license": "MIT",
+			"gitHead": "871d50118f07c0a54f670644cafb2f7155891f60",
+			"bugs": {
+				"url": "https://github.com/ForbesLindesay/throat/issues"
+			},
+			"homepage": "https://github.com/ForbesLindesay/throat#readme",
+			"_id": "throat@5.0.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.15.3",
+			"_npmUser": {
+				"name": "forbeslindesay",
+				"email": "forbes@lindesay.co.uk"
+			},
+			"dist": {
+				"integrity": "sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==",
+				"shasum": "c5199235803aad18754a667d659b5e72ce16764b",
+				"tarball": "https://registry.npmjs.org/throat/-/throat-5.0.0.tgz",
+				"fileCount": 6,
+				"unpackedSize": 8901,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc6ADdCRA9TVsSAnZWagAAKKQQAI6eRgF/lgWMnWzCiP2a\n8FQ6PJ1m3dvvpemckVnB1Pe/9oALY/Ft3OrhtstMmjTNWavbztYEEld2kcQh\nEpoPboeHxCUT5i+w04ECrv8BNj4qSUFtq3pGqN4Cw/kaJZNxAlneF2LvQvGc\n8gz6bmrwtqfEmhyvMG02iWw6VhUK3hPkOFDd7kpSQF5gZL9XiK0qPdjTJhdr\n+BXknK+lqLN4HcEejZxE/EHpgrUv9k1SRyK1/YYDtjm0BceG7DqtWTS5TUr9\nBzgEc/TpOKpEZrSTtfZpniXX+wixfEVk02RThiVdaMKvsThOHsfvfeOkiFUS\nS5Vqmv6I5qLc5BWll3n9xsmUdrfKDEmnMkuSRwkVRLCEm/VMm4EO47SFjF2E\ng9wwF/nUIbwXWUd23Q1ZDFhDirL1JdY2Cqz9KOLrlJFgY3nEt6H9DM8Q1EDn\n3QpnhyofE/fFUML/gKzuzB6GNqWvp5CtrFkOlPxV4AI+9NgOUVCS2S0K/NBA\nAjg3ssk+X5eIjUgW6bG2hlIEU/Nl4PFgt7DcrbvUN4QzfkcLQNj40zAcsVdm\nlD2pd9eVF+KN+Nfde7HidzYZsR5aT616tONdJVAtc4iTGX3pxeYcTRx0emJW\nO5U48c1A0wLPWI0MC+RRdIFt00vfO7q23JbJOvOaeZBxA3IoAgxxo2+S/XNF\nFPaW\r\n=4ZAQ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "forbeslindesay",
+					"email": "forbes@lindesay.co.uk"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/throat_5.0.0_1558708444315_0.6548170732872463"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-05-24T14:34:08.947Z",
+		"created": "2012-12-23T00:17:08.786Z",
+		"0.0.0": "2012-12-23T00:17:11.379Z",
+		"1.0.0": "2013-07-27T01:28:08.597Z",
+		"2.0.0": "2015-02-14T11:40:40.469Z",
+		"2.0.1": "2015-02-14T12:55:25.270Z",
+		"2.0.2": "2015-02-16T09:39:45.954Z",
+		"3.0.0": "2016-06-01T10:43:48.228Z",
+		"3.1.0": "2017-06-04T19:30:57.963Z",
+		"3.2.0": "2017-06-13T13:04:50.148Z",
+		"4.0.0": "2017-06-20T10:06:37.243Z",
+		"4.1.0": "2017-07-07T00:01:52.628Z",
+		"5.0.0": "2019-05-24T14:34:04.404Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "5.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"3888bb5b455edd0c95bc48eabb8b7cda\"",
+			"fetched": 1577117293817
+		}
+	},
+	"_distfiles": {
+		"throat-0.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-0.0.0.tgz",
+			"sha": "2bf638b8824510e14b1348f318deb01c06bd9478",
+			"registry": "npmjs"
+		},
+		"throat-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-1.0.0.tgz",
+			"sha": "04c9e0f9ce88e250db630fdeabc2e5bb152a0625",
+			"registry": "npmjs"
+		},
+		"throat-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-2.0.0.tgz",
+			"sha": "720d03e0f270e4452d87a345025412e35883e24c",
+			"registry": "npmjs"
+		},
+		"throat-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-2.0.1.tgz",
+			"sha": "ae9034aeb023cfee3c2d080653f20936b15711e8",
+			"registry": "npmjs"
+		},
+		"throat-2.0.2.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-2.0.2.tgz",
+			"sha": "a9fce808b69e133a632590780f342c30a6249b02",
+			"registry": "npmjs"
+		},
+		"throat-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-3.0.0.tgz",
+			"sha": "e7c64c867cbb3845f10877642f7b60055b8ec0d6",
+			"registry": "npmjs"
+		},
+		"throat-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-3.1.0.tgz",
+			"sha": "ef22d8855963b3fdc626d043508f24c4cdf7d3c3",
+			"registry": "npmjs"
+		},
+		"throat-3.2.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-3.2.0.tgz",
+			"sha": "50cb0670edbc40237b9e347d7e1f88e4620af836",
+			"registry": "npmjs"
+		},
+		"throat-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-4.0.0.tgz",
+			"sha": "e8d397aeb3f335c3bae404a83dc264b813a41e1b",
+			"registry": "npmjs"
+		},
+		"throat-4.1.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-4.1.0.tgz",
+			"sha": "89037cbc92c56ab18926e6ba4cbb200e15672a6a",
+			"registry": "npmjs"
+		},
+		"throat-5.0.0.tgz": {
+			"url": "https://registry.npmjs.org/throat/-/throat-5.0.0.tgz",
+			"sha": "c5199235803aad18754a667d659b5e72ce16764b",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-ca97d62a1e8a6070",
+	"_id": "throat",
+	"readme": "# throat\n\nThrottle the parallelism of an asynchronous, promise returning, function / functions.  This has special utility when you set the concurrency to `1`.  That way you get a mutually exclusive lock.\n\n[Professionally supported throat is now available](https://tidelift.com/subscription/pkg/npm-throat?utm_source=npm-throat&utm_medium=referral&utm_campaign=readme)\n\n[![Build Status](https://img.shields.io/travis/ForbesLindesay/throat/master.svg)](https://travis-ci.org/ForbesLindesay/throat)\n[![Coverage Status](https://img.shields.io/coveralls/ForbesLindesay/throat/master.svg?style=flat)](https://coveralls.io/r/ForbesLindesay/throat?branch=master)\n[![Dependency Status](https://img.shields.io/david/ForbesLindesay/throat.svg)](https://david-dm.org/ForbesLindesay/throat)\n[![NPM version](https://img.shields.io/npm/v/throat.svg)](https://www.npmjs.com/package/throat)\n[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/throat.svg)](https://greenkeeper.io/)\n\n## Installation\n\n    npm install throat\n\n## API\n\n### throat(concurrency)\n\nThis returns a function that acts a bit like a lock (exactly as a lock if concurrency is 1).\n\nExample, only 2 of the following functions will execute at any one time:\n\n```js\nconst throat = require('throat')(2);\n// alternatively provide your own promise implementation\nconst throat = require('throat')(require('promise'))(2);\nconst promise = Promise.resolve();\n\nconst resA = throat(() => /* async stuff... */ promise);\nconst resB = throat(() => /* async stuff... */ promise);\nconst resC = throat(() => /* async stuff... */ promise);\nconst resD = throat(() => /* async stuff... */ promise);\nconst resE = throat(() => /* async stuff... */ promise);\n```\n\n### throat(concurrency, worker)\n\nThis returns a function that is an exact copy of `worker` except that it will only execute up to `concurrency` times in parallel before further requests are queued:\n\n```js\nconst throat = require('throat');\n// alternatively provide your own promise implementation\nconst throat = require('throat')(require('promise'));\n\nconst input = ['fileA.txt', 'fileB.txt', 'fileC.txt', 'fileD.txt'];\nconst data = Promise.all(input.map(throat(2, fileName => readFile(fileName))));\n```\n\nOnly 2 files will be read at a time, sometimes limiting parallelism in this way can improve scalability.\n\n## Security contact information\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.\n\n## License\n\n  MIT"
+}

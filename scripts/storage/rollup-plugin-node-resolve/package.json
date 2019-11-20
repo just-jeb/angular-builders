@@ -1,0 +1,3381 @@
+{
+	"name": "rollup-plugin-node-resolve",
+	"versions": {
+		"1.4.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.4.0",
+			"devDependencies": {
+				"babel-preset-es2015": "^6.3.13",
+				"babel-preset-es2015-rollup": "^1.0.0",
+				"babel-register": "^6.3.13",
+				"es5-ext": "^0.10.11",
+				"eslint": "^1.7.3",
+				"mocha": "^2.3.3",
+				"rollup": "^0.22.0",
+				"rollup-plugin-babel": "^2.2.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha --compilers js:babel-register",
+				"pretest": "npm run build",
+				"build": "rollup -c -f cjs -o dist/rollup-plugin-node-resolve.cjs.js && rollup -c -f es6 -o dist/rollup-plugin-node-resolve.es6.js",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "266c9574939f9fd86381d2c6c6ca936cfcb474b7",
+			"_id": "rollup-plugin-node-resolve@1.4.0",
+			"_shasum": "2724e89e26612e9863abbaa54fc0548bbc2f7b4f",
+			"_from": ".",
+			"_npmVersion": "3.3.12",
+			"_nodeVersion": "5.5.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "2724e89e26612e9863abbaa54fc0548bbc2f7b4f",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-9-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.4.0.tgz_1454803649381_0.5418599329423159"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.5.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.5.0",
+			"devDependencies": {
+				"babel-preset-es2015": "^6.3.13",
+				"babel-preset-es2015-rollup": "^1.0.0",
+				"babel-register": "^6.3.13",
+				"es5-ext": "^0.10.11",
+				"eslint": "^1.7.3",
+				"mocha": "^2.3.3",
+				"rollup": "^0.22.0",
+				"rollup-plugin-babel": "^2.2.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha --compilers js:babel-register",
+				"pretest": "npm run build",
+				"build": "rollup -c -f cjs -o dist/rollup-plugin-node-resolve.cjs.js && rollup -c -f es6 -o dist/rollup-plugin-node-resolve.es6.js",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "c9fa515ced055a48bf36206f380274416f618e76",
+			"_id": "rollup-plugin-node-resolve@1.5.0",
+			"_shasum": "b3e433f36d636afed4379b5a47dd7c98c5d930c7",
+			"_from": ".",
+			"_npmVersion": "3.6.0",
+			"_nodeVersion": "5.6.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "b3e433f36d636afed4379b5a47dd7c98c5d930c7",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.5.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-13-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.5.0.tgz_1457276579777_0.9035094580613077"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.6.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.6.0",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "f852cdd2c36abacad864cba7178d5e2e0dece309",
+			"_id": "rollup-plugin-node-resolve@1.6.0",
+			"_shasum": "917efb2620573282df5418a534f45a6c601abd4f",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "917efb2620573282df5418a534f45a6c601abd4f",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.6.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.6.0.tgz_1465315940633_0.8788296312559396"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.7.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.7.0",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "4cb27187dfb361bc269a6f20252a02ff86168c74",
+			"_id": "rollup-plugin-node-resolve@1.7.0",
+			"_shasum": "c6e03900c0752a052d31daccab861423935b6f43",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "c6e03900c0752a052d31daccab861423935b6f43",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.7.0.tgz_1465326464873_0.18260760023258626"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.7.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.7.1",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "3c62de1a7c9e5cc72fbdf8f0af1b7d9e2d69d4f7",
+			"_id": "rollup-plugin-node-resolve@1.7.1",
+			"_shasum": "f9d71fa9bc15d84b8d23ac6bfb04a6a6ef2a0a35",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "f9d71fa9bc15d84b8d23ac6bfb04a6a6ef2a0a35",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.7.1.tgz_1466712710858_0.564268653281033"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.7.2": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.7.2",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "41d43af05dbb77798e42d6211673381a62d0c5ff",
+			"_id": "rollup-plugin-node-resolve@1.7.2",
+			"_shasum": "6be31fbdaf21c9694947b305c7e7cd12cc72027c",
+			"_from": ".",
+			"_npmVersion": "3.9.5",
+			"_nodeVersion": "0.12.14",
+			"_npmUser": {
+				"name": "trysound",
+				"email": "trysound@yandex.ru"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"dist": {
+				"shasum": "6be31fbdaf21c9694947b305c7e7cd12cc72027c",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.2.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.7.2.tgz_1469745112724_0.4864513734355569"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"1.7.3": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "1.7.3",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"test": "mocha",
+				"pretest": "npm run build",
+				"build": "rollup -c",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "10ba8fc1a1c0a1bef1d3b0fa1dc6a83fe1acf3ba",
+			"_id": "rollup-plugin-node-resolve@1.7.3",
+			"_shasum": "7212f2c371b8499fcfb0a1772431931b240f12e4",
+			"_from": ".",
+			"_npmVersion": "3.9.5",
+			"_nodeVersion": "0.12.14",
+			"_npmUser": {
+				"name": "trysound",
+				"email": "trysound@yandex.ru"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"dist": {
+				"shasum": "7212f2c371b8499fcfb0a1772431931b240f12e4",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.3.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-1.7.3.tgz_1469974886036_0.7426346419379115"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "2.0.0",
+			"devDependencies": {
+				"buble": "^0.10.6",
+				"es5-ext": "^0.10.11",
+				"eslint": "^2.11.1",
+				"mocha": "^2.3.3",
+				"rollup": "^0.27.1",
+				"rollup-plugin-buble": "^0.10.0",
+				"rollup-plugin-commonjs": "^2.0.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es6.js",
+			"scripts": {
+				"pretest": "rollup -c",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test"
+			},
+			"files": [
+				"src",
+				"dist",
+				"README.md"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "3befb3ba9856a375881708258e39c7c7a7d63e86",
+			"_id": "rollup-plugin-node-resolve@2.0.0",
+			"_shasum": "07e0ae94ac002a3ea36e8f33ca121d9f836b1309",
+			"_from": ".",
+			"_npmVersion": "3.9.5",
+			"_nodeVersion": "0.12.14",
+			"_npmUser": {
+				"name": "trysound",
+				"email": "trysound@yandex.ru"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"dist": {
+				"shasum": "07e0ae94ac002a3ea36e8f33ca121d9f836b1309",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.0.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-2.0.0.tgz_1469979971377_0.5654256283305585"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "2.1.0",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"pretest": "rollup -c",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "7c616ef97a3f84f5ee6b46d08fbe4a5a30717a16",
+			"_id": "rollup-plugin-node-resolve@2.1.0",
+			"_shasum": "f182a71a2b705129210444a4b74696768baf0515",
+			"_from": ".",
+			"_npmVersion": "4.0.5",
+			"_nodeVersion": "7.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "f182a71a2b705129210444a4b74696768baf0515",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-2.1.0.tgz_1490921465800_0.5745780027937144"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"2.1.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "2.1.1",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"pretest": "rollup -c",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "c9443734e80436bc4881121049c95ab9de8e3464",
+			"_id": "rollup-plugin-node-resolve@2.1.1",
+			"_shasum": "cbb783b0d15b02794d58915350b2f0d902b8ddc8",
+			"_from": ".",
+			"_npmVersion": "4.2.0",
+			"_nodeVersion": "7.8.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "cbb783b0d15b02794d58915350b2f0d902b8ddc8",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.1.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-2.1.1.tgz_1490987339793_0.8420666337478906"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.0.0",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"browser-resolve": "^1.11.0",
+				"builtin-modules": "^1.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "0e0b429e9c6020fd0e895c56df9d26d58ab03e4e",
+			"_id": "rollup-plugin-node-resolve@3.0.0",
+			"_shasum": "8b897c4c3030d5001277b0514b25d2ca09683ee0",
+			"_from": ".",
+			"_npmVersion": "4.0.5",
+			"_nodeVersion": "7.2.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"shasum": "8b897c4c3030d5001277b0514b25d2ca09683ee0",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/rollup-plugin-node-resolve-3.0.0.tgz_1491023846501_0.775156058371067"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.0.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.0.1",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^1.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "1bea2adab3889e11caf7d191e3ee718cddb0ccae",
+			"_id": "rollup-plugin-node-resolve@3.0.1",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "9.1.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-tmFkiOCWR7FJDDEUWSnF7M+dVN7zJdMP+xvbh1a4REAF0/biJY4Z8wdRBmu5TO6WKGcfAdwrscDPIKC8vtDF1Q==",
+				"shasum": "fd9dd3de196d595a739dbce4bd60578cafb41da0",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve-3.0.1.tgz_1515606462829_0.5333810565061867"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.0.2": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.0.2",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^1.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "1b26066a811739c8e256935ed2fc44b4e2ccb762",
+			"_id": "rollup-plugin-node-resolve@3.0.2",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "9.1.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-ZwmMip/yqw6cmDQJuCQJ1G7gw2z11iGUtQNFYrFZHmqadRHU+OZGC3nOXwXu+UTvcm5lzDspB1EYWrkTgPWybw==",
+				"shasum": "38babc12fd404cc2ba1ff68648fe43fa3ffee6b0",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve-3.0.2.tgz_1515617466996_0.7023381222970784"
+			},
+			"directories": {},
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.0.3": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.0.3",
+			"devDependencies": {
+				"buble": "^0.15.2",
+				"es5-ext": "^0.10.11",
+				"eslint": "^3.18.0",
+				"mocha": "^3.0.2",
+				"rollup": "^0.41.6",
+				"rollup-plugin-buble": "^0.15.0",
+				"rollup-plugin-commonjs": "^8.0.2",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^0.2.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"prepublish": "npm test",
+				"lint": "eslint src"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^1.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "19fd5872fe89e28daa3abd9c4008441373fca042",
+			"_id": "rollup-plugin-node-resolve@3.0.3",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "9.1.0",
+			"_npmUser": {
+				"name": "rich_harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-qJLXJ1aASV6p8SrEfRdQdHmb5OQmqXyIWIdVGcju8QFzftSsHcuL554Vy+n8mr0fZCC+ksO6aWJ7TAVl2F+Qwg==",
+				"shasum": "8f57b253edd00e5b0ad0aed7b7e9cf5982e98fa4",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.3.tgz",
+				"fileCount": 7,
+				"unpackedSize": 22617
+			},
+			"maintainers": [
+				{
+					"name": "rich_harris",
+					"email": "richard.a.harris@gmail.com"
+				},
+				{
+					"name": "trysound",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_3.0.3_1518620088777_0.6144633133741468"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.1.0",
+			"devDependencies": {
+				"buble": "^0.19.3",
+				"es5-ext": "^0.10.39",
+				"eslint": "^4.18.0",
+				"mocha": "^5.0.1",
+				"rollup": "^0.56.3",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-commonjs": "^8.3.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^2.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "848c3719b09488d1b600be205b19505966e9d2cd",
+			"_id": "rollup-plugin-node-resolve@3.1.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "keithamus",
+				"email": "npm@keithcirkel.co.uk"
+			},
+			"dist": {
+				"integrity": "sha512-i/vXzry0Fr0k4bo8DV2dyP19rgRR+tfalLAbgtUOCzwPjJTA1inlQDBxuex8wzj6focGwbntRX/4HkvrtkGzlA==",
+				"shasum": "3073a28525a67e6890d029eea8b4c563d355beca",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.1.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 23735
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_3.1.0_1520418002461_0.6434200730602666"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.2.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.2.0",
+			"devDependencies": {
+				"buble": "^0.19.3",
+				"es5-ext": "^0.10.39",
+				"eslint": "^4.18.0",
+				"mocha": "^5.0.1",
+				"rollup": "^0.56.3",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-commonjs": "^8.3.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^2.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "f2676209e4bfa6eded23e6f36bd2f9279e6fa1a2",
+			"_id": "rollup-plugin-node-resolve@3.2.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "keithamus",
+				"email": "npm@keithcirkel.co.uk"
+			},
+			"dist": {
+				"integrity": "sha512-stvVrKaQiNu65ObGJLCHyHH/NXjiPMt/ZHwvl444KgJPrii1zCgyg+NTK2Uy6WExL+OuUWdHd7T8EoPQDtYEkw==",
+				"shasum": "31534952f3ab21f9473c1d092be7ed43937ea4d4",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.2.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 27213
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_3.2.0_1520418557581_0.3155870873694002"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.3.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.3.0",
+			"devDependencies": {
+				"buble": "^0.19.3",
+				"es5-ext": "^0.10.39",
+				"eslint": "^4.18.0",
+				"mocha": "^5.0.1",
+				"rollup": "^0.56.3",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-commonjs": "^8.3.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"files": [
+				"src",
+				"dist"
+			],
+			"dependencies": {
+				"builtin-modules": "^2.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "7846a19da76e84f81f349162e6cf281550f6a67d",
+			"_id": "rollup-plugin-node-resolve@3.3.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "9.8.0",
+			"_npmUser": {
+				"name": "keithamus",
+				"email": "npm@keithcirkel.co.uk"
+			},
+			"dist": {
+				"integrity": "sha512-9zHGr3oUJq6G+X0oRMYlzid9fXicBdiydhwGChdyeNRGPcN/majtegApRKHLR5drboUvEWU+QeUmGTyEZQs3WA==",
+				"shasum": "c26d110a36812cbefa7ce117cadcd3439aa1c713",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 28340
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_3.3.0_1521312997708_0.7870755610804279"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"3.4.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "3.4.0",
+			"devDependencies": {
+				"buble": "^0.19.3",
+				"es5-ext": "^0.10.39",
+				"eslint": "^4.18.0",
+				"mocha": "^5.0.1",
+				"rollup": "^0.56.3",
+				"rollup-plugin-buble": "^0.19.2",
+				"rollup-plugin-commonjs": "^8.3.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"builtin-modules": "^2.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.1.6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "341037adee274bf6b5c197f22ef505a3c60f0ff0",
+			"_id": "rollup-plugin-node-resolve@3.4.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "keithamus",
+				"email": "npm@keithcirkel.co.uk"
+			},
+			"dist": {
+				"integrity": "sha512-PJcd85dxfSBWih84ozRtBkB731OjXk0KnzN0oGp7WOWcarAFkVa71cV5hTJg2qpVsV2U8EUwrzHP3tvy9vS3qg==",
+				"shasum": "908585eda12e393caac7498715a01e08606abc89",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.4.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 29074,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjmKYCRA9TVsSAnZWagAAzpoP/0VADBRHLRpnHds7i89r\nuxk4WNZAERYrHF+ZPRoW3Lg1GadA38PIsfU2c5DwEo2D03AkwgQZT71SfRuS\nY7T+OxLekIaOfhopoXRKVkilgBqlAcReIQdfj45iwodyxByVGO6o8F5s0fHH\n0+20y91UVo98zitIB6zu3jtwWEAtQiDC1IVQsPoNIafV/av2/kXCIVFperCK\nhV96xwPcMHdMNntgwa2oTeZRMM3omSV1Yh15M4q8oaTQmrH2vWuS4IxhX1yG\nWFLour3RTNzXwe8Nm5tQnlrxPyfpuBsXwcsW8ZpLWLf48WqUiW/a8lm/0qiB\n56d5hgscME1vD29+wItwEpV8fjhnFrlFpCJFtT1al+SoEsNKKhB4EKWtWqLe\ntCn+FI9505+4LRog4qUxry8y+0SI+coDcTvmyt3acmdIQ5pfQ9zJ+v/iU+0U\nAKkPBAeNgKk3F5uh/Mr6CCtSA8R92aWY3zcUwaZxQf6D5E67EjHqVJTOzPiT\nnYbsYuCoC/x5ZLL4SGzsFPBdpYpW1LnIMQaMlPS4i/IKHIvxWdd8DeDPr/0N\nMt0hxAZDjwW3UfPsrLNRKl4fsLNspRqgVSb7BUod5P1Pw6HPu8Wld2/PV9a9\ndiUzP66ej0+4G80yRxNlcSQtMQ1GMjrVs4fziYdSjXIrMZtKJ7e42V7ZdO4i\nhnV8\r\n=HlNP\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_3.4.0_1536058007466_0.21135799547155631"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.0.0",
+			"devDependencies": {
+				"buble": "^0.19.6",
+				"es5-ext": "^0.10.46",
+				"eslint": "^5.10.0",
+				"mocha": "^5.2.0",
+				"rollup": "^0.67.4",
+				"rollup-plugin-buble": "^0.19.4",
+				"rollup-plugin-commonjs": "^9.2.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.8.1"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "73b01b1d96d95021af5fb5026e0a9ea946448cb0",
+			"_id": "rollup-plugin-node-resolve@4.0.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.7.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-7Ni+/M5RPSUBfUaP9alwYQiIKnKeXCOHiqBpKUl9kwp3jX5ZJtgXAait1cne6pGEVUUztPD6skIKH9Kq9sNtfw==",
+				"shasum": "9bc6b8205e9936cc0e26bba2415f1ecf1e64d9b2",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 29447,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcDRCnCRA9TVsSAnZWagAAlkMP/3iVhZL1I1bsLSFabH5D\nBK8+4JB1urblsQxbx6XJDpz8ReZaqQ9uaM3CMeTHrrBsYzDp5RuhlpZ6zbgU\nDDqpJDtGlR78Gi6weN73YQBOKdVcj7/uOb95vUAq4Gz1+OIb3ab2uxO+AEN8\nJo25H82VS8985nxiDkX5LgvIpKMlEby/Omxfixb+AKG/UDzM3Dkh5D8xaRvx\n3MfUUSKcrcrux/po0FcZ6adKEYOHeAhzPASdfevo5QhmxAUXnhYE7HyVK3SL\nTyZ0417B4wJs3dOvhij02n9AVtpgBRQxrQhyY1Udr6yRGxGoOxMowU0Qr0Yo\nBDhpNSlRZcCVsJLTwH8KWcSnEvMvdkDlnB/P51h+XbJHW4I0gdVHne8lYRrh\nE2PsBCd8hA8r5pbTIv3HfZrQ7uoIA9zkFtSOMzHALv/KKw/ITyB+qmg6Kumk\nk2jce9/QqrYRz7b1esSo5WggJYlPl0qHpCNd+Myilf20CyppcxiabT93qSrv\ngQsYoH0+jKF45fOoRolrQV4fMCFC68PxtQsAN6wLaBo80pgwT9XtCp5AeYRp\nybpADBq7tyq/ezEsE2Zodr2LHdw/hmnmhnsJrO0Xt+Vjuq86JkA/NdCfX1R6\nDYfjayMmrHo/8kiaxMrXNABegoLfPtlXCTTpXc1/KqLYKG5Kq+abTHGyU4S1\n7fKz\r\n=qTNg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.0.0_1544360103218_0.5078188162517197"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.0.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.0.1",
+			"devDependencies": {
+				"buble": "^0.19.6",
+				"es5-ext": "^0.10.47",
+				"eslint": "^5.14.1",
+				"mocha": "^6.0.0",
+				"rollup": "^1.2.2",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.2.0",
+				"string-capitalize": "^1.0.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "f8dfa5770b1bfffd7c97ba2923d58a5d8ac4d4ac",
+			"_id": "rollup-plugin-node-resolve@4.0.1",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.8.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-fSS7YDuCe0gYqKsr5OvxMloeZYUSgN43Ypi1WeRZzQcWtHgFayV5tUSPYpxuaioIIWaBXl6NrVk0T2/sKwueLg==",
+				"shasum": "f95765d174e5daeef9ea6268566141f53aa9d422",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.1.tgz",
+				"fileCount": 7,
+				"unpackedSize": 30496,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcb52uCRA9TVsSAnZWagAAJhUP/RB1KPOyav/8As7xlHdm\nf7yoO4pS+sa17HpLhi+QiqOY5DN7Xrw37EC9iljc1nwSWcmWJuEx9NwmqT9G\nqYgk1jMTcPVQFTi8seBJCCopSAXf5kMiSSN8h9kdB2rlfB0803VZYBjxTzOn\nl1qzsiCcVnd87Gu1vw/M6+yEJ1ibnhAtvlCB731/nheb9hsg6+wHU8plCP6N\nF22Q/1E+CCB2WxwK9sBxed636DeA0WH/xkxzEOpzCYCimtIhtCneRx9JUPIx\n5Vt6agCdz8WTOHKc0bv2Bz6OzhwokOKxvYs9WNc5f9+TwvplWpfPiKtKoqhY\nDjBkf9kBSahgTupw7Qe4qBMY3NPVKpY4wSXAey01mIGqrIpEzOm7gc0NTxSQ\nHXHpMk0RSvMmHWT1drg1Hau96RJUBGZtXJmkhQRjBpRDdBOObSt+e5HwhrhS\nXPFZtrebdfDxFym7glwF1CnEkCPU7WpSCGmkySemevWW9KI04rg9CiQtow+v\nwkPmF90BZDjnROa09KbicqfZ9Qc8/g7cmhXDAn+WRmO/qV1fQA8LEmJVW46J\nBLqFefFBYHPmVVHtBs3e3GOlL/xAXpd+L4a4Rs+ipdztck46FL9UN78VjBNh\nycSA3MxuwFmvat16ZWRyLWELRRvTTZ1Ij+deFefKUsfznHJx39xCh6ZKQgVH\n9Nu4\r\n=Dszp\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.0.1_1550818733526_0.7621609503044622"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.1.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.1.0",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.0.2",
+				"rollup": "^1.8.0",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "5fa2cf6dc2163e44eeb9c400f93746c9950b264c",
+			"_id": "rollup-plugin-node-resolve@4.1.0",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-N7eBrK0gpdAVQTk5SmsO2h39LlLQMNXalu6Mo6RGWx/hZtq0+gwssT+W2IdF9im2rDNGjUF7HLnxMd9uLiI5+Q==",
+				"shasum": "2f1534c0057b2db0219d271daf887c4e062a7e56",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.1.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 32928,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpvOQCRA9TVsSAnZWagAAFq0P/iZwRUQ6cn19HfEbtL8n\n7S4xWgsW0Y8zwCUUT+i+WWBakeKE/9pkUoVNczKbG0mUtS1tmxRPojHF4pPj\nERou4vSZZNh4o1COwTI5jaqm3qZhVMI9CW0uzf2hsnQiXBVsXCwvfJCcQ05u\nxnkfmRGR0sp6t3xOvzrv9PYkHt+nnc21leBp0rNeMkN1DKXE10X7yGFMr5ew\nDxAFQS3cRCUiecmIzuiyht3htx5QfyfPajHn8W+sYwQtMFS4C1Pg0IxdYmVa\npEMelte/2FbH9iAubGW4WNoCbA+o78cco1eDLH/JTeRO5QH0B6nwbqwy3p8K\nsdZJwGWEUKOuGHQRnf7LCFh5qbMgK2p+IbjbKKIQDuKKLZcjN+u0kzuhhwir\nmsjtAZvf3xaifoEGXf2CjzGhWZmHrO6Zb+YnQHkJWL+CKIMc98PLdA3ck6gD\n6/n5Mw5FI0DlvSO8mP66lDinU+A4YxGtdv4+rI3aC9uAV6OPWoitntRePYH0\nznsIMz6UnxTUTo0SdsnoioiMYY1C79OlNLG+eWGU/S0nXZo8kmt4Tc5UFJxi\nMX2R3SqsvoKmYbDB6TW3SJ8aVjDm0QdyG7N0yx3MrvRHfUeQHNE37+7Sr28P\n8S26vQqMIYsb+GucPWjMKxBx0p27H3Es8Acj8ZWQUSoX0Bca98NfGMbQHGOV\nCLiB\r\n=tK3O\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.1.0_1554445199217_0.5049083831858785"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.2.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.2.0",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.0.2",
+				"rollup": "^1.8.0",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "234475757dd7799485e60c1d5712e0eed760a710",
+			"_id": "rollup-plugin-node-resolve@4.2.0",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-JhD9hcOFv4oPQ5zViwP3Z79WSXCvcoSDmtZ1tn2pOKry28+XpoRRzWZHp5qz1aPKtTHRLRoMMnrMxnwDhbtuUw==",
+				"shasum": "f1f38392a97360195be04d3c3d791ddd9715d755",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 37980,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqFapCRA9TVsSAnZWagAAE1gP/0nP9BlQRXoA2YjXp3GG\ng7di+oUGtFMMCrrwUz0FCuVOZQ/lllC6MwHR/IA1r8eRyCdlhLdZ/zCKR/hC\nzrWwLrlc6cfFwlzij04h/CB7WH4xhUAZklAJq3I3+UR0hcd6F4l/uxFmGW6S\nDjo3rf3XdIzecl9EBDkD/Cjdp7uYJVl/h1Xsho63Se+TqKvvHqL7bE429+hp\nB+1DibXeAkEheTZHo+DaqVIfUKRNlilmwvkzM5o+pIgnVPyvCwmGnOyQVFFb\nGn/0j2/s9W8xwdS1DVsvNGggSlq8703903Fc+/8umuCHVXs/WO2lmZfZMY7a\nuV1WT3j+vB/ndU1wfGPBQBAlTt3xEzQ8hNLpOvgVOL1EvpV20A4BlU6f9zn8\nTF87BJNICg3q4UXhiFxiY85Crjh5VFYZaapuv1rpJDJw4QwWSwOLawpOI15I\nSW0L0fP8DlMMvKQJay2Hyo1p6KjfnhgmrR4KR9uAuQYDbji257U+x8Hgo3Zw\n8o+UtnqNMAzDDjODcmupqF0JL8FSxNz5dLEnRU6qXizBZa7OMht0IthmDvbU\nkGCold1MdMPexqT+plgLclGYTs7SVN49P5ZtwjGC1dsHMXK0LdARXf8WJt4G\ntdECjywe22uFZi1IxTANBPDWx5WwFt8bXayKgUIJKrxLOReH1EUH7xfa8mDs\nZDCj\r\n=srOv\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.2.0_1554536105220_0.10149984678869961"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.2.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.2.1",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.0.2",
+				"rollup": "^1.8.0",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "e222b6445ae73832ff9df2c67418608be75efd6d",
+			"_id": "rollup-plugin-node-resolve@4.2.1",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-zf2dcKBSv9KSnNbAPDYzwLpeI4Lc4bOsNlaRsq3ud80zquxWdu9iYA0ZgmHxFjBkbt8uHzXCGC4FkkejtngKng==",
+				"shasum": "a949f3082c9839ca586d0e893425d1f83ed01fcf",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.1.tgz",
+				"fileCount": 8,
+				"unpackedSize": 38165,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqRYMCRA9TVsSAnZWagAAnBMQAJ/YQibRXyU55zJCgMnh\nd4QXYK+Sbxdi9tySTLwgYEx/ztRxOSZ0wKjB44dhWQok35GOTy45sYGakimj\nmpXb0CB0lUcT3OnZDXBOpd5tYZpv/oUx7EMig4pB6yPBff1TDgja7mQTR6IE\nt43wlPaR5kXIAq7Yk6sMQVZQzisM4TJmdj8WbeYGiH+qcPRabpviyS/WI8Hp\nG/OQTk4R2PRfXLmoZFlL064hu25Nii8lPCaUaBFsoCKB2Xw1bhEqWkm3hNgp\nsaLotqhxRaxXyl3TEtn9bfI8a2cIqHvD3QxEj+Z4vXSos78r96A21GfH/MPB\nf491k9PSaSqIgmfmpDQy97R+ebatjn3EOuXoO54zEHBVg4UK9ikjnW1ATO4h\nZhUKhDDx6yVl6ifN6F2PoIQIZ8Nw1tzjzSEn/H2DD9k/f4njLeiMPKYhYKSP\ngHQc17wOyC95cyrjVo4OD37gw8RxvyOYqwda43r+4CMH8nx9K2nyzVAaXc4K\nLu32isKm41tyTm5jbKQ56iSNsWeZMEsemnsTKhdZqUA2ViDhpBYWH8BV+tWo\nc8uxqAKMG4VxczYu5PJhrG86xpurLXGq/b1lYWjRlnXAALcDZ5RNGFmvUbwB\nzuV3LnnA0L+vdlUfLXVJI5shlPESOq9mS1yhg/TLSFtnkli4ArdFoaIv+XwS\nuFFM\r\n=2zyx\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.2.1_1554585099861_0.12855336085125413"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.2.2": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.2.2",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.0.2",
+				"rollup": "^1.8.0",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.1",
+				"vlq": "^1.0.0"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.0.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "9736d867e9c9d8bda22669919f1b25485be347d6",
+			"_id": "rollup-plugin-node-resolve@4.2.2",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-fkTHihF4Tzc95ZotKJNZZgxZPzslj+twk6UNWSBn3ln1mSV55atjsi7CDODdw/NNlteaf/jjjvrAj62p7OQjaQ==",
+				"shasum": "590962b8568d8f7361c2b434e10bd8cb91556615",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.2.tgz",
+				"fileCount": 8,
+				"unpackedSize": 38413,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrXLACRA9TVsSAnZWagAAi3gP/RKXviFYQMdlcmR2CD23\nF2FfKSBdni0LtvmsiJeJSPXtEofUMBwW16EVGzccKBbnPuccvl4oCLRpDV3k\nwGBHWci4TipDngEqbcC4Cm4RCWwiPgRMagZVqQ9j+281oBOHCtZG1COnkti2\npsnroV+X3Khjcyrxw2SVdvA5b204fQ/QIjCKZ0WIrdOLRRlFTovkT/XcFC2j\nsaAAGgN/rfTkYCin41F1zbjdCSrBgJpB0bjuCQOOF+CB7vcizk5yPFPA1lJK\nUsCmP993jEvcrbepvASZH3MVmhvzfSCyNmiftefGctE3NbNj6WHQAzuXpz28\nB5nMGq+NQKCnenDExxnM4h4ABlkD3TkOGwwZN6df1cp6MRgbTL5DcyPdr3Vf\nvymudYo/poye4iGnub1T6kWinSTuGe17b0Q9PlJTonUgipo72d2jiNZeJotL\nHwyPzhVglejKxJWm9zZfGjvFB49O3TP/IX19w5ODmAijHMmLp77/Dj2p38cl\nrKf1KDZOmWq3luWc6Y/SzUFHz3UZf/RQqFi8mo9M6vmF9JPVOiWO44zCkbiP\nLtaqt2Z+iYloU3PssKhFR2mYqOonA33Zblt7AA4EWI1gK0vPpLOPy3F2DJH9\nA9KcE3qExI2XUyrfw2uxmXHSdX0lEwmljNz/E8ll6339gB+uURps0NfPSWpR\na3Nq\r\n=70pk\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.2.2_1554870975297_0.747647640945907"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.2.3": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.2.3",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.2",
+				"rollup": "^1.9.3",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.3"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "4ba2f87ebd586deb2efaba282dd7b2a6ed68a3c2",
+			"_id": "rollup-plugin-node-resolve@4.2.3",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-r+WaesPzdGEynpLZLALFEDugA4ACa5zn7bc/+LVX4vAXQQ8IgDHv0xfsSvJ8tDXUtprfBtrDtRFg27ifKjcJTg==",
+				"shasum": "638a373a54287d19fcc088fdd1c6fd8a58e4d90a",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.3.tgz",
+				"fileCount": 8,
+				"unpackedSize": 38319,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrtNkCRA9TVsSAnZWagAAMfkP/2Yz+oQeFP/YUy8ysLaK\nbQYDrNoohAMjjEqd1L4tOfn7LQg4jEJu3oFVGz02zDrCvKstRzQPz6hf+qeE\nwYAZqbQIAmByWB5WY3pPRctCF1MYCQOBrDaFIo4jlrtfU91ffSslMalr4GD5\nl6QcQs33BhVAagc0QPULcHS26DtozXMGFjLZXXpmtOUEzO5i1sNWaGPtELIF\noBS4gxXf3mMFaTJU/H9VJ8+/1m3DZ879J9e3ibEfd5cEY6006LBvijTh2P5D\ns0tFr0BX7+7DxLdsJbJsBSvhWOZ5cmBstheHbpv3iCEeCCQgZLanm9Oxm/Kk\nlqaPmfRA93Q4X5zxJyvLlxZewOhFfhjt48Tk91pSWp+jYs6DH1oG+/aJNKTC\nuq122PsEFifOOnJ9l31htb6vHoSV9U/ctJrjTMdWCSdx5ZSNqS0QJWd3tBoA\nyVsbVUx5tk3X9doYW6vhRHW6Lf9LPqtIers5FpU25qaO4s1C6Kd1US4mlGY0\ns2fhF878heIogxcw5HvlydE6VyQryFG7zwDpbxKiXltXmHZ0uKZg6Adf1hfv\naywnkQBlAVJ5FhxTwOcS88N4mC6Tg5qt7O3B4/cwr/cegDEAK3xxr0w+xNhO\nxU+COaQ6OKzFd1ge0GFHICKc1iAl+VcgwQXPneaVp+Rnkc2DmiAgdYzhc3Te\n6A7S\r\n=K+wN\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.2.3_1554961252157_0.8914415145713583"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"4.2.4": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "4.2.4",
+			"devDependencies": {
+				"buble": "^0.19.7",
+				"es5-ext": "^0.10.49",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.2",
+				"rollup": "^1.9.3",
+				"rollup-plugin-buble": "^0.19.6",
+				"rollup-plugin-commonjs": "^9.3.4",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.3"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "519ab43cb947ac376fcbb2ec80e44c206fdf630c",
+			"_id": "rollup-plugin-node-resolve@4.2.4",
+			"_nodeVersion": "10.7.0",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-t/64I6l7fZ9BxqD3XlX4ZeO6+5RLKyfpwE2CiPNUKa+GocPlQhf/C208ou8y3AwtNsc6bjSk/8/6y/YAyxCIvw==",
+				"shasum": "7d370f8d6fd3031006a0032c38262dd9be3c6250",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.4.tgz",
+				"fileCount": 8,
+				"unpackedSize": 39794,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc1nfxCRA9TVsSAnZWagAAw5AP/0M/AQIaDsvbvpMlnf7/\nj3H5H6OgXg04Ck33Ky2HisT99noGd8xrbk9p158IHEcjPwMU+n095HJclKQK\nwI9idzilQgFZqCk1s9yZgXtCFa9HvGyQMhgMG2Hd3lfzoWqfGnDpuPuqG9Oo\nv20ES2LL0wR8nHpFQX/VSDAKOX5lomxek9cgjqDAuxz/zN+aFvx5tavD2YBd\n1fW7lJng+jSbqxIa9MDUbl/96N4mjR6Yu+zu1Cn0hx6FhOP7/G55c/9IRn+e\nqknd5hgJhRL9WdUyY/EdakErb/uBJ6EM9u/Bizzk8K4fLDQGyjdG81Dm61ez\n+ATEipffrWJcrG/XqSbZW5XeN0B/vVksXINWlPCfws3NdbxEFBnPIG5tLNCs\nzgRzQaKXMBnUReliXPA9DYFD40LmQDrKAMcCymftlUfcPrISCXzyARqxnYxM\ns7zT7sPrq7CDKHGNEtWmEXBmtgqgNOS53EGU7lM2nGQg320b7DroMBBdm4jX\nijwYteNjYnsKu9uPVsgJ8rotv3wXlb4VFW+TIqfk7wCcU+4y+zyqCJPbkZ1f\neqfXl0TrbUfcSGaXgvyfgFzmIrg9pN8H5u5uBYM5Tw1jrQc0+V9HZD/3Eivz\ncfLkME14ifbJGbShZdBGRNAPfMDw7neJk6Xo/tBe0BOlAHRG6kCZ7aZBvTa4\n/6rF\r\n=Ru1W\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_4.2.4_1557559280844_0.19398631205597394"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.0.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.0.0",
+			"devDependencies": {
+				"@babel/core": "7.4.4",
+				"@babel/preset-env": "^7.4.4",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.12.0",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.4.5"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.10.1",
+				"rollup-pluginutils": "^2.7.0"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "07234b4cbff79399e0242da225cf905dc9452923",
+			"_id": "rollup-plugin-node-resolve@5.0.0",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-JUFr7DkFps3div9DYwpSg0O+s8zuSSRASUZUVNx6h6zhw2m8vcpToeS68JDPsFbmisMVSMYK0IxftngCRv7M9Q==",
+				"shasum": "754abf4841ed4bab2241551cba0a11d04c57f290",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 47447,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc282MCRA9TVsSAnZWagAAj58P/RB3po/GWDoMsyN4r96V\nuDkuomToChTWxrx1A8oOyr22bj1OJC/ruUVX0jh0gQu0VvNUHNzIaOMzQwwk\nc0qb4d1w/RaSvjnw56PW/JABC14d4H4L9iyvZGDJOfsmUd3GeuDNnT/0Lr3A\nGKnZlJj4YSKWj0+GFN704SC/U0n5UqWNd94y0JFQi3Q+tswWja5NLoc4syxm\nt69zTFzRA0lNF2Rna5utsDi3zeYfGaqiMo9cXQPjVUOopT8CvMAIwT+/hc/l\ny1L4nsVQUEZ51Q7u7BnjOUY5pCzq0MYQFj03k2oS+A3Oho7VZSe3UVo4HD/4\nTRa/R0I4jOHfHttIcTEhTnCquCT+jViWKJAiuoCXODgNR36VGv8IxfPnv03e\nzuVDor2nbChDkXsi/cSGf1/EIGM7KF+HZHdW4ZeYM/nV/tziJy/PbLTcnxZb\nBdQp7PDzdpg4WI7ZWmVrZB6M3/g/IcVq8IAN1wjZy6w+zis6fO+HRXtQFvoT\nWaKsZLPC7tG8LU59enNdHAEuAfN1Q1NXSabRtLsr4SzeBJ6vdnhBcB/VgxK/\ndBHpgvHXfAk+I+kjywndbRo2CvEn1+jyP/I+CJ7QwmqZ4TAoCWWKpAueLZYR\nHFTT99rju9ZYUJt57kGRmRoJRviEsqk46+OOelqqbE28uZ6OJH42faYVigTg\nxh4l\r\n=dSjy\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.0.0_1557908875823_0.8743832348609926"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.0.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.0.1",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.13.0",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.0",
+				"rollup-pluginutils": "^2.8.0"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "9a47c451dc427c47c7c77a42d946d08d74aeb970",
+			"_id": "rollup-plugin-node-resolve@5.0.1",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-9s3dTu44SKQZM/Pwll42GpqXgT+WdvO0Ga01lF8cwZqJGqRUATtD+GrP3uIzZdpnbPonEJbVasfFt80VGPQqKw==",
+				"shasum": "4619eafdf2ecb4e8ed24177ba47d7f11f027d38b",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.1.tgz",
+				"fileCount": 8,
+				"unpackedSize": 47608,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc8OfzCRA9TVsSAnZWagAAeWoP/AiauSiTPJFTyjLtp97q\nWzz+QoqSIjER9mfbtqh5adWHDBWHJSjuuEyp60bWUr4aB3cXgEs3So6jFoX3\nxlx5hIBAg3EO6fJY7U6GWjpTrcw8knSc4K5cedSlK42doUrLrW7eV7nDC4ay\nBzx4CuI/9j18egeycpfqOlV7/Asn6TVuDoTFDTIk78S1dO7P26tzuuseKY0G\nfApbkVRAW8sOb5wM3keg9trFvHHzcrmk3xyEBPgss3AIHcJNo/VzNOJeGoCn\n6ALbf2HgFcrttooOkG9/fxeg9cXg3uXsUXz7zKgXegnd42ZZ/PqZ373ZWq8+\n1LGWhdF3wEmrImSRHMUKaMlUjjXRt+5Dc5A76SdxaNwyUXs4R7JKxkCwjDIF\nkUFF09MnnQQVYrPkVPAcZh7h8MWoaOOgO5XTOPkxT5kgA3QHYd4bQ/JW8UXJ\nhtUmLkyhEP2YgOdaHc+qAzZkYPhmOpENgUHxJO46xlxX3Vo7Ah+H/pDELz9A\nump9COECQI5pP2V91jE3OuIkxNP2R9CEfxM77/csJN3KevRTytdjuUz509Vz\nRYurPY0o3FUSKwqC2oFiH+EX/Fgm6xYODeXbVIkrkcKFe8O7syko/eoRqxSu\nyLgbAMk0JdyaAxgFmrNFsriFfIe5mESWb5lZ1s4BjaotWm3dtzWJuNl0lghp\nD0NM\r\n=IJ2n\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.0.1_1559291891046_0.7476879621961035"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.0.2": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.0.2",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.13.0",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.0",
+				"rollup-pluginutils": "^2.8.0"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "75bebd44b08e318ba77c1e5559ba4efee660519d",
+			"_id": "rollup-plugin-node-resolve@5.0.2",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-/KMxyYDSMoeE+06CwbbPD8gwYcU9uwyOgMjfw2MJPDmwzEw24HIur9TR80SMsUjP2QCLSZ9othB65xNHN3e0gw==",
+				"shasum": "6475dc689934a2f85bb5c5867d03d8bd1bf859c1",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.2.tgz",
+				"fileCount": 8,
+				"unpackedSize": 49672,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdAf+uCRA9TVsSAnZWagAAYKMP/3B7jPyZcoh/WgeEsOMv\nXYt+UDLrheM9AHN6VKCpsEzcDUEVrfsbztRnN/cn4VP/N/uJpzcVdO8BUHQI\nuuFQNxEtnE9Sf/NNSyWYv24o5n8VaCmI+k0bI70th+r/BZz4TwpDQsfq9I4H\nUXvwVIX1C/KyOdMwTQaq6pDBQy3dHzx6Hwi2u2XvZ6eVOLrZQFGgtHJiWyQW\nMbhmj5zx7zR/pEz+VCKJeveTm8KPbWypNFX2aNj7EK35tzFn4qrLfriJBaZz\nk1eSErRqCjFn4PPtVap91xlH0yG0Oz4e7W3rftn3eJMTW1B/8MxLSPAMioPJ\nwVnP2NbimgrvLytxc59KgolF/KPc4/F2MxMKe4dD4RC94xQ9M995V8b0EWuP\nw6ZvWFXBpDVIL6toUXEZkutpy+2tmk6rEMelYtZ0UqjiHiJ0nbir+FJ2EC0h\nxWLJFT50AROutT3rrtQ/DCx3ennxGw/ouTyS4TzKwbLTuiwkwzMyHB2qON2C\nYU9RZwXwnP7/CFZwD0+hE84V19AuBeltf3JLH7sAKa1pmLhrIEEYSZk1ybPR\ng5XyJRq1pMNlZQViSuSwMokWcvIaFkxfc9FW/rT6XO/nXBWLAlZqgqBIgR5w\ndjCTqb97mFDzgtUkLWjqXLo6ec+TIZ3T1sTumgCT0RsFWoH/xley3OwdTlnB\nGMcP\r\n=Ya3C\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.0.2_1560412077758_0.7239025457601618"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.0.3": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.0.3",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.13.0",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.1"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.0",
+				"rollup-pluginutils": "^2.8.0"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "cdb7448aee177943c036b0d658699b37c69cfed5",
+			"_id": "rollup-plugin-node-resolve@5.0.3",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-Mhhmf0x493xgUPEsRELnU1VM+4+WO82knWkAbZ0d2DvZQZJMbhzyQK/hqtpVscoRru1EqlK3TM1kK9ro469wPw==",
+				"shasum": "5e90fbd04a33fa1e4e1ed6d9b54afbe45af944f1",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.3.tgz",
+				"fileCount": 7,
+				"unpackedSize": 50107,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdBgWbCRA9TVsSAnZWagAArKEP/13ffew1PjICT54U3X2f\nGrcaxgj3Rxrj5eifoy6NNUfdMioIqxRsrNLB0cTNzF3vAvxEgnDGpGiBrsst\nUViWSPNwVrclrG7jH5R2v4c6aOKZPbreso9cEPmPwT47P+SJItdQ+3vkh8hw\nDA8xv7ih3Lxm1PA4tu5J5kN7O3vBPXj6d0liVFirA2Cy/75/m2rjxbNAusL5\nH/RxonPHWKhNpsJ55W8tF5GTWTv5Su2z6fWxfgkHucdUTYCNhn+FBfq/7gkB\nRktW/92l9O7IM7tikmwi1Vxj/4N9MC3+QrVgw7HHgGMbvTrt/tao0DS8M5g5\ny2RAinJPz1mKLsAwXe70JayX46MwWHZbLAtiCCQX/9hQ+zt7tSrEwPzBy3KN\nM4jLAkGtUzdvQdLITv5b4OK0Q8im80EqySJ86MyBVLBhSFTv8nVslFlt6JQE\nOTf0yTMqoSB6PllCHfFXMPzQZLBoy0kPGyMu8oUSLHMcz4ODjK2A691x//Qw\ngBo8i7GfhWZRHBGHkIWTf3cUxzIzGz1mTDywnxiU9b9LIJLXyonaU6EYZwe7\n5kJsmsRa04fUnnUZdrpBKj9GL+93qKmtfPLPfyI2zTuTDrqqn4QN3Tw6IcA+\naHaYZWdHa0tHYOcjxN90jFeGGxZCPEwrjXZzk7+j1fbzTgtAYVZ04JHsia5E\nJuyF\r\n=9uGZ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.0.3_1560675739025_0.14319680070383511"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.0.4": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.0.4",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^6.0.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.16.1",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.2"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.1",
+				"rollup-pluginutils": "^2.8.1"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "a89d5c9c38ef30031173aa42ae7975ecb073621b",
+			"_id": "rollup-plugin-node-resolve@5.0.4",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-L/fGn+uZOCk/e3uNa3MITUCA3tXndcsaH0Bc7rq7v389vEXMXAYnmF0giEUWbhYxE7PyMGglByVrR8AeIP9klw==",
+				"shasum": "9a09f63618fb1ac46e37cf4e5a13c390b19451af",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.4.tgz",
+				"fileCount": 7,
+				"unpackedSize": 50192,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDdENCRA9TVsSAnZWagAAut4P/2SvnqJKB9g9o2dxp21E\n9lgLcpfdHTcGvxYeBH5UIS9Jtf/uLQZ1hK22kxw+JzLCH4Cruba7yKlcrIWG\nXyJRubQYIpoFs1Xiac6KDS66ESqKwHiZR5MJP2SpNMN8BhuAgl4BkRqD3WDy\nYxtsarUATSvLTNmlCB8g3KXBRbXvF49yp3ltCD18Zgehlm7rteAVDdbAI9zA\n82GLOroOfcsv/juDQAVxtxjd61c5xKJs8yqxNewUlwZsycFE7NzO6YxYsMiI\n17ElivkAkuuVNCQq4dVP8i7Ve0FJA94nBN8rSRWuYQA6QkIWBmZzUGz8t+qU\nWdzisA5YpSLQ8g95EQy0aPzBsRJSrc4pyyFyfQj4K6PSRmoZLaIr+I/CAu4a\n/3RAkWYuYHkVKbadgcSfFn/Hc78hVh2qG/GKFqKbmf0QrJjn6Okuyw9kFAFF\nT9O53mtnC35vwWTklTUMufA1Ls/QfhqyCa+hUIOPn46QV/pgMSj4zN6qeGOi\n8MvHblUk/+YcwSPi/JVwRrBsEJbXUJ2oydK4je36suXqtSfbRmTtJt0cIVIy\nO/Wnch090NnzlAAYnsFjfjqc8AK8K9V1kugFXxN92vAOVQepvnyGLsCZNoNR\nzNXubVEwbl6KS23NDzwV9uUdssvOzyZ3jKvlSuECoDdxugOlg+g4aNhmHeQl\n/X4A\r\n=Sra9\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.0.4_1561186572524_0.5122677757702379"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.1.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.1.0",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.16.1",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.2"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.1",
+				"rollup-pluginutils": "^2.8.1"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "4b1e355b287fc7a797931234cb78dfd166fff545",
+			"_id": "rollup-plugin-node-resolve@5.1.0",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-2hwwHNj0s8UEtUNT+lJq8rFWEznP7yJm3GCHBicadF6hiNX1aRARRZIjz2doeTlTGg/hOvJr4C/8+3k9Y/J5Hg==",
+				"shasum": "49608b6ecaf2b776ab83e317d39b282d65d21b76",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.1.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 54391,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdEbd1CRA9TVsSAnZWagAAOuUQAIWajuA8L+8keWJNSQnM\n6Gb6E6w69ik0HClVfxWq42hMLC8pyR1qNMXK56qx7DoH/bUWGW7xUWnLbuHc\nTGlM+c6x4gduo3MgVVzkyPAlaUiwmBcnXc6W981UQOW12J0s2WRggoQ+1Igx\nnbiQ9pFPbgfw5clLJ2hwhnI9+HG0//DjuOXJWDjd/cJA43pU8FmxyO8I73mK\nQCzU0BnbQJueoN3L97ltk4daFD8XXpoEG+bmi0YXsTxctMKtQdljgnjAU9C5\nen52BSX1XCo6TPeEHpot5IhnAXYv8w3hpQwUOLJgspHmMCYDZLU4+F+OJ1i6\n5k8Xgo22erykn0+6aXBbolK+VjVS09JdWo3zOdIRtZEHHYAj3TGB7VlLC6rJ\nM2v7oy0pxykQH9u6I7OCd5xDB/FY5lWHDBiV7KhInR1Wnh5hlGC2wqyWOuAq\ne9II/VYsrIYoutN3H8aD1KuIFR+73ZRinoV7mBoKpOM6AFiIBqtkZg4al1Sw\ntg79D9HgHIfklK+NBvPF8aQ9sGGTCkzDKLWnJSSzrqBkBcG4dZxr14T2jgBb\n3p9NFfbjQ/siyIL4+KNg8iDbNyrM63mOJK24oOb0UVNCKZCIZsDzweAqiX77\ngtMPIdbNKmXWpQbWTKsS9cVp4PhrDYYnhPQYlq473Wog7S7ldoduynj4+Q0J\nIs4e\r\n=hmH+\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.1.0_1561442164757_0.9415542076015977"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.1.1": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.1.1",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.16.1",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.2"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.1",
+				"rollup-pluginutils": "^2.8.1"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "3a8ebf11b2923c1f2cb31b99a2d2074dcae082a4",
+			"_id": "rollup-plugin-node-resolve@5.1.1",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-GMirxuCZS+D7mSulCNQSr3lFnEzKVCAnVRuG1O0rSA6N6H1F2uHUetIKr0oUJ1Hd7FgF2zs1pc+KNPfyyZnAzA==",
+				"shasum": "c914ce4585509b097ed692ab4a25d089ae84fbed",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.1.1.tgz",
+				"fileCount": 7,
+				"unpackedSize": 55510,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdFv+FCRA9TVsSAnZWagAAHUUP/AiMpTIjGXkKjE0upKE+\nbCJ+o2Zxa1Fu87L59gl1UNaDzjFcSYrK0FVDQZ6Srw2SyyOl0AJ6KobPfbd1\neEv9eHxEqrQAsYJELL04K9n/MUDMMvZTa5NHRrO6COBSe1Z8vbFF4+pgsNsQ\ngNP2Cylijc6ChaSqw9oXmUPD3hNMA7+vV/9/Eg2b8Oe/GDBH0oze733E0LZW\nJrn8KUH5bkkqMky91Bds1x50LqkSAby6z5KknWjdMbyLraOJELfkInS0qWLx\niVPAhoEugwvAxmkhctgMWBqbl4Dkpu2TdNGNGYTBIeAQeXIFZ0vZ2c7cY9rY\nGfc5fZucVOhuM/xOAzZJu8bQ4owGbE1gOPNxajDo70wcfJsSytEl4OmFfS4U\nK3NnbUlBcxV78dRpEHRZ7nP1coDOHXAWOQR6CAY2wuF04Z7h0REk8BCbRpxr\nQhRAFnZsDbbmPsEbIqx3zYtos9uWXzUkWof35mSBMqJxRcWDyomWoQU6qIt8\nNpEBCdLaU7/W8VyfX6IZ6IUdBLQMvSWKsvSx3YfE1GodCKR/i4isIYARSo67\njTqF/2bbuXrLSapNGC7M35k89BovZOX44Reuw3i1yF9sfYLZXDy4j8PR73Dh\n8VdaX7Gmw/peSaYrTEhhLpGXkoP2qwnMEs5xpFhPJvZ8ju8iYHS5deG4i8U/\ncN/C\r\n=Ej7T\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.1.1_1561788292315_0.6173543031645583"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		},
+		"5.2.0": {
+			"name": "rollup-plugin-node-resolve",
+			"description": "Bundle third-party dependencies in node_modules",
+			"version": "5.2.0",
+			"devDependencies": {
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@babel/register": "^7.4.4",
+				"es5-ext": "^0.10.50",
+				"eslint": "^5.16.0",
+				"mocha": "^6.1.4",
+				"rollup": "^1.16.1",
+				"rollup-plugin-babel": "^4.3.2",
+				"rollup-plugin-commonjs": "^10.0.0",
+				"rollup-plugin-json": "^4.0.0",
+				"string-capitalize": "^1.0.1",
+				"typescript": "^3.5.2"
+			},
+			"main": "dist/rollup-plugin-node-resolve.cjs.js",
+			"module": "dist/rollup-plugin-node-resolve.es.js",
+			"jsnext:main": "dist/rollup-plugin-node-resolve.es.js",
+			"scripts": {
+				"build": "rollup -c",
+				"pretest": "npm run build",
+				"test": "mocha",
+				"posttest": "tsc && eslint src test/*.js",
+				"lint": "eslint src",
+				"prepublishOnly": "npm test",
+				"prepare": "npm run build"
+			},
+			"dependencies": {
+				"@types/resolve": "0.0.8",
+				"builtin-modules": "^3.1.0",
+				"is-module": "^1.0.0",
+				"resolve": "^1.11.1",
+				"rollup-pluginutils": "^2.8.1"
+			},
+			"peerDependencies": {
+				"rollup": ">=1.11.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/rollup/rollup-plugin-node-resolve.git"
+			},
+			"keywords": [
+				"rollup",
+				"rollup-plugin",
+				"es2015",
+				"npm",
+				"modules"
+			],
+			"author": {
+				"name": "Rich Harris",
+				"email": "richard.a.harris@gmail.com"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/rollup/rollup-plugin-node-resolve/issues"
+			},
+			"homepage": "https://github.com/rollup/rollup-plugin-node-resolve#readme",
+			"gitHead": "07b00d0bc9a59951ce1ff0548cb7fa9d92531d22",
+			"_id": "rollup-plugin-node-resolve@5.2.0",
+			"_nodeVersion": "10.15.3",
+			"_npmVersion": "6.9.0",
+			"_npmUser": {
+				"name": "lukastaegert",
+				"email": "lukas.taegert@tngtech.com"
+			},
+			"dist": {
+				"integrity": "sha512-jUlyaDXts7TW2CqQ4GaO5VJ4PwwaV8VUGA7+km3n6k6xtOEacf61u0VXwN80phY/evMcaS+9eIeJ9MOyDxt5Zw==",
+				"shasum": "730f93d10ed202473b1fb54a5997a7db8c6d8523",
+				"tarball": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.2.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 55968,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdFxDoCRA9TVsSAnZWagAAnGMP/30Z6Ya5S6UPSLF0D1RR\nI+dodEccYwiQ9WdcWKb0gCSiWSP/phpiU9B083eRCUSTOqSjHdXxsiG17UWh\nwwvEsHC47ZxlGSm+se8clIEUvQfWW8nhHG0XqOePcz7T46sfioyebGt35+uN\nR/DNGr0Zk+iGTktkRLUnVT3NoTxWbNEFuRQ0D52Q++XrvMBJr4QkquEiun/y\nH4BA7Myws6+fRFztQjjpNkXbLGvnrzGcl+V2Q6K3DKXewfE8JCQIRiibDbjz\nWNf3JWPPDtJaYkqPyfQoG1azICfLkcJ3xJZqIfdyWbQdYEgeqQoyDEs0JDWQ\nChWlzJRCTrCXHo8j7NX7h4XJ5L9lPSymboY0vAOziBj6hhtggBSLl24k/6wL\n3+0HiqTNbmrkGLmTalUYWbK9+1Ejm2KbcX0J/wdH+dHF2YRVtBee86a4S6TY\nh40yMNpAGsc2PrTBSEgjDwEHNQ9ZmhzZ9NBlPpNFDPqp2Dfs62suuxPjwPR8\no7FC+zf5wERsAkwP3Aku2iQEpa9tJ+ZU9f3Zu8fmw+NnLf3N/R7eN8f2eLEQ\nhuGiDUYQsIdpBxco3qI7NJfnJpywEzmozilFwCHFNF7XnBWTBpirsCkxEt4L\nbhJlHvW1NeQ4OdWC6ot89otWae7e+JQmsAua7b3OLC48LZCR9B11r1Gs2/5t\njahf\r\n=jyMu\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "npm@keithcirkel.co.uk",
+					"name": "keithamus"
+				},
+				{
+					"email": "lukas.taegert@tngtech.com",
+					"name": "lukastaegert"
+				},
+				{
+					"email": "richard.a.harris@gmail.com",
+					"name": "rich_harris"
+				},
+				{
+					"email": "trysound@yandex.ru",
+					"name": "trysound"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/rollup-plugin-node-resolve_5.2.0_1561792741401_0.7733859093046755"
+			},
+			"_hasShrinkwrap": false,
+			"deprecated": "This package has been deprecated and is no longer maintained. Please use @rollup/plugin-node-resolve.",
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-12-16T00:17:18.393Z",
+		"created": "2016-02-07T00:07:31.991Z",
+		"1.4.0": "2016-02-07T00:07:31.991Z",
+		"1.5.0": "2016-03-06T15:03:03.031Z",
+		"1.6.0": "2016-06-07T16:12:22.649Z",
+		"1.7.0": "2016-06-07T19:07:46.838Z",
+		"1.7.1": "2016-06-23T20:11:53.404Z",
+		"1.7.2": "2016-07-28T22:31:54.752Z",
+		"1.7.3": "2016-07-31T14:21:29.030Z",
+		"2.0.0": "2016-07-31T15:46:14.350Z",
+		"2.1.0": "2017-03-31T00:51:07.532Z",
+		"2.1.1": "2017-03-31T19:09:00.508Z",
+		"3.0.0": "2017-04-01T05:17:28.276Z",
+		"3.0.1": "2018-01-10T17:47:43.886Z",
+		"3.0.2": "2018-01-10T20:51:07.886Z",
+		"3.0.3": "2018-02-14T14:54:49.492Z",
+		"3.1.0": "2018-03-07T10:20:02.537Z",
+		"3.2.0": "2018-03-07T10:29:17.643Z",
+		"3.3.0": "2018-03-17T18:56:37.805Z",
+		"3.4.0": "2018-09-04T10:46:48.287Z",
+		"4.0.0": "2018-12-09T12:55:03.351Z",
+		"4.0.1": "2019-02-22T06:58:53.635Z",
+		"4.1.0": "2019-04-05T06:19:59.417Z",
+		"4.2.0": "2019-04-06T07:35:05.346Z",
+		"4.2.1": "2019-04-06T21:11:40.039Z",
+		"4.2.2": "2019-04-10T04:36:15.483Z",
+		"4.2.3": "2019-04-11T05:40:52.339Z",
+		"4.2.4": "2019-05-11T07:21:20.946Z",
+		"5.0.0": "2019-05-15T08:27:55.946Z",
+		"5.0.1": "2019-05-31T08:38:11.148Z",
+		"5.0.2": "2019-06-13T07:47:57.884Z",
+		"5.0.3": "2019-06-16T09:02:19.180Z",
+		"5.0.4": "2019-06-22T06:56:12.639Z",
+		"5.1.0": "2019-06-25T05:56:04.838Z",
+		"5.1.1": "2019-06-29T06:04:52.439Z",
+		"5.2.0": "2019-06-29T07:19:01.573Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "5.2.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"34da84be3070211118f0c22cbf11d34c\"",
+			"fetched": 1577117297263
+		}
+	},
+	"_distfiles": {
+		"rollup-plugin-node-resolve-1.4.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.4.0.tgz",
+			"sha": "2724e89e26612e9863abbaa54fc0548bbc2f7b4f",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.5.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.5.0.tgz",
+			"sha": "b3e433f36d636afed4379b5a47dd7c98c5d930c7",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.6.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.6.0.tgz",
+			"sha": "917efb2620573282df5418a534f45a6c601abd4f",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.7.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.0.tgz",
+			"sha": "c6e03900c0752a052d31daccab861423935b6f43",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.7.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.1.tgz",
+			"sha": "f9d71fa9bc15d84b8d23ac6bfb04a6a6ef2a0a35",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.7.2.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.2.tgz",
+			"sha": "6be31fbdaf21c9694947b305c7e7cd12cc72027c",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-1.7.3.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-1.7.3.tgz",
+			"sha": "7212f2c371b8499fcfb0a1772431931b240f12e4",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.0.0.tgz",
+			"sha": "07e0ae94ac002a3ea36e8f33ca121d9f836b1309",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.1.0.tgz",
+			"sha": "f182a71a2b705129210444a4b74696768baf0515",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-2.1.1.tgz",
+			"sha": "cbb783b0d15b02794d58915350b2f0d902b8ddc8",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.0.tgz",
+			"sha": "8b897c4c3030d5001277b0514b25d2ca09683ee0",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.0.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.1.tgz",
+			"sha": "fd9dd3de196d595a739dbce4bd60578cafb41da0",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.0.2.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.2.tgz",
+			"sha": "38babc12fd404cc2ba1ff68648fe43fa3ffee6b0",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.0.3.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.0.3.tgz",
+			"sha": "8f57b253edd00e5b0ad0aed7b7e9cf5982e98fa4",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.1.0.tgz",
+			"sha": "3073a28525a67e6890d029eea8b4c563d355beca",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.2.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.2.0.tgz",
+			"sha": "31534952f3ab21f9473c1d092be7ed43937ea4d4",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.3.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.3.0.tgz",
+			"sha": "c26d110a36812cbefa7ce117cadcd3439aa1c713",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-3.4.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-3.4.0.tgz",
+			"sha": "908585eda12e393caac7498715a01e08606abc89",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.0.tgz",
+			"sha": "9bc6b8205e9936cc0e26bba2415f1ecf1e64d9b2",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.0.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.0.1.tgz",
+			"sha": "f95765d174e5daeef9ea6268566141f53aa9d422",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.1.0.tgz",
+			"sha": "2f1534c0057b2db0219d271daf887c4e062a7e56",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.2.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.0.tgz",
+			"sha": "f1f38392a97360195be04d3c3d791ddd9715d755",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.2.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.1.tgz",
+			"sha": "a949f3082c9839ca586d0e893425d1f83ed01fcf",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.2.2.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.2.tgz",
+			"sha": "590962b8568d8f7361c2b434e10bd8cb91556615",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.2.3.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.3.tgz",
+			"sha": "638a373a54287d19fcc088fdd1c6fd8a58e4d90a",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-4.2.4.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-4.2.4.tgz",
+			"sha": "7d370f8d6fd3031006a0032c38262dd9be3c6250",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.0.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.0.tgz",
+			"sha": "754abf4841ed4bab2241551cba0a11d04c57f290",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.0.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.1.tgz",
+			"sha": "4619eafdf2ecb4e8ed24177ba47d7f11f027d38b",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.0.2.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.2.tgz",
+			"sha": "6475dc689934a2f85bb5c5867d03d8bd1bf859c1",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.0.3.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.3.tgz",
+			"sha": "5e90fbd04a33fa1e4e1ed6d9b54afbe45af944f1",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.0.4.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.0.4.tgz",
+			"sha": "9a09f63618fb1ac46e37cf4e5a13c390b19451af",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.1.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.1.0.tgz",
+			"sha": "49608b6ecaf2b776ab83e317d39b282d65d21b76",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.1.1.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.1.1.tgz",
+			"sha": "c914ce4585509b097ed692ab4a25d089ae84fbed",
+			"registry": "npmjs"
+		},
+		"rollup-plugin-node-resolve-5.2.0.tgz": {
+			"url": "https://registry.npmjs.org/rollup-plugin-node-resolve/-/rollup-plugin-node-resolve-5.2.0.tgz",
+			"sha": "730f93d10ed202473b1fb54a5997a7db8c6d8523",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-f27536ad2205ac9f",
+	"_id": "rollup-plugin-node-resolve",
+	"readme": "# rollup-plugin-node-resolve\n\n*This plugin used to be called rollup-plugin-npm*\n\nLocate modules using the [Node resolution algorithm](https://nodejs.org/api/modules.html#modules_all_together), for using third party modules in `node_modules`\n\n## Installation\n\n```bash\nnpm install --save-dev rollup-plugin-node-resolve\n```\n\n## Usage\n\n```js\n// rollup.config.js\nimport resolve from 'rollup-plugin-node-resolve';\n\nexport default {\n  input: 'main.js',\n  output: {\n    file: 'bundle.js',\n    format: 'iife',\n    name: 'MyModule'\n  },\n  plugins: [\n    resolve({\n\n      // the fields to scan in a package.json to determine the entry point\n      // if this list contains \"browser\", overrides specified in \"pkg.browser\"\n      // will be used\n      mainFields: ['module', 'main'], // Default: ['module', 'main']\n\n      // DEPRECATED: use \"mainFields\" instead\n      // use \"module\" field for ES6 module if possible\n      module: true, // Default: true\n\n      // DEPRECATED: use \"mainFields\" instead\n      // use \"jsnext:main\" if possible\n      // legacy field pointing to ES6 module in third-party libraries,\n      // deprecated in favor of \"pkg.module\":\n      // - see: https://github.com/rollup/rollup/wiki/pkg.module\n      jsnext: true,  // Default: false\n\n      // DEPRECATED: use \"mainFields\" instead\n      // use \"main\" field or index.js, even if it's not an ES6 module\n      // (needs to be converted from CommonJS to ES6)\n      // – see https://github.com/rollup/rollup-plugin-commonjs\n      main: true,  // Default: true\n\n      // some package.json files have a \"browser\" field which specifies\n      // alternative files to load for people bundling for the browser. If\n      // that's you, either use this option or add \"browser\" to the\n      // \"mainfields\" option, otherwise pkg.browser will be ignored\n      browser: true,  // Default: false\n\n      // not all files you want to resolve are .js files\n      extensions: [ '.mjs', '.js', '.jsx', '.json' ],  // Default: [ '.mjs', '.js', '.json', '.node' ]\n\n      // whether to prefer built-in modules (e.g. `fs`, `path`) or\n      // local ones with the same names\n      preferBuiltins: false,  // Default: true\n\n      // Lock the module search in this path (like a chroot). Module defined\n      // outside this path will be marked as external\n      jail: '/my/jail/path', // Default: '/'\n\n      // Set to an array of strings and/or regexps to lock the module search\n      // to modules that match at least one entry. Modules not matching any\n      // entry will be marked as external\n      only: [ 'some_module', /^@some_scope\\/.*$/ ], // Default: null\n\n      // If true, inspect resolved files to check that they are\n      // ES2015 modules\n      modulesOnly: true, // Default: false\n\n      // Force resolving for these modules to root's node_modules that helps\n      // to prevent bundling the same package multiple times if package is\n      // imported from dependencies.\n      dedupe: [ 'react', 'react-dom' ], // Default: []\n\n      // Any additional options that should be passed through\n      // to node-resolve\n      customResolveOptions: {\n        moduleDirectory: 'js_modules'\n      }\n    })\n  ]\n};\n```\n\n## Using with rollup-plugin-commonjs\n\nSince most packages in your node_modules folder are probably legacy CommonJS rather than JavaScript modules, you may need to use [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs):\n\n```js\n// rollup.config.js\nimport resolve from 'rollup-plugin-node-resolve';\nimport commonjs from 'rollup-plugin-commonjs';\n\nexport default {\n  input: 'main.js',\n  output: {\n    file: 'bundle.js',\n    format: 'iife'\n  },\n  name: 'MyModule',\n  plugins: [\n    resolve(),\n    commonjs()\n  ]\n};\n```\n\n## Resolving Built-Ins (like `fs`)\n\nThis plugin won't resolve any builtins (e.g. `fs`). If you need to resolve builtins you can install local modules and set `preferBuiltins` to `false`, or install a plugin like [rollup-plugin-node-builtins](https://github.com/calvinmetcalf/rollup-plugin-node-builtins) which provides stubbed versions of these methods.\n\nIf you want to silence warnings about builtins, you can add the list of builtins to the `externals` option; like so:\n\n```js\nimport resolve from 'rollup-plugin-node-resolve';\nimport builtins from 'builtin-modules'\nexport default ({\n  input: ...,\n  plugins: [resolve()],\n  externals: builtins,\n  output: ...\n})\n```\n\n\n## License\n\nMIT"
+}

@@ -1,0 +1,1344 @@
+{
+	"name": "genfun",
+	"versions": {
+		"0.1.3": {
+			"name": "genfun",
+			"description": "Prototype-friendly multiple method dispatch for JS.",
+			"homepage": "http://github.com/zkat/genfun.js",
+			"keywords": [
+				"util",
+				"functional",
+				"server",
+				"client",
+				"browser",
+				"clos",
+				"oop"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.js"
+			},
+			"main": "src/genfun.js",
+			"version": "0.1.3",
+			"licenses": [
+				{
+					"type": "CC0",
+					"url": "https://creativecommons.org/publicdomain/zero/1.0/"
+				}
+			],
+			"files": [
+				"Makefile",
+				"README.md",
+				"src/*.js",
+				"build/",
+				"docs/",
+				"test/*.js"
+			],
+			"devDependencies": {
+				"browserify": "~2.28.0",
+				"uglify-js": "~2.3.6",
+				"jsdoc": "~3.2.0",
+				"jshint": "~2.1.10",
+				"mocha": "~1.12.0"
+			},
+			"scripts": {
+				"prepublish": "make",
+				"test": "make test"
+			},
+			"testling": {
+				"browsers": [
+					"iexplore/7.0",
+					"iexplore/8.0",
+					"iexplore/9.0",
+					"iexplore/10.0",
+					"chrome/25.0",
+					"firefox/19.0",
+					"opera/12.0",
+					"firefox/nightly",
+					"opera/next",
+					"chrome/canary",
+					"iphone/6.0",
+					"ipad/6.0",
+					"safari/6.0",
+					"android-browser/4.2"
+				],
+				"harness": "mocha",
+				"files": "test/*.js"
+			},
+			"gitHead": "d873d0f55b7e681a59ff89dc649788e6e40ad1f5",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun.js/issues"
+			},
+			"_id": "genfun@0.1.3",
+			"_shasum": "ada06fbe6a751a9e0753e7a0ba93ec0ba8ca9123",
+			"_from": ".",
+			"_npmVersion": "2.1.7",
+			"_nodeVersion": "0.10.33",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"dist": {
+				"shasum": "ada06fbe6a751a9e0753e7a0ba93ec0ba8ca9123",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-0.1.3.tgz"
+			},
+			"deprecated": "1.0.0",
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "genfun",
+			"description": "Prototype-friendly multiple method dispatch for JS.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "dist/genfun.js",
+			"version": "1.0.0",
+			"license": "CC0-1.0",
+			"files": [
+				"Makefile",
+				"README.md",
+				"build/",
+				"src/*.js",
+				"test/*.js"
+			],
+			"devDependencies": {
+				"babel": "^5.6.14",
+				"mocha": "~1.12.0",
+				"semantic-release": "^3.3.2",
+				"standard": "^4.5.2"
+			},
+			"scripts": {
+				"build": "babel src --out-dir dist --source-map",
+				"postpublish": "semantic-release post",
+				"prepublish": "npm run build && semantic-release pre",
+				"test": "npm run build && standard src/*.js && mocha --check-leaks"
+			},
+			"gitHead": "def4d005b0e36f6e90e299d99b6f7c321f798f87",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@1.0.0",
+			"_shasum": "3875b0566610bb148b865ce033aed07fd4cc36b8",
+			"_from": ".",
+			"_npmVersion": "2.9.0",
+			"_nodeVersion": "1.8.3",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kzm@sykosomatic.org"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"dist": {
+				"shasum": "3875b0566610bb148b865ce033aed07fd4cc36b8",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-1.0.0.tgz"
+			},
+			"deprecated": "Missing dist folder entirely",
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "genfun",
+			"description": "Prototype-friendly multiple method dispatch for JS.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "dist/genfun.js",
+			"version": "1.0.1",
+			"license": "CC0-1.0",
+			"files": [
+				"Makefile",
+				"README.md",
+				"dist/*.js",
+				"src/*.js",
+				"test/*.js"
+			],
+			"devDependencies": {
+				"babel": "^5.6.14",
+				"mocha": "~1.12.0",
+				"standard": "^4.5.2"
+			},
+			"scripts": {
+				"build": "babel src --out-dir dist --source-map",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && mocha --check-leaks"
+			},
+			"dependencies": {},
+			"gitHead": "8c67b636dac155f3e885e0825741e72808d93b6e",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@1.0.1",
+			"_shasum": "8bd551f03b91fff2b26ed24e0ad2f2b3a7560537",
+			"_from": ".",
+			"_npmVersion": "2.13.0",
+			"_nodeVersion": "0.12.6",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "8bd551f03b91fff2b26ed24e0ad2f2b3a7560537",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-1.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"deprecated": "1.0.0",
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "genfun",
+			"description": "Prototype-friendly multiple method dispatch for JS.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "2.0.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "8b79cf6f0921e901ea1ec47e8f633b85f3cf26c3",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@2.0.0",
+			"_shasum": "eb45a8ca1940a85d12e17ba29b4420ba7c404d77",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "eb45a8ca1940a85d12e17ba29b4420ba7c404d77",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-2.0.0.tgz_1472106183146_0.5240524052642286"
+			},
+			"deprecated": "This version has a huge performance regression -- please install v2.0.1",
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "genfun",
+			"description": "Prototype-friendly multiple method dispatch for JS.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "2.0.1",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "e16dbbbe9f61104fcda71c8a519e70a546a99c98",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@2.0.1",
+			"_shasum": "ec2e5c67f615ab1b8221ac7e721c8174e84564c2",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "ec2e5c67f615ab1b8221ac7e721c8174e84564c2",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-2.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/genfun-2.0.1.tgz_1472181555713_0.9439683614764363"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.0.2": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "2.0.2",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "d4e4bfc98ecff870e6c575bd6b637093a2b6ad61",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@2.0.2",
+			"_shasum": "c6e80abe3809ee27e1bcda120383f54b280ef651",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "c6e80abe3809ee27e1bcda120383f54b280ef651",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-2.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-2.0.2.tgz_1472199357515_0.40437056357041"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "2.1.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "3c98e8dd529d0ce9a9f42a86914d1dbd59d186f1",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@2.1.0",
+			"_shasum": "073d27b318717e1c0f52ab1eb7c86a3399b25eb3",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "073d27b318717e1c0f52ab1eb7c86a3399b25eb3",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/genfun-2.1.0.tgz_1472626191092_0.6680187140591443"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"2.2.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "2.2.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "c6d16b44d74362033bad7bc0a16be323437b361f",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@2.2.0",
+			"_shasum": "b7a69800548b3561e60438ec07472e403dc3825c",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "b7a69800548b3561e60438ec07472e403dc3825c",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-2.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-2.2.0.tgz_1472717161825_0.55744399712421"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.0.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "3.0.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "866bd17e8e9037312bb1488fc6cc2053334e1d4c",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@3.0.0",
+			"_shasum": "7c268c431895c992e5584e8e8788ddcccc161ee1",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "7c268c431895c992e5584e8e8788ddcccc161ee1",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-3.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-3.0.0.tgz_1473230233774_0.7471091898623854"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.0.1": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "3.0.1",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"test": "standard src/*.js && npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "6f0b463bf7ae6cb04afb8419ec2deb6bea50630c",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@3.0.1",
+			"_shasum": "212042620803f312e53e1059086bc8211c0122a9",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "6.0.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "212042620803f312e53e1059086bc8211c0122a9",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-3.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-3.0.1.tgz_1473403586124_0.7344354488886893"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.1.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "3.1.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"preversion": "npm t",
+				"postversion": "npm publish && git push --follow-tags",
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"pretest": "standard src/*.js",
+				"test": "npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "f25168ae2a00a7283e3f05326227ed4c29349b90",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@3.1.0",
+			"_shasum": "ef05e2a013b8730591ca3d51a0a9701f134f69af",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "4.5.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "ef05e2a013b8730591ca3d51a0a9701f134f69af",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-3.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/genfun-3.1.0.tgz_1473672474420_0.40450572967529297"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "3.2.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"preversion": "npm t",
+				"postversion": "npm publish && git push --follow-tags",
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"pretest": "standard src/*.js",
+				"test": "npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "b86abb58414843a2f1267baf53840016b572b24f",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@3.2.0",
+			"_shasum": "c8d00ea9fbfe5703a1cd6b1369d8e9a84457f2f7",
+			"_from": ".",
+			"_npmVersion": "3.10.8",
+			"_nodeVersion": "4.5.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "c8d00ea9fbfe5703a1cd6b1369d8e9a84457f2f7",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-3.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-3.2.0.tgz_1473761171471_0.28987702378071845"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"3.2.1": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "3.2.1",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"babel-cli": "^6.1.4",
+				"babel-plugin-add-module-exports": "^0.2.1",
+				"babel-preset-es2015": "^6.1.4",
+				"mocha": "^3.0.2",
+				"nyc": "^8.1.0",
+				"standard": "^8.0.0"
+			},
+			"scripts": {
+				"preversion": "npm t",
+				"postversion": "npm publish && git push --follow-tags",
+				"build": "babel --presets es2015 --plugins add-module-exports src --out-dir lib",
+				"prepublish": "npm run build",
+				"pretest": "standard src/*.js",
+				"test": "npm run build && nyc -- mocha --reporter spec"
+			},
+			"dependencies": {},
+			"gitHead": "4a8caceaa9d8d99e4c1af2d6147a22579e4ad885",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@3.2.1",
+			"_shasum": "f4d8dbefa133ec8b59647bbc5eeb0525ae51dcc1",
+			"_from": ".",
+			"_npmVersion": "3.10.7",
+			"_nodeVersion": "4.5.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "f4d8dbefa133ec8b59647bbc5eeb0525ae51dcc1",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-3.2.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-3.2.1.tgz_1474104651153_0.9594157240353525"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "4.0.0",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"mocha": "^3.2.0",
+				"nyc": "^10.2.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0",
+				"weallbehave": "^1.0.3",
+				"weallcontribute": "^1.0.8"
+			},
+			"scripts": {
+				"prerelease": "npm t",
+				"postrelease": "npm publish && git push --follow-tags",
+				"pretest": "standard lib",
+				"release": "standard-version -s",
+				"test": "nyc -- mocha --reporter spec",
+				"update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+				"update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+			},
+			"dependencies": {},
+			"gitHead": "0f03d6754e9a86a6fc13c08db85a8bf36b27a95c",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@4.0.0",
+			"_shasum": "90f85e16ef7ee548411d6cadee8a34f99532e7ee",
+			"_from": ".",
+			"_npmVersion": "4.2.0",
+			"_nodeVersion": "7.9.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "90f85e16ef7ee548411d6cadee8a34f99532e7ee",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-4.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/genfun-4.0.0.tgz_1492320663546_0.7064438678789884"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"4.0.1": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "4.0.1",
+			"license": "CC0-1.0",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"mocha": "^3.2.0",
+				"nyc": "^10.2.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0",
+				"weallbehave": "^1.0.3",
+				"weallcontribute": "^1.0.8"
+			},
+			"scripts": {
+				"prerelease": "npm t",
+				"postrelease": "npm publish && git push --follow-tags",
+				"pretest": "standard lib",
+				"release": "standard-version -s",
+				"test": "nyc -- mocha --reporter spec",
+				"update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+				"update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+			},
+			"dependencies": {},
+			"gitHead": "26d69c067ed811251fbcde1c331322aef2acd615",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@4.0.1",
+			"_npmVersion": "4.5.0",
+			"_nodeVersion": "7.9.0",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kat@sykosomatic.org"
+			},
+			"dist": {
+				"shasum": "ed10041f2e4a7f1b0a38466d17a5c3e27df1dfc1",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-4.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/genfun-4.0.1.tgz_1492386683394_0.13581436942331493"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"5.0.0": {
+			"name": "genfun",
+			"description": "Fast, prototype-friendly multimethods.",
+			"homepage": "http://github.com/zkat/genfun",
+			"keywords": [
+				"clos",
+				"functional",
+				"oop",
+				"util",
+				"object oriented",
+				"prototypes",
+				"multimethod",
+				"generic functions",
+				"multiple dispatch",
+				"polymorphism",
+				"polymorphic",
+				"protocols"
+			],
+			"author": {
+				"name": "Kat Marchán",
+				"email": "kzm@sykosomatic.org"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/zkat/genfun.git"
+			},
+			"main": "lib/genfun.js",
+			"version": "5.0.0",
+			"license": "MIT",
+			"files": [
+				"lib/*.js"
+			],
+			"devDependencies": {
+				"mocha": "^3.2.0",
+				"nyc": "^10.2.0",
+				"standard": "^10.0.2",
+				"standard-version": "^4.0.0",
+				"weallbehave": "^1.0.3",
+				"weallcontribute": "^1.0.8"
+			},
+			"scripts": {
+				"prerelease": "npm t",
+				"postrelease": "npm publish && git push --follow-tags",
+				"pretest": "standard lib",
+				"release": "standard-version -s",
+				"test": "nyc -- mocha --reporter spec",
+				"update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+				"update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+			},
+			"dependencies": {},
+			"gitHead": "6569a203f7287c4c5f98a5f071a5ce734086da77",
+			"bugs": {
+				"url": "https://github.com/zkat/genfun/issues"
+			},
+			"_id": "genfun@5.0.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "zkat",
+				"email": "kzm@sykosomatic.org"
+			},
+			"dist": {
+				"integrity": "sha512-KGDOARWVga7+rnB3z9Sd2Letx515owfk0hSxHGuqjANb1M+x2bGZGqHLiozPsYMdM2OubeMni/Hpwmjq6qIUhA==",
+				"shasum": "9dd9710a06900a5c4a5bf57aca5da4e52fe76537",
+				"tarball": "https://registry.npmjs.org/genfun/-/genfun-5.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "zkat",
+					"email": "kat@sykosomatic.org"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/genfun-5.0.0.tgz_1513112295545_0.36507095326669514"
+			},
+			"directories": {},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2017-12-12T20:58:15.685Z",
+		"created": "2013-08-22T09:00:57.596Z",
+		"0.0.0": "2013-08-22T09:00:58.952Z",
+		"0.0.1": "2013-08-24T17:11:44.775Z",
+		"0.0.2": "2013-08-24T22:16:44.936Z",
+		"0.0.3": "2013-08-24T22:18:56.758Z",
+		"0.1.0": "2013-08-29T02:03:53.885Z",
+		"0.1.1": "2013-09-02T03:40:26.808Z",
+		"0.1.2": "2013-12-19T05:44:00.992Z",
+		"0.1.3": "2015-02-13T07:28:13.342Z",
+		"1.0.0": "2015-07-09T02:49:36.806Z",
+		"1.0.1": "2015-07-18T23:52:50.157Z",
+		"2.0.0": "2016-08-25T06:23:03.381Z",
+		"2.0.1": "2016-08-26T03:19:17.520Z",
+		"2.0.2": "2016-08-26T08:15:57.752Z",
+		"2.1.0": "2016-08-31T06:49:53.844Z",
+		"2.2.0": "2016-09-01T08:06:02.082Z",
+		"3.0.0": "2016-09-07T06:37:14.017Z",
+		"3.0.1": "2016-09-09T06:46:27.057Z",
+		"3.1.0": "2016-09-12T09:27:56.505Z",
+		"3.2.0": "2016-09-13T10:06:13.096Z",
+		"3.2.1": "2016-09-17T09:30:52.855Z",
+		"4.0.0": "2017-04-16T05:31:03.770Z",
+		"4.0.1": "2017-04-16T23:51:25.265Z",
+		"5.0.0": "2017-12-12T20:58:15.685Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "5.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"98b13629196f9f61f2f5fdbd9fb5bc5d\"",
+			"fetched": 1577117288326
+		}
+	},
+	"_distfiles": {
+		"genfun-0.1.3.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-0.1.3.tgz",
+			"sha": "ada06fbe6a751a9e0753e7a0ba93ec0ba8ca9123",
+			"registry": "npmjs"
+		},
+		"genfun-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-1.0.0.tgz",
+			"sha": "3875b0566610bb148b865ce033aed07fd4cc36b8",
+			"registry": "npmjs"
+		},
+		"genfun-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-1.0.1.tgz",
+			"sha": "8bd551f03b91fff2b26ed24e0ad2f2b3a7560537",
+			"registry": "npmjs"
+		},
+		"genfun-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-2.0.0.tgz",
+			"sha": "eb45a8ca1940a85d12e17ba29b4420ba7c404d77",
+			"registry": "npmjs"
+		},
+		"genfun-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-2.0.1.tgz",
+			"sha": "ec2e5c67f615ab1b8221ac7e721c8174e84564c2",
+			"registry": "npmjs"
+		},
+		"genfun-2.0.2.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-2.0.2.tgz",
+			"sha": "c6e80abe3809ee27e1bcda120383f54b280ef651",
+			"registry": "npmjs"
+		},
+		"genfun-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-2.1.0.tgz",
+			"sha": "073d27b318717e1c0f52ab1eb7c86a3399b25eb3",
+			"registry": "npmjs"
+		},
+		"genfun-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-2.2.0.tgz",
+			"sha": "b7a69800548b3561e60438ec07472e403dc3825c",
+			"registry": "npmjs"
+		},
+		"genfun-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-3.0.0.tgz",
+			"sha": "7c268c431895c992e5584e8e8788ddcccc161ee1",
+			"registry": "npmjs"
+		},
+		"genfun-3.0.1.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-3.0.1.tgz",
+			"sha": "212042620803f312e53e1059086bc8211c0122a9",
+			"registry": "npmjs"
+		},
+		"genfun-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-3.1.0.tgz",
+			"sha": "ef05e2a013b8730591ca3d51a0a9701f134f69af",
+			"registry": "npmjs"
+		},
+		"genfun-3.2.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-3.2.0.tgz",
+			"sha": "c8d00ea9fbfe5703a1cd6b1369d8e9a84457f2f7",
+			"registry": "npmjs"
+		},
+		"genfun-3.2.1.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-3.2.1.tgz",
+			"sha": "f4d8dbefa133ec8b59647bbc5eeb0525ae51dcc1",
+			"registry": "npmjs"
+		},
+		"genfun-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-4.0.0.tgz",
+			"sha": "90f85e16ef7ee548411d6cadee8a34f99532e7ee",
+			"registry": "npmjs"
+		},
+		"genfun-4.0.1.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-4.0.1.tgz",
+			"sha": "ed10041f2e4a7f1b0a38466d17a5c3e27df1dfc1",
+			"registry": "npmjs"
+		},
+		"genfun-5.0.0.tgz": {
+			"url": "https://registry.npmjs.org/genfun/-/genfun-5.0.0.tgz",
+			"sha": "9dd9710a06900a5c4a5bf57aca5da4e52fe76537",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-279aa3f12d0dc1bd",
+	"_id": "genfun",
+	"readme": "# Genfun [![Travis](https://img.shields.io/travis/zkat/genfun.svg)](https://travis-ci.org/zkat/genfun) [![npm](https://img.shields.io/npm/v/genfun.svg)](https://npm.im/genfun) [![npm](https://img.shields.io/npm/l/genfun.svg)](https://npm.im/genfun)\n\n[`genfun`](https://github.com/zkat/genfun) is a Javascript library that lets you\ndefine generic functions: regular-seeming functions that can be invoked just\nlike any other function, but that automatically dispatch methods based on the\ncombination of arguments passed to it when it's called, also known as multiple\ndispatch.\n\nIt was inspired by [Slate](http://slatelanguage.org/),\n[CLOS](http://en.wikipedia.org/wiki/CLOS) and\n[Sheeple](http://github.com/zkat/sheeple).\n\n## Install\n\n`$ npm install genfun`\n\n## Table of Contents\n\n* [Example](#example)\n* [API](#api)\n  * [`Genfun()`](#genfun)\n  * [`gf.add()`](#addMethod)\n  * [`Genfun.callNextMethod()`](#callNextMethod)\n  * [`Genfun.noApplicableMethod()`](#noApplicableMethod)\n* [Performance](#performance)\n\n### Example\n\nVarious examples are available to look at in the examples/ folder included in\nthis project. Most examples are also runnable by just invoking them with node.\n\n```javascript\nimport Genfun from \"genfun\"\n\nclass Person {}\nclass Dog {}\n\nconst frobnicate = Genfun()\n\nfrobnicate.add([Person], (person) => {\n  console.log('Got a person!')\n})\n\nfrobnicate.add([Dog], (dog) => {\n  console.log('Got a dog!')\n})\n\nfrobnicate.add([String, Person, Dog], (greeting, person, dog) => {\n  console.log(person, ' greets ', dog, ', \\'' + greeting + '\\'')\n})\n\nconst person = new Person()\nconst dog = new Dog()\n\nfrobnicate(person) // Got a person!\nfrobnicate(dog) // Got a dog!\nfrobnicate('Hi, dog!', person, dog); // {} greets {}, 'Hi, dog!'\n```\n\n### API\n\nThe basic API for `Genfun` is fairly simple: You create a new `genfun` by\ncalling `Genfun()`, and add methods to them. Then you call the `genfun` object\nlike a regular function, and it takes care of dispatching the appropriate\nmethods!\n\n#### `Genfun()`\n\nTakes no arguments. Simply creates a new `genfun`. A `genfun` is a regular\nfunction object with overriden function call/dispatch behavior.\n\nWhen called, it will look at its arguments and determine if a matching method\nhas been defined that applies to **all** arguments passed in, considered\ntogether.\n\nNew methods may be added to the `genfun` object with [`gf.add()`](#addMethod).\n\nIf no method is found, or none has been defined, it will invoke\n[`Genfun.noApplicableMethod`](#noApplicableMethod) with the appropriate\narguments.\n\nGenfuns preserve the value of `this` if invoked using `.call` or `.apply`.\n\n##### Example\n\n```javascript\nvar gf = Genfun()\n\n//... add some methods ..\n\n// These calls are all identical.\ngf(1, 2, 3)\ngf.call(null, 1, 2, 3)\ngf.apply(null, [1, 2, 3])\n```\n\n#### <a name=\"addMethod\"></a> `gf.add(<selector>, <body>)`\n\nAdds a new method to `gf` and returns `gf` to allow chaining multiple `add`s.\n\n`<selector>` must be an array of objects that will receive new `Role`s (dispatch\npositions) for the method. If an object in the selector is a function, its\n`.prototype` field will receive the new `Role`. The array must not contain any\nfrozen objects.\n\nWhen a `genfun` is called (like a function), it will look at its set of added\nmethods and, based on the `Role`s assigned, and corresponding prototype chains,\nwill determine which method, if any, will be invoked. On invocation, a method's\n`<body>` argument will be the called with the arguments passed to the `genfun`,\nincluding its `this` and `arguments` values`.\n\nWithin the `<body>`, [`Genfun.callNextMethod`](#callNextMethod) may be called.\n\n##### Example\n\n```javascript\n\nvar numStr = Genfun()\n\nnumStr.add([String, Number], function (str, num) {\n  console.log('got a str:', str, 'and a num: ', num)\n})\n\nnumStr.add([Number, String], function (num, str) {\n  console.log('got a num:', num, 'and a str:', str)\n})\n\n```\n\n#### <a name=\"callNextMethod\"></a> `Genfun.callNextMethod([...<arguments>])`\n\n**NOTE**: This function can only be called synchronously. To call it\nasynchronously (for example, in a `Promise` or in a callback), use\n[`getContext`](#getContext)\n\nCalls the \"next\" applicable method in the method chain. Can only be called\nwithin the body of a method.\n\nIf no arguments are given, `callNextMethod` will pass the current method's\noriginal arguments to the next method.\n\nIf arguments are passed to `callNextMethod`, it will invoke the next applicable\nmethod (based on the **original** method list calculation), with **the given\narguments**, even if they would otherwise not have triggered that method.\n\nReturns whatever value the next method returns.\n\nThere **must** be a next method available when invoked. This function **will\nnot** call `noApplicableMethod` when it runs out of methods to call. It will\ninstead throw an error.\n\n##### Example\n\n```javascript\nclass Foo {}\nclass Bar extends Foo {}\n\nvar cnm = Genfun()\n\ncnm.add([Foo], function (foo) {\n  console.log('calling the method on Foo with', foo)\n  return foo\n})\n\ncnm.add([Bar], function (bar) {\n  console.log('calling the method on Bar with', bar)\n  return Genfun.callNextMethod('some other value!')\n})\n\ncnm(new Bar())\n// calling the method on Bar with {}\n// calling the method on Foo with \"some other value!\"\n// => 'some other value!'\n```\n\n#### <a name=\"getContext\"></a> `Genfun.getContext()`\n\nThe `context` returned by this function will have a `callNextMethod` method\nwhich can be used to invoke the correct next method even during asynchronous\ncalls (for example, when used in a callback or a `Promise`).\n\nThis function must be called synchronously within the body of the method before\nany asynchronous calls, and will error if invoked outside the context of a\nmethod call.\n\n##### Example\n\n```javascript\nsomeGenfun.add([MyThing], function (thing) {\n  const ctx = Genfun.getContext()\n  return somePromisedCall(thing).then(res => ctx.callNextMethod(res))\n})\n```\n\n#### <a name=\"noApplicableMethod\"></a> `Genfun.noApplicableMethod(<gf>, <this>, <args>)`\n\n`Genfun.noApplicableMethod` is a `genfun` itself, which is called whenever **any `genfun`** fails to find a matching method for its given arguments.\n\nIt will be called with the `genfun` as its first argument, then the `this`\nvalue, and then the arguments it was called with.\n\nBy default, this will simply throw a NoApplicableMethod error.\n\nUsers may override this behavior for particular `genfun` and `this`\ncombinations, although `args` will always be an `Array`. The value returned from\nthe dispatched `noApplicableMethod` method will be returned by `genfun` as if it\nhad been its original method. Comparable to [Ruby's\n`method_missing`](http://ruby-doc.org/core-2.1.0/BasicObject.html#method-i-method_missing).\n\n### Performance\n\n`Genfun` pulls a few caching tricks to make sure dispatch, specially for common\ncases, is as fast as possible.\n\nHow fast? Well, not much slower than native methods:\n\n```\nRegular function: 30.402ms\nNative method: 28.109ms\nSingly-dispatched genfun: 64.467ms\nDouble-dispatched genfun: 70.052ms\nDouble-dispatched genfun with string primitive: 76.742ms\n```"
+}

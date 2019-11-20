@@ -1,0 +1,3688 @@
+{
+	"name": "terser-webpack-plugin",
+	"versions": {
+		"1.0.0": {
+			"name": "terser-webpack-plugin",
+			"version": "1.0.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"files": [
+				"dist"
+			],
+			"peerDependencies": {
+				"webpack": "^4.3.0"
+			},
+			"dependencies": {
+				"@webpack-contrib/schema-utils": "^1.0.0-beta.0",
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.4.3",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.14.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.2",
+				"husky": "^0.14.3",
+				"jest": "^22.4.3",
+				"lint-staged": "^6.0.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3",
+				"webpack-defaults": "^2.3.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"jest": {
+				"testEnvironment": "node"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "990fb1ca375affa99f24333c250f72cf18689986",
+			"_id": "terser-webpack-plugin@1.0.0",
+			"_npmVersion": "6.3.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-J1i69VN1tyhzpzbWrNvNaS1G4G7iNCvTvoT+qGNFxQPqND2Kk49M6yKw5/yA+dcU0D5pH/PuuH2ouDbhqDf0RQ==",
+				"shasum": "757d89d37694e0ba2ea0db0200773e467f2f4231",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 36743,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbY0dwCRA9TVsSAnZWagAAzRAQAIwx5h+hn+sruUV3m4mL\n/IM30f3HrCP0hV+Dj2svrnj/AVxulArLi9gKspxxRn9hCZGxy2B5Qnnen/Kr\nUYC6pPBLFqsG3zXAl9iguGU1MS5U1ASYgD415bL3QPpWmWwQVMOBPWfKjMUK\nRjNlfnWEeUHxr2AbNUTj+NjS1OI1pDQBN+5tILNd/mIEpGa2CzzJ1e9SbJBp\nnkuQujAMWOJOzVkDwckEJhHh4EkyO41ZxptjHFCwfN1KhvrM1FgLhgPVsFcl\nC4dkoX6ifgbIp7vDOzUkN577l/bDEcxCFidopmigTrBrlU+8ki+psiwUeEe5\nKkLimXJKtHMP+eGiPutEpwcoq0/Gk5P/1b9jY0bAaxt32TAKSimdgkK17EQQ\nN/cjZzhaqtyfvRxOquARWgt3yU9QNsnOEJ1e5k6qoWdrWlMZ5xLfYVlLugfs\nWvPJOAtvoGm/KP3qLbiklk8r+ytgwyG0n1gdYNznSf6+YG3bYmCTJaAcu+wn\n5wSisGIPCi5Dcblcqp6bOtTsayp4KY12KUh+i5Pz+lssiJZAMeUeTyFsEWik\ntYEzqgz88/PMvtgv1BL4pfC63GiYPt8n6aLqY/Fnvo/svu9jHOl9FoFn2/jC\nMretPKo8rokYb3jEwM3XlbRr+EXzxf8rTbimg03I+kJGCC8++hHzyIsDv4dZ\n6Kjs\r\n=c3gc\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.0.0_1533233008158_0.4163871600614044"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "terser-webpack-plugin",
+			"version": "1.0.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"files": [
+				"dist"
+			],
+			"peerDependencies": {
+				"webpack": "^4.3.0"
+			},
+			"dependencies": {
+				"@webpack-contrib/schema-utils": "^1.0.0-beta.0",
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.4.3",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.14.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.2",
+				"husky": "^0.14.3",
+				"jest": "^22.4.3",
+				"lint-staged": "^6.0.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3",
+				"webpack-defaults": "^2.3.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"jest": {
+				"testEnvironment": "node"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "ece879b9940b47b0a333b7d456049f1ae8068032",
+			"_id": "terser-webpack-plugin@1.0.1",
+			"_npmVersion": "6.3.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-TALB9oZeC5/DheHwVVydwak/xRqiSaqcg9vT01MRP6FICpBsKvRdXob+hIW+MR01fuNwI7kHsJhQgJQ4v02g2g==",
+				"shasum": "b184e7b4084fcb5a65beafb15c997e3682e4f90c",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 37225,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbc/PbCRA9TVsSAnZWagAAJfAP/ihsiLiD6VELuoessKUp\nGbCCawxTDnDhb6o4V80EWb3p3gH/Ui+sJFqhB4xyC7XLwaLZstZ8ksY+WTWQ\nVuYFKS5yBU14tzhZXXPvNrEP0z/BgvJys2TyuKWReopDyoelRfvIdaYfyKNv\na2pGuOFFpbqaoogEWLZnQFM2ydqAsW5ZIxtIxhxwY+1ju3ocVRY00/SGdiMl\n/yOaa0IMFC3CbV98Bxs1Uf67Rzo/daHSL5oEtXPx0gjWJWh4FE6x5d/iIpPk\nhxsTs1ZQ90KDkb/KFWV5/hpM+lOw4Ep22wjCgNl9dh1FlqFAZSZz965tzTTF\nKO4ZlDe3DOkBHI7ek4rj9ITCNhwrK1otrvdnHP+CvzdyBw/LqU53IYe7Y9R8\ndAP7XVJVQxhpHueMdpswu7SuH6GYm6jpCEzobWSiNp1ywh0JnGOXADKntvl7\nnWkJGqFmi4DDgmujYoCwLM8k5mS7svadtxziLFMCFwr6TsEo6BB6NXv8MlVo\nS+mXBXKlRYb6VXcGTCpS9zLxmE7rwn4wRM+kTRhA0960ZkVLL1fw6cMj4fRT\nrvkgZLlP5j+h4+KCtNcPW0SD7PbjOvjSvCRcuvi34O2kGQ1FlRnSVY5qE74m\nvIWqjW+Fk5QysOB8Z/E/QzIuSIVY0cj5Jbx1ogc05qfb2/56pe9Uxm+S7YeJ\n5u8z\r\n=TxBL\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.0.1_1534325723128_0.17359608274050342"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.2": {
+			"name": "terser-webpack-plugin",
+			"version": "1.0.2",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"files": [
+				"dist"
+			],
+			"peerDependencies": {
+				"webpack": "^4.3.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.4.3",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.14.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.2",
+				"husky": "^0.14.3",
+				"jest": "^22.4.3",
+				"lint-staged": "^6.0.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3",
+				"webpack-defaults": "^2.3.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"jest": {
+				"testEnvironment": "node"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "39239576bad5d3a683fd9616716e86511ca88e76",
+			"_id": "terser-webpack-plugin@1.0.2",
+			"_npmVersion": "6.4.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-gJyt10fRIVj4dwOylFltjrjtcQzvGGlTF4afmiXJ8X5iul5l5lDDym353KOisKjXh2oRBdwQyv+9hkc0Ar+d9g==",
+				"shasum": "b62dfdc4e59b0b5093665a765b234645b598d1a5",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 37452,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdYmtCRA9TVsSAnZWagAAviQP/AmTYQfNnHii2KvSB0FU\n3GOlawlaIy8oW8Ph6JPNQSu/cXc7lPgvCrXM1mkU8A4EKi5wWlrCwB4Ka9m9\nk9Lk+zIg4oxVyf9NBOQjROmp/UP9pXy6Jmxr+zdDf7KnnvVUZtCtzeoIxpM/\neFIHeHbn5MDE9R+yv3bP4dN4KgCssZZXISU8hfn9My1n2ogYQc0MpFXPGhQv\n91PcPqmQX17f7h4fd99b5MzcShELZ5hP6r0+Roc/S5wSB9xaSPC7+A44TjNa\nBNfi4il5RZgg5cGa9oD02+xCc3jKbUoO5zqPvtmxHRWCsbydgEeZAl/PT7Oy\nzJXqqsgcme3M5dwvyXQFYdVpSMxFhCnLZwTe/dGYoCT4win259VV4qQMrlqS\nWrd5QSNLSyvJx456TohT6sko2x/7pJUQkh7ZMrfpe7411THzFqvC76r9ipu7\nL0o4BTxJ8omyPC9+ICpohRis2VfedJ9OSMmEa+7jiX5/UX8MQ/2ThF2ehQG2\nZyQ7/4aR/yQ2K9pE4sQxRam67PAesfUzOmGSBiQMY5GGbx5OVPngVMMxzVfv\nDHXUp9iSG1S2ShcsWm2z+iczl6ZKY2onDICP09KI89uEc/7ua1qDpWruxKKV\nLtOS/LJ4iplfXEwyRq4ieX32RPWnlTM2c+ZXpUZNPdAePVHfweTapNbAX9ir\nLk1o\r\n=9BaE\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.0.2_1534429613017_0.30941041450387696"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "terser-webpack-plugin",
+			"version": "1.1.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "npm audit",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.3.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^23.4.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.5.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.2",
+				"husky": "^0.14.3",
+				"jest": "^23.5.0",
+				"lint-staged": "^7.2.2",
+				"memory-fs": "^0.4.1",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3",
+				"webpack-defaults": "^2.3.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"jest": {
+				"testEnvironment": "node"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "7457b2b17036772a28e21466d6861cfb0224ad16",
+			"_id": "terser-webpack-plugin@1.1.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.10.0",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-61lV0DSxMAZ8AyZG7/A4a3UPlrbOBo8NIQ4tJzLPAdGOQ+yoNC7l5ijEow27lBAL2humer01KLS6bGIMYQxKoA==",
+				"shasum": "cf7c25a1eee25bf121f4a587bb9e004e3f80e528",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.1.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40328,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbm8UmCRA9TVsSAnZWagAAJKwP/1k8IS2NK5OW5Ad7rOg5\nDOdkgJxCw+tNy+Re5G520ISbakB5CESFXiC0OWngjQcCDGHNhkceNHFxFuNK\nxNk7M/RrRPeVruQi9j43yRHvFwtF0hwts0d6J5t9jwNxLHZxS1NfiCY5Gpiq\nFCrJUSzUZUoO/UQKEXB0yUCljmAvEsfy9jBLuDNWvNavbrPgNrSy44uHGu6/\nTf7DKAeva4pVj+txlE1TFsRcF1RCLKCVkIO5pFBAj40ua73i8YT7SFBouwX0\nle19tXnG1NqAMJZKn+OVsCMCAHt9+4Rx+qAgvxltbJ/fbHUCHxWbewEXmtkz\nZAJnPdstgBiRGnsFzPaoD/JaBRTviLJaO3NR4wDrB7nI9Nk4zeK2E7Hbg6Un\nPXBXhjbZzqM/d/JtclsMTx/XxjuIXziu0uilq2Yv3ylCHoUsXTx2r/YatO4C\nhD1qrr07n/nXQPOkfRdfGX9xL2G51FkcxkuZOqaMn8Yrh6YYE1/IOxC2ZGDi\ncZ1ma/Q1po6gTwEApX3wAFBP0emVXPWaPvUkJoW0szu4hRyCYZIQ0K2gC+5b\nTLB1wHVlXd+2rQt2K93wh1ZrQ/jOm6lCRQ3aaw0k5pYYmBGXe4sO1hyrnGhq\nPhlH7UUaPTeSt2DgIxPAS3Jcz0csyEbGqk4datkfaU6M/y2nltY73OeEg9q8\n0rMM\r\n=UI5M\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.1.0_1536935205345_0.7088554489817147"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.2.0": {
+			"name": "terser-webpack-plugin",
+			"version": "1.2.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.1.5",
+				"@babel/core": "^7.1.6",
+				"@babel/polyfill": "^7.0.0",
+				"@babel/preset-env": "^7.1.6",
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/defaults": "^3.0.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-core": "^7.0.0-bridge.0",
+				"babel-jest": "^23.6.0",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.5.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^3.0.0",
+				"husky": "^1.2.1",
+				"jest": "^23.5.0",
+				"lint-staged": "^8.1.0",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "6.9.0"
+							},
+							"useBuiltIns": "usage"
+						}
+					]
+				]
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged"
+				}
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"gitHead": "5af4547fdcd73105a388fee1e142322e796da31a",
+			"_id": "terser-webpack-plugin@1.2.0",
+			"_npmVersion": "6.5.0",
+			"_nodeVersion": "10.14.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-QW7RACLS89RalHtLDb0s8+Iqcs/IAEw1rnVrV+mS7Gx1kgPG8o1g33JhAGDgc/CQ84hLsTW5WrAMdVysh692yg==",
+				"shasum": "24697213f2128009080f39f081c18cb2221d91ff",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 47272,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcHlN2CRA9TVsSAnZWagAApOoP/22qIok4vOlvW3w0otvo\nQBVrBebDATlxfNfFo8qRVBgXg7TTais7El7NM0XRrhDnSrjnjIreIDUnsIqQ\nO469/iNOt1UJb2YSY6D4XjwVU2+MVr6gF4V/uj65Yq2ck/S0dfwQMA+7qmaa\ntb6ZzalrMUvpjjJnYi2n8c4HlMMVuCjBzCEoYO7T8SoMSE3ow24ADzjQDipy\n7bAfbq2anToAJBSQIdbPlLNQzdu17p3obxfwqZyxjKVFWX+hGgmLyGUNHrkx\n6WSmQANKxa0ebE4LxNgLUis8Z9WJHvLk/uL3kwvbR8KDmgccna/UFwX0dkeU\nMyncxDJNq3y+vZXRbnD/E5rOt1okazMukr0d72dVRt0RC+Na97csRM6i2eCu\nJBczz2AQAUz/ikXn5BhEd6kkCwD3mGAMLd20oiZ29AtO9bHKwnCmXDep1Veh\nWQQnro+OvakA4x6q5ukYX9oZE5wCeZQdRv0oaXsbsxld7nP0NIU4pUzAox/n\n5cHWnMrvZj10Lm9BYx55fZJlRw0yiWI0wjtKgrFECq+tRUfJGZ51YF5IaykY\noT141ByNBykePs+zY0A1fw54c0/FHi8UQPUhkPdnHWMFsMp+rnl0mnHVKx5I\nsVooQz8iud9w9LX2yLwaRzz7eOQvKLVmbvZXAqRUzH2n3IUyCmxucL9Du2X8\n3r/K\r\n=lxZA\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.2.0_1545491317267_0.9174902599508501"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.2.1": {
+			"name": "terser-webpack-plugin",
+			"version": "1.2.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.8.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.1.5",
+				"@babel/core": "^7.1.6",
+				"@babel/polyfill": "^7.0.0",
+				"@babel/preset-env": "^7.1.6",
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/defaults": "^3.0.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-core": "^7.0.0-bridge.0",
+				"babel-jest": "^23.6.0",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.5.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^3.0.0",
+				"husky": "^1.2.1",
+				"jest": "^23.5.0",
+				"lint-staged": "^8.1.0",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "6.9.0"
+							},
+							"useBuiltIns": "usage"
+						}
+					]
+				]
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged"
+				}
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"gitHead": "bb902d7d0b8f38a0ed8d1ca5827ff3252e1ec3d1",
+			"_id": "terser-webpack-plugin@1.2.1",
+			"_npmVersion": "6.5.0",
+			"_nodeVersion": "10.14.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-GGSt+gbT0oKcMDmPx4SRSfJPE1XaN3kQRWG4ghxKQw9cn5G9x6aCKSsgYdvyM0na9NJ4Drv0RG6jbBByZ5CMjw==",
+				"shasum": "7545da9ae5f4f9ae6a0ac961eb46f5e7c845cc26",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 47642,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJMaQCRA9TVsSAnZWagAA0doP/2kb2o56eX4ZqC0atMlu\nbexsw/rWyVPW2Rk0YLLBNOVhuAC1D3rzri5LYz82SEDjGP0HRyTNoOUGU4vv\nKdA7PiBIqHMQnBzOEAh9PyMuq053wQrWog1oSKCmTkEQ1jxGk2uShKGa6Ii8\nt5Vl1Fv3XVbsyqPLbHId4xEnEqvINFZY51hy8WwNaJkTVjA/2xlRG+WGJ06s\nBAg6mw1p5yn8ERFLdQ3QQdqUCuVrm0nrUmXSx15/VjEpmfon4sYl1afTBdd4\nyk1naCRA6vgFSl6XP1C6qNF689jpmcdE3bgKHh6CppxASmOYZshi9p9wJ/OP\nohsnEzIKGJIBWRhqpSofoSOFJkjKBv/EoJHKeoa9gEit6B7RwFMdVrY/HvdY\neai5nO+gy0kOBmZ1c6MtSro0g8yZsGT7VivrTn/zegQUvzSF0Z46B2dVNV8g\nxjTOSrbVEd743KPpHwsnslLHi+Fr2oyEo9yp0tJ5+fHbn+6XFN2cElHzW0/U\nrwl4zcxowdkJv00+w3cQd7eEIpvMYVCnEXXn7IbDY+6qK5qRdxjj1ZoOiQ32\nVUFLbFl82/7FRisBlNlhBgzi95kmoJFdbgzmyVihAS99rLoMqRAkp88RIeF3\nwbYHvFDdWNT+yAZekJ2IbYSjRArIN+kq3l8Q+M4CL+XRo4IemlTqL9WDV3/h\niG++\r\n=HQrZ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.2.1_1545913999886_0.7529356123498174"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.2.2": {
+			"name": "terser-webpack-plugin",
+			"version": "1.2.2",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.16.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.1.5",
+				"@babel/core": "^7.1.6",
+				"@babel/polyfill": "^7.0.0",
+				"@babel/preset-env": "^7.1.6",
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/defaults": "^3.0.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.0.0",
+				"conventional-github-releaser": "^3.1.2",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.5.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^3.0.0",
+				"husky": "^1.2.1",
+				"jest": "^24.0.0",
+				"lint-staged": "^8.1.0",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.14.0",
+				"standard-version": "^4.3.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "6.9.0"
+							},
+							"useBuiltIns": "usage"
+						}
+					]
+				]
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged"
+				}
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"gitHead": "ea99cce2b6263a5745f9cf7b8d526587d8864fd7",
+			"_id": "terser-webpack-plugin@1.2.2",
+			"_nodeVersion": "10.15.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-1DMkTk286BzmfylAvLXwpJrI7dWa5BnFmscV/2dCr8+c56egFcbaeFAl7+sujAjdmpLam21XRdhA4oifLyiWWg==",
+				"shasum": "9bff3a891ad614855a7dde0d707f7db5a927e3d9",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 47836,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWDneCRA9TVsSAnZWagAA7MMP/1o+QnTZ0AXHMDXdLwZg\nONsDskRwUdWePZCkf8pnjOjHcUTJILvK21S3RVsw+6+j92lBEYou/m8rojbl\n8++gOrEtEd7oqHGwED1yeU3rH90hp/tsIHsVLCcNfwjod7Yxmr9qF3aB8xwn\nx14kMLP45OsG6pKaXt1+AOa10bmpUPVp4PLcJUgiSPFk2YHQyeVDH3uEy7hw\nJI85SNeR3YBEsELsyaPo1ME44Qgw8sq6F5QVoLcdtsqWI3yHCfIZzqfsIf/X\nPHDzj/dlmEAdKB7OF3KjP+T7I8lr1tYHPaY9ZfuBJDnwkI1qp/R5uLohnC56\nB8Zd0rtUjOY9Kof5ZjajJZQsdQXc5sil/dKnIOyqwZJ14ION76JL4j6AL1wW\nlkMcFmSaNLD/Za7PJAmwDJXPoA8IO6yV3HSdyygQt8/euRXc5pFt0ziJoTSE\noXergl0Uf7/cKbMBQSnIoWKGL+1TRVNh4NTG9MkcPszq5YUKIfu/2qV8dWGZ\nuokPsgu3uQIM/5lTWcKzDVpvVSAmuHvYu1T1W1jgyd4WZ7AGGERuZe0XTHjM\npwWQa9ci4q227E4rH2mf9o29SAim0Vnyzd413rhg8c2Zyge+4Wm3wVt9GO8G\nCLrdt2G/sHkX1ic87OrDLa6YVXoG1p1HuFHTnnFqY7PvI7r/nnMff/aVL0lt\nfXdK\r\n=iJdL\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.2.2_1549285854115_0.2225339415375016"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.2.3": {
+			"name": "terser-webpack-plugin",
+			"version": "1.2.3",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:only",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test:only -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.0.2",
+				"find-cache-dir": "^2.0.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.4.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.16.1",
+				"webpack-sources": "^1.1.0",
+				"worker-farm": "^1.5.2"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.1.5",
+				"@babel/core": "^7.1.6",
+				"@babel/polyfill": "^7.0.0",
+				"@babel/preset-env": "^7.1.6",
+				"@commitlint/cli": "^7.0.0",
+				"@commitlint/config-conventional": "^7.0.1",
+				"@webpack-contrib/defaults": "^3.0.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.0.0",
+				"cross-env": "^5.1.3",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.5.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^3.0.0",
+				"husky": "^1.2.1",
+				"jest": "^24.0.0",
+				"lint-staged": "^8.1.0",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.14.0",
+				"standard-version": "^5.0.0",
+				"uglify-js": "^3.4.3",
+				"webpack": "^4.16.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "6.9.0"
+							},
+							"useBuiltIns": "usage"
+						}
+					]
+				]
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged"
+				}
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"singleQuote": true,
+				"trailingComma": "es5",
+				"arrowParens": "always"
+			},
+			"gitHead": "22352b03d06ab248819c5e9cf32e62e914b76ff1",
+			"_id": "terser-webpack-plugin@1.2.3",
+			"_nodeVersion": "10.15.0",
+			"_npmVersion": "6.8.0",
+			"dist": {
+				"integrity": "sha512-GOK7q85oAb/5kE12fMuLdn2btOS9OBZn4VsecpHDywoUC/jLhSAKOiYo0ezx7ss2EXPMzyEWFoE0s1WLE+4+oA==",
+				"shasum": "3f98bc902fac3e5d0de730869f50668561262ec8",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.3.tgz",
+				"fileCount": 10,
+				"unpackedSize": 48290,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcc83xCRA9TVsSAnZWagAA5u4QAKQI8xKvhMKVehjoDKfo\neT3ooqIDXj+p2xpI1pmSkGOsXgFWyBbKSxKQpQzIwYvUL0+3V890YezkJuyd\n+wTLDFVHIdSi56K6lBW/WtAFNUX9IO4nAp44lbJ7bKxf2TioSBHNYz0PBz94\naX3S/roQ/U1q8zVK5izW6zLWm7f47BiQnIrhWVYgUDlYlhA23vsrmFMtrfTi\n7CN3FvBl/Ttz/uQBsvXnIf3g6H5zNF8+Et10XyImErwenT7kRoo7rndeLNoU\nV9gxL8Vk08ezD88XefCSxUYhngFkNHGylaUh8gOGOxMbv66UXDVEk0/fTPKC\nW741nwtn1g+R45J3buCKNquBpZGLvIkz8+NrOQ5ET0zy6CEBmmy+5S/NeeWM\nFSD/i1uSxGcDFibtI9cRGNRttsyEvU18A4xhQQVDuhWjZDLzFp5IxcI4OhcP\n3CsgJceh/ss/rm5zeGjXMZGuUYrT381SLwE0mMfK20z69nsaVLi/rN9IKLGz\nwVLOJrt1nkh4hBNDG7+V21+4zdhjWAsL0FbIGRstPufJlSWpmg2lbBcgLB/U\nzjPdzZIZjClQKjYIsholHyUD9DotzCZgLNpJx8k5QVCB8fnpluaKc7NdD5GX\nvJdtD4Lny6W2mqsjs0RiB4yX0xvzzWlb92bolcoAVc601PIkeokmGBG4ROIm\nXW/h\r\n=frES\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.2.3_1551093232668_0.08182738548952573"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.2.4": {
+			"name": "terser-webpack-plugin",
+			"version": "1.2.4",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint": "eslint --cache src test",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.3.2",
+				"find-cache-dir": "^2.0.0",
+				"is-wsl": "^1.1.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.7.0",
+				"source-map": "^0.6.1",
+				"terser": "^3.17.0",
+				"webpack-sources": "^1.3.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.4.4",
+				"@babel/core": "^7.4.4",
+				"@babel/preset-env": "^7.4.4",
+				"@commitlint/cli": "^7.6.1",
+				"@commitlint/config-conventional": "^7.6.0",
+				"@webpack-contrib/defaults": "^4.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.1",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.16.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.17.2",
+				"eslint-plugin-prettier": "^3.1.0",
+				"husky": "^2.2.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^6.4.0",
+				"lint-staged": "^8.1.6",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.17.1",
+				"standard-version": "^6.0.1",
+				"uglify-js": "^3.5.12",
+				"webpack": "^4.31.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "6d7aaa7196147b15607b9d495a1136f08dba9563",
+			"_id": "terser-webpack-plugin@1.2.4",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-64IiILNQlACWZLzFlpzNaG0bpQ4ytaB7fwOsbpsdIV70AfLUmIGGeuKL0YV2WmtcrURjE2aOvHD4/lrFV3Rg+Q==",
+				"shasum": "56f87540c28dd5265753431009388f473b5abba3",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.4.tgz",
+				"fileCount": 10,
+				"unpackedSize": 48431,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc28odCRA9TVsSAnZWagAASTAP/09+47PqLEbTigZA698x\ng5MMc4aceXeQOE1KNndSn/VJhEevETnfLKQgqd7iQ0QoFd+q0AgY6JX+m68Z\nM9mCtj30vyg8buLT/GMy1ex+wqQE3n9Ha+g33+FF1Fn0QdJBhAWnPwScsoeF\nZnOxin9QT2/GasZsH/T5M0nCmm53jZifxoCgMVRe5S9FsQKApxU1mmZ7X7bO\nTr2EkF7oSPYso9eB0EThQvgE0xVl87i0fxVUmloDZCSwIv472XHBRwk3Pm1h\nWSiZAPJDXNhpjgLk+Prq9TKcSbELrzlx8dhIo9DbtqylCgmLCTPRD7hUw4b6\n0lMoxjURIY5MLdXOwV8J4ufg3iu+7xjMhNHTAxUgDPbdoO/8dz80J0q9HaCs\nXig20VPlNkB6Hz2UlQ2DNdqVK2sKQGcESXIiqxVIXtGIop+dgxhlw8BNORBB\n21Ao3jzaYidJMgTg4ol1IU/tWL61XNamr68Tr2myEAvh3XDQu7l0xp2csyDz\nafv39TsV+6rSGq8/LzFfq4JjUAApM/1riCWvatD7dJQTj+mdhQyisej2cgqm\n0lHvJbQQyznXqePqMnqDlrWUE4dDhPAN4pQPEe5weSkg3unZWDOU5vf4HAKy\nRJk0SgeCaWLpXs3Pwk3rIcv/nl+zw4Hhw9Bgh6bBV4QE25DwkGm3HycmBGl9\nDVvL\r\n=Cp9y\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.2.4_1557907997072_0.49344203996005964"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.3.0": {
+			"name": "terser-webpack-plugin",
+			"version": "1.3.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^11.3.2",
+				"find-cache-dir": "^2.0.0",
+				"is-wsl": "^1.1.0",
+				"loader-utils": "^1.2.3",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.7.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.0.0",
+				"webpack-sources": "^1.3.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.4.4",
+				"@babel/core": "^7.4.5",
+				"@babel/preset-env": "^7.4.5",
+				"@commitlint/cli": "^7.6.1",
+				"@commitlint/config-conventional": "^7.6.0",
+				"@webpack-contrib/defaults": "^4.1.1",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.1",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^5.16.0",
+				"eslint-config-prettier": "^4.3.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.17.2",
+				"eslint-plugin-prettier": "^3.1.0",
+				"husky": "^2.2.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^6.4.0",
+				"lint-staged": "^8.1.7",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.17.1",
+				"standard-version": "^6.0.1",
+				"uglify-js": "^3.5.15",
+				"webpack": "^4.32.2"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "a0d83170168e786004fa12b94525b2934a17a4f5",
+			"_id": "terser-webpack-plugin@1.3.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-W2YWmxPjjkUcOWa4pBEv4OP4er1aeQJlSo2UhtCFQCuRXEHjOFscO8VyWHj9JLlA0RzQb8Y2/Ta78XZvT54uGg==",
+				"shasum": "69aa22426299f4b5b3775cbed8cb2c5d419aa1d4",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.3.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 49076,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc5/EyCRA9TVsSAnZWagAAwqAP/iHS/sjGmsq6IC0id+JJ\ngn4JWl6pDoqcgg9NivvIGtiKoDn4/seDWocHQRAonAJo5I7WDBRCcj+ClG9U\nYYvZLsgZbJEeK4tmH67XizXiaQ1BypwZy4DkhGQRBRkgC/f0xyAKEbcU6tqJ\nOiPVD4DvNO9ndX3U4Wvah+ctvNaYYPkqZrOYylwjxj93OmSFHr64pic8qV4S\nYM1nk8Plzox1OKNC5XGdmSWlsBIhDn/ENxniwGQap2Vuz5riXuCosxVGGRuS\ns48iQUtVU1oVxKczLM9I0TY2aZDJnVqtvY70M628cZ+jDHmPcJHzg5itGUw2\ndagj53mmBumBzDA+dPJBhhTlUa3W0vEOw8depAOx++Maq1GVMAtMKGYGGqgs\n6ueS0uHdOMKDrOmxadJCBttAIF5KB59StBBxLpJSgeKxnjx1eDebbxEc/XMo\n5waGVe2Vp8E5YU46oQbINdMy0RzMVCAi/hrs/i9TShvBqR/SmPEVjJtloUV+\nzdtxXAKF2J0BYWhFXvrBxYu6cWJLLnxc28w5TxmENOsyE7MlAI2Ng9UvXtbY\n6LWRvTo7VaZ7Ymnj32pq58ey6FUJ8I9kJif2Steg49O0iVLBsl6rZE1ymu09\nZrjFndBDOLEt6s3ri2pgluM1tc1RPGwGIwYNhOTvCjohDlxGKe5Kl6lgMzOF\n0s64\r\n=jqm/\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.3.0_1558704433897_0.686976472940936"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.4.0": {
+			"name": "terser-webpack-plugin",
+			"version": "1.4.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.2",
+				"find-cache-dir": "^2.1.0",
+				"is-wsl": "^1.1.0",
+				"loader-utils": "^1.2.3",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.7.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.1.2",
+				"webpack-sources": "^1.4.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^6.1.0",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.2",
+				"jest": "^24.8.0",
+				"jest-junit": "^7.0.0",
+				"lint-staged": "^9.2.1",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.38.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "2b2cb8aba3b9ae3c1c59f9eab07e9d0f043d46fd",
+			"_id": "terser-webpack-plugin@1.4.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.10.2",
+			"dist": {
+				"integrity": "sha512-8ShcKziW7DZDL5jrO7TtBY7DV2tuAoztc73+2ufmiSp72XOjCJlYfnn/VM1SPeO/oqD9wBrLSJVFDamLuETofA==",
+				"shasum": "01bc2eb4902441e66dc0cc8d30af5266117df4a4",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50063,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQX1NCRA9TVsSAnZWagAAXs0QAJNTs8EkH0lYIm/rLay/\nYM2+zOyiGnOSulHfAZqFri2qXBasJ+nHx+9Rfb4po2qT1H85G+V/p85bZDpm\naKKlkhV82fn82pBqSAxrEA2aEmxJqUZebR9gFt0UB02sXUHF6XTdXv1e7a0I\nBAOhIgR05A5b28+4YKJXLTbrm5nnTtHqFaap5ISzWWLI0ymhh3UNfgrVzlPO\n3nd2EQjt9FgLY3JxlfnBW6i0IYK4/nWfPURBF+clwQ8sl9uH+SKQ5IWbduKq\nM0nBDtDiCT4PUJEK4PZiNg5PzOgLs+E3QUPF5WXDFvxFScKFHu7TX6cVKmzn\nATmwC6r5m2+dDEXr44mX3NnQD0yXYhtU62XAPbPWGNuxcfKtmTU6u9L+vPUk\na49CdoRnhX39l4EMdz3+6OCKq0QayHnDEUJlhyKjDx4BTvhZ4yA/LTQaPrs1\nXkujJt5lziRy20+iQU5YOqcCQ+kzVzPG3UP8WbGgEP5OG7O+tp8pkxBL67td\nJsIlfvaMxJj0IMGk0ni6s4pyfPBCi0hbIcB9Uq1G/BCB088vQVotN79fJsYx\n35T8GiMUYuJdDGIZQHs/6WRQC5tF69r4npAOxfBz9PUYwKFL/zlZgRsVriT6\nB7Eut6tamj0ZBFCsDxdvJa4NkFNN9Bolfh7JHce6kYPHLLw9PyzA4lJBX/Kp\nWpbr\r\n=ISqz\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.4.0_1564573005089_0.5717403472883256"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.4.1": {
+			"name": "terser-webpack-plugin",
+			"version": "1.4.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.2",
+				"find-cache-dir": "^2.1.0",
+				"is-wsl": "^1.1.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^1.7.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.1.2",
+				"webpack-sources": "^1.4.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^6.1.0",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.2",
+				"jest": "^24.8.0",
+				"jest-junit": "^7.0.0",
+				"lint-staged": "^9.2.1",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.38.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "aa12914c34f3eac7280052dad3de465a163630d7",
+			"_id": "terser-webpack-plugin@1.4.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.10.2",
+			"dist": {
+				"integrity": "sha512-ZXmmfiwtCLfz8WKZyYUuuHf3dMYEjg8NrjHMb0JqHVHVOSkzp3cW2/XG1fP3tRhqEqSzMwzzRQGtAPbs4Cncxg==",
+				"shasum": "61b18e40eaee5be97e771cdbb10ed1280888c2b4",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50354,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQYWQCRA9TVsSAnZWagAA1tgP/A0s1F4udYdzwXeIJEDF\nAIMrwAyyKj45nIEGJyOutvOPGi/KRJd8uCJKVHimtX/8CB5T04FVf5CeY4t7\nAmf8vShMMwbUqaJi7XHtpmou/RMu9v2va4u5sRsKykBeVynz5BiIiJgr0gte\ni5qopwSppsQ3s9z9/JzslZeh6HtDm20YLVMH66dDlYhLsbsuvyrtCN6OrORm\nhp9bZ7S1j0P/Te5sMaZikqtoy/Vn5jnv98lCZ7pihhcun7Q1CDHSzV1TK0R2\n7wyvL2CY7kR/CzLkgceboRkn1AB4PZpjurJkIwPReT1aHbEbDnND8Tjdpfwo\nG03WLlvdXB84R0SBoeFu7/ibulrRME80SlonzXcq1q8fhyhTMWsOzYipE5Wp\nvyc6+AqFvCu4D0HXyooQpeXa0q3XB6BQciOUjGlw0yE5DOA1n6+tnqIwcBXL\nYpT4fy/ohN/ufIAWy/r7rI0ktMoTVcY2wN7R4PkZ5vMvfRl5sKR69/vSOV9K\n53v84MnkeyIwiPSRh8fx0KDlMKHHQVzZT5gJUD8+2HQBK/pf7VJ+MZDsZN9B\n/caR6uwQsaEo/3X1o4m1PRBH9NdqNN8/+iTcKPF4aoG2YUCTL06Gt+rjL0pd\nd4UA7NEzCu61JPUFNBiQZsxuMlPng2CCEsXddmzlSPueMcuO7q7IjGrdC3k/\nF2kh\r\n=2LYE\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.4.1_1564575119850_0.24911352412752774"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.0.0": {
+			"name": "terser-webpack-plugin",
+			"version": "2.0.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.3",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.2.0",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.2.1",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.1",
+				"del": "^5.1.0",
+				"del-cli": "^2.0.0",
+				"eslint": "^6.3.0",
+				"eslint-config-prettier": "^6.2.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.5",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.2.5",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.39.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "42a0f9c547ceb11b33b94443f52b817b868cc810",
+			"_id": "terser-webpack-plugin@2.0.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.11.2",
+			"dist": {
+				"integrity": "sha512-kbaUz6c4dlfsEEiZK5/tuQqe4VGagCtezxLj+9YuLvI6dRMQo2LWOmAH7+MybT5lzTMx4kVJnA6/jUgWeY/erQ==",
+				"shasum": "1b744e0b7b577fb02456355a08fd05b7e4efdd59",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.0.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50003,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcUfxCRA9TVsSAnZWagAAUoQP/RWfNtCOcgPJSo9qiTKQ\nsjxs5mZ1RYIypdmbqLoS5RdkRQ7CvyXdstXSGLKajd1cnPCOkRB+QNzDQR/O\nvapQijMotnWTaO8s9OI179yN4hAy/IRH9V1y1i5H8lgscDct7M7KMEPTwsz4\nH/XF8QZcFImqWHEX8poBSpZ8RLAY0C6zXEXXwcOQc2QcmIQ3TVGeKH4xwT0q\ns743KtIqWLzlfE0aficVjT+6QJrQgToERAc2oo3XSPwam0y86BSLUL45H40o\nB9rHbO/wddGUbaZx+I3MoOfkwcaUCu6GdABNgFnr/3S1TP3zuW79FA1/Q+3F\nhc8GJTtE1W04nNTfqV+X7n9auwveqRZ2yOhwgZghCHMihIZxdkYuNdOFbC9f\nKh/D7BxaHF3Y7xc1SucY45EayimK0BwPJmRSG664723vh8l/mJ/ADipEvNKf\n/LTntOWEQxTKa90UyToRPTEzmypnqG9JkrjFl+jCjVNItVu7VfnMv2pEMIgq\nOkSvmxqqOTHY7N70ecyiO5bx5alR9bgpJQ6V57ekmD1UOa8y9zo/wg8A2Xpi\nwi1ez6zhFGVbkbwoa1srf7r/sDEVd5zCWFMMrakdPJDQQaYmA61Txe3KkmU3\nLLRHYp2wwE6B6o7xSsnMMuF5AdSRD1My0pkA6zxdOgf0HEIaFA8kKQeiwmi3\nBNlN\r\n=o8Mw\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.0.0_1567705072258_0.08775180454725007"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.0.1": {
+			"name": "terser-webpack-plugin",
+			"version": "2.0.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.3",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.2.0",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.2.1",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.1",
+				"del": "^5.1.0",
+				"del-cli": "^2.0.0",
+				"eslint": "^6.3.0",
+				"eslint-config-prettier": "^6.2.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.5",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.2.5",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.39.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "0b9681de9fc6a2a9f3f794e983742bd30c39e1fd",
+			"_id": "terser-webpack-plugin@2.0.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.11.2",
+			"dist": {
+				"integrity": "sha512-DXx8f7080P2dgW9Ydd7MUon81AL+GkGr9prfQRf+rH06dRrgCGIvtT7q73JRm2UzmjKeJGtro9O8zwL2y2udag==",
+				"shasum": "5e69a187133472174ef2fb51afc76a0f0a7b1d13",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.0.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50523,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcmmoCRA9TVsSAnZWagAAWJ0P/2JZuYC7mFlN4kpzcb7c\nBYYTmYkZbX3qAclQDIuiHeFsNqEXi/rWvJM+FacgyoxiyDMpiKuI8Z3hv4VB\njdF7mx8ab9/b99L3oKuwqvkV0BfW3GdaS9wVT4gRHZ5uqcwoh6LQ4Nt5NZ8X\nJBvZ23RHLRLPhhCbkE2IuKCH7nD0uw6rxWPbwLIf6TMcenhWVDO8nha+hgm0\nEfxWM2IxAF6LXIr7REg9UK6syRZA6GS9XwshvRmbG5xjr1Wun7DXWgisw/Nc\nQgK2jhU8JEMc9KvKM0bL0jptaGCHlnLS4qY9GyKhb0UOG8zMpPNW+H7h/0AZ\nwKoSAQES2SFsimBREJzYds/+95mQzsSngToWfLRSKNt+fJLjKfeBfEE93q6C\nkI4+VEcJjKfiYlE1k15AWii7rFouRieIoIhFn9qoLlM95b6ZEQJpcMs3zxVR\nN587JOTPCSZhAkwJxWBPfrsZyg0ZNMk7Na2CzBnzj+JsZhYSuScToqUAhoSD\na/wUx1LJXMLltJH4dWUzFdFOinIreuLDh9aNeS9cMpJUvBd81jXcI1qis/A1\nNeN2d40ZCkriBQv/CfXlT4ZwrzSTqDqU2JStY8z3wW1KUmsBJqHEmT011OAb\n7mZJn7ZL8QSOyMU4NMbH4oqYF9peTYyq5j8X55VB6W5pXEOJSWdk0N7TM2yD\nqA7M\r\n=9H6u\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.0.1_1567779239359_0.4828805413574835"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.1.0": {
+			"name": "terser-webpack-plugin",
+			"version": "2.1.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.3",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.2.0",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.1",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.0",
+				"@babel/core": "^7.6.0",
+				"@babel/preset-env": "^7.6.0",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.1",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.3.0",
+				"eslint-config-prettier": "^6.3.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.5",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.2.5",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.40.1"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "d5df72804c4f723ff8f71a80c745711a0b234504",
+			"_id": "terser-webpack-plugin@2.1.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.11.3",
+			"dist": {
+				"integrity": "sha512-sZs43FVvNTqHp5hTkTSIC3XKB7rEC2FCbx9Uv0rM7D4iJsbTA1Q84tiaRYSSKSojBe6LCONX44RF73AEHGasvw==",
+				"shasum": "b9cee799a2da2bce788540c3738e081b6db28d8a",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 53920,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdf5POCRA9TVsSAnZWagAAwwAP/ibF7QZEryvwxU9Z/p75\n1wWQ7rMVTpRl8Y+MysC+QYk0hSCYRQ+dIWsJBBJc0y/WdKZssm30VJuq7LUM\nnPmbJhh+m8X2n5ayChYnNYmVZge+oKtJ/CsBX2PU/olVMSfwUvpmUPAB/ipb\nx7cJdBudYx6dGbLxIJrzrCPycQHD+zcPRDd1Fl0d4KlJ2Mx98si71IgJkMA3\nUYcShKXFYbwVh8kQvecV8OFw3HdMfbHHqY318sw2gzHZ27EToiG61axq5i8J\nyGAGtDNgdlFFZqNALlKrMgIK/Vzn4wZBOcAyTr2avmSHK7EmczeVfJPrFBMv\nog5PI2wfqpERrXgiXbJGYI8O2vP0IWptfGkiHBJf6DYo4V1np9rbtBPSx/KW\ne+i/hsrafDfgr3dahudEwZqnSxULzJM1E0zBvWROklPibi+qcOGlQ25Vdk6o\nXL4lzTHyPiN3he15Dr4So41X3DMVaUgxZAPg7e8Mpq9TuWn5UYoJTCadF7aD\nI+NxNFY+lXRe+HnhkTdzmz3/R6YohCqvH/F6hurUlpFm0IuY6KDuk5q8Nbjs\n/s6OHfPcVASdfy3PfAue00rKSegR2r6EAoK3ATzsKGS0hbTC5x4pGXuvFwZz\nXAQ+cHhQdHi/mNftR75L/BlfDH9LzFZuYLVxEqgcyoNosnB+sY0CIBSYq94X\nF9Z4\r\n=xV1h\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.1.0_1568641997906_0.7811189108021903"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.1.1": {
+			"name": "terser-webpack-plugin",
+			"version": "2.1.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.0",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.4.1",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.3",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.0",
+				"@babel/core": "^7.6.0",
+				"@babel/preset-env": "^7.6.0",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.0",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.3.0",
+				"eslint-config-prettier": "^6.3.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.5",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.4.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.40.1"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "8c6845060da8f0e807447d738949c914536430a4",
+			"_id": "terser-webpack-plugin@2.1.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.11.3",
+			"dist": {
+				"integrity": "sha512-JhKx1aWtb0woicUwG7VJgunyNigRDKgeriOgh1bAZVSwu3raBuP/jTF9zpFWwoLzuTaoj0TwxcK/nA/PauEe+A==",
+				"shasum": "ce84a39124bff59b56895642dd803e73bfca007f",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 53806,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjh+gCRA9TVsSAnZWagAAmWMP/AspiXQrU/4GlpNRy6Vk\nEYqcbE/DDD8TcJSZBzhKKK53G7AgnIr4vGEWbwhMaQcKv7mSY7CKixQ+E8tY\nElyv8/S86qMFKTUqGUTstzdzgiKR+N9Y9TiOez42mnebGjm+580kn9MtaNvq\nWEPUCyX7DS3rsE/XcDIK/rv/bNecgFdhfw+OmmXFCI27lP5SxwHqbHObGsSa\n3ajb8LwXZB72PAnhW6BOMU4OUmvbWhB+jKo+gB6RrmnjnZg0b0TyKfAzoki1\n6LFW8/vtWuI8Q2F7hC4ToaxwX5aGZ1NlFwgLcuPGRKK5nYKoX1HMsroBKBOR\nzGDdmJJaJ4TyF59XU4e3XwRjiuh1MimS4hn6yqN0kbsQ3lJAeAnFpN7HQ+Up\nmCa+OQv5u3YRyZALo+rYlBRy82LRwJslyP5om3CWP9v8+ZcSVMsskjQUBwAO\nTVI4tM79ao3Awj8cSmZQNGqXIjV204TrFFVA03qRhPnFb9vj/ZCkQEUf+g3d\nbYJeki0W4HSECgOrD5o962liVrB++5lBg/HDTaV5rPyxju+MLoTuH+Hz30ih\nFM/1uiMZ77QBPkkZJDV/m//YD0e+psTTM+6pqdr4lwyqlbNCsV3LTSIB69cl\np6O3GLaWSyGrHgiVDK1yGvL/tVyQIWI5YrZnTCFwhPaGlkBvJyInDSdmszj/\niewp\r\n=wkwR\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.1.1_1569595295464_0.0668562797798189"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.1.2": {
+			"name": "terser-webpack-plugin",
+			"version": "2.1.2",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.0",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.4.1",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.4",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.0",
+				"@babel/core": "^7.6.0",
+				"@babel/preset-env": "^7.6.0",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.0",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.3.0",
+				"eslint-config-prettier": "^6.3.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.7",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.4.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.40.1"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "f4eec753b490e7587a4b22e83fb8c1ce0adb4bf6",
+			"_id": "terser-webpack-plugin@2.1.2",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.11.3",
+			"dist": {
+				"integrity": "sha512-MF/C4KABwqYOfRDi87f7gG07GP7Wj/kyiX938UxIGIO6l5mkh8XJL7xtS0hX/CRdVQaZI7ThGUPZbznrCjsGpg==",
+				"shasum": "2b9b8147a6f18918348200800cf9560c50f701bb",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 54073,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdj5BQCRA9TVsSAnZWagAA29MP/3JC9jisIsk7kvLN5Udg\nyCznmTXeMlOXYj/XdMT/pKSMvGqO20O9AA+sRyIUfVepIXjDNPQeWjHhdFht\nEi7mhP5JBgsa7DFh5UvmgV9A9s1+P4cygwBJd63ND3UsFJ/DFqDUMbItzrRH\n0duqatZPGxuj/oUcUXX5IYvjX5fNoRYAsyGD0763+W/uO6R937Cp9F2tb1KL\n60u+5Si+rzb5ZG7u70emWjGCsRrYQaigQcbax6t5uuSCR53OmSnVtNhNKPOu\nmFKRvlycn78SW+/o5Wr19N1/fqiHUrrqaNCsc0aC/TK+4oUFKLHezQGG9eFw\nYMm3+fkHn//vZzKRm1REd08if8ttux43ew2nz6I2/FNQDZ8P8AP1QmXT5xj3\n9q2S3EI50xtEBu4N79TX7o/4KYB9ye/viWcwZa8N+eAGznNQQy06qOnYgjDg\n39S/DUa4OGsxgQXmK8ghxYZFDy/ec1KaECDFURnDh9fPojpmwIyd9C8FeVQr\n9ZroZzFybSenui/KSoEf/sJb2XzwAvRRJ3DQ1hvFw3+8ljuDV+fiGjo42ynG\nk+QW5n7DgmJ5Y3EUZH1LLt3jidHSk71Iscs07pyUZfladVF3qLCBBEAZ63I1\n5NDISAE+pvZll5tmHhd3Yth/xTgShc3o/CckIGOjPrc2tFLk9LK9tsEQOwck\niRmY\r\n=BYRR\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.1.2_1569689679260_0.023323062343016288"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.1.3": {
+			"name": "terser-webpack-plugin",
+			"version": "2.1.3",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.4.1",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.8",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.3",
+				"@babel/core": "^7.6.3",
+				"@babel/preset-env": "^7.6.3",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.5.1",
+				"eslint-config-prettier": "^6.4.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.8",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.4.2",
+				"memory-fs": "^0.5.0",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.1",
+				"webpack": "^4.41.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "92c56add39df84863eeca68382b984a3cbecf0c4",
+			"_id": "terser-webpack-plugin@2.1.3",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.12.0",
+			"dist": {
+				"integrity": "sha512-z5Utx0TxmirZvRNL1GC795tlDM+bO83ZfcbtkL1y1VLoWtZ7S2a9+HFCLnabSRE/Yjsu4zCEX6U6CIRo4dVmcQ==",
+				"shasum": "85430da71ba88a60072bf659589eafaf6a00dc22",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.3.tgz",
+				"fileCount": 10,
+				"unpackedSize": 54764,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdn3tfCRA9TVsSAnZWagAAjZIQAJQpKEpIhEcoK+9zsC08\n9s5ix4nzmrVfuf3Ixp9FCyhp5Qe9IPDltYINSk6BV1+3d6awfj1484P6f77v\nDunHSMxfo0SK1T/Akx7VVBuxXpaAQ429x81VMUWpOtouGhwExA7hfpi/EI9r\nT+2gYMOeHtAYm0tBZ9VWGUajgzDE+ANtW4ipU5OkwBdNK/ESCnp+kfjAcXJ3\n/RPkjojSwjSPAaqotjAiqfZyKlBDC0PwTCAhC7eUb2iXd+dyw2dMtEzBmE2v\nriqCLXJZjRAYMb3GI9Q8Ia1ufbIH3G3ugFATN0ojhOUsPYXnVoYPuz37q6er\nTDU54fqvRp/EOZzO+acY3z1KCPQ9hgYRNFCjLgISxSzkKhS5+ERzB9vziqiW\n73/pZwlqi11X3xLKuH2f5p1hoAtL7Z8DSfIVyryTKPpyOeOvZEkBFfbLZSaS\nqQUTm9hlGT4wtRDERjXsfZ4Qq3VCzgsdc/qXDibKRKNZPN/PA1BPZKDWmeLJ\njK4P3/CBIA8UV6dycz7pNF8HxZqA7giA3jYKnSU5hI3yY2r3Hh1UWLRs+tiD\nyEXTNCxnf7aZpCoAbu1XK/2iFYqZzbXqZU5jFhHCLs+xXlMiVWPHbP/+ikUd\n9K8vjsMR12lQEwRCEs8LDQdn8WUQKAoarS9czeEyv0i+eFPVN+Xz4/5SvRMw\nYfKA\r\n=FoVo\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.1.3_1570732894719_0.6586753478915599"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.2.0": {
+			"name": "terser-webpack-plugin",
+			"version": "2.2.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.5.0",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.9",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.4",
+				"@babel/core": "^7.6.4",
+				"@babel/preset-env": "^7.6.3",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.5.1",
+				"eslint-config-prettier": "^6.4.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.9",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.4.2",
+				"memory-fs": "^0.5.0",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.3",
+				"webpack": "^4.41.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "cd802272973959493473d6e67412760113a27a29",
+			"_id": "terser-webpack-plugin@2.2.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.12.0",
+			"dist": {
+				"integrity": "sha512-Sv2tyWCEXSi7aHCBOnigWMIFYHScftKytogG08RCmusPRkYMRCxyq2rVdy7s1ahEE13Yoz2ddgPsNU6axP5LJg==",
+				"shasum": "c35d66552ccfb9cc6fd39db06f430c3133d73110",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 57915,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdruPeCRA9TVsSAnZWagAAdqoP/3v+0KPvc1hFmX3k/sd6\n85LPttEGaLyy+fBzITXKYedCl6DgjIvkar4FjiGMp+Owqy6z4aaJNwKjDsjO\n2NVrb4y49j5Q10UWkKk4narbOXRaDMiOLe+4V5rOgJOMe1pfOTgmuqiz9UmZ\n1cSSbspnrBVuiqRV3xYyXf/tD/NunK0SRBmZ5jVaTyo0rEW4LfAISHGhXsIh\nX/l8qQtvH/WlbBTiliU/rN1XEYyNzrpHwlqO1zmcX9NeGybDcCsDT1LD1LRL\n+Ocxfmg+bSLxQ/jHULANWOl0bzz8VTa1X4fvwUOZNUGixP4jYskc1UTBbCn0\nEKrM0fCy+Q7leFQUVEEI9BcJYzQkwQyDvxihb/yWi3wENKxuzHYAjw8IPEbq\nOYtsB2CAQPM9Ni6nRWLVuuSi9OaDDqXdneT4pQ7wZziit2Q+bRl/DUWZvMKz\nIrJ9Ozt1mB43wwUDNXp6qEkDlD2rwcfyPSDnQzSt3BEThmEQ4DSiIZ0oH87c\ngkj/1wzOn4AyVFRlI1knzdcgUd8nh7M8qjMH+8zGCQ0UONYkyC5C61tw5Bju\nnmNggfqd30LpBoNpCRqiOydmiBF6YIuJEgz/ElRzvpxdfkbvaSnNJj7lwadJ\nyKqIg2LETvMKqnNNzhXAV4G0+Qb9JvtMRivYv1D4p/DZ4xEjofgKJiWdyMLU\n9oMv\r\n=CK/t\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.2.0_1571742685316_0.47473611583279673"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.2.1": {
+			"name": "terser-webpack-plugin",
+			"version": "2.2.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.0.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.5.0",
+				"serialize-javascript": "^2.1.0",
+				"source-map": "^0.6.1",
+				"terser": "^4.3.9",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.4",
+				"@babel/core": "^7.6.4",
+				"@babel/preset-env": "^7.6.3",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.5.1",
+				"eslint-config-prettier": "^6.4.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.9",
+				"jest": "^24.9.0",
+				"jest-junit": "^8.0.0",
+				"lint-staged": "^9.4.2",
+				"memory-fs": "^0.5.0",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.3",
+				"webpack": "^4.41.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "1b03b6b84652dd451465ea24e60ad717498fad2f",
+			"_id": "terser-webpack-plugin@2.2.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.12.0",
+			"dist": {
+				"integrity": "sha512-jwdauV5Al7zopR6OAYvIIRcxXCSvLjZjr7uZE8l2tIWb/ryrGN48sJftqGf5k9z09tWhajx53ldp0XPI080YnA==",
+				"shasum": "5569e6c7d8be79e5e43d6da23acc3b6ba77d22bd",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 58326,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdrwkeCRA9TVsSAnZWagAAc1IP/2xbqahMDaJT1j0UCXkD\nXiusnNvQeMh95pmDVKtALqbVWp3RbKL2IHmkJsyn32OH5txCk+MoE7g5fHLL\n0V0YLiJOYtmn9p7S3Dj9XIg3FkAL5l5Bsgm6/25tzv6T8FFWCbW9O7XPIdWa\n9MpGewinkjRaiNdZqphxPmfywOajv9KHqnjKZNO2aaPUNujkatAdciRN0f6b\nARz2rnJ/i9ygzi5CiE5e3sXxXEyLbU3FwBMo3t8YYEqGsBDNZ1FnWRfXJwyU\nk2szQeGBxIMLzlN6zdEWegwtQy1JjwVwzr7n+D1V239gGzTvQvjuSF7wBm+x\nfzWIInsdcDSVuO+y5j0zIjE+41oy2hVjws3n2AGSM2d7MmERQsY/X0e3Od5p\nyplzeCJoaYp5xtKmmD/9kIx+iZsUL0RNMQXUtzrAnlWixHuu4k7OsgLu8h0y\nyTLpOPH2SUQQNSbA6mWixP85mn3GuS1I+92FnnpT2UIkmqeSR5H3aqy3cp7/\naofK+VqobuFGTQW/s1WIfS9MG9w36+el9NaPsettL5x9Um/W/yMT49S1VFhz\nolrOyEwE39kCfX1DsRFGwjc6DrNAxcRLduSUvIuOjR9RmnyHfCO4lZHq4WCA\nnQFO7LIXU4r+S6PcPvtnbrduKOiE1fm6Wp5g86xFnMncEiwkGKz8sfrHhxbi\nODZ4\r\n=cNh6\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.2.1_1571752221465_0.01566689987677128"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.2.2": {
+			"name": "terser-webpack-plugin",
+			"version": "2.2.2",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"funding": {
+				"type": "opencollective",
+				"url": "https://opencollective.com/webpack"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"clean": "del-cli dist",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+				"commitlint": "commitlint --from=master",
+				"security": "npm audit",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+				"lint:js": "eslint --cache .",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "npm run test:only -- --watch",
+				"test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0 || ^5.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.1.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.6.1",
+				"serialize-javascript": "^2.1.1",
+				"source-map": "^0.6.1",
+				"terser": "^4.4.2",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.4",
+				"@babel/core": "^7.7.4",
+				"@babel/preset-env": "^7.7.4",
+				"@commitlint/cli": "^8.2.0",
+				"@commitlint/config-conventional": "^8.2.0",
+				"@webpack-contrib/defaults": "^6.2.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.7.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.1.0",
+				"jest": "^24.9.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memfs": "^3.0.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"uglify-js": "^3.7.1",
+				"webpack": "^4.41.2"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "b33ff1a006c4d65ac1be237137a09ead9043a8ca",
+			"_id": "terser-webpack-plugin@2.2.2",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.2",
+			"dist": {
+				"integrity": "sha512-/CHMNswPMAwuD2kd++qys8UmBRmsshPSzHw4BlDwurPtK9YjeK93OV89YWkJulHk972cs07K/7Z92V6PNjWF8A==",
+				"shasum": "2a6e00237125564a455ad69b22e08ee59420473a",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 58533,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6lUUCRA9TVsSAnZWagAAF3EP/RRjece7BvodsJ6UVfZ9\nqZnD7BA9fHK3aYhWus7m+jmFG/lqYA8i0Ws1v5lbQGXPOfHXOtTIjKVO7MmF\nQfsTj4tAGhHspt604hLdghlkpBMVc0c6K9khPPLsRo8FJryrLh3atPb3rMaa\ncDGlS0VBwr2GjljyHBYG9X3SalYMyEd9RHq0Y3D3n0+ML9fjT4Uo6cUDrFZy\nux+hoOrNsU5rT4RXDNcEc1HZNgdvceJ9ECpXV4fOtmlWbuCWklmew1a1/d3F\nEHpfkL6IdvJya7H3g9GFKWwh6+Os9B64yF9RnzpQmE3m6JCHLJN4NXEtRUap\nXsrfj1rq9RpqqIN3j+Mk5SqUodenK+WFdiS97w2DXfNZwZ55L4E0IYahIGNf\n2J4ysZCQGI6zq5R2Kanb9XZR9V6Q1ISG5NOpXeHasXrAkgB4Vh9bbeHrqhNs\nUtqONCOX5Gxy+j5PHfT1d2OuYXepiJVV1/S8C1HY9X5ZgFHjjaKMYwlwD8EC\nDZuBA8JxjrF9Mo5qNOCpTlvJamBMrDO3IuVjOOuEVWxz+0ItlUyARIqVPze7\nbPeLUctTKs9QEEM7KxqEEEYYTXFBNcglDSnulWAfaxtmHf4J3aZlROjsZNwD\nJHbvpWE9n4eOdtR3UpXja+vckSiO9dTNVPz5lQ1pdrkTF/ftOy56Bj9atUCD\n0z1B\r\n=GQWj\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.2.2_1575638292025_0.740525543657319"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.4.2": {
+			"name": "terser-webpack-plugin",
+			"version": "1.4.2",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.2",
+				"find-cache-dir": "^2.1.0",
+				"is-wsl": "^1.1.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^2.1.1",
+				"source-map": "^0.6.1",
+				"terser": "^4.1.2",
+				"webpack-sources": "^1.4.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^6.1.0",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.2",
+				"jest": "^24.8.0",
+				"jest-junit": "^7.0.0",
+				"lint-staged": "^9.2.1",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.38.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"readmeFilename": "README.md",
+			"gitHead": "68611d9da89b74c5141b153a258a30c3ef79f93c",
+			"_id": "terser-webpack-plugin@1.4.2",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.2",
+			"dist": {
+				"integrity": "sha512-fdEb91kR2l+BVgES77N/NTXWZlpX6vX+pYPjnX5grcDYBF2CMnzJiXX4NNlna4l04lvCW39lZ+O/jSvUhHH/ew==",
+				"shasum": "e23c0d554587d1f473bd0cf68627720e733890a4",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50562,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6mdqCRA9TVsSAnZWagAAYusP/AwnEClSA8sj0Xo0n0Vu\n8EEcEY0ZEA84OVYKD5JRvxmYVMGVEqnHcSgg/0CKHTMI1V0Mpzj2v90Y7BwV\ne1IXGRexdChLSBuxgyB0quJsBNBAxFKL+nFreO+SQCAuUZB6qwNaxUhFqIvE\n/C6ir62YsWn8PfwYjdNn0O3dMHdPwDbKD5TJs7zErdbhAHMcxsDwROECP7Cr\n3trr2+fhPNV6qIMEd0br2lGX3L3PelJz6i0rfT/4OhYYplW2Tjc/+NPmQJSP\njWJwEI14gOupHChp10FpxK9PTAkW3qa9W03K/jlysiwSILGvAjCpCMI2lddO\njQMBI1/ma3mgQNkf+IG6yL7x9MKbwpE/LZvGiAz1aPCfEDrGUV24yB60OHLa\nN8NtWqV3QdCDoCQeVLgHLU4GVHEvhYY7PBgnYKWeG7Ddb5rbcPJ012LmeUWg\nBoqwoAvQvbwzTRKrYcnG9u4yH4q145OeWvRFcRq00HqYGZ0U+PvA9KWT3FOx\nslqDSejP8UZDKjK9Yrfm+mxGEgJVv6egaXzgqGfYn0lkYdBt5H/ADbTX03sM\n7nONXbE1WzkJs6mfE/aPI6UPOrSGxj6QU4YQipe3+Ujm4JWdeXuatXYO7Azj\nUqhaT8U7/zGJlz6DG0GpM7fj2hQIxvXo4iFt9wdDebk2PCj8KPalK+xYp3Wr\n/AVT\r\n=DfUS\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.4.2_1575642985921_0.7170378377147895"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.2.3": {
+			"name": "terser-webpack-plugin",
+			"version": "2.2.3",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"funding": {
+				"type": "opencollective",
+				"url": "https://opencollective.com/webpack"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"clean": "del-cli dist",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+				"commitlint": "commitlint --from=master",
+				"security": "npm audit",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+				"lint:js": "eslint --cache .",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "npm run test:only -- --watch",
+				"test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0 || ^5.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.1.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.6.1",
+				"serialize-javascript": "^2.1.2",
+				"source-map": "^0.6.1",
+				"terser": "^4.4.2",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.4",
+				"@babel/core": "^7.7.4",
+				"@babel/preset-env": "^7.7.4",
+				"@commitlint/cli": "^8.2.0",
+				"@commitlint/config-conventional": "^8.2.0",
+				"@webpack-contrib/defaults": "^6.2.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.7.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.1.0",
+				"jest": "^24.9.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memfs": "^3.0.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"uglify-js": "^3.7.2",
+				"webpack": "^4.41.2"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "9f8c8122dd1c919882d62d2efdb1efc2339df72c",
+			"_id": "terser-webpack-plugin@2.2.3",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.2",
+			"dist": {
+				"integrity": "sha512-R8cqQDld4BjVKaIR0D9Q0O/QzfgXzME3wXfSxxW23ZGv5xpMDUt1NEnCuG94y1+bKASLvc5TjIHLlNo0eK8GLA==",
+				"shasum": "7b070b40e39ef177ca062a4b6d70c3acdd85defc",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.3.tgz",
+				"fileCount": 10,
+				"unpackedSize": 58708,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8L9XCRA9TVsSAnZWagAAqeQP/j1BgyiciXdZtXEiCQ3i\nkkJKSVTk1Glv8+GaJ+iw58hZVSou13YHkaEJiSt6DlWpHjDpIU7j6XNceVWE\nPfkssy/LvjK7dihQw+8EzeHDeX7yZjCGJz0+S7UFsvHVik5HRxanMrOLJ51+\nQ2LOyxLGgFfMSIBeNw2Zk02mf14nDZtEadyY1x9dibYXqmQosWaxF9f0qGBc\nPp9PveRW6m3jamacX2TDLhDBqV491nrWZHi3tSbA66U3BbT0g1kDLZaKCBWE\n3+eDko0GbTWguGoISAlM6qTGWKeWWhE8LIHWOY6xJVgn9tX0aY0nGmHkAw1i\nFoBIUbvFd+nzdHBXQgC1kL7wSwmmWFUf2EKoTMen4DhgI0dIKZLi0VbGKWXO\nZkBZzjrdy3mwNsxYD8zL8bx6ElArmXrjyW0b5fcdkn7Ecl99rG1gzs6Rxhyb\np0Is7unDyqb3m2HgDoxgICIu0vbkx/Wt0A/NoYaOfpV/fDxlV+WfUONBabcm\n7k99h6p6Gsr8Y3QGk0bjEG9hphrKKBY9VWRL1cnXGMOp3QBtmMxVmU5BVPy4\nCBLfTW18L0KJkX5VFNJ5KL7vXX8RO8OLeltVIjE91/1fxBZVtrlqPQqHAsUK\nlg7c7c0X8mVU/zxrguxDungvKU62udqukcOeXI9ytnzUfRsDf16QgSToFI0H\nSIcy\r\n=h5mU\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.2.3_1576058711083_0.7364329900534412"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.4.3": {
+			"name": "terser-webpack-plugin",
+			"version": "1.4.3",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0"
+			},
+			"dependencies": {
+				"cacache": "^12.0.2",
+				"find-cache-dir": "^2.1.0",
+				"is-wsl": "^1.1.0",
+				"schema-utils": "^1.0.0",
+				"serialize-javascript": "^2.1.2",
+				"source-map": "^0.6.1",
+				"terser": "^4.1.2",
+				"webpack-sources": "^1.4.0",
+				"worker-farm": "^1.7.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.5",
+				"@babel/core": "^7.5.5",
+				"@babel/preset-env": "^7.5.5",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"eslint": "^6.1.0",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.0.2",
+				"jest": "^24.8.0",
+				"jest-junit": "^7.0.0",
+				"lint-staged": "^9.2.1",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^7.0.0",
+				"uglify-js": "^3.6.0",
+				"webpack": "^4.38.0"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"readmeFilename": "README.md",
+			"gitHead": "f816d9644224aba066738d7d9fe9f9c5ced13820",
+			"_id": "terser-webpack-plugin@1.4.3",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.2",
+			"dist": {
+				"integrity": "sha512-QMxecFz/gHQwteWwSo5nTc6UaICqN1bMedC5sMtUc7y3Ha3Q8y6ZO0iCR8pq4RJC8Hjf0FEPEHZqcMB/+DFCrA==",
+				"shasum": "5ecaf2dbdc5fb99745fd06791f46fc9ddb1c9a7c",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.3.tgz",
+				"fileCount": 10,
+				"unpackedSize": 50738,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8MLHCRA9TVsSAnZWagAAMfMQAIumea6HSJSUDXsQT4Np\nMfs0cMsYzUQlgN81cRkwXCHKspgjvcM2QOAetfkwbDNUc6yR1lrQkK+6hRac\nuvdw4MGaVc9h9xlGDRKHTubXsJdHqV6WgOuKjB+rZEe3/BSsjmp0pUY8kIdG\n1Fn5fWkA0yB2TwE+DwW3cbuf+TvLJ4TCpuOhP+9MXvtUvN0un1ymFB4ZNGdW\neBbnlVdQhjYQBpw459U4EME+HKuKg6RZvA2twSDL+e5HYx84duQOkb6JGktD\nTeXU4m5qf+5CbSTt3/8SZauwxqYMgnFUneinpS2IzrlWAav4kxGRy7BpNgeS\nyuOy69HdBR2SSF2/1O1GcSA3tyKs+x1TOIzDx5vUYHhBWtdsrWmmbsArXZpc\nkQVQGvTY1nHTa8kPOyFCthjEBAo0wNZ8MxWu9v92UXlWKm8BzHv0S1yBMgOF\nnlgpzWCgm12ISidmw+7fS8s9OYl6bmLVawNlXdHv+ZucG/G8cQ7bPQJa8Y8q\nRDHySMrThM+ZzpFV0CvjkORYxoiqS0Rb9x/VZsek3tFbWe2r3bTdVKsE2WHl\nZU46HMJjuI8wRQ9r8o2nLIkQDqZ47GAfHuBx40Ho+B4stwspb95iBz3Qw13g\nmvtaWQoLmUg1qKc6cDNN3YTEaSuuHRlm/8o3yNMUCSDTXnhKsEpds17IOmwY\nsmrx\r\n=u9KZ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_1.4.3_1576059591382_0.05788055295776462"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.3.0": {
+			"name": "terser-webpack-plugin",
+			"version": "2.3.0",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"funding": {
+				"type": "opencollective",
+				"url": "https://opencollective.com/webpack"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"clean": "del-cli dist",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+				"commitlint": "commitlint --from=master",
+				"security": "npm audit",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+				"lint:js": "eslint --cache .",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "npm run test:only -- --watch",
+				"test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0 || ^5.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.1.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.6.1",
+				"serialize-javascript": "^2.1.2",
+				"source-map": "^0.6.1",
+				"terser": "^4.4.2",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.4",
+				"@babel/core": "^7.7.4",
+				"@babel/preset-env": "^7.7.4",
+				"@commitlint/cli": "^8.2.0",
+				"@commitlint/config-conventional": "^8.2.0",
+				"@webpack-contrib/defaults": "^6.2.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.7.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.1.0",
+				"jest": "^24.9.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memfs": "^3.0.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"uglify-js": "^3.7.2",
+				"webpack": "^4.41.2"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "0bc8435bc06e6ac32c81f0800200c2eea37e3ee2",
+			"_id": "terser-webpack-plugin@2.3.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.3",
+			"dist": {
+				"integrity": "sha512-yez0HdpDf/iQVYGf+e/o8ZYWLb1g9d1nRRi5FIOZ4KfXbfSPT259UoqxPiSLhCnr0mlDoh+bucpYQSFbU0cEsQ==",
+				"shasum": "00fd8f792a330dc572e2e2b468fd7cb5ffd7ea51",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.3.0.tgz",
+				"fileCount": 12,
+				"unpackedSize": 62563,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8jc5CRA9TVsSAnZWagAAbQkP/i5O9vgYJzWTagjzoZ21\nEBuggHwhxtcSXg/Ys2XK33x3O50+khqYJUsd6wlAPcdIlX8BeNaAYP6T/LXm\noFD/DhOMrUaE3ebc3lrI/KcTdfzgd1pGHHKuyTk6dKMjjUCXSt20DoCE1Gov\ndPh7sBLDvGhPgB0ODBIMu/So+S39pJU/aP5F8K7f0qALcvPvTHYGN1jMtJWt\ndqwTzwmCwJkSojiVsX1Yl5T9yoAuDWj5P8yJxmbSUIy43o2j6p6Bi2QV4SwD\nVNxw3TrNJ1OdideNb23zzR/PyZhoyn3L2Lufnp467cl+bwTn2Op73wiNXPbg\nI6P8iyS3R5GlYMJOl1oKVfYYLXUmT0IyloHe2udxIEKU5dn55zrQ0zcZjgFO\nj2+uFOC6iHNGjRyKZgH1efLbjujJZVdRC87DfR6heQkM+10HMraeQYDX0lYA\nE+V0Sv4gq+8FULGLHi64/Pw9qzwM9tryug6bh/R4nmUsXNqHO4R/yqf6+oXW\ny0O7fF0bGWB949ymPSULASk8GDd1CUWp5cZbR6uqWqpiD1Il2v9pHh7nsivf\nJa2B0g9cbLmxFgSNbf6RZ+IzXvPcNqm/XTEc4CacaLI0jH1VMRdeNFAt6Jra\nEjfNSGeeNNsw0O45X0zTUKfzAFkRtqWZmRa1cneeDOu9h3qbEJvX/2r27Fqs\n39IR\r\n=OlRw\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.3.0_1576154937232_0.7909530555441466"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"2.3.1": {
+			"name": "terser-webpack-plugin",
+			"version": "2.3.1",
+			"description": "Terser plugin for webpack",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/terser-webpack-plugin.git"
+			},
+			"author": {
+				"name": "webpack Contrib Team"
+			},
+			"homepage": "https://github.com/webpack-contrib/terser-webpack-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/terser-webpack-plugin/issues"
+			},
+			"funding": {
+				"type": "opencollective",
+				"url": "https://opencollective.com/webpack"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"clean": "del-cli dist",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+				"commitlint": "commitlint --from=master",
+				"security": "npm audit",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+				"lint:js": "eslint --cache .",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "npm run test:only -- --watch",
+				"test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.0.0 || ^5.0.0"
+			},
+			"dependencies": {
+				"cacache": "^13.0.1",
+				"find-cache-dir": "^3.2.0",
+				"jest-worker": "^24.9.0",
+				"schema-utils": "^2.6.1",
+				"serialize-javascript": "^2.1.2",
+				"source-map": "^0.6.1",
+				"terser": "^4.4.3",
+				"webpack-sources": "^1.4.3"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.4",
+				"@babel/core": "^7.7.4",
+				"@babel/preset-env": "^7.7.4",
+				"@commitlint/cli": "^8.2.0",
+				"@commitlint/config-conventional": "^8.2.0",
+				"@webpack-contrib/defaults": "^6.2.0",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-jest": "^24.9.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.7.0",
+				"eslint-plugin-import": "^2.18.2",
+				"husky": "^3.1.0",
+				"jest": "^24.9.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memfs": "^3.0.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"uglify-js": "^3.7.2",
+				"webpack": "^4.41.3"
+			},
+			"keywords": [
+				"uglify",
+				"uglify-js",
+				"uglify-es",
+				"terser",
+				"webpack",
+				"webpack-plugin",
+				"minification",
+				"compress",
+				"compressor",
+				"min",
+				"minification",
+				"minifier",
+				"minify",
+				"optimize",
+				"optimizer"
+			],
+			"gitHead": "0e2da43f7bce3716bd6418b7f484d959e2f97172",
+			"_id": "terser-webpack-plugin@2.3.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.4",
+			"dist": {
+				"integrity": "sha512-dNxivOXmDgZqrGxOttBH6B4xaxT4zNC+Xd+2K8jwGDMK5q2CZI+KZMA1AAnSRT+BTRvuzKsDx+fpxzPAmAMVcA==",
+				"shasum": "6a63c27debc15b25ffd2588562ee2eeabdcab923",
+				"tarball": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.3.1.tgz",
+				"fileCount": 12,
+				"unpackedSize": 62910,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+LZFCRA9TVsSAnZWagAA4bcP/jWw86Q/er7CuTxXZQRs\nXnv9/QIoJZ6vnuVDivw1O39HlofHbUdt2EIa8w/DYGlCFQlSFrlbs8CF5F5j\n4VM34S2rhoPPbnfRC8Bi7h8Or0Db3mkvF6PCx9fXQq7/miY7Eo+2/NL8pymz\n6ahCoIu0BSOo0zavr7x5bZJ1Ki0bi3mbkhN6ObPX3/2X9bNoQ2y00T43V+Nq\nDb7Ku0ks9Xg4OM74kGU7pSlk29OEBUucUNQ1/hRHN8/ys9bctaOvYD8Zm3ds\n1Xk5Sd8r0bLrWeM0VgAGilNsEhstzxfP0t0yaGx3drGmC89PZSjoTpX4Wtvc\ncGNrXKTFjNPxrRpz7koYCITlc73T55hHGaUhNUbGx7FrDHuc5xyBMuaFnYCm\nADOmxI/ey3KR9Jnyzlld3Vd0Ax9AZ7qtRbmNdRiAHJzExIyvG4VhDcnj+U6k\n3PXj3BQGY10+OBEtIFDaW3Aqhom2l9uC1ygKbCMn4FFMXso+VMkfK74o5tUQ\n5xBYzWMDcZ4+aZY3h8bWiqCkhafzI4fDKP9St69D8BfbFyqHpfEUB9ypl8qg\n8MSYKTsEQGxxaPvqAORpFUQcNxEcTq6oXeyg3VZoVZRDWxuQBLo6AtQ2yu9o\nCVnj6iUp71/ZBoeL1B6446TeA0k6/fkbQ7/dNNNqvMiddmTVlOeG1or37D99\nhF2c\r\n=p5Dw\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "evilebottnawi",
+					"email": "sheo13666q@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/terser-webpack-plugin_2.3.1_1576580676738_0.30902392077290974"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2018-08-02T18:03:28.156Z",
+		"1.0.0": "2018-08-02T18:03:28.263Z",
+		"modified": "2019-12-17T11:04:39.458Z",
+		"1.0.1": "2018-08-15T09:35:23.187Z",
+		"1.0.2": "2018-08-16T14:26:53.174Z",
+		"1.1.0": "2018-09-14T14:26:45.468Z",
+		"1.2.0": "2018-12-22T15:08:37.361Z",
+		"1.2.1": "2018-12-27T12:33:20.065Z",
+		"1.2.2": "2019-02-04T13:10:54.212Z",
+		"1.2.3": "2019-02-25T11:13:52.842Z",
+		"1.2.4": "2019-05-15T08:13:17.210Z",
+		"1.3.0": "2019-05-24T13:27:14.117Z",
+		"1.4.0": "2019-07-31T11:36:45.229Z",
+		"1.4.1": "2019-07-31T12:11:59.958Z",
+		"2.0.0": "2019-09-05T17:37:52.431Z",
+		"2.0.1": "2019-09-06T14:13:59.490Z",
+		"2.1.0": "2019-09-16T13:53:18.057Z",
+		"2.1.1": "2019-09-27T14:41:35.600Z",
+		"2.1.2": "2019-09-28T16:54:39.527Z",
+		"2.1.3": "2019-10-10T18:41:34.954Z",
+		"2.2.0": "2019-10-22T11:11:25.423Z",
+		"2.2.1": "2019-10-22T13:50:21.645Z",
+		"2.2.2": "2019-12-06T13:18:12.241Z",
+		"1.4.2": "2019-12-06T14:36:26.099Z",
+		"2.2.3": "2019-12-11T10:05:11.267Z",
+		"1.4.3": "2019-12-11T10:19:51.515Z",
+		"2.3.0": "2019-12-12T12:48:57.388Z",
+		"2.3.1": "2019-12-17T11:04:36.946Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "2.3.1",
+		"version-1": "1.4.3"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"6175e387b63396c1a8e0b8669bb8a7a0\"",
+			"fetched": 1577117259654
+		}
+	},
+	"_distfiles": {
+		"terser-webpack-plugin-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.0.tgz",
+			"sha": "757d89d37694e0ba2ea0db0200773e467f2f4231",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.1.tgz",
+			"sha": "b184e7b4084fcb5a65beafb15c997e3682e4f90c",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.0.2.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.0.2.tgz",
+			"sha": "b62dfdc4e59b0b5093665a765b234645b598d1a5",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.1.0.tgz",
+			"sha": "cf7c25a1eee25bf121f4a587bb9e004e3f80e528",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.2.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.0.tgz",
+			"sha": "24697213f2128009080f39f081c18cb2221d91ff",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.2.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.1.tgz",
+			"sha": "7545da9ae5f4f9ae6a0ac961eb46f5e7c845cc26",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.2.2.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.2.tgz",
+			"sha": "9bff3a891ad614855a7dde0d707f7db5a927e3d9",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.2.3.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.3.tgz",
+			"sha": "3f98bc902fac3e5d0de730869f50668561262ec8",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.2.4.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.2.4.tgz",
+			"sha": "56f87540c28dd5265753431009388f473b5abba3",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.3.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.3.0.tgz",
+			"sha": "69aa22426299f4b5b3775cbed8cb2c5d419aa1d4",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.4.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.0.tgz",
+			"sha": "01bc2eb4902441e66dc0cc8d30af5266117df4a4",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.4.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.1.tgz",
+			"sha": "61b18e40eaee5be97e771cdbb10ed1280888c2b4",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.0.0.tgz",
+			"sha": "1b744e0b7b577fb02456355a08fd05b7e4efdd59",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.0.1.tgz",
+			"sha": "5e69a187133472174ef2fb51afc76a0f0a7b1d13",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.0.tgz",
+			"sha": "b9cee799a2da2bce788540c3738e081b6db28d8a",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.1.tgz",
+			"sha": "ce84a39124bff59b56895642dd803e73bfca007f",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.1.2.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.2.tgz",
+			"sha": "2b9b8147a6f18918348200800cf9560c50f701bb",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.1.3.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.1.3.tgz",
+			"sha": "85430da71ba88a60072bf659589eafaf6a00dc22",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.0.tgz",
+			"sha": "c35d66552ccfb9cc6fd39db06f430c3133d73110",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.2.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.1.tgz",
+			"sha": "5569e6c7d8be79e5e43d6da23acc3b6ba77d22bd",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.2.2.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.2.tgz",
+			"sha": "2a6e00237125564a455ad69b22e08ee59420473a",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.4.2.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.2.tgz",
+			"sha": "e23c0d554587d1f473bd0cf68627720e733890a4",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.2.3.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.2.3.tgz",
+			"sha": "7b070b40e39ef177ca062a4b6d70c3acdd85defc",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-1.4.3.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-1.4.3.tgz",
+			"sha": "5ecaf2dbdc5fb99745fd06791f46fc9ddb1c9a7c",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.3.0.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.3.0.tgz",
+			"sha": "00fd8f792a330dc572e2e2b468fd7cb5ffd7ea51",
+			"registry": "npmjs"
+		},
+		"terser-webpack-plugin-2.3.1.tgz": {
+			"url": "https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-2.3.1.tgz",
+			"sha": "6a63c27debc15b25ffd2588562ee2eeabdcab923",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "3-8eadbc1282e4fd76",
+	"_id": "terser-webpack-plugin",
+	"readme": "<div align=\"center\">\n  <a href=\"https://github.com/webpack/webpack\">\n    <img width=\"200\" height=\"200\" src=\"https://webpack.js.org/assets/icon-square-big.svg\">\n  </a>\n</div>\n\n[![npm][npm]][npm-url]\n[![node][node]][node-url]\n[![deps][deps]][deps-url]\n[![tests][tests]][tests-url]\n[![cover][cover]][cover-url]\n[![chat][chat]][chat-url]\n[![size][size]][size-url]\n\n# terser-webpack-plugin\n\nThis plugin uses [terser](https://github.com/terser-js/terser) to minify your JavaScript.\n\n## Getting Started\n\nTo begin, you'll need to install `terser-webpack-plugin`:\n\n```console\n$ npm install terser-webpack-plugin --save-dev\n```\n\nThen add the plugin to your `webpack` config. For example:\n\n**webpack.config.js**\n\n```js\nconst TerserPlugin = require('terser-webpack-plugin');\n\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [new TerserPlugin()],\n  },\n};\n```\n\nAnd run `webpack` via your preferred method.\n\n## Options\n\n### `test`\n\nType: `String|RegExp|Array<String|RegExp>`\nDefault: `/\\.m?js(\\?.*)?$/i`\n\nTest to match files against.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        test: /\\.js(\\?.*)?$/i,\n      }),\n    ],\n  },\n};\n```\n\n### `include`\n\nType: `String|RegExp|Array<String|RegExp>`\nDefault: `undefined`\n\nFiles to include.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        include: /\\/includes/,\n      }),\n    ],\n  },\n};\n```\n\n### `exclude`\n\nType: `String|RegExp|Array<String|RegExp>`\nDefault: `undefined`\n\nFiles to exclude.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        exclude: /\\/excludes/,\n      }),\n    ],\n  },\n};\n```\n\n### `chunkFilter`\n\nType: `Function<(chunk) -> boolean>`\nDefault: `() => true`\n\nAllowing to filter which chunks should be uglified (by default all chunks are uglified).\nReturn `true` to uglify the chunk, `false` otherwise.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        chunkFilter: (chunk) => {\n          // Exclude uglification for the `vendor` chunk\n          if (chunk.name === 'vendor') {\n            return false;\n          }\n\n          return true;\n        },\n      }),\n    ],\n  },\n};\n```\n\n### `cache`\n\n> ⚠ Doesn't work with webpack 5!\n\nType: `Boolean|String`\nDefault: `true`\n\nEnable file caching.\nDefault path to cache directory: `node_modules/.cache/terser-webpack-plugin`.\n\n> ℹ️ If you use your own `minify` function please read the `minify` section for cache invalidation correctly.\n\n#### `Boolean`\n\nEnable/disable file caching.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        cache: true,\n      }),\n    ],\n  },\n};\n```\n\n#### `String`\n\nEnable file caching and set path to cache directory.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        cache: 'path/to/cache',\n      }),\n    ],\n  },\n};\n```\n\n### `cacheKeys`\n\n> ⚠ Doesn't work with webpack 5!\n\nType: `Function<(defaultCacheKeys, file) -> Object>`\nDefault: `defaultCacheKeys => defaultCacheKeys`\n\nAllows you to override default cache keys.\n\nDefault cache keys:\n\n```js\n({\n  terser: require('terser/package.json').version, // terser version\n  'terser-webpack-plugin': require('../package.json').version, // plugin version\n  'terser-webpack-plugin-options': this.options, // plugin options\n  path: compiler.outputPath ? `${compiler.outputPath}/${file}` : file, // asset path\n  hash: crypto\n    .createHash('md4')\n    .update(input)\n    .digest('hex'), // source file hash\n});\n```\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        cache: true,\n        cacheKeys: (defaultCacheKeys, file) => {\n          defaultCacheKeys.myCacheKey = 'myCacheKeyValue';\n\n          return defaultCacheKeys;\n        },\n      }),\n    ],\n  },\n};\n```\n\n### `parallel`\n\nType: `Boolean|Number`\nDefault: `true`\n\nUse multi-process parallel running to improve the build speed.\nDefault number of concurrent runs: `os.cpus().length - 1`.\n\n> ℹ️ Parallelization can speedup your build significantly and is therefore **highly recommended**.\n\n#### `Boolean`\n\nEnable/disable multi-process parallel running.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        parallel: true,\n      }),\n    ],\n  },\n};\n```\n\n#### `Number`\n\nEnable multi-process parallel running and set number of concurrent runs.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        parallel: 4,\n      }),\n    ],\n  },\n};\n```\n\n### `sourceMap`\n\nType: `Boolean`\nDefault: `false` (see below for details around `devtool` value and `SourceMapDevToolPlugin` plugin)\n\n**Works only with `source-map`, `inline-source-map`, `hidden-source-map` and `nosources-source-map` values for the [`devtool`](https://webpack.js.org/configuration/devtool/) option.**\n\nWhy?\n\n- `eval` wraps modules in `eval(\"string\")` and the minimizer does not handle strings.\n- `cheap` has not column information and minimizer generate only a single line, which leave only a single mapping.\n\nThe plugin respect the [`devtool`](https://webpack.js.org/configuration/devtool/) and using the `SourceMapDevToolPlugin` plugin.\nUsing supported `devtool` values enable source map generation.\nUsing `SourceMapDevToolPlugin` with enabled the `columns` option enables source map generation.\n\nUse source maps to map error message locations to modules (this slows down the compilation).\nIf you use your own `minify` function please read the `minify` section for handling source maps correctly.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        sourceMap: true,\n      }),\n    ],\n  },\n};\n```\n\n### `minify`\n\nType: `Function`\nDefault: `undefined`\n\nAllows you to override default minify function.\nBy default plugin uses [terser](https://github.com/terser-js/terser) package.\nUseful for using and testing unpublished versions or forks.\n\n> ⚠️ **Always use `require` inside `minify` function when `parallel` option enabled**.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        minify: (file, sourceMap) => {\n          const extractedComments = [];\n\n          // Custom logic for extract comments\n\n          const { error, map, code, warnings } = require('uglify-module') // Or require('./path/to/uglify-module')\n            .minify(file, {\n              /* Your options for minification */\n            });\n\n          return { error, map, code, warnings, extractedComments };\n        },\n      }),\n    ],\n  },\n};\n```\n\n### `terserOptions`\n\nType: `Object`\nDefault: [default](https://github.com/terser-js/terser#minify-options)\n\nTerser minify [options](https://github.com/terser-js/terser#minify-options).\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        terserOptions: {\n          ecma: undefined,\n          warnings: false,\n          parse: {},\n          compress: {},\n          mangle: true, // Note `mangle.properties` is `false` by default.\n          module: false,\n          output: null,\n          toplevel: false,\n          nameCache: null,\n          ie8: false,\n          keep_classnames: undefined,\n          keep_fnames: false,\n          safari10: false,\n        },\n      }),\n    ],\n  },\n};\n```\n\n### `extractComments`\n\nType: `Boolean|String|RegExp|Function<(node, comment) -> Boolean|Object>|Object`\nDefault: `true`\n\nWhether comments shall be extracted to a separate file, (see [details](https://github.com/webpack/webpack/commit/71933e979e51c533b432658d5e37917f9e71595a)).\nBy default extract only comments using `/^\\**!|@preserve|@license|@cc_on/i` regexp condition and remove remaining comments.\nIf the original file is named `foo.js`, then the comments will be stored to `foo.js.LICENSE`.\nThe `terserOptions.output.comments` option specifies whether the comment will be preserved, i.e. it is possible to preserve some comments (e.g. annotations) while extracting others or even preserving comments that have been extracted.\n\n#### `Boolean`\n\nEnable/disable extracting comments.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: true,\n      }),\n    ],\n  },\n};\n```\n\n#### `String`\n\nExtract `all` or `some` (use `/^\\**!|@preserve|@license|@cc_on/i` RegExp) comments.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: 'all',\n      }),\n    ],\n  },\n};\n```\n\n#### `RegExp`\n\nAll comments that match the given expression will be extracted to the separate file.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: /@extract/i,\n      }),\n    ],\n  },\n};\n```\n\n#### `Function<(node, comment) -> Boolean>`\n\nAll comments that match the given expression will be extracted to the separate file.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: (astNode, comment) => {\n          if (/@extract/i.test(comment.value)) {\n            return true;\n          }\n\n          return false;\n        },\n      }),\n    ],\n  },\n};\n```\n\n#### `Object`\n\nAllow to customize condition for extract comments, specify extracted file name and banner.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: {\n          condition: /^\\**!|@preserve|@license|@cc_on/i,\n          filename: (file, fileData) => {\n            // ⚠ webpack 5: there is only fileData parameter\n\n            // A file can contain a query string (for example when you have `output.filename: '[name].js?[chunkhash]'`)\n            // You must consider this\n            // The \"fileData\" argument contains object with \"filename\", \"basename\", \"query\"\n            return file.replace(/\\.(\\w+)($|\\?)/, '.$1.LICENSE$2');\n          },\n          banner: (licenseFile) => {\n            return `License information can be found in ${licenseFile}`;\n          },\n        },\n      }),\n    ],\n  },\n};\n```\n\n##### `condition`\n\nType: `Boolean|String|RegExp|Function<(node, comment) -> Boolean|Object>`\n\nCondition what comments you need extract.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: {\n          condition: 'some',\n          filename: (file, fileData) => {\n            // ⚠ webpack 5: there is only fileData parameter\n\n            // A file can contain a query string (for example when you have `output.filename: '[name].js?[chunkhash]'`)\n            // You must consider this\n            return file.replace(/\\.(\\w+)($|\\?)/, '.$1.LICENSE$2');\n          },\n          banner: (licenseFile) => {\n            return `License information can be found in ${licenseFile}`;\n          },\n        },\n      }),\n    ],\n  },\n};\n```\n\n##### `filename`\n\nType: `String|Function<(string) -> String>`\nDefault: `[file].LICENSE[query]`\n\nAvailable placeholders: `[file]`, `[query]` and `[filebase]` (`[base]` for webpack 5).\n\nThe file where the extracted comments will be stored.\nDefault is to append the suffix `.LICENSE` to the original filename.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: {\n          condition: /^\\**!|@preserve|@license|@cc_on/i,\n          filename: 'extracted-comments.js',\n          banner: (licenseFile) => {\n            return `License information can be found in ${licenseFile}`;\n          },\n        },\n      }),\n    ],\n  },\n};\n```\n\n##### `banner`\n\nType: `Boolean|String|Function<(string) -> String>`\nDefault: `/*! For license information please see ${commentsFile} */`\n\nThe banner text that points to the extracted file and will be added on top of the original file.\nCan be `false` (no banner), a `String`, or a `Function<(string) -> String>` that will be called with the filename where extracted comments have been stored.\nWill be wrapped into comment.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        extractComments: {\n          condition: true,\n          filename: (file, fileData) => {\n            // ⚠ webpack 5: there is only fileData parameter\n\n            // A file can contain a query string (for example when you have `output.filename: '[name].js?[chunkhash]'`)\n            // You must consider this\n            return file.replace(/\\.(\\w+)($|\\?)/, '.$1.LICENSE$2');\n          },\n          banner: (commentsFile) => {\n            return `My custom banner about license information ${commentsFile}`;\n          },\n        },\n      }),\n    ],\n  },\n};\n```\n\n### `warningsFilter`\n\nType: `Function<(warning, source, file) -> Boolean>`\nDefault: `() => true`\n\nAllow to filter [terser](https://github.com/terser-js/terser) warnings.\nReturn `true` to keep the warning, a falsy value (`false`/`null`/`undefined`) otherwise.\n\n> ⚠️ The `source` argument will contain `undefined` if you don't use source maps.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        warningsFilter: (warning, source, file) => {\n          if (/Dropping unreachable code/i.test(warning)) {\n            return true;\n          }\n\n          if (/source\\.js/i.test(source)) {\n            return true;\n          }\n\n          if (/file\\.js/i.test(file)) {\n            return true;\n          }\n\n          return false;\n        },\n      }),\n    ],\n  },\n};\n```\n\n## Examples\n\n### Preserve Comments\n\nExtract all legal comments (i.e. `/^\\**!|@preserve|@license|@cc_on/i`) and preserve `/@license/i` comments.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        terserOptions: {\n          output: {\n            comments: /@license/i,\n          },\n        },\n        extractComments: true,\n      }),\n    ],\n  },\n};\n```\n\n### Remove Comments\n\nIf you avoid building with comments, use this config:\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        terserOptions: {\n          output: {\n            comments: false,\n          },\n        },\n        extractComments: false,\n      }),\n    ],\n  },\n};\n```\n\n### Custom Minify Function\n\nOverride default minify function - use `uglify-js` for minification.\n\n**webpack.config.js**\n\n```js\nmodule.exports = {\n  optimization: {\n    minimize: true,\n    minimizer: [\n      new TerserPlugin({\n        // Uncomment lines below for cache invalidation correctly\n        // cache: true,\n        // cacheKeys: (defaultCacheKeys) => {\n        //   delete defaultCacheKeys.terser;\n        //\n        //   return Object.assign(\n        //     {},\n        //     defaultCacheKeys,\n        //     { 'uglify-js': require('uglify-js/package.json').version },\n        //   );\n        // },\n        minify: (file, sourceMap) => {\n          // https://github.com/mishoo/UglifyJS2#minify-options\n          const uglifyJsOptions = {\n            /* your `uglify-js` package options */\n          };\n\n          if (sourceMap) {\n            uglifyJsOptions.sourceMap = {\n              content: sourceMap,\n            };\n          }\n\n          return require('uglify-js').minify(file, uglifyJsOptions);\n        },\n      }),\n    ],\n  },\n};\n```\n\n## Contributing\n\nPlease take a moment to read our contributing guidelines if you haven't yet done so.\n\n[CONTRIBUTING](./.github/CONTRIBUTING.md)\n\n## License\n\n[MIT](./LICENSE)\n\n[npm]: https://img.shields.io/npm/v/terser-webpack-plugin.svg\n[npm-url]: https://npmjs.com/package/terser-webpack-plugin\n[node]: https://img.shields.io/node/v/terser-webpack-plugin.svg\n[node-url]: https://nodejs.org\n[deps]: https://david-dm.org/webpack-contrib/terser-webpack-plugin.svg\n[deps-url]: https://david-dm.org/webpack-contrib/terser-webpack-plugin\n[tests]: https://dev.azure.com/webpack-contrib/terser-webpack-plugin/_apis/build/status/webpack-contrib.terser-webpack-plugin?branchName=master\n[tests-url]: https://dev.azure.com/webpack-contrib/terser-webpack-plugin/_build/latest?definitionId=7&branchName=master\n[cover]: https://codecov.io/gh/webpack-contrib/terser-webpack-plugin/branch/master/graph/badge.svg\n[cover-url]: https://codecov.io/gh/webpack-contrib/terser-webpack-plugin\n[chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg\n[chat-url]: https://gitter.im/webpack/webpack\n[size]: https://packagephobia.now.sh/badge?p=terser-webpack-plugin\n[size-url]: https://packagephobia.now.sh/result?p=terser-webpack-plugin"
+}

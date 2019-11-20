@@ -1,0 +1,792 @@
+{
+	"name": "w3c-xmlserializer",
+	"versions": {
+		"0.0.1": {
+			"name": "w3c-xmlserializer",
+			"version": "0.0.1",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "05d290240cbb1f284953dc23fbf44a298d1321af",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@0.0.1",
+			"_shasum": "e7e479a22c505ea64e488381313a935d99b0e540",
+			"_from": ".",
+			"_npmVersion": "4.2.0",
+			"_nodeVersion": "7.10.1",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"shasum": "e7e479a22c505ea64e488381313a935d99b0e540",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.1.tgz",
+				"fileCount": 9,
+				"unpackedSize": 20800
+			},
+			"maintainers": [
+				{
+					"name": "sebmaster",
+					"email": "sebmaster16@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_0.0.1_1530477222618_0.9788189917625341"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.0.2": {
+			"name": "w3c-xmlserializer",
+			"version": "0.0.2",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "7180db079035556d027eddd8df60b9742aec5f44",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@0.0.2",
+			"_npmVersion": "6.1.0",
+			"_nodeVersion": "10.6.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-H3Ivs3jViqlzE1gS/rlwWB4/GRpLNEZfrwlZta/k0IZgxhnZtedLelHiWpN82rQYpRFwa+WZd/3Jcvv6J6FQ1g==",
+				"shasum": "2ef8d1f30841e292eafaed95ba0f2a4b08401b42",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.2.tgz",
+				"fileCount": 8,
+				"unpackedSize": 20824,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaP9+CRA9TVsSAnZWagAAkpMP/RHvveesywKUX+Yo78+S\nxLxwwFLkv3iZhH24h2IjXmjxvRbJQd+5Q4jNCG6v3TWMd887v/THN4z5Nt/Z\nXZU4c4ciGplkkJ6upS5x4ytteWUfXaNp0wJnbcoQOolC4y/ZMjhWobFdqxLB\n4eb0zqGu4SugTgnilFg8RNUKC2VfSjIQrlWtJCk5pOtFdCSkVQP9mugZDe3y\nZwpEf6nb9kYeex3piH5H43P044NSA5QybhaMvLZA3A8dJsWxyzpxZpspOqkI\nP0N+eXqunpx6Jbx7sNZ4sreLB472up49lsgvPw1SuCUvGvLlM918y+mrEUpr\nMmbCi2zCTjJFgHAmikdTinXQniUkRlyyQPfFi8D6w+/DpoXPF2Mfh8Bj8IKX\ndaLTw3OvirUL7o4IcWKeSifPR0F2H4AZ/Fewz6D8NMdXs99ZeKsqjC9jvgTB\nnbT64VkoNh5N6/LecXquxCsJuKkuSDVkCdxx4amH0IAnd6TaU8/lKYhb6HUv\nWuJTvUGXxEIztO/srFJwcNe7FjvuGVHU7CcPZgvOWF6JlPLv4hTbzcXesFdC\ne8ba+Yg/pgCVzEIAzO9jiShOfkLfZ6iXDX4qDx4xuMJK4wuGtGqJrgqWp6Yi\nCvBAkN5KgKkFQsSc3eIfFQcNOTe3M4tld1cf3L5ioUIQrdYi/IySuSVKIQ2I\ngfxr\r\n=qpM5\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_0.0.2_1533607805922_0.8617771627494226"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.0.3": {
+			"name": "w3c-xmlserializer",
+			"version": "0.0.3",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "7a8520d466da1d424f7369b1cad88672a74546ed",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@0.0.3",
+			"_npmVersion": "6.1.0",
+			"_nodeVersion": "10.6.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-Qdx4Kcxi7066Og1sJieUnYZ+02+v+runmOc7CSEpIsjMdu1270aoZZgpF9Wt0xqpfAJo7kjjmoOe/Jb1WgKhUQ==",
+				"shasum": "d55e88a12d627cb93a7435da1e5930a6f822a4da",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.3.tgz",
+				"fileCount": 8,
+				"unpackedSize": 21285,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaQsJCRA9TVsSAnZWagAA9tYP/RDhOqhPqxI+bIgJhY+N\nY2o7R6AIWo7F1AMoBg8MQcdKliw3RBBnm1Tq+z7g/QsdcGGqBIUIOY25uP16\n7Sdekeaa1bkNl5vrHj35aXUt3nG4yuYFy23DkZqvNLLV+ivq5tVgVUMXwCMb\nOf7vBGKUIxX2Ny5ql6y3DQBPRlhRe7xlRTQKBtqRUmmjtbkCai7GnFd86kzV\nDITZ6dg2+60y5Z/aBI7TN1N8riMnDP5UEeCUIjmgAGw3wr31HFN7WO0Tetjt\nvYfShdZzVr5xubP7msZu9hyxMk97wfR6gZajWuFDRGab3LX6Qr15HeBABbPZ\n4J9qOsuNsbHVCkuBQym7kjPUK1lUY4/s3K6kQ6FOtsHDHkTGWfvSbBmX35ws\neGyqx7LShJLAvB05G2L5wIHRZ8i7JZzDKLICVjyOexKT0HqPrtQyouitxV1i\nNPTAdQXsYPvenweHOtAkaAwoF5oboFtznjCsi8Ke1ETkYfX07gsCs2f2GZZm\nAK9QII3ngAjHXCfWXFBgkk0RPtnhKcxivx9kd8MmRZj9IR8+fhOwh7tYZOo0\nMYjJw09cNcuG7qOtczRkyEzvMlke8DHW+9EroqWsr2I73JvWNscKd1khgWmI\nyn21Gtq3OTPvc6yA1k7+QzsBBLpGUDEB98OwPubP/ZML/9yKvzJZHRc0flju\nIYLz\r\n=ZMhX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_0.0.3_1533610760926_0.2977220997738368"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.0.4-0": {
+			"name": "w3c-xmlserializer",
+			"version": "0.0.4-0",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "d474dd8994994d7f903628efe4aed8441514b977",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@0.0.4-0",
+			"_npmVersion": "6.2.0",
+			"_nodeVersion": "10.9.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-BHp+920cHY6fU+LG8WAu780e3z/MHQBu6hXcRzcwhk1+u+/YLBaYMNwhu2IxM0dmVQarmwY69lv7Y4uv/Kv+9g==",
+				"shasum": "3ada61933ff6654c7e02fc049d767b12ccc21dac",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.4-0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 21317,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeHGxCRA9TVsSAnZWagAAqMoP/iMb1/p35WH0JyAc/s3v\nbX/2ZJmheb16on4E6B/eq3R1MPnG/fGehzMQjhi14cMvWqUllErFRIdWL8F4\nquSNQl7874WBWpOtiKLPCElO2waPejUQBymiifewY8HSGDSunx8vJ9SVGQQ0\nQ1DG3OG/gMBSYwfPc8c7314L/3O4spowGgJk2BRqI+CMXZL8zdiBOoPnrfYe\n0vGP5/+9uo5KWukj2p9nsZoTaq+88SWMKPQ5ukllvtb7R0lbtmIDoaGhjgSS\nV85XdQnC3H8dIKp8udLsWct5zQTWwOIXlAJUa1YYiYKdZ1sO2z1Ggnl6V7BF\nGUo8MrS+UEBTwGRZNZlqD0XO+zt2liHVEHjK7IuYs7E6K65g7vZR+S82aXiP\nI3pQY3KOvP6QzL/0hzPvTj7cQ8CdVLT4tHxss3ly98nr+dlVwe4fChOLTV3I\nm4SAiJ8ytf+RElCVtGU5ylkVjX3HobcOfwz2Zqi6r7YDRkxceEeMFWb7htng\nUI0Fdvp8UXCC9ZrRBCXiavXiCo7LUGTuLVCwqoNUj8VsHImKkG44IJyLo59J\n/Vd+qK0FpPi993sRImIns8Rz+UBcaN3vJuAtLz9QvYeAO5dvBM94XCI+MYBO\nJGGd7u1UnOVQsgZEBhuzKZYLXXOuZI86EqYl1fbZ5iAIJNZdEQwcYS4CCsZi\nSra3\r\n=jD3D\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_0.0.4-0_1534620081039_0.5138563680744128"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "w3c-xmlserializer",
+			"version": "1.0.0",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "7a9a3cfd6e38308cd9b53791aa312b0dc0e68f7e",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@1.0.0",
+			"_npmVersion": "6.2.0",
+			"_nodeVersion": "10.9.0",
+			"_npmUser": {
+				"name": "sebmaster",
+				"email": "sebmaster16@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-0et1+9uXYiIRAecx1D5Z1nk60+vimniGdIKl4XjeqkWi6acoHNlXMv1VR5jV+jF4ooeO08oWbYxeAJOcon1oMA==",
+				"shasum": "d23e20de595b892056f20a359fc2622908d48695",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.0.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 21315,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbuuU0CRA9TVsSAnZWagAAjV8P/1/r4GftqPYgtG43TnVy\nM3duZCox4paznKEx4aZyazgZsa/vNLlJvA1iZnDYmPJiKOAvXc6iQSn8iar0\nJub1ErR8Mp4Ay+gNT9JWK1qSRYtcrqE0IQhCmKD9ka3bGh9lm14ATkg7sPHZ\n+z5kY4tzyBQSwHh1zLnyks8jEtTw9v8j7d1vnLpyCMi3DfQSqiFX5CpXZ4qp\nhcl3IfEv2qN6IJ9r761kKmmNTIGlbAbe+MDTN6jZEfz5VRMS+AvMDa0svzZD\nqdtbDMVEatQ5UNQxXhNr/uvZng9NKGM8ib3heA5WPcPdoKxWYF3ksL1wk4/J\nMPKWaUtwm3pY3pK69kmG+4Z9Ad2TMADmOBESFm7CtrqNYxNYW654uOqnLF5P\nioPAS1usTXaB3tp9g1sgO6rWgUCUvPFQWfLTlGA4CazONB2a2E5dSJk2Ccou\ntDp2f0jra/nFV7rlnqygtdWH/C23fNrvPbpWjtTDUR/nGG2fTQC5RDojR/6H\nW0a2y4CCSFMYfMkgDZpEoEFbkInXxhocZX/YdfROP07mJtYirhKwy7Ih4WhX\n11R1MJw8h4GntCis0nhze9FrcURCKHExzylairyZ4tEI+d1fK2BVmNdsBnLW\nPpdTO5vR/hTzvoZSq5d00wIwgWre4IMdboOiq86nl0nO6ERpxHkUAerSJT7/\nh2z3\r\n=BAQV\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_1.0.0_1538975028176_0.5058855142993772"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "w3c-xmlserializer",
+			"version": "1.0.1",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.19.1",
+				"jest": "^23.1.0",
+				"jsdom": "^11.11.0",
+				"prettier": "^1.13.4",
+				"webidl2js": "^9.0.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest"
+			},
+			"gitHead": "f00a351ec87d2ce26baacceba895a0f2e4685905",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@1.0.1",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "11.2.0",
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"dist": {
+				"integrity": "sha512-XZGI1OH/OLQr/NaJhhPmzhngwcAnZDLytsvXnRmlYeRkmbb0I7sqFFA22erq4WQR0sUu17ZSQOAV9mFwCqKRNg==",
+				"shasum": "054cdcd359dc5d1f3ec9be4e272c756af4b21d39",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.0.1.tgz",
+				"fileCount": 8,
+				"unpackedSize": 21896,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcD6OuCRA9TVsSAnZWagAAClgP/izldtVC1oxMDpi8+iGR\nL4UDgYHWAjFZbODSBPj9Cj2FLLR29EupvuI3UvlqgL7PJgBD9G4Bx3SYbDmY\n3NBBw7n3wr05/b245/ycpIa7KyysazYw1vh3G/aFO0nwEjLQ7jMvIFF3DLiP\noEojL/j5LOtiSorCNHFgablNip38MgjAiVmULWQ25nxs0hlNrAUgTh0gzX2x\nmXRs7e8aOL6zuVGnQrV7VbyKzjR3syw+fDe9W0XE1Gzck8el+ae3K8nPKZLe\ntyDgJq3OOPS1IZakcc+vz1xsZzo2YBOxNxdSh5sEzGbAYQE3v3v8aGIm87Ck\nczVs7yaCF5eaRT+1V9M/RbjN5t+NDK1QJkx+8w8lmGZek23lgCoWFgpUlHJj\nOrjB8JgDjZuZ8/mMcdtYZ0M1iHpLYJEr9h4iDneFgNws1MtnxbbfOvHcs4f5\nnpPNAz56ZCmC1nhTmVEGokjjd+wX/6yO5I/akeQeQYHl78QT0+gKpBdOnD8u\npC8aEw6PLdLtLY8SlTGQRNnBjN6LwpUiOsXi4CssbYnd8qcMhwwmoNdKppjy\nCEsa8aZfp28wXhcNWFdbg5hRudmpwCN4fJmuivM7OMekBkM+9lASOhcH7kwu\nJ/oiAVJJjUe9pk5vcHmwgv/jPh54041j3ufOZdUdtILHA8K18qTx9FpZHzy1\nnyJu\r\n=C43l\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_1.0.1_1544528814071_0.32114815790528195"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "w3c-xmlserializer",
+			"description": "A per-spec XML serializer implementation",
+			"keywords": [
+				"dom",
+				"w3c",
+				"xml",
+				"xmlserializer"
+			],
+			"version": "1.1.0",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^5.15.2",
+				"jest": "^24.5.0",
+				"jsdom": "^14.0.0",
+				"webidl2js": "^9.2.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest",
+				"lint": "eslint ."
+			},
+			"gitHead": "c541636d15dae7bd9d090924b7c00962c2bee627",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@1.1.0",
+			"_nodeVersion": "11.10.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-qz7u3HSWyST7K0P8xreh1JoMc1skbKpOVvDXijRdutW2y84Fr9ANixmLVkttJ8L/cu3UNnMxVxAL6CfyCJeROg==",
+				"shasum": "0e1e9dd16e45b0cfeb9e1a40a47647c725691d2d",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.0.tgz",
+				"fileCount": 8,
+				"unpackedSize": 22729,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcmET8CRA9TVsSAnZWagAAWhMP/RtJk1aarJbCubIOQIKy\nmZbme72vrDPj+f+WkBTdXJphITc8scoBb0XnpzLnlwpQS4dPpdxmBPFfL9tH\nWQ5StuPMC6Ejc0S7k+51t4Wo9GTkHn3TcMFLpFHC3vGIyDa2mcFDIvp7Mh0Z\nKEGBVxAfI7cLToS9R6e7QzQV1WQBTFpf8O9kaBatkjhU+o53D14HEz678wuk\n2vhHKea+QOBxuJkVZrGCIpJkQ8/J0WpP3wrUhARb+v07eiyZCAoDGPWEQ4mx\n2Fc3nhtcloCHiw7TvVijEqT9+0Nsx27+f0NKV5OS46fV0TK5w2ikFA0QrwUc\nLvpVYaM5FG9qUEJaRLIKu9+k6ugK3Jx7zkWkrKoks2ZE6KzCRraJz9wWND0O\nUSvL/3v1bf1luQUdo2E5yxw7Ue4t7l1hwo5vOXahD6sQU+tUy7BQLaPb8lHK\nl/Mo1wxyN+NXAjUTVz9TtFrQMrWdBohvDcQ9Vm9MSTvHldDKLDx9sh6qfvEj\n6fpYRiG306j4hnY+RYrfMLWQFGCLG74t7aTRqpUaPixcwgC0nhAmpcVT57cp\n71M5aFn2nujWD84WPUfshs/19Ck2LpNrtop9FvyXAY3r88DnKvzdGTPWa66t\noRAn/AOzDgOH88X0sbQVTirZFAp1O1eUazKtWrN982lDAXQcQfpNnyZoEw8i\nOSA3\r\n=XAv/\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_1.1.0_1553483004042_0.5152781379156208"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.1": {
+			"name": "w3c-xmlserializer",
+			"description": "A per-spec XML serializer implementation",
+			"keywords": [
+				"dom",
+				"w3c",
+				"xml",
+				"xmlserializer"
+			],
+			"version": "1.1.1",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^5.15.2",
+				"jest": "^24.5.0",
+				"jsdom": "^14.0.0",
+				"webidl2js": "^9.2.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"scripts": {
+				"build": "node scripts/convert-idl.js",
+				"prepublish": "node scripts/convert-idl.js",
+				"test": "jest",
+				"lint": "eslint ."
+			},
+			"gitHead": "7897c8331c4e06824575b98c93c7073c8968819d",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@1.1.1",
+			"_nodeVersion": "11.10.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-gfvG/1D8rTm/aFMvxwdJqvjg4DDjrVDZzTZPYEPIwkuh+UFHdqqth77o1P9ewQt+Le40jdOKmRvHYdsmR9A2sA==",
+				"shasum": "e522f3f05f219da8ae2b5b66100b9c5c6ab46cee",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.1.tgz",
+				"fileCount": 8,
+				"unpackedSize": 22739,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcmEYGCRA9TVsSAnZWagAA6rIP/igjkrIazTaDvRTSQfMe\nce3cTc6EReKmESwcoxFKm3UDArLCHdSm8LzMu444nG7WSjh7I8oSuzBIdwQa\np7TltFKBOP0C7h5a6nKEzxH5tD0/IOIqs/kvjaMVC1DkTf9JSpSnQmeN6Lw8\ncXwT3eKdJNOfF5BXzqGXfsG9HTOV+5KRNM1FgaZMPIxUuoPXJpWKycpXKXpG\nieYFUvxE+PeS65vz6tIVgOXa2OfgTm53A3ufQQB8QaOoactd6ZvttCWV07Sj\nQeo5b51JRVGUKcJnBssBDdqjsQ52lC4G+fYEfCKytd3+LCBOrOwQMCSMHgYm\nq1HTnJse2GEu+veoxJxJgx00wYrlv8y3GZ/mIjUhM7x6NZ7+fuL5ZtRNJTTi\nmf5GaAit7M+d8Dr8tSTokcA3zmdg8WVdWB5HqD1liCLmDY1LJ8GTORSoat0K\n6rhgZvwuqWXruPo1MZz/fXg8Q0+fU8xRRIagHNaowd3thEh6/zHSmGDjSklG\nY3/MiYYBKDLpRnrmkrmnsvCeyjkLrlMluB3RP4M58Jjclq2MuFx2Fa1iPOrP\nRaMBm+h4lg/HOE97yWbG10ygIzr+7L5h+IqxQlFplwZK6CZC0mcGI2Vpsw7u\n/iu1CNLIPTkZ2SgD0wIq6xKZjBGGlAtY30qKMVa7pYijFJfXWqk7/4Truqa0\np47w\r\n=Lf4V\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_1.1.1_1553483269734_0.6192009504991498"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.2": {
+			"name": "w3c-xmlserializer",
+			"description": "A per-spec XML serializer implementation",
+			"keywords": [
+				"dom",
+				"w3c",
+				"xml",
+				"xmlserializer"
+			],
+			"version": "1.1.2",
+			"license": "MIT",
+			"dependencies": {
+				"domexception": "^1.0.1",
+				"webidl-conversions": "^4.0.2",
+				"xml-name-validator": "^3.0.0"
+			},
+			"devDependencies": {
+				"eslint": "^5.15.2",
+				"jest": "^24.5.0",
+				"jsdom": "^14.0.0",
+				"webidl2js": "^9.2.0"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/jsdom/w3c-xmlserializer.git"
+			},
+			"main": "lib/index.js",
+			"scripts": {
+				"prepare": "node scripts/convert-idl.js",
+				"pretest": "node scripts/convert-idl.js",
+				"test": "jest",
+				"lint": "eslint ."
+			},
+			"gitHead": "7a9dfddc5c3233ba471563afb9cdcb4b1dd6cbfa",
+			"bugs": {
+				"url": "https://github.com/jsdom/w3c-xmlserializer/issues"
+			},
+			"homepage": "https://github.com/jsdom/w3c-xmlserializer#readme",
+			"_id": "w3c-xmlserializer@1.1.2",
+			"_nodeVersion": "11.10.0",
+			"_npmVersion": "6.7.0",
+			"dist": {
+				"integrity": "sha512-p10l/ayESzrBMYWRID6xbuCKh2Fp77+sA0doRuGn4tTIMrrZVeqfpKjXHY+oDh3K4nLdPgNwMTVP6Vp4pvqbNg==",
+				"shasum": "30485ca7d70a6fd052420a3d12fd90e6339ce794",
+				"tarball": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.2.tgz",
+				"fileCount": 9,
+				"unpackedSize": 22959,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcmFKbCRA9TVsSAnZWagAApHQP/RKSYPisfwAH+woN8Ulo\nKyycuDCVB2DsVbjCvF5PsuioZFHuBG/YDHlciIydX+n/ArycnvkS1OA28DAo\na1fnuG/KkvllSEiJv1h906QDzP9jhle6xaAIIB0JCQrSHsj19soZxNf1aqRU\nh0wArvLjyQGqsdydPdmt4KuS+SDO1/HOyVHyKVDVVqshvhCAoP87F6mPxQoJ\nkqzslfuHaMAtRYd61W99s2E0lRSohm1Cy+T08BAwJ8gdPv0gipGhA717NzAY\n/0sNg/Nc8QRAKQMQUAJXJ/FPdJxUlfRMMZCGKHk0guUegUqUG39MKoIzUiS6\nW7cHXorXTRlj/NCfRj52j7z+fcrrrCeb46buPxMJYvKlDDhyrrCp0NDfQjMR\nH0aI2r+Z2zeg0is45Ss+LXLy8zpVlPQxOKoQmUjHlsQeX5LlhLnGYqaqVT3p\n5mZaAgWUZZdoHbhBfROGN0alp0sNkJPm37gRai21MyzZ8i9hKCRccRHIwgOL\nke9+7EBuEFSyYo1w9WlJYRtWXAmzNJMztquwG+ML7UqmngsM86xUxIgt05bj\nvLtb7t0Aol3XTDVgAXgNSR+6qORZ6wZNoMGlK/CEC1alJTv78ovNJmTdUatG\nGPojT+LUI9beMxOEmSltelDOiLi1Xe9IcRuyEGfePLwrzGXhnc3I/OLDQ9Ut\nsScE\r\n=wKVK\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "d@domenic.me",
+					"name": "domenic"
+				},
+				{
+					"email": "joris@jorisvanderwel.com",
+					"name": "joris-van-der-wel"
+				},
+				{
+					"email": "sebmaster16@gmail.com",
+					"name": "sebmaster"
+				},
+				{
+					"email": "timothygu99@gmail.com",
+					"name": "timothygu"
+				},
+				{
+					"email": "tmpvar@gmail.com",
+					"name": "tmpvar"
+				},
+				{
+					"email": "code@zirro.se",
+					"name": "zirro"
+				}
+			],
+			"_npmUser": {
+				"name": "domenic",
+				"email": "d@domenic.me"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/w3c-xmlserializer_1.1.2_1553486490688_0.7119449807652507"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2018-07-01T20:33:42.617Z",
+		"0.0.1": "2018-07-01T20:33:42.687Z",
+		"modified": "2019-03-25T04:01:33.472Z",
+		"0.0.2": "2018-08-07T02:10:06.032Z",
+		"0.0.3": "2018-08-07T02:59:21.000Z",
+		"0.0.4-0": "2018-08-18T19:21:21.123Z",
+		"1.0.0": "2018-10-08T05:03:48.338Z",
+		"1.0.1": "2018-12-11T11:46:54.220Z",
+		"1.1.0": "2019-03-25T03:03:24.172Z",
+		"1.1.1": "2019-03-25T03:07:49.880Z",
+		"1.1.2": "2019-03-25T04:01:30.856Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.1.2"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"3b0fa5a8b8b0fb1462954efd0ec342a4\"",
+			"fetched": 1577117262020
+		}
+	},
+	"_distfiles": {
+		"w3c-xmlserializer-0.0.1.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.1.tgz",
+			"sha": "e7e479a22c505ea64e488381313a935d99b0e540",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-0.0.2.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.2.tgz",
+			"sha": "2ef8d1f30841e292eafaed95ba0f2a4b08401b42",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-0.0.3.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.3.tgz",
+			"sha": "d55e88a12d627cb93a7435da1e5930a6f822a4da",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-0.0.4-0.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-0.0.4-0.tgz",
+			"sha": "3ada61933ff6654c7e02fc049d767b12ccc21dac",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.0.0.tgz",
+			"sha": "d23e20de595b892056f20a359fc2622908d48695",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.0.1.tgz",
+			"sha": "054cdcd359dc5d1f3ec9be4e272c756af4b21d39",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.0.tgz",
+			"sha": "0e1e9dd16e45b0cfeb9e1a40a47647c725691d2d",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-1.1.1.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.1.tgz",
+			"sha": "e522f3f05f219da8ae2b5b66100b9c5c6ab46cee",
+			"registry": "npmjs"
+		},
+		"w3c-xmlserializer-1.1.2.tgz": {
+			"url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-1.1.2.tgz",
+			"sha": "30485ca7d70a6fd052420a3d12fd90e6339ce794",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-ebfb308e15394249",
+	"_id": "w3c-xmlserializer",
+	"readme": "# w3c-xmlserializer\n\nAn XML serializer that follows the [W3C specification](https://w3c.github.io/DOM-Parsing/).\n\nThis module is mostly used as an internal part of [jsdom](https://github.com/jsdom/jsdom). However, you can use it independently with some care. That isn't very well-documented yet, but hopefully the below sample can give you an idea.\n\n## Basic usage\n\n```js\nconst { XMLSerializer } = require(\"w3c-xmlserializer\");\nconst { JSDOM } = require(\"jsdom\");\n\nconst { document } = new JSDOM().window;\nconst XMLSerializer = XMLSerializer.interface;\nconst serializer = new XMLSerializer();\nconst doc = document.createElement(\"akomaNtoso\");\n\nconsole.log(serializer.serializeToString(doc));\n// => '<akomantoso xmlns=\"http://www.w3.org/1999/xhtml\"></akomantoso>'\n```"
+}

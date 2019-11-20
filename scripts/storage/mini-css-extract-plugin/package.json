@@ -1,0 +1,2409 @@
+{
+	"name": "mini-css-extract-plugin",
+	"versions": {
+		"0.1.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.1.0",
+			"description": "desc",
+			"main": "dist/cjs.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"license": "MIT",
+			"private": false,
+			"scripts": {
+				"webpack-defaults": "webpack-defaults",
+				"start": "npm run build -- -w",
+				"appveyor:test": "npm run test",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+				"clean": "del-cli dist",
+				"lint": "eslint --cache src test",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"travis:lint": "npm run lint && npm run security",
+				"travis:test": "npm run test -- --runInBand",
+				"travis:coverage": "npm run test:coverage -- --runInBand"
+			},
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"standard-version": "^4.3.0",
+				"webpack": "^3.11.0",
+				"webpack-defaults": "^1.6.0"
+			},
+			"files": [
+				"dist"
+			],
+			"engines": {
+				"node": ">= 6.11.5"
+			},
+			"peerDependencies": {
+				"webpack": "^4.1.0"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"gitHead": "31742323d4a6004ee4a2d2be92f642de01f66cbc",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin#readme",
+			"_id": "mini-css-extract-plugin@0.1.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "sokra",
+				"email": "tobias.koppers@googlemail.com"
+			},
+			"dist": {
+				"integrity": "sha512-MRokS8rze/gAUQTU7f3jdRhVAFgYXhKb3Ziw/RnKC+jPxJBxqfn4QNt0GLq6yw+vOrsAG2c/jXxUZK1IG/z8Og==",
+				"shasum": "913d0358b7f75573554702b773c3851b163c70c4",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.1.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 19874
+			},
+			"maintainers": [
+				{
+					"name": "sokra",
+					"email": "tobias.koppers@googlemail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.1.0_1520161193553_0.18612077190962517"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.2.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.2.0",
+			"description": "desc",
+			"main": "dist/cjs.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"license": "MIT",
+			"private": false,
+			"scripts": {
+				"webpack-defaults": "webpack-defaults",
+				"start": "npm run build -- -w",
+				"appveyor:test": "npm run test",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+				"clean": "del-cli dist",
+				"lint": "eslint --cache src test",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"travis:lint": "npm run lint && npm run security",
+				"travis:test": "npm run test -- --runInBand",
+				"travis:coverage": "npm run test:coverage -- --runInBand"
+			},
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.1.0",
+				"webpack-defaults": "^1.6.0"
+			},
+			"files": [
+				"dist"
+			],
+			"engines": {
+				"node": ">= 6.11.5"
+			},
+			"peerDependencies": {
+				"webpack": "^4.1.0"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"gitHead": "bc488b1249e2979cc0c035b7f329bda25c5d342f",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin#readme",
+			"_id": "mini-css-extract-plugin@0.2.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "sokra",
+				"email": "tobias.koppers@googlemail.com"
+			},
+			"dist": {
+				"integrity": "sha512-rbuOYZCmNT0FW46hbhIKklBJ6ubwpcWnT81RmTsk0BLTQmL6euOH8lr2d7Wlv5ywJgpH3p7vKy5039dkn4YvxQ==",
+				"shasum": "7a16b0e1096c86de8e4d1c3b063aa1aeae88d41d",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.2.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 20769
+			},
+			"maintainers": [
+				{
+					"name": "sokra",
+					"email": "tobias.koppers@googlemail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.2.0_1520426224655_0.3555865372006397"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.3.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.3.0",
+			"description": "desc",
+			"main": "dist/cjs.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"license": "MIT",
+			"private": false,
+			"scripts": {
+				"webpack-defaults": "webpack-defaults",
+				"start": "npm run build -- -w",
+				"appveyor:test": "npm run test",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+				"clean": "del-cli dist",
+				"lint": "eslint --cache src test",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"travis:lint": "npm run lint && npm run security",
+				"travis:test": "npm run test -- --runInBand",
+				"travis:coverage": "npm run test:coverage -- --runInBand"
+			},
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.3.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^1.6.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"files": [
+				"dist"
+			],
+			"engines": {
+				"node": ">= 6.11.5"
+			},
+			"peerDependencies": {
+				"webpack": "^4.3.0"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"gitHead": "f379ee1322cc47f7ad981a025ba979cdb34d1224",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin#readme",
+			"_id": "mini-css-extract-plugin@0.3.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "sokra",
+				"email": "tobias.koppers@googlemail.com"
+			},
+			"dist": {
+				"integrity": "sha512-xWifHy3fqq0HZeEZ0WTi22tek85YQqNFlGxtvSXJXBi1O6XgqKMyK6fsupSBaaIsyBdfpr9QsG93hrWu13pruQ==",
+				"shasum": "f8dc03abb3a8663f1a431143e232fb47fb4d9318",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.3.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 25949
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.3.0_1522259933392_0.12537583185968715"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.0",
+			"description": "desc",
+			"main": "dist/cjs.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"license": "MIT",
+			"private": false,
+			"scripts": {
+				"webpack-defaults": "webpack-defaults",
+				"start": "npm run build -- -w",
+				"appveyor:test": "npm run test",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+				"clean": "del-cli dist",
+				"lint": "eslint --cache src test",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"travis:lint": "npm run lint && npm run security",
+				"travis:test": "npm run test -- --runInBand",
+				"travis:coverage": "npm run test:coverage -- --runInBand"
+			},
+			"devDependencies": {
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-config-webpack": "^1.2.5",
+				"eslint-plugin-import": "^2.8.0",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.4.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^1.6.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"files": [
+				"dist"
+			],
+			"engines": {
+				"node": ">= 6.11.5"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"gitHead": "e200b083e5a437026d6021262d4ac56088b39e65",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin#readme",
+			"_id": "mini-css-extract-plugin@0.4.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.4",
+			"_npmUser": {
+				"name": "sokra",
+				"email": "tobias.koppers@googlemail.com"
+			},
+			"dist": {
+				"integrity": "sha512-2Zik6PhUZ/MbiboG6SDS9UTPL4XXy4qnyGjSdCIWRrr8xb6PwLtHE+AYOjkXJWdF0OG8vo/yrJ8CgS5WbMpzIg==",
+				"shasum": "ff3bf08bee96e618e177c16ca6131bfecef707f9",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 26910
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.0_1522340072912_0.2522280868739948"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.1": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.1",
+			"description": "desc",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"files": [
+				"dist"
+			],
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"@webpack-contrib/schema-utils": "^1.0.0-beta.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "4afcfe2a16216d4b5e693d2fc87e177f3c8af1e2",
+			"_id": "mini-css-extract-plugin@0.4.1",
+			"_npmVersion": "6.1.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-XWuB3G61Rtasq/gLe7cp5cuozehE6hN+E4sxCamRR/WDiHTg+f7ZIAS024r8UJQffY+e2gGELXQZgQoFDfNDCg==",
+				"shasum": "d2bcf77bb2596b8e4bd9257e43d3f9164c2e86cb",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.1.tgz",
+				"fileCount": 7,
+				"unpackedSize": 31921,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbNjihCRA9TVsSAnZWagAAZEwQAIthWsZm5OiAZ9xnyYQa\nJkKc1Ww5U7nN+5uuQ+Df5DuwEX5NqzmxD/QCXKAre0u/eDT+XW5W+woSgYWx\nrPEzqjIp/ae9Yd/Uv7IZ85qhHmD2UWnAzP1VtcAsmeHF7FvD5ZiS8e+15876\nIWp3KQq9gscXa1R8c/umUjk2a9NlVaZITTl6+xdYR/VN1+DvCBLjmodfTd8W\n8hps69mfcW5+FjXfWIiqVNFehlQBrgMY9IppcYQnCkHYLBMPzOhsL8CCukjh\nYN0MkEIpzk3XboJhviMG9MJJYYm/NuBnkgnEpaVs//XAVIwVMWE85FHpc4hi\nNCgOta89GQ2tazVPuTdPnQhtYAf36gZXl28YuEExghaoFYXHC/o68uttK5bU\nSJfzA8yf1LzLPFgWLlt0btMMI53rsgIhaN0dmgQQfx1ejtE+S3qSmvCwJF/q\nay33OOGg486dK4lEd+YIfUUzTLOUAYuxO0WdZf6I/q1MU2wM57Bb+YwzeT9i\ny1vHwGiOxIr9VkCBVWZ1WvS1+E2ZHvu8r7k4HO9gi9f5f3/Dhjab1B6AttaW\n749eOS4Fs3bf8/uEMF4alCQ7lvMtzdBT+G8uMvK0pErHLSa4v7nanlcxJ/+g\nrhdnni1TnUa8o1V9qhQ9K2/SkBYgTaJ31gS7blqgmPLt2rgpOYtL307GfzDH\nRADw\r\n=Grz3\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.1_1530280097058_0.16789616761501347"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.2": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.2",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"files": [
+				"dist"
+			],
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "d8e4674f5a7d92dc1a4ed61ac06ce22ec791106d",
+			"_id": "mini-css-extract-plugin@0.4.2",
+			"_npmVersion": "6.4.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-ots7URQH4wccfJq9Ssrzu2+qupbncAce4TmTzunI9CIwlQMp2XI+WNUw6xWF6MMAGAm1cbUVINrSjATaVMyKXg==",
+				"shasum": "b3ecc0d6b1bbe5ff14add42b946a7b200cf78651",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.2.tgz",
+				"fileCount": 7,
+				"unpackedSize": 34790,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfBSFCRA9TVsSAnZWagAAPGAP/jKYdYNS9DYLscdeGMJM\nDMy5ioQH6tgaa6725GQ2qtYGFN77CJFbJP5lXmfe8J79cgn6S3hfBZMfgkIp\nZXntjraRPaHOaN4KDd4fuPtC1ViaFw9yoWvH8DE9JH8JHZa/tYxXbUNfM2cE\nV1EZvkNO24DOshfDA4RPyqJLYJsxNVjjVqJOqblwT+ZfaiBK9TPGosblL/x0\nyaBi0sEMWna9nVGn87LuY2ayQ/meCWmgkb/IV4tiRu5tUApZveKvLbv776Po\n0kWBwYprjqeAkABtHiy3jZEA1RHKYsoIBkrfhG/1p3j5ClUbWLvu2ALgqzz4\nif5QjCyv4BX3C0QAuJA9TJg3k8pWTVdV9cVJCT6KUvlYVKKpLvQpqLYQ7ft3\nCEXdqzCjZMQjyd/Bg8RP3pKbPAlsM8EWBQl25c3PKYQGMTt+MNx4dUGBEr/1\nRcb31URk+1VdIpDJCMjmao6Oq39oCUkEDK0xFeqsVm8InIjZUVp90wdp/prP\nBJqAiYfRKZ6xUo6z+ujvr3Ml/tda+mzRxuefJfzqQe4oETWfciH2GNPxlaze\nnejVCKvS979rpwm0l0HSj4PNUlLtB6MgSWxN1iyZd9WN+bjo654yUzy2PkmS\n5mPBY2nrjXFoNb4Nn62oWuh0OP48Qdf+O4fV9fC0Y8KgXvDZcvODHRd1FS4D\nNLhB\r\n=s9Es\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.2_1534858372733_0.7142727763638208"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.3": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.3",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "aa993daa12a45a326abcdd4f19dcba76db35ed8a",
+			"_id": "mini-css-extract-plugin@0.4.3",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.9.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-Mxs0nxzF1kxPv4TRi2NimewgXlJqh0rGE30vviCU2WHrpbta6wklnUV9dr9FUtoAHmB3p3LeXEC+ZjgHvB0Dzg==",
+				"shasum": "98d60fcc5d228c3e36a9bd15a1d6816d6580beb8",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.3.tgz",
+				"fileCount": 7,
+				"unpackedSize": 35425,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboUP/CRA9TVsSAnZWagAAaxYP/RMUBvOyGZCudpiHq9vE\n2hAQAtIzOEI9198d+M0SzDyqqsJ8q+cGgdrPMt27tHW1U6s91nJguy4EI21X\n80lSHApMM8ay/QA8P4dCIGp1z1a1zh/Luw4xsmUkX5ZWB7vkfYK5y9mJhyVw\nP4LCYn+iTh5lH5jh4/7MYPWxJ0/J89LsLYw/ZZcvgWSJN6rhAVyv13R4fJvD\nJLghDar8XCHg4g9SmXLF0bw4RiphxLj+ho7yEoKMKVhRW99rrfIdIuD1Sudz\nSV6zUnxubJWHmgo1UYSprKW8M/dCTFrWZ0jzhLvBqBEKLmUa5J8r4vWHnEPM\nkT3jNQHBnjIYf1Ox4jfSNM/RnId4vjTc21Cl/TTLkpbsWfdGiO/ui1xD+lZp\nCPrP9Y9IkdCcoGin9gznRiOnt9RIzq9fUlIEcPtr3ab6A1S5onbi/AlLGCPy\nNNBsXTV3hQLEuVBhW3txQskqSsoqmEjrpXR5ktGqs5somkJIArPK+VUA7R9j\npfAgXqewhYuJynSpmZPxPSj3j/Wkl0GeeertA3lDCHU/Dyk+6qN/8XHj2pIl\nsmwareRdldP2nnWCVnFZxddwdq/Azs5+ZOEeh2jTpW7B9DRT6UciuBp3VfAW\noaIgktVFcBKxoTszdmHHu9oiOgue5IynYYmU4u/sVmnaMx8FvhFsQ9ni4mBw\nleUa\r\n=Nq+l\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.3_1537295358490_0.798967405629845"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.4": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.4",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "eb218ccd5ce07b880e55833f9b9a9084ba03e68f",
+			"_id": "mini-css-extract-plugin@0.4.4",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.11.0",
+			"_npmUser": {
+				"name": "michael-ciniawsky",
+				"email": "michael.ciniawsky@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-o+Jm+ocb0asEngdM6FsZWtZsRzA8koFUudIDwYUfl94M3PejPHG7Vopw5hN9V8WsMkSFpm3tZP3Fesz89EyrfQ==",
+				"shasum": "c10410a004951bd3cedac1da69053940fccb625d",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.4.tgz",
+				"fileCount": 7,
+				"unpackedSize": 35866,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbvf88CRA9TVsSAnZWagAA6i4P/3zOaMYSWXOU0LDiTBPx\nCECFZVQYVDJ1cFmF9n+PC8cxwjRoiGozH0mVtK5C74pxaWytVSK96x6qYM1B\nJBf/NgY3BBhMLaeLzDBX8mk99K/Z7qJhaINk9ZvyHrxAqMS+kBel+mHC6O6x\nRyiScgZ8rITGr69cVN0vV9VrsNGtMKCHg39QHJxr32OaWEOZIoRc+DF0X/F3\nnVhD3gNNmnPN7Y/QQEvjzrOEcZtwPg+oFl8T8811P9X7SNKxvQpW+ukZYzvx\noRTSOa53f6abBjfGHTxwQuV9/pgnn3qqmaHpyc6QI2bnF5utzeHLjzYPdlpe\nmq3tnv4C1uVGLE1ZKgJcFymUFiOXde+AHKzRw95U66BM1tcmXT685Qa3TXoA\nntICMbYzNJoWVM3wkHc0siqDe2rHGPbkEh38rrXLQKv3i1dKKDIUc/2a0L5C\nkdTyZ1lrLHVOs0OXbhqk1nTFShosyvIFsquvFf+mcU5boI1fRoNvqYqikt6h\ntfDITT9aJjMIqtn8KOVo9mSEmii/DH6PZ4sO9w3fnLDbvTQk8yBjBiZeFIW4\nwW5fwH7zStXthxoSLttpak+BR3gznD39AOswlVvsijJs2O924Rjaj49wVTTK\nWd13JW+7islxk44wTfzjzU2QU+UCrnf0TyCWvpQIUTxCaRGbBXW39greHo+N\ntQWQ\r\n=sJaH\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.4_1539178299001_0.5320473741494631"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.4.5": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.4.5",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "c12ddcbe350c4ac9dfb43d14ad4ac52aa64ece36",
+			"_id": "mini-css-extract-plugin@0.4.5",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.12.0",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-dqBanNfktnp2hwL2YguV9Jh91PFX7gu7nRLs4TGsbAfAG6WOtlynFRYzwDwmmeSb5uIwHo9nx1ta0f7vAZVp2w==",
+				"shasum": "c99e9e78d54f3fa775633aee5933aeaa4e80719a",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.5.tgz",
+				"fileCount": 7,
+				"unpackedSize": 36316,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb9a8RCRA9TVsSAnZWagAAOjUP/02wxhn6fnBYDre9RcA7\ntfDZN4v3E5rsONvHeQLT8zJSPaJ4Sqn3J1ewft/Lznu23IY5dH0QMon0HdZd\nBDYl5foghcVBgckt68DCC5iPy2v9W8g8oFSrfJQmqDMgwQdvgq/mXt7XCNz6\n/uXSMlRQnjp7ZWBWa+QdHVsMxt9jY3MTv3Wqw+E+G8PkCe9JvRCBwi7/foLi\n9VMKG1yBswYg9pxxNdzBh82WQvdf7q5AY3r9jwfzdaeGXzwPzzcK7YwJ2n1k\nGw7dtQfFOdey9vMJ7Tz2mAKDZJJC8AA33vBg1wBKhbP4ECVHBRiQTolCdEeg\ngpYdmtM7u/ylyKdZeN+FwJvmfVyRZVPH2I2X5hw1USY37nI1DKJdilQ5diXf\nGRBm54i4bivob3v9qNmPEB0qtm2qYWotylD2wMzISiwgsNyq3rYRsTN8lXOi\n1lJ3HDB/6dZoJUZyFi+lPyOvY4Bn1dRXaxtyMs49TmnB9o5GDxNnTMK48e7R\nVHr85uwgcEsfZSkb31Xupj569LCc1HKnUO1OiLf2KuluT3UZh7962eH8ISvH\n0U1DfIbyroDi1jrZBxyKzC4JSWuQmSmU07Ch2mYzxlF5LGrJ0qv+txu+g2t6\nN+gCR0AMYv0gLlU8tmV6MJw8tghYSyqAN/WBJjj59EkiNQG77a+DRNAmdzJb\n0V8Q\r\n=dXXC\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.4.5_1542827792538_0.49355386271189206"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.5.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.5.0",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"bin": "",
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0 <7.0.0 || >= 8.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint",
+				"commitmsg": "commitlint -e $GIT_PARAMS",
+				"lint": "eslint --cache src test",
+				"ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+				"lint-staged": "lint-staged",
+				"prebuild": "npm run clean",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"release:ci": "conventional-github-releaser -p angular",
+				"release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+				"security": "nsp check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"schema-utils": "^1.0.0",
+				"loader-utils": "^1.1.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.1.3",
+				"@commitlint/config-conventional": "^6.1.3",
+				"@webpack-contrib/eslint-config-webpack": "^2.0.4",
+				"babel-cli": "^6.26.0",
+				"babel-jest": "^22.2.2",
+				"babel-plugin-transform-object-rest-spread": "^6.26.0",
+				"babel-polyfill": "^6.26.0",
+				"babel-preset-env": "^1.6.1",
+				"conventional-github-releaser": "^2.0.2",
+				"cross-env": "^5.1.3",
+				"css-loader": "^0.28.10",
+				"del": "^3.0.0",
+				"del-cli": "^1.1.0",
+				"eslint": "^4.17.0",
+				"eslint-plugin-import": "^2.8.0",
+				"eslint-plugin-prettier": "^2.6.0",
+				"file-loader": "^1.1.11",
+				"husky": "^0.14.3",
+				"jest": "^22.2.2",
+				"lint-staged": "^6.1.0",
+				"memory-fs": "^0.4.1",
+				"nsp": "^3.1.0",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.11.1",
+				"standard-version": "^4.3.0",
+				"webpack": "^4.14.0",
+				"webpack-cli": "^2.0.13",
+				"webpack-defaults": "^2.3.0",
+				"webpack-dev-server": "^3.1.1"
+			},
+			"keywords": [
+				"webpack"
+			],
+			"pre-commit": "lint-staged",
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"gitHead": "d12cd134a4d41089684b6979ad7cfb9e6a315c83",
+			"_id": "mini-css-extract-plugin@0.5.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.12.0",
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-IuaLjruM0vMKhUUT51fQdQzBYTX49dLj8w68ALEAe2A4iYNpIC4eMac67mt3NzycvjOlf07/kYxJDc0RTl1Wqw==",
+				"shasum": "ac0059b02b9692515a637115b0cc9fed3a35c7b0",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 36939,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcCkaXCRA9TVsSAnZWagAAj9EQAId4JqScMBlmzV76gkFw\nLW5semxYe2WT44serGGnNwOdbuC5dFTwbgOESEPjSrv0/XSZAqQ+se7tdlms\nEWLvfAjd43udbWzP4izdoVtjBotna1ZYYzo7s8j1I5YFVAlDVjn+fGVwlxSl\nngbKENhqlc5s6p88XPKdbcbuqLQst3bS7zwrMOJHKUXO4MV38JAMLTJClWko\nc0AckEzXEqDxN8J0xbephHcxbt36Ur3Qnht0MrsP4LWR6iEZGXaL9Wvo0Rwq\nYBAu7Plg5N8RkkmfCvOT70ID2F7brcUN60IUBQQuQsEIvUc1M3NkfD9K5ptF\nn29YLieDMdNwcl814810Nz6GBdBfYnr7Jz7ZLe91BVLm/bK9bQ7fRCw0OUrQ\nXPvWrQzqMN2NFLLHl8zx1q65QFggVVUigE7dkhWq2V0QUiWcFd24t8OiEgT+\nNsfwtMf1jGmmfhAFOU4oyX9ItNOvSDkW+TFouFBeIG4jSB4Qgr2yeq+OoVGK\nVLf7NoFeLcNtv8iUSG+MQT87+Yp40g3Y9E9R3tNoOy8R9HV6anM7Acl/zySK\ney+B7hzbVe3e9pSVqgVyc1xotX/gU9XNyxD1xZ2PnimZBfybkXwR6drwfzKi\n6v5nuH5MZUojQJxvGedsEX3jUtGkwmKlg12GTKT49ZPfUXUogi5Mktexu5zx\nNPNW\r\n=R75h\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.5.0_1544177302679_0.9260561094773996"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.6.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.6.0",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint": "eslint --cache src test",
+				"prepublish": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"pretest": "npm run lint",
+				"test": "npm run test:only",
+				"ci:lint": "npm run lint && npm run security",
+				"ci:test": "npm run test:only -- --runInBand",
+				"ci:coverage": "npm run test:coverage -- --runInBand",
+				"ci:lint:commits": "commitlint --from=origin/master --to=${CIRCLE_SHA1}",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "^2.0.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.4.3",
+				"@babel/core": "^7.4.3",
+				"@babel/preset-env": "^7.4.3",
+				"@commitlint/cli": "^7.5.2",
+				"@commitlint/config-conventional": "^7.5.0",
+				"@webpack-contrib/defaults": "^3.1.1",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"acorn": "^6.1.1",
+				"babel-eslint": "^10.0.1",
+				"babel-jest": "^24.7.1",
+				"cross-env": "^5.1.3",
+				"css-loader": "^2.1.1",
+				"del": "^4.1.0",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^5.16.0",
+				"eslint-plugin-import": "^2.16.0",
+				"eslint-plugin-prettier": "^3.0.1",
+				"file-loader": "^3.0.1",
+				"husky": "^1.3.1",
+				"jest": "^24.7.1",
+				"lint-staged": "^8.1.5",
+				"memory-fs": "^0.4.1",
+				"pre-commit": "^1.2.2",
+				"prettier": "^1.16.4",
+				"standard-version": "^5.0.2",
+				"webpack": "4.29.0",
+				"webpack-cli": "^3.3.0",
+				"webpack-dev-server": "^3.3.1"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "6.9.0"
+							}
+						}
+					]
+				]
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged",
+					"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+				}
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				]
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"singleQuote": true,
+				"trailingComma": "es5",
+				"arrowParens": "always"
+			},
+			"gitHead": "e808b8502e7e5b6ee17ffd3f80086020d52a2832",
+			"_id": "mini-css-extract-plugin@0.6.0",
+			"_nodeVersion": "10.15.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-79q5P7YGI6rdnVyIAV4NXpBQJFWdkzJxCim3Kog4078fM0piAaFlwocqbejdWtLW1cEzCexPrh6EdyFsPgVdAw==",
+				"shasum": "a3f13372d6fcde912f3ee4cd039665704801e3b9",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.6.0.tgz",
+				"fileCount": 9,
+				"unpackedSize": 46503,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcrceUCRA9TVsSAnZWagAArWoP/jGGTsRSs7uZ1HaZMqXH\nUCdS74ft9lZfy4CPQHy8acx+tqBpjbZ33WlYWSfSuYFtqtCKryWDvr4IKGLJ\nvSu/lPZOs+O5XFXI81/HQ7lKuyn6FzMcyhqVthjIaqFtb7DNb2CqM4GGIvp+\n6rLNLcM9mZMdVS2wFEjbTsWx9a4mMOkw8RvS66LuvnrguvlN8ZCAoGArswKu\nDd7yyDgcEZ9tmRR1H9MfPXhPsnwaWc9LWICFk6SJJTgYXrE2xBrYxsLo+DgQ\nEypKhb1pbf/Rb2co+zN09uAyq+jgJQn01bQQBRujRCHqV2a5kREjAfyGeMQy\n3EBDn7dVCQjaUlSKHz9rZEUaV10QWM2b0WtHMuJs4kI373uVZ4fP4t8ApgHV\na73n6UgcA4EC0usDsOu6BepnWQ+OMNaYI+iIn0EQ3Rzi20hyiDWkpyCBeHy6\nnPZJyh1ap9X5OxeHxyTiNvU1oFhHXasOKT8Snw610yCt3iY3xYwKk1lanNVR\nUJdJdJOHg41NLWMZzujLkvzqCTT53ToFVi9kpa0quKFyABGKP/dGC2lJlp+J\nlTTThFHcTqMHQ6w8grzXcW0D1WBd0dgZk9Tb8NRRBwU9HRYArwAXyTexOy9s\nWE1loVX8NH9nT5WUeJanjSaSXuKMUbHMzJJZbR6ISn2FwU5LCR3U/WFcuXJr\nETDN\r\n=H70q\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.6.0_1554892691725_0.2124576500854396"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.7.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.7.0",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint": "eslint --cache src test",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "jest",
+				"test:watch": "jest --watch",
+				"test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"pretest": "npm run lint",
+				"test": "npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "1.9.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.4.4",
+				"@babel/core": "^7.4.4",
+				"@babel/preset-env": "^7.4.4",
+				"@commitlint/cli": "^7.6.1",
+				"@commitlint/config-conventional": "^7.6.0",
+				"@webpack-contrib/defaults": "^4.0.1",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"acorn": "^6.1.1",
+				"babel-eslint": "^10.0.1",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.1",
+				"cross-env": "^5.2.0",
+				"css-loader": "^2.1.1",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^5.16.0",
+				"eslint-plugin-import": "^2.17.2",
+				"eslint-plugin-prettier": "^3.1.0",
+				"file-loader": "^3.0.1",
+				"husky": "^2.2.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^6.4.0",
+				"lint-staged": "^8.1.6",
+				"memory-fs": "^0.4.1",
+				"prettier": "^1.17.0",
+				"standard-version": "^6.0.1",
+				"webpack": "^4.31.0",
+				"webpack-cli": "^3.3.2",
+				"webpack-dev-server": "^3.3.1"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"gitHead": "392c4ae68c9384230d6652e7fee277a702deacd7",
+			"_id": "mini-css-extract-plugin@0.7.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-RQIw6+7utTYn8DBGsf/LpRgZCJMpZt+kuawJ/fju0KiOL6nAaTBNmCJwS7HtwSCXfS47gCkmtBFS7HdsquhdxQ==",
+				"shasum": "5ba8290fbb4179a43dd27cca444ba150bee743a0",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.7.0.tgz",
+				"fileCount": 9,
+				"unpackedSize": 48613,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc7AyCCRA9TVsSAnZWagAAtfwP/03SbzKNKeZSfnYKAmP4\nIIHeOJnLrGgxq6Idrc7Ecs2O0cEuE92b6NHL+EqgdVOStDpvkXYdnjhGHJ0n\nkIy/klLITGlqEXq6MtCx2WnlwirVNTm/ZYRjPr9l0eecMxq/bKKVmq0k6DWO\n1rsE7SncLj8KXryRQiGIu5dkeWwAb7di4FqBwaPgNGg4c2CnnPFUzkRPBy6A\niBU5AKVtKtJknJ95fuJqz25UGa5MtD2uPZzbXeFQWTPYhVQqXJa7yj8DdQT3\naL9/ObNSPXlR7LhJujhPzSr5sEVDQujETzy+FdGmmwCnRo6nbuReUJjjfoP8\ndXtsGU1yOrQh1gejtUSZ62m4Wce+HLQfD/xxxwIzW7i5yt0kiG6bLEL6AFlm\nsTJxO4f2N467ObBxaioq97UJu2WLv9Eku+Lp/HWKaacL++IdtFAucahY8juf\ne9K+/EPaVGd7MXiTOYFsEM7tlC5YEcyInu5P8tus+hiLR4FlErkHY0kGe/Ak\n+QvXEzgEODkNxrftaSJq5X3YpeP1VJPXvNz6pNTygINl0dceBCaMYS0zOk/v\nfsvIRr7+oL1gnQfzZC+3+VZJsY3MwQJRigKQf91hHhqM4iEnpcc4u86U1/As\n45TeNkNzzb4oYEJrU17pU4sooBHoOSEbRjhO8fesRZF2rJ3wmGZvkItT8vck\n3/ZF\r\n=KqC+\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "bebraw@gmail.com",
+					"name": "bebraw"
+				},
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "j.tangelder@gmail.com",
+					"name": "jtangelder"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "andrew@shellscape.org",
+					"name": "shellscape"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				},
+				{
+					"email": "sean.larkin@cuw.edu",
+					"name": "thelarkinn"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.7.0_1558973570080_0.3030098523814788"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.8.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.8.0",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"test:manual": "webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "1.9.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.5.0",
+				"@babel/core": "^7.5.4",
+				"@babel/preset-env": "^7.5.4",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-eslint": "^10.0.2",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"css-loader": "^3.0.0",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^6.0.1",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.18.0",
+				"file-loader": "^4.0.0",
+				"husky": "^3.0.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^6.4.0",
+				"lint-staged": "^9.2.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.18.2",
+				"standard-version": "^6.0.1",
+				"webpack": "^4.35.3",
+				"webpack-cli": "^3.3.6",
+				"webpack-dev-server": "^3.7.2"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"gitHead": "87d929ef0bab60cca36710cc74b8eb23b77c7bd2",
+			"_id": "mini-css-extract-plugin@0.8.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.10.1",
+			"dist": {
+				"integrity": "sha512-MNpRGbNA52q6U92i0qbVpQNsgk7LExy41MdAlG84FeytfDOtRIf/mCHdEgG8rpTKOaNKiqUnZdlptF469hxqOw==",
+				"shasum": "81d41ec4fe58c713a96ad7c723cdb2d0bd4d70e1",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.0.tgz",
+				"fileCount": 9,
+				"unpackedSize": 49817,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdLjgmCRA9TVsSAnZWagAAdSMQAKJsmy4Oz//jy51XQDHk\nGYqJYHydG/Sh0lRIXzcDHz1Jz4YqBLq864SyGkDom5slWl2V6MlxEhH/9U/U\nd5PSKAYmm0qXrnhwCuRhvo1zKnUia11dMyl2rzsYVSihNjNZIRSW8DATt8cn\nPjZN0dmIDLz1n7hdBLs4xozQdWqP8sY32AAq2f0zcCJ/L/Kkf6K+d/+EJvGh\n1T3xT+to1+G5x8TLH6tS8nAZK/icEaeUcFu13TVKbF8jhdyOs5YVt7e+tW1k\nIbA8lrAMUwqLw0C9OyLUnfyRRCenepAGm0FM2Td/NigEK1polk/4xFSOE7Np\nAl8lDmByblWM66iUEJydF7GeYC+mxewJUi2s3bG4GI4RhXZRVjVGyRtJ0G1K\nbr1mmccTasTRtfpzEAHy4rrHHzUr5aZsBWz6BEGz34MG6HsRlKr7KU5jVWKJ\nytRbiPmzW9tmgHXaKLKXp/DsvmBfD0A7gmLUmLznAXeic+uTPL3Rq+E6mK+Z\naxkS217LdTFOH+kt5dU1dfPQxtAt1bseaPBYWoQxFSbeI4oeb4TOlPOfZAzp\nvl0cH6RqMUhTZFhXE7nIjfTe/ROiE6cvVAyBs6tI4wnMIPPNHIJsUUL54k5h\ngd2syU7CsJtoUN0pt9aA1zqs5numvec1PV8x1QhdjUntDs3K7Haq2Ow4PVN4\n+zuv\r\n=yQnA\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.8.0_1563310118086_0.13268682242076713"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.8.1": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.8.1",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "1.9.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.5",
+				"@babel/core": "^7.7.5",
+				"@babel/preset-env": "^7.7.6",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-eslint": "^10.0.2",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"css-loader": "^3.3.2",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.19.1",
+				"file-loader": "^4.0.0",
+				"husky": "^3.0.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"webpack": "^4.41.3",
+				"webpack-cli": "^3.3.6",
+				"webpack-dev-server": "^3.7.2"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"gitHead": "054532a647137164670927a7b28707184220d013",
+			"_id": "mini-css-extract-plugin@0.8.1",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.4",
+			"dist": {
+				"integrity": "sha512-YOMfkqV07IlP3xVFMuTXze8K+fa5WXW8PE3rb2P01XAD5UxpbrwMHIYQ/DPfWaOmTnS16TD7d8CRi8AyOmgJ8g==",
+				"shasum": "0b3cd3f9610e60860c58493ed170ca6d3c35daf3",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 52013,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+OBpCRA9TVsSAnZWagAAS/wP/0vfy/DPCkUyCkZH8Gtl\ntfNTsS4vjiRb6O/qdrTy3vOFxaNVmL66zurwhosJr21FDaNSZ7xUwiY7PoZ3\nhj5PDij+C+wxbiTTxePITtpUYKpz4yJlQjDx0uZM/pq4jyPRMCXjlyy6f48J\nvQhPvT4Ep34p94+mMI88HqICtrNaiDu3H0JX/nlW3wk8Euz+YQPybkhXkWFQ\nDu/r5YgsjxWuvFOxPlYoQvvqq5JsFNk8d8XXvpd7zXTfXxAIMmVKKvK8FxnC\neTlIMuGf7ph/7O1t1N/gjrfeLkaax5pFCJdELFsJcNYjpbuKfUeOR0Fcgnwv\nmj/xGwNG9FJy5xSjrCLL972bfxq7tAg9qT1P0a0S+EQYpxfqq8fWnLL5l2zy\ns7jC5hsjrQgUtQtzakzSB192aW++ZGoKMGSAMJQfC4R/o54jPHVtc04ChnK3\nDXZBz2KjK07RwIAG29MHaMIVs9RjsR3V58ZJbEYQ6GWJ6F6CzhWePZ7SXHBs\nMp28107Wh2RZw3GEahxop3CWlf81O1OxEnJ3HJg9a49N1PTXdP9WlrL0ETjV\nGmgFmnJaokZSy/X02PuIk0ary44M9CLZpfIG4jESmOEPT9X90BpZOacnxuir\nUSNGxHzXez9j1kajrd53CaZtcdgmXUCXtGo7QSnljLlbwnDgCrKd6A1JdOzV\n/rN5\r\n=GKsl\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.8.1_1576591465335_0.8266992162801168"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.8.2": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.8.2",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "1.9.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.5",
+				"@babel/core": "^7.7.5",
+				"@babel/preset-env": "^7.7.6",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-eslint": "^10.0.2",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"css-loader": "^3.3.2",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.19.1",
+				"file-loader": "^4.0.0",
+				"husky": "^3.0.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"webpack": "^4.41.3",
+				"webpack-cli": "^3.3.6",
+				"webpack-dev-server": "^3.7.2"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"gitHead": "78e1613934b36eb97bc45b36685734518592eeaa",
+			"_id": "mini-css-extract-plugin@0.8.2",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.4",
+			"dist": {
+				"integrity": "sha512-a3Y4of27Wz+mqK3qrcd3VhYz6cU0iW5x3Sgvqzbj+XmlrSizmvu8QQMl5oMYJjgHOC4iyt+w7l4umP+dQeW3bw==",
+				"shasum": "a875e169beb27c88af77dd962771c9eedc3da161",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 52408,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+RRCCRA9TVsSAnZWagAAnKoP/1XsNCStQ/BY2MMkJYtC\nkuE3LJky1/Xa62Rq9/55alBqSU6EYmjzj5raTd+8Ypd0vBQ/YpAZ3tgAgTxG\nWtwEYC+uWSeWnenEgcK0cM0/KZ+DhB4Vc936hG0UhEMnUEf/Psd3gd6Gn8OE\nALmz8Cn7rzL0WvHq32U5YUDD66qnueJ6MuWfxsTTksOLpkBdT2Wr79zBqAlq\nRr6NcOUujExbZSzC9q49jK5D0v9Aa5J3BdEVzsx1f9E8LiuDESmoDofJM6iR\ne+D1zgwdp5zjNn+eTZwyPrOc2kdTvEY1WS4eNZKTpMbqxrtfeEMuxFzsJBNJ\nxEZnJchJp54rQ81bSPx4Is9YWW46OMQb7HhLkMfa4RygxuNq5udT/gJ+K9TR\nqKX+O5XZHVTUg4IEFE71S+Hl1bkrWY6iM9WRwoODfM7nGuYtfmtlA64M/Do3\nZdXntNWNStOduc5NI5rLpIkv+mVRS+YXucjmzM65Om7enJkP3nmWKRECDsVL\nk2hOnxtTCqo8hhD8F6lLNySH+1O22erWxMTIs4h3ZrklXpBw65ZohOkvblqS\nsjSXcEG42LDM54Xy94xsD9Tt7Lxfk2vPajDnTwPzueOT06If24qsHaBcgLfP\nZOBZ6GaZYspBwprdfAXgxThFOYk9RthpA+M0Me9+4jl7Iw0hnveWvLfxPCZh\njsbz\r\n=skOJ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.8.2_1576604737541_0.4060689970487297"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"0.9.0": {
+			"name": "mini-css-extract-plugin",
+			"version": "0.9.0",
+			"description": "extracts CSS into separate files",
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/webpack-contrib/mini-css-extract-plugin.git"
+			},
+			"author": {
+				"name": "Tobias Koppers @sokra"
+			},
+			"homepage": "https://github.com/webpack-contrib/mini-css-extract-plugin",
+			"bugs": {
+				"url": "https://github.com/webpack-contrib/mini-css-extract-plugin/issues"
+			},
+			"main": "dist/cjs.js",
+			"engines": {
+				"node": ">= 6.9.0"
+			},
+			"scripts": {
+				"start": "npm run build -- -w",
+				"prebuild": "npm run clean",
+				"build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+				"postbuild": "es-check es5 dist/hmr/hotModuleReplacement.js",
+				"clean": "del-cli dist",
+				"commitlint": "commitlint --from=master",
+				"lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+				"lint:js": "eslint --cache src test",
+				"lint": "npm-run-all -l -p \"lint:**\"",
+				"prepare": "npm run build",
+				"release": "standard-version",
+				"security": "npm audit",
+				"test:only": "cross-env NODE_ENV=test jest",
+				"test:watch": "cross-env NODE_ENV=test jest --watch",
+				"test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+				"test:manual": "npm run build && webpack-dev-server test/manual/src/index.js --open --config test/manual/webpack.config.js",
+				"pretest": "npm run lint",
+				"test": "cross-env NODE_ENV=test npm run test:coverage",
+				"defaults": "webpack-defaults"
+			},
+			"peerDependencies": {
+				"webpack": "^4.4.0"
+			},
+			"dependencies": {
+				"loader-utils": "^1.1.0",
+				"normalize-url": "1.9.1",
+				"schema-utils": "^1.0.0",
+				"webpack-sources": "^1.1.0"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.7.5",
+				"@babel/core": "^7.7.5",
+				"@babel/preset-env": "^7.7.6",
+				"@commitlint/cli": "^8.1.0",
+				"@commitlint/config-conventional": "^8.1.0",
+				"@webpack-contrib/defaults": "^5.0.2",
+				"@webpack-contrib/eslint-config-webpack": "^3.0.0",
+				"babel-eslint": "^10.0.2",
+				"babel-jest": "^24.8.0",
+				"commitlint-azure-pipelines-cli": "^1.0.2",
+				"cross-env": "^5.2.0",
+				"css-loader": "^3.3.2",
+				"del": "^4.1.1",
+				"del-cli": "^1.1.0",
+				"es-check": "^5.0.0",
+				"eslint": "^6.7.2",
+				"eslint-config-prettier": "^6.0.0",
+				"eslint-plugin-import": "^2.19.1",
+				"file-loader": "^4.0.0",
+				"husky": "^3.0.0",
+				"jest": "^24.8.0",
+				"jest-junit": "^10.0.0",
+				"lint-staged": "^9.5.0",
+				"memory-fs": "^0.4.1",
+				"npm-run-all": "^4.1.5",
+				"prettier": "^1.19.1",
+				"standard-version": "^7.0.1",
+				"webpack": "^4.41.3",
+				"webpack-cli": "^3.3.6",
+				"webpack-dev-server": "^3.7.2"
+			},
+			"keywords": [
+				"webpack",
+				"css",
+				"extract",
+				"hmr"
+			],
+			"gitHead": "4e23630dd02868008d1bf76ee08b11b3409183e3",
+			"_id": "mini-css-extract-plugin@0.9.0",
+			"_nodeVersion": "10.15.2",
+			"_npmVersion": "6.13.4",
+			"dist": {
+				"integrity": "sha512-lp3GeY7ygcgAmVIcRPBVhIkf8Us7FZjA+ILpal44qLdSu11wmjKQ3d9k15lfD7pO4esu9eUIAW7qiYIBppv40A==",
+				"shasum": "47f2cf07aa165ab35733b1fc97d4c46c0564339e",
+				"tarball": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.9.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 53788,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd/Ot+CRA9TVsSAnZWagAA2zQP/148QBuXaVK2bUQ8PBiN\nJLShIC7FbqBukQ3WdzGuQulWolr8IyILvJUhdjLp7DNRte2YvblLBVbLXs+z\nodbfuy/eC+QWNTQyo8BRmcMVMb4F4Zwn49v/rkGzqyuC5tfgldjROh3o/HS0\nsGcFZQkt9gesDHbwaXZloYSTo01Cr5Ru985/37/n6m3ad1LWVth/HkJozJUr\nigUOgX8w+0m+A7CplhYDPCn3BKD1/PiNCaGqRy1G2P/oxZK40C8EGSuJn0o4\noPYO2iac8FU1ZpiGNZEH+UIbO7e2H7poASSSBb9ok07BL1i9LwXL+Rdgx+XA\nDpKjKX0hJai4VW49Z6BDEreJQecdt21HpdNqnlnN0sbVQxvc5LOdEBamn9tB\nTkBNtyp/CxIbnrnyHvzdDQ2EXC3rbBqUibPL50WT9C9c7GGktwZrJLFlD0fZ\nHJueRpLv4epXCAaUmXeRGE3oZ9MHaQ4AZ+pZo6KpiqIsnwH0W1escKpZ6h6J\nWSnQ7z+Ci4yHtx+gG9uiwmoy20ktysJzDWiff0d9ELKOLVhdlA49ZH9PUucZ\nAoRKo7E6tqdvzo86b2lLlV6SERWm/ukB1eX7fYFncBp/WTVZW4DWvVvBtWaD\niQr8LCMsf7Zy0hScPZyjorCOor8jKJtBc1GK6/1ziFlSmjZxbaZLwqEIknAB\nFC6s\r\n=AECQ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "wiens.joshua@gmail.com",
+					"name": "d3viant0ne"
+				},
+				{
+					"email": "sheo13666q@gmail.com",
+					"name": "evilebottnawi"
+				},
+				{
+					"email": "mail@johannesewald.de",
+					"name": "jhnns"
+				},
+				{
+					"email": "michael.ciniawsky@gmail.com",
+					"name": "michael-ciniawsky"
+				},
+				{
+					"email": "tobias.koppers@googlemail.com",
+					"name": "sokra"
+				}
+			],
+			"_npmUser": {
+				"name": "evilebottnawi",
+				"email": "sheo13666q@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/mini-css-extract-plugin_0.9.0_1576856446232_0.2734169539129421"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2018-03-04T10:59:53.553Z",
+		"0.1.0": "2018-03-04T10:59:53.741Z",
+		"modified": "2019-12-20T15:40:48.859Z",
+		"0.2.0": "2018-03-07T12:37:04.752Z",
+		"0.3.0": "2018-03-28T17:58:53.616Z",
+		"0.4.0": "2018-03-29T16:14:32.985Z",
+		"0.4.1": "2018-06-29T13:48:17.159Z",
+		"0.4.2": "2018-08-21T13:32:52.810Z",
+		"0.4.3": "2018-09-18T18:29:18.693Z",
+		"0.4.4": "2018-10-10T13:31:40.174Z",
+		"0.4.5": "2018-11-21T19:16:32.669Z",
+		"0.5.0": "2018-12-07T10:08:22.837Z",
+		"0.6.0": "2019-04-10T10:38:11.989Z",
+		"0.7.0": "2019-05-27T16:12:50.276Z",
+		"0.8.0": "2019-07-16T20:48:38.217Z",
+		"0.8.1": "2019-12-17T14:04:25.430Z",
+		"0.8.2": "2019-12-17T17:45:37.652Z",
+		"0.9.0": "2019-12-20T15:40:46.386Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "0.9.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"31baee94455e53b237fce49d79797928\"",
+			"fetched": 1577117256549
+		}
+	},
+	"_distfiles": {
+		"mini-css-extract-plugin-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.1.0.tgz",
+			"sha": "913d0358b7f75573554702b773c3851b163c70c4",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.2.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.2.0.tgz",
+			"sha": "7a16b0e1096c86de8e4d1c3b063aa1aeae88d41d",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.3.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.3.0.tgz",
+			"sha": "f8dc03abb3a8663f1a431143e232fb47fb4d9318",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.0.tgz",
+			"sha": "ff3bf08bee96e618e177c16ca6131bfecef707f9",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.1.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.1.tgz",
+			"sha": "d2bcf77bb2596b8e4bd9257e43d3f9164c2e86cb",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.2.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.2.tgz",
+			"sha": "b3ecc0d6b1bbe5ff14add42b946a7b200cf78651",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.3.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.3.tgz",
+			"sha": "98d60fcc5d228c3e36a9bd15a1d6816d6580beb8",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.4.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.4.tgz",
+			"sha": "c10410a004951bd3cedac1da69053940fccb625d",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.4.5.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.5.tgz",
+			"sha": "c99e9e78d54f3fa775633aee5933aeaa4e80719a",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.5.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.5.0.tgz",
+			"sha": "ac0059b02b9692515a637115b0cc9fed3a35c7b0",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.6.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.6.0.tgz",
+			"sha": "a3f13372d6fcde912f3ee4cd039665704801e3b9",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.7.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.7.0.tgz",
+			"sha": "5ba8290fbb4179a43dd27cca444ba150bee743a0",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.8.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.0.tgz",
+			"sha": "81d41ec4fe58c713a96ad7c723cdb2d0bd4d70e1",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.8.1.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.1.tgz",
+			"sha": "0b3cd3f9610e60860c58493ed170ca6d3c35daf3",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.8.2.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.8.2.tgz",
+			"sha": "a875e169beb27c88af77dd962771c9eedc3da161",
+			"registry": "npmjs"
+		},
+		"mini-css-extract-plugin-0.9.0.tgz": {
+			"url": "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-0.9.0.tgz",
+			"sha": "47f2cf07aa165ab35733b1fc97d4c46c0564339e",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-36a561060ca70629",
+	"_id": "mini-css-extract-plugin",
+	"readme": "<div align=\"center\">\n  <!-- replace with accurate logo e.g from https://worldvectorlogo.com/ -->\n  <img width=\"200\" height=\"200\" src=\"https://cdn.worldvectorlogo.com/logos/javascript.svg\">\n  <a href=\"https://webpack.js.org/\">\n    <img width=\"200\" height=\"200\" vspace=\"\" hspace=\"25\" src=\"https://cdn.rawgit.com/webpack/media/e7485eb2/logo/icon-square-big.svg\">\n  </a>\n  <h1>mini-css-extract-plugin</h1>\n</div>\n\n[![npm][npm]][npm-url]\n[![deps][deps]][deps-url]\n[![tests][tests]][tests-url]\n[![coverage][cover]][cover-url]\n[![chat][chat]][chat-url]\n\nThis plugin extracts CSS into separate files. It creates a CSS file per JS file which contains CSS. It supports On-Demand-Loading of CSS and SourceMaps.\n\nIt builds on top of a new webpack v4 feature (module types) and requires webpack 4 to work.\n\nCompared to the extract-text-webpack-plugin:\n\n- Async loading\n- No duplicate compilation (performance)\n- Easier to use\n- Specific to CSS\n\n<h2 align=\"center\">Install</h2>\n\n```bash\nnpm install --save-dev mini-css-extract-plugin\n```\n\n<h2 align=\"center\">Usage</h2>\n\n### Configuration\n\n#### `publicPath`\n\nType: `String|Function`\nDefault: the `publicPath` in `webpackOptions.output`\n\nSpecifies a custom public path for the target file(s).\n\n#### `esModule`\n\nType: `Boolean`\nDefault: `false`\n\nBy default, `mini-css-extract-plugin` generates JS modules that use the CommonJS modules syntax.\nThere are some cases in which using ES modules is beneficial, like in the case of [module concatenation](https://webpack.js.org/plugins/module-concatenation-plugin/) and [tree shaking](https://webpack.js.org/guides/tree-shaking/).\n\nYou can enable a ES module syntax using:\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\n\nmodule.exports = {\n  plugins: [new MiniCssExtractPlugin()],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/i,\n        use: [\n          {\n            loader: MiniCssExtractPlugin.loader,\n            options: {\n              esModule: true,\n            },\n          },\n          'css-loader',\n        ],\n      },\n    ],\n  },\n};\n```\n\n#### Minimal example\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\n\nmodule.exports = {\n  plugins: [\n    new MiniCssExtractPlugin({\n      // Options similar to the same options in webpackOptions.output\n      // all options are optional\n      filename: '[name].css',\n      chunkFilename: '[id].css',\n      ignoreOrder: false, // Enable to remove warnings about conflicting order\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [\n          {\n            loader: MiniCssExtractPlugin.loader,\n            options: {\n              // you can specify a publicPath here\n              // by default it uses publicPath in webpackOptions.output\n              publicPath: '../',\n              hmr: process.env.NODE_ENV === 'development',\n            },\n          },\n          'css-loader',\n        ],\n      },\n    ],\n  },\n};\n```\n\n#### `publicPath` function example\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nmodule.exports = {\n  plugins: [\n    new MiniCssExtractPlugin({\n      // Options similar to the same options in webpackOptions.output\n      // both options are optional\n      filename: '[name].css',\n      chunkFilename: '[id].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [\n          {\n            loader: MiniCssExtractPlugin.loader,\n            options: {\n              publicPath: (resourcePath, context) => {\n                // publicPath is the relative path of the resource to the context\n                // e.g. for ./css/admin/main.css the publicPath will be ../../\n                // while for ./css/main.css the publicPath will be ../\n                return path.relative(path.dirname(resourcePath), context) + '/';\n              },\n            },\n          },\n          'css-loader',\n        ],\n      },\n    ],\n  },\n};\n```\n\n#### Advanced configuration example\n\nThis plugin should be used only on `production` builds without `style-loader` in the loaders chain, especially if you want to have HMR in `development`.\n\nHere is an example to have both HMR in `development` and your styles extracted in a file for `production` builds.\n\n(Loaders options left out for clarity, adapt accordingly to your needs.)\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nconst devMode = process.env.NODE_ENV !== 'production';\n\nmodule.exports = {\n  plugins: [\n    new MiniCssExtractPlugin({\n      // Options similar to the same options in webpackOptions.output\n      // both options are optional\n      filename: devMode ? '[name].css' : '[name].[hash].css',\n      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.(sa|sc|c)ss$/,\n        use: [\n          {\n            loader: MiniCssExtractPlugin.loader,\n            options: {\n              hmr: process.env.NODE_ENV === 'development',\n            },\n          },\n          'css-loader',\n          'postcss-loader',\n          'sass-loader',\n        ],\n      },\n    ],\n  },\n};\n```\n\n#### Hot Module Reloading (HMR)\n\nextract-mini-css-plugin supports hot reloading of actual css files in development. Some options are provided to enable HMR of both standard stylesheets and locally scoped CSS or CSS modules. Below is an example configuration of mini-css for HMR use with CSS modules.\n\nWhile we attempt to hmr css-modules. It is not easy to perform when code-splitting with custom chunk names. `reloadAll` is an option that should only be enabled if HMR isn't working correctly. The core challenge with css-modules is that when code-split, the chunk ids can and do end up different compared to the filename.\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nmodule.exports = {\n  plugins: [\n    new MiniCssExtractPlugin({\n      // Options similar to the same options in webpackOptions.output\n      // both options are optional\n      filename: '[name].css',\n      chunkFilename: '[id].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [\n          {\n            loader: MiniCssExtractPlugin.loader,\n            options: {\n              // only enable hot in development\n              hmr: process.env.NODE_ENV === 'development',\n              // if hmr does not work, this is a forceful method.\n              reloadAll: true,\n            },\n          },\n          'css-loader',\n        ],\n      },\n    ],\n  },\n};\n```\n\n### Minimizing For Production\n\nTo minify the output, use a plugin like [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin). Setting `optimization.minimizer` overrides the defaults provided by webpack, so make sure to also specify a JS minimizer:\n\n**webpack.config.js**\n\n```js\nconst TerserJSPlugin = require('terser-webpack-plugin');\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nconst OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');\nmodule.exports = {\n  optimization: {\n    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],\n  },\n  plugins: [\n    new MiniCssExtractPlugin({\n      filename: '[name].css',\n      chunkFilename: '[id].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [MiniCssExtractPlugin.loader, 'css-loader'],\n      },\n    ],\n  },\n};\n```\n\n### Features\n\n#### Using preloaded or inlined CSS\n\nThe runtime code detects already added CSS via `<link>` or `<style>` tag.\nThis can be useful when injecting CSS on server-side for Server-Side-Rendering.\nThe `href` of the `<link>` tag has to match the URL that will be used for loading the CSS chunk.\nThe `data-href` attribute can be used for `<link>` and `<style>` too.\nWhen inlining CSS `data-href` must be used.\n\n#### Extracting all CSS in a single file\n\nSimilar to what [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin) does, the CSS\ncan be extracted in one CSS file using `optimization.splitChunks.cacheGroups`.\n\n**webpack.config.js**\n\n```js\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\nmodule.exports = {\n  optimization: {\n    splitChunks: {\n      cacheGroups: {\n        styles: {\n          name: 'styles',\n          test: /\\.css$/,\n          chunks: 'all',\n          enforce: true,\n        },\n      },\n    },\n  },\n  plugins: [\n    new MiniCssExtractPlugin({\n      filename: '[name].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [MiniCssExtractPlugin.loader, 'css-loader'],\n      },\n    ],\n  },\n};\n```\n\n#### Extracting CSS based on entry\n\nYou may also extract the CSS based on the webpack entry name. This is especially useful if you import routes dynamically\nbut want to keep your CSS bundled according to entry. This also prevents the CSS duplication issue one had with the\nExtractTextPlugin.\n\n```javascript\nconst path = require('path');\nconst MiniCssExtractPlugin = require('mini-css-extract-plugin');\n\nfunction recursiveIssuer(m) {\n  if (m.issuer) {\n    return recursiveIssuer(m.issuer);\n  } else if (m.name) {\n    return m.name;\n  } else {\n    return false;\n  }\n}\n\nmodule.exports = {\n  entry: {\n    foo: path.resolve(__dirname, 'src/foo'),\n    bar: path.resolve(__dirname, 'src/bar'),\n  },\n  optimization: {\n    splitChunks: {\n      cacheGroups: {\n        fooStyles: {\n          name: 'foo',\n          test: (m, c, entry = 'foo') =>\n            m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,\n          chunks: 'all',\n          enforce: true,\n        },\n        barStyles: {\n          name: 'bar',\n          test: (m, c, entry = 'bar') =>\n            m.constructor.name === 'CssModule' && recursiveIssuer(m) === entry,\n          chunks: 'all',\n          enforce: true,\n        },\n      },\n    },\n  },\n  plugins: [\n    new MiniCssExtractPlugin({\n      filename: '[name].css',\n    }),\n  ],\n  module: {\n    rules: [\n      {\n        test: /\\.css$/,\n        use: [MiniCssExtractPlugin.loader, 'css-loader'],\n      },\n    ],\n  },\n};\n```\n\n#### Module Filename Option\n\nWith the `moduleFilename` option you can use chunk data to customize the filename. This is particularly useful when dealing with multiple entry points and wanting to get more control out of the filename for a given entry point/chunk. In the example below, we'll use `moduleFilename` to output the generated css into a different directory.\n\n```javascript\nconst miniCssExtractPlugin = new MiniCssExtractPlugin({\n  moduleFilename: ({ name }) => `${name.replace('/js/', '/css/')}.css`,\n});\n```\n\n#### Long Term Caching\n\nFor long term caching use `filename: \"[contenthash].css\"`. Optionally add `[name]`.\n\n### Remove Order Warnings\n\nFor projects where css ordering has been mitigated through consistent use of scoping or naming conventions, the css order warnings can be disabled by setting the ignoreOrder flag to true for the plugin.\n\n```javascript\nnew MiniCssExtractPlugin({\n  ignoreOrder: true,\n}),\n```\n\n### Media Query Plugin\n\nIf you'd like to extract the media queries from the extracted CSS (so mobile users don't need to load desktop or tablet specific CSS anymore) you should use one of the following plugins:\n\n- [Media Query Plugin](https://github.com/SassNinja/media-query-plugin)\n- [Media Query Splitting Plugin](https://github.com/mike-diamond/media-query-splitting-plugin)\n\n## License\n\n[MIT](./LICENSE)\n\n[npm]: https://img.shields.io/npm/v/mini-css-extract-plugin.svg\n[npm-url]: https://npmjs.com/package/mini-css-extract-plugin\n[node]: https://img.shields.io/node/v/mini-css-extract-plugin.svg\n[node-url]: https://nodejs.org\n[deps]: https://david-dm.org/webpack-contrib/mini-css-extract-plugin.svg\n[deps-url]: https://david-dm.org/webpack-contrib/mini-css-extract-plugin\n[tests]: https://dev.azure.com/webpack-contrib/mini-css-extract-plugin/_apis/build/status/webpack-contrib.mini-css-extract-plugin?branchName=master\n[tests-url]: https://dev.azure.com/webpack-contrib/mini-css-extract-plugin/_build/latest?definitionId=6&branchName=master\n[cover]: https://codecov.io/gh/webpack-contrib/mini-css-extract-plugin/branch/master/graph/badge.svg\n[cover-url]: https://codecov.io/gh/webpack-contrib/mini-css-extract-plugin\n[chat]: https://img.shields.io/badge/gitter-webpack%2Fwebpack-brightgreen.svg\n[chat-url]: https://gitter.im/webpack/webpack\n[size]: https://packagephobia.now.sh/badge?p=mini-css-extract-plugin\n[size-url]: https://packagephobia.now.sh/result?p=mini-css-extract-plugin"
+}

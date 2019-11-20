@@ -1,0 +1,974 @@
+{
+	"name": "request-promise-native",
+	"versions": {
+		"0.0.0": {
+			"name": "request-promise-native",
+			"version": "0.0.0",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.10.0"
+			},
+			"gitHead": "0beef89c7ef60889d23b6efcb9a9caf048ca02cb",
+			"_id": "request-promise-native@0.0.0",
+			"_shasum": "15c12aa68dcdabb91041a303225696b483b93143",
+			"_from": ".",
+			"_npmVersion": "3.8.9",
+			"_nodeVersion": "6.1.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				}
+			],
+			"dist": {
+				"shasum": "15c12aa68dcdabb91041a303225696b483b93143",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-0.0.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-0.0.0.tgz_1462603462435_0.40700467117130756"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "request-promise-native",
+			"version": "1.0.0",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"@request/promise-core": "^1.0.0",
+				"stealthy-require": "^0.1.0"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "213a0c1c19ad5b8215afc75f4bd818850cee21c8",
+			"_id": "request-promise-native@1.0.0",
+			"_shasum": "3eb8679416eb3ce1dcdabc5112ad4102e30241ab",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "3eb8679416eb3ce1dcdabc5112ad4102e30241ab",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.0.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-1.0.0.tgz_1468628596330_0.2668888629414141"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "request-promise-native",
+			"version": "1.0.1",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"@request/promise-core": "1.0.0",
+				"stealthy-require": "^0.1.0"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "d440ae9babc827b373057d99d7f06e59a86129ca",
+			"_id": "request-promise-native@1.0.1",
+			"_shasum": "cf37d5ff54cf4cee84cc6f47bd328cc553b35c0b",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "cf37d5ff54cf4cee84cc6f47bd328cc553b35c0b",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.1.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-1.0.1.tgz_1468801224822_0.8910705908201635"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.2": {
+			"name": "request-promise-native",
+			"version": "1.0.2",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"@request/promise-core": "1.0.0",
+				"stealthy-require": "^1.0.0"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "91d1a6a4a36f49bef1fe5428d74fb72eddf3f818",
+			"_id": "request-promise-native@1.0.2",
+			"_shasum": "3690aa97d5bcdb9b9faad5c684e09a98d06cf427",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "3690aa97d5bcdb9b9faad5c684e09a98d06cf427",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.2.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-1.0.2.tgz_1468872735449_0.1329065125901252"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.3": {
+			"name": "request-promise-native",
+			"version": "1.0.3",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.1",
+				"stealthy-require": "^1.0.0"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "700d1fb2d3543bbf5cccb21489ae882a33cb213e",
+			"_id": "request-promise-native@1.0.3",
+			"_shasum": "9cb2b2f69f137e4acf35116a08a441cbfd0c0134",
+			"_from": ".",
+			"_npmVersion": "2.15.8",
+			"_nodeVersion": "4.4.7",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "9cb2b2f69f137e4acf35116a08a441cbfd0c0134",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.3.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-1.0.3.tgz_1470655637642_0.3287261014338583"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.4": {
+			"name": "request-promise-native",
+			"version": "1.0.4",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.1",
+				"stealthy-require": "^1.1.0",
+				"tough-cookie": ">=2.3.0"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "7239e1e41d475ef840375ace4a6cbc6d8b53ce1e",
+			"_id": "request-promise-native@1.0.4",
+			"_shasum": "86988ec8eee408e45579fce83bfd05b3adf9a155",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "86988ec8eee408e45579fce83bfd05b3adf9a155",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.4.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/request-promise-native-1.0.4.tgz_1494208485520_0.7859867103397846"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.5": {
+			"name": "request-promise-native",
+			"version": "1.0.5",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.1",
+				"stealthy-require": "^1.1.0",
+				"tough-cookie": ">=2.3.3"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "1874877850a59152915c9e9cbacbdc577486cca5",
+			"_id": "request-promise-native@1.0.5",
+			"_shasum": "5281770f68e0c9719e5163fd3fab482215f4fda5",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.8.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "5281770f68e0c9719e5163fd3fab482215f4fda5",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.5.tgz"
+			},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-native-1.0.5.tgz_1506099256263_0.1273770765401423"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.6": {
+			"name": "request-promise-native",
+			"version": "1.0.6",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.2",
+				"stealthy-require": "^1.1.1",
+				"tough-cookie": "~2.3.3"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "7ad655aa4092e6d508f386281a020ac4f240c7f6",
+			"_id": "request-promise-native@1.0.6",
+			"_shasum": "1e500217da47b43c77ff6427942ed3ece248ee18",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "6.16.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "1e500217da47b43c77ff6427942ed3ece248ee18",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.6.tgz",
+				"integrity": "sha512-7B1oMJO8JJJY97Q3rB8blXLF6+QaBW8BFrqaknlE56MQNh5KH/J/mOk6rU45CxTjpFiT1xju2WwDEEC/XvkQGA==",
+				"fileCount": 6,
+				"unpackedSize": 7455,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZgZSCRA9TVsSAnZWagAAFT4P/R2jxF9uV95WJj2XIDnv\n0dOBPlArWZxVERwy9iitycDF2wa26xM+htmJz9UVZEDDt28iUK59VbyF5EM1\nNobgwmAMQPvbtBtjU+BLSha5O5PModqnM48QTgI/V5PDKDildNl796HjKG67\nPfVz9Y5s5sMNvm5q8y7KhjFsJSPIfOp4UY8thkmUEN4vWht+qcoC3ETLlF3C\n26Ri9qvmMVMXR3aRbr0PvTxyiTB4xqb84CmRuFmQ9nicQVEUimikXHoReWUl\nRVa2zY5WT4mgW8nMkhn1V+2AISkKuG53IGLmwWn80uxbzGTsPdzK6hwSsLR5\nS6/ySwI3iqgYtT0pPPLy4DsQHd24275ztE300w5M+B2Q/hw0DFEIXzhgOz99\n0CWEbe88swDYN363824D9JsXmKfpVOVAw6SJhb3x/vL4uVtol0dokvV5i/Oa\nyhDd6bGWU5MtwQyAeW+cKR11TgbBjF0hUjWsre7fGPXNCzqYd20otbXGCzK6\nbzvW/KnORPyCLcP9Wj7pLwZU+r/a+xyjePZ0ERT00yaGhVdvo/QlWPE/d1OV\nZjs/uAYj+LJ/2N1GCkSFKkt54JrwQ0079jG2oLFTCg/cB3gihq55sLy3BON3\nPoNzF785BjlTw8rs9ZX36gWhKZhpUssnWb11+otdMScx88sSi+q/OtU6VUUf\nFw8e\r\n=TUZ6\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-native_1.0.6_1550190161844_0.752176928849341"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.7": {
+			"name": "request-promise-native",
+			"version": "1.0.7",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.2",
+				"stealthy-require": "^1.1.1",
+				"tough-cookie": "^2.3.3"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "2ae195a597ee92861e70fa6edda30c9a68a9caf2",
+			"_id": "request-promise-native@1.0.7",
+			"_shasum": "a49868a624bdea5069f1251d0a836e0d89aa2c59",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "6.16.0",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"shasum": "a49868a624bdea5069f1251d0a836e0d89aa2c59",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.7.tgz",
+				"integrity": "sha512-rIMnbBdgNViL37nZ1b3L/VfPOpSi0TqVDQPAvO6U14lMzOLrt5nilxCQqtDKhZeDiW0/hkCXGoQjhgJd/tCh6w==",
+				"fileCount": 6,
+				"unpackedSize": 7778,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZk/lCRA9TVsSAnZWagAAa3wP/1PovwsOS2XN3ARVxsHR\nQrJ4BNIJRkX/L64qDEC7pGahDbh8qOv3gmI6XtGKHqjGLimnfrZ+lAmg5TNp\ndsgabVtm8I+I0tDBTX+hqC5fkXDaRhkiyOj8opcNttLA9Kv7JFjAIWPM2wn2\nIm4Mq40q4bEDAwORqA+Vi0C7/T5gDqnkzYTn8ahVLcKf5I40dlSDjSIt+tX+\n4Y4SJVkF8hiavxyPFyzu1alkui8mOOEZveTg32dNvaVIJXEimW+gWDgsZtfM\nm33o44i3Io1DGLm5Z22ohTvY807Jim7rbITGjLNeRgsEH4U9CMJjD+RItrvG\nhfU2TbyNhbO/6inpN/U/RbWnK160RgdwS8nz+pnzWYNETwLnr+152pvSKqzd\nv1+NsrtrlUxZs0f5S2rIOmx/vUUFScqBzgPZExKEOHCSJeXaTOjbM0al2Zxr\n1VplcsqkBxt+juiqTsx9g9fDZVFS/vGPW8dw3fBXnMiWcowVbJyW3HBFVxNn\nuW8wX+tgmA4Nb9iCBOWTISNOSJ9eXxt66/YTun3GQAOToreVzu3DA1s0zq6p\nOcGl1FUzrHqkH827+7WIeRydBtmXWXFcPJP1ztXBMbLyCB5jIG/b4zvtfp+Y\n3hKV18OLyEO2uY6gKSFlrjJdNVbn4wIRoW/k32rUUjU917dW7bX1nEuu/5Du\n+Fzs\r\n=Z/0K\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-native_1.0.7_1550208996693_0.4063641940678413"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.8": {
+			"name": "request-promise-native",
+			"version": "1.0.8",
+			"description": "The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.",
+			"keywords": [
+				"xhr",
+				"http",
+				"https",
+				"promise",
+				"request",
+				"then",
+				"thenable",
+				"native"
+			],
+			"main": "./lib/rp.js",
+			"scripts": {
+				"test": "gulp ci",
+				"test-publish": "gulp ci-no-cov",
+				"publish-please": "publish-please",
+				"prepublish": "publish-please guard"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/request/request-promise-native.git"
+			},
+			"author": {
+				"name": "Nicolai Kamenzky",
+				"url": "https://github.com/analog-nico"
+			},
+			"license": "ISC",
+			"bugs": {
+				"url": "https://github.com/request/request-promise-native/issues"
+			},
+			"homepage": "https://github.com/request/request-promise-native#readme",
+			"engines": {
+				"node": ">=0.12.0"
+			},
+			"dependencies": {
+				"request-promise-core": "1.1.3",
+				"stealthy-require": "^1.1.1",
+				"tough-cookie": "^2.3.3"
+			},
+			"peerDependencies": {
+				"request": "^2.34"
+			},
+			"devDependencies": {
+				"body-parser": "~1.15.2",
+				"chai": "~3.5.0",
+				"chalk": "~1.1.3",
+				"gulp": "~3.9.1",
+				"gulp-coveralls": "~0.1.4",
+				"gulp-eslint": "~2.1.0",
+				"gulp-istanbul": "~1.0.0",
+				"gulp-mocha": "~2.2.0",
+				"lodash": "~4.13.1",
+				"publish-please": "~2.1.4",
+				"request": "^2.34.0",
+				"rimraf": "~2.5.3",
+				"run-sequence": "~1.2.2"
+			},
+			"gitHead": "6498be1290b24e8911278df724b49670e80c684b",
+			"_id": "request-promise-native@1.0.8",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.15.1",
+			"_npmUser": {
+				"name": "analog-nico",
+				"email": "nicolai.kamenzky@testrails.org"
+			},
+			"maintainers": [
+				{
+					"name": "analog-nico",
+					"email": "nicolai.kamenzky@testrails.org"
+				},
+				{
+					"name": "request",
+					"email": "request@outofindex.com"
+				}
+			],
+			"dist": {
+				"integrity": "sha512-dapwLGqkHtwL5AEbfenuzjTYg35Jd6KPytsC2/TLkVMz8rm+tNt72MGUWT1RP/aYawMpN6HqbNGBQaRcBtjQMQ==",
+				"shasum": "a455b960b826e44e2bf8999af64dff2bfe58cb36",
+				"tarball": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.8.tgz",
+				"fileCount": 5,
+				"unpackedSize": 7970,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdv3njCRA9TVsSAnZWagAAW0wP/R+ua8A1xB26fwJx8m/l\nSaaRKNBTr8oLz7c/cvQWysCHG4O1ZS8uFIYUQr/kQvmSpqX7es0xPhbtc6Wl\nN6CltxIg1Zs+LU74uRQ5Fhuvt0QkvKsvCa9pB9PYR9/olW2DSegPchdh3zg2\nsdOBPwiANpbElot3BnwPbRUo2vUVO/yy1vuxwpN+GFdwxcU/ap0R2rx1ybbp\nYC9nbzsDVfcS6bAYvhMikIVobe/eMwsaP+1s58geCzsP6+GWRrBRFL8mER97\nv3SqWTwdbbhWzr+ONqMeyzCOAMr2AEsN3cFg6r2tyI39j4+a0dZ2ZUmf5Ufl\nsSN10qp7y24dvHjfbkN167ZEgwUIsRKuGv9yqKVf8h6q/HC8soGKTrtRSa5c\n9SARKq1yFhdHXjDp8g5VuKbT1rGWm3xS8JCtOTl/RDav5sSyt5JsZPyklbc4\njfXvL/LYrXLKzL1/PJAdwbZwIRCSo+GwO6OfOnRUP82/dhUaD+7PT5QAk5Yd\nHP9po1FBoezYw5I6znh9xNnG+IImOxMiNJAawgFclGd1I5fj6LwfVPkgYfN0\nCb9guhtG2GysRus4HEefnl6/ut/vp/MjfqJuOrlVce5i78TuJt6PLLAJNZog\nDbRPH8imLTXhMs4PUTUtVYT2uog8q4tybFo407C8TBTNrMpRQZ2CI+b9fVO7\niVti\r\n=krug\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/request-promise-native_1.0.8_1572829667238_0.44504824238785545"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-04T01:07:49.805Z",
+		"created": "2016-05-07T06:44:22.851Z",
+		"0.0.0": "2016-05-07T06:44:22.851Z",
+		"1.0.0": "2016-07-16T00:23:18.177Z",
+		"1.0.1": "2016-07-18T00:20:25.049Z",
+		"1.0.2": "2016-07-18T20:12:17.633Z",
+		"1.0.3": "2016-08-08T11:27:17.880Z",
+		"1.0.4": "2017-05-08T01:54:45.758Z",
+		"1.0.5": "2017-09-22T16:54:16.350Z",
+		"1.0.6": "2019-02-15T00:22:41.957Z",
+		"1.0.7": "2019-02-15T05:36:36.841Z",
+		"1.0.8": "2019-11-04T01:07:47.368Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.8"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"2a11ded91efc0668ac15bba903f8b747\"",
+			"fetched": 1577117260875
+		}
+	},
+	"_distfiles": {
+		"request-promise-native-0.0.0.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-0.0.0.tgz",
+			"sha": "15c12aa68dcdabb91041a303225696b483b93143",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.0.tgz",
+			"sha": "3eb8679416eb3ce1dcdabc5112ad4102e30241ab",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.1.tgz",
+			"sha": "cf37d5ff54cf4cee84cc6f47bd328cc553b35c0b",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.2.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.2.tgz",
+			"sha": "3690aa97d5bcdb9b9faad5c684e09a98d06cf427",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.3.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.3.tgz",
+			"sha": "9cb2b2f69f137e4acf35116a08a441cbfd0c0134",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.4.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.4.tgz",
+			"sha": "86988ec8eee408e45579fce83bfd05b3adf9a155",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.5.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.5.tgz",
+			"sha": "5281770f68e0c9719e5163fd3fab482215f4fda5",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.6.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.6.tgz",
+			"sha": "1e500217da47b43c77ff6427942ed3ece248ee18",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.7.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.7.tgz",
+			"sha": "a49868a624bdea5069f1251d0a836e0d89aa2c59",
+			"registry": "npmjs"
+		},
+		"request-promise-native-1.0.8.tgz": {
+			"url": "https://registry.npmjs.org/request-promise-native/-/request-promise-native-1.0.8.tgz",
+			"sha": "a455b960b826e44e2bf8999af64dff2bfe58cb36",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-28cced0dc0051806",
+	"_id": "request-promise-native",
+	"readme": "<a href=\"http://promisesaplus.com/\">\n    <img src=\"https://promises-aplus.github.io/promises-spec/assets/logo-small.png\" align=\"right\" alt=\"Promises/A+ logo\" />\n</a>\n\n# Request-Promise-Native\n\n[![Gitter](https://img.shields.io/badge/gitter-join_chat-blue.svg?style=flat-square&maxAge=2592000)](https://gitter.im/request/request-promise?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\n[![Build Status](https://img.shields.io/travis/request/request-promise-native/master.svg?style=flat-square&maxAge=2592000)](https://travis-ci.org/request/request-promise-native)\n[![Coverage Status](https://img.shields.io/coveralls/request/request-promise-native.svg?style=flat-square&maxAge=2592000)](https://coveralls.io/r/request/request-promise-native)\n[![Dependency Status](https://img.shields.io/david/request/request-promise-native.svg?style=flat-square&maxAge=2592000)](https://david-dm.org/request/request-promise-native)\n[![Known Vulnerabilities](https://snyk.io/test/npm/request-promise-native/badge.svg?style=flat-square&maxAge=2592000)](https://snyk.io/test/npm/request-promise-native)\n\nThis package is similar to [`request-promise`](https://www.npmjs.com/package/request-promise) but uses native ES6+ promises.\n\nPlease refer to the [`request-promise` documentation](https://www.npmjs.com/package/request-promise). Everything applies to `request-promise-native` except the following:\n- Instead of using Bluebird promises this library uses native ES6+ promises.\n- Native ES6+ promises may have fewer features than Bluebird promises do. In particular, the `.finally(...)` method was not included until Node v10.\n\n## Installation\n\nThis module is installed via npm:\n\n```\nnpm install --save request\nnpm install --save request-promise-native\n```\n\n`request` is defined as a peer-dependency and thus has to be installed separately.\n\n## Migration from `request-promise` to `request-promise-native`\n\n1. Go through the [migration instructions](https://github.com/request/request-promise#migration-from-v3-to-v4) to upgrade to `request-promise` v4.\n2. Ensure that you don't use Bluebird-specific features on the promise returned by your request calls. In particular, you can't use `.finally(...)` anymore.\n3. You are done.\n\n## Contributing\n\nTo set up your development environment:\n\n1. clone the repo to your desktop,\n2. in the shell `cd` to the main folder,\n3. hit `npm install`,\n4. hit `npm install gulp -g` if you haven't installed gulp globally yet, and\n5. run `gulp dev`. (Or run `node ./node_modules/.bin/gulp dev` if you don't want to install gulp globally.)\n\n`gulp dev` watches all source files and if you save some changes it will lint the code and execute all tests. The test coverage report can be viewed from `./coverage/lcov-report/index.html`.\n\nIf you want to debug a test you should use `gulp test-without-coverage` to run all tests without obscuring the code by the test coverage instrumentation.\n\n## Change History\n\n- v1.0.8 (2019-11-03)\n    - Security fix: bumped `request-promise-core` which bumps `lodash` to `^4.17.15`. See [vulnerabilty reports](https://snyk.io/vuln/search?q=lodash&type=npm).\n      *(Thanks to @aw-davidson for reporting this in issue [#49](https://github.com/request/request-promise-native/issues/49).)*\n- v1.0.7 (2019-02-14)\n    - Corrected mistakenly set `tough-cookie` version, now `^2.3.3`\n      *(Thanks to @evocateur for pointing this out.)*\n    - If you installed `request-promise-native@1.0.6` please make sure after the upgrade that `request` and `request-promise-native` use the same physical copy of `tough-cookie`.\n- v1.0.6 (2019-02-14)\n    - Using stricter `tough-cookie@~2.3.3` to avoid installing `tough-cookie@3` which introduces breaking changes\n      *(Thanks to @jasonmit for pull request [#33](https://github.com/request/request-promise-native/pull/33/))*\n    - Security fix: bumped `lodash` to `^4.17.11`, see [vulnerabilty reports](https://snyk.io/vuln/search?q=lodash&type=npm)\n- v1.0.5 (2017-09-22)\n    - Upgraded `tough-cookie` to a version without regex DoS vulnerability\n      *(Thanks to @sophieklm for [pull request #13](https://github.com/request/request-promise-native/pull/13))*\n- v1.0.4 (2017-05-07)\n    - Fix that allows to use `tough-cookie` for [cookie creation](https://github.com/request/request-promise#include-a-cookie)\n- v1.0.3 (2016-08-08)\n    - Renamed internally used package `@request/promise-core` to `request-promise-core` because there where [too](https://github.com/request/request-promise/issues/137) [many](https://github.com/request/request-promise/issues/141) issues with the scoped package name\n- v1.0.2 (2016-07-18)\n    - Fix for using with module bundlers like Webpack and Browserify\n- v1.0.1 (2016-07-17)\n    - Fixed `@request/promise-core` version for safer versioning\n- v1.0.0 (2016-07-15)\n    - Initial version similar to [`request-promise`](https://www.npmjs.com/package/request-promise) v4\n\n## License (ISC)\n\nIn case you never heard about the [ISC license](http://en.wikipedia.org/wiki/ISC_license) it is functionally equivalent to the MIT license.\n\nSee the [LICENSE file](LICENSE) for details."
+}

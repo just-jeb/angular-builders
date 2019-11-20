@@ -1,0 +1,4057 @@
+{
+	"name": "cosmiconfig",
+	"versions": {
+		"0.1.0": {
+			"name": "cosmiconfig",
+			"version": "0.1.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"files": [
+				"index.js"
+			],
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"lodash": "^3.10.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^1.0.0",
+				"require-from-string": "^1.1.0",
+				"resolve-from": "^1.0.1"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "ea874b90ee989ab9855badc29d572d2a55944b7c",
+			"_id": "cosmiconfig@0.1.0",
+			"_shasum": "bdfbb256f714ffb2b310d35623f133139a1b6dae",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "bdfbb256f714ffb2b310d35623f133139a1b6dae",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.2.0": {
+			"name": "cosmiconfig",
+			"version": "0.2.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"files": [
+				"index.js"
+			],
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"lodash": "^3.10.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^1.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "a087b9f0cb4973de60de85bdf19ed98cf62cfe04",
+			"_id": "cosmiconfig@0.2.0",
+			"_shasum": "2fcad200e61230077fd1e3a6495d0da95edeef1a",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "2fcad200e61230077fd1e3a6495d0da95edeef1a",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.3.0": {
+			"name": "cosmiconfig",
+			"version": "0.3.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"lodash": "^3.10.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^1.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "eb93fd3e83965bd9670cefd966a3b8b9d350fb4b",
+			"_id": "cosmiconfig@0.3.0",
+			"_shasum": "2c9dd2730b045817919c096071b2b61baf0d6b9e",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "2c9dd2730b045817919c096071b2b61baf0d6b9e",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.3.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.4.0": {
+			"name": "cosmiconfig",
+			"version": "0.4.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"lodash": "^3.10.1",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^1.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "67e4e69a2b9634057c0d9f7e2c8e301454418eeb",
+			"_id": "cosmiconfig@0.4.0",
+			"_shasum": "386c7c6691df62315b843aeb0a9c83fca0accca6",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "386c7c6691df62315b843aeb0a9c83fca0accca6",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.4.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.4.1": {
+			"name": "cosmiconfig",
+			"version": "0.4.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^1.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "c837ff3e040a069e646ce03fe9fe6c8443d4ad3d",
+			"_id": "cosmiconfig@0.4.1",
+			"_shasum": "1a78efb42e8c4e9a1b4fa09ffaab717e6cef626a",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "1a78efb42e8c4e9a1b4fa09ffaab717e6cef626a",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.4.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"0.5.0": {
+			"name": "cosmiconfig",
+			"version": "0.5.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"scripts": {
+				"lint": "eslint .",
+				"test": "npm run lint && tape test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"defaults": "^1.0.3",
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^2.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "1.9.0",
+				"sinon": "1.17.2",
+				"tape": "4.2.2"
+			},
+			"gitHead": "1374fba1ce19967b06fc314b6a92ab4e2f1aa67a",
+			"_id": "cosmiconfig@0.5.0",
+			"_shasum": "9a6e8006c034e83c1b995846dcd12405c8ea6c07",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "9a6e8006c034e83c1b995846dcd12405c8ea6c07",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.5.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		},
+		"1.0.0": {
+			"name": "cosmiconfig",
+			"version": "1.0.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"pretest": "npm run lint",
+				"test": "ava",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"bluebird": "^3.0.5",
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.0.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "^0.5.0",
+				"eslint": "1.9.0",
+				"sinon": "1.17.2"
+			},
+			"gitHead": "edcd9fde279416790a3dede34c65d420cf28fbb0",
+			"_id": "cosmiconfig@1.0.0",
+			"_shasum": "132ff8b46e2bb1df735a8c3e9db1ff6ca90643a2",
+			"_from": ".",
+			"_npmVersion": "3.3.10",
+			"_nodeVersion": "4.2.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "132ff8b46e2bb1df735a8c3e9db1ff6ca90643a2",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {}
+		},
+		"1.0.1": {
+			"name": "cosmiconfig",
+			"version": "1.0.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"pretest": "npm run lint",
+				"test": "ava",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.0.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^2.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "^0.5.0",
+				"eslint": "1.9.0",
+				"sinon": "1.17.2"
+			},
+			"gitHead": "38ca03025b7ee82bc4479fcffbac88027e999b4c",
+			"_id": "cosmiconfig@1.0.1",
+			"_shasum": "27995f978268fe941d8dae8924fc0c9a6b55c74f",
+			"_from": ".",
+			"_npmVersion": "3.4.1",
+			"_nodeVersion": "5.1.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "27995f978268fe941d8dae8924fc0c9a6b55c74f",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {}
+		},
+		"1.0.2": {
+			"name": "cosmiconfig",
+			"version": "1.0.2",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"pretest": "npm run lint",
+				"test": "ava",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.0.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^2.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.9.1",
+				"eslint": "1.10.3",
+				"sinon": "1.17.2"
+			},
+			"gitHead": "1135486e4483208dcd0047cf6588581be9a892a4",
+			"_id": "cosmiconfig@1.0.2",
+			"_shasum": "84225dd0ae301a5ac83a4f4d6636104f7065c826",
+			"_from": ".",
+			"_npmVersion": "3.5.3",
+			"_nodeVersion": "5.4.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "84225dd0ae301a5ac83a4f4d6636104f7065c826",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {}
+		},
+		"1.1.0": {
+			"name": "cosmiconfig",
+			"version": "1.1.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"pretest": "npm run lint",
+				"test": "ava",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.0.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"pinkie-promise": "^2.0.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.9.1",
+				"eslint": "1.10.3",
+				"lodash": "4.0.0",
+				"sinon": "1.17.2"
+			},
+			"gitHead": "3bf5bef54fc18e8193a8e0b34f3cd17eb1033dea",
+			"_id": "cosmiconfig@1.1.0",
+			"_shasum": "0dea0f9804efdfb929fbb1b188e25553ea053d37",
+			"_from": ".",
+			"_npmVersion": "3.5.3",
+			"_nodeVersion": "5.4.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "0dea0f9804efdfb929fbb1b188e25553ea053d37",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"directories": {}
+		},
+		"2.0.0": {
+			"name": "cosmiconfig",
+			"version": "2.0.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"ava": "ava test/*.test.js",
+				"coverage": "nyc npm run ava && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run ava && npm run lint",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.16.0",
+				"eslint": "3.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^2.0.0",
+				"expect": "^1.20.2",
+				"lodash": "4.16.1",
+				"nyc": "^8.3.0",
+				"sinon": "1.17.6"
+			},
+			"engines": {
+				"node": "4"
+			},
+			"gitHead": "31fec2c5179bc4d5494789be2b046c738c4f4fca",
+			"_id": "cosmiconfig@2.0.0",
+			"_shasum": "0a4a456b8e62de679370d86de5e17b12bf08fafb",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.6.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "0a4a456b8e62de679370d86de5e17b12bf08fafb",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.0.0.tgz_1475937068818_0.0514873587526381"
+			},
+			"directories": {}
+		},
+		"2.0.1": {
+			"name": "cosmiconfig",
+			"version": "2.0.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"ava": "ava test/*.test.js",
+				"coverage": "nyc npm run ava && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run ava && npm run lint",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.16.0",
+				"eslint": "3.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^2.0.0",
+				"expect": "^1.20.2",
+				"lodash": "4.16.1",
+				"nyc": "^8.3.0",
+				"sinon": "1.17.6"
+			},
+			"engines": {
+				"node": "4"
+			},
+			"gitHead": "529cb128016f3f09bc876100b3eba2d89934da6c",
+			"_id": "cosmiconfig@2.0.1",
+			"_shasum": "7bd3cb61a9f5a4a807c0a04b2905a99a6a868f23",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.6.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "7bd3cb61a9f5a4a807c0a04b2905a99a6a868f23",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.0.1.tgz_1476198181717_0.8488575008232147"
+			},
+			"directories": {}
+		},
+		"2.0.2": {
+			"name": "cosmiconfig",
+			"version": "2.0.2",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "eslint .",
+				"ava": "ava test/*.test.js",
+				"coverage": "nyc npm run ava && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run ava && npm run lint",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.16.0",
+				"eslint": "3.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^2.0.0",
+				"expect": "^1.20.2",
+				"lodash": "4.16.1",
+				"nyc": "^8.3.0",
+				"sinon": "1.17.6"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "2c5ace504ebab0d67f1481dda443189d4c9506ae",
+			"_id": "cosmiconfig@2.0.2",
+			"_shasum": "555501957f17b849d44488d55dd2275a6452fff1",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.6.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "555501957f17b849d44488d55dd2275a6452fff1",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-16-east.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.0.2.tgz_1476209549923_0.25399640412069857"
+			},
+			"directories": {}
+		},
+		"2.1.0": {
+			"name": "cosmiconfig",
+			"version": "2.1.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"ava": "ava test/*.test.js",
+				"coverage": "nyc npm run ava && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run ava && npm run lint",
+				"prepublish": "npm test"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"graceful-fs": "^4.1.2",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.16.0",
+				"eslint": "3.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^2.0.0",
+				"expect": "^1.20.2",
+				"lodash": "4.16.1",
+				"node-version-check": "^2.1.1",
+				"nyc": "^8.3.0",
+				"sinon": "1.17.6"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "141c4adb5244b6abbb98a941f662a07ed70c8783",
+			"_id": "cosmiconfig@2.1.0",
+			"_shasum": "26e384a2055ea4e087050e5e08d53eb4eac8f86e",
+			"_from": ".",
+			"_npmVersion": "2.15.11",
+			"_nodeVersion": "4.6.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "26e384a2055ea4e087050e5e08d53eb4eac8f86e",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.1.0.tgz_1476412220096_0.5366442145314068"
+			},
+			"directories": {}
+		},
+		"2.1.1": {
+			"name": "cosmiconfig",
+			"version": "2.1.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"ava": "ava test/*.test.js",
+				"coverage": "nyc npm run ava && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run ava && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"ava": "0.16.0",
+				"eslint": "3.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^2.0.0",
+				"expect": "^1.20.2",
+				"lodash": "4.16.1",
+				"node-version-check": "^2.1.1",
+				"nyc": "^8.3.0",
+				"sinon": "1.17.6"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "833385b0897c7d698e346442cc260a40f0e8eb9d",
+			"_id": "cosmiconfig@2.1.1",
+			"_shasum": "817f2c2039347a1e9bf7d090c0923e53f749ca82",
+			"_from": ".",
+			"_npmVersion": "4.0.2",
+			"_nodeVersion": "4.6.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "817f2c2039347a1e9bf7d090c0923e53f749ca82",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.1.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-18-east.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.1.1.tgz_1480883998374_0.7163176657631993"
+			},
+			"directories": {}
+		},
+		"2.1.2": {
+			"name": "cosmiconfig",
+			"version": "2.1.2",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"tape": "tape test/*.test.js | tap-spec",
+				"coverage": "nyc npm run tape && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run tape && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.4.3",
+				"json-parse-helpfulerror": "^1.0.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "^3.13.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^3.0.5",
+				"expect": "^1.20.2",
+				"lodash": "^4.17.4",
+				"node-version-check": "^2.1.1",
+				"nyc": "^10.0.0",
+				"sinon": "^1.17.7",
+				"tap-spec": "^4.1.1",
+				"tape": "^4.6.3"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "324ba6e6899822218027c145220faad3da52a231",
+			"_id": "cosmiconfig@2.1.2",
+			"_shasum": "c43ae86d238f08f1728a345ed60ceb0aef63c060",
+			"_from": ".",
+			"_npmVersion": "4.5.0",
+			"_nodeVersion": "6.10.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "c43ae86d238f08f1728a345ed60ceb0aef63c060",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.2.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.1.2.tgz_1493170533469_0.09523397800512612"
+			},
+			"directories": {}
+		},
+		"2.1.3": {
+			"name": "cosmiconfig",
+			"version": "2.1.3",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"tape": "tape test/*.test.js | tap-spec",
+				"coverage": "nyc npm run tape && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run tape && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "^3.13.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^3.0.5",
+				"expect": "^1.20.2",
+				"lodash": "^4.17.4",
+				"node-version-check": "^2.1.1",
+				"nyc": "^10.0.0",
+				"sinon": "^1.17.7",
+				"tap-spec": "^4.1.1",
+				"tape": "^4.6.3"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "334065d9f7b557170a38b3f920bf5e90cecfab72",
+			"_id": "cosmiconfig@2.1.3",
+			"_shasum": "952771eb0dddc1cb3fa2f6fbe51a522e93b3ee0a",
+			"_from": ".",
+			"_npmVersion": "4.5.0",
+			"_nodeVersion": "6.10.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"shasum": "952771eb0dddc1cb3fa2f6fbe51a522e93b3ee0a",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.3.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "packages-12-west.internal.npmjs.com",
+				"tmp": "tmp/cosmiconfig-2.1.3.tgz_1493484678373_0.50360560673289"
+			},
+			"directories": {}
+		},
+		"2.2.0": {
+			"name": "cosmiconfig",
+			"version": "2.2.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"tape": "tape test/*.test.js | tap-spec",
+				"coverage": "nyc npm run tape && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run tape && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"is-promise": "^2.1.0",
+				"js-yaml": "^3.9.0",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.1",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "^4.2.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^3.0.5",
+				"expect": "^1.20.2",
+				"lodash": "^4.17.4",
+				"node-version-check": "^2.2.0",
+				"nyc": "^11.0.3",
+				"sinon": "^2.3.8",
+				"tap-spec": "^4.1.1",
+				"tape": "^4.7.0"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "bfa7721399d8a094796725456ddf0a143379f0a2",
+			"_id": "cosmiconfig@2.2.0",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "6.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-L5gAiD3YAzzD2o+XAL8HD8wCprGC+2gGudfdckAIpV3zAEgYMHnolmK3iRnMsYiS0W4e/ey6fDBy6O27bQYdpg==",
+				"shasum": "a14ef6f81bf4cc8b7c708730a4010c41b4ab35b8",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "davidtheclark",
+					"email": "david.dave.clark@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-2.2.0.tgz_1500645658522_0.9643848484847695"
+			},
+			"directories": {}
+		},
+		"2.2.1": {
+			"name": "cosmiconfig",
+			"version": "2.2.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"tape": "tape test/*.test.js | tap-spec",
+				"coverage": "nyc npm run tape && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run tape && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "^3.13.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^3.0.5",
+				"expect": "^1.20.2",
+				"lodash": "^4.17.4",
+				"node-version-check": "^2.1.1",
+				"nyc": "^10.0.0",
+				"sinon": "^1.17.7",
+				"tap-spec": "^4.1.1",
+				"tape": "^4.6.3"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "a004ec9d36adf0b4d47a527f2bb8cff12aca0405",
+			"_id": "cosmiconfig@2.2.1",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "6.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-17m9pl5cD9jhPUHqaxSA4fyoiAQJUG7V3CQDxCF7gWzGYeUY0YEnLQdQyOEKjEPVv0yGbdCfdfJMq6SphRiRjw==",
+				"shasum": "7fbdc6fb47597d5f88175de1df696b66d36e5944",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.1.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-2.2.1.tgz_1500650393526_0.31028774357400835"
+			},
+			"directories": {}
+		},
+		"2.2.2": {
+			"name": "cosmiconfig",
+			"version": "2.2.2",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "index.js",
+			"files": [
+				"index.js",
+				"lib"
+			],
+			"scripts": {
+				"lint": "node-version-gte-4 && eslint . || echo \"ESLint not supported\"",
+				"tape": "tape test/*.test.js | tap-spec",
+				"coverage": "nyc npm run tape && nyc report --reporter=html && open coverage/index.html",
+				"test": "npm run tape && npm run lint"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.4.3",
+				"minimist": "^1.2.0",
+				"object-assign": "^4.1.0",
+				"os-homedir": "^1.0.1",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"eslint": "^3.13.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-plugin-node": "^3.0.5",
+				"expect": "^1.20.2",
+				"lodash": "^4.17.4",
+				"node-version-check": "^2.1.1",
+				"nyc": "^10.0.0",
+				"sinon": "^1.17.7",
+				"tap-spec": "^4.1.1",
+				"tape": "^4.6.3"
+			},
+			"engines": {
+				"node": ">=0.12"
+			},
+			"gitHead": "6ba8acded691b08e550436de3bbad7d25598ad75",
+			"_id": "cosmiconfig@2.2.2",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "6.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-GiNXLwAFPYHy25XmTPpafYvn3CLAkJ8FLsscq78MQd1Kh0OU6Yzhn4eV2MVF4G9WEQZoWEGltatdR+ntGPMl5A==",
+				"shasum": "6173cebd56fac042c1f4390edf7af6c07c7cb892",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.2.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-2.2.2.tgz_1500820216479_0.9056716256309301"
+			},
+			"directories": {}
+		},
+		"3.0.0": {
+			"name": "cosmiconfig",
+			"version": "3.0.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"index.js",
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint": "eslint .",
+				"lint:fix": "eslint . --fix",
+				"pretest": "npm run lint && flow check",
+				"test": "jest",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				]
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^2.2.0",
+				"require-from-string": "^1.1.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^7.2.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"eslint": "^4.5.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-config-prettier": "^2.3.0",
+				"eslint-plugin-flowtype": "^2.35.1",
+				"eslint-plugin-node": "^3.0.5",
+				"flow-bin": "^0.54.1",
+				"flow-remove-types": "^1.2.1",
+				"husky": "^0.14.3",
+				"jest": "^20.0.4",
+				"lint-staged": "^4.0.4",
+				"prettier": "^1.6.1"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "e9226f1310f36dadd0323d68ab0256e976be8645",
+			"_id": "cosmiconfig@3.0.0",
+			"_npmVersion": "5.4.2",
+			"_nodeVersion": "6.11.3",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-BkkaWKg1oZ1qhaKTbRPAYNshAstpR5xiS6s3yL/o5H8rW/FvoOyZuPiqrpS9tBIJZIRKxGNdKZv3pREazD/FyQ==",
+				"shasum": "9c465e02f5a7cc6e8f7e5975fce4a1b712d7d936",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-3.0.0.tgz_1505525636771_0.17221695114858449"
+			},
+			"directories": {}
+		},
+		"3.0.1": {
+			"name": "cosmiconfig",
+			"version": "3.0.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint": "eslint .",
+				"lint:fix": "eslint . --fix",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				}
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^3.0.0",
+				"require-from-string": "^2.0.1"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"eslint": "^4.7.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-config-prettier": "^2.5.0",
+				"eslint-plugin-flowtype": "^2.35.1",
+				"eslint-plugin-node": "^3.0.5",
+				"flow-bin": "^0.54.1",
+				"flow-remove-types": "^1.2.1",
+				"husky": "^0.14.3",
+				"jest": "^21.1.0",
+				"lint-staged": "^4.2.1",
+				"prettier": "^1.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "2dac2f9165c01a571f5c61648ff3c0079d4a4bee",
+			"_id": "cosmiconfig@3.0.1",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.5.0",
+			"_npmUser": {
+				"name": "sudo-suhas",
+				"email": "sudo.suhas@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-ybh58PgNtXMlTN+xpsHNPyhzdSg4PCS9QBVxXMLi5sJGfudUqdtu2XTZd3vRys7iqgMVuWinMSKRMNHbfJH9SA==",
+				"shasum": "d290e2b657a7f3a335257a0d306587836650fdc0",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.0.1.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-3.0.1.tgz_1505660827478_0.797999853733927"
+			},
+			"directories": {}
+		},
+		"3.1.0": {
+			"name": "cosmiconfig",
+			"version": "3.1.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint": "eslint .",
+				"lint:fix": "eslint . --fix",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				}
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^3.0.0",
+				"require-from-string": "^2.0.1"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.0",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"eslint": "^4.7.0",
+				"eslint-config-davidtheclark-node": "^0.2.0",
+				"eslint-config-prettier": "^2.5.0",
+				"eslint-plugin-flowtype": "^2.35.1",
+				"eslint-plugin-node": "^3.0.5",
+				"flow-bin": "^0.54.1",
+				"flow-remove-types": "^1.2.1",
+				"husky": "^0.14.3",
+				"jest": "^21.1.0",
+				"lint-staged": "^4.2.1",
+				"prettier": "^1.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "930926e7ca4e4f4c6cd57c371748a6c9d45083d8",
+			"_id": "cosmiconfig@3.1.0",
+			"_npmVersion": "5.3.0",
+			"_nodeVersion": "8.6.0",
+			"_npmUser": {
+				"name": "sudo-suhas",
+				"email": "sudo.suhas@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-zedsBhLSbPBms+kE7AH4vHg6JsKDz6epSv2/+5XHs8ILHlgDciSJfSWf8sX9aQ52Jb7KI7VswUTsLpR/G0cr2Q==",
+				"shasum": "640a94bf9847f321800403cd273af60665c73397",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.1.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-3.1.0.tgz_1506906985338_0.6278869041707367"
+			},
+			"directories": {}
+		},
+		"4.0.0": {
+			"name": "cosmiconfig",
+			"version": "4.0.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint": "eslint .",
+				"lint:fix": "eslint . --fix",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				}
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0",
+				"require-from-string": "^2.0.1"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.54.1",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.8.2"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "e520cde1cbbbd528e8b0533c3f02bcb35e8a359e",
+			"_id": "cosmiconfig@4.0.0",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.3",
+			"_npmUser": {
+				"name": "sudo-suhas",
+				"email": "sudo.suhas@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-6e5vDdrXZD+t5v0L8CrurPeybg4Fmf+FCSYxXKYVAqLUtyCSbuyqE059d0kDthTNRzKVjL7QMgNpEUlsoYH3iQ==",
+				"shasum": "760391549580bbd2df1e562bc177b13c290972dc",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-4.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				},
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig-4.0.0.tgz_1516072984111_0.9652654137462378"
+			},
+			"directories": {}
+		},
+		"5.0.1": {
+			"name": "cosmiconfig",
+			"version": "5.0.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "493c62aca93b9b79ea75b0768f7b425e685e2d57",
+			"_id": "cosmiconfig@5.0.1",
+			"_npmVersion": "6.0.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-Kb8por4Jn2HbgGMmQoS2glS7FipYnNxIDccjLr1y9jRjonlSeHrciUfa2y5D6ucahMnKj5oUAToLU6cRXUfOpg==",
+				"shasum": "1467d4b6010116a3adcc1d8cbcc126d993a5afa9",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.1.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40134,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7eNYCRA9TVsSAnZWagAA+MEP/1SBECl2u0Ek7Q8pyJN3\nWQnSOw7CUCphyXqMEINQY1a6E/u2r94P6G2quNp6DeFADbzEDWjMxGwTH3lC\n33JCWghnNJn1ZAXXXVmvU6RFM/hxZ1APNMhzpD4nsF1UWFhy+6K0tCLTMvfQ\n3AQOJjJStdPZERH2QJ3FTNPFrJajCN5TYWy+gO8j7nNRRunlw+a4bDtDuytV\n/kqeOoCKIk5GPxk+Fl+Nz8huhbr/er4nfUINDZSktFchWtlo2g0A33uuL2Op\nrlwTmuBxbjt88I7nV4wctljQ9ztXRvoNAk2+8PsUQxXePjWKDlyXLjufDGBa\nZTDWLrHLltf9tKk6LKhXUoCDO5U1VDAhO2dDoVkYBOukBghm27vxIP4nDkYT\nlSYHCyUh51OX5beew4my7mWS+sQ16V/jQy1fKfLXltD9fsodP/5rrJlk8zOZ\nTNgiYB+j+DqkuVQ4glA5hMLwGwRSuz3OrBjVBvIGvoz37495owtKlssxwL9b\npWmF8Oke2rzjxKD1ZmPBnaM8WCaQaGu5QzFOgHPlhL8C7N71J/FUuJ4Spw8x\n/LGU+pthXiLCKi4PxxUkwutAEC4FhObxMrXaMTmBY0WQRd6XiN1VaNZ9S2Ct\n8jFcxZh/yiYXcBVid4b1XDN/G8AVvy5yi5ErFZ86TVNhsp0snRLMJkPK37iM\nV5ky\r\n=eSLI\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.1_1525539670694_0.4144289824136158"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.2": {
+			"name": "cosmiconfig",
+			"version": "5.0.2",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "e454aba02a6acfa45a3f9eb7d0784fb03b266acf",
+			"_id": "cosmiconfig@5.0.2",
+			"_npmVersion": "6.0.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-zJV4MeVVN4DN/RdvqJURLFBnIfdwJDSHJ9IoxxqwnW48ZNKG9rbOEZb5tuWpnjLkqKCYvDKqGFt7egAUFHdakQ==",
+				"shasum": "03f8965ae4675317a0015b4a5a48a470d9baeada",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.2.tgz",
+				"fileCount": 10,
+				"unpackedSize": 39929,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8M8UCRA9TVsSAnZWagAApRAP/jq9oyQFNrvSupvMd1/Z\nr1jgZatpM9jeMKDVKI7fG8RtyBXYvct/7gePp2aOc6Xi5hYK5WAy1tDB+ze2\nvJsY5z47b5St0l40ZC74JpaXpptJZ/GdibGyQHYaXm+BnXFukf5E7Z8ACZ/s\nxNHfHIpp5nb14p4R/c5sIlRoCuFi+3Nz/W9NmuaX5/J43xptqwiGiVyGyNP9\nMvwUXlVq4IdbQsmgrLqi+HernqlbBj/ugBceGbn5IWn8m7qJVlsVNvTdapAs\nhGXYZQRCoGhdKxUNv0m2wary2shozjjHYpfu6YYQPZciZxH7OxDbpM6wJhiy\nSN2YHYDhtnP+YYrOUt0GM+mZcokCA4AOJRpR9+SQwM9g10TOlzqowpCUkN1U\nDLj/JSzynELIjTLCpBDir7yWF1R7vHkUv1NWixVKUIL31DEk9cEF8GrkYm3R\nYdHJxLIY0y6706sLJV/v3uL8654loGAe/0aMHtG8Gpup1RHDckmx19kQbTuv\nV+kuaoYTtvdtpt39uBmJSz3kcvmmydIipuETLPweEbX2VntKN5I4xl4Nmyhf\nx5PDKL/CIZaIjuiwfo+y3vJm48QiKSfyetkdTccwfgKy5CV1UUVvOc4tEQPU\n4rabjQ6GCvcPuelaNl+i8ld90P3jSHO3pH3vaeZ0S70Xne9LX0e6X4skxZXa\nEWmy\r\n=b71b\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.2_1525731090723_0.5044492278052646"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.3": {
+			"name": "cosmiconfig",
+			"version": "5.0.3",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "fa5f52ef43e9eea14105fc13c6c6f49556c99c77",
+			"_id": "cosmiconfig@5.0.3",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "sudo-suhas",
+				"email": "sudo.suhas@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-x7vMpNH5favpvFjxwSzfQkB5ozdxikcmWzxah9aOh8BCOKeR+j6TM6PxQ2zyMm3+EDZcSajQrzzPKrsVqbsUDA==",
+				"shasum": "299c08ebce9d2df8a2c9ec3f11e55b1c2e897bf3",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.3.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40036,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+lWhCRA9TVsSAnZWagAAf80P/jy1zWeZ+4N29Qtv1nGS\nrnjlaTryt8JkD+emUsO5Z0975EBGVkp/Y6D3Dg3w+kElmtK234Xa8zXHHdkj\nfDzXUYo/36EXpiHr7VKA0AX/JnFgbxEnIiF1MHjgOiXa/KMosYJgMacaQeeK\nJfAGvYM7RoH8pO0EAD+eWYLlkN65KPml1QP9QiWrFU9Ru8Ju2sKflPjNT+Gm\n0XTHKAHAZZ6g8AdanXmRznBLQ61Mkgj8LOAWiQtagwT1B/AiGHA3cgrvpdhf\ntMhBmTK+6r2Fxs7LOdLlBMbP27/VlXgoaRvo7ZlFqzjrnf0GIg8SYZlAwltQ\nFgRXCRSBwzP0R7tQpQZ5jmOfhRL0fl6dFd+2sgdEqTzknFfs7dt/sptm/vTd\nhNU1THaLkCxqgkRppqSgBvnF3ABKCy/3rmUorRkmRhbi/N+mxNXlPZ119QgS\nwVUXLXUwazHm9sGPVUdz4AYVcUlwc3rWW1rkmzjkb7Rv92iUQyLlIzMqJAfr\nc4jSXVhVCCi511iLAjyaemt5JSM1tpohU1dl5KXw1Bf6/mM/geEpT6+nm50P\nAOC9bo+MDmEmXRCYLR0IF7Gx0+d0yc7dcy0pH9xPG3a8OPMb4wLCAP9ILnMj\nzBP8ojOrqTQbljAmm+MN2FEbfBionMkhQbfT8vN81YNjB6fl0z5N6OGIQ616\nmmp0\r\n=3ngD\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.3_1526355359309_0.2329486190334984"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.4": {
+			"name": "cosmiconfig",
+			"version": "5.0.4",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "6106aeca2d5729d5955c37ab80494e470b712ca1",
+			"_id": "cosmiconfig@5.0.4",
+			"_npmVersion": "6.0.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-AmWciHfzwEOUI+4jeXJap/E3Apebr7FZIGBqjzkID+lnIPTMMSNN6WM4o6q4EX1u+5fgcP7G3rEzxSe0FTqtIw==",
+				"shasum": "fe4c1fccf8947ab30911760eace33784749eb51e",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.4.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40230,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAF4ECRA9TVsSAnZWagAACxIP/3lJPAFpCwlZa4JI/4O8\nMaLd7sfbufXz7v6f3ZbNK4V0S3buitlJ0zuPSWm1b0kfdl/8tAnQTjyL5Mcr\nyFNl7uIiPMJ9Hf6qzu7GnLKlqES/XsD9NC+uot9g1D443XzL0ybyp1Ny1baj\n2+RU0gJqoZTM9rNUyM6AA5QNfAuCbY/4v+Fn84ZSqdSstj2oj0gLIoawWlfH\nwzeyjHZWOxjVaYCU9gvcxJZti8wvtfDiTD19DoMEURUhnv5uh25XtltqIl+n\nzkdAQEGWQN/HwCLphlpaqzO8cp1GVWt9zMzAp+2UFonR1iKsItdDgg4U1q5/\nkLYryNlpLTAk8EKi34+GRu08rlFMY+0d0l0WplBeKy0kUIIN1L/S2A7dl4Ei\nLnaq7T665OeUwUlbOvFYXvEQUUzHzEFClQihHZ8LbyIxZR7pgC3SiwC7PnVC\nFPwfrpVvh0Z8hpLriCfPYUUAPHSH0Gm8sUnjR8EjvivmiI1Ccg+uEcKmWqH/\nbQSfGvMFbr6xbRg0/ibHfALRE1pMxY7sT0QD72J/lDnsietYBH7OmGO44LH4\nE1jnb7hmzMYrUWBspl2bEJOdI7T62eBicO5yfYcuNWCEfpt0YrxjR7n/a5Ro\nLX4ESjYc+Og+olBF3SXB+aGNQ15bZRn4tXFNFc4vxTX1tDwyKzBBo6JwgE2n\nVodB\r\n=27c7\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.4_1526750722153_0.24526780173289553"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.5": {
+			"name": "cosmiconfig",
+			"version": "5.0.5",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "5ce57f0758a143cffcf52415b5a0d155675332bb",
+			"_id": "cosmiconfig@5.0.5",
+			"_npmVersion": "6.0.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-94j37OtvxS5w7qr7Ta6dt67tWdnOxigBVN4VnSxNXFez9o18PGQ0D33SchKP17r9LAcWVTYV72G6vDayAUBFIg==",
+				"shasum": "a809e3c2306891ce17ab70359dc8bdf661fe2cd0",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.5.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40512,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbA3whCRA9TVsSAnZWagAAxw0P/i+MRSIDzs+MMYZg1WlY\nZ2kO1QpVrXnFUhyd6aMESueb4ydRxwPph17Bs3Jp0+Rf7oBUhYc5aUKJ62j0\nssOZopp+GYDHc77WnqDMuOE9k6WI5KpP5eFLXZYYWZnZqal+459ACSvtGnbD\nXi9oozYahxRETvBVyLFCqTv9xQv4cA+wBPIiNLzUCf7LLhjaQ6NK2yUPLSmY\nBI8wq7c+1HHNgppIZ2e1O3nfWwL6FnCBnmkNKdiZkHER22pIPKH+FW03DtXb\nB6LGYmzb27VPLlowbleN9McVOh3inbt2fzQa5ORbGcJ+kj+g6XobU6cVrOlj\n78OWO1xPq1rIvSjhqltTof8Gj4M3DmIDUyF7Is1vXDcvSD0IUL+E6Bst/Ahr\n7DjOP/GE4IxA2kKr8MusB/mEuzkebepRJ+ImmUoCog24DA/wUmK9+yzf4jvo\n9JjrU0mpS5D5kk/WYr6be2Ijxgjkqxy9NgMtQ4iS3FSxhIqq9DC8P8e12/BJ\nywP9F//MqrQyinobMPWrZ4R79sxbe3h9VCX2293I81+z1Wu2K2Wnez3L723F\nnW2kyNXaCJQ2dYjTylJtAbhkLpf1ujqPEU4yQV2OwzxPDby5hEXAWwClfDrw\n0LgYECVwbA3ajXlWZMOxmMAbKshuTw4SgAdFxGOCF7Xog5ksutgCg3FuZ/cn\nTcY7\r\n=irRT\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.5_1526955040307_0.5628565018623786"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.6": {
+			"name": "cosmiconfig",
+			"version": "5.0.6",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"files": [
+				"dist"
+			],
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "599594916041a66e3963268bb9893e4c7724ca55",
+			"_id": "cosmiconfig@5.0.6",
+			"_npmVersion": "6.3.0",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-6DWfizHriCrFWURP1/qyhsiFvYdlJzbCzmtFWh744+KyWsJo5+kPzUZZaMRSSItoYc0pxFX7gEO7ZC1/gN/7AQ==",
+				"shasum": "dca6cf680a0bd03589aff684700858c81abeeb39",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.6.tgz",
+				"fileCount": 10,
+				"unpackedSize": 40639,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbFBkCRA9TVsSAnZWagAArE4P/jI39FyipmmdSBYzgM/u\nE4jipHhOjvvgkPz6g1YP+vXuHd3X2N7XNggN2d6oWx1DurvA8AiM6zwlTxhi\n6BWzbTtvm2pixHhJaZLoca3wZK5W1XX8dwoDOoyKjxGK4AgQrtHaCKMb5QlE\nW0D/bs/vF82ShKh86bVw3XyFILYmnJnjX3+Rk/CT01r7q27lpWc/GFFthRgH\nLMoPCJgcmg3GUvZbGJmSguht+PsN5Dn/2l3jDqFxTXgU83G1igOy/nedxDz0\nBWPqe3SKZX9FK588PB6nRlMbtOrIKRh9xIM9uKJeFb0JVf6F7uJu3kn/i5gH\nOEIkFFJ8ygtOau6r3bvwalnM9z0rAYe5keGiMJsHQwFr41VterIFyrKN/l8x\nx1NN2l0ANdHSBAZP89bLR5/yVPPGgTgKIUxx0v0NTg42FQ5Ntn25qT9mcp5Y\nXFp6NScU1jVXnmRvQ4DpTobJ+ELxk3ffG+tHsgticpQXOcEY/IukzR7zRKXP\nIlcNTFH5DHijNGVyyV9Qe7WBjn06x054uSJWOde0aZROyJIC7UhUYtGg12ox\nBpYP+bOoYN4ctcMta+Tml3a3O25vn34J+X8QfATezeFyw/KptQEapdhgTXOd\nS86UIDGXAc3M+PfEWLZj2l9KQyhlfsFTqI3E/2ht5QxTBmJI0rOMkxX+Rjh3\ny2ws\r\n=xetn\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.6_1533825124009_0.5502853986113991"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.0.7": {
+			"name": "cosmiconfig",
+			"version": "5.0.7",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"import-fresh": "^2.0.0",
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "323d8f21ee8e182815cfac6711cee144a74f65d3",
+			"_id": "cosmiconfig@5.0.7",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-PcLqxTKiDmNT6pSpy4N6KtuPwb53W+2tzNvwOZw0WH9N6O0vLIBq0x8aj8Oj75ere4YcGi48bDFCL+3fRJdlNA==",
+				"shasum": "39826b292ee0d78eda137dfa3173bd1c21a43b04",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.7.tgz",
+				"fileCount": 10,
+				"unpackedSize": 41071,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb46JKCRA9TVsSAnZWagAAWjkP/1CAbhA/gb20NB4dlp18\nfKAkhk4EA2VvAbJQSw5Ic7HQ+cwn6Ix2+tWZUhln2+vcuku4FnQFkvgypJzF\nbWqyuUO9a+BSfpGUOuIkFZziCblKCModAK5Fd+B35w8RnIoJmv84OWi3yU6v\nVm9cCbY8GrlzP9ZElnPlugHtKrxU/7Bc8fYvO7R/WVRmYSSvjKmcAuKpdH1S\nc/V0eTqQ+2SgUqdAkeRvHTPuyt89tgNVklJvfdQ1vZ6RWtSzyb4ljT1+bIgo\n2ifs3DWvkF+U0pU+qUMk8SBPTYB8x6PQRnVz2c/aUFVXVeRIWFxONUzNSEX4\nPSeJUFN8QAT7d0+4/6yBGsofvH/oUgSqUifDrHMRCa306GmqpwA1u2QXrxQJ\nsTSOW/DlABqJ1+11ejvkEI1A0dQZ9+IIqyM5PNH3mTxXebtWD19DiPdadytJ\nMuPCl6sHByWLQEbjgtPu7gIgWmUfqvh7rlqmSmmB27tRtqN+4Caom4om4roA\nII8NMowWse6/OpooVps1HQIAZ8Xl9Zc02yePit60ldzhwJA8Ge0CqFzIzMzV\niu57Hz+Z6T2MCkqupAQ8gNd9+M4w0dtLtMCVc/ZbYzIQIMMpfbixZZqoumVi\nBXCDs6KJKGPp9dBXAK6T0ul9cEeFhbsUvXuR/jWgbLTMfoL3JKkmbYrVr/B4\nuZj4\r\n=8naF\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.0.7_1541644873823_0.5878130624403042"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.1.0": {
+			"name": "cosmiconfig",
+			"version": "5.1.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"import-fresh": "^2.0.0",
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.9.0",
+				"lodash.get": "^4.4.2",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "71da3267ff24b3e80bd0e5fc955b4c45942c3548",
+			"_id": "cosmiconfig@5.1.0",
+			"_npmVersion": "6.5.0",
+			"_nodeVersion": "8.14.0",
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-kCNPvthka8gvLtzAxQXvWo4FxqRB+ftRZyPZNuab5ngvM9Y7yw7hbEysglptLgpkGX9nAOKTBVkHUAe8xtYR6Q==",
+				"shasum": "6c5c35e97f37f985061cdf653f114784231185cf",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.1.0.tgz",
+				"fileCount": 10,
+				"unpackedSize": 41541,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcafUICRA9TVsSAnZWagAAFF8P/Rwx78K07Usel2xLFV1E\n1TCVZJrLGvmPa7blKYbu1wKlcliJcoUThF7yT5uXPEBj1PTh2ODBUnUE4F/w\n7SMI4jtdOimGZVRIqQwwC5pvRwQ8aljCRS4CgQorFPQoGFNXQgMQgS/5/BVa\nevQLT7/4zLW5chNMqJV+Fl/kQJdpclsE4YQTYi12NdbFCptj67ezyMtXl7y8\nrL9H9MuH4VJiX4krnG1e+rl6qXtJq3JHWIKsVjjp+R1DsQaFGqT2fRvpix13\npP0gkoVdyPLDMzQW4sC0PMqARwz1nOUtDfBDNX2Phko0WM2q/oq+Lk1QgdFs\nfJORm9Yr4OwSFUTB6VD60/FR7eNNGIde0AAbe/mtaNlAsnkq5zMkB3ABVkSK\nos//eEhZi/oP4AYw9+i7PkMMt7aRnlWryG9HTaudtJQ4si1nS9uqVLZc7pT5\n0rO/UxXrIUkxsz5QjqtolmNyEQwM/XLIxX1stPaZohCnk0vgddcWLn7dJjKG\nJF+3bNYaVS5p1eCutxPu9cLqFWzRnfRwB9rH4EqYfwqda39BSKdyJYU9FTYg\nBVkSutwfIJVDjD76CqelfgtnrM3KRO5Ymlo+g0p9Wsm3JwGuRE7ZIGDX+qFy\nWR8Ld1f2dYuBEg19kCBGDbra3sqMnFqeVkJig1MiRnXrg0rOJK2IVNGW1xuW\nWpaV\r\n=INII\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.1.0_1550447879993_0.4726436965960332"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.2.0": {
+			"name": "cosmiconfig",
+			"version": "5.2.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"import-fresh": "^2.0.0",
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.13.0",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "f1750cde0b9c53bc577efa60d012a85a4dc4b823",
+			"_id": "cosmiconfig@5.2.0",
+			"_nodeVersion": "8.14.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-nxt+Nfc3JAqf4WIWd0jXLjTJZmsPLrA9DDc4nRw2KFJQJK7DNooqSXrNI7tzLG50CF8axczly5UV929tBmh/7g==",
+				"shasum": "45038e4d28a7fe787203aede9c25bca4a08b12c8",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.0.tgz",
+				"fileCount": 11,
+				"unpackedSize": 43348,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcl8oDCRA9TVsSAnZWagAALbAP+QAmTLJfqO01Q34rbf22\nFkow6J+qwjAe1mTuDk/QeJfX70CIRNonPTGUrZe81UaxvrZZQhUQnGE163CA\nOJfsY6rztJu0AFX+QQqRQLRpb538E4gJWD9sP/cpI89IiaN6R0vEUrNipK74\n2g7sLZZIB7iJdLJKOuMLd0SrBOKAj/RnRg0rnyEKqQ3Ol9oE/miymIY4tF0P\nVmkwhRWt+IZgEvd35LHttHzQ/V1lK2k8/8c1D2IGsG7HeTRoEoNstGzFCOX6\nS0y5z161AkAcFxXdvbi7kQATodO9DHY3j+PQ1k8Ba+F1lENXPMuIeAHSD/iA\nmoB9M6S907eRFIiED+avZiTDB1T1yuqpFSBYWTvY+JR5a1oHj84bk49rP2co\nKMNhDrk5BGPz8vEITchUlR9fFTIrLuWi92lrRIkL6vyqglSSCcjBfth0aAPf\n27WHWX4X6ybubme28mro3C+dB9eiFabNTbwKoWKMTqQIBIDrK5h/t5yLzvPR\nexmbXLDBH/kh4xQsAk36myRWwTZ9ORmJi7AlaIxMCR0LaKuA98+LmGrJtoVI\nXRb5YCgDTR7IMHmqWQ1JnvAwiNXD5lYCg5aQ9HY42M7H1ARgf1zJXbbnj+wh\n1e0wfe9/z8Feg6MQMQzdlPDkj5mP/DUoYxtkHCLcoimS60Nx4zvSOFIGSpZt\ntQYU\r\n=Xg0U\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.2.0_1553451522790_0.4067340719793242"
+			},
+			"_hasShrinkwrap": false
+		},
+		"5.2.1": {
+			"name": "cosmiconfig",
+			"version": "5.2.1",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"scripts": {
+				"precommit": "lint-staged && jest && flow check",
+				"lint:md-partial": "remark -u remark-preset-davidtheclark --frail --quiet --no-stdout --output --",
+				"lint:md": "npm run lint:md-partial -- *.md",
+				"lint:fix": "eslint . --fix",
+				"lint": "eslint . && npm run lint:md",
+				"format": "prettier --write \"{src/*.js,test/*.js}\"",
+				"pretest": "npm run lint && flow check",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"coverage": "jest --coverage --coverageReporters=html --coverageReporters=text",
+				"build": "flow-remove-types src --out-dir dist --quiet",
+				"prepublishOnly": "npm run build"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"npm run lint:md-partial",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "es5",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/*.js"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true
+			},
+			"babel": {
+				"plugins": [
+					"transform-flow-strip-types"
+				]
+			},
+			"dependencies": {
+				"import-fresh": "^2.0.0",
+				"is-directory": "^0.3.1",
+				"js-yaml": "^3.13.1",
+				"parse-json": "^4.0.0"
+			},
+			"devDependencies": {
+				"babel-eslint": "^8.0.3",
+				"babel-plugin-transform-flow-strip-types": "^6.22.0",
+				"del": "^3.0.0",
+				"eslint": "^4.12.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^2.9.0",
+				"eslint-plugin-flowtype": "^2.39.1",
+				"eslint-plugin-node": "^5.2.1",
+				"flow-bin": "^0.68.0",
+				"flow-remove-types": "^1.2.3",
+				"husky": "^0.14.3",
+				"jest": "^21.2.1",
+				"lint-staged": "^6.0.0",
+				"make-dir": "^1.2.0",
+				"parent-module": "^0.1.0",
+				"prettier": "^1.8.2",
+				"remark-cli": "^5.0.0",
+				"remark-preset-davidtheclark": "^0.7.0"
+			},
+			"engines": {
+				"node": ">=4"
+			},
+			"gitHead": "f31c3c8623161967bbd1b4d50b16dcc4be1fb503",
+			"_id": "cosmiconfig@5.2.1",
+			"_nodeVersion": "8.14.0",
+			"_npmVersion": "6.9.0",
+			"dist": {
+				"integrity": "sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==",
+				"shasum": "040f726809c591e77a17c0a3626ca45b4f168b1a",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.1.tgz",
+				"fileCount": 11,
+				"unpackedSize": 43414,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc22eMCRA9TVsSAnZWagAAXoUP/RQPnGQRVW4W3hRmd3A/\nIsnF1c+hmLt1QUttS2CLg5mNdSLS4mvB308RKCSYfkCK8/1eE0zv55lt+MgV\n0Ew7YOtwKwuAqnzcJt33KynA6Z47dfiylxyoghRyfpNrZA3cbEumWPHZbQgN\ntidlwoyt0hL9n2eZ9aQEI7ei5T2YmHMqLrhe1CRSrwbWKBWcOrOib3GF49R+\n7I+aQd0TtE+VPGdmANn3EUdd4x9y9Z0kLwMUtQGh8ODZOTgCKj/GrUkXrowN\n3efZuIAkPbuUxV69HpI85q1KsqjaUp2n4E9ikAue/oZ+XLVHdN8fiL6Mf3XW\nczO4RABexvpb2yf5UpGnij3l5SolJy3HCYiwK0/1v68KvNkytRHP1o475gsP\nPPgLLscaViOSTBdQzf9GbDztQd3XBzHeWXI9GpDJki56XP0bQqpuGxnB2YBD\nXGQ3LoXIDU8dIuUxJKYxCTHSUpENzZcY/STWnYBnSMF3wdcb2kuu/oPa8t1y\ntqkb9PyCBGuQ1kSDAybmJR+yr5hUmNWV6T5otu1EczT0t2OfGKszv2dTsmH4\n3NXBhz6+cXnkNYLCMTXXX4kCAvD3Jq6l+nWiS5RDLAXTgcSEfnQbZJWz5lLK\nZqw3apwpE/LZCgRIiZXWsGMwb7t04vsv4ZGGAM9Bfj1TPaV1/J80qeEWqHUa\nbgh5\r\n=40Af\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_5.2.1_1557882764010_0.9977172981055464"
+			},
+			"_hasShrinkwrap": false
+		},
+		"6.0.0": {
+			"name": "cosmiconfig",
+			"version": "6.0.0",
+			"description": "Find and load configuration from a package.json property, rc file, or CommonJS module",
+			"main": "dist/index.js",
+			"types": "dist/index.d.ts",
+			"scripts": {
+				"clean": "del-cli --dot=true \"./dist/**/*\"",
+				"build": "npm run clean && npm run build:compile && npm run build:types",
+				"build:compile": "cross-env NODE_ENV=production babel src -d dist --verbose --extensions .js,.ts --ignore \"**/**/*.test.js\",\"**/**/*.test.ts\" --source-maps",
+				"build:types": "cross-env NODE_ENV=production tsc --project tsconfig.types.json",
+				"dev": "npm run clean && npm run build:compile -- --watch",
+				"lint": "eslint --ext .js,.ts . && npm run lint:md",
+				"lint:fix": "eslint --ext .js,.ts . --fix",
+				"lint:md": "remark-preset-davidtheclark",
+				"format": "prettier \"**/*.{js,ts,json,yml,yaml}\" --write",
+				"format:md": "remark-preset-davidtheclark --format",
+				"format:check": "prettier \"**/*.{js,ts,json,yml,yaml}\" --check",
+				"typescript": "tsc",
+				"test": "jest --coverage",
+				"test:watch": "jest --watch",
+				"check:all": "npm run test && npm run typescript && npm run lint && npm run format:check",
+				"prepublishOnly": "npm run check:all && npm run build"
+			},
+			"husky": {
+				"hooks": {
+					"pre-commit": "lint-staged && npm run typescript && npm run test",
+					"pre-push": "npm run check:all"
+				}
+			},
+			"lint-staged": {
+				"*.{js,ts}": [
+					"eslint --fix",
+					"prettier --write",
+					"git add"
+				],
+				"*.{json,yml,yaml}": [
+					"prettier --write",
+					"git add"
+				],
+				"*.md": [
+					"remark-preset-davidtheclark",
+					"remark-preset-davidtheclark --format",
+					"git add"
+				]
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/davidtheclark/cosmiconfig.git"
+			},
+			"keywords": [
+				"load",
+				"configuration",
+				"config"
+			],
+			"author": {
+				"name": "David Clark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"contributors": [
+				{
+					"name": "Bogdan Chadkin",
+					"email": "trysound@yandex.ru"
+				},
+				{
+					"name": "Suhas Karanth",
+					"email": "sudo.suhas@gmail.com"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/davidtheclark/cosmiconfig/issues"
+			},
+			"homepage": "https://github.com/davidtheclark/cosmiconfig#readme",
+			"prettier": {
+				"trailingComma": "all",
+				"arrowParens": "always",
+				"singleQuote": true,
+				"printWidth": 80,
+				"tabWidth": 2
+			},
+			"jest": {
+				"testEnvironment": "node",
+				"collectCoverageFrom": [
+					"src/**/*.{js,ts}"
+				],
+				"coverageReporters": [
+					"text",
+					"html",
+					"lcov"
+				],
+				"coverageThreshold": {
+					"global": {
+						"branches": 100,
+						"functions": 100,
+						"lines": 100,
+						"statements": 100
+					}
+				},
+				"resetModules": true,
+				"resetMocks": true,
+				"restoreMocks": true
+			},
+			"babel": {
+				"presets": [
+					[
+						"@babel/preset-env",
+						{
+							"targets": {
+								"node": "8.9"
+							}
+						}
+					],
+					"@babel/preset-typescript"
+				]
+			},
+			"dependencies": {
+				"@types/parse-json": "^4.0.0",
+				"import-fresh": "^3.1.0",
+				"parse-json": "^5.0.0",
+				"path-type": "^4.0.0",
+				"yaml": "^1.7.2"
+			},
+			"devDependencies": {
+				"@babel/cli": "^7.6.4",
+				"@babel/core": "^7.6.4",
+				"@babel/preset-env": "^7.6.3",
+				"@babel/preset-typescript": "^7.6.0",
+				"@types/jest": "^24.0.19",
+				"@types/node": "^12.11.5",
+				"@typescript-eslint/eslint-plugin": "^2.5.0",
+				"@typescript-eslint/parser": "^2.5.0",
+				"cross-env": "^6.0.3",
+				"del": "^5.1.0",
+				"del-cli": "^3.0.0",
+				"eslint": "^6.5.1",
+				"eslint-config-davidtheclark-node": "^0.2.2",
+				"eslint-config-prettier": "^6.4.0",
+				"eslint-plugin-import": "^2.18.2",
+				"eslint-plugin-jest": "^22.20.0",
+				"eslint-plugin-node": "^10.0.0",
+				"husky": "^3.0.9",
+				"jest": "^24.9.0",
+				"lint-staged": "^9.4.2",
+				"make-dir": "^3.0.0",
+				"parent-module": "^2.0.0",
+				"prettier": "^1.18.2",
+				"remark-preset-davidtheclark": "^0.10.0",
+				"typescript": "^3.6.4"
+			},
+			"engines": {
+				"node": ">=8"
+			},
+			"gitHead": "d26b10550df566648c5a9a05d893d800c9b129c6",
+			"_id": "cosmiconfig@6.0.0",
+			"_nodeVersion": "10.16.3",
+			"_npmVersion": "6.12.0",
+			"dist": {
+				"integrity": "sha512-xb3ZL6+L8b9JLLCx3ZdoZy4+2ECphCMo2PwqgP1tlfVq6M6YReyzBJtvWWtbDSpNr9hn96pkCiZqUcFEc+54Qg==",
+				"shasum": "da4fee853c52f6b1e6935f41c1a2fc50bd4a9982",
+				"tarball": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-6.0.0.tgz",
+				"fileCount": 44,
+				"unpackedSize": 99585,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvakICRA9TVsSAnZWagAAJPEP+gLezqhpAJX/BrbyOdfg\nnuS+q3kTDjPHTS60bTwE18YLgPc1AUXLfIXpdCbryNdWCN2SP4xyb0ZHyXC2\nhXd/gmf8Nt3UyvrRBEVh3GI/0eq/LdTkHNX5Cs5iSDrCkf7QYCBclCDQBD5d\nPjd99gQXgqB/wxhsq2TuNd7ycgXGJtVMm8ztx9ALS20AxrWFlJazrzEOyWyv\nR5Ll5KmdX+QcZ0A+b5wW1O3GDoqjFIGIYDDGJ9W7Il0Ak+umhht6VfnSsqbO\nOTrBMopVT8M9yIJcFWv+IYdWL6qB/KpgK6k52KI7a3qB+ArdJKir8885U4qu\nHIUyGI7976DhVYNLm0DjPFfqM2+Z5V2VITRD08p5E5Ahl1GdWL48R85OtIzV\nPmIx7HRtjX7e4UaG+rbjYQqAmTpdJSi3Lws+8LQxzyTUkAgzHTlf+kjpscac\n0AkPmCaKzCg68ittpsU6CdD3a4b2c1Lln5bHVbs3s9Zf0XzCUMHJrrBYR98m\nIqshE9sPZVU29gCOcLVbZ1xrK9lVIBPPq3DmtSTG6v2SDJWhsnPUHKwGyLBO\ntAv9k0IeRhqemkFNC3XEfTahWYONyBCMhynnAqhLZZtCRAkidAPI+8rM6yE9\n9S0AvstEcDlzVt3K0a8plnt7fx/ELRIf828/BVb91CzIAxlmn7MGADHdgTfE\nEkUN\r\n=vRGf\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "david.dave.clark@gmail.com",
+					"name": "davidtheclark"
+				},
+				{
+					"email": "sudo.suhas@gmail.com",
+					"name": "sudo-suhas"
+				}
+			],
+			"_npmUser": {
+				"name": "davidtheclark",
+				"email": "david.dave.clark@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/cosmiconfig_6.0.0_1572710664428_0.1972864267891421"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"time": {
+		"modified": "2019-11-21T01:27:12.941Z",
+		"created": "2015-11-12T02:06:06.728Z",
+		"0.1.0": "2015-11-12T02:06:06.728Z",
+		"0.2.0": "2015-11-12T14:14:36.859Z",
+		"0.3.0": "2015-11-13T04:35:37.790Z",
+		"0.4.0": "2015-11-13T13:57:53.031Z",
+		"0.4.1": "2015-11-13T14:10:00.493Z",
+		"0.5.0": "2015-11-15T14:56:40.794Z",
+		"1.0.0": "2015-11-18T02:48:57.711Z",
+		"1.0.1": "2015-11-27T15:46:00.803Z",
+		"1.0.2": "2016-01-10T17:47:06.120Z",
+		"1.1.0": "2016-01-13T03:06:08.295Z",
+		"2.0.0": "2016-10-08T14:31:10.642Z",
+		"2.0.1": "2016-10-11T15:03:03.419Z",
+		"2.0.2": "2016-10-11T18:12:31.606Z",
+		"2.1.0": "2016-10-14T02:30:20.337Z",
+		"2.1.1": "2016-12-04T20:40:00.515Z",
+		"2.1.2": "2017-04-26T01:35:33.689Z",
+		"2.1.3": "2017-04-29T16:51:18.660Z",
+		"2.2.0": "2017-07-21T14:00:58.618Z",
+		"2.2.1": "2017-07-21T15:19:53.616Z",
+		"2.2.2": "2017-07-23T14:30:16.541Z",
+		"3.0.0": "2017-09-16T01:33:56.982Z",
+		"3.0.1": "2017-09-17T15:07:07.586Z",
+		"3.1.0": "2017-10-02T01:16:26.525Z",
+		"4.0.0": "2018-01-16T03:23:05.317Z",
+		"5.0.0": "2018-05-05T16:27:30.286Z",
+		"5.0.1": "2018-05-05T17:01:10.859Z",
+		"5.0.2": "2018-05-07T22:11:30.894Z",
+		"5.0.3": "2018-05-15T03:35:59.445Z",
+		"5.0.4": "2018-05-19T17:25:22.785Z",
+		"5.0.5": "2018-05-22T02:10:40.433Z",
+		"5.0.6": "2018-08-09T14:32:04.107Z",
+		"5.0.7": "2018-11-08T02:41:13.971Z",
+		"5.1.0": "2019-02-17T23:58:00.136Z",
+		"5.2.0": "2019-03-24T18:18:42.999Z",
+		"5.2.1": "2019-05-15T01:12:44.145Z",
+		"6.0.0": "2019-11-02T16:04:24.585Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "6.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"e8a1603274e21a191dea199dcb3fb6e9\"",
+			"fetched": 1577117276245
+		}
+	},
+	"_distfiles": {
+		"cosmiconfig-0.1.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.1.0.tgz",
+			"sha": "bdfbb256f714ffb2b310d35623f133139a1b6dae",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-0.2.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.2.0.tgz",
+			"sha": "2fcad200e61230077fd1e3a6495d0da95edeef1a",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-0.3.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.3.0.tgz",
+			"sha": "2c9dd2730b045817919c096071b2b61baf0d6b9e",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-0.4.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.4.0.tgz",
+			"sha": "386c7c6691df62315b843aeb0a9c83fca0accca6",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-0.4.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.4.1.tgz",
+			"sha": "1a78efb42e8c4e9a1b4fa09ffaab717e6cef626a",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-0.5.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-0.5.0.tgz",
+			"sha": "9a6e8006c034e83c1b995846dcd12405c8ea6c07",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.0.tgz",
+			"sha": "132ff8b46e2bb1df735a8c3e9db1ff6ca90643a2",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.1.tgz",
+			"sha": "27995f978268fe941d8dae8924fc0c9a6b55c74f",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-1.0.2.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.0.2.tgz",
+			"sha": "84225dd0ae301a5ac83a4f4d6636104f7065c826",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-1.1.0.tgz",
+			"sha": "0dea0f9804efdfb929fbb1b188e25553ea053d37",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.0.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.0.tgz",
+			"sha": "0a4a456b8e62de679370d86de5e17b12bf08fafb",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.0.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.1.tgz",
+			"sha": "7bd3cb61a9f5a4a807c0a04b2905a99a6a868f23",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.0.2.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.0.2.tgz",
+			"sha": "555501957f17b849d44488d55dd2275a6452fff1",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.1.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.0.tgz",
+			"sha": "26e384a2055ea4e087050e5e08d53eb4eac8f86e",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.1.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.1.tgz",
+			"sha": "817f2c2039347a1e9bf7d090c0923e53f749ca82",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.1.2.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.2.tgz",
+			"sha": "c43ae86d238f08f1728a345ed60ceb0aef63c060",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.1.3.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.1.3.tgz",
+			"sha": "952771eb0dddc1cb3fa2f6fbe51a522e93b3ee0a",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.2.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.0.tgz",
+			"sha": "a14ef6f81bf4cc8b7c708730a4010c41b4ab35b8",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.2.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.1.tgz",
+			"sha": "7fbdc6fb47597d5f88175de1df696b66d36e5944",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-2.2.2.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-2.2.2.tgz",
+			"sha": "6173cebd56fac042c1f4390edf7af6c07c7cb892",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-3.0.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.0.0.tgz",
+			"sha": "9c465e02f5a7cc6e8f7e5975fce4a1b712d7d936",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-3.0.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.0.1.tgz",
+			"sha": "d290e2b657a7f3a335257a0d306587836650fdc0",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-3.1.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-3.1.0.tgz",
+			"sha": "640a94bf9847f321800403cd273af60665c73397",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-4.0.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-4.0.0.tgz",
+			"sha": "760391549580bbd2df1e562bc177b13c290972dc",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.1.tgz",
+			"sha": "1467d4b6010116a3adcc1d8cbcc126d993a5afa9",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.2.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.2.tgz",
+			"sha": "03f8965ae4675317a0015b4a5a48a470d9baeada",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.3.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.3.tgz",
+			"sha": "299c08ebce9d2df8a2c9ec3f11e55b1c2e897bf3",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.4.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.4.tgz",
+			"sha": "fe4c1fccf8947ab30911760eace33784749eb51e",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.5.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.5.tgz",
+			"sha": "a809e3c2306891ce17ab70359dc8bdf661fe2cd0",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.6.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.6.tgz",
+			"sha": "dca6cf680a0bd03589aff684700858c81abeeb39",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.0.7.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.0.7.tgz",
+			"sha": "39826b292ee0d78eda137dfa3173bd1c21a43b04",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.1.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.1.0.tgz",
+			"sha": "6c5c35e97f37f985061cdf653f114784231185cf",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.2.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.0.tgz",
+			"sha": "45038e4d28a7fe787203aede9c25bca4a08b12c8",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-5.2.1.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-5.2.1.tgz",
+			"sha": "040f726809c591e77a17c0a3626ca45b4f168b1a",
+			"registry": "npmjs"
+		},
+		"cosmiconfig-6.0.0.tgz": {
+			"url": "https://registry.npmjs.org/cosmiconfig/-/cosmiconfig-6.0.0.tgz",
+			"sha": "da4fee853c52f6b1e6935f41c1a2fc50bd4a9982",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-17f62746a51af51d",
+	"_id": "cosmiconfig",
+	"readme": "# cosmiconfig\n\n[![Build Status](https://img.shields.io/travis/davidtheclark/cosmiconfig/master.svg?label=unix%20build)](https://travis-ci.org/davidtheclark/cosmiconfig) [![Build status](https://img.shields.io/appveyor/ci/davidtheclark/cosmiconfig/master.svg?label=windows%20build)](https://ci.appveyor.com/project/davidtheclark/cosmiconfig/branch/master)\n[![codecov](https://codecov.io/gh/davidtheclark/cosmiconfig/branch/master/graph/badge.svg)](https://codecov.io/gh/davidtheclark/cosmiconfig)\n\nCosmiconfig searches for and loads configuration for your program.\n\nIt features smart defaults based on conventional expectations in the JavaScript ecosystem.\nBut it's also flexible enough to search wherever you'd like to search, and load whatever you'd like to load.\n\nBy default, Cosmiconfig will start where you tell it to start and search up the directory tree for the following:\n\n- a `package.json` property\n- a JSON or YAML, extensionless \"rc file\"\n- an \"rc file\" with the extensions `.json`, `.yaml`, `.yml`, or `.js`.\n- a `.config.js` CommonJS module\n\nFor example, if your module's name is \"myapp\", cosmiconfig will search up the directory tree for configuration in the following places:\n\n- a `myapp` property in `package.json`\n- a `.myapprc` file in JSON or YAML format\n- a `.myapprc.json` file\n- a `.myapprc.yaml`, `.myapprc.yml`, or `.myapprc.js` file\n- a `myapp.config.js` file exporting a JS object\n\nCosmiconfig continues to search up the directory tree, checking each of these places in each directory, until it finds some acceptable configuration (or hits the home directory).\n\n👀 **Looking for the v5 docs?**\nv6 involves slight changes to Cosmiconfig's API, clarifying the difference between synchronous and asynchronous usage.\nIf you have trouble switching from v5 to v6, please file an issue.\nIf you are still using v5, those v5 docs are available [in the `5.x.x` tagged code](https://github.com/davidtheclark/cosmiconfig/tree/5.2.1).\n\n## Table of contents\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Result](#result)\n- [Asynchronous API](#asynchronous-api)\n  - [cosmiconfig()](#cosmiconfig)\n  - [explorer.search()](#explorersearch)\n  - [explorer.load()](#explorerload)\n  - [explorer.clearLoadCache()](#explorerclearloadcache)\n  - [explorer.clearSearchCache()](#explorerclearsearchcache)\n  - [explorer.clearCaches()](#explorerclearcaches)\n- [Synchronsous API](#synchronsous-api)\n  - [cosmiconfigSync()](#cosmiconfigsync)\n  - [explorerSync.search()](#explorersyncsearch)\n  - [explorerSync.load()](#explorersyncload)\n  - [explorerSync.clearLoadCache()](#explorersyncclearloadcache)\n  - [explorerSync.clearSearchCache()](#explorersyncclearsearchcache)\n  - [explorerSync.clearCaches()](#explorersyncclearcaches)\n- [cosmiconfigOptions](#cosmiconfigoptions)\n  - [searchPlaces](#searchplaces)\n  - [loaders](#loaders)\n  - [packageProp](#packageprop)\n  - [stopDir](#stopdir)\n  - [cache](#cache)\n  - [transform](#transform)\n  - [ignoreEmptySearchPlaces](#ignoreemptysearchplaces)\n- [Caching](#caching)\n- [Differences from rc](#differences-from-rc)\n- [Contributing & Development](#contributing--development)\n\n## Installation\n\n```\nnpm install cosmiconfig\n```\n\nTested in Node 8+.\n\n## Usage\n\nCreate a Cosmiconfig explorer, then either `search` for or directly `load` a configuration file.\n\n```js\nconst { cosmiconfig, cosmiconfigSync } = require('cosmiconfig');\n// ...\nconst explorer = cosmiconfig(moduleName);\n\n// Search for a configuration by walking up directories.\n// See documentation for search, below.\nexplorer.search()\n  .then((result) => {\n    // result.config is the parsed configuration object.\n    // result.filepath is the path to the config file that was found.\n    // result.isEmpty is true if there was nothing to parse in the config file.\n  })\n  .catch((error) => {\n    // Do something constructive.\n  });\n\n// Load a configuration directly when you know where it should be.\n// The result object is the same as for search.\n// See documentation for load, below.\nexplorer.load(pathToConfig).then(..);\n\n// You can also search and load synchronously.\nconst explorerSync = cosmiconfigSync(moduleName);\n\nconst searchedFor = explorerSync.search();\nconst loaded = explorerSync.load(pathToConfig);\n```\n\n## Result\n\nThe result object you get from `search` or `load` has the following properties:\n\n- **config:** The parsed configuration object. `undefined` if the file is empty.\n- **filepath:** The path to the configuration file that was found.\n- **isEmpty:** `true` if the configuration file is empty. This property will not be present if the configuration file is not empty.\n\n## Asynchronous API\n\n### cosmiconfig()\n\n```js\nconst { cosmiconfig } = require('cosmiconfig');\nconst explorer = cosmiconfig(moduleName[, cosmiconfigOptions])\n```\n\nCreates a cosmiconfig instance (\"explorer\") configured according to the arguments, and initializes its caches.\n\n#### moduleName\n\nType: `string`. **Required.**\n\nYour module name. This is used to create the default [`searchPlaces`] and [`packageProp`].\n\nIf your [`searchPlaces`] value will include files, as it does by default (e.g. `${moduleName}rc`), your `moduleName` must consist of characters allowed in filenames. That means you should not copy scoped package names, such as `@my-org/my-package`, directly into `moduleName`.\n\n**[`cosmiconfigOptions`] are documented below.**\nYou may not need them, and should first read about the functions you'll use.\n\n### explorer.search()\n\n```js\nexplorer.search([searchFrom]).then(result => {..})\n```\n\nSearches for a configuration file. Returns a Promise that resolves with a [result] or with `null`, if no configuration file is found.\n\nYou can do the same thing synchronously with [`explorerSync.search()`].\n\nLet's say your module name is `goldengrahams` so you initialized with `const explorer = cosmiconfig('goldengrahams');`.\nHere's how your default [`search()`] will work:\n\n- Starting from `process.cwd()` (or some other directory defined by the `searchFrom` argument to [`search()`]), look for configuration objects in the following places:\n  1. A `goldengrahams` property in a `package.json` file.\n  2. A `.goldengrahamsrc` file with JSON or YAML syntax.\n  3. A `.goldengrahamsrc.json` file.\n  4. A `.goldengrahamsrc.yaml`, `.goldengrahamsrc.yml`, or `.goldengrahamsrc.js` file.\n  5. A `goldengrahams.config.js` JS file exporting the object.\n- If none of those searches reveal a configuration object, move up one directory level and try again.\n  So the search continues in `./`, `../`, `../../`, `../../../`, etc., checking the same places in each directory.\n- Continue searching until arriving at your home directory (or some other directory defined by the cosmiconfig option [`stopDir`]).\n- If at any point a parsable configuration is found, the [`search()`] Promise resolves with its [result] \\(or, with [`explorerSync.search()`], the [result] is returned).\n- If no configuration object is found, the [`search()`] Promise resolves with `null` (or, with [`explorerSync.search()`], `null` is returned).\n- If a configuration object is found *but is malformed* (causing a parsing error), the [`search()`] Promise rejects with that error (so you should `.catch()` it). (Or, with [`explorerSync.search()`], the error is thrown.)\n\n**If you know exactly where your configuration file should be, you can use [`load()`], instead.**\n\n**The search process is highly customizable.**\nUse the cosmiconfig options [`searchPlaces`] and [`loaders`] to precisely define where you want to look for configurations and how you want to load them.\n\n#### searchFrom\n\nType: `string`.\nDefault: `process.cwd()`.\n\nA filename.\n[`search()`] will start its search here.\n\nIf the value is a directory, that's where the search starts.\nIf it's a file, the search starts in that file's directory.\n\n### explorer.load()\n\n```js\nexplorer.load(loadPath).then(result => {..})\n```\n\nLoads a configuration file. Returns a Promise that resolves with a [result] or rejects with an error (if the file does not exist or cannot be loaded).\n\nUse `load` if you already know where the configuration file is and you just need to load it.\n\n```js\nexplorer.load('load/this/file.json'); // Tries to load load/this/file.json.\n```\n\nIf you load a `package.json` file, the result will be derived from whatever property is specified as your [`packageProp`].\n\nYou can do the same thing synchronously with [`explorerSync.load()`].\n\n### explorer.clearLoadCache()\n\nClears the cache used in [`load()`].\n\n### explorer.clearSearchCache()\n\nClears the cache used in [`search()`].\n\n### explorer.clearCaches()\n\nPerforms both [`clearLoadCache()`] and [`clearSearchCache()`].\n\n## Synchronsous API\n\n### cosmiconfigSync()\n\n```js\nconst { cosmiconfigSync } = require('cosmiconfig');\nconst explorerSync = cosmiconfigSync(moduleName[, cosmiconfigOptions])\n```\n\nCreates a *synchronous* cosmiconfig instance (\"explorerSync\") configured according to the arguments, and initializes its caches.\n\nSee [`cosmiconfig()`].\n\n### explorerSync.search()\n\n```js\nconst result = explorerSync.search([searchFrom]);\n```\n\nSynchronous version of [`explorer.search()`].\n\nReturns a [result] or `null`.\n\n### explorerSync.load()\n\n```js\nconst result = explorerSync.load(loadPath);\n```\n\nSynchronous version of [`explorer.load()`].\n\nReturns a [result].\n\n### explorerSync.clearLoadCache()\n\nClears the cache used in [`load()`].\n\n### explorerSync.clearSearchCache()\n\nClears the cache used in [`search()`].\n\n### explorerSync.clearCaches()\n\nPerforms both [`clearLoadCache()`] and [`clearSearchCache()`].\n\n## cosmiconfigOptions\n\nType: `Object`.\n\nPossible options are documented below.\n\n### searchPlaces\n\nType: `Array<string>`.\nDefault: See below.\n\nAn array of places that [`search()`] will check in each directory as it moves up the directory tree.\nEach place is relative to the directory being searched, and the places are checked in the specified order.\n\n**Default `searchPlaces`:**\n\n```js\n[\n  'package.json',\n  `.${moduleName}rc`,\n  `.${moduleName}rc.json`,\n  `.${moduleName}rc.yaml`,\n  `.${moduleName}rc.yml`,\n  `.${moduleName}rc.js`,\n  `${moduleName}.config.js`,\n]\n```\n\nCreate your own array to search more, fewer, or altogether different places.\n\nEvery item in `searchPlaces` needs to have a loader in [`loaders`] that corresponds to its extension.\n(Common extensions are covered by default loaders.)\nRead more about [`loaders`] below.\n\n`package.json` is a special value: When it is included in `searchPlaces`, Cosmiconfig will always parse it as JSON and load a property within it, not the whole file.\nThat property is defined with the [`packageProp`] option, and defaults to your module name.\n\nExamples, with a module named `porgy`:\n\n```js\n// Disallow extensions on rc files:\n[\n  'package.json',\n  '.porgyrc',\n  'porgy.config.js'\n]\n\n// ESLint searches for configuration in these places:\n[\n  '.eslintrc.js',\n  '.eslintrc.yaml',\n  '.eslintrc.yml',\n  '.eslintrc.json',\n  '.eslintrc',\n  'package.json'\n]\n\n// Babel looks in fewer places:\n[\n  'package.json',\n  '.babelrc'\n]\n\n// Maybe you want to look for a wide variety of JS flavors:\n[\n  'porgy.config.js',\n  'porgy.config.mjs',\n  'porgy.config.ts',\n  'porgy.config.coffee'\n]\n// ^^ You will need to designate custom loaders to tell\n// Cosmiconfig how to handle these special JS flavors.\n\n// Look within a .config/ subdirectory of every searched directory:\n[\n  'package.json',\n  '.porgyrc',\n  '.config/.porgyrc',\n  '.porgyrc.json',\n  '.config/.porgyrc.json'\n]\n```\n\n### loaders\n\nType: `Object`.\nDefault: See below.\n\nAn object that maps extensions to the loader functions responsible for loading and parsing files with those extensions.\n\nCosmiconfig exposes its default loaders on a named export `defaultLoaders`.\n\n**Default `loaders`:**\n\n```js\nconst { defaultLoaders } = require('cosmiconfig');\n\nconsole.log(Object.entries(defaultLoaders))\n// [\n//   [ '.js', [Function: loadJs] ],\n//   [ '.json', [Function: loadJson] ],\n//   [ '.yaml', [Function: loadYaml] ],\n//   [ '.yml', [Function: loadYaml] ],\n//   [ 'noExt', [Function: loadYaml] ]\n// ]\n```\n\n(YAML is a superset of JSON; which means YAML parsers can parse JSON; which is how extensionless files can be either YAML *or* JSON with only one parser.)\n\n**If you provide a `loaders` object, your object will be *merged* with the defaults.**\nSo you can override one or two without having to override them all.\n\n**Keys in `loaders`** are extensions (starting with a period), or `noExt` to specify the loader for files *without* extensions, like `.myapprc`.\n\n**Values in `loaders`** are a loader function (described below) whose values are loader functions.\n\n**The most common use case for custom loaders value is to load extensionless `rc` files as strict JSON**, instead of JSON *or* YAML (the default).\nTo accomplish that, provide the following `loaders` value:\n\n```js\n{\n  noExt: defaultLoaders['.json']\n}\n```\n\nIf you want to load files that are not handled by the loader functions Cosmiconfig exposes, you can write a custom loader function or use one from NPM if it exists.\n\n**Third-party loaders:**\n\n- [@endemolshinegroup/cosmiconfig-typescript-loader](https://github.com/EndemolShineGroup/cosmiconfig-typescript-loader)\n\n**Use cases for custom loader function:**\n\n- Allow configuration syntaxes that aren't handled by Cosmiconfig's defaults, like JSON5, INI, or XML.\n- Allow ES2015 modules from `.mjs` configuration files.\n- Parse JS files with Babel before deriving the configuration.\n\n**Custom loader functions** have the following signature:\n\n```js\n// Sync\n(filepath: string, content: string) => Object | null\n\n// Async\n(filepath: string, content: string) => Object | null | Promise<Object | null>\n```\n\nCosmiconfig reads the file when it checks whether the file exists, so it will provide you with both the file's path and its content.\nDo whatever you need to, and return either a configuration object or `null` (or, for async-only loaders, a Promise that resolves with one of those).\n`null` indicates that no real configuration was found and the search should continue.\n\nA few things to note:\n\n- If you use a custom loader, be aware of whether it's sync or async: you cannot use async customer loaders with the sync API ([`cosmiconfigSync()`]).\n- **Special JS syntax can also be handled by using a `require` hook**, because `defaultLoaders['.js']` just uses `require`.\n  Whether you use custom loaders or a `require` hook is up to you.\n\nExamples:\n\n```js\n// Allow JSON5 syntax:\n{\n  '.json': json5Loader\n}\n\n// Allow a special configuration syntax of your own creation:\n{\n  '.special': specialLoader\n}\n\n// Allow many flavors of JS, using custom loaders:\n{\n  '.mjs': esmLoader,\n  '.ts': typeScriptLoader,\n  '.coffee': coffeeScriptLoader\n}\n\n// Allow many flavors of JS but rely on require hooks:\n{\n  '.mjs': defaultLoaders['.js'],\n  '.ts': defaultLoaders['.js'],\n  '.coffee': defaultLoaders['.js']\n}\n```\n\n### packageProp\n\nType: `string | Array<string>`.\nDefault: `` `${moduleName}` ``.\n\nName of the property in `package.json` to look for.\n\nUse a period-delimited string or an array of strings to describe a path to nested properties.\n\nFor example, the value `'configs.myPackage'` or `['configs', 'myPackage']` will get you the `\"myPackage\"` value in a `package.json` like this:\n\n```json\n{\n  \"configs\": {\n    \"myPackage\": {..}\n  }\n}\n```\n\nIf nested property names within the path include periods, you need to use an array of strings. For example, the value `['configs', 'foo.bar', 'baz']` will get you the `\"baz\"` value in a `package.json` like this:\n\n```json\n{\n  \"configs\": {\n    \"foo.bar\": {\n      \"baz\": {..}\n    }\n  }\n}\n```\n\nIf a string includes period but corresponds to a top-level property name, it will not be interpreted as a period-delimited path. For example, the value `'one.two'` will get you the `\"three\"` value in a `package.json` like this:\n\n```json\n{\n  \"one.two\": \"three\",\n  \"one\": {\n    \"two\": \"four\"\n  }\n}\n```\n\n### stopDir\n\nType: `string`.\nDefault: Absolute path to your home directory.\n\nDirectory where the search will stop.\n\n### cache\n\nType: `boolean`.\nDefault: `true`.\n\nIf `false`, no caches will be used.\nRead more about [\"Caching\"](#caching) below.\n\n### transform\n\nType: `(Result) => Promise<Result> | Result`.\n\nA function that transforms the parsed configuration. Receives the [result].\n\nIf using [`search()`] or [`load()`] \\(which are async), the transform function can return the transformed result or return a Promise that resolves with the transformed result.\nIf using `cosmiconfigSync`, [`search()`] or [`load()`], the function must be synchronous and return the transformed result.\n\nThe reason you might use this option — instead of simply applying your transform function some other way — is that *the transformed result will be cached*. If your transformation involves additional filesystem I/O or other potentially slow processing, you can use this option to avoid repeating those steps every time a given configuration is searched or loaded.\n\n### ignoreEmptySearchPlaces\n\nType: `boolean`.\nDefault: `true`.\n\nBy default, if [`search()`] encounters an empty file (containing nothing but whitespace) in one of the [`searchPlaces`], it will ignore the empty file and move on.\nIf you'd like to load empty configuration files, instead, set this option to `false`.\n\nWhy might you want to load empty configuration files?\nIf you want to throw an error, or if an empty configuration file means something to your program.\n\n## Caching\n\nAs of v2, cosmiconfig uses caching to reduce the need for repetitious reading of the filesystem or expensive transforms. Every new cosmiconfig instance (created with `cosmiconfig()`) has its own caches.\n\nTo avoid or work around caching, you can do the following:\n\n- Set the `cosmiconfig` option [`cache`] to `false`.\n- Use the cache-clearing methods [`clearLoadCache()`], [`clearSearchCache()`], and [`clearCaches()`].\n- Create separate instances of cosmiconfig (separate \"explorers\").\n\n## Differences from [rc](https://github.com/dominictarr/rc)\n\n[rc](https://github.com/dominictarr/rc) serves its focused purpose well. cosmiconfig differs in a few key ways — making it more useful for some projects, less useful for others:\n\n- Looks for configuration in some different places: in a `package.json` property, an rc file, a `.config.js` file, and rc files with extensions.\n- Built-in support for JSON, YAML, and CommonJS formats.\n- Stops at the first configuration found, instead of finding all that can be found up the directory tree and merging them automatically.\n- Options.\n- Asynchronous by default (though can be run synchronously).\n\n## Contributing & Development\n\nPlease note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.\n\nAnd please do participate!\n\n[result]: #result\n\n[`load()`]: #explorerload\n\n[`search()`]: #explorersearch\n\n[`clearloadcache()`]: #explorerclearloadcache\n\n[`clearsearchcache()`]: #explorerclearsearchcache\n\n[`cosmiconfig()`]: #cosmiconfig\n\n[`cosmiconfigSync()`]: #cosmiconfigsync\n\n[`clearcaches()`]: #explorerclearcaches\n\n[`packageprop`]: #packageprop\n\n[`cache`]: #cache\n\n[`stopdir`]: #stopdir\n\n[`searchplaces`]: #searchplaces\n\n[`loaders`]: #loaders\n\n[`cosmiconfigoptions`]: #cosmiconfigoptions\n\n[`explorerSync.search()`]: #explorersyncsearch\n\n[`explorerSync.load()`]: #explorersyncload\n\n[`explorer.search()`]: #explorersearch\n\n[`explorer.load()`]: #explorerload"
+}

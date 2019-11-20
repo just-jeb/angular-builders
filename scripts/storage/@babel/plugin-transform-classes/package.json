@@ -1,0 +1,3598 @@
+{
+	"name": "@babel/plugin-transform-classes",
+	"versions": {
+		"7.0.0-beta.4": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.4",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.4",
+				"@babel/helper-define-map": "7.0.0-beta.4",
+				"@babel/helper-function-name": "7.0.0-beta.4",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.4",
+				"@babel/helper-replace-supers": "7.0.0-beta.4",
+				"@babel/template": "7.0.0-beta.4",
+				"@babel/traverse": "7.0.0-beta.4",
+				"@babel/types": "7.0.0-beta.4"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.3"
+			},
+			"devDependencies": {
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.4",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-fYMzGpafsfwnczqSMDtPEvEtimEc1PyeK+ucIF5fBHIIPqANDuBEitnt5L9oSoGRTLrwX6FcsE6b+PR9/K5iWg==",
+				"shasum": "733b26dae8b66679844d12464949f243dd30a717",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.4.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "hzoo",
+					"email": "hi@henryzoo.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.4.tgz_1509388592163_0.8387221228331327"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.5": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.5",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.5",
+				"@babel/helper-define-map": "7.0.0-beta.5",
+				"@babel/helper-function-name": "7.0.0-beta.5",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.5",
+				"@babel/helper-replace-supers": "7.0.0-beta.5",
+				"@babel/template": "7.0.0-beta.5",
+				"@babel/traverse": "7.0.0-beta.5",
+				"@babel/types": "7.0.0-beta.5"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.5",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-KeG3QVPz+MJsty3of2tXaeK6+2/lX5aQczBcF5c8PO6gW3vDqM/d0whnBXCGRfeRevbxKVCg9aLTMX+Gl6Yniw==",
+				"shasum": "a91ec0c235d694ac97db5c4bb232058b4c9462aa",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.5.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.5.tgz_1509397090061_0.41028118203394115"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.31": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.31",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.31",
+				"@babel/helper-define-map": "7.0.0-beta.31",
+				"@babel/helper-function-name": "7.0.0-beta.31",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.31",
+				"@babel/helper-replace-supers": "7.0.0-beta.31",
+				"@babel/template": "7.0.0-beta.31",
+				"@babel/traverse": "7.0.0-beta.31",
+				"@babel/types": "7.0.0-beta.31"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.31"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.31",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.31",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.1.4",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-LjUV6wqfOw8jazAjNJGtsyqGN6QNkKjdnYIKbqYYHfG+v2GcIAl/f2VwnoQhV2oqTdZl/4vK9uL+0B2TZdxSFQ==",
+				"shasum": "25fc0eedd4277110853b9d00dcfee60d75ad9904",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.31.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.31.tgz_1509739475920_0.39327105693519115"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.32": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.32",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.32",
+				"@babel/helper-define-map": "7.0.0-beta.32",
+				"@babel/helper-function-name": "7.0.0-beta.32",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.32",
+				"@babel/helper-replace-supers": "7.0.0-beta.32"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.32"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.32",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.32",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-cgI+ktFC6FKbWI+AGA4/ia2sE/b1AOpFcYk8PpnNAOLp4IS+OtpGqntDVBXvJvnzo/V6+afrh6sl9WrIz3hYpA==",
+				"shasum": "ccf71f14f08963afe551a89c1a3d3224918f28e8",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.32.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.32.tgz_1510493647821_0.17350191995501518"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.33": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.33",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.33",
+				"@babel/helper-define-map": "7.0.0-beta.33",
+				"@babel/helper-function-name": "7.0.0-beta.33",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.33",
+				"@babel/helper-replace-supers": "7.0.0-beta.33"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.33"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.33",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.33",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-N1KWuTdHwJv8Yq9zzNorzfieKpx+hcDfeD9Wn0l7KIGJeFzI8HORmNNTz/oTBG2z9RslgHNhsUFHbyMG7x/pag==",
+				"shasum": "317b526f2afb2abb14f82ce333575b179d7aec0e",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.33.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.33.tgz_1512138565047_0.2373313440475613"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.34": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.34",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.34",
+				"@babel/helper-define-map": "7.0.0-beta.34",
+				"@babel/helper-function-name": "7.0.0-beta.34",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.34",
+				"@babel/helper-replace-supers": "7.0.0-beta.34"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.34"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.34",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.34",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-t7l8FnjgpYOIYAmdttb50EjaQxqt3tRBbzR8jJ1Q7m6qDmaY+pt0XjbSDE63vg4jjWL9N/2IkTWevgd0nbyoGQ==",
+				"shasum": "2da769561a87e1fe25f66cd548970e70bf058a3b",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.34.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.34.tgz_1512225625767_0.09926213603466749"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.35": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.35",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.35",
+				"@babel/helper-define-map": "7.0.0-beta.35",
+				"@babel/helper-function-name": "7.0.0-beta.35",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.35",
+				"@babel/helper-replace-supers": "7.0.0-beta.35"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.35"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.35",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.35",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-D71nw+Brh7IWSHiW4/JDux5EhT4gyMYG1WJVjaXl6D6DQhOFlZf5otUVrVX6IxEQaco3B2dlEBDEt/UXvf9E2Q==",
+				"shasum": "ae1367d9c41081528f87d5770f6b8c6ee7141b52",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.35.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.35.tgz_1513288112644_0.8242637796793133"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.36": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.36",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.36",
+				"@babel/helper-define-map": "7.0.0-beta.36",
+				"@babel/helper-function-name": "7.0.0-beta.36",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.36",
+				"@babel/helper-replace-supers": "7.0.0-beta.36",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.36"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.36",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.36",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-VamoOsbL4mJ4xAHvTcM8RvTFhFQ8VXc+M3/VeFgPGFAZ6gOb7dyjuluE2G5CzPSQstMuEoCcoOawTsjtgLWl3w==",
+				"shasum": "98614835cb6bb7356aa8d18d2cc5a109b2da88ce",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.36.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "james@henry.sc",
+					"name": "jameshenry"
+				},
+				{
+					"email": "kent@doddsfamily.us",
+					"name": "kentcdodds"
+				},
+				{
+					"email": "kaicataldo@gmail.com",
+					"name": "kaicataldo"
+				},
+				{
+					"email": "teddy.katz@gmail.com",
+					"name": "not-an-aardvark"
+				},
+				{
+					"email": "star.ctor@gmail.com",
+					"name": "mysticatea"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.36.tgz_1514228748151_0.49089773348532617"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.37": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.37",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.37",
+				"@babel/helper-define-map": "7.0.0-beta.37",
+				"@babel/helper-function-name": "7.0.0-beta.37",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.37",
+				"@babel/helper-replace-supers": "7.0.0-beta.37",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.37"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.37",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.37",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-MvmMRNdevuWuL6QcvA3G/GYsUwWEtHKrxdjNs8YXTG/aGQ7P3vbbZtvE+z1nBpdVl5/ojuFa1mf3zHZpWkrVdA==",
+				"shasum": "a933772d1ea55ed16ebe2cb85a1f6f7e482b4e41",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.37.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.37.tgz_1515427427980_0.9343030638992786"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.38": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.38",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.38",
+				"@babel/helper-define-map": "7.0.0-beta.38",
+				"@babel/helper-function-name": "7.0.0-beta.38",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.38",
+				"@babel/helper-replace-supers": "7.0.0-beta.38",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.38"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.38",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.38",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-aqGomD8WO9Ne/agQBxXQy8XhalSF3awhOs/NmicxtttXHblFxEj14HSio1gWKfKpt2Er1d2DnWOD3i2o9X9hQg==",
+				"shasum": "6237a40053f5e9b7e220431195d7342b1f276095",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.38.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.38.tgz_1516206767070_0.6766396348830312"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.39": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.39",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.39",
+				"@babel/helper-define-map": "7.0.0-beta.39",
+				"@babel/helper-function-name": "7.0.0-beta.39",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.39",
+				"@babel/helper-replace-supers": "7.0.0-beta.39",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.39"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.39",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.39",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-AJZYiskVcTFEB3Vja8EvUovHxBXP/TWTGQGDt4ZIww/7U4QH2YDQb8X6cDiDsPlWcalLwAR38xKZacrAkmpnaQ==",
+				"shasum": "fe10e8cbcb6914c2b5cfa072d6ce8d9271f52a9c",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.39.tgz"
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes-7.0.0-beta.39.tgz_1517344129348_0.39324641809798777"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"7.0.0-beta.40": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.40",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.40",
+				"@babel/helper-define-map": "7.0.0-beta.40",
+				"@babel/helper-function-name": "7.0.0-beta.40",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.40",
+				"@babel/helper-replace-supers": "7.0.0-beta.40",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.40"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.40",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.40",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.9.1",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-yjViyoOYJtt2vLDai8jluxl9quOtq/Xq4GTjT9uzy+mOfUTE77dcJySMGkWHE52Mu3n0TSI09ENBFYykpvXXDw==",
+				"shasum": "c7a752009df4bb0f77179027daa0783f9a036b0b",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.40.tgz",
+				"fileCount": 6,
+				"unpackedSize": 27257
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.40_1518453774300_0.5899609585621739"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.41": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.41",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.41",
+				"@babel/helper-define-map": "7.0.0-beta.41",
+				"@babel/helper-function-name": "7.0.0-beta.41",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.41",
+				"@babel/helper-plugin-utils": "7.0.0-beta.41",
+				"@babel/helper-replace-supers": "7.0.0-beta.41",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.41",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.41"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.41",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.41",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-ba9vn5U+DQ2qsu0cIMoFwExys/eSv6kb/PE5O1xJjhnVS4y1mFpw7zi2zSW+/hFb/T0/Yri2P9mB4W5PFYpnQg==",
+				"shasum": "bc5f1e1d7eb1c0a763cc912834f8cbaf4a12b31b",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.41.tgz",
+				"fileCount": 6,
+				"unpackedSize": 27343
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.41_1521044825984_0.46101361735580304"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.42": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.42",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.42",
+				"@babel/helper-define-map": "7.0.0-beta.42",
+				"@babel/helper-function-name": "7.0.0-beta.42",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.42",
+				"@babel/helper-plugin-utils": "7.0.0-beta.42",
+				"@babel/helper-replace-supers": "7.0.0-beta.42",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.42",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.42"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.42",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.42",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-0GCv1wNyfMXKuaulype6+TF02Bxq/zQZ4NUbn2w9aQxzIZviAe1jcA7IRrNN2eVQL9L4oi8N6B26Wf8xFoBNrQ==",
+				"shasum": "3b9fdb2e36f9f16b011a2ddc4ebb610e3dc9edfb",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.42.tgz",
+				"fileCount": 6,
+				"unpackedSize": 27299
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.42_1521147134533_0.1896599889618864"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.43": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.43",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.43",
+				"@babel/helper-define-map": "7.0.0-beta.43",
+				"@babel/helper-function-name": "7.0.0-beta.43",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.43",
+				"@babel/helper-plugin-utils": "7.0.0-beta.43",
+				"@babel/helper-replace-supers": "7.0.0-beta.43",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.43",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.43"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.43",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.43",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-/SeZGeF0fPGlKEyMgaKKgagL93GSy8qvdRj0RUTbKJs3C0UriCKL39/3Uxg+EL8UAhVz2DOIOSTpCI8X/mZR0Q==",
+				"shasum": "9c367f9b6cd8fb0453dd19a556fa4ff6c2ddcf57",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.43.tgz",
+				"fileCount": 5,
+				"unpackedSize": 26379
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.43_1522687743510_0.07542845970605683"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.44": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.44",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.44",
+				"@babel/helper-define-map": "7.0.0-beta.44",
+				"@babel/helper-function-name": "7.0.0-beta.44",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.44",
+				"@babel/helper-plugin-utils": "7.0.0-beta.44",
+				"@babel/helper-replace-supers": "7.0.0-beta.44",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.44",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.44"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.44",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.44",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-oQE40NQ9HBg3KJppRrG0AFYmb73mVJUPmFjUZtuMlFJWV4kAyPwfGC98MDJ7fFjGZLIWesJD7yE+eh0e4N2ssQ==",
+				"shasum": "5410fcf6a9eeba3cc8e25bf0f72b43358336b534",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.44.tgz",
+				"fileCount": 5,
+				"unpackedSize": 29567
+			},
+			"maintainers": [
+				{
+					"email": "mateuszburzynski@gmail.com",
+					"name": "andarist"
+				},
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.44_1522707643616_0.5710959404018019"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.45": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.45",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.45",
+				"@babel/helper-define-map": "7.0.0-beta.45",
+				"@babel/helper-function-name": "7.0.0-beta.45",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.45",
+				"@babel/helper-plugin-utils": "7.0.0-beta.45",
+				"@babel/helper-replace-supers": "7.0.0-beta.45",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.45",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.45"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.45",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.45",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-uTkWdNCSbA9+93oWqRh/OX7/ynSyVT5A55pgrjKnu5ZV8zd+GvvcyAaBt/xdj/BQkd7MkjVkhsjxwWVERWi6FA==",
+				"shasum": "052b70994099c736ce05369d41152c591a7cfeb0",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.45.tgz",
+				"fileCount": 5,
+				"unpackedSize": 30151,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T3fCRA9TVsSAnZWagAAaS8P/jqCBl7Dlj4HnrrvkD9M\nZuPnLlKx8mB7KBoqELZTP8GGYdOfI3BZf9tBd+PSugCAznMEJeU0Rv9whVQy\ngP2LyZZcAtxvEVJ43lV5Tiu5Qqy6VEfU2fjCkUILXs7bry0Fo2GHs1rT3C1s\nCDy7qzTcGleEMPldDtrzncEHXhDmHcHVJj0ohJ15VEPFza0aakPjgg/NA4QQ\nxmH9DPyunl7X7fPnXS5Seon+wl2BMPyGoBKZxZKsmAqMEiilvdWkH1QfHpQ7\nCAgyccPV9ifEtfXd64DcsBuJArzGJJqrAo+wG73KnC24hAfDOQKIGLmXwgRr\nBK5cqEwX519Tvip32bagPcYTb/n5NZu6+7JHTP2tam60ALkKb7vb1TLcYxhD\nNHvXzqqjDxiFAezYNgXI/U9VBjQXzuwuVhi0CkizDFCg0CcRRNKGeE6Uc4ls\nVGKXSwFm7QbeyimdMQfOqPP98TcVGpDU85acjrL9gNPSNPKafIS3+RTL71Ba\n2gm7Cwgzmra6Db1J79jbmtDI8c3hZOCZiGsEDsY/aXEC++kG20QZbrV/zfKA\nYLtTPmFnsvfFMYCHobn0Px2cbSCveEb8X9tUxkwBNCxzKcGLwPfHauH+6BTT\nioVMrWjVYGBaWCCu/yzESAH7GlWbkZVe0w3HdlMgqfQs/h0RSwo0cmW3uP9X\nw/H9\r\n=ik2j\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.45_1524448735052_0.5314100140337781"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.46": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.46",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.46",
+				"@babel/helper-define-map": "7.0.0-beta.46",
+				"@babel/helper-function-name": "7.0.0-beta.46",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.46",
+				"@babel/helper-plugin-utils": "7.0.0-beta.46",
+				"@babel/helper-replace-supers": "7.0.0-beta.46",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.46",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.46"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.46",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.46",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "9.4.0",
+			"_npmUser": {
+				"name": "loganfsmyth",
+				"email": "loganfsmyth@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-EDp/qQAURfrX6hNM+VrLSSA+cGiwDeZL0ZTTt6a7PNSFABCw4qwKJHx3Q7me1oV7q3U/GJwPS4Aym2QTDmNGvg==",
+				"shasum": "00c856feda2ee756c4cc6ef8c97d17d070acebf7",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.46.tgz",
+				"fileCount": 5,
+				"unpackedSize": 30151,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WIFCRA9TVsSAnZWagAAGfUP/iY+n4ktuwAqhNHhq4i3\nG2SanxEvCNuXK8IHUr8sbHWcBcZACnCdeQrBp663MA9DwWOgc8SXs45HoSKV\nqcnpWRD8NSQ+JUS415e1AwB3Qwu/VG52dH7BiQTlB6mRj+0ddfy3k36lyqj0\nPxooogxDVAlmwgniuOKWrirrufEHwkcXt86QexP8DKTLtPLn3vaWUqwx/DlR\nsqWRq//GSfGZsm7qAbtsqUa2vGs8Rkz5aZ/mzdkhVaPBmyshPYLuzt3qykT2\n4OEnkKkPFz2+c/YGTHqStTe2oFn6WCdyjYti1OZC+XUHo7ccpYbvRYqkIBpj\nl+K6dBAguzg8wzJCJsgnjnzaK9i3RIk34NHyXt4FgRHcgF6f8i2oyX4aqBAY\nsJtZ+JxsnfuYRbVH9goMMsZpoTidrnbMTx4OV5GbRzgLzRRt+uh8tNiJ0nrG\neEnBlKzBCLtyv5MjwtarnVHGvvmV4dt/avZ8rhoo+w2+q03/AnLLHUekaVhD\n2lkpU9QbykqMXfNLh8xFHG6uRfHrMs0o3c3YgDm/gmmrg85/XdGVPr/Zbsqh\nkAkNexrHLxCqI/b1FXHPy36j8TgNAaetT0aOoO9ahc9Vt1yAW5lruM7oxcC5\n5dG9fR0D1iYUFyvgL/bs2pZxjwnuKYCdVTSKpk2mPM/vLQ3nU7pRtqW8vF4N\nL7Cx\r\n=ppQr\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.46_1524457989475_0.7719328295741645"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.47": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.47",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.47",
+				"@babel/helper-define-map": "7.0.0-beta.47",
+				"@babel/helper-function-name": "7.0.0-beta.47",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.47",
+				"@babel/helper-plugin-utils": "7.0.0-beta.47",
+				"@babel/helper-replace-supers": "7.0.0-beta.47",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.47",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.47"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.47",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.47",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-hzW/jL6TPBMHJXeXwzuxMN0PFAfjVD0UzATHrFSejY5A7SvhWWrv1cZ3K0/SzCXJ9LpMdxCNiREvVjeD/Tyx2g==",
+				"shasum": "7aff9cbe7b26fd94d7a9f97fa90135ef20c93fb6",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.47.tgz",
+				"fileCount": 5,
+				"unpackedSize": 29566,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+idFCRA9TVsSAnZWagAA2o8QAJAEYm2bFYgaEt88sJll\nQz+y84lctBxm/KQVQaROiy0YNuSqz2Q3UVwJ+hvarsYcssNS9Y3rnMpHmPdO\nYfftGTEsYpEK2WbSIz7Dcdklm+aebY6UWnbZtLn6yD7DG0gxjwP2y01blO+Q\nGPCooya8a4oKi2SE412C2JuzjYj+X8HDhbCLFNfPGOqgVrSOuxTowoHtlEJo\nlCMsf9fpzRhZvQ3qEsRD8ZwWvRIThYK073g1brfpjyvOF/0q9rh44K5I8NXF\nvb6NENPodiGzb+pficseTuDED18SaygYkbxTcNifJIuTxgSzh3RFTgeKSmns\n62D27V+wxPoISyT+HsQCFa7ZXQ+BgiZnM50e8uiAJqlohv2fY5aCpbf+Zfxy\nYjXiOBWgZ39EzmDcj2x9MDbIiSQcegw25nnMa2cdiZWg0ITCliMlnZtpTGnZ\nv2srd0eEa0Loyq3U68AEK15NFpSvZlYFnaYSbDBRqkDB33LHEzViFpSFHzw7\nCqYUBL2+E8SH2QIqPq6KKVHsUOj1e9kXlPBIarpRNf++XSV0Lc3OU2IBaSeL\nNh70HhQA5mbDgD+jZXGImljjuUFS7n7DsNhuTBGg8JqSQ5GQ/P/rKpn1V6dz\nGW8RlUS9jn/Up2IKe7SGt5IrDe7jW/lD/YhK21+IHyFoc75iqWL31KggQ5OX\naL0W\r\n=nbDV\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.47_1526343492758_0.9753365871437745"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.48": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.48",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.48",
+				"@babel/helper-define-map": "7.0.0-beta.48",
+				"@babel/helper-function-name": "7.0.0-beta.48",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.48",
+				"@babel/helper-plugin-utils": "7.0.0-beta.48",
+				"@babel/helper-replace-supers": "7.0.0-beta.48",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.48",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.48"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.48",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.48",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.10.0",
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"dist": {
+				"integrity": "sha512-1m6OeD+zNheuTtcQcGW8/nk78GVzVo3xho/Gwc0U+/QbfsDRXoVEAWEvR3cuUqM+LrteWwR2hdpMuCahuY7vNA==",
+				"shasum": "5eb5e71bc660293abbb4b9751e3e02d88319e785",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.48.tgz",
+				"fileCount": 5,
+				"unpackedSize": 26590,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxGSCRA9TVsSAnZWagAAWQgQAJ3rwvedbuJ4mSianb3L\n6EEZyg3TfoTO0ahzoSIa+7Dfp1+7FmImHozEIVb8Zq1enZer5jA6UAhlFyz/\n8ddWbQmiOfj5K0o0+eTk+QvATJrzW2J2aA3+HIwGY41BvmLt1UamBig1LnYy\nqur3gVNWbNXQmZzDpiGCtHMzSWo/G++Rw0XV8m477x+ROQa9KHHRq/xSV4yB\n5WeZqG1C0s/YLa3K81qTdDdJXUbI4qy7vOhKS/8LGxKKtVtbepfh67gho1K/\nQgDvVbDhAu6eoFfk59mCdYQmwOLfRt4c92SkokMm9Hm47UcM888p2loC3eZ+\n0Ls3vbyWLmZmwizQwS501Wg+g6856nqnBIqWRLuER1QRBjAV/MK5JQ4YqTog\nwLtni0r+eOK/pf7z/oCO1zvSpPenLsk70xYIWUJ4lameMr9DguM30LfcVzNx\nSy2XyYlWWpkSNNK9HtXNdwc6qZM8PDzyi+SDM8N81MUIxFxaKejlgzd9LsnA\nFwwO2SKe2PDl1Yep5Lb1SaWodpdSgDwUJZe81BIzfy6miGAuw5wpVyolRy/7\nQGMLaVQtIecZsUowCNeKIfRfIvMlN5sZmKar+h16SC4g0sSVuOfN0SXMhf6f\nUdV38EthBdwcehCehmIBj6RAyFOZD1dv7/BTjbVE9PByTJEed9IxJUZjHkOw\nSRLN\r\n=A/OC\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.48_1527189906198_0.9075206722523417"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.49": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.49",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.49",
+				"@babel/helper-define-map": "7.0.0-beta.49",
+				"@babel/helper-function-name": "7.0.0-beta.49",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.49",
+				"@babel/helper-plugin-utils": "7.0.0-beta.49",
+				"@babel/helper-replace-supers": "7.0.0-beta.49",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.49",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.49"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.49",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.49",
+			"scripts": {},
+			"_shasum": "5342471d2e6a3337332ea246b46c0bddf5fc544d",
+			"_from": ".",
+			"_npmVersion": "3.10.10",
+			"_nodeVersion": "6.12.3",
+			"_npmUser": {
+				"name": "loganfsmyth",
+				"email": "loganfsmyth@gmail.com"
+			},
+			"dist": {
+				"shasum": "5342471d2e6a3337332ea246b46c0bddf5fc544d",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.49.tgz",
+				"fileCount": 6,
+				"unpackedSize": 26605,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDQuCRA9TVsSAnZWagAA3/wP/A3M1cSwzPXW5lleA00x\n2h20uA3QDa8K5mCFCzq5JD3X+e4fPTFD0xjp53twVI+ZK5cpx8vfzML7CWUA\nygNX4QrWjBOcDNBiePTej18hH78mO4SEh/YmCLCLM5j8PAqq4AEt6xSUZ6vb\nNTrWHtYBRZvoJu/TVccmfXO0sK+cmKpQc1V4eekHz5H7+nIGiM5euOTs5W9T\ndx/A+ukmME8IdgZ5gC9poPg3K5MpBNt2vA3y+UKSR2LUCqraUmMlBTRO683F\nWghTLp3TgiLUvEdVtUExitoq7mEXl5tqdtqrSLv0FPbq9RzSki9Hg1SSIC88\nNW2cxglvZ9LpiviXU72O0IqtxmVpxLlB2sR9IDQwy2lFe1B8ZE66jOnn49Ad\n9Z4PCSSA2Pewwj3sTG0W4Nd1kkl+K6L/d2OZMnIOWRsXwR0mYdqFKeXOW6Ik\n98rxhE8cFcyevY3XmRp+NyUH9T/P85jqnQXTMmH6ILyDOnCsDng6M7pFlaV7\n2YC84khp/Crpl+0CJfDXCYk+nTu01ESp/DpFayNI22SS9qZIHgvv6N7G3G7W\n78vlV1T5hT7HlOtVxI6bwf/6kXNLLE12PNLdRuJDP3N14fF9a/i8eYbTeE66\nLwoQSVTBFS0qVgDG8JPXTZRuUMfvtNHedj7c0x00KBKKOKpMI2inwX0nkH3y\nkC3F\r\n=QoUd\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.49_1527264302061_0.8131129751991513"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.50": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.50",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.50",
+				"@babel/helper-define-map": "7.0.0-beta.50",
+				"@babel/helper-function-name": "7.0.0-beta.50",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.50",
+				"@babel/helper-plugin-utils": "7.0.0-beta.50",
+				"@babel/helper-replace-supers": "7.0.0-beta.50",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.50",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "7.0.0-beta.49"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.50",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.50",
+			"dist": {
+				"shasum": "0ce5b8bc96937c2e26f96b533d9f0fc85730a587",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.50.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24407
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.50_1528832901748_0.8039169074654595"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.51": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.51",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.51",
+				"@babel/helper-define-map": "7.0.0-beta.51",
+				"@babel/helper-function-name": "7.0.0-beta.51",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.51",
+				"@babel/helper-plugin-utils": "7.0.0-beta.51",
+				"@babel/helper-replace-supers": "7.0.0-beta.51",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.51",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.51",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.51",
+			"dist": {
+				"shasum": "043f31fb6327664a32d8ba65de15799efdc65da0",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.51.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24421
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.51_1528838460161_0.6423719974642559"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.52": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.52",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.52",
+				"@babel/helper-define-map": "7.0.0-beta.52",
+				"@babel/helper-function-name": "7.0.0-beta.52",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.52",
+				"@babel/helper-plugin-utils": "7.0.0-beta.52",
+				"@babel/helper-replace-supers": "7.0.0-beta.52",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.52",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.52",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.52",
+			"dist": {
+				"shasum": "08b1b664a7769b685c3ece2f3eab01832f272019",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.52.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24420
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.52_1530838791262_0.3905755544942313"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.53": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.53",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.53",
+				"@babel/helper-define-map": "7.0.0-beta.53",
+				"@babel/helper-function-name": "7.0.0-beta.53",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.53",
+				"@babel/helper-plugin-utils": "7.0.0-beta.53",
+				"@babel/helper-replace-supers": "7.0.0-beta.53",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.53",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.53",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.53",
+			"dist": {
+				"shasum": "5dc2ec31bf1e98066acdf0c4887b7744c14bec6e",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.53.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24420
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.53_1531316454286_0.7573259402960977"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.54": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.54",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.54",
+				"@babel/helper-define-map": "7.0.0-beta.54",
+				"@babel/helper-function-name": "7.0.0-beta.54",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.54",
+				"@babel/helper-plugin-utils": "7.0.0-beta.54",
+				"@babel/helper-replace-supers": "7.0.0-beta.54",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.54",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.54",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.54",
+			"dist": {
+				"shasum": "b15781d2e499ce25438e73fea2fa5a09858568ff",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.54.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24420
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.54_1531764032283_0.5352012856347708"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.55": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.55",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.55",
+				"@babel/helper-define-map": "7.0.0-beta.55",
+				"@babel/helper-function-name": "7.0.0-beta.55",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.55",
+				"@babel/helper-plugin-utils": "7.0.0-beta.55",
+				"@babel/helper-replace-supers": "7.0.0-beta.55",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.55",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.55",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.55",
+			"dist": {
+				"shasum": "fa260266943f7a1e144ef9783d9a07e987755022",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.55.tgz",
+				"fileCount": 8,
+				"unpackedSize": 24420
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.55_1532815717025_0.06676149622605143"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-beta.56": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-beta.56",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-beta.56",
+				"@babel/helper-define-map": "7.0.0-beta.56",
+				"@babel/helper-function-name": "7.0.0-beta.56",
+				"@babel/helper-optimise-call-expression": "7.0.0-beta.56",
+				"@babel/helper-plugin-utils": "7.0.0-beta.56",
+				"@babel/helper-replace-supers": "7.0.0-beta.56",
+				"@babel/helper-split-export-declaration": "7.0.0-beta.56",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-beta.56",
+				"@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-beta.56",
+			"dist": {
+				"shasum": "99b405dee3fb466c09c1e0874e795f4682ee690d",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.56.tgz",
+				"integrity": "sha512-uq0Nvjlkt5gpF+dlvJ1yOZu8liBfOp3QoA/hrP7LZ6XzmYwZOhIUpUbouvKjgvybWiDmNDGcELeC96CL/mtV5Q==",
+				"fileCount": 8,
+				"unpackedSize": 24420,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPy3CRA9TVsSAnZWagAA7H4P/0HPfwFXdwO4FdJXxXdT\n6brZuugPYv0RWv6Os+gJzgalFLqfSOYHJHw/ZwzY/g50HWETu/HOuG49vaWo\nSHlqwn6itZwcYsiyaEZQW1d+C+JggaJsTtofcF0OHBH4zkxjzAxrZRBKyuLP\nuhDf2vSvq7gJmiCJ3Ai01hgXx/GFncy9JmaxwYx52miJz8dFNnRA6a6TRxTG\nRUUHgLcVLH+5S7b4R+xjz7iiHnXC2O7GydtYHOpWdVcXnQJrnTIf+HhMNp/r\nh6KYV4HHRocNEixXkomrP96Tmti9HEWuK+cw//+8aL8qQOUt096ZERM9010S\n0KHj3+909ZNAsi9NyV9gH475jxfF8s4wpiQ8Frix2Oxf01DvA6c1zFoMCt1h\nblsQEOVT6qXSbA6qEN0/v/wvrgJuMRDrWDLO5K8vsHbVdDa9c3uc337E0rhb\nSQzWUsmtYBTUfg5pVQ/zICkweMBwuUxjXJ4PbvNX3ilCvc4usnonBS4eOx9E\nBOwD0gjOOBvLHRdVFXL5I+9FVGypycn4TChjwLdSwcmfNu1syKYdh8IxDASg\nm++j8Fpe0o7qA2EYaAVhfLAzT6tmWN7qIwPNAV/Axt41ynfb1pRO+tK0+V5/\n7/HOV6uhtLsCbVTYrhC2yiW0eIj9+KKE5tQ/pYLt1s5QrgwD9/1ZE+7XQkjw\nr7oD\r\n=NSFa\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-beta.56_1533344950712_0.3371561052285519"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-rc.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-rc.0",
+				"@babel/helper-define-map": "7.0.0-rc.0",
+				"@babel/helper-function-name": "7.0.0-rc.0",
+				"@babel/helper-optimise-call-expression": "7.0.0-rc.0",
+				"@babel/helper-plugin-utils": "7.0.0-rc.0",
+				"@babel/helper-replace-supers": "7.0.0-rc.0",
+				"@babel/helper-split-export-declaration": "7.0.0-rc.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-rc.0",
+				"@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-rc.0",
+			"dist": {
+				"shasum": "871b93a4339d301080d6c0362471ff5828539b20",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.0.tgz",
+				"integrity": "sha512-ekaIv/J7T+FaVif+zYE86RV60m9OvPmlo0NITRtapFWdkuNOJMikUrh3D1geuLGwpYBkxRUi2CR6GH/Yza/E2g==",
+				"fileCount": 8,
+				"unpackedSize": 24390,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGUdCRA9TVsSAnZWagAAAwMQAJTPWBtYUoUmow6cTJtu\nwaH4OpWK8OnflbfrkaoJqx+WuaIVMYIKr7MFqon1Z6XCzkfU4xQK8ZtvSdnZ\n3tgABoa4kUstzVah30dJD3rKSx+VJD7WmLKQqOCY1l7BWyDYf5GO7gZkNOmZ\nYWT955DjkMY3/dnFy6v1XDn9SNPoCf2hWmz9rjW/3yEeci9BJF7kjAxkwS2G\nJkt9dneka78PDmpqp6v66wq21jC9sxCwReMjtr10WSEHYFDDVFbynhmQkPV2\nJ88FhWBHEB4dbmYoFuGbZLoaULhuyDd9Kez50tjHVCtSfa1QgpWjSoNhpojC\nROMeJk4htIXTAmAQz/Z3r0M6z7eFNR3jSRks+TfFq6z3FWgdyLHwcZdT73jJ\nc903RH8rKKZxQeXQh7qv/DdYfCuNZvvYEHjNlcMdZXU8fWGDVGZeXRtVQ3vO\n7HYoUAL+O3A264eLVCIki2PLBaA5usQsT+4bXvUDybNjLS65V8KEvx0MT4T+\nkyycqEWSiqZYZWzgioZ6qCtv+6H0U3eWBpw/9RSqTR/LwKActZ8uK7+tW/Nl\nQadepPGu/bUALj94RUjfA02sGmtqgGJN90oli3W+BXRuwPo0jKYUUxguG9Ap\niypx8mzGRsmG2e0DkGj9TDsXmmL735Fqs+/Qjb3oZoC1yFEJyNeBuLhkIx30\nGPWn\r\n=0W2u\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-rc.0_1533830429354_0.14034962692372677"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.1": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-rc.1",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-rc.1",
+				"@babel/helper-define-map": "7.0.0-rc.1",
+				"@babel/helper-function-name": "7.0.0-rc.1",
+				"@babel/helper-optimise-call-expression": "7.0.0-rc.1",
+				"@babel/helper-plugin-utils": "7.0.0-rc.1",
+				"@babel/helper-replace-supers": "7.0.0-rc.1",
+				"@babel/helper-split-export-declaration": "7.0.0-rc.1",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-rc.1",
+				"@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-rc.1",
+			"dist": {
+				"shasum": "1d73cbceb4b4adca4cdad5f8f84a5c517fc0e06d",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.1.tgz",
+				"integrity": "sha512-mPXMbQR8zNHMXvaJ71wQ7iPcQLHPv12XjWwvYkDjtsEvknDQ2HWA+UYZGVpZ0bv3jLQIZuwc1kZ6f5vSsavvog==",
+				"fileCount": 8,
+				"unpackedSize": 24371,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ+lCRA9TVsSAnZWagAA4PkP/1LiH7aN0kEaMykVvCpp\nx5nUMryXQ+jbBlyYCvqyxpP2wH/wx6hcrot0kfXK5K5TN4r9vznzvQXVq1AY\nPjXZFQBAq+CKMH3VkoFcYxqP5XbfzP8lPdvaXGFDCy0Hx8G2kqiVW033cyv7\nOWD0+pWpKVMjiBo2eX/qZl1IA27UPclaEUNDlTu0HbRyVPjNTHXRxnk3+5u3\nTH2rlIFaY9uxW5XBIcl8c5IgtoY7351hKxxKsjHvuI6JcYYPo7ncU+7xU5Ia\nd3N/UyA7BWAwhWT7LF7Y1TcpPKin6NabOHdSRcAMKfGFWtO9oW4SnBv57+9K\nashBxMKkcvaWu4Eb2ABZtQheN3guNtTRn4uIjFyNXnTK/SZDVdpjuhwwglpd\nef+3tM0KWkRJPC4nZqqNhovo+QSvK9i+MzvClx2XqrnZwjRcP+6c7TxEEoGg\nY/mJkY/BkBZSO+mkD+5YqsutWHapvDP+Skk+1Y0PkljcgPEckygXHTuSAjwr\nx+p9jCQZhouuVVXN/Vfsi7VOQv5TGHrAMruz+r/WJmJ+ACEEH3D+bnzDB/Zs\nUDswo9C6dZiT+UYqOIyRyHIERQTRGLTRJOeSMfWf98sfsxiApZ7n3QfHpC6f\nZFiUltPBtoCHnlWRlpJbsobLmApvfNgE7HyiRxhoXvZ/KyXyKcWQWrmgiOdi\n1H14\r\n=ZSqi\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-rc.1_1533845412533_0.5259741920512397"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.2": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-rc.2",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-rc.2",
+				"@babel/helper-define-map": "7.0.0-rc.2",
+				"@babel/helper-function-name": "7.0.0-rc.2",
+				"@babel/helper-optimise-call-expression": "7.0.0-rc.2",
+				"@babel/helper-plugin-utils": "7.0.0-rc.2",
+				"@babel/helper-replace-supers": "7.0.0-rc.2",
+				"@babel/helper-split-export-declaration": "7.0.0-rc.2",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-rc.2",
+				"@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+			},
+			"_id": "@babel/plugin-transform-classes@7.0.0-rc.2",
+			"dist": {
+				"shasum": "900550c5fcd76e42a6f72b0e8661e82d6e36ceb5",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.2.tgz",
+				"integrity": "sha512-VGLIza5QhmNBuSQ7wRYl5vSjjb1jdYIJcJsJ7Kgv5QvAasFbjjVAhqiv3/LJae7IJqetjNYN9V+2Bec64399tw==",
+				"fileCount": 6,
+				"unpackedSize": 23295,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGdYCRA9TVsSAnZWagAAn6cQAJvyjasv729+4SAR4i5Z\nTQUYumMGz/MmaoFInPBjEj6KfnPq0A0ei+UepFpwHdq3hwstaxdLVQx+ahXb\nE4efXWGLiKRw0s2ZW/tfcMRTZLlja3rrz2Bep/iZCcsA5AtgPhKvOff2YiKO\nyqDAVTF208mJglZ9bPT2fnIPjxtHTlqX+qjy+edmfcA5rDT/OhmteX1i5KSg\nyqV6wrDxnlyqaoJ56QwiEl2WVEUOgKCh9QeZu5xmwy+Y02mRnu+XoZ5xlL+L\nwLppAQ8thmvAoolb6Vd8JnC3e0EOa5WlGNSUibPjVhR28sErVJybCKo2TZOE\nXXwFId8FAn8S0BL6jbjd87TskflDRedEdZmYnLzqQ9+0Yb7cR6uhDjhy/+vh\n2z6j2la1Ck+m13gNZKkIZ6cGMyroghflYdgqhVUs8eWqI5XX0K85AhGlOsLW\nUZJZazKY9nd9pqHSa6h5AEEmaHJl223nOSctmqHa4lwyjS60eYho4OK/NxIa\nvHtzZ35SncvMnBuUcdbrQn0Gly2LVdS+lmCINLcT8cpI3HNH/4+jev/PUzr3\nsaS4KVmKcwWLBS6L9W2OXedfjS0CcZKAnZPFLA+LVn6tBc+XK3KaJ3B13+91\nw+DXCaIssrxSRQSTDq+jnt/f3CbKk7YphcCayuNkup8DT+vySBazKPxEOCzw\nWXTz\r\n=vY0s\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-rc.2_1534879576373_0.6722572888200833"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.3": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-rc.3",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "7.0.0-rc.3",
+				"@babel/helper-define-map": "7.0.0-rc.3",
+				"@babel/helper-function-name": "7.0.0-rc.3",
+				"@babel/helper-optimise-call-expression": "7.0.0-rc.3",
+				"@babel/helper-plugin-utils": "7.0.0-rc.3",
+				"@babel/helper-replace-supers": "7.0.0-rc.3",
+				"@babel/helper-split-export-declaration": "7.0.0-rc.3",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "7.0.0-rc.3",
+				"@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.0.0-rc.3",
+			"dist": {
+				"shasum": "4bc40e0ab871169e72a847a1d031fef8c34f3fb8",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.3.tgz",
+				"integrity": "sha512-YukadsMOJreB1iZDntIEq6t3Qh+sVJ9xZZnTB9GlcIqf7oiILSQQsZsc8wQGl9XmYXd4hA47hQZpWN9tDluIJQ==",
+				"fileCount": 7,
+				"unpackedSize": 24394,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEn5CRA9TVsSAnZWagAA2O0P/1Jixc2g/kTbxX33Wrw3\n3Nha2AAjaPSa13RFUYMWIOMyhKSsgemZskxQ+Mgv70F0xIl1VXhKVMNnr2pc\n7MchG8XfiHGuGWb2ruyM62zvN+B3pAEVxSy+GLvDZL/PBwLTWEAwiIkPghmJ\nPaKlM7XDqAk1A095GkZc+lvSGavcYvp0AcqREKgNeEsfeU+D1rEck8sJzHvL\nmbsII5nsFe80u3He9rcBew+Jzsu92aPDoovEpa1msYuB9DixC9lOH5yprdgI\nLbOLBhCN7CdfySa1Xs3D/EPpVV9nsFGqvb1BVgktljNdFVVm0XVQJzR/pyp3\nKz0SfALKYIYl4Ii+vHadOrMeNb/W+sDLhycDgOwZEL46QBCNYRf/IUUG+Lsg\ndwVIcM7g2/uZRv721qA43rtnK/o31ANBN4CC1xQU9zHPCrJYmtPHq6A3//nO\nl0wnvVTsBh/tMItYED7fszqmK5wRJB0spJ9Jmze2uHAsbQFPYf1zulaVNiA4\n3j36rtxUUkKPNTkcIvEWuCdXgI/igOTCQrn2r2h5ojwhtuYGqBT0dTSHFVzc\nuFyC9myuJA08hC5NNxI7KwwD19UxtwNYWCuTZ6R1vsNdbZkTFQ9iznAAkUqx\naCsRsZDWGcIltpqBot0x/pLXm5elDIUok3rG95zs6Nr4pq2sIKzqOZ4E6D+7\nJvRf\r\n=1E9q\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-rc.3_1535134200169_0.9773603396098582"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0-rc.4": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0-rc.4",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0-rc.4",
+				"@babel/helper-define-map": "^7.0.0-rc.4",
+				"@babel/helper-function-name": "^7.0.0-rc.4",
+				"@babel/helper-optimise-call-expression": "^7.0.0-rc.4",
+				"@babel/helper-plugin-utils": "^7.0.0-rc.4",
+				"@babel/helper-replace-supers": "^7.0.0-rc.4",
+				"@babel/helper-split-export-declaration": "^7.0.0-rc.4",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.0.0-rc.4",
+				"@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.0.0-rc.4",
+			"dist": {
+				"shasum": "a989681c85eefb03272bc381456175e368d32cd7",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.4.tgz",
+				"integrity": "sha512-cVTWum5Vhqk6cq4BQU1FDAOCJkhOqORu2FySUJCpFQcYRSwgMEXKgccuWZ7+V8UtYQ1Nk1eLdwC7aktlRY68QA==",
+				"fileCount": 7,
+				"unpackedSize": 24403,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCr6CRA9TVsSAnZWagAAwX4P/2AfFR9WzCyB4joJbuNT\nU9+Xz/uUobmTpEXoeyRUEnJ624paEj3A3BKv0K9GiEtJAxXX0Et4+vhzOeEw\nyQrVJUV0rJ7O+oo3UR4YpK20841wBsp1FAJZKqlIozc+oXXSSeR4zzWC1NNi\nexAMPXKrWmhavcMjur1pmZiZV2y3JKod44SyX74dsz8h/IJnvBv6NfX4B59W\nXwKbaUoYAllJYzK7I4sz9FC+wgRD3sB54+GACVBKmZhJwJQS1l7JIEkglFvD\nmmnjXiSqF2muPq+AlbWlcFT1Mk3wkzwPgiQ5EVZ7sbk9sZQhm4DVlUqgoFRs\n7sbhbn4pVGyEzhx5EeZLjJNSf3NFNSAMGSgDYBmcd90QLcevr5p1hL8b+fdY\nvarPh4Mjtm/mxlBjFOJHchBJqWQmuoCYOAA9bUx0ZErhTvuCLGub8KR86hJK\nLggwJyupywUcE0ahKwvjA7WJ2pq5E8exBC/KxWaKyIxH/ajDfzKO+lU7/E6y\nZQhf+M0KWVndlv+LmOm++wQUKv3XCJgBHe7zgdmkdw3YLhcfGk0zL8buXgwz\n8Hb2gqxFFeyA4EoJp4OYLyRcMpJtLYdpgOdpQh1MuOWbOIfnEQ5S67BnIqGV\nrtVJB5E+XYU/NN1C47e1mD3+oGBSk5jxmQiiMu27RXGyDNonPCZ+s58lFxvl\nVTtj\r\n=1gXK\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0-rc.4_1535388409561_0.04312618064762952"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.0.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.0.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.0.0",
+				"@babel/helper-function-name": "^7.0.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.0.0",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.0.0",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"readmeFilename": "README.md",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.0.0",
+			"dist": {
+				"shasum": "9e65ca401747dde99e344baea90ab50dccb4c468",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0.tgz",
+				"integrity": "sha512-8LBm7XsHQiNISEmb+ejBiHi1pUihwUf+lrIwyVsXVbQ1vLqgkvhgayK5JnW3WXvQD2rmM0qxFAIyDE5vtMem2A==",
+				"fileCount": 7,
+				"unpackedSize": 24353,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHDrCRA9TVsSAnZWagAAlgAQAIm64vAKYTUOE0lgE1Go\nUpavkpUMSVHWmhYIvcd1+gzml/mmPppkRG0IR0IMumJgJfbQWR/0Xjy6C4KL\npB/S1fJ7CwWZOxHheQAhkox6IL8YzC/3VPxnTTz4TMpgTBI+Si++u9/8A3BY\n9d9ROJm2AAy2H5L9b9lv2hL0qTBs0aAIxnESbGi3Id71i0JsobZqvADDWhMu\np00ISxlJ1DmH0TC7K9AYSHBH3BOrZtaLIpdpzIQXse2b9B/Bdhf5AqOvJKKY\nTYlos+HVHSJ+gvBTLGMCXrQqMDL4M4LUmkCeP/Y7FCc3+GinG9wKNqBFV/vf\nVgC0e9Loh+s8SejCjr6MGrtSIwG2l/7hp4p4Im6YCipogn0Elz7hvLgvOwhj\nYSnp3QsVqASX4rUGeywGrX25N/Oo+biggz/CNQ35SCqoC0np5LLO99iz4WiH\nQQSh8RRqws3XKK2XM4zSK/DmVQCG2gUzvTc82ycwhLfv0MJpXTk4h+X7xYZ1\ntXhcaoa+6DIk1zQwer86+eUuziColNBO9iI8LnCtTEebmv+Z+s8B3sewum/2\nMG2Z8ToHJuWzrjUjRfojLu4/nisJra5c/iKrcqQykdQOjZosfrQQVzspeFSF\nmFbtRWxSUbNfpoKoMZU+pYWjagjbXE/Qsxpz6gYz2Krj6jaStr5RLu5TBRRs\nl9hc\r\n=/pYv\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "contact@xtuc.fr",
+					"name": "xtuc"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.0.0_1535406315071_0.968139918068402"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.1.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.1.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.1.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.1.0",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.0.0",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.1.0",
+			"dist": {
+				"shasum": "ab3f8a564361800cbc8ab1ca6f21108038432249",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.1.0.tgz",
+				"integrity": "sha512-rNaqoD+4OCBZjM7VaskladgqnZ1LO6o2UxuWSDzljzW21pN1KXkB7BstAVweZdxQkHAujps5QMNOTWesBciKFg==",
+				"fileCount": 7,
+				"unpackedSize": 24406,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboAEPCRA9TVsSAnZWagAANPkP/1SZzDoQUmR+pFEqcGeo\nNUeadDxSUwvho+8pntCzwPVuAgfwuzhHdDTaCe50zatfqaZofHnuIH9t+Rnf\nRdT3Xm91dwF7dRkmymjk5+wBa8WxGcHCgVVd6tzZga6rvppQS6+KY8Y5G2Yw\nBhCHeZGVKYuafPL03w7+nRqBI9CmontTdFBxhTHUnpm8St6ZiEnJgNeNTz90\nKElfUGngS+0kna1WHwdQAQwvDpNbWHd+ksGFe+lFVGjZrqROO+KQCBkQXOVU\nueWxcwWibIqlUb/fx7uxHzShmwNA1SSNN2NarKqYE0B63+4nmn0lFRHaOM3h\n2NEFmGRdAr4/4xSURhID6OaR/so17VQVnkodB0j10wx+C7raPbUel6J0rNbl\nF4yJoi9tPL1gmP13LiYSltFC7DnO2zYdAnxJiMuhvTxacC7Y4Fux9lm7jWWB\n11CxZzZo8R8vbP7zFbAcgV2GwZwSZfJLahj+T4fd890p2P0W/LU5Y8a4TPF8\nfc2sxdmmxeZf0g74aBu0am6bRQx5L3QB4ihftjaBKfW5UkGX2PA3OCz9kANY\njA2SDmihI+eso0mFMazNBtsG/h09xrqGNX6wiaHmWMQG3ZqAgVpkibwCMmG2\n4PCxAZGNH0m+5D4p2Al0VNlCSSqr5bO9+rO8GZhD9FQtn+isMC4EUHxq1uF4\ndfNG\r\n=qdXY\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				}
+			],
+			"_npmUser": {
+				"name": "hzoo",
+				"email": "hi@henryzoo.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.1.0_1537212687115_0.5938052251303909"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.2.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.2.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.1.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.1.0",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.2.0",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.2.0",
+			"dist": {
+				"shasum": "374f8876075d7d21fea55aeb5c53561259163f96",
+				"integrity": "sha512-aPCEkrhJYebDXcGTAP+cdUENkH7zqOlgbKwLbghjjHpJRJBWM/FSlCjMoPGA8oUdiMfOrk3+8EFPLLb5r7zj2w==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.2.0.tgz",
+				"fileCount": 7,
+				"unpackedSize": 24437,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX15CRA9TVsSAnZWagAAmJ8QAIalNXhbtvmnNWdHE9SL\nM9FMFXwKGwkaZ50lYkYybDyGiZ2xbzgxvRbzj5WSpGNg+Z92dH3dAZlF62xa\ncNbEDWX49Ks8Rh5YBqiUSA093VjaxPiKYqdpENsa57F0vHpQE1/DexXbONnt\n1XquVGCzQqIaSrPPobmQeFwZxCDrBf/njtYNr8z6HwEcZykfdE/SS2hr4VNW\nfDMUZXsyZZamY8GwXolZNNWg95mvIJ8yVEo5lzj33idk6uiWzvQ7c6TqDby3\nlrJqCjGDLRtbQAML2ls6bVm2Ajk/U9wdWRwrmgypVuloA8jzDoY6o/MjTV6S\nEjmpOtkIrPrcrDduX5cD+i5KzqdGsk8kUXxQ3HuX0bHetS9IJ8u5QEHxQmMa\n2DMk62Puzz76MolxlLi02a4kG1DLY6Dyfy8ijaeeJFYj1SwL0vXp+y4bsSBH\nrvQJ94xwiAVc6xWIJjs5c0L2AdCAPNy24z/zLY77xAExLqujSMaaJSG5UF49\nogv5P6xdJS9tqTHYGwKUKPIRrXtFYWIMJbu2jJZnHObUxk9sD+nTpCwskwxa\nVzbQFJJIBWACUTWorO8GBBcaA68LU1CWWh2BfCEIqF+YGmnDZDmM6kpgersX\nCCL4LdCDKM/jiVDwsPoME/k8CMB3yuLsj2pCJRzEDbBDasvXJYNA89x2/Bt8\nubOn\r\n=ePUq\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.2.0_1543863672560_0.0889654306147114"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.2.2": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.2.2",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.1.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.1.0",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.2.2",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.2.2",
+			"dist": {
+				"shasum": "6c90542f210ee975aa2aa8c8b5af7fa73a126953",
+				"integrity": "sha512-gEZvgTy1VtcDOaQty1l10T3jQmJKlNVxLDCs+3rCVPr6nMkODLELxViq5X9l+rfxbie3XrfrMCYYY6eX3aOcOQ==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.2.2.tgz",
+				"fileCount": 7,
+				"unpackedSize": 24438,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcFNHcCRA9TVsSAnZWagAAoS8QAIX7ymmfx5JEbXnwownE\n85UeeBwQsgeBUFON4UyWTQcsTYjsc3qvdqpM/wiBt2QUIuUcrgam7PS7u2U/\nsVMs1pZy3S/F8f0Bma63ewcKMV2ay23H+D5U2PWS8QwTtSDYjJdyyU94porm\n/IizI1QCIJXApLdFzT4qT+LxkMHuq/Uo2qGZSUN2rXvdg19YQLGcnKinrmZd\nGIdv9wH861Y9s11Lk+OGtYB8MGKYj9FQWpcb8IBD0c5XmWpymKnuXzUeMsRg\nAxIbzMqpvOrzVO+mI6jPv7kmGxeLVhnd1LT1Nzj/9XFcv2mDjZ0O6y2HcAD+\nf9uEiSuDX3LkCqGaZZ5aqyBTCmT9f2KQu2UvzMGXYAMFk5HcP5x4XiAdr2hI\n5bzzR3lmf/kDLCrSHrbqEZueXVXODfV5fVgzt2TyemSYy0XgGnlauoX1C9qN\nzatzNYGgOCFjZmyxhKpvTTK1dlOxkFT68828Afv+H5qp1HiuRJBrluAsshyH\nYYAfwomwkaubhBm9Y7t+jef0DlJF35KxI0bbEowoIXoAlEGDRDdPe0+t0kka\nM9RzOf/urlgKLQWpyWjEhr5du/A7amrNQRG0qUI0ccx9pEunROj5bOfZ0LoR\nN13icJ+0Q+UVq45zQhQijvaG3UCXiJHe5JC/QDZYQa5cCM68P00UVTooXRcP\n60nG\r\n=pmHn\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.2.2_1544868315603_0.4018570210079815"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.3": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.3.3",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.1.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.1.0",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.3.3",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "d1fe2d05f4c468640facf40565e30f7110757f2d",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.3.3",
+			"dist": {
+				"shasum": "a0532d6889c534d095e8f604e9257f91386c4b51",
+				"integrity": "sha512-n0CLbsg7KOXsMF4tSTLCApNMoXk0wOPb0DYfsOO1e7SfIb9gOyfbpKI2MZ+AXfqvlfzq2qsflJ1nEns48Caf2w==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.3.3.tgz",
+				"fileCount": 5,
+				"unpackedSize": 24023,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZyuzCRA9TVsSAnZWagAA3tkP/0oRaKP61RK6MF88AGS8\nVdajiNQiEwP7ZuQ05f8Avkd5q3e26TVNAysokS5iK6kR5afWu9wxrT1Pd0FE\n71T5YyC6NDJqWdux7ICtNZQDQQozmSEG7DveuvdLyq9c/OgRjYtCkT6bDtzP\nustajw6M1y73A/RMmK26qcoDCYaIcUInhA/v2001hPguP1H7+2kd27d6c36L\nQH6aikv088JZBJyYyRLINdkXe9gDDBiBcnmQL95K51CqFLNG0KSc5r0Tfhad\nFk6+CV6maqwMtuT0WdtgtRbqZA7NbEs8/vIUzvtSks/lw0JVkWCFcNs/GQDi\nB3IAUAG29fIhhnTZC5/4Cgqi5Nun6EL6tzhWsxjLKZRTBODu4Gw/au80yWB8\n/TkDQJmwzgh0SBYZ2JD5VEkBbawyd0/WTX4GDKp52KYwKbMHB6sLQW0S6Ook\nb6RZ4GmyeeolLs2l/rc1wyUBt3n5MyvpRMjARXOdmMzta+/Bo3Mbq3jxZVin\nhrDCDuq0FNsIL/SRVMsrUKtuss55H2NRASIg/bC6CGJDzsnNyTuMFSTdCuX4\npSNVAKTHWv/1VUmb9XdAYV3tngysrELBwX1uVIKpJ23vt0jVFMenTd1Zpvkx\nlmtlOmbBhcFBz4e5lu7R88kdoqtxASxYPLYqgyoDDx/e9WLRBxhraWRBqYCT\nDM7j\r\n=Ah4v\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.3.3_1550265266818_0.22330156872327667"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.3.4": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.3.4",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.1.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.3.4",
+				"@babel/helper-split-export-declaration": "^7.0.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.3.4",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "1f6454cc90fe33e0a32260871212e2f719f35741",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.3.4",
+			"dist": {
+				"shasum": "dc173cb999c6c5297e0b5f2277fdaaec3739d0cc",
+				"integrity": "sha512-J9fAvCFBkXEvBimgYxCjvaVDzL6thk0j0dBvCeZmIUDBwyt+nv6HfbImsSrWsYXfDNDivyANgJlFXDUWRTZBuA==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.3.4.tgz",
+				"fileCount": 5,
+				"unpackedSize": 24023,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdDWNCRA9TVsSAnZWagAABBcQAJqRU7W4QKD5G9IwWz1G\nouwBsyCQjMDJZfbB20O7gCA7LVcE4iEiIAto+75i9XerAYmTUyrXHPtbxfWS\nioITN5+32MJj6AxwgiggvH81jrzZtnytrkudqxKn7RBKQ1Sn82tL7WQQSiZY\nP4KnVRBLYu6SuPtlOMr0YuxfWOh7rE+LU2kRfERWIix9o0smPY7h8ebHO3rA\noh5LQXDlGa1rnlTh5DcELw/98ex/eJ9Pv/q3uUlSHq4uW3JSYwjU/1FlG0DE\n140dYEdGFYF4z57I95MgvXXsbrx8ATiQyv7D+pD4o21TT0oijJJ8FXo66PTe\nHFw6rhdmUzd+Uz4YbU8SkIXSbfmIe6tFd6/AVNNuAqgGWzv6W8aTPMgEUbWe\n0rfsDT8JYCMZqFkrWax53r77wNj4GE8HxW1jIkGZxxMKPAUGX4OlRgvFP9Ck\nYSkYck+mRquQV6svmrRzeWhoRrSR3ZIy1mzSrL0zybygCEtCnP3apwMrvEUJ\nuaslaao289DxgFaJUvNPcAy5zKjilgcsIVLkFCIWnCYJrEz2oMvaVnszwQL9\nTOQshph3w4xHrMvn5MtvAji3/ZYzOch3aeNC3KH93ithD54locMujFLnWM5X\nTA9nBbJ3adZDNn7bI6IIGcZGifZukqsl5tB04hevP/cXJyPtGCJol68oWWg1\nDlXr\r\n=Ahh2\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.3.4_1551119756922_0.3680768470284492"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.4.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.4.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.4.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.4.0",
+				"@babel/helper-split-export-declaration": "^7.4.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.4.0",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "f1328fb913b5a93d54dfc6e3728b1f56c8f4a804",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.4.0",
+			"dist": {
+				"shasum": "e3428d3c8a3d01f33b10c529b998ba1707043d4d",
+				"integrity": "sha512-XGg1Mhbw4LDmrO9rSTNe+uI79tQPdGs0YASlxgweYRLZqo/EQktjaOV4tchL/UZbM0F+/94uOipmdNGoaGOEYg==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 23440,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckVTjCRA9TVsSAnZWagAA3FMP/1bV0P9zwbpjpEPp/KCD\nAinsT/UW9fUYA/W9e7ISkeioG+f/nAiBnP8q07EfOeAk6MXA0h6CAeKSrhKB\nf1+Z2Ji7T4qwABtwxzKmpLECby5HQF6MsbFbdAYdUW7fYxcx7lX+x+cRk2op\nFDTQWe+MmiLZ9t1J4XkQpxcePdXhcPYx5Vqc2pN0adjP8lSYqW3GUTfsqIZj\nXdp03ybzhD21aqYx9dxisU2/sYoDaiKnwIxVkcVxo90o1qtEJms/Dox+Z91R\ncKxTwB3RlvHHVYqGiAzPETGuuqIUq+Tsye9wBliIMEZNxfYO53/K9+FoGp4Y\nz7J+O0mWZQROAbAdnWlfi47wPbLgUvKSkdGZI3fcuTccZTd9G4uIOz1Kh3Vk\nWFgCSHwRfAL9CUdttEd34XdnYU3+/lGNle08LD3WRBAR1Y7tplq2XpqPl7EP\nByJEmH5D/UY9xODDRxKFcafvQhbBKlvxeYXFmTg7oMsMwWcv/lTlg0FTXy0d\nDaoT/DhRlvko1Ce4ipGt/OGyIe2m6WqNVkJEp7KdOHr4XKQ31zgZQPAmojhG\nWok87eAQH2bTwJVXC8M3wVpvevIN9ZrXXe/GjbBVcyJDSl8Ao5edP7Zc3bnm\n9avSfg7Fyz537vcdO+NVoGB9f8qHXxR7TMOG0YFZamnxOFDdNN136wAfrisB\nnS3w\r\n=D10f\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.4.0_1553028322620_0.2760719556369273"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.4.3": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.4.3",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.4.0",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.4.0",
+				"@babel/helper-split-export-declaration": "^7.4.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.4.3",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "508fde4009f31883f318b9e6546459ac1b086a91",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.4.3",
+			"dist": {
+				"shasum": "adc7a1137ab4287a555d429cc56ecde8f40c062c",
+				"integrity": "sha512-PUaIKyFUDtG6jF5DUJOfkBdwAS/kFFV3XFk7Nn0a6vR7ZT8jYw5cGtIlat77wcnd0C6ViGqo/wyNf4ZHytF/nQ==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.3.tgz",
+				"fileCount": 5,
+				"unpackedSize": 23440,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJco75ECRA9TVsSAnZWagAAr34QAIx17xJhHEKGIBylm41F\ns4ILUPFBByWH4tQ5qrHMFwX4NELWROJFUtyjfkna2JcjMjxk7bO2EEJY3yE+\nt2vaRkOsTITclfGgrXshw7aijhWLmFuXqsZ4srS8x/fxty04sn2rV64ytquR\nYkFEoQv8Kl4FaICPZ4w/k5rj+ABcOE40OO6Ref8prtssnpXN4nFFlxC8EBx7\nip06AmvZ3REXGEySUBOinL0bdE1KyeXl+AZcQqZHYc5mtkg7CRqPz/4jNGpk\n7qZ733ob3TETIFDvqe/gdLlfwCHwtRHvGKkectlGfz+4Ffu1uaN1Io7ivtu3\nvmcWK6yAachEMgybO+oIUE3Wppacf31K5jvi9U8X+IzKR5uM7OjNRsAgs6pQ\n9tkc0zK/yMik/WnWo0Bw+WG4K3pHgZla7GMlC6yiwL0LeBiUWsi1GAyp+NGz\n0CwsKyeuyM9EMim/QzhSlJ/bjcvAa0hGPdcDds6UF0j4SjQewCHGp0KwCJy8\nJKqhy8eMmVVr4iRVhcCWacAnF92NSlnbViFosUdG6OYUdRjoOb82lZUUsE/m\noWbBMm+5v8RUH7O86NUvuRtXJmkyBMtKk21udgt2OrSE/xDE1o4qwa8RQO4I\n09tfJVqQVJqcmuSWK+SHW+IJKjvSSfQCpxcAE+39VGDqd5ibrGp9FOCXKfja\nQ+2U\r\n=SSKX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.4.3_1554234947624_0.028293420413408876"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.4.4": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.4.4",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.4.4",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.4.4",
+				"@babel/helper-split-export-declaration": "^7.4.4",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.4.4",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+			"licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@babel/plugin-transform-classes@7.4.4",
+			"dist": {
+				"shasum": "0ce4094cdafd709721076d3b9c38ad31ca715eb6",
+				"integrity": "sha512-/e44eFLImEGIpL9qPxSRat13I5QNRgBLu2hOQJCF7VLy/otSM/sypV1+XaIw5+502RX/+6YaSAPmldk+nhHDPw==",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.4.tgz",
+				"fileCount": 5,
+				"unpackedSize": 23440,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3J5CRA9TVsSAnZWagAAjAEP/2tUYekLpro5TRVzJ2sh\n9LpN0a4QE27bmSTzMP08JSL13Fftb59cnyuQLaaozNarnG1UXFuF7Lp07pAU\nCro0nkd6qlTxbu4sty1VNufVxMfGRi/r1nfQs+MXm+VNh/vil3JduwHe0dY2\nqrdeDFamTlFJ8e224rzj8nNpK3cN1dlTjwViHaY6H+psoeTGSCPortSE5S1j\nG3nuFIHPhR/wRYIpCxx4A/t3LdImj75KQkLRlyZnK8H32howAkjnWPXK0fjD\nDEDhLsECI6K77g6Uqs9XE3MuazVORqgSgDtlQl8YH9bBV3IOi8tKKw31KsIg\na4gpoNX3m501GHO52GvWazz/k8GhsrNEwaQlkgG3/yqsdrqEtrACpEDnjsHH\n01m0WfHy/NWCHxF0uW+3xs8HfYci7ZIHJrdshJPtmb1iVtqqZS1mCod9WW1T\nGaX0Sd+oC6nqlUIVxY0zrHPFW1Qacmba2TMIqD/9u5YJ31PZ368OmAC83RA0\nqq+uwCYwLvjm2XbfOyd/kojuDy4WdC8NxwzRlmTmqPNIhd6QacSQfeU4PQXJ\nU9DFPWEj7/omU/im2XaOgYDr/9RX/HRYDVJAqUqVHItv2tjEIvzcPIM3ZE4i\nX5ogwajw3Bt1siZ+iIySRl/O7S/DpiY/MUgHguHJ6vFEgBLakvIRuZmnJY2f\nFtHd\r\n=wcUr\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.4.4_1556312697111_0.8188235180535635"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.5.5": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.5.5",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.0.0",
+				"@babel/helper-define-map": "^7.5.5",
+				"@babel/helper-function-name": "^7.1.0",
+				"@babel/helper-optimise-call-expression": "^7.0.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.5.5",
+				"@babel/helper-split-export-declaration": "^7.4.4",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.5.5",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "0407f034f09381b95e9cabefbf6b176c76485a43",
+			"_id": "@babel/plugin-transform-classes@7.5.5",
+			"_nodeVersion": "11.14.0",
+			"_npmVersion": "lerna/3.15.0/node@v11.14.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-U2htCNK/6e9K7jGyJ++1p5XRU+LJjrwtoiVn9SzRlDT2KubcZ11OOwy3s24TjHxPgxNwonCYP7U2K51uVYCMDg==",
+				"shasum": "d094299d9bd680a14a2a0edae38305ad60fb4de9",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.5.5.tgz",
+				"fileCount": 5,
+				"unpackedSize": 23440,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdL5FxCRA9TVsSAnZWagAAwucP/jKT4LUoNGuSvaXmZMFU\nTxgKvozXd6yNm9HwijT9RY3k0xqD1KNQUMlsFyn3RmflSr42H+tiQjEJenJf\ngzfE9E3j6mNfv4gE2edqwaJgFtao7wAtZtSiFzHhTbhvgtq4iliuJX3Lx4mS\nMKcafdtcOX7l+giuU5ZMq1Quj8qG+FBc9Kk4H4rfOixq2PyD6Sl2Fs+g0qNz\nB5K6fxO3EpDTtNowAs36ZEWHyYcILfvQEKXTHhysnnqZrT4TWhdLeYp/vkZw\nC3B0LKwe0OgJ+eD5VX/cqpNhFQvy2qlAGlzfTuHwZ0tMHuqGjzm4PBl0NkRm\nuq7/TmVoopgOpwpvDz9y7hBH3k6ypt80qupwbnIHbwtJJEf2LoJLvWIcQvdS\nTaUBM5O2iX65UjQWCuCR3QJ5/hxcPZf3N63wax/IpkFC/7IX3w+30oxyaXb3\nl1PybzAPxrCipieTWa/UUdDqXCQ+9x0cZKOvnk8OSaK9KWD2I+wYr7cekIDn\n22l56iLPurXEezqqkKjdbBYTo7HkN5J76ZJO3AeJ32qGWF1vTIIsw6qHIv4U\nT9hxMq7VPi8luRL3fvhnxiuKFPbwHJ+1JbKRCG2ClrHN2YQ3Uv8ArHkQJMV/\n8nEDrS2b9JyCCtnt9h2kPRAEG+M/jBmFX91CxhtJP+QNo8V609/Rg4RGQxBj\nwLzQ\r\n=i8CX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.5.5_1563398512939_0.17688755416527902"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.0": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.7.0",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.7.0",
+				"@babel/helper-define-map": "^7.7.0",
+				"@babel/helper-function-name": "^7.7.0",
+				"@babel/helper-optimise-call-expression": "^7.7.0",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.7.0",
+				"@babel/helper-split-export-declaration": "^7.7.0",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.7.0",
+				"@babel/helper-plugin-test-runner": "^7.0.0"
+			},
+			"gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+			"_id": "@babel/plugin-transform-classes@7.7.0",
+			"_nodeVersion": "13.0.1",
+			"_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-/b3cKIZwGeUesZheU9jNYcwrEA7f/Bo4IdPmvp7oHgvks2majB5BoT5byAql44fiNQYOPzhk2w8DbgfuafkMoA==",
+				"shasum": "b411ecc1b8822d24b81e5d184f24149136eddd4a",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.7.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 22523,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVTICRA9TVsSAnZWagAA458P/1uXgcLjych3JB/iAikY\nE7TpXAdkITI77MYZam/cpeocMwAI5KqxD5aFsGWU65KiASNhFyr/jsMr7pUd\nz7Tov02qsNCZCJtxVuonu4zegtB/m1uwP9Z5Z3Ma4hESYDsrkvjGWLK/KaPr\n8+D6bYAmK5VHcx5cbCc4GVXTbB+Fqkj2mlOP+kvXjl3it8Qye0px5noZHbXb\nWqztAd7Weosddovhc/jzLQWcZruR0z8vvYKNQte0OU0ZPcSjgynFPUFn4sGz\n3lIKHb6yXzZ5ridix68Bmc+jCuyZHVD5OCKCe+9CvpJstVyBfRd1Sljc0j45\nVeOgQL73UBT2/elL7TeK5LQBuQXyQssedFPdn5GiXDCAIxhbE+08zIJUOj+9\nSIgr5YkuGquKlsNCopoaKu+L1t35jMfH1Dib01q7wm81isyk0rOqbN3mTEcW\n6Nh2eWXwkDiOg9GX9uCTZsmLOAb6fkVgjYOkJU+QQuW1kNsn8jHa3JYos6bV\nDqaUgiZZFBItlT80PiVS2G1R39cr4OSWZkFhHJQCNU2AFYrH8T0s/y+UiC14\nfQEpA9B4wQJfaII5ZBRCgf+IKc5UVr8kZikZaJUwChTwkZJclDVKNckzru0Y\nfJAY4G7wJHP73adVbSZu6c+TchxAC2yLIugf6o2+NY/nHQLzYdKVkGkBoguV\nVuHf\r\n=gH5p\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.7.0_1572951239983_0.23961155522514344"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"7.7.4": {
+			"name": "@babel/plugin-transform-classes",
+			"version": "7.7.4",
+			"description": "Compile ES2015 classes to ES5",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-classes"
+			},
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"main": "lib/index.js",
+			"dependencies": {
+				"@babel/helper-annotate-as-pure": "^7.7.4",
+				"@babel/helper-define-map": "^7.7.4",
+				"@babel/helper-function-name": "^7.7.4",
+				"@babel/helper-optimise-call-expression": "^7.7.4",
+				"@babel/helper-plugin-utils": "^7.0.0",
+				"@babel/helper-replace-supers": "^7.7.4",
+				"@babel/helper-split-export-declaration": "^7.7.4",
+				"globals": "^11.1.0"
+			},
+			"keywords": [
+				"babel-plugin"
+			],
+			"peerDependencies": {
+				"@babel/core": "^7.0.0-0"
+			},
+			"devDependencies": {
+				"@babel/core": "^7.7.4",
+				"@babel/helper-plugin-test-runner": "^7.7.4"
+			},
+			"gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+			"_id": "@babel/plugin-transform-classes@7.7.4",
+			"_nodeVersion": "13.1.0",
+			"_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+			"dist": {
+				"integrity": "sha512-sK1mjWat7K+buWRuImEzjNf68qrKcrddtpQo3swi9j7dUcG6y6R6+Di039QN2bD1dykeswlagupEmpOatFHHUg==",
+				"shasum": "c92c14be0a1399e15df72667067a8f510c9400ec",
+				"tarball": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.7.4.tgz",
+				"fileCount": 5,
+				"unpackedSize": 22605,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HBhCRA9TVsSAnZWagAAC9gP/jyWwUvW5CkkiLukjH3i\nPkj1VACAmQ4d/QcFzlH1PBGmDalDXOMW5dNDBQ8W//Bt3fkjrz4FXHHMiYpX\nrq1F4qxc9QqrwYcV19EFElzly3cNaQziuRvYshg11ubzW1EvN0Hb14f07g26\n/D2aVwQhyEA3wDOBOIOoBHb9o55kRdHBbVj9lXOEyUl9nEpIVBLKzg8xci7Y\nYAyKv/ZLn138ILesV+QsQMaHM4OKl7mkBrdWfzwr6Fin8qNL4GfrZsuyz6Qu\nBdtgNpaMxC5yvOnz9GkjGAqv8GRNnT0Y2jbKtekKFAD7k0kqFfOpyhxPwtCT\no83QGMWJHazuc8pXBYKwvmdKVloSrdQ24AKfZ/+FKDAMG1YwwNEcSUrg3+EB\nUX2mN1GVwZO1Fzlb4FXY2aOfiBe896SuB/zRtLo72FxSFR9RuPuPZDhHOJDk\nqcc9//WuxiHzLVUmHC5HKZVkShk+2PE03HPyutD2y3rIE4fnlC2njedoyJfb\nTofF7RSEOhm+/0LDIwueBN90Zf21Of2xriwuepc/IIy0yeSB5ROHMZviwY2r\noUgdfNRIgddLIAjbHApLXuZJQRi1Rh4UQbcsUkECcaQKf3Ph7Zfnzgy4a+LK\nmSQKgK8zsrMbvsSCjGraPQd2uCoOipWj6uSdJk43npgiQHe8eMkQDkzg46KC\n077L\r\n=0eJe\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "daniel@tschinder.de",
+					"name": "danez"
+				},
+				{
+					"email": "jason@developit.ca",
+					"name": "developit"
+				},
+				{
+					"email": "bng412@gmail.com",
+					"name": "existentialism"
+				},
+				{
+					"email": "hi@henryzoo.com",
+					"name": "hzoo"
+				},
+				{
+					"email": "loganfsmyth@gmail.com",
+					"name": "loganfsmyth"
+				},
+				{
+					"email": "nicolo.ribaudo@gmail.com",
+					"name": "nicolo-ribaudo"
+				}
+			],
+			"_npmUser": {
+				"name": "nicolo-ribaudo",
+				"email": "nicolo.ribaudo@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/plugin-transform-classes_7.7.4_1574465632694_0.8702379636881872"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-22T23:33:57.630Z",
+		"created": "2017-10-30T18:36:32.255Z",
+		"7.0.0-beta.4": "2017-10-30T18:36:32.255Z",
+		"7.0.0-beta.5": "2017-10-30T20:58:10.115Z",
+		"7.0.0-beta.31": "2017-11-03T20:04:35.984Z",
+		"7.0.0-beta.32": "2017-11-12T13:34:08.721Z",
+		"7.0.0-beta.33": "2017-12-01T14:29:25.975Z",
+		"7.0.0-beta.34": "2017-12-02T14:40:26.637Z",
+		"7.0.0-beta.35": "2017-12-14T21:48:32.718Z",
+		"7.0.0-beta.36": "2017-12-25T19:05:48.207Z",
+		"7.0.0-beta.37": "2018-01-08T16:03:48.256Z",
+		"7.0.0-beta.38": "2018-01-17T16:32:47.150Z",
+		"7.0.0-beta.39": "2018-01-30T20:28:49.445Z",
+		"7.0.0-beta.40": "2018-02-12T16:42:54.461Z",
+		"7.0.0-beta.41": "2018-03-14T16:27:06.069Z",
+		"7.0.0-beta.42": "2018-03-15T20:52:14.637Z",
+		"7.0.0-beta.43": "2018-04-02T16:49:03.557Z",
+		"7.0.0-beta.44": "2018-04-02T22:20:43.670Z",
+		"7.0.0-beta.45": "2018-04-23T01:58:55.147Z",
+		"7.0.0-beta.46": "2018-04-23T04:33:09.518Z",
+		"7.0.0-beta.47": "2018-05-15T00:18:12.822Z",
+		"7.0.0-beta.48": "2018-05-24T19:25:06.290Z",
+		"7.0.0-beta.49": "2018-05-25T16:05:02.123Z",
+		"7.0.0-beta.50": "2018-06-12T19:48:21.842Z",
+		"7.0.0-beta.51": "2018-06-12T21:21:00.244Z",
+		"7.0.0-beta.52": "2018-07-06T00:59:51.318Z",
+		"7.0.0-beta.53": "2018-07-11T13:40:54.384Z",
+		"7.0.0-beta.54": "2018-07-16T18:00:32.351Z",
+		"7.0.0-beta.55": "2018-07-28T22:08:37.092Z",
+		"7.0.0-beta.56": "2018-08-04T01:09:11.066Z",
+		"7.0.0-rc.0": "2018-08-09T16:00:29.452Z",
+		"7.0.0-rc.1": "2018-08-09T20:10:12.620Z",
+		"7.0.0-rc.2": "2018-08-21T19:26:16.433Z",
+		"7.0.0-rc.3": "2018-08-24T18:10:01.314Z",
+		"7.0.0-rc.4": "2018-08-27T16:46:49.609Z",
+		"7.0.0": "2018-08-27T21:45:15.139Z",
+		"7.1.0": "2018-09-17T19:31:27.224Z",
+		"7.2.0": "2018-12-03T19:01:12.767Z",
+		"7.2.2": "2018-12-15T10:05:15.812Z",
+		"7.3.3": "2019-02-15T21:14:26.995Z",
+		"7.3.4": "2019-02-25T18:35:57.076Z",
+		"7.4.0": "2019-03-19T20:45:22.723Z",
+		"7.4.3": "2019-04-02T19:55:47.789Z",
+		"7.4.4": "2019-04-26T21:04:57.290Z",
+		"7.5.5": "2019-07-17T21:21:53.045Z",
+		"7.7.0": "2019-11-05T10:54:00.111Z",
+		"7.7.4": "2019-11-22T23:33:52.839Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "7.7.4"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"429878e3f09011c83b0fddec05831522\"",
+			"fetched": 1577117262012
+		}
+	},
+	"_distfiles": {
+		"plugin-transform-classes-7.0.0-beta.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.4.tgz",
+			"sha": "733b26dae8b66679844d12464949f243dd30a717",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.5.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.5.tgz",
+			"sha": "a91ec0c235d694ac97db5c4bb232058b4c9462aa",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.31.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.31.tgz",
+			"sha": "25fc0eedd4277110853b9d00dcfee60d75ad9904",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.32.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.32.tgz",
+			"sha": "ccf71f14f08963afe551a89c1a3d3224918f28e8",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.33.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.33.tgz",
+			"sha": "317b526f2afb2abb14f82ce333575b179d7aec0e",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.34.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.34.tgz",
+			"sha": "2da769561a87e1fe25f66cd548970e70bf058a3b",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.35.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.35.tgz",
+			"sha": "ae1367d9c41081528f87d5770f6b8c6ee7141b52",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.36.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.36.tgz",
+			"sha": "98614835cb6bb7356aa8d18d2cc5a109b2da88ce",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.37.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.37.tgz",
+			"sha": "a933772d1ea55ed16ebe2cb85a1f6f7e482b4e41",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.38.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.38.tgz",
+			"sha": "6237a40053f5e9b7e220431195d7342b1f276095",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.39.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.39.tgz",
+			"sha": "fe10e8cbcb6914c2b5cfa072d6ce8d9271f52a9c",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.40.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.40.tgz",
+			"sha": "c7a752009df4bb0f77179027daa0783f9a036b0b",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.41.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.41.tgz",
+			"sha": "bc5f1e1d7eb1c0a763cc912834f8cbaf4a12b31b",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.42.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.42.tgz",
+			"sha": "3b9fdb2e36f9f16b011a2ddc4ebb610e3dc9edfb",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.43.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.43.tgz",
+			"sha": "9c367f9b6cd8fb0453dd19a556fa4ff6c2ddcf57",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.44.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.44.tgz",
+			"sha": "5410fcf6a9eeba3cc8e25bf0f72b43358336b534",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.45.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.45.tgz",
+			"sha": "052b70994099c736ce05369d41152c591a7cfeb0",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.46.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.46.tgz",
+			"sha": "00c856feda2ee756c4cc6ef8c97d17d070acebf7",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.47.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.47.tgz",
+			"sha": "7aff9cbe7b26fd94d7a9f97fa90135ef20c93fb6",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.48.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.48.tgz",
+			"sha": "5eb5e71bc660293abbb4b9751e3e02d88319e785",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.49.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.49.tgz",
+			"sha": "5342471d2e6a3337332ea246b46c0bddf5fc544d",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.50.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.50.tgz",
+			"sha": "0ce5b8bc96937c2e26f96b533d9f0fc85730a587",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.51.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.51.tgz",
+			"sha": "043f31fb6327664a32d8ba65de15799efdc65da0",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.52.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.52.tgz",
+			"sha": "08b1b664a7769b685c3ece2f3eab01832f272019",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.53.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.53.tgz",
+			"sha": "5dc2ec31bf1e98066acdf0c4887b7744c14bec6e",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.54.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.54.tgz",
+			"sha": "b15781d2e499ce25438e73fea2fa5a09858568ff",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.55.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.55.tgz",
+			"sha": "fa260266943f7a1e144ef9783d9a07e987755022",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-beta.56.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.56.tgz",
+			"sha": "99b405dee3fb466c09c1e0874e795f4682ee690d",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-rc.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.0.tgz",
+			"sha": "871b93a4339d301080d6c0362471ff5828539b20",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-rc.1.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.1.tgz",
+			"sha": "1d73cbceb4b4adca4cdad5f8f84a5c517fc0e06d",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-rc.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.2.tgz",
+			"sha": "900550c5fcd76e42a6f72b0e8661e82d6e36ceb5",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-rc.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.3.tgz",
+			"sha": "4bc40e0ab871169e72a847a1d031fef8c34f3fb8",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0-rc.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-rc.4.tgz",
+			"sha": "a989681c85eefb03272bc381456175e368d32cd7",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.0.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0.tgz",
+			"sha": "9e65ca401747dde99e344baea90ab50dccb4c468",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.1.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.1.0.tgz",
+			"sha": "ab3f8a564361800cbc8ab1ca6f21108038432249",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.2.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.2.0.tgz",
+			"sha": "374f8876075d7d21fea55aeb5c53561259163f96",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.2.2.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.2.2.tgz",
+			"sha": "6c90542f210ee975aa2aa8c8b5af7fa73a126953",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.3.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.3.3.tgz",
+			"sha": "a0532d6889c534d095e8f604e9257f91386c4b51",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.3.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.3.4.tgz",
+			"sha": "dc173cb999c6c5297e0b5f2277fdaaec3739d0cc",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.4.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.0.tgz",
+			"sha": "e3428d3c8a3d01f33b10c529b998ba1707043d4d",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.4.3.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.3.tgz",
+			"sha": "adc7a1137ab4287a555d429cc56ecde8f40c062c",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.4.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.4.4.tgz",
+			"sha": "0ce4094cdafd709721076d3b9c38ad31ca715eb6",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.5.5.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.5.5.tgz",
+			"sha": "d094299d9bd680a14a2a0edae38305ad60fb4de9",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.7.0.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.7.0.tgz",
+			"sha": "b411ecc1b8822d24b81e5d184f24149136eddd4a",
+			"registry": "npmjs"
+		},
+		"plugin-transform-classes-7.7.4.tgz": {
+			"url": "https://registry.npmjs.org/@babel/plugin-transform-classes/-/plugin-transform-classes-7.7.4.tgz",
+			"sha": "c92c14be0a1399e15df72667067a8f510c9400ec",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-fc8f7db773d4a6af",
+	"_id": "@babel/plugin-transform-classes",
+	"readme": "# @babel/plugin-transform-classes\n\n> Compile ES2015 classes to ES5\n\nSee our website [@babel/plugin-transform-classes](https://babeljs.io/docs/en/next/babel-plugin-transform-classes.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-classes\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-classes --dev\n```"
+}

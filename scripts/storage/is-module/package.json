@@ -1,0 +1,80 @@
+{
+	"name": "is-module",
+	"versions": {
+		"1.0.0": {
+			"name": "is-module",
+			"description": "check if a source string is an es6 module",
+			"keywords": [
+				"es6",
+				"module",
+				"modules"
+			],
+			"version": "1.0.0",
+			"author": {
+				"name": "Jonathan Ong",
+				"email": "me@jongleberry.com",
+				"url": "http://jongleberry.com"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "git://github.com/component/is-module"
+			},
+			"devDependencies": {
+				"mocha": "*"
+			},
+			"scripts": {
+				"test": "mocha --reporter spec --bail"
+			},
+			"bugs": {
+				"url": "https://github.com/component/is-module/issues"
+			},
+			"homepage": "https://github.com/component/is-module",
+			"_id": "is-module@1.0.0",
+			"dist": {
+				"shasum": "3258fb69f78c14d5b815d664336b4cffb6441591",
+				"tarball": "https://registry.npmjs.org/is-module/-/is-module-1.0.0.tgz"
+			},
+			"_from": ".",
+			"_npmVersion": "1.4.6",
+			"_npmUser": {
+				"name": "jongleberry",
+				"email": "jonathanrichardong@gmail.com"
+			},
+			"maintainers": [
+				{
+					"name": "jongleberry",
+					"email": "jonathanrichardong@gmail.com"
+				}
+			],
+			"directories": {},
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-11-22T08:31:15.461Z",
+		"created": "2014-04-01T00:58:29.191Z",
+		"1.0.0": "2014-04-01T00:58:29.191Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"78ac3d020cc999d0d0073b90d24e3379\"",
+			"fetched": 1577117298015
+		}
+	},
+	"_distfiles": {
+		"is-module-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/is-module/-/is-module-1.0.0.tgz",
+			"sha": "3258fb69f78c14d5b815d664336b4cffb6441591",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "1-a9f04e447a84b35d",
+	"_id": "is-module",
+	"readme": "# Is Module\n\nCheck whether a source string looks like an ES6 module.\nThis doesn't actually execute the code,\nand doesn't check other module types.\nSo source strings without any module loaders returns `false`.\n\nThis is just what I need from https://github.com/yahoo/js-module-formats, which actually executes the sauce string in a subcontext.\n\n## API\n\n```js\nvar isES6Module = require('is-module');\n\nconsole.log(isES6Module('import * from \"emitter\";')) // => true\n```\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2014 segmentio &lt;team@segment.io&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+}

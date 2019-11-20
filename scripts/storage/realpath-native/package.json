@@ -1,0 +1,504 @@
+{
+	"name": "realpath-native",
+	"versions": {
+		"1.0.0": {
+			"name": "realpath-native",
+			"version": "1.0.0",
+			"main": "index.js",
+			"files": [
+				"index.js"
+			],
+			"description": "Use the system's native `realpath`",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SimenB/realpath-native.git"
+			},
+			"author": {
+				"name": "Simen Bekkhus",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"license": "MIT",
+			"keywords": [
+				"realpath"
+			],
+			"engines": {
+				"node": ">=4"
+			},
+			"scripts": {
+				"lint": "eslint .",
+				"test": "eslint ."
+			},
+			"dependencies": {
+				"util.promisify": "^1.0.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^5.2.5",
+				"@commitlint/config-conventional": "^5.2.3",
+				"eslint": "^4.13.1",
+				"eslint-config-simenb-base": "^14.0.0",
+				"eslint-config-simenb-node": "^0.4.11",
+				"husky": "^0.14.3",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.9.2",
+				"semantic-release": "11.0.1"
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"proseWrap": "always",
+				"singleQuote": true,
+				"trailingComma": "es5"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				],
+				"*.{md,json}": [
+					"prettier --write",
+					"git add"
+				]
+			},
+			"gitHead": "6cdcb865f899a1ecd09e2f49ec4c9e0d35b9317a",
+			"bugs": {
+				"url": "https://github.com/SimenB/realpath-native/issues"
+			},
+			"homepage": "https://github.com/SimenB/realpath-native#readme",
+			"_id": "realpath-native@1.0.0",
+			"_npmVersion": "5.5.1",
+			"_nodeVersion": "8.9.3",
+			"_npmUser": {
+				"name": "simenb",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-XJtlRJ9jf0E1H1SLeJyQ9PGzQD7S65h1pRXEcAeK48doKOnKxcgPeNohJvD5u/2sI9J1oke6E8bZHS/fmW1UiQ==",
+				"shasum": "7885721a83b43bd5327609f0ddecb2482305fdf0",
+				"tarball": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.0.tgz"
+			},
+			"maintainers": [
+				{
+					"name": "simenb",
+					"email": "sbekkhus91@gmail.com"
+				}
+			],
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/realpath-native-1.0.0.tgz_1513507613868_0.4931398299522698"
+			},
+			"directories": {},
+			"contributors": []
+		},
+		"0.0.0": {
+			"name": "realpath-native",
+			"version": "0.0.0",
+			"main": "index.js",
+			"files": [
+				"index.js"
+			],
+			"description": "Use the system's native `realpath`",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/SimenB/realpath-native.git"
+			},
+			"author": {
+				"name": "Simen Bekkhus",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"license": "MIT",
+			"keywords": [
+				"realpath"
+			],
+			"engines": {
+				"node": ">=4"
+			},
+			"scripts": {
+				"lint": "eslint .",
+				"test": "eslint ."
+			},
+			"dependencies": {
+				"util.promisify": "^1.0.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.0.2",
+				"@commitlint/config-conventional": "^6.0.2",
+				"eslint": "^4.13.1",
+				"eslint-config-simenb-base": "^14.0.0",
+				"eslint-config-simenb-node": "^0.4.11",
+				"husky": "^0.14.3",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.9.2"
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"proseWrap": "always",
+				"singleQuote": true,
+				"trailingComma": "es5"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				],
+				"*.{md,json}": [
+					"prettier --write",
+					"git add"
+				]
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2017 Simen Bekkhus\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "realpath-native@0.0.0",
+			"dist": {
+				"shasum": "68af5777f9e690db822834cdba1a3325184ffae9",
+				"tarball": "https://registry.npmjs.org/realpath-native/-/realpath-native-0.0.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 4502
+			},
+			"maintainers": [
+				{
+					"name": "simenb",
+					"email": "sbekkhus91@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "simenb",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/realpath-native_0.0.0_1530723180955_0.005711975050382678"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.1": {
+			"name": "realpath-native",
+			"version": "1.0.1",
+			"main": "index.js",
+			"files": [
+				"index.js"
+			],
+			"description": "Use the system's native `realpath`",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SimenB/realpath-native.git"
+			},
+			"author": {
+				"name": "Simen Bekkhus",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"license": "MIT",
+			"keywords": [
+				"realpath"
+			],
+			"engines": {
+				"node": ">=4"
+			},
+			"scripts": {
+				"lint": "eslint .",
+				"test": "eslint ."
+			},
+			"dependencies": {
+				"util.promisify": "^1.0.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.0.2",
+				"@commitlint/config-conventional": "^6.0.2",
+				"eslint": "^4.13.1",
+				"eslint-config-simenb-base": "^14.0.0",
+				"eslint-config-simenb-node": "^0.4.11",
+				"husky": "^0.14.3",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.9.2"
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"proseWrap": "always",
+				"singleQuote": true,
+				"trailingComma": "es5"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				],
+				"*.{md,json}": [
+					"prettier --write",
+					"git add"
+				]
+			},
+			"gitHead": "415f09537a38051fbce0af4bba411d1d3aeafd37",
+			"bugs": {
+				"url": "https://github.com/SimenB/realpath-native/issues"
+			},
+			"homepage": "https://github.com/SimenB/realpath-native#readme",
+			"_id": "realpath-native@1.0.1",
+			"_npmVersion": "5.7.1",
+			"_nodeVersion": "8.11.1",
+			"_npmUser": {
+				"name": "simenb",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-W14EcXuqUvKP8dkWkD7B95iMy77lpMnlFXbbk409bQtNCbeu0kvRE5reo+yIZ3JXxg6frbGsz2DLQ39lrCB40g==",
+				"shasum": "07f40a0cce8f8261e2e8b7ebebf5c95965d7b633",
+				"tarball": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.1.tgz",
+				"fileCount": 4,
+				"unpackedSize": 4502,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbPPunCRA9TVsSAnZWagAAQ7MP/1ZkddeNSTgmIKR3WRVj\nmZi7sRPFDhZ16hesAmUJq7eNEP0ivSMEDu7zYKTmHjv6xX82Cd9HzHCrfjJo\nyQWvf9ue65iOn7cK4f1m8CCFMCyZN5B3CmQNOnc83hqCSDiEmLptNpsTqeX5\nFTE8yMmxmH40eglGSCnj9/FW8dUcA1ImiwxKBPA/kZD8XWMseELkyapaUV6t\nS2WHyr26MiNXsjuB0y6iu7fbXJ7mS7FoSI2cKso4zKBFANBEiARoCVjratuj\nFGUPb9MYU4qB0Gh3PYFzbdJ0oSL7Lt4jtfDa4ITnTubkDI1D+a9OLvMSeUVs\nyCMUWDJnnUOEYU0OOwo2HgLjugO7hCLi0bL7/n5bIgOT/6uD2Mh+oFUWDSW4\nRabHP0/6jiXgrivvMeKKKIwms1ke2js3ekLydDiCqDehr6TU2707RR0NdGPS\n1BTsJErAioT/Jc48W2cbSRXbDABim8Pw6URZs0kEEF7Mh2sr88YysUUC/kYV\nWzoMMlUXPAm/8KbpILJnkxFZiUyWasTIEdZyZzF3n3FhkGjk7qCDImv0HSeb\nZR/bdhjJsC2hN4ZTVJgx9HRZ3ib7hjkf5sxFEM/xAxE9G80i2+Ad/MLQXfBs\nRQtH/JuT0YAc+Wh9NMvfLtBJvUAmtcblmMrOm0mVQgsx+NDyZ+GLS8OZrca3\ne3F+\r\n=etA8\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "simenb",
+					"email": "sbekkhus91@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/realpath-native_1.0.1_1530723239668_0.3046671029701813"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.0.2": {
+			"name": "realpath-native",
+			"version": "1.0.2",
+			"main": "index.js",
+			"description": "Use the system's native `realpath`",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/SimenB/realpath-native.git"
+			},
+			"author": {
+				"name": "Simen Bekkhus",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"license": "MIT",
+			"keywords": [
+				"realpath"
+			],
+			"engines": {
+				"node": ">=4"
+			},
+			"scripts": {
+				"lint": "eslint .",
+				"test": "eslint ."
+			},
+			"dependencies": {
+				"util.promisify": "^1.0.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.0.2",
+				"@commitlint/config-conventional": "^6.0.2",
+				"eslint": "^4.13.1",
+				"eslint-config-simenb-base": "^14.0.0",
+				"eslint-config-simenb-node": "^0.4.11",
+				"husky": "^0.14.3",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.9.2"
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"proseWrap": "always",
+				"singleQuote": true,
+				"trailingComma": "es5"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				],
+				"*.{md,json}": [
+					"prettier --write",
+					"git add"
+				]
+			},
+			"licenseText": "MIT License\n\nCopyright (c) 2017 Simen Bekkhus\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "realpath-native@1.0.2",
+			"dist": {
+				"shasum": "cd51ce089b513b45cf9b1516c82989b51ccc6560",
+				"tarball": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.2.tgz",
+				"integrity": "sha512-+S3zTvVt9yTntFrBpm7TQmQ3tzpCrnA1a/y+3cUHAc9ZR6aIjG0WNLR+Rj79QpJktY+VeW/TQtFlQ1bzsehI8g==",
+				"fileCount": 5,
+				"unpackedSize": 4570,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbj8NBCRA9TVsSAnZWagAAbA4P+gJNHuDfZULB1B9y13l3\nQCadlSP1UZFzmHJylYc+lhXAqgQltLYIYoCEJkGlaz0jFkeVFUw4P5uA0sKM\na9UBfKYLJkHDZ1beJh4WaAN4IVLqdhgv79YVRI49cTbyhe5tf55uXv0/Blxi\ntUBe4x6Qjb2eLNRsBisnZdYPKjI2bKWpKPM5+0/xQGI5P8hRTdmGxY05PG1K\nsRkOuWANU6N58EO8a5ZIryzqB6RlXtRRx3qG/QalP39nOQmlPNxQ85HGFp8B\n8GblBnc2e8H2Rc1tT57K5xv5csAn2Lcs0JF+PkyUWBJs1FgJO7LTR+iP+nOl\nY7WFywfd43ga7LCbmdsQah0e+QY3FeoDBTjE1senCwsDlG2SEMBeJReznaIX\nQYaYKOXz4/VToqBplnm8/KUevhXmBcG+/eyjJHgYVePCu5ZzbkJRIQxx9yQt\nb3akA26ify2a10CSvatmRcBkW4yVzWyoDmT/LnjhfbdpNzxHZ62qOk3aU9MT\nz/bWoZaskXqil1Bc3tD94ybeb8FmU4sImkLhK+m+QshzXYDIJwkXkPniwM1A\nEfOx6gQj+6xTQGOBsYAfh/NyAG0NFrJSmqDrFBZ0y6FDaeTMOTVFzx/svZZI\n2jYz0bEXF4giosQkQJkjbXiGDIok1BIiPl1V0GEvh18FmVqNFDIPFiDj53hh\nE9U6\r\n=IMDF\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "simenb",
+					"email": "sbekkhus91@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "simenb",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/realpath-native_1.0.2_1536148280433_0.5897226903623491"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"1.1.0": {
+			"name": "realpath-native",
+			"version": "1.1.0",
+			"main": "index.js",
+			"types": "index.d.ts",
+			"description": "Use the system's native `realpath`",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/SimenB/realpath-native.git"
+			},
+			"author": {
+				"name": "Simen Bekkhus",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"license": "MIT",
+			"keywords": [
+				"realpath"
+			],
+			"engines": {
+				"node": ">=4"
+			},
+			"scripts": {
+				"lint": "eslint .",
+				"test": "eslint . && ava"
+			},
+			"dependencies": {
+				"util.promisify": "^1.0.0"
+			},
+			"devDependencies": {
+				"@commitlint/cli": "^6.0.2",
+				"@commitlint/config-conventional": "^6.0.2",
+				"ava": "^0.25.0",
+				"eslint": "^4.13.1",
+				"eslint-config-simenb-base": "^14.0.0",
+				"eslint-config-simenb-node": "^0.4.11",
+				"husky": "^0.14.3",
+				"lint-staged": "^6.0.0",
+				"prettier": "^1.16.4"
+			},
+			"commitlint": {
+				"extends": [
+					"@commitlint/config-conventional"
+				]
+			},
+			"prettier": {
+				"proseWrap": "always",
+				"singleQuote": true,
+				"trailingComma": "es5"
+			},
+			"lint-staged": {
+				"*.js": [
+					"eslint --fix",
+					"git add"
+				],
+				"*.{md,json,ts}": [
+					"prettier --write",
+					"git add"
+				]
+			},
+			"gitHead": "7808c3d3d1d20b2314cc7bee788fc727f9f2f080",
+			"bugs": {
+				"url": "https://github.com/SimenB/realpath-native/issues"
+			},
+			"homepage": "https://github.com/SimenB/realpath-native#readme",
+			"_id": "realpath-native@1.1.0",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "10.15.1",
+			"_npmUser": {
+				"name": "simenb",
+				"email": "sbekkhus91@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-wlgPA6cCIIg9gKz0fgAPjnzh4yR/LnXovwuo9hvyGvx3h8nX4+/iLZplfUWasXpqD8BdnGnP5njOFjkUwPzvjA==",
+				"shasum": "2003294fea23fb0672f2476ebe22fcf498a2d65c",
+				"tarball": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.1.0.tgz",
+				"fileCount": 5,
+				"unpackedSize": 4839,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcYsrgCRA9TVsSAnZWagAAbqkP/1Ik5P8UzDHMauzqvqVX\nhvQPfgYFQdMC6UTeLPK8AydpSkreAsoP8EmNCRZOGwp7LdRghNOVNmQCoxhX\nd0+7Gr7zR+UbO4Cs5t1K7aRhFTGSj6Y3lByLlLESRQ/IE+9OZmYZ3ME55Iof\nDtkfVjH2y2mM3/uuzSy7vPAogl3fcQsYyI3VQZbY4lno/YiTy7NBSEJVtY/K\nCfXIAI9TCAWNO+lRvFGuPUAHjRZjFIlprk3UEJ+WWZm9Ckx7x0jLYAa7+Efm\nWs4hyPdKILX2UiE1HQb/r5mEO1raOlYyrxodNwa5PFUhRzkgvesBPKk1hs7k\nA9IXDMqBZRcqz7/Sc+O67CCyts9Z7uyhwaelO2/p8BQq49rwvqGtRKJ0DPsV\nYtkfOhP8U4ysLYidnZ3Wuy/ABL8IjMZg5+FQPQZV/KpTAwikVHTMODJ6YsBg\nDhrkrolMntetFp096RXV+YaJVNh02hi1HelnsXurT8zwW8wzErSm2reVBrlW\nHX/RuTnJK7ETNQQg6zUGTTwnriVNdXT/6cWd21eKn180H8MbXCHutAOZOVIB\nIezfq6AfqGOWeIQ9Yt7/fiGCIYaWnZXgVaDQ42oSjWSsU1e6MqWDz4WnfsAx\n8vj9QRFqUbotdw5imlp7VLbGxRn1pV32L5JdySYJhkGirt9MWz5lc9v81qxV\ntaCF\r\n=xzGK\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "simenb",
+					"email": "sbekkhus91@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/realpath-native_1.1.0_1549978335744_0.5993735341274131"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"modified": "2019-02-12T13:32:18.353Z",
+		"created": "2017-12-17T10:46:54.783Z",
+		"1.0.0": "2017-12-17T10:46:54.783Z",
+		"0.0.0": "2018-07-04T16:53:01.024Z",
+		"1.0.1": "2018-07-04T16:53:59.738Z",
+		"1.0.2": "2018-09-05T11:51:28.507Z",
+		"1.1.0": "2019-02-12T13:32:15.869Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"latest": "1.1.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"2689646a7fd32b14a196401134c4de2c\"",
+			"fetched": 1577117291800
+		}
+	},
+	"_distfiles": {
+		"realpath-native-1.0.0.tgz": {
+			"url": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.0.tgz",
+			"sha": "7885721a83b43bd5327609f0ddecb2482305fdf0",
+			"registry": "npmjs"
+		},
+		"realpath-native-0.0.0.tgz": {
+			"url": "https://registry.npmjs.org/realpath-native/-/realpath-native-0.0.0.tgz",
+			"sha": "68af5777f9e690db822834cdba1a3325184ffae9",
+			"registry": "npmjs"
+		},
+		"realpath-native-1.0.1.tgz": {
+			"url": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.1.tgz",
+			"sha": "07f40a0cce8f8261e2e8b7ebebf5c95965d7b633",
+			"registry": "npmjs"
+		},
+		"realpath-native-1.0.2.tgz": {
+			"url": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.0.2.tgz",
+			"sha": "cd51ce089b513b45cf9b1516c82989b51ccc6560",
+			"registry": "npmjs"
+		},
+		"realpath-native-1.1.0.tgz": {
+			"url": "https://registry.npmjs.org/realpath-native/-/realpath-native-1.1.0.tgz",
+			"sha": "2003294fea23fb0672f2476ebe22fcf498a2d65c",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-65c15abb619aab19",
+	"_id": "realpath-native",
+	"readme": "# realpath-native\n\n> Use the system's native `realpath`\n\n[![NPM Version][npm-image]][npm-url]\n[![Linux & Mac Build Status][travis-image]][travis-url]\n\n[![Greenkeeper Dependency Status][greenkeeper-image]][greenkeeper-url]\n\nNode 9.3 added `fs.realpath(Sync).native`. On older Nodes you have to use\n`process.binding` to access the same function. This module does that check for\nyou.\n\nThe advantage of the native `realpath` over `fs.realpath` is that the native one\nbetter supports paths on Windows.\n\nOn node 4 the function uses the old `fs.realpath` function.\n\n## Install\n\nInstall the module with `npm`:\n\n```sh\n$ npm install realpath-native\n```\n\n## Usage\n\n```js\nconst realpath = require('realpath-native');\n\nrealpath('some-path'); // returns a promise\n\nrealpath.sync('some-path');\n```\n\n## API\n\n### realpath(path)\n\nReturns a promise for the resolved path of the input.\n\n#### path\n\nType: `string`\n\n### realpath.sync(path)\n\nReturns the resolved path of the input synchronously.\n\n#### path\n\nType: `string`\n\n[npm-url]: https://npmjs.org/package/realpath-native\n[npm-image]: https://img.shields.io/npm/v/realpath-native.svg\n[travis-url]: https://travis-ci.org/SimenB/realpath-native\n[travis-image]: https://img.shields.io/travis/SimenB/realpath-native/master.svg\n[greenkeeper-url]: https://greenkeeper.io/\n[greenkeeper-image]: https://badges.greenkeeper.io/SimenB/realpath-native.svg"
+}

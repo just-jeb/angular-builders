@@ -36,11 +36,11 @@
   },
   "builders": "builders.json",
   "dependencies": {
+    "@angular-devkit/architect": "^0.900.0-rc.2",
+    "@angular-devkit/build-angular": "^0.900.0-rc.2",
+    "@angular-devkit/core": "^9.0.0-rc.2",
     "lodash": "^4.17.10",
     "ts-node": "^8.5.2",
     "webpack-merge": "^4.2.1"
-  },
-  "peerDependencies": {
-    "@angular-devkit/build-angular": ">=0.801.0"
   }
 }

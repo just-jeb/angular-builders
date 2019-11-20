@@ -1,0 +1,1259 @@
+{
+	"name": "@jest/reporters",
+	"versions": {
+		"24.2.0-alpha.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.2.0-alpha.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.2.0-alpha.0",
+				"@jest/test-result": "^24.2.0-alpha.0",
+				"@jest/transform": "^24.2.0-alpha.0",
+				"@jest/types": "^24.2.0-alpha.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.2.0-alpha.0",
+				"jest-resolve": "^24.2.0-alpha.0",
+				"jest-runtime": "^24.2.0-alpha.0",
+				"jest-util": "^24.2.0-alpha.0",
+				"jest-worker": "^24.2.0-alpha.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800f2f803d01c8ae194d71b251e4965dd70e5bf2",
+			"_id": "@jest/reporters@24.2.0-alpha.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-2SNlstM4ResT2Rz7HQ04x+NHCzAZTrzik4go1YFYB5r3Wa2M8p6k59sslfyUf5KhDrFizpgbtVyyu1RtUq+hZw==",
+				"shasum": "5ca66150507dfaf4e5336252828d72333ee8560b",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.2.0-alpha.0.tgz",
+				"fileCount": 50,
+				"unpackedSize": 97061,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfo94CRA9TVsSAnZWagAA9pUP/1YRE4aZPC6FvyU5Hsdr\nq7403j9qTISYMNMadrftmy/d9eXqXeMK4wAuBn1gVJSL805evaViyz4ddDC4\nZkNzWHIdHGdhTTzgVMfCBLLwHKER3E4Qvj17ZOjTTICIwAgqq26XwJeYTgdI\nZ59aXN8/uOAxI9HIFjev+cX9QXTXCkMEcu1iiaD5rI+aUFlpV5/xBSC59H5S\n0a4994CFOL3UFACdHvJrnRa+wNdFDnYYdD7THXnjmpilRhLgIQY7B8d1Gek4\nOMGovPabtJKaA68PEgl5ZR6V1I2GLpcTI0EuFvbe+XHGL6KbhRhxqjGTEzy3\nLq9yI1Y/N+O4Vymn8LBe+3squzoGXvT1qIgPZ9YFuK4K2079ZLAWvbR1RHwi\n8dRJAMaJ0SiqakcrYF7lOKL2Mepik+k1mkxqtKHNCp+6ss9xfMh98O8+y+3R\nxxyy4NBneD3uZ725p3LcpCeZoTR7x0vxDIjAd3nNtkgd0gnA3HhkOfAfmX1K\nKZuu8T6UygFRfeEIf+JLghKqSrR+DjXbF/myP98IhYWefvfWxP0hG467rovD\nqz+9n10loAtZ628gmAZG5WwZ/WUuposAdCZhJ6zxdVQDFxtqNU/As71osTrK\nICQBi0Q1ymO0TWgEWKUCCfD6xMx6ijZ/HUu8d83OVt2bPAkqu/b7pwfaJULd\nA4C7\r\n=QhDI\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.2.0-alpha.0_1551798136198_0.49935800386764817"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.3.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.3.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.3.0",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.3.0",
+				"@jest/types": "^24.3.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.3.0",
+				"jest-resolve": "^24.3.0",
+				"jest-runtime": "^24.3.0",
+				"jest-util": "^24.3.0",
+				"jest-worker": "^24.3.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "3a7a4f3a3f5489ac8e07dcddf76bb949c482ec87",
+			"_id": "@jest/reporters@24.3.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-/Gwdcej9x4QuhFIWTKyiiMLAMzfCtIIvuk2AnreqmuxLRAyUbkR5BoUoPvwowKVyZn20ZdCG5Qf7/KaoHhCG8Q==",
+				"shasum": "beaa8b7d0148db8438a12102daf4d36268a150f5",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.3.0.tgz",
+				"fileCount": 50,
+				"unpackedSize": 96981,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgRb9CRA9TVsSAnZWagAA0BwP/ihSDKIf3cJQatU9mV4d\nFxcukg21NQXxc47nlj/Qp+qi0NF8r6DxlE8ndTcpmuY0IvHHrPmtq5p7uGpy\nASgSpkDu5JPS/sQivT2Rgcp94ljE1Dy3+sCPcK0GawGcZoLke3e84PcG9INH\nuFtKhmRg2oCmaTYKraraOBr451mlTrtx1Hyy5uRDHzWiDGyS1ck3iEigsfJg\nFr2W3A/MCfddQqo7RxPRFutx3QJYJNWQHIt7LTA4EMNhJGaIZKs26+Wx4QN6\n86woVok/KCDws/f+IHO1BdiAmSQx62WM8Yxd+SShd9HxhSGvgtmUj0O/sPqH\nvTtdcDcKkEmkwckF98Abnuz7PuvaI3PVz4DMc+Z7gy6ZzuckQlpcUnaDP/Ek\ndq0YJsjhsAybZGeRr85WaRMnz+kDUcGQX7AknMjEA2eFDLS99wGVmPphzP3a\nqaYczqfyledHiHhr6MqnrzF9YR9WglhRtQN/SKAGlKeOrY+Xiq/RO1aGwkMk\nPEYHXppgUOgy7a34AiICla14FvWkAcEacZMLmG7Q88m0xeuiYBt8nncFYnd3\n/3ztESBFPzjJxn935vdtaOWYAE9NwafuM6CnwVAJ8B6EyVq194D7HSyXiD2b\n2YAhKMkLjynKuvh82xX6tkla3/tSIs+k2Ckq2J8Yje0PdriBY6HRfSqNDAoS\nHk3U\r\n=uBFp\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.3.0_1551963900763_0.9923197647772959"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.3.1": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.3.1",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.3.1",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.3.1",
+				"@jest/types": "^24.3.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.3.1",
+				"jest-resolve": "^24.3.1",
+				"jest-runtime": "^24.3.1",
+				"jest-util": "^24.3.0",
+				"jest-worker": "^24.3.1",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "65c6e9d5e398711c011078bb72648c77fc8a8cb3",
+			"_id": "@jest/reporters@24.3.1",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-jEIDJcvk20ReUW1Iqb+prlAcFV+kfFhQ/01poCq8X9As7/l/2y1GqVwJ3+6SaPTZuCXh0d0LVDy86zDAa8zlVA==",
+				"shasum": "68e4abc8d4233acd0dd87287f3bd270d81066248",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.3.1.tgz",
+				"fileCount": 51,
+				"unpackedSize": 98080,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgaWNCRA9TVsSAnZWagAAB08P/1dH8k/rdfsFqlKgervC\njB5yucwRHXDFcpg/quMxZS1xJbEO7CWrnplJ9m+CbKbb5sGnd9A/kjCOo+th\n167k5ku9V5lk5LTgyPiOUM3iN1O9YGicSNFrWYL79wmz4AnAaBM6cju6bWev\nDJOc8dXNtUEFlRhQc5RMDo6i84UqWiv4jVlnKMIbfbS7RTkyqVmWO4tNrYKA\nTs1ST1Bt/tzBvsx5RpZrG7gsuFPlG6d5b3Wa1BJMwweMHxcLcRQ/T+F34O0/\nZ5pDelkoJjYFaZb6Kbnu3xQeeGevvxY8IfFV7kXSfF7yqw6NgWELta3Twcs6\nb/J5YmRAN5f1N9EkwO584wUUf5zS180UyGy/w7Ggjypx7YRXZBZXIODFUR1m\nuY8UBujVZ4hF5BGR/uLLpBJxLvWFehCJQOCy0OnPJ3Szo+BzmWfHJ21nmzGk\nRULwhcrCL92Gem4nXI8jr+uNroHCyxG35EZSj1zdLs1l4pz+chUeeGaFWz5+\nFR2C7SYJQcsOLwwHSUFEcFGKInoRTxoHrKDTjIV8qJvvs3wiq46nnPlQwa/U\n2DEsMWu0e3Uaf1aXWIxvbqpLHsbBkoub+DeeOklt5xy8Kz3tIWhJPnZnqWys\nm0GYss2C3Rs1rd7Q5kBGLItI8qIieJOamJ4y74H/+RiGwvrzr7InYcXD+Lg0\nYSe9\r\n=joFh\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.3.1_1552000396397_0.42163829725570756"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.4.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.4.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.4.0",
+				"@jest/test-result": "^24.3.0",
+				"@jest/transform": "^24.4.0",
+				"@jest/types": "^24.3.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.4.0",
+				"jest-resolve": "^24.4.0",
+				"jest-runtime": "^24.4.0",
+				"jest-util": "^24.3.0",
+				"jest-worker": "^24.4.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "a018000fc162db3cfd0ebf9f23fdb734f05821a6",
+			"_id": "@jest/reporters@24.4.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-teO0to16UaYJTLWXCWCa1kBPx/PY4dw2/8I2LPIzk5mNN5km8jyx5jz8D1Yy0nqascVtbpG4+VnSt7E16cnrcw==",
+				"shasum": "e1e6ca29593f36088db76a380f04e93e71f09607",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.4.0.tgz",
+				"fileCount": 51,
+				"unpackedSize": 110468,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchnehCRA9TVsSAnZWagAAYGoQAIrIKPfRakGNkihMHQJG\nhWx8exg7IoLJlskGUFu/hn3R/9UjfPwoNmeMnJd48skdP24iQHX8vzAT9S76\nd8dlTZSpiXsUp9utjOcYDL8U84ZYKlOwCeEOLkLeOFbH5QzcN7Ki6DIQo/a8\n2tKckEy+Vjjx7+bKomSSHO5akFCduUha5NeaUNbuPgo1rkyTmNRlZhyr/J4G\nU5juNAmRK+6ItBXZYCG/v8POWJe89hRfdhQ2TWHj9cOnuAxplUJpn/IBI9jt\najPYTkHB27SOJCG7jw+haSJMM7nTcmbEwZAv1qDe23bQ1+m/ks+5NsI2Enr8\nuashGQH3iRVBy3hLzf5qX8BS/AxI4A4U/bVrp87CBWSWEMn6YkzLBkPJtGMz\njUpYrcJlaC8fgDcidvI83wpo55csyaw0uSiQaPyJMzcBIGRYDaHo/I4U47iP\n5qNChUYGdzYwuOIOWNYQS1g1np1eKlWLYxSqWHKcXP0FgY/s9FAorcVQjj3X\nTlIvqQbRXo+aKqCmCtD8daRw4dPV8Rc7rhA7MPOdE7Lw2A19xM7BMPl996ro\n3S2RP2UnwK1cMR/X2nrxC5fH+ic67EjROHQ7/QebWp1xn90vnLzPiyg1MMgU\nBdINTa1et66sH9xyd445QKGmP+VkIUfxQ+K3uOlovz1gAxTDLdlVPUowWrJL\nPKx0\r\n=NRWX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.4.0_1552316321284_0.2218529896125334"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.5.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.5.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.5.0",
+				"@jest/test-result": "^24.5.0",
+				"@jest/transform": "^24.5.0",
+				"@jest/types": "^24.5.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.5.0",
+				"jest-resolve": "^24.5.0",
+				"jest-runtime": "^24.5.0",
+				"jest-util": "^24.5.0",
+				"jest-worker": "^24.4.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "800533020f5b2f153615c821ed7cb12fd868fa6f",
+			"_id": "@jest/reporters@24.5.0",
+			"_npmVersion": "5.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"dist": {
+				"integrity": "sha512-vfpceiaKtGgnuC3ss5czWOihKOUSyjJA4M4udm6nH8xgqsuQYcyDCi4nMMcBKsHXWgz9/V5G7iisnZGfOh1w6Q==",
+				"shasum": "9363a210d0daa74696886d9cb294eb8b3ad9b4d9",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.5.0.tgz",
+				"fileCount": 50,
+				"unpackedSize": 109369,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch+L+CRA9TVsSAnZWagAAnboP/0FODhFmqLpX3cwYe0BA\nEdRXF35on3TTZY+DecSPILOiXUKSWdDHeDi3yqMuBrFLGkaSG5X8uxvn1nSg\nIRhqzEyoOq6Hk2fRoi2XVwt1tVTS+nCNdDWVlhTvfYm3A5Ce7rJp+7E3vIfS\nnwAQYv6Jc+EKMnRSLkO5bLpjItyFjxKjKV64g/jJ5V9gbv4N0GLyjuB8DRzs\nY9aiV9m0PPlSdUfv9ub+WpWYERixDgg0EEWXGmYf3ry5oV3yHJLLO6ZbljjL\nhkLY6qs9l/bOZ+jJQPv8RFxQzfAHU00N2TvNj/k5JDWrsXBYpLcKIAkLHuEs\nyacA5bLmnjmzsuUZZSEPpiFP5SHXHe2D9ITp36YsdFcXV7lscT0vbV/VAJle\nngZNnhYJEXBVg72j2V9g3P+zeumvitZAO8LTtehjRgy+r+KPxm0uBs1jKQxb\ndhPJG/6ZVQ9kZaRu7UazdExUkuNUCRgObPaZwaeefqSw1ELq69w0f99rsa3x\nDtCd32b2wJ+1qADORfh3A42DVE7/2TNJta770hZG+ALHtLFu5/CTzfrCuX3G\ntne5y+gp7E93xlSuSRXuGl19xpQxhKBUOI08aHzf139oIx6Cv8qvdnnMPwNd\n3/IAmZRaASyq9z/VED3U+TcdFU/25MovDv9sf6PqBSPfbqtcTENxshgk2zCD\nKt+G\r\n=Pc88\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "aaronabramov",
+					"email": "aaron@abramov.io"
+				},
+				{
+					"name": "cpojer",
+					"email": "christoph.pojer@gmail.com"
+				},
+				{
+					"name": "fb",
+					"email": "opensource+npm@fb.com"
+				},
+				{
+					"name": "jeanlauliac",
+					"email": "jean@lauliac.com"
+				},
+				{
+					"name": "mjesun",
+					"email": "mjesun@hotmail.com"
+				},
+				{
+					"name": "rubennorte",
+					"email": "rubennorte@gmail.com"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.5.0_1552409341310_0.21531621896584707"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.6.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.6.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.6.0",
+				"@jest/test-result": "^24.6.0",
+				"@jest/transform": "^24.6.0",
+				"@jest/types": "^24.6.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.6.0",
+				"jest-resolve": "^24.6.0",
+				"jest-runtime": "^24.6.0",
+				"jest-util": "^24.6.0",
+				"jest-worker": "^24.6.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/node-notifier": "^5.4.0",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "04e6a66d2ba8b18bee080bb28547db74a255d2c7",
+			"_id": "@jest/reporters@24.6.0",
+			"_nodeVersion": "8.11.3",
+			"_npmVersion": "lerna/3.13.1/node@v8.11.3+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-fx20elfvGcuImjQZrNPS1fl/uj3mjuSf0vQFUoAPhQDarMzSbekLfRH8ZWt4ir1kpE36dLdFeFkeB8dhaTueIA==",
+				"shasum": "2b4d75255743cbc448ba0a4890912e1e148417b4",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.6.0.tgz",
+				"fileCount": 50,
+				"unpackedSize": 351237,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcopBICRA9TVsSAnZWagAAwfEP/3Ja4qnYv5k0MxcVfZ/Y\nm/NzUupyeO04Kp+nFg12WwreN+0OMWGXVgknYaSfz9H2fORNwc8XAYx186tL\nCIXkAnvhfGToobojT6IQyLV70w4JLP414VTPyp+3AII5J7QXJ6HXqV0NgeOl\noxTo7egBAyZcVYMf/yk2eVCBSnGA+6uSJhLgMWtrxO5jPaBMTxd577qB1krV\nwa++fitxjrw5QFDMeFijPR84ElSsk340CJitCU/VAdmI848zeC+GTVf3GZin\nBN4vHsC4H+86wx2fmPk5gApzR62/JmGV64Ce6xUEqiX//L3/3qfL0PCwN0Gi\nEW1QcF6Qo9LrZ+togsKZY9UcB8pBS08sc7HVYNhNKWcWYHR2Ns7Lv5jdQ6MJ\nM4INE2yoryT1+8nKQKF5Kt/qTqZa8UwAQySS3W7Ot2Dj3uPnUEgVD1wsnnHq\nBn4et3Y+eylQtBOH7SbekE5usiz/X6RUo/8roQzdtXoiPK6zHVLB9Fnv9FUX\n9dGYSz2vG9ybeSw8jrhuH0aksJIax/qbGj7RZA3//Jlc2prPN0Xc5WScr0oO\nQdJE3/6Rqu8dW6Ebr2egsT+sjLvE7qaKoEeZ1D5TfoPcaHZIDb9v9VbPH4rH\ne9ouwvwByLBXVtUHImb5GSCG48Ra3X89eQpZqytRcXj2t5tz5f/zcTCoq/YZ\n3gio\r\n=mqa5\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "rubennorte",
+				"email": "rubennorte@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.6.0_1554157639667_0.009245060871147626"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.7.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.7.0",
+				"@jest/test-result": "^24.7.0",
+				"@jest/transform": "^24.7.0",
+				"@jest/types": "^24.7.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.7.0",
+				"jest-resolve": "^24.7.0",
+				"jest-runtime": "^24.7.0",
+				"jest-util": "^24.7.0",
+				"jest-worker": "^24.6.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/node-notifier": "^5.4.0",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "eb0413622542bc0f70c32950d9daeeab9f6802ac",
+			"_id": "@jest/reporters@24.7.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-iOLYOXtRJEkY//aI6b95U5T1JzcRrvfKAlk7zj5ab+4w/Drko9x0PaP0eRBMRvSolzwiXaF8f1zWId397N6Vyg==",
+				"shasum": "f780e0811bd1de46ed78270eb622097387cbb442",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.7.0.tgz",
+				"fileCount": 50,
+				"unpackedSize": 325623,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpC7cCRA9TVsSAnZWagAApYIQAIEXPs/PoVeIDgedGDPO\nLCEQUJvSlz9ACkqHn9Cm/m6ZDIr13K7frBxritWpFnf46r2AT1w2rqn3Vh66\nYBV8/3N99xJxY7BmVUCHL2Lbe+oLNKvNRrnhOUX16GqgJ6W9X5tCQy4ezTl4\nDF4bndBpVi4nA14cYbzRUlJ3IaDcU7ghA2b+s4sPMUUbxC0qZ9Fs1N/Kco0Q\ntI6fRsbh7mewn0A2jRpsOzzZ2ofC5JcRSH1hecmtIxkegehEJU6yjUN/kKNQ\nfHBLDTaI9ys9N2v2ogdTYtshYwSjhBLLgcfYT1h00mPYXfl5vAc7zqoP6/52\ngc1GTfRV2U745B0S6BiLcZUC2RegRA7xeN1auZn3/0WA0GWyg6GmGjVos/tP\nGp3ICJaminn3KpOhdYyzJ/W8zoNcUCcEMv2TNvNbm+wIeDYjg+EM89xSawyU\nkSTOiVhxUtEoQfhXin88NScEPRgQZYg29Ztiuza1JjjPZEhFdvOjtSQH+uRX\nfVhAeu2DMDt4oKVVMRrb4FQAUkco4dvmrYnstpDROXk+X+3ZPXAhP8DwlsWu\nPhFMMXu6PeSCniOcxMccPK81JOprpaQLfJ1/a98kmcUBbbFxyEPHTfa6ttLH\ng7kb68Tjbj2/JApe+orAgpikfSBibU3lwsb65uNyf+h8hlBIEEbxj7mpZd6K\nNhoP\r\n=WCWe\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.7.0_1554263771904_0.44869051070643495"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.7.1": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.7.1",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.7.1",
+				"@jest/test-result": "^24.7.1",
+				"@jest/transform": "^24.7.1",
+				"@jest/types": "^24.7.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-api": "^2.1.1",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"jest-haste-map": "^24.7.1",
+				"jest-resolve": "^24.7.1",
+				"jest-runtime": "^24.7.1",
+				"jest-util": "^24.7.1",
+				"jest-worker": "^24.6.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/node-notifier": "^5.4.0",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "0efb1d7809cb96ae87a7601e7802f1dab3774280",
+			"_id": "@jest/reporters@24.7.1",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-bO+WYNwHLNhrjB9EbPL4kX/mCCG4ZhhfWmO3m4FSpbgr7N83MFejayz30kKjgqr7smLyeaRFCBQMbXpUgnhAJw==",
+				"shasum": "38ac0b096cd691bbbe3051ddc25988d42e37773a",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.7.1.tgz",
+				"fileCount": 50,
+				"unpackedSize": 325623,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpVuhCRA9TVsSAnZWagAAv8YQAJnqdxOOPn9vJPU62DdK\nDK9285Hc0cxtYYZ8vvhJmk/AConP+EABr2vM6QXuusm7xR9//n7BT1QmzRO9\nNxutqmtoauKdFwpUS81Z+e/5aXymG8t/Ill+XeY73/VmxCEf/mTPea1PCpkZ\nuyqBOTj5iHDsPYsVG7dQC95Da6OAlO8Sn/kwD6bVTVl72r5Vk++Loru10yk6\n57V9uqIhrCm8A9FkWEP4Q70PO25hfmounlOOxGf/jkAlnXpWEAJG2AdKxK4B\nQlSNA8A6dRDDyFc840anvLU2TH2vbTAFPxECmzigQXRAGR+bcbjCCCjNSHoG\nUqBQeECsgdRLegqvljpUxiIdbe1uO0Pv0auGbIQy4RmHhbna9Jy0dm22qc1u\nIlUw4NUUOXDsl887YOcpQNs9gWCKmSsisk2YWoVB5E3bGNC8JKbOLYD4N0xm\nKFiZLwkL0oqbw4mgJGXeweDExdf9+F8wS/EcwIZST4E0PEkfh3eKchC9NEra\nnCUxsDnHxSZOa4sXViLoJJN8Z9ZsKhvsyhwCZUIyUnsctI64Ry/JVP9xrgqC\nHxyPGqXyWpx1czNlqRimaPLm6K5rrgxfO4IYAT5hl5BatYQ1G2t7FuzsJf/w\nPJ5tZrHpVHjlJEMYZYjzdvsUqpdy+WiyOpfhYH7N/oso7CGcZF//Wy63f5x3\nxNeO\r\n=fvdG\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.7.1_1554340768526_0.42844508441035334"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.8.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.8.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.8.0",
+				"@jest/test-result": "^24.8.0",
+				"@jest/transform": "^24.8.0",
+				"@jest/types": "^24.8.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-report": "^2.0.4",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"istanbul-reports": "^2.1.1",
+				"jest-haste-map": "^24.8.0",
+				"jest-resolve": "^24.8.0",
+				"jest-runtime": "^24.8.0",
+				"jest-util": "^24.8.0",
+				"jest-worker": "^24.6.0",
+				"node-notifier": "^5.2.1",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-report": "^1.1.0",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/istanbul-reports": "^1.1.0",
+				"@types/node-notifier": "^5.4.0",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "845728f24b3ef41e450595c384e9b5c9fdf248a4",
+			"_id": "@jest/reporters@24.8.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.13.1/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-eZ9TyUYpyIIXfYCrw0UHUWUvE35vx5I92HGMgS93Pv7du+GHIzl+/vh8Qj9MCWFK/4TqyttVBPakWMOfZRIfxw==",
+				"shasum": "075169cd029bddec54b8f2c0fc489fd0b9e05729",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.8.0.tgz",
+				"fileCount": 49,
+				"unpackedSize": 328513,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJczkReCRA9TVsSAnZWagAA2LEP/j2zIuRVPzxBJogo6CyM\nsifNzxNtYoNpJS72Qi+OYBVdBFNyUUQd0kpGpzYJIEkAN1u6SsmJZouaI2EZ\nFIHJJ1JTOX3IWX4T8iEYVcx4ws5EoAqktO3h0BSKdXA62WndCXbBTm2D3779\nxQrxJR/WOPqtQt2sE6PTETWRJFLFU8Q4lSc0O0XE4yA4RGlkXyR0UU3gHVNB\nfmXVZ9muullasL/Ix2Xb4QVRBcbesYhwNwZxNnypH3K73t63X3mnAifz1ZCG\nwHopPMnhzD/kwWTuqmBUtYx+dcc4ujiOzywBsixuW1/U3O0oTHQe/5bEcme3\nJzIKqCziu8aA7Fgl6NrcjODcmwJMB67zfLjub/FPFxKrC+qATeXaAGOB3C7p\nqX9zf08fGgEcnWRGbYHfDqyrwNABsyxRpXJ21/oylvkq7Ss/WZqMmhczoMyq\nxLHOqo3THCKUPYAHEFu4BIPCMLz/wJuL4sxB6frqrez8q+06vImkkaKQRutP\nob17FAj4hW89aeqXrrMULIpagpA5YXoPOovWY3fTEPJ8UJQaTAyYPSeXWi1p\n//i9vNlEZ+KVgR7dypnqpg98y9x2qFg9xzzxhYq1eu+HYn+y9vV9481711A1\nAor0uP3uoEjvtNUqiXPPli2/YraB1u/PN0YpAGvIBPuse1HjkcW2mTaOu/DN\nSgFR\r\n=QIAU\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "mjesun@hotmail.com",
+					"name": "mjesun"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.8.0_1557021789665_0.9752707503750746"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"24.9.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "24.9.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^24.9.0",
+				"@jest/test-result": "^24.9.0",
+				"@jest/transform": "^24.9.0",
+				"@jest/types": "^24.9.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-report": "^2.0.4",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"istanbul-reports": "^2.2.6",
+				"jest-haste-map": "^24.9.0",
+				"jest-resolve": "^24.9.0",
+				"jest-runtime": "^24.9.0",
+				"jest-util": "^24.9.0",
+				"jest-worker": "^24.6.0",
+				"node-notifier": "^5.4.2",
+				"slash": "^2.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^2.0.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-report": "^1.1.0",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/istanbul-reports": "^1.1.0",
+				"@types/node-notifier": "^5.4.0",
+				"@types/slash": "^2.0.0",
+				"@types/string-length": "^2.0.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 6"
+			},
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/facebook/jest",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "9ad0f4bc6b8bdd94989804226c28c9960d9da7d1",
+			"_id": "@jest/reporters@24.9.0",
+			"dist": {
+				"shasum": "86660eff8e2b9661d042a8e98a028b8d631a5b43",
+				"integrity": "sha512-mu4X0yjaHrffOsWmVLzitKmmmWSQ3GGuefgNscUSWNiUNcEOSEQk9k3pERKEQVBb0Cnn88+UESIsZEMH3o88Gw==",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.9.0.tgz",
+				"fileCount": 48,
+				"unpackedSize": 101191,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdVkn6CRA9TVsSAnZWagAA0ZUP/3r8LShXcmGLCoEjGWIj\nQGNmYfcB6nGTBolKxFWXWZaj68NrtkTk7xaz01mExs40GDcVsF7O5aKJ4Y+G\nNwjJEQqvFhjsu887q6rmU/HXTQOzxsJVu8Hvjcz8nt7q56LNj6Dg2EDTw89G\nc7zZCgAgRxs4o8kF33Vb7uKWLtFZhkChy7fYA9WzL3e6lfrMsuvQlYUHpjj1\nIJEWi0Mi7s52liKW3Qcx47STJTU81EsMcHBFbyT0nY73VfgxgGpY7zQ7cFr7\nySGfltsxOq4WnVOxPHzPAL3kTQbwIi2Q/ZQS0qgSAekN9885Y5XOueWEuo3b\npRvB+blTecK237exgLhNSKUXMEGpCuv7KUeVZH60L9Z3jY+AJYh6snNdiIKx\nFi9YPlUZJoE6T/qA8pKVRWSz8sOnu8jCrcPLOxUPIeLkMxnrMPpKSdgS+uwR\nrD9TA9rQWxrznV8mnQh9tCa+zXiQZmb8iJefvWGaFezRKMfLMl/Rq2/Zxl5d\nAxloBdOE8ixXKafvN5m54M4vV3pymk0b1P104tYzYFO/DnB7/5hwMt25ziCk\nuWFNTlW1lLvyHB5889+4p7CqLwDBUpt5RKaZLbfApd8MF5oJpkUJLtiSJBAN\n1J423hGKMorHLZthvQgbpQKMB3q55djeD5RZ1dT6TjGQ/i4NU3JwgIH8DU/2\nVwo3\r\n=6tIZ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_24.9.0_1565936121526_0.2063977067844498"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		},
+		"25.0.0": {
+			"name": "@jest/reporters",
+			"description": "Jest's reporters",
+			"version": "25.0.0",
+			"main": "build/index.js",
+			"types": "build/index.d.ts",
+			"dependencies": {
+				"@jest/environment": "^25.0.0",
+				"@jest/test-result": "^25.0.0",
+				"@jest/transform": "^25.0.0",
+				"@jest/types": "^25.0.0",
+				"chalk": "^2.0.1",
+				"exit": "^0.1.2",
+				"glob": "^7.1.2",
+				"istanbul-lib-coverage": "^2.0.2",
+				"istanbul-lib-instrument": "^3.0.1",
+				"istanbul-lib-report": "^2.0.4",
+				"istanbul-lib-source-maps": "^3.0.1",
+				"istanbul-reports": "^2.2.6",
+				"jest-haste-map": "^25.0.0",
+				"jest-resolve": "^25.0.0",
+				"jest-runtime": "^25.0.0",
+				"jest-util": "^25.0.0",
+				"jest-worker": "^25.0.0",
+				"node-notifier": "^5.4.3",
+				"slash": "^3.0.0",
+				"source-map": "^0.6.0",
+				"string-length": "^3.1.0"
+			},
+			"devDependencies": {
+				"@types/exit": "^0.1.30",
+				"@types/glob": "^7.1.1",
+				"@types/istanbul-lib-coverage": "^2.0.0",
+				"@types/istanbul-lib-instrument": "^1.7.2",
+				"@types/istanbul-lib-report": "^1.1.0",
+				"@types/istanbul-lib-source-maps": "^1.2.1",
+				"@types/istanbul-reports": "^1.1.0",
+				"@types/node-notifier": "^5.4.0",
+				"strip-ansi": "^5.0.0"
+			},
+			"engines": {
+				"node": ">= 8"
+			},
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/facebook/jest.git",
+				"directory": "packages/jest-reporters"
+			},
+			"bugs": {
+				"url": "https://github.com/facebook/jest/issues"
+			},
+			"homepage": "https://jestjs.io/",
+			"license": "MIT",
+			"publishConfig": {
+				"access": "public"
+			},
+			"gitHead": "ff9269be05fd8316e95232198fce3463bf2f270e",
+			"_id": "@jest/reporters@25.0.0",
+			"_nodeVersion": "11.12.0",
+			"_npmVersion": "lerna/3.16.4/node@v11.12.0+x64 (darwin)",
+			"dist": {
+				"integrity": "sha512-1myFXDCAdSnBlHdFjJW5W6m0GGiSr6ggfZdHRp9w7BlGFsAMiaUqmFdt8GL4WIrG+uoHQcH/yXS3qdCeTx1v7g==",
+				"shasum": "a99dee0ec3201ba3ae0dfc49b10f26831380f9a2",
+				"tarball": "https://registry.npmjs.org/@jest/reporters/-/reporters-25.0.0.tgz",
+				"fileCount": 47,
+				"unpackedSize": 98937,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXgr+CRA9TVsSAnZWagAADVsP/2uiPTYzcJq1EFpxINrs\nEy1oWbWJaCaCZ/aMvl0VHLEsucXgshoU8poyJjgxXIXZx4GN+Ozh1KKa6Gyp\nkOD0Gi+7bj+XVNAfsqCr+Ieavdcrv9aUpoaBXlmwBpPM86gOnMjNoG6BI20p\nbma4SHxv7mlpix4m5a+WjZN40Z1TWv4CgQc6JNDLV6hptuCkHrywDd8UnGsG\n0J/hPlKY6v5z35sBnZo1wq7HMIQlXDPgAQKefd0KiPjg6t/7LInd4C8SyMvn\n3cvZAfB/XoQWYyciXipwmaegDGotJXtfj4bWw51erjlozHkiRIC4+5eFd5N/\nvJVrD/FbnV7dIvDVE8TAMqozpDGj3v/HJ0hVJzRiCXFmCTnzvyBewMnp57tF\nbBp1Bwn1jXHh7qRs3VNXk7rPKHib7HHQBNlngeilfSrVeCFsxNMPPij1YRU7\n/UbE7cEm3pisL4QmN6WS9/qpwM/XK1MyrkNFKkHf7XRphn2L+ktAEfekM1bE\nkJPF6Qj08AcREQsE8+4J47SF0evzdd1oCewM7QzildiJY6v9489rUBA3xUoT\nyZo31OAM6US0PqWPinT3zMpb9ABg4thGNHAfI4Ak9ds/yrVCKVUX91HcwpU4\nMX5c8HZdnylHVIA/PnGaoOknlsPRD7G5XXia/a93OOtsOa3U8MZDxFH7L0ac\nShFf\r\n=jKwE\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "aaron@abramov.io",
+					"name": "aaronabramov"
+				},
+				{
+					"email": "christoph.pojer@gmail.com",
+					"name": "cpojer"
+				},
+				{
+					"email": "opensource+npm@fb.com",
+					"name": "fb"
+				},
+				{
+					"email": "jean@lauliac.com",
+					"name": "jeanlauliac"
+				},
+				{
+					"email": "rubennorte@gmail.com",
+					"name": "rubennorte"
+				},
+				{
+					"email": "scott.hovestadt@gmail.com",
+					"name": "scotthovestadt"
+				}
+			],
+			"_npmUser": {
+				"name": "scotthovestadt",
+				"email": "scott.hovestadt@gmail.com"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/reporters_25.0.0_1566444286132_0.05472528010851585"
+			},
+			"_hasShrinkwrap": false,
+			"contributors": []
+		}
+	},
+	"time": {
+		"created": "2019-03-05T15:02:16.027Z",
+		"24.2.0-alpha.0": "2019-03-05T15:02:16.382Z",
+		"modified": "2019-09-24T20:36:57.610Z",
+		"24.3.0": "2019-03-07T13:05:00.887Z",
+		"24.3.1": "2019-03-07T23:13:16.787Z",
+		"24.4.0": "2019-03-11T14:58:41.420Z",
+		"24.5.0": "2019-03-12T16:49:01.477Z",
+		"24.6.0": "2019-04-01T22:27:19.791Z",
+		"24.7.0": "2019-04-03T03:56:12.160Z",
+		"24.7.1": "2019-04-04T01:19:28.646Z",
+		"24.8.0": "2019-05-05T02:03:10.055Z",
+		"24.9.0": "2019-08-16T06:15:21.652Z",
+		"25.0.0": "2019-08-22T03:24:46.238Z"
+	},
+	"users": {},
+	"dist-tags": {
+		"beta": "24.2.0-alpha.0",
+		"latest": "24.9.0",
+		"next": "25.0.0"
+	},
+	"_uplinks": {
+		"npmjs": {
+			"etag": "W/\"9e18a3730e199efc5ba57819cd2ffd76\"",
+			"fetched": 1577117291977
+		}
+	},
+	"_distfiles": {
+		"reporters-24.2.0-alpha.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.2.0-alpha.0.tgz",
+			"sha": "5ca66150507dfaf4e5336252828d72333ee8560b",
+			"registry": "npmjs"
+		},
+		"reporters-24.3.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.3.0.tgz",
+			"sha": "beaa8b7d0148db8438a12102daf4d36268a150f5",
+			"registry": "npmjs"
+		},
+		"reporters-24.3.1.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.3.1.tgz",
+			"sha": "68e4abc8d4233acd0dd87287f3bd270d81066248",
+			"registry": "npmjs"
+		},
+		"reporters-24.4.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.4.0.tgz",
+			"sha": "e1e6ca29593f36088db76a380f04e93e71f09607",
+			"registry": "npmjs"
+		},
+		"reporters-24.5.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.5.0.tgz",
+			"sha": "9363a210d0daa74696886d9cb294eb8b3ad9b4d9",
+			"registry": "npmjs"
+		},
+		"reporters-24.6.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.6.0.tgz",
+			"sha": "2b4d75255743cbc448ba0a4890912e1e148417b4",
+			"registry": "npmjs"
+		},
+		"reporters-24.7.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.7.0.tgz",
+			"sha": "f780e0811bd1de46ed78270eb622097387cbb442",
+			"registry": "npmjs"
+		},
+		"reporters-24.7.1.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.7.1.tgz",
+			"sha": "38ac0b096cd691bbbe3051ddc25988d42e37773a",
+			"registry": "npmjs"
+		},
+		"reporters-24.8.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.8.0.tgz",
+			"sha": "075169cd029bddec54b8f2c0fc489fd0b9e05729",
+			"registry": "npmjs"
+		},
+		"reporters-24.9.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-24.9.0.tgz",
+			"sha": "86660eff8e2b9661d042a8e98a028b8d631a5b43",
+			"registry": "npmjs"
+		},
+		"reporters-25.0.0.tgz": {
+			"url": "https://registry.npmjs.org/@jest/reporters/-/reporters-25.0.0.tgz",
+			"sha": "a99dee0ec3201ba3ae0dfc49b10f26831380f9a2",
+			"registry": "npmjs"
+		}
+	},
+	"_attachments": {},
+	"_rev": "2-d13c290723d6721d",
+	"_id": "@jest/reporters",
+	"readme": "ERROR: No README data found!"
+}

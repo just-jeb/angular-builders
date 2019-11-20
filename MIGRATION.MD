@@ -1,3 +1,8 @@
+# Migration from version 8 to version 9
+
+## All builders
+1. `@angular/architect` and `angular/core` are now direct builder dependencies, therefore no need to specify them explicitly in `package.json`
+
 # Migration from version 7 to version 8
 
 ## Custom webpack builder
