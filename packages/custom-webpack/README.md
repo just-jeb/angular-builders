@@ -316,7 +316,7 @@ module.exports = (config, options) => {
 Alternatively, using TypeScript:
 
 ```ts
-import { CustomWebpackBrowserSchema } from '@angular-builders/custom-webpack/dist';
+import { CustomWebpackBrowserSchema } from '@angular-builders/custom-webpack';
 import * as webpack from 'webpack';
 import * as pkg from './package.json';
 
