@@ -1,4 +1,4 @@
-import { Configuration } as webpack from 'webpack';
+import { Configuration } from 'webpack';
 import { CustomWebpackBrowserSchema } from '@angular-builders/custom-webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
