@@ -1,4 +1,4 @@
-# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
@@ -38,6 +38,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.strangeplanet.fr"><img src="https://avatars3.githubusercontent.com/u/41597?v=4" width="100px;" alt="Damien Sorel"/><br /><sub><b>Damien Sorel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=mistic100" title="Code">💻</a></td>
     <td align="center"><a href="https://wesleygrimes.com"><img src="https://avatars0.githubusercontent.com/u/324308?v=4" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=wesleygrimes" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/michaeljota"><img src="https://avatars0.githubusercontent.com/u/10507776?v=4" width="100px;" alt="Michael De Abreu"/><br /><sub><b>Michael De Abreu</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michaeljota" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/a1russell"><img src="https://avatars0.githubusercontent.com/u/241628?v=4" width="100px;" alt="Adam Russell"/><br /><sub><b>Adam Russell</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/issues?q=author%3Aa1russell" title="Bug reports">🐛</a> <a href="https://github.com/just-jeb/angular-builders/commits?author=a1russell" title="Code">💻</a></td>
   </tr>
 </table>
 
