@@ -313,6 +313,24 @@ module.exports = (config, options) => {
 };
 ```
 
+Alternatively, using TypeScript:
+
+```ts
+import { CustomWebpackBrowserSchema } from '@angular-builders/custom-webpack';
+import * as webpack from 'webpack';
+import * as pkg from './package.json';
+
+export default (config: webpack.Configuration, options: CustomWebpackBrowserSchema) => {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      APP_VERSION: JSON.stringify(pkg.version),
+    })
+  );
+
+  return config;
+};
+```
+
 It's also possible to export an asynchronous factory (factory that returns a `Promise` object). Let's look at the following example:
 
 ```js

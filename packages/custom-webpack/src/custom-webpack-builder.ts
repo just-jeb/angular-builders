@@ -67,9 +67,5 @@ function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
   // `module.exports = { ... }`. And the second one is:
   // `export default { ... }`. The ESM format is compiled into:
   // `{ default: { ... } }`
-  if (typeof customWebpackConfig.default === 'object') {
-    return customWebpackConfig.default;
-  }
-
-  return customWebpackConfig;
+  return customWebpackConfig.default || customWebpackConfig;
 }
