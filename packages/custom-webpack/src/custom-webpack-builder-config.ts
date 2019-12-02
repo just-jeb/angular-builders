@@ -6,4 +6,10 @@ export interface CustomWebpackBuilderConfig {
   path?: string;
   mergeStrategies?: MergeStrategies;
   replaceDuplicatePlugins?: boolean;
+  verbose?: CustomWebpackBuilderVerboseConfig;
+}
+
+export interface CustomWebpackBuilderVerboseConfig {
+  properties?: string | string[];
+  serializationDepth: number;
 }

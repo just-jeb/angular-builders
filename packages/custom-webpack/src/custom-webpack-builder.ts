@@ -1,6 +1,7 @@
 import { getSystemPath, Path } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 
+import { VerboseLogger } from './verbose-logger';
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 
@@ -17,7 +18,8 @@ export class CustomWebpackBuilder {
     root: Path,
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
-    buildOptions: any
+    buildOptions: any,
+    verboseLogger: VerboseLogger
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
@@ -31,7 +33,12 @@ export class CustomWebpackBuilder {
       // That exported function can be synchronous either
       // asynchronous. Given the following example:
       // `module.exports = async (config) => { ... }`
-      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions);
+      const finalConfig = configOrFactoryOrPromise(
+        baseWebpackConfig,
+        buildOptions
+      ) as Configuration;
+      verboseLogger.logFinalConfig(finalConfig);
+      return finalConfig;
     }
 
     // The user can also export a `Promise` that resolves `Configuration`
@@ -41,13 +48,15 @@ export class CustomWebpackBuilder {
     // `module.exports = { ... }`
     // then it will promisified and awaited
     const resolvedConfig = await configOrFactoryOrPromise;
-
-    return mergeConfigs(
+    const finalConfig = mergeConfigs(
       baseWebpackConfig,
       resolvedConfig,
       config.mergeStrategies,
       config.replaceDuplicatePlugins
     );
+
+    verboseLogger.logFinalConfig(finalConfig);
+    return finalConfig;
   }
 }
 

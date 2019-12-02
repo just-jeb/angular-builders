@@ -4,12 +4,49 @@
       "type": "object",
       "description": "Custom webpack configuration",
       "properties": {
-        "path": {"type": "string", "description": "Path to the custom webpack configuration file"},
-        "mergeStrategies": {"type": "object", "description": "Merge strategies per webpack config field"},
-        "replaceDuplicatePlugins": {"type": "boolean", "description": "Flag that indicates whether to replace duplicate webpack plugins or not"}
+        "path": {
+          "type": "string",
+          "description": "Path to the custom webpack configuration file"
+        },
+        "mergeStrategies": {
+          "type": "object",
+          "description": "Merge strategies per webpack config field"
+        },
+        "replaceDuplicatePlugins": {
+          "type": "boolean",
+          "description": "Flag that indicates whether to replace duplicate webpack plugins or not"
+        },
+        "verbose": {
+          "type": "object",
+          "description": "(verbose for debugging purposes) TODO ADD DESCRPTION HERE...",
+          "properties": {
+            "properties": {
+              "description": "(webpack properties to print) TODO ADD DESCRPTION HERE...",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              ]
+            },
+            "serializationDepth": {
+              "type": "number",
+              "description": "TODO ADD DESCRPTION HERE...",
+              "default": 5
+            }
+          }
+        }
       },
       "default": false
     },
-    "indexTransform": {"type": "string", "description": "Path to the file with index.html transform function" }
+    "indexTransform": {
+      "type": "string",
+      "description": "Path to the file with index.html transform function"
+    }
   }
 }
