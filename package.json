@@ -12,12 +12,17 @@
     "node": ">=10.0.0"
   },
   "scripts": {
+    "bootstrap:packages": "npx lerna bootstrap --scope \\@angular-builders\\/*",
+    "bootstrap:examples": "npx lerna exec --ignore \\@angular-builders\\/* -- yarn install && npx lerna exec --ignore \\@angular-builders\\/* -- yarn list --pattern angular-builders",
+    "build:packages": "npx lerna run build --scope \\@angular-builders\\/*",
+    "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
     "postbuild": "yarn test && yarn run e2e",
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e",
-    "format": "prettier --write \"**/*.{js,ts,html,md}\""
+    "format": "prettier --write \"**/*.{js,ts,html,md}\"",
+    "clean": "npx lerna clean"
   },
   "devDependencies": {
     "@angular/compiler": "^9.0.0-rc.5",
