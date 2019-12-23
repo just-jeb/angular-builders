@@ -13,7 +13,7 @@
   },
   "scripts": {
     "bootstrap:packages": "npx lerna bootstrap --scope \\@angular-builders\\/*",
-    "bootstrap:examples": "npx lerna exec --ignore \\@angular-builders\\/* -- yarn install && npx lerna exec --ignore \\@angular-builders\\/* -- yarn list --pattern angular-builders",
+    "bootstrap:examples": "npx lerna exec --ignore \\@angular-builders\\/* -- yarn install --network-concurrency 1 && npx lerna exec --ignore \\@angular-builders\\/* -- yarn list --pattern angular-builders",
     "build:packages": "npx lerna run build --scope \\@angular-builders\\/*",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",

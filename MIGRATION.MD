@@ -3,6 +3,9 @@
 ## All builders
 1. `@angular/architect` and `angular/core` are now direct builder dependencies, therefore no need to specify them explicitly in `package.json`
 
+## Jest builder
+1. jest-preset-angular version has been updated to 8. If you have any custom Jest configuration, make sure it matches the preset [version](https://github.com/thymikee/jest-preset-angular/releases/tag/v8.0.0).
+
 # Migration from version 7 to version 8
 
 ## Custom webpack builder
