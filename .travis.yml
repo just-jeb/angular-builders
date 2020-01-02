@@ -13,7 +13,6 @@ before_install:
   - npm i -g yarn@1
 install: 
  - yarn
- - lerna bootstrap
 script:
   - yarn bootstrap:packages
   - yarn ci

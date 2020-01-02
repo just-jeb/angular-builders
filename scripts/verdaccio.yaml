@@ -14,7 +14,7 @@ auth:
     file: ./htpasswd
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
-    # max_users: -1
+    max_users: -1
 
 # a list of other known repositories we can talk to
 uplinks:
@@ -27,7 +27,7 @@ uplinks:
       keepAlive: true
       maxSockets: 40
       maxFreeSockets: 10
-
+    cache: false
 packages:
   '@*/*':
     # scoped packages
