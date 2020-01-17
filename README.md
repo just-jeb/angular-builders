@@ -1,4 +1,4 @@
-# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
+# @angular-builders [![Build Status](https://travis-ci.org/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.org/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors) [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=43KX7EMK96A94&currency_code=USD&source=url)
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
