@@ -6,6 +6,7 @@ addons:
   apt:
     sources:
       - google-chrome
+        key_url: 'https://dl.google.com/linux/linux_signing_key.pub'
     packages:
       - google-chrome-stable
       - coreutils
