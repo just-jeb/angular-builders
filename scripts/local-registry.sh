@@ -30,7 +30,5 @@ function stopLocalRegistry {
 }
 
 function publishToLocalRegistry {
-  npm config get registry
-  yarn config get registry
   npx lerna publish prerelease --yes --force-publish=* --no-git-tag-version --no-git-reset --canary --no-commit-hooks --no-push --exact --dist-tag=latest --registry="$custom_registry_url"
 }

@@ -14,3 +14,13 @@ install:
 script:
   - yarn bootstrap:packages
   - yarn ci
+before_deploy:
+  - git remote set-url origin "https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > /dev/null 2>&1
+  - git checkout ${TRAVIS_BRANCH}
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+deploy:
+  provider: script
+  script: "./scripts/default-registry.sh"
+  skip_cleanup: true
+  on:
+    branch: auto-publish
