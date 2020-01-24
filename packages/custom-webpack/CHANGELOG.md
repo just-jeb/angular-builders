@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.1 (2020-01-24)
+
+* ci: dummy change ([5cc775d](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/5cc775d))
+
+
+
+
+
 ## 9.0.0-beta.0 (2020-01-04)
 
 - ci: use verdaccio for e2e ([23f9235](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/23f9235))
