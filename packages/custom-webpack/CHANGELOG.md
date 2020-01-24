@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.2 (2020-01-24)
+
+* ci: dummy change ([5cc775d](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/5cc775d))
+* ci(release): publish ([28e0345](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/28e0345))
+
+
+
+
+
 ## 9.0.0-beta.1 (2020-01-24)
 
 * ci: dummy change ([5cc775d](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/5cc775d))
