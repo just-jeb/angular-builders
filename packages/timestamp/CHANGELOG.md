@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.2 (2020-01-24)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+
+
+
+
 ## 9.0.0-beta.1 (2020-01-23)
 
 * chore(deps-dev): bump karma-jasmine from 3.0.3 to 3.1.0 ([bf4f11c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/bf4f11c))
