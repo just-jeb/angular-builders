@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.6 (2020-01-24)
+
+* chore: another try ([c59df0f](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/c59df0f))
+
+
+
+
+
 ## 9.0.0-beta.5 (2020-01-24)
 
 * chore: another try ([94cba16](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/94cba16))
