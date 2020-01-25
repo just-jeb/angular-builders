@@ -1,4 +1,4 @@
-# @angular-builders [![Build Status](https://travis-ci.org/meltedspark/angular-builders.svg?branch=7.x.x)](https://travis-ci.org/meltedspark/angular-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-builders.svg)](https://greenkeeper.io/) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
+# @angular-builders [![Build Status](https://travis-ci.com/meltedspark/angular-builders.svg?branch=7.x.x)](https://travis-ci.org/meltedspark/angular-builders) [![Greenkeeper badge](https://badges.greenkeeper.io/meltedspark/angular-builders.svg)](https://greenkeeper.io/) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)  
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
