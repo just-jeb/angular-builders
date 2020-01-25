@@ -31,5 +31,3 @@ export const getTransforms = (options: CustomWebpackSchema, context: BuilderCont
   webpackConfiguration: customWebpackConfigTransformFactory(options, context),
   indexHtml: indexHtmlTransformFactory(options, context),
 });
-
-//Dummy change
