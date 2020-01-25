@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.7 (2020-01-25)
+
+* Merge branch 'auto-publish' of github.com:meltedspark/angular-builders into auto-publish ([2523534](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/2523534))
+* chore: remove dummy change ([cb33a5d](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/cb33a5d))
+
+
+
+
+
 ## 9.0.0-beta.6 (2020-01-24)
 
 * chore: another try ([c59df0f](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/c59df0f))
