@@ -3,44 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 9.0.0-beta.4 (2020-01-24)
-
-**Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
-
-## 9.0.0-beta.3 (2020-01-24)
-
-* ci(release): publish ([28e0345](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/28e0345))
-* ci(release): publish ([2dc517a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/2dc517a))
-* chore(deps-dev): bump karma-jasmine from 3.0.3 to 3.1.0 ([bf4f11c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/bf4f11c))
-* chore(deps-dev): bump typescript from 3.6.4 to 3.7.5 ([5c0c82c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/5c0c82c))
-* chore(deps): bump ts-node from 8.5.4 to 8.6.0 ([61c830a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/61c830a))
-
-
-
-
-
-## 9.0.0-beta.2 (2020-01-24)
-
-**Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
-
-## 9.0.0-beta.1 (2020-01-23)
-
-* chore(deps-dev): bump karma-jasmine from 3.0.3 to 3.1.0 ([bf4f11c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/bf4f11c))
-* chore(deps-dev): bump typescript from 3.6.4 to 3.7.5 ([5c0c82c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/5c0c82c))
-* chore(deps): bump ts-node from 8.5.4 to 8.6.0 ([61c830a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/61c830a))
-
-
-
-
-
 ## 9.0.0-beta.0 (2020-01-04)
 
 - chore(deps-dev): bump @types/jasmine from 3.4.6 to 3.5.0 ([ec2bb8b](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ec2bb8b))
