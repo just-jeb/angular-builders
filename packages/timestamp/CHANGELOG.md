@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.2 (2020-01-28)
+
+* docs: add 'next' tag badges (#672) ([441adec](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/441adec)), closes [#672](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/issues/672)
+
+
+
+
+
 ## 9.0.0-beta.1 (2020-01-25)
 
 - chore(deps-dev): bump karma-jasmine from 3.0.3 to 3.1.0 ([bf4f11c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/bf4f11c))
