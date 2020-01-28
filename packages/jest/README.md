@@ -1,6 +1,6 @@
 # Jest builder for Angular build facade
 
-[![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
+[![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/jest/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
 # This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md).
 
