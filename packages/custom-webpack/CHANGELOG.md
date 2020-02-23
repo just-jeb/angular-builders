@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0-beta.2 (2020-02-23)
+
+* docs: update README and MIGRATION for v9 (#685) ([92ec06d](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/92ec06d)), closes [#685](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/685)
+
+
+
+
+
 ## 9.0.0-beta.1 (2020-01-28)
 
 * docs: add 'next' tag badges (#672) ([441adec](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/441adec)), closes [#672](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/672)
