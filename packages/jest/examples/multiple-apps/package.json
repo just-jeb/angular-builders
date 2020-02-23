@@ -7,7 +7,8 @@
     "build": "yarn ng build",
     "test": "yarn ng test",
     "lint": "yarn ng lint",
-    "e2e": "yarn ng e2e"
+    "e2e": "yarn ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
