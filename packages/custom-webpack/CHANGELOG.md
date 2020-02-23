@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.0 (2020-02-23)</small>
+
+* docs: minor fixes (#688) ([7cd52f8](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7cd52f8)), closes [#688](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/688)
+
+
+
+
+
 ## 9.0.0 (2020-02-23)
 
 - ci(release): publish ([f0ce8bc](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/f0ce8bc))
