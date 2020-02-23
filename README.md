@@ -2,11 +2,13 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders require Angular CLI 8 and incompatible with Angular CLI 7
+## The latest version of all the builders require Angular CLI 9
 
 ## [Documentation for version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
 
-## [Migration guide from version 7 to version 8](./MIGRATION.MD)
+## [Documentation for version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
+
+## [Migration guide](./MIGRATION.MD)
 
 # Builders
 
