@@ -4,12 +4,11 @@
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
-# This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md).
+# This documentation is for version 9 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md) and for version 8 [here](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md).
 
 # Prerequisites:
 
-- [Angular CLI 8](https://www.npmjs.com/package/@angular/cli)
-- [@angular-devkit/build-angular](https://npmjs.com/package/@angular-devkit/build-angular) >= 0.801.0
+- [Angular CLI 9](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
