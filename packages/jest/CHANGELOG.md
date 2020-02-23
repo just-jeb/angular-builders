@@ -3,37 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.0.0 (2020-02-23)
+
+**Note:** Version bump only for package @angular-builders/jest
+
 ## 9.0.0-beta.4 (2020-02-23)
 
-* docs: update README and MIGRATION for v9 (#685) ([92ec06d](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/92ec06d)), closes [#685](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/685)
-
-
-
-
+- docs: update README and MIGRATION for v9 (#685) ([92ec06d](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/92ec06d)), closes [#685](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/685)
 
 ## 9.0.0-beta.3 (2020-02-01)
 
-* fix(jest): improve testsMatch pattern for Jest 25 (#675) ([0e04a6d](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/0e04a6d)), closes [#675](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/675)
-
-
-
-
+- fix(jest): improve testsMatch pattern for Jest 25 (#675) ([0e04a6d](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/0e04a6d)), closes [#675](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/675)
 
 ## 9.0.0-beta.2 (2020-01-30)
 
-* feat: mock matchMedia out of the box (#674) ([bec48ed](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/bec48ed)), closes [#674](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/674) [#641](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/641)
-
-
-
-
+- feat: mock matchMedia out of the box (#674) ([bec48ed](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/bec48ed)), closes [#674](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/674) [#641](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/641)
 
 ## 9.0.0-beta.1 (2020-01-28)
 
-* docs: add 'next' tag badges (#672) ([441adec](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/441adec)), closes [#672](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/672)
-
-
-
-
+- docs: add 'next' tag badges (#672) ([441adec](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/441adec)), closes [#672](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/672)
 
 ## 9.0.0-beta.0 (2020-01-04)
 
