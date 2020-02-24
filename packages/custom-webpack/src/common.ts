@@ -23,6 +23,14 @@ export const indexHtmlTransformFactory: (
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
+  if (indexTransform.endsWith('.ts')) {
+    // Register TS compiler lazily
+    require('ts-node').register({
+      compilerOptions: {
+        module: 'commonjs',
+      },
+    });
+  }
   const transform = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   return async (indexHtml: string) => transform(target, indexHtml);
 };
