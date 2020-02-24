@@ -362,7 +362,7 @@ module.exports = async config => {
 **_Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`._**
 
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
-`indexTransform` is a path (relative to workspace root) to a `.js` file that exports transformation function for `index.html`.  
+`indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
 
 ```typescript
