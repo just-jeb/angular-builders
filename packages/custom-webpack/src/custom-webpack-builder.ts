@@ -54,7 +54,7 @@ export class CustomWebpackBuilder {
 /**
  * check for TS node registration
  * @param file: string file name or file directory are allowed
- * @todo tsNodeRegister: 
+ * @todo tsNodeRegistration: require ts-node if file extendsion is TypeScript
  */
 export function tsNodeRegister(file: string = '') {
   if (file && file.endsWith('.ts')) {

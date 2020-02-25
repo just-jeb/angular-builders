@@ -409,6 +409,18 @@ module.exports = (targetOptions, indexHtml) => {
 };
 ```
 
+Alternatively, using TypeScript:
+
+```ts
+export default (targetOptions: Target, indexHtml: string) => {
+  const i = indexHtml.indexOf('</body>');
+  const config = `<p>Configuration: ${targetOptions.configuration}</p>`;
+  return `${indexHtml.slice(0, i)}
+            ${config}
+            ${indexHtml.slice(i)}`;
+};
+```
+
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
 Full example [here](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
