@@ -51,8 +51,13 @@ export class CustomWebpackBuilder {
   }
 }
 
-function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  if (path.endsWith('.ts')) {
+/**
+ * check for TS node registration
+ * @param file: string file name or file directory are allowed
+ * @todo tsNodeRegister: 
+ */
+export function tsNodeRegister(file: string = '') {
+  if (file && file.endsWith('.ts')) {
     // Register TS compiler lazily
     require('ts-node').register({
       compilerOptions: {
@@ -60,6 +65,11 @@ function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
       },
     });
   }
+}
+
+function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
+  
+  tsNodeRegister(path);
 
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file

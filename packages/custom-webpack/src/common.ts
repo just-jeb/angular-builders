@@ -2,7 +2,7 @@ import { BuilderContext } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
 import { normalize, getSystemPath } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
-import { CustomWebpackBuilder } from './custom-webpack-builder';
+import { CustomWebpackBuilder, tsNodeRegister } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
 import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
 
@@ -23,14 +23,7 @@ export const indexHtmlTransformFactory: (
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  if (indexTransform.endsWith('.ts')) {
-    // Register TS compiler lazily
-    require('ts-node').register({
-      compilerOptions: {
-        module: 'commonjs',
-      },
-    });
-  }
+  tsNodeRegister(indexTransform);
   const transform = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   return async (indexHtml: string) => transform(target, indexHtml);
 };
