@@ -3,6 +3,7 @@ import { Configuration } from 'webpack';
 
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
+import { tsNodeRegister } from './utils';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
@@ -48,22 +49,6 @@ export class CustomWebpackBuilder {
       config.mergeStrategies,
       config.replaceDuplicatePlugins
     );
-  }
-}
-
-/**
- * check for TS node registration
- * @param file: string file name or file directory are allowed
- * @todo tsNodeRegistration: require ts-node if file extendsion is TypeScript
- */
-export function tsNodeRegister(file: string = '') {
-  if (file && file.endsWith('.ts')) {
-    // Register TS compiler lazily
-    require('ts-node').register({
-      compilerOptions: {
-        module: 'commonjs',
-      },
-    });
   }
 }
 

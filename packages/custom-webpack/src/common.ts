@@ -1,10 +1,13 @@
 import { BuilderContext } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
-import { normalize, getSystemPath } from '@angular-devkit/core';
-import { Configuration } from 'webpack';
-import { CustomWebpackBuilder, tsNodeRegister } from './custom-webpack-builder';
-import { CustomWebpackSchema } from './custom-webpack-schema';
 import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
+import { normalize, getSystemPath } from '@angular-devkit/core';
+
+import { Configuration } from 'webpack';
+
+import { CustomWebpackBuilder } from './custom-webpack-builder';
+import { CustomWebpackSchema } from './custom-webpack-schema';
+import { tsNodeRegister } from './utils';
 
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
