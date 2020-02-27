@@ -30,22 +30,26 @@ Have any questions? Would like to discuss something?
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://medium.com/@overthesanity"><img src="https://avatars1.githubusercontent.com/u/7337691?v=4" width="100px;" alt="Artur Androsovych"/><br /><sub><b>Artur Androsovych</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arturovt" title="Code">💻</a> <a href="#question-arturovt" title="Answering Questions">💬</a></td>
-    <td align="center"><a href="https://github.com/jogelin"><img src="https://avatars2.githubusercontent.com/u/954509?v=4" width="100px;" alt="jogelin"/><br /><sub><b>jogelin</b></sub></a><br /><a href="#example-jogelin" title="Examples">💡</a></td>
-    <td align="center"><a href="https://github.com/jusefb"><img src="https://avatars2.githubusercontent.com/u/3741868?v=4" width="100px;" alt="Jusef Belkasemi"/><br /><sub><b>Jusef Belkasemi</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jusefb" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://medium.com/@ExplosionPills/"><img src="https://avatars0.githubusercontent.com/u/1308273?v=4" width="100px;" alt="Andrew Crites"/><br /><sub><b>Andrew Crites</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=ajcrites" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.strangeplanet.fr"><img src="https://avatars3.githubusercontent.com/u/41597?v=4" width="100px;" alt="Damien Sorel"/><br /><sub><b>Damien Sorel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=mistic100" title="Code">💻</a></td>
-    <td align="center"><a href="https://wesleygrimes.com"><img src="https://avatars0.githubusercontent.com/u/324308?v=4" width="100px;" alt="Wes Grimes"/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=wesleygrimes" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/michaeljota"><img src="https://avatars0.githubusercontent.com/u/10507776?v=4" width="100px;" alt="Michael De Abreu"/><br /><sub><b>Michael De Abreu</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michaeljota" title="Code">💻</a></td>
+    <td align="center"><a href="https://medium.com/@overthesanity"><img src="https://avatars1.githubusercontent.com/u/7337691?v=4" width="100px;" alt=""/><br /><sub><b>Artur Androsovych</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arturovt" title="Code">💻</a> <a href="#question-arturovt" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://github.com/jogelin"><img src="https://avatars2.githubusercontent.com/u/954509?v=4" width="100px;" alt=""/><br /><sub><b>jogelin</b></sub></a><br /><a href="#example-jogelin" title="Examples">💡</a></td>
+    <td align="center"><a href="https://github.com/jusefb"><img src="https://avatars2.githubusercontent.com/u/3741868?v=4" width="100px;" alt=""/><br /><sub><b>Jusef Belkasemi</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jusefb" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://medium.com/@ExplosionPills/"><img src="https://avatars0.githubusercontent.com/u/1308273?v=4" width="100px;" alt=""/><br /><sub><b>Andrew Crites</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=ajcrites" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.strangeplanet.fr"><img src="https://avatars3.githubusercontent.com/u/41597?v=4" width="100px;" alt=""/><br /><sub><b>Damien Sorel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=mistic100" title="Code">💻</a></td>
+    <td align="center"><a href="https://wesleygrimes.com"><img src="https://avatars0.githubusercontent.com/u/324308?v=4" width="100px;" alt=""/><br /><sub><b>Wes Grimes</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=wesleygrimes" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/michaeljota"><img src="https://avatars0.githubusercontent.com/u/10507776?v=4" width="100px;" alt=""/><br /><sub><b>Michael De Abreu</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michaeljota" title="Code">💻</a></td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/a1russell"><img src="https://avatars0.githubusercontent.com/u/241628?v=4" width="100px;" alt="Adam Russell"/><br /><sub><b>Adam Russell</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/issues?q=author%3Aa1russell" title="Bug reports">🐛</a> <a href="https://github.com/just-jeb/angular-builders/commits?author=a1russell" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/a1russell"><img src="https://avatars0.githubusercontent.com/u/241628?v=4" width="100px;" alt=""/><br /><sub><b>Adam Russell</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/issues?q=author%3Aa1russell" title="Bug reports">🐛</a> <a href="https://github.com/just-jeb/angular-builders/commits?author=a1russell" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.facebook.com/onfocus.vi"><img src="https://avatars0.githubusercontent.com/u/19356181?v=4" width="100px;" alt=""/><br /><sub><b>Vix Nguyen</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=vixnguyen" title="Code">💻</a></td>
   </tr>
 </table>
 
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
