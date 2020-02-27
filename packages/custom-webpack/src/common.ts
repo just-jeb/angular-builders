@@ -1,10 +1,13 @@
 import { BuilderContext } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
+import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
 import { normalize, getSystemPath } from '@angular-devkit/core';
+
 import { Configuration } from 'webpack';
+
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
-import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
+import { tsNodeRegister } from './utils';
 
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
@@ -23,7 +26,9 @@ export const indexHtmlTransformFactory: (
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  const transform = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
+  tsNodeRegister(indexTransform);
+  const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
+  const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
 };
 

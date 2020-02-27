@@ -14,5 +14,6 @@ yarn test --browsers=ChromeHeadlessCI
 #check browser and dev-server
 yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
 yarn e2e --protractor-config=./e2e/protractor-ci-prod.conf.js --prod
+yarn e2e --protractor-config=./e2e/protractor-ci-itwcw.conf.js -c itwcw
 
 

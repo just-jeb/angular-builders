@@ -3,6 +3,7 @@ import { Configuration } from 'webpack';
 
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
+import { tsNodeRegister } from './utils';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
@@ -52,14 +53,8 @@ export class CustomWebpackBuilder {
 }
 
 function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  if (path.endsWith('.ts')) {
-    // Register TS compiler lazily
-    require('ts-node').register({
-      compilerOptions: {
-        module: 'commonjs',
-      },
-    });
-  }
+  
+  tsNodeRegister(path);
 
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file

@@ -68,6 +68,10 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "itwcw": {
+              "customWebpackConfig": null,
+              "indexTransform": "./index-html.transform.ts"
             }
           }
         },
@@ -79,6 +83,9 @@
           "configurations": {
             "production": {
               "browserTarget": "full-cycle-app:build:production"
+            },
+            "itwcw": {
+              "browserTarget": "full-cycle-app:build:itwcw"
             }
           }
         },
@@ -128,6 +135,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "full-cycle-app:serve:production"
+            },
+            "itwcw": {
+              "devServerTarget": "full-cycle-app:serve:itwcw"
             }
           }
         }
