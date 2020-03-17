@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.1 (2020-03-17)</small>
+
+* fix(jest): bump jest-preset-angular from 8.0.0 to 8.1.2 (#698) ([3e7159b](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/3e7159b)), closes [#698](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/698)
+
+
+
+
+
 ## <small>9.0.1-beta.0 (2020-02-23)</small>
 
 * docs: minor fixes (#688) ([7cd52f8](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/7cd52f8)), closes [#688](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/688)
