@@ -45,6 +45,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/a1russell"><img src="https://avatars0.githubusercontent.com/u/241628?v=4" width="100px;" alt=""/><br /><sub><b>Adam Russell</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/issues?q=author%3Aa1russell" title="Bug reports">🐛</a> <a href="https://github.com/just-jeb/angular-builders/commits?author=a1russell" title="Code">💻</a></td>
     <td align="center"><a href="https://www.facebook.com/onfocus.vi"><img src="https://avatars0.githubusercontent.com/u/19356181?v=4" width="100px;" alt=""/><br /><sub><b>Vix Nguyen</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=vixnguyen" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jankeesvanandel"><img src="https://avatars1.githubusercontent.com/u/272120?v=4" width="100px;" alt=""/><br /><sub><b>Jan-Kees van Andel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jankeesvanandel" title="Code">💻</a></td>
   </tr>
 </table>
 
