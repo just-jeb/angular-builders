@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.0 (2020-03-18)</small>
+
+* chore(deps): bump ts-node from 8.6.2 to 8.7.0 ([04069c3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/04069c3))
+
+
+
+
+
 ## 9.0.0 (2020-02-23)
 
 - ci(release): publish ([f0ce8bc](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/f0ce8bc))
