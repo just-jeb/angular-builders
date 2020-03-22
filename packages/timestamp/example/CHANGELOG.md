@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.2 (2020-03-22)</small>
+
+* chore(deps-dev): bump jasmine-spec-reporter from 4.2.1 to 5.0.0 ([df9710a](https://github.com/just-jeb/angular-builders/commit/df9710a))
+
+
+
+
+
 ## <small>9.0.1-beta.1 (2020-03-22)</small>
 
 * chore(deps): bump ts-node from 8.7.0 to 8.8.0 ([38659ab](https://github.com/just-jeb/angular-builders/commit/38659ab))
