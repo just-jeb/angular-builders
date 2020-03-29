@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.3 (2020-03-29)</small>
+
+* fix: adjust devkit version range to fit 0.9xx.0 (#709) ([99e061f](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/99e061f)), closes [#709](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/issues/709)
+
+
+
+
+
 ## <small>9.0.1-beta.2 (2020-03-22)</small>
 
 * chore(deps-dev): bump jasmine-spec-reporter from 4.2.1 to 5.0.0 ([df9710a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/df9710a))
