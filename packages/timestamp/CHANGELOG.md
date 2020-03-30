@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.1-beta.5 (2020-03-30)</small>
+
+* chore(deps-dev): bump typescript from 3.7.5 to 3.8.3 ([8fc1842](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/8fc1842))
+
+
+
+
+
 ## <small>9.0.1-beta.4 (2020-03-29)</small>
 
 * chore(deps-dev): bump tslint from 5.20.1 to 6.1.0 ([da8bd20](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/da8bd20))
