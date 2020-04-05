@@ -22,7 +22,8 @@
     "test": "jest src",
     "e2e": "jest e2e",
     "format": "prettier --write \"**/*.{js,ts,html,md}\"",
-    "clean": "npx lerna clean"
+    "clean": "npx lerna clean",
+    "graduate": "lerna publish --conventional-commits --conventional-graduate"
   },
   "devDependencies": {
     "@angular/compiler": "^9.0.0",
