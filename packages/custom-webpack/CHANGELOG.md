@@ -3,29 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.1.0 (2020-04-05)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## 9.1.0-beta.1 (2020-03-29)
 
-* fix: adjust devkit version range to fit 0.9xx.0 (#709) ([99e061f](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/99e061f)), closes [#709](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/709)
-
-
-
-
+- fix: adjust devkit version range to fit 0.9xx.0 (#709) ([99e061f](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/99e061f)), closes [#709](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/709)
 
 ## 9.1.0-beta.0 (2020-02-27)
 
-* feat(custom-webpack): support TS for indexTransform (#689) ([f97905c](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/f97905c)), closes [#689](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/689)
-
-
-
-
+- feat(custom-webpack): support TS for indexTransform (#689) ([f97905c](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/f97905c)), closes [#689](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/689)
 
 ## <small>9.0.1-beta.0 (2020-02-23)</small>
 
-* docs: minor fixes (#688) ([7cd52f8](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7cd52f8)), closes [#688](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/688)
-
-
-
-
+- docs: minor fixes (#688) ([7cd52f8](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7cd52f8)), closes [#688](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/688)
 
 ## 9.0.0 (2020-02-23)
 
