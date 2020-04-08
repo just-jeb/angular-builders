@@ -1,0 +1,47 @@
+name: angular-builders
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.12
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        # If checksum for the `yarn.lock` hasn't changed then we shouldn't run
+        # `yarn install` again.
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn --pure-lockfile --non-interactive --no-progress
+
+      - name: Bootstrap packages
+        run: yarn bootstrap:packages
+
+      - name: Run CI scripts
+        run: yarn ci
+
+      - name: deploy
+        # Deploy only on the master branch.
+        if: github.ref == 'refs/heads/master'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: bash scripts/default-registry.sh
