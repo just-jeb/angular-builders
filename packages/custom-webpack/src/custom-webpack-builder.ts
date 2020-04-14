@@ -10,8 +10,8 @@ export const defaultWebpackConfigPath = 'webpack.config.js';
 type CustomWebpackConfig =
   | Configuration
   | Promise<Configuration>
-  | ((baseWebpackConfig: Configuration, buildOptions: any) => Configuration)
-  | ((baseWebpackConfig: Configuration, buildOptions: any) => Promise<Configuration>);
+  | ((baseWebpackConfig: Configuration, buildOptions: any, targetOptions: any) => Configuration)
+  | ((baseWebpackConfig: Configuration, buildOptions: any, targetOptions: any) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
   static async buildWebpackConfig(
@@ -19,7 +19,7 @@ export class CustomWebpackBuilder {
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
     buildOptions: any,
-    target: any
+    targetOptions: any
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
@@ -33,7 +33,7 @@ export class CustomWebpackBuilder {
       // That exported function can be synchronous either
       // asynchronous. Given the following example:
       // `module.exports = async (config) => { ... }`
-      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions, target);
+      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions, targetOptions);
     }
 
     // The user can also export a `Promise` that resolves `Configuration`
