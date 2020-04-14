@@ -13,6 +13,12 @@ const buildOptions = {
   env: 'prod',
 };
 
+const targetOptions = {
+  project: 'application',
+  configuration: 'production',
+  target: 'serve'
+};
+
 const customWebpackConfig = {
   module: {
     rules: [
@@ -163,9 +169,9 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       buildOptions,
-      {}
+      targetOptions
     );
-    expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions);
+    expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions, targetOptions);
   });
 
   it('should apply custom function on configuration', async () => {
