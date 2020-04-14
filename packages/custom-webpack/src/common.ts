@@ -12,12 +12,13 @@ import { tsNodeRegister } from './utils';
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => ExecutionTransformer<Configuration> = (options, { workspaceRoot }) => browserWebpackConfig => {
+) => ExecutionTransformer<Configuration> = (options, { workspaceRoot, target }) => browserWebpackConfig => {
   return CustomWebpackBuilder.buildWebpackConfig(
     normalize(workspaceRoot),
     options.customWebpackConfig,
     browserWebpackConfig,
-    options //TODO: pass Target options as well (configuration option in particular)
+    options,
+    target
   );
 };
 

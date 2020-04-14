@@ -18,7 +18,8 @@ export class CustomWebpackBuilder {
     root: Path,
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
-    buildOptions: any
+    buildOptions: any,
+    target: any
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
@@ -32,7 +33,7 @@ export class CustomWebpackBuilder {
       // That exported function can be synchronous either
       // asynchronous. Given the following example:
       // `module.exports = async (config) => { ... }`
-      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions);
+      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions, target);
     }
 
     // The user can also export a `Promise` that resolves `Configuration`

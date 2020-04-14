@@ -62,6 +62,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       null,
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -71,7 +72,7 @@ describe('CustomWebpackBuilder', () => {
   it('should load webpack.config.js if no path specified', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
-    await CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {});
+    await CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {}, {});
 
     try {
       expect(spy).toHaveBeenCalledWith(
@@ -94,6 +95,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { path: fileName },
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -118,6 +120,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { mergeStrategies },
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -141,6 +144,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { replaceDuplicatePlugins: true },
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -158,7 +162,8 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
-      buildOptions
+      buildOptions,
+      {}
     );
     expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions);
   });
@@ -170,6 +175,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -193,6 +199,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
+      {},
       {}
     );
 
@@ -221,6 +228,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
+      {},
       {}
     );
 
