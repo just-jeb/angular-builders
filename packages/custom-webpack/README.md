@@ -359,10 +359,6 @@ module.exports = async config => {
 
 # Index Transform
 
-### Important:
-
-**_Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`._**
-
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
@@ -431,4 +427,4 @@ Full example [here](https://github.com/just-jeb/angular-builders/tree/master/pac
 
 # Further Reading
 
-- [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@just-jeb/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
+- [Customizing Angular CLI build - an alternative to ng eject](https://medium.com/angular-in-depth/customizing-angular-cli-build-an-alternative-to-ng-eject-v2-c655768b48cc)
