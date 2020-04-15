@@ -21,7 +21,7 @@ export class CustomWebpackBuilder {
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
     buildOptions: any,
-    targetOptions: any
+    targetOptions: TargetOptions
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
