@@ -291,7 +291,9 @@ In this case, the behavior will be the same as when exporting a plain object —
 If `customWebpackConfig.path` file exports a function, the behaviour of the builder changes : no more automatic merge is applied, instead the function
 is called with the base Webpack configuration and must return the new configuration.
 
-The function is called with the base config and the builder options as parameters.
+The function is called with the base config the builder options and the target options as parameters.
+`TargetOptions` follows `target` definition from [this](https://github.com/angular/angular-cli/blob/master/packages/angular_devkit/architect/src/input-schema.json) schema
+and can be used to manipulate your build based on the build target.
 
 In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no effect.
 
@@ -301,7 +303,7 @@ In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no ef
 const webpack = require('webpack');
 const pkg = require('./package.json');
 
-module.exports = (config, options) => {
+module.exports = (config, options, targetOptions) => {
   config.plugins.push(
     new webpack.DefinePlugin({
       APP_VERSION: JSON.stringify(pkg.version),
@@ -315,11 +317,11 @@ module.exports = (config, options) => {
 Alternatively, using TypeScript:
 
 ```ts
-import { CustomWebpackBrowserSchema } from '@angular-builders/custom-webpack';
+import { CustomWebpackBrowserSchema, TargetOptions } from '@angular-builders/custom-webpack';
 import * as webpack from 'webpack';
 import * as pkg from './package.json';
 
-export default (config: webpack.Configuration, options: CustomWebpackBrowserSchema) => {
+export default (config: webpack.Configuration, options: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => {
   config.plugins.push(
     new webpack.DefinePlugin({
       APP_VERSION: JSON.stringify(pkg.version),
@@ -356,10 +358,6 @@ module.exports = async config => {
 ```
 
 # Index Transform
-
-### Important:
-
-**_Requires `@angular-devkit/build-angular@0.801` and `@angular-builders/custom-webpack@8.1.0`._**
 
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
@@ -429,4 +427,4 @@ Full example [here](https://github.com/just-jeb/angular-builders/tree/master/pac
 
 # Further Reading
 
-- [Customizing Angular CLI 6 build  -  an alternative to ng eject](https://medium.com/@just-jeb/customizing-angular-cli-6-build-an-alternative-to-ng-eject-a48304cd3b21)
+- [Customizing Angular CLI build - an alternative to ng eject](https://medium.com/angular-in-depth/customizing-angular-cli-build-an-alternative-to-ng-eject-v2-c655768b48cc)

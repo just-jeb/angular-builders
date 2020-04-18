@@ -4,21 +4,24 @@ import { Configuration } from 'webpack';
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { tsNodeRegister } from './utils';
+import {TargetOptions} from "./type-definition";
+import {CustomWebpackBrowserSchema} from "./browser";
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
 type CustomWebpackConfig =
   | Configuration
   | Promise<Configuration>
-  | ((baseWebpackConfig: Configuration, buildOptions: any) => Configuration)
-  | ((baseWebpackConfig: Configuration, buildOptions: any) => Promise<Configuration>);
+  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Configuration)
+  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
   static async buildWebpackConfig(
     root: Path,
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
-    buildOptions: any
+    buildOptions: any,
+    targetOptions: TargetOptions
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
@@ -32,7 +35,7 @@ export class CustomWebpackBuilder {
       // That exported function can be synchronous either
       // asynchronous. Given the following example:
       // `module.exports = async (config) => { ... }`
-      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions);
+      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions, targetOptions);
     }
 
     // The user can also export a `Promise` that resolves `Configuration`
