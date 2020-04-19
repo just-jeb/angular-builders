@@ -18,7 +18,9 @@ jobs:
       - uses: actions/cache@v1
         id: node-modules
         with:
-          path: node_modules
+          path: |
+            node_modules
+            */*/node_modules
           key: ${{ runner.os }}-node-modules
           restore-keys: ${{ runner.os }}-node-modules
 
@@ -28,7 +30,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        if: steps.node-modules.outputs.cache-hit != 'true'
         run: yarn --non-interactive --no-progress
 
       - name: Bootstrap packages
