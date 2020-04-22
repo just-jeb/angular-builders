@@ -2,14 +2,14 @@
 
 [![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/jest/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
-# This documentation is for version 8 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md).
+# This documentation is for version 9 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md) and for version 8 [here](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/jest/README.md).
 
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
 ## Prerequisites
 
-- [Angular CLI 8](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 9](https://www.npmjs.com/package/@angular/cli)
 - [Jest 24](https://www.npmjs.com/package/jest)
 
 ## Installation
@@ -53,6 +53,10 @@ The builder comes to provide zero configuration setup for Jest while keeping the
                             }
   ```
 - Run the tests: `ng test`
+
+## Ivy compatibility
+
+Ivy compiler is enabled by default in version 9 so if you use it, make sure you run `ngcc` in a `postinstall` hook. For more details refer to [this](https://github.com/just-jeb/angular-builders/issues/679#issuecomment-587525674) issue.
 
 ## Multi-projects workspace support
 

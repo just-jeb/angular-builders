@@ -1,34 +1,35 @@
 {
   "name": "simple-app",
-  "version": "9.0.0-beta.0",
+  "version": "9.0.1",
   "scripts": {
     "ng": "node --preserve-symlinks ./node_modules/@angular/cli/bin/ng",
     "start": "yarn ng serve",
     "build": "yarn ng build",
     "test": "yarn ng test",
     "lint": "yarn ng lint",
-    "e2e": "yarn ng e2e"
+    "e2e": "yarn ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.0.0-rc.5",
-    "@angular/common": "~9.0.0-rc.5",
-    "@angular/compiler": "~9.0.0-rc.5",
-    "@angular/core": "~9.0.0-rc.5",
-    "@angular/forms": "~9.0.0-rc.5",
-    "@angular/platform-browser": "~9.0.0-rc.5",
-    "@angular/platform-browser-dynamic": "~9.0.0-rc.5",
-    "@angular/router": "~9.0.0-rc.5",
+    "@angular/animations": "^9.0.0",
+    "@angular/common": "^9.0.0",
+    "@angular/compiler": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "@angular/forms": "^9.0.0",
+    "@angular/platform-browser": "^9.0.0",
+    "@angular/platform-browser-dynamic": "^9.0.0",
+    "@angular/router": "^9.0.0",
     "rxjs": "~6.5.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-builders/jest": "latest",
-    "@angular-devkit/build-angular": "~0.900.0-rc.5",
-    "@angular/cli": "^9.0.0-rc.5",
-    "@angular/compiler-cli": "~9.0.0-rc.5",
-    "@angular/language-service": "~9.0.0-rc.5",
+    "@angular-devkit/build-angular": ">=0.900.0 < 0.1000.0",
+    "@angular/cli": "^9.0.0",
+    "@angular/compiler-cli": "^9.0.0",
+    "@angular/language-service": "^9.0.0",
     "@types/jasmine": "~3.3.13",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -40,6 +41,6 @@
     "protractor": "^5.4.2",
     "ts-node": "~8.2.0",
     "tslint": "~5.16.0",
-    "typescript": "~3.6.4"
+    "typescript": "~3.7.5"
   }
 }
