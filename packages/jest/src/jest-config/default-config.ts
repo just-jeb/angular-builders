@@ -2,7 +2,10 @@ export default {
   globals: {
     'ts-jest': {
       stringifyContentPathRegex: '\\.html$',
-      astTransformers: ['jest-preset-angular/InlineHtmlStripStylesTransformer.js'],
+      astTransformers: [
+        'jest-preset-angular/build/InlineFilesTransformer.js',
+        'jest-preset-angular/build/StripStylesTransformer.js'
+      ],
     },
   },
   preset: 'jest-preset-angular',
