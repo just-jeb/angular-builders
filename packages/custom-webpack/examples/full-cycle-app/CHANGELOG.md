@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.2.1-beta.0 (2020-06-23)</small>
+
+* fix(custom-webpack): schema validation error ([fe1cda0](https://github.com/just-jeb/angular-builders/commit/fe1cda0))
+
+
+
+
+
 ## 9.2.0 (2020-06-23)
 
 **Note:** Version bump only for package full-cycle-app
