@@ -3,21 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.2 (2020-06-23)</small>
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
 ## <small>9.0.2-beta.1 (2020-04-20)</small>
 
-* chore(deps): bump ts-node from 8.8.2 to 8.9.0 ([c78c0d3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/c78c0d3))
-
-
-
-
+- chore(deps): bump ts-node from 8.8.2 to 8.9.0 ([c78c0d3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/c78c0d3))
 
 ## <small>9.0.2-beta.0 (2020-04-10)</small>
 
-* chore(deps-dev): bump karma from 4.4.1 to 5.0.1 ([ca08d01](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ca08d01))
-
-
-
-
+- chore(deps-dev): bump karma from 4.4.1 to 5.0.1 ([ca08d01](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ca08d01))
 
 ## <small>9.0.1 (2020-04-05)</small>
 

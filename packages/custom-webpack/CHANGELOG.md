@@ -3,14 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 9.2.0 (2020-06-23)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## 9.2.0-beta.0 (2020-04-15)
 
-* docs(custom-webpack): update README ([0b81440](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/0b81440))
-* feat(custom-webpack): pass target options to custom webpack config function (#721) ([7a44528](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7a44528)), closes [#721](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/721) [#683](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/683)
-
-
-
-
+- docs(custom-webpack): update README ([0b81440](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/0b81440))
+- feat(custom-webpack): pass target options to custom webpack config function (#721) ([7a44528](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7a44528)), closes [#721](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/721) [#683](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/683)
 
 ## 9.1.0 (2020-04-05)
 
