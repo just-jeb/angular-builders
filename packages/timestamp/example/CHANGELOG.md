@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.3-beta.3 (2020-06-23)</small>
+
+* chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([cef8925](https://github.com/just-jeb/angular-builders/commit/cef8925))
+
+
+
+
+
 ## <small>9.0.3-beta.2 (2020-06-23)</small>
 
 * chore(deps-dev): bump karma-coverage-istanbul-reporter ([910660d](https://github.com/just-jeb/angular-builders/commit/910660d))
