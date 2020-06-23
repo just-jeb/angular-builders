@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.3-beta.0 (2020-06-23)</small>
+
+* chore(deps-dev): bump karma-jasmine from 3.1.1 to 3.3.1 ([9ca1a13](https://github.com/just-jeb/angular-builders/commit/9ca1a13))
+
+
+
+
+
 ## <small>9.0.2 (2020-06-23)</small>
 
 **Note:** Version bump only for package example
