@@ -1,3 +1,8 @@
+# Migration from version 9 to version 10
+
+## Jest builder
+1. Update to Jest 26 if you still haven't.
+
 # Migration from version 8 to version 9
 
 ## All builders

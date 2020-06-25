@@ -13,7 +13,7 @@
     "builders.json"
   ],
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=10.13.0"
   },
   "builders": "builders.json",
   "scripts": {
@@ -25,12 +25,11 @@
     "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "devDependencies": {
-    "@types/dateformat": "^3.0.0"
+    "@types/dateformat": "^3.0.1"
   },
   "dependencies": {
-    "@angular-devkit/architect": ">=0.900.0 < 0.1000.0",
-    "@angular-devkit/core": "^9.0.0",
+    "@angular-devkit/architect": ">=0.1000.0 < 0.1100.0",
+    "@angular-devkit/core": "^10.0.0",
     "dateformat": "^3.0.3"
-  },
-  "gitHead": "e06cf28d3c8ac200a1434ddb9c643bf0788fb3dc"
+  }
 }
