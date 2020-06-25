@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.3-beta.6 (2020-06-25)</small>
+
+* chore(deps): bump @angular/platform-browser-dynamic ([4c7f86f](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4c7f86f))
+
+
+
+
+
 ## <small>9.0.3-beta.5 (2020-06-23)</small>
 
 * chore(deps): bump ts-node from 8.9.1 to 8.10.2 ([7448e35](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/7448e35))
