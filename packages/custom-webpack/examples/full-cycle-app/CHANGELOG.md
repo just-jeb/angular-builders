@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0-beta.0 (2020-06-25)
+
+* build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/issues/782)
+
+
+
+
+
 ## <small>9.2.1-beta.0 (2020-06-23)</small>
 
 * fix(custom-webpack): schema validation error ([fe1cda0](https://github.com/just-jeb/angular-builders/commit/fe1cda0))
