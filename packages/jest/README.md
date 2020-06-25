@@ -2,15 +2,21 @@
 
 [![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/jest/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
 
-# This documentation is for version 9 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md) and for version 8 [here](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/jest/README.md).
-
 Allows running `ng test` with Jest instead of Karma & Jasmine.  
 The builder comes to provide zero configuration setup for Jest while keeping the workspace clear of boilerplate code.
 
+# This documentation is for the latest major version only
+
+## Previous versions
+
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+
 ## Prerequisites
 
-- [Angular CLI 9](https://www.npmjs.com/package/@angular/cli)
-- [Jest 24](https://www.npmjs.com/package/jest)
+- [Angular CLI 10](https://www.npmjs.com/package/@angular/cli)
+- [Jest 26](https://www.npmjs.com/package/jest)
 
 ## Installation
 

@@ -4,11 +4,17 @@
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
-# This documentation is for version 9 only. Find documentation for version 7 [here](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md) and for version 8 [here](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md).
+# This documentation is for the latest major version only
 
-# Prerequisites:
+## Previous versions
 
-- [Angular CLI 9](https://www.npmjs.com/package/@angular/cli)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+
+## Prerequisites:
+
+- [Angular CLI 10](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
@@ -321,7 +327,11 @@ import { CustomWebpackBrowserSchema, TargetOptions } from '@angular-builders/cus
 import * as webpack from 'webpack';
 import * as pkg from './package.json';
 
-export default (config: webpack.Configuration, options: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => {
+export default (
+  config: webpack.Configuration,
+  options: CustomWebpackBrowserSchema,
+  targetOptions: TargetOptions
+) => {
   config.plugins.push(
     new webpack.DefinePlugin({
       APP_VERSION: JSON.stringify(pkg.version),
