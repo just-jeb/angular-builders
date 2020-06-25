@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.3-beta.9 (2020-06-25)</small>
+
+* chore(deps-dev): bump @angular/language-service from 9.1.11 to 10.0.0 ([4af6ae3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4af6ae3))
+
+
+
+
+
 ## <small>9.0.3-beta.8 (2020-06-25)</small>
 
 * chore(deps): bump @angular/forms from 9.1.11 to 10.0.0 ([d25b43c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/d25b43c))
