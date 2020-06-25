@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>9.0.3-beta.8 (2020-06-25)</small>
+
+* chore(deps): bump @angular/forms from 9.1.11 to 10.0.0 ([d25b43c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/d25b43c))
+* chore(deps): bump @angular/platform-browser from 9.1.11 to 10.0.0 ([1665f53](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/1665f53))
+
+
+
+
+
 ## <small>9.0.3-beta.7 (2020-06-25)</small>
 
 * chore(deps): bump @angular/common from 9.1.11 to 10.0.0 ([c3d2e3a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/c3d2e3a))
