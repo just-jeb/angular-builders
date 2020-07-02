@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0-beta.2 (2020-07-02)
+
+* chore(deps): bump @angular-devkit/build-angular ([89525ae](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/89525ae))
+
+
+
+
+
 ## 10.0.0-beta.1 (2020-06-25)
 
 * chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([6399200](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/6399200))
