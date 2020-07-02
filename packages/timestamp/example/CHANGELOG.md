@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0-beta.4 (2020-07-02)
+
+* chore(deps-dev): bump codelyzer from 5.2.2 to 6.0.0 ([356754d](https://github.com/just-jeb/angular-builders/commit/356754d))
+
+
+
+
+
 ## 10.0.0-beta.3 (2020-07-02)
 
 * chore(deps): bump rxjs from 6.5.5 to 6.6.0 ([9ede4ae](https://github.com/just-jeb/angular-builders/commit/9ede4ae))
