@@ -3,13 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0 (2020-07-21)
+
+**Note:** Version bump only for package multiple-apps
+
 ## 10.0.0-beta.0 (2020-06-25)
 
-* build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/issues/782)
-
-
-
-
+- build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/issues/782)
 
 ## <small>9.0.1 (2020-04-05)</small>
 

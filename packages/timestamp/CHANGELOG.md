@@ -3,158 +3,86 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0 (2020-07-21)
+
+- chore(deps): bump @angular-devkit/build-angular ([9aaa8b3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/9aaa8b3))
+
 ## 10.0.0-beta.5 (2020-07-09)
 
-* chore(deps): bump @angular-devkit/build-angular ([f83f2d7](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/f83f2d7))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([f83f2d7](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/f83f2d7))
 
 ## 10.0.0-beta.4 (2020-07-02)
 
-* chore(deps-dev): bump codelyzer from 5.2.2 to 6.0.0 ([356754d](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/356754d))
-
-
-
-
+- chore(deps-dev): bump codelyzer from 5.2.2 to 6.0.0 ([356754d](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/356754d))
 
 ## 10.0.0-beta.3 (2020-07-02)
 
-* chore(deps): bump rxjs from 6.5.5 to 6.6.0 ([9ede4ae](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/9ede4ae))
-
-
-
-
+- chore(deps): bump rxjs from 6.5.5 to 6.6.0 ([9ede4ae](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/9ede4ae))
 
 ## 10.0.0-beta.2 (2020-07-02)
 
-* chore(deps): bump @angular-devkit/build-angular ([89525ae](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/89525ae))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([89525ae](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/89525ae))
 
 ## 10.0.0-beta.1 (2020-06-25)
 
-* chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([6399200](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/6399200))
-
-
-
-
+- chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([6399200](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/6399200))
 
 ## 10.0.0-beta.0 (2020-06-25)
 
-* build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/issues/782)
-
-
-
-
+- build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/issues/782)
 
 ## <small>9.0.3-beta.12 (2020-06-25)</small>
 
-* chore(deps): bump @angular/animations from 9.1.11 to 10.0.0 ([14ab37a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/14ab37a))
-
-
-
-
+- chore(deps): bump @angular/animations from 9.1.11 to 10.0.0 ([14ab37a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/14ab37a))
 
 ## <small>9.0.3-beta.11 (2020-06-25)</small>
 
-* chore(deps): bump @angular/router from 9.1.11 to 10.0.0 ([de3454e](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/de3454e))
-
-
-
-
+- chore(deps): bump @angular/router from 9.1.11 to 10.0.0 ([de3454e](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/de3454e))
 
 ## <small>9.0.3-beta.10 (2020-06-25)</small>
 
-* chore(deps-dev): bump @angular/cli from 9.1.9 to 10.0.0 ([ad877c5](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ad877c5))
-
-
-
-
+- chore(deps-dev): bump @angular/cli from 9.1.9 to 10.0.0 ([ad877c5](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ad877c5))
 
 ## <small>9.0.3-beta.9 (2020-06-25)</small>
 
-* chore(deps-dev): bump @angular/language-service from 9.1.11 to 10.0.0 ([4af6ae3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4af6ae3))
-
-
-
-
+- chore(deps-dev): bump @angular/language-service from 9.1.11 to 10.0.0 ([4af6ae3](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4af6ae3))
 
 ## <small>9.0.3-beta.8 (2020-06-25)</small>
 
-* chore(deps): bump @angular/forms from 9.1.11 to 10.0.0 ([d25b43c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/d25b43c))
-* chore(deps): bump @angular/platform-browser from 9.1.11 to 10.0.0 ([1665f53](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/1665f53))
-
-
-
-
+- chore(deps): bump @angular/forms from 9.1.11 to 10.0.0 ([d25b43c](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/d25b43c))
+- chore(deps): bump @angular/platform-browser from 9.1.11 to 10.0.0 ([1665f53](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/1665f53))
 
 ## <small>9.0.3-beta.7 (2020-06-25)</small>
 
-* chore(deps): bump @angular/common from 9.1.11 to 10.0.0 ([c3d2e3a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/c3d2e3a))
-
-
-
-
+- chore(deps): bump @angular/common from 9.1.11 to 10.0.0 ([c3d2e3a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/c3d2e3a))
 
 ## <small>9.0.3-beta.6 (2020-06-25)</small>
 
-* chore(deps): bump @angular/platform-browser-dynamic ([4c7f86f](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4c7f86f))
-
-
-
-
+- chore(deps): bump @angular/platform-browser-dynamic ([4c7f86f](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/4c7f86f))
 
 ## <small>9.0.3-beta.5 (2020-06-23)</small>
 
-* chore(deps): bump ts-node from 8.9.1 to 8.10.2 ([7448e35](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/7448e35))
-
-
-
-
+- chore(deps): bump ts-node from 8.9.1 to 8.10.2 ([7448e35](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/7448e35))
 
 ## <small>9.0.3-beta.4 (2020-06-23)</small>
 
-* chore(deps-dev): bump @types/node from 13.13.12 to 14.0.13 ([76ee36a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/76ee36a))
-
-
-
-
+- chore(deps-dev): bump @types/node from 13.13.12 to 14.0.13 ([76ee36a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/76ee36a))
 
 ## <small>9.0.3-beta.3 (2020-06-23)</small>
 
-* chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([cef8925](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/cef8925))
-
-
-
-
+- chore(deps-dev): bump karma from 5.0.9 to 5.1.0 ([cef8925](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/cef8925))
 
 ## <small>9.0.3-beta.2 (2020-06-23)</small>
 
-* chore(deps-dev): bump karma-coverage-istanbul-reporter ([910660d](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/910660d))
-
-
-
-
+- chore(deps-dev): bump karma-coverage-istanbul-reporter ([910660d](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/910660d))
 
 ## <small>9.0.3-beta.1 (2020-06-23)</small>
 
-* chore(deps-dev): bump protractor from 5.4.4 to 7.0.0 ([2c14a2a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/2c14a2a))
-
-
-
-
+- chore(deps-dev): bump protractor from 5.4.4 to 7.0.0 ([2c14a2a](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/2c14a2a))
 
 ## <small>9.0.3-beta.0 (2020-06-23)</small>
 
-* chore(deps-dev): bump karma-jasmine from 3.1.1 to 3.3.1 ([9ca1a13](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/9ca1a13))
-
-
-
-
+- chore(deps-dev): bump karma-jasmine from 3.1.1 to 3.3.1 ([9ca1a13](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/9ca1a13))
 
 ## <small>9.0.2 (2020-06-23)</small>
 

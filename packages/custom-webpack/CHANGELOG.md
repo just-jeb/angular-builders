@@ -3,29 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 10.0.0 (2020-07-21)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## 10.0.0-beta.1 (2020-07-13)
 
-* feat(custom-webpack): export common (#793) ([1cb73d4](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/1cb73d4)), closes [#793](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/793)
-
-
-
-
+- feat(custom-webpack): export common (#793) ([1cb73d4](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/1cb73d4)), closes [#793](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/793)
 
 ## 10.0.0-beta.0 (2020-06-25)
 
-* build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/782)
-
-
-
-
+- build!: update to Angular 10 (#782) ([409f356](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/409f356)), closes [#782](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/782)
 
 ## <small>9.2.1-beta.0 (2020-06-23)</small>
 
-* fix(custom-webpack): schema validation error ([fe1cda0](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/fe1cda0))
-
-
-
-
+- fix(custom-webpack): schema validation error ([fe1cda0](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/fe1cda0))
 
 ## 9.2.0 (2020-06-23)
 
