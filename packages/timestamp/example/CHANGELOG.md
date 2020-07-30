@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.0 (2020-07-30)</small>
+
+* chore(deps): bump @angular-devkit/build-angular ([1bb4f68](https://github.com/just-jeb/angular-builders/commit/1bb4f68))
+
+
+
+
+
 ## 10.0.0 (2020-07-21)
 
 - chore(deps): bump @angular-devkit/build-angular ([9aaa8b3](https://github.com/just-jeb/angular-builders/commit/9aaa8b3))
