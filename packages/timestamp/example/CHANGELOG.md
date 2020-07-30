@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.1 (2020-07-30)</small>
+
+* chore(deps-dev): bump jasmine-core from 3.5.0 to 3.6.0 ([7928992](https://github.com/just-jeb/angular-builders/commit/7928992))
+
+
+
+
+
 ## <small>10.0.1-beta.0 (2020-07-30)</small>
 
 * chore(deps): bump @angular-devkit/build-angular ([1bb4f68](https://github.com/just-jeb/angular-builders/commit/1bb4f68))
