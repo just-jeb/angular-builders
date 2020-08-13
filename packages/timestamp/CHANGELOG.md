@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.4 (2020-08-13)</small>
+
+* chore(deps): bump @angular-devkit/build-angular ([fe2fd7b](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/fe2fd7b))
+
+
+
+
+
 ## <small>10.0.1-beta.3 (2020-08-11)</small>
 
 * chore(deps-dev): bump karma-jasmine from 3.3.1 to 4.0.0 ([03cc6c7](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/03cc6c7))
