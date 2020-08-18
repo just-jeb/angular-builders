@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.5 (2020-08-18)</small>
+
+* chore(deps): bump zone.js from 0.10.3 to 0.11.0 ([ed4e820](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/ed4e820))
+
+
+
+
+
 ## <small>10.0.1-beta.4 (2020-08-13)</small>
 
 * chore(deps): bump @angular-devkit/build-angular ([fe2fd7b](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/fe2fd7b))
