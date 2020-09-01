@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.9 (2020-09-01)</small>
+
+* chore(deps): bump ts-node from 8.10.2 to 9.0.0 ([7de38ff](https://github.com/just-jeb/angular-builders/commit/7de38ff))
+
+
+
+
+
 ## <small>10.0.1-beta.8 (2020-09-01)</small>
 
 * chore(deps): bump @angular-devkit/build-angular ([f0b361a](https://github.com/just-jeb/angular-builders/commit/f0b361a))

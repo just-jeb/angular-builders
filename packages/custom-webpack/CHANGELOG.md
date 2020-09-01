@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.0 (2020-09-01)</small>
+
+* chore(deps): bump ts-node from 8.10.2 to 9.0.0 ([7de38ff](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7de38ff))
+
+
+
+
+
 ## 10.0.0 (2020-07-21)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
