@@ -5,13 +5,14 @@ import { resolve } from 'path';
  *
  * @param file - webpack config file path
  * @param root - path to project root
+ * @param tsConfig - tsConfig file name
  */
-export function tsNodeRegister(file = '', root = process.cwd()) {
+export function tsNodeRegister(file = '', root: string, tsConfig: string) {
   if (!file.endsWith('.ts')) {
     return;
   }
 
-  const tsConfigPath = resolve(root, 'tsconfig.app.json');
+  const tsConfigPath = resolve(root, tsConfig);
 
   const { register } = require('ts-node');
 
