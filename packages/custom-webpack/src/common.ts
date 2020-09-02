@@ -12,7 +12,10 @@ import { tsNodeRegister } from './utils';
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => ExecutionTransformer<Configuration> = (options, { workspaceRoot, target }) => browserWebpackConfig => {
+) => ExecutionTransformer<Configuration> = (
+  options,
+  { workspaceRoot, target }
+) => browserWebpackConfig => {
   return CustomWebpackBuilder.buildWebpackConfig(
     normalize(workspaceRoot),
     options.customWebpackConfig,
@@ -27,7 +30,7 @@ export const indexHtmlTransformFactory: (
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  tsNodeRegister(indexTransform);
+  tsNodeRegister(indexTransform, workspaceRoot);
   const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
