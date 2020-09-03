@@ -1,5 +1,5 @@
 import { Path, resolve } from '@angular-devkit/core';
-import { mergeWith } from 'lodash';
+import { isArray, mergeWith } from 'lodash';
 import { CustomConfigResolver } from './custom-config.resolver';
 import { DefaultConfigResolver } from './default-config.resolver';
 
@@ -20,6 +20,14 @@ const ARRAY_PROPERTIES_TO_CONCAT = [
 function concatArrayProperties(objValue: any[], srcValue: unknown, property: string) {
   if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property)) {
     return;
+  }
+
+  if (!isArray(objValue)) {
+    return mergeWith(objValue, srcValue, (obj, src) => {
+      if (isArray(obj)) {
+        return obj.concat(src);
+      }
+    });
   }
 
   return objValue.concat(srcValue);
