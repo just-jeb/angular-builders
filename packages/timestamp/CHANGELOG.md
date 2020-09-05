@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.11 (2020-09-04)</small>
+
+* chore(deps-dev): bump typescript from 3.9.7 to 4.0.2 ([418d8ed](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/418d8ed))
+
+
+
+
+
 ## <small>10.0.1-beta.10 (2020-09-03)</small>
 
 * chore(deps): bump @angular-devkit/build-angular ([1e6ea84](https://github.com/just-jeb/angular-builders/tree/master/packages/timestamp/commit/1e6ea84))
