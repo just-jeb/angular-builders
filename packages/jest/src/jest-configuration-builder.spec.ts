@@ -137,6 +137,60 @@ describe('Build Jest configuration object', () => {
     });
   });
 
+  it('Should work with object style configuration for "astTransformers"', () => {
+    defaultConfigResolver.resolveGlobal.mockReturnValue({
+      globals: {
+        'ts-jest': {
+          astTransformers: {
+            before: ['astTA'],
+          },
+        },
+      },
+    });
+
+    defaultConfigResolver.resolveForProject.mockReturnValue({
+      testMatch: ['shouldNotBe'],
+    });
+
+    customConfigResolver.resolveGlobal.mockReturnValue({
+      globals: {
+        'ts-jest': {
+          astTransformers: {
+            before: ['astTB'],
+            after: ['astTC'],
+          },
+        },
+      },
+      testMatch: ['shouldBeOnlyThis'],
+    });
+
+    customConfigResolver.resolveForProject.mockReturnValue({
+      globals: {
+        'ts-jest': {
+          astTransformers: {}
+        },
+      },
+    });
+
+    const config = jestConfigurationBuilder.buildConfiguration(
+      normalize(''),
+      undefined,
+      normalize('./')
+    );
+
+    expect(config).toEqual({
+      globals: {
+        'ts-jest': {
+          astTransformers: {
+            before: ['astTA', 'astTB'],
+            after: ['astTC'],
+          },
+        },
+      },
+      testMatch: ['shouldBeOnlyThis'],
+    });
+  });
+
   it('Should call the default config resolver resolveGlobal method', () => {
     const workspaceRoot = normalize('my/workspace/root');
     jestConfigurationBuilder.buildConfiguration(normalize(''), workspaceRoot, normalize('./'));
