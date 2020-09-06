@@ -68,7 +68,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Custom Webpack `browser`
 
-Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+Extended `@angular-devkit/build-angular:browser` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` transformations.
 The builder will run the same build as `@angular-devkit/build-angular:browser` does with extra parameters that are specified in the provided webpack configuration. It will also run transformation on `index.html` if specified.
 
 Builder options:
@@ -138,7 +138,7 @@ In this example `dev-server` will use `custom-webpack:browser` builder, hence mo
 
 ## Custom Webpack `server`
 
-Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+Extended `@angular-devkit/build-angular:server` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` transformations.
 The builder will run the same build as `@angular-devkit/build-angular:server` does with extra parameters that are specified in the provided webpack configuration.
 
 Builder options:
@@ -172,7 +172,7 @@ Since loaders are evaluated [from right to left](https://webpack.js.org/concepts
 
 ## Custom Webpack `karma`
 
-Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` tranformations.
+Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` transformations.
 The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
 
 Builder options:
@@ -197,6 +197,40 @@ Builder options:
       "karmaConfig": "src/karma.conf.js",
     }
 ```
+
+## Custom Webpack `extract-i18n`
+
+Enhanced `@angular-devkit/build-angular:extract-i18n` builder that leverages the custom webpack builder to get webpack configuration.
+
+The builder uses `customWebpackConfiguration` from `browserTarget` to run the extraction process while taking into account changes in your custom webpack config.
+
+Thus, if you use `@angular-builders/custom-webpack:extract-i18n` along with `@angular-builders/custom-webpack:browser`, `ng extract-i18n` will run with custom configuration provided in the latter.
+
+### Example
+
+`angular.json`:
+
+```js
+"architect": {
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-webpack:browser",
+    "options": {
+      "customWebpackConfig": {
+         "path": "./extra-webpack.config.js"
+      },
+      ...
+    }
+  },
+  "extract-i18n": {
+    "builder": "@angular-builders/custom-webpack:extract-i18n",
+    "options": {
+      "browserTarget": "my-project:build"
+    }
+  }
+```
+
+In this example `extract-i18n` will use `custom-webpack:browser` builder, hence modified webpack config, when invoking the extract-i18n target.
 
 # Custom Webpack Config Object
 
