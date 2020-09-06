@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.0 (2020-09-06)</small>
+
+* chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/issues/831)
+
+
+
+
+
 ## 10.0.0 (2020-07-21)
 
 **Note:** Version bump only for package simple-app
