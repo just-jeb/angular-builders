@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1-beta.1 (2020-09-06)</small>
+
+* chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/issues/831)
+
+
+
+
+
 ## <small>10.0.1-beta.0 (2020-09-01)</small>
 
 * chore(deps): bump ts-node from 8.10.2 to 9.0.0 ([7de38ff](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/commit/7de38ff))
