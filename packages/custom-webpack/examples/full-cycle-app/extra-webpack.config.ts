@@ -13,7 +13,7 @@ export default {
       filename: 'footer.html',
       template: 'src/footer-template.html',
     }),
-    new webpack.ProvidePlugin({
+    new webpack.DefinePlugin({
       APP_VERSION: JSON.stringify(version),
     }),
   ],
