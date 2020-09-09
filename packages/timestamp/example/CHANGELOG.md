@@ -3,109 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1 (2020-09-09)</small>
+
+**Note:** Version bump only for package example
+
 ## <small>10.0.1-beta.12 (2020-09-06)</small>
 
-* chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/issues/831)
-
-
-
-
+- chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/issues/831)
 
 ## <small>10.0.1-beta.11 (2020-09-04)</small>
 
-* chore(deps-dev): bump typescript from 3.9.7 to 4.0.2 ([418d8ed](https://github.com/just-jeb/angular-builders/commit/418d8ed))
-
-
-
-
+- chore(deps-dev): bump typescript from 3.9.7 to 4.0.2 ([418d8ed](https://github.com/just-jeb/angular-builders/commit/418d8ed))
 
 ## <small>10.0.1-beta.10 (2020-09-03)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([1e6ea84](https://github.com/just-jeb/angular-builders/commit/1e6ea84))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([1e6ea84](https://github.com/just-jeb/angular-builders/commit/1e6ea84))
 
 ## <small>10.0.1-beta.9 (2020-09-01)</small>
 
-* chore(deps): bump ts-node from 8.10.2 to 9.0.0 ([7de38ff](https://github.com/just-jeb/angular-builders/commit/7de38ff))
-
-
-
-
+- chore(deps): bump ts-node from 8.10.2 to 9.0.0 ([7de38ff](https://github.com/just-jeb/angular-builders/commit/7de38ff))
 
 ## <small>10.0.1-beta.8 (2020-09-01)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([f0b361a](https://github.com/just-jeb/angular-builders/commit/f0b361a))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([f0b361a](https://github.com/just-jeb/angular-builders/commit/f0b361a))
 
 ## <small>10.0.1-beta.7 (2020-09-01)</small>
 
-* chore(deps-dev): bump karma from 5.1.1 to 5.2.0 ([a58b0d6](https://github.com/just-jeb/angular-builders/commit/a58b0d6))
-
-
-
-
+- chore(deps-dev): bump karma from 5.1.1 to 5.2.0 ([a58b0d6](https://github.com/just-jeb/angular-builders/commit/a58b0d6))
 
 ## <small>10.0.1-beta.6 (2020-08-21)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([ac8c8f3](https://github.com/just-jeb/angular-builders/commit/ac8c8f3))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([ac8c8f3](https://github.com/just-jeb/angular-builders/commit/ac8c8f3))
 
 ## <small>10.0.1-beta.5 (2020-08-18)</small>
 
-* chore(deps): bump zone.js from 0.10.3 to 0.11.0 ([ed4e820](https://github.com/just-jeb/angular-builders/commit/ed4e820))
-
-
-
-
+- chore(deps): bump zone.js from 0.10.3 to 0.11.0 ([ed4e820](https://github.com/just-jeb/angular-builders/commit/ed4e820))
 
 ## <small>10.0.1-beta.4 (2020-08-13)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([fe2fd7b](https://github.com/just-jeb/angular-builders/commit/fe2fd7b))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([fe2fd7b](https://github.com/just-jeb/angular-builders/commit/fe2fd7b))
 
 ## <small>10.0.1-beta.3 (2020-08-11)</small>
 
-* chore(deps-dev): bump karma-jasmine from 3.3.1 to 4.0.0 ([03cc6c7](https://github.com/just-jeb/angular-builders/commit/03cc6c7))
-
-
-
-
+- chore(deps-dev): bump karma-jasmine from 3.3.1 to 4.0.0 ([03cc6c7](https://github.com/just-jeb/angular-builders/commit/03cc6c7))
 
 ## <small>10.0.1-beta.2 (2020-08-01)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([4d85c19](https://github.com/just-jeb/angular-builders/commit/4d85c19))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([4d85c19](https://github.com/just-jeb/angular-builders/commit/4d85c19))
 
 ## <small>10.0.1-beta.1 (2020-07-30)</small>
 
-* chore(deps-dev): bump jasmine-core from 3.5.0 to 3.6.0 ([7928992](https://github.com/just-jeb/angular-builders/commit/7928992))
-
-
-
-
+- chore(deps-dev): bump jasmine-core from 3.5.0 to 3.6.0 ([7928992](https://github.com/just-jeb/angular-builders/commit/7928992))
 
 ## <small>10.0.1-beta.0 (2020-07-30)</small>
 
-* chore(deps): bump @angular-devkit/build-angular ([1bb4f68](https://github.com/just-jeb/angular-builders/commit/1bb4f68))
-
-
-
-
+- chore(deps): bump @angular-devkit/build-angular ([1bb4f68](https://github.com/just-jeb/angular-builders/commit/1bb4f68))
 
 ## 10.0.0 (2020-07-21)
 

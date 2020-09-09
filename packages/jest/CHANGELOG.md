@@ -3,21 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>10.0.1 (2020-09-09)</small>
+
+**Note:** Version bump only for package @angular-builders/jest
+
 ## <small>10.0.1-beta.1 (2020-09-06)</small>
 
-* chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/831)
-
-
-
-
+- chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/831)
 
 ## <small>10.0.1-beta.0 (2020-09-05)</small>
 
-* fix(jest):  support astTransformers object syntax (#828) ([0acd239](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/0acd239)), closes [#828](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/828) [#825](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/825)
-
-
-
-
+- fix(jest): support astTransformers object syntax (#828) ([0acd239](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/commit/0acd239)), closes [#828](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/828) [#825](https://github.com/just-jeb/angular-builders/tree/master/packages/jest/issues/825)
 
 ## 10.0.0 (2020-07-21)
 
