@@ -433,7 +433,7 @@ export default (targetOptions: TargetOptions, indexHtml: string) => {
 
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
-Full example [here](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack/examples/full-cycle-app).
+Full example [here](./examples/full-cycle-app).
 
 # Further Reading
 
