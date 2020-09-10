@@ -1,10 +1,8 @@
 import { BuilderContext } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
 import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/angular-cli-files/utilities/index-file/write-index-html';
-import { normalize, getSystemPath } from '@angular-devkit/core';
-
+import { getSystemPath, normalize } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
-
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
 import { tsNodeRegister } from './utils';
@@ -12,7 +10,10 @@ import { tsNodeRegister } from './utils';
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => ExecutionTransformer<Configuration> = (options, { workspaceRoot, target }) => browserWebpackConfig => {
+) => ExecutionTransformer<Configuration> = (
+  options,
+  { workspaceRoot, target }
+) => browserWebpackConfig => {
   return CustomWebpackBuilder.buildWebpackConfig(
     normalize(workspaceRoot),
     options.customWebpackConfig,

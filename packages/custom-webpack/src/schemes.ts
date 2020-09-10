@@ -16,10 +16,12 @@ module.exports = [
   },
   {
     originalSchemaPath: '@angular-devkit/build-angular/src/dev-server/schema.json',
-    schemaExtensionPaths: [
-      `${__dirname}/dev-server/schema.ext.json`,
-      `${__dirname}/schema.ext.json`,
-    ],
+    schemaExtensionPaths: [`${__dirname}/dev-server/schema.ext.json`],
     newSchemaPath: `${__dirname}/../dist/dev-server/schema.json`,
+  },
+  {
+    originalSchemaPath: '@angular-devkit/build-angular/src/extract-i18n/schema.json',
+    schemaExtensionPaths: [`${__dirname}/extract-i18n/schema.ext.json`],
+    newSchemaPath: `${__dirname}/../dist/extract-i18n/schema.json`,
   },
 ];

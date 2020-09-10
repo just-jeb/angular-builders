@@ -5,5 +5,7 @@ export * from './browser';
 export * from './karma';
 export * from './server';
 export * from './dev-server';
-export * from './common';
+export * from './extract-i18n';
+export * from './transform-factories';
+export * from './generic-browser-builder';
 export { TargetOptions } from './type-definition';
