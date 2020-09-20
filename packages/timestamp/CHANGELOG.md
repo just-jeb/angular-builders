@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [10.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.0...@angular-builders/timestamp@10.0.2-beta.1) (2020-09-20)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+
+
+
+
 ## <small>10.0.2-beta.0 (2020-09-09)</small>
 
 * Fix CHANGELOG links (#834) ([001b4ab](https://github.com/just-jeb/angular-builders/commit/001b4ab)), closes [#834](https://github.com/just-jeb/angular-builders/issues/834)

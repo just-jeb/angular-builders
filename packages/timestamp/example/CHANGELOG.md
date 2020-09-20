@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [10.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/example@10.0.1...example@10.0.2-beta.0) (2020-09-20)
+
+**Note:** Version bump only for package example
+
+
+
+
+
 ## <small>10.0.1 (2020-09-09)</small>
 
 **Note:** Version bump only for package example
