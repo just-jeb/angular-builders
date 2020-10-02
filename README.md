@@ -50,6 +50,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jankeesvanandel"><img src="https://avatars1.githubusercontent.com/u/272120?v=4" width="100px;" alt=""/><br /><sub><b>Jan-Kees van Andel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jankeesvanandel" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/gdoerr"><img src="https://avatars2.githubusercontent.com/u/6474127?v=4" width="100px;" alt=""/><br /><sub><b>Greg Doerr</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=gdoerr" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/arluko"><img src="https://avatars0.githubusercontent.com/u/70697565?v=4" width="100px;" alt=""/><br /><sub><b>arluko</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arluko" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/zauni"><img src="https://avatars0.githubusercontent.com/u/663845?v=4" width="100px;" alt=""/><br /><sub><b>Matthias Zaunseder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=zauni" title="Code">💻</a></td>
   </tr>
 </table>
 
