@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [10.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@10.0.2-beta.0...@angular-builders/jest@10.0.2-beta.1) (2020-10-20)
+
+
+### Bug Fixes
+
+* **jest:** remove local storage mock ([#843](https://github.com/just-jeb/angular-builders/issues/843)) ([f98dfd7](https://github.com/just-jeb/angular-builders/commit/f98dfd79090b45bb9dc510a7d0f59ecc0720f20a))
+
+
+
 ## <small>10.0.2-beta.0 (2020-09-09)</small>
 
 * Fix CHANGELOG links (#834) ([001b4ab](https://github.com/just-jeb/angular-builders/commit/001b4ab)), closes [#834](https://github.com/just-jeb/angular-builders/issues/834)
