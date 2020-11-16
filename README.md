@@ -2,13 +2,15 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders require Angular CLI 10
+## The latest version of all the builders require Angular CLI 11
 
 ## [Documentation for version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
 
 ## [Documentation for version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
 
 ## [Documentation for version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
+
+## [Documentation for version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
 
 ## [Migration guide](./MIGRATION.MD)
 
@@ -56,6 +58,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
