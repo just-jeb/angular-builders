@@ -3,130 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [11.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.13...@angular-builders/timestamp@11.0.0-beta.0) (2020-11-17)
-
+## [11.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.13...@angular-builders/timestamp@11.0.0-beta.1) (2020-11-17)
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to angular 11 (#874)
+- **deps:** update to angular 11 (#874)
 
 ### Miscellaneous Chores
 
-* **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
+- **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
 
+## [11.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.13...@angular-builders/timestamp@11.0.0-beta.0) (2020-11-17)
 
+### ⚠ BREAKING CHANGES
+
+- **deps:** update to angular 11 (#874)
+
+### Miscellaneous Chores
+
+- **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
 
 ### [10.0.2-beta.13](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.12...@angular-builders/timestamp@10.0.2-beta.13) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.12](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.11...@angular-builders/timestamp@10.0.2-beta.12) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.11](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.10...@angular-builders/timestamp@10.0.2-beta.11) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.10](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.9...@angular-builders/timestamp@10.0.2-beta.10) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.9](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.8...@angular-builders/timestamp@10.0.2-beta.9) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.8](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.7...@angular-builders/timestamp@10.0.2-beta.8) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.7](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.6...@angular-builders/timestamp@10.0.2-beta.7) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.6](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.5...@angular-builders/timestamp@10.0.2-beta.6) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.5](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.4...@angular-builders/timestamp@10.0.2-beta.5) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.3...@angular-builders/timestamp@10.0.2-beta.4) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.2...@angular-builders/timestamp@10.0.2-beta.3) (2020-11-12)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ### [10.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.1...@angular-builders/timestamp@10.0.2-beta.2) (2020-10-24)
 
 **Note:** Version bump only for package @angular-builders/timestamp
-
-
-
-
 
 ### [10.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.0...@angular-builders/timestamp@10.0.2-beta.1) (2020-09-20)
 
 **Note:** Version bump only for package @angular-builders/timestamp
 
-
-
-
-
 ## <small>10.0.2-beta.0 (2020-09-09)</small>
 
-* Fix CHANGELOG links (#834) ([001b4ab](https://github.com/just-jeb/angular-builders/commit/001b4ab)), closes [#834](https://github.com/just-jeb/angular-builders/issues/834)
-
-
-
-
+- Fix CHANGELOG links (#834) ([001b4ab](https://github.com/just-jeb/angular-builders/commit/001b4ab)), closes [#834](https://github.com/just-jeb/angular-builders/issues/834)
 
 ## <small>10.0.1 (2020-09-09)</small>
 
