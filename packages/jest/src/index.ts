@@ -1,5 +1,5 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
-import { normalize, Path, schema, json, workspaces } from '@angular-devkit/core';
+import { experimental, normalize, Path, schema, json } from '@angular-devkit/core';
 import { NodeJsSyncHost } from '@angular-devkit/core/node';
 import { run } from 'jest';
 import { from, Observable } from 'rxjs';
@@ -13,17 +13,17 @@ import { SchemaObject as JestBuilderSchema } from './schema';
 export async function getRoots(
   context: BuilderContext
 ): Promise<{ workspaceRoot: Path; projectRoot: Path }> {
+  const host = new NodeJsSyncHost();
   const registry = new schema.CoreSchemaRegistry();
   registry.addPostTransform(schema.transforms.addUndefinedDefaults);
-  const { workspace } = await workspaces.readWorkspace(
+  const workspace = await experimental.workspace.Workspace.fromPath(
+    host,
     normalize(context.workspaceRoot),
-    workspaces.createWorkspaceHost(new NodeJsSyncHost())
+    registry
   );
-  const projectName = context.target
-    ? context.target.project
-    : workspace.extensions['defaultProject'];
+  const projectName = context.target ? context.target.project : workspace.getDefaultProjectName();
 
-  if (typeof projectName !== 'string') {
+  if (!projectName) {
     throw new Error('Must either have a target from the context or a default project.');
   }
 
@@ -31,10 +31,10 @@ export async function getRoots(
   //     workspace.root,
   //     normalize(workspace.getProject(projectName).root),
   // );
-  const { root } = workspace.projects.get(projectName);
+  const { root } = workspace.getProject(projectName);
   return {
     projectRoot: normalize(root),
-    workspaceRoot: normalize(context.workspaceRoot),
+    workspaceRoot: workspace.root,
   };
 }
 
