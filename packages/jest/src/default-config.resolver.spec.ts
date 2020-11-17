@@ -8,7 +8,7 @@ const defaultConfigResolver = new DefaultConfigResolver();
 describe('Resolve project default configuration', () => {
   it('Should resolve tsconfig relatively to project root', () => {
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-    expect(config.globals['ts-jest'].tsConfig).toEqual(
+    expect(config.globals['ts-jest'].tsconfig).toEqual(
       getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`))
     );
   });
@@ -16,7 +16,7 @@ describe('Resolve project default configuration', () => {
   it('Should resolve path to the tsconfig if "tsConfig" is provided', () => {
     const defaultConfigResolver = new DefaultConfigResolver('./ts-configs/tsconfig.spec.json');
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/project'));
-    const tsConfig = config.globals['ts-jest'].tsConfig;
+    const tsConfig = config.globals['ts-jest'].tsconfig;
     expect(tsConfig).toEqual(
       getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`))
     );
