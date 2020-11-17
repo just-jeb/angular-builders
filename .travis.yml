@@ -24,6 +24,5 @@ before_deploy:
 deploy:
   provider: script
   script: bash scripts/default-registry.sh
-  skip_cleanup: true
   on:
     branch: master
