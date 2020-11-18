@@ -4,16 +4,24 @@ import { Configuration } from 'webpack';
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { tsNodeRegister } from './utils';
-import {TargetOptions} from "./type-definition";
-import {CustomWebpackBrowserSchema} from "./browser";
+import { TargetOptions } from './type-definition';
+import { CustomWebpackBrowserSchema } from './browser';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
 type CustomWebpackConfig =
   | Configuration
   | Promise<Configuration>
-  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Configuration)
-  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Promise<Configuration>);
+  | ((
+      baseWebpackConfig: Configuration,
+      buildOptions: CustomWebpackBrowserSchema,
+      targetOptions: TargetOptions
+    ) => Configuration)
+  | ((
+      baseWebpackConfig: Configuration,
+      buildOptions: CustomWebpackBrowserSchema,
+      targetOptions: TargetOptions
+    ) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
   static async buildWebpackConfig(
@@ -29,7 +37,8 @@ export class CustomWebpackBuilder {
 
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
     const path = `${getSystemPath(root)}/${webpackConfigPath}`;
-    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path);
+    const tsConfig = `${getSystemPath(root)}/${buildOptions.tsConfig}`;
+    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path, tsConfig);
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // That exported function can be synchronous either
@@ -55,9 +64,8 @@ export class CustomWebpackBuilder {
   }
 }
 
-function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  
-  tsNodeRegister(path);
+function resolveCustomWebpackConfig(path: string, tsConfig: string): CustomWebpackConfig {
+  tsNodeRegister(path, tsConfig);
 
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file
