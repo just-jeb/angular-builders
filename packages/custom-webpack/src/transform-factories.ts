@@ -26,9 +26,9 @@ export const customWebpackConfigTransformFactory: (
 export const indexHtmlTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
+) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  tsNodeRegister(indexTransform);
+  tsNodeRegister(indexTransform, `${getSystemPath(normalize(workspaceRoot))}/${tsConfig}`);
   const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
