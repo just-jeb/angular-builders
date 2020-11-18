@@ -37,7 +37,8 @@ export class CustomWebpackBuilder {
 
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
     const path = `${getSystemPath(root)}/${webpackConfigPath}`;
-    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path);
+    const tsConfig = `${getSystemPath(root)}/${buildOptions.tsConfig}`;
+    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path, tsConfig);
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // That exported function can be synchronous either
@@ -63,8 +64,8 @@ export class CustomWebpackBuilder {
   }
 }
 
-function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  tsNodeRegister(path);
+function resolveCustomWebpackConfig(path: string, tsConfig: string): CustomWebpackConfig {
+  tsNodeRegister(path, tsConfig);
 
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file
