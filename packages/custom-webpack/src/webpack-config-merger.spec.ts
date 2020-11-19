@@ -1,5 +1,6 @@
 import { mergeConfigs } from './webpack-config-merger';
 import * as webpack from 'webpack';
+import { CustomizeRule } from 'webpack-merge';
 
 describe('Webpack config merger test', () => {
   it('Should replace plugins', () => {
@@ -141,7 +142,7 @@ describe('Webpack config merger test', () => {
     }
   });
 
-  it('Should replace plugins while working properly with other strategies', () => {
+  it('Should replace plugins while working properly with merging rules', () => {
     const plugin1 = new webpack.HotModuleReplacementPlugin({
       multiStep: true,
       fullBuildTimeout: 3000,
@@ -161,7 +162,7 @@ describe('Webpack config merger test', () => {
         externals: ['c', 'd'],
         plugins: [plugin2],
       },
-      { externals: 'prepend' },
+      { externals: CustomizeRule.Prepend },
       true
     );
 
@@ -216,7 +217,7 @@ describe('Webpack config merger test', () => {
                   modules: true,
                 },
               },
-              'sass-loader',
+              { loader: 'sass-loader' },
             ],
           },
         ],

@@ -1,8 +1,9 @@
 import { Path } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
+import { CustomizeRule } from 'webpack-merge';
 
 import { CustomWebpackBuilder, defaultWebpackConfigPath } from './custom-webpack-builder';
-import { MergeStrategies } from './custom-webpack-builder-config';
+import { MergeRules } from './custom-webpack-builder-config';
 import * as webpackConfigMerger from './webpack-config-merger';
 
 const baseWebpackConfig = {
@@ -16,7 +17,7 @@ const buildOptions = {
 const targetOptions = {
   project: 'application',
   configuration: 'production',
-  target: 'serve'
+  target: 'serve',
 };
 
 const customWebpackConfig = {
@@ -120,11 +121,11 @@ describe('CustomWebpackBuilder', () => {
   it('should pass on merge strategies', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
-    const mergeStrategies: MergeStrategies = { blah: 'prepend' };
+    const mergeRules: MergeRules = { blah: CustomizeRule.Prepend };
 
     await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
-      { mergeStrategies },
+      { mergeRules },
       baseWebpackConfig,
       {},
       {}
@@ -134,7 +135,7 @@ describe('CustomWebpackBuilder', () => {
       expect(spy).toHaveBeenCalledWith(
         baseWebpackConfig,
         customWebpackConfig,
-        mergeStrategies,
+        mergeRules,
         undefined
       );
     } finally {
