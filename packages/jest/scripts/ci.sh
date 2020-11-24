@@ -11,11 +11,10 @@ function validateSingleTestRun() {
     testsTotal=$6;
     testsSkipped=$7;
     additionalStep=$8;
-    ngTestParams=$9;#TODO: remove once this is merged https://github.com/facebook/jest/pull/7549
 
     IFS=',' read -ra testCommandArgs <<< "$testCommandArgsString";
     set -x;
-    ${testCommand} "${ngTestParams}" "${testCommandArgs[@]}" 2>&1 | tee tests.log;
+    ${testCommand} "${testCommandArgs[@]}" 2>&1 | tee tests.log;
     set +x;
     if [[ ! -z ${additionalStep} ]]; then
         ${additionalStep}
@@ -45,7 +44,6 @@ function ciApp() {
     appDir=$1;
     e2eOptions=$2;
     local -n testOptions=$3;
-    ngTestParams=$4;
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
@@ -78,8 +76,8 @@ multiAppTestOptions=(
     "yarn test my-first-app|--testNamePattern=^AppComponent should create the app$|1|1|1|3|2||"
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.component.spec.ts$,--testPathPattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
-    "yarn test my-shared-library|--rootDir=`pwd`/examples/multiple-apps/projects/my-shared-library|2|2|2|2|||--configPath=../../../../scripts/symlinks-custom-root-jest.config.js"
+    "yarn test my-shared-library|--rootDir=`pwd`/examples/multiple-apps/projects/my-shared-library|2|2|2|2|||"
 )
-(ciApp ./examples/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions --configPath=../../scripts/symlinks-jest.config.js)
-(ciApp ./examples/multiple-apps --configuration=ci multiAppTestOptions --configPath=../../../../scripts/symlinks-jest.config.js)
+(ciApp ./examples/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions)
+(ciApp ./examples/multiple-apps --configuration=ci multiAppTestOptions)
 
