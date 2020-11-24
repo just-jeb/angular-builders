@@ -6,7 +6,9 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
-  "workspaces": ["packages/*", "packages/*/examples/*", "packages/*/example"],
+  "workspaces": {
+    "packages": ["packages/*", "packages/*/examples/*", "packages/*/example"]
+  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {

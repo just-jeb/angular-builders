@@ -80,8 +80,8 @@ multiAppTestOptions=(
 )
 
 function installNext() {
-    yarn workspace simple-app add @angular-builders/jest@next
-    yarn workspace multiple-apps add @angular-builders/jest@next
+    yarn workspace simple-app upgrade @angular-builders/jest
+    yarn workspace multiple-apps upgrade @angular-builders/jest
 }
 
 installNext

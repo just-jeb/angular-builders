@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 function installNext() {
-    yarn workspace simple-app add @angular-builders/custom-webpack@next
-    yarn workspace multiple-apps add @angular-builders/custom-webpack@next
+    yarn workspace simple-app upgrade @angular-builders/custom-webpack
+    yarn workspace multiple-apps upgrade @angular-builders/custom-webpack
 }
 
 installNext
