@@ -2,12 +2,11 @@
   "name": "multiple-apps",
   "version": "11.0.0-beta.1",
   "scripts": {
-    "ng": "node --preserve-symlinks ./node_modules/@angular/cli/bin/ng",
-    "start": "yarn ng serve",
-    "build": "yarn ng build",
-    "test": "yarn ng test",
-    "lint": "yarn ng lint",
-    "e2e": "yarn ng e2e"
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
