@@ -78,6 +78,13 @@ multiAppTestOptions=(
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.component.spec.ts$,--testPathPattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
     "yarn test my-shared-library|--rootDir=`pwd`/examples/multiple-apps/projects/my-shared-library|2|2|2|2|||"
 )
+
+function installNext() {
+    yarn workspace simple-app add @angular-builders/jest@next
+    yarn workspace multiple-apps add @angular-builders/jest@next
+}
+
+installNext
 (ciApp ./examples/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions)
 (ciApp ./examples/multiple-apps --configuration=ci multiAppTestOptions)
 

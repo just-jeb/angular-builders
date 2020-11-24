@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
+function installNext() {
+    yarn workspace simple-app add @angular-builders/custom-webpack@next
+    yarn workspace multiple-apps add @angular-builders/custom-webpack@next
+}
 
+installNext
 #Check that it works the same way angular-devkit builders do when there is no custom webpack config provided
 cd ./examples/sanity-app
 #ng build is verified during lerna run
