@@ -12,7 +12,6 @@ before_install:
 install: 
  - yarn
 script:
-  - yarn bootstrap:packages
   - yarn ci
 before_deploy:
   - git config --global user.name ${GIT_USER}

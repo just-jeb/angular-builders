@@ -6,15 +6,13 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": ["packages/*", "packages/*/examples/*", "packages/*/example"],
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
     "node": ">=10.0.0"
   },
   "scripts": {
-    "bootstrap:packages": "npx lerna bootstrap --scope '@angular-builders/*' --hoist",
-    "bootstrap:examples": "npx lerna bootstrap --ignore '@angular-builders/*'",
     "build:packages": "npx lerna run build --scope '@angular-builders/*'",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",

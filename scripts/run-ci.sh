@@ -44,8 +44,6 @@ startLocalRegistry "$root_path"/scripts/verdaccio.yaml
 
 publishToLocalRegistry
 
-yarn bootstrap:examples
-
 npx lerna run ci
 
 cleanup
