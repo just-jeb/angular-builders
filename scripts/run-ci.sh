@@ -27,6 +27,13 @@ function handle_exit {
   exit
 }
 
+function upgradeLocals() {
+    yarn workspace simple-app upgrade @angular-builders/custom-webpack
+    yarn workspace multiple-apps upgrade @angular-builders/custom-webpack
+    yarn workspace simple-app upgrade @angular-builders/jest
+    yarn workspace multiple-apps upgrade @angular-builders/jest
+}
+
 # Exit the script with a helpful error message when any error is encountered
 trap 'set +x; handle_error $LINENO $BASH_COMMAND' ERR
 
@@ -43,6 +50,8 @@ root_path=$PWD
 startLocalRegistry "$root_path"/scripts/verdaccio.yaml
 
 publishToLocalRegistry
+
+upgradeLocals
 
 npx lerna run ci
 
