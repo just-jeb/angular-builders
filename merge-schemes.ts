@@ -11,7 +11,7 @@ const wd = process.cwd();
 const schemesToMerge: CustomSchema[] = require(`${wd}/src/schemes`);
 
 for (const { originalSchemaPath, schemaExtensionPaths, newSchemaPath } of schemesToMerge) {
-  const originalSchema = require(`${wd}/node_modules/${originalSchemaPath}`);
+  const originalSchema = require(originalSchemaPath);
   const schemaExtensions = schemaExtensionPaths.map((path: string) => require(path));
   const newSchema = schemaExtensions.reduce(
     (extendedSchema: any, currentExtension: any) => merge(extendedSchema, currentExtension),
