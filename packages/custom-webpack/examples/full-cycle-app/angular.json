@@ -18,9 +18,9 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.ts"
+              "path": "extra-webpack.config.ts"
             },
-            "indexTransform": "./index-html.transform.js",
+            "indexTransform": "index-html.transform.js",
             "outputPath": "dist/full-cycle-app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -39,7 +39,7 @@
           "configurations": {
             "production": {
               "customWebpackConfig": {
-                "path": "./func-webpack.config.ts"
+                "path": "func-webpack.config.ts"
               },
               "fileReplacements": [
                 {
@@ -50,7 +50,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -70,7 +69,7 @@
               ]
             },
             "itwcw": {
-              "indexTransform": "./index-html.transform.ts"
+              "indexTransform": "index-html.transform.ts"
             }
           }
         },
