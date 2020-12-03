@@ -4,16 +4,24 @@ import { Configuration } from 'webpack';
 import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { tsNodeRegister } from './utils';
-import {TargetOptions} from "./type-definition";
-import {CustomWebpackBrowserSchema} from "./browser";
+import { TargetOptions } from './type-definition';
+import { CustomWebpackBrowserSchema } from './browser';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
 type CustomWebpackConfig =
   | Configuration
   | Promise<Configuration>
-  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Configuration)
-  | ((baseWebpackConfig: Configuration, buildOptions: CustomWebpackBrowserSchema, targetOptions: TargetOptions) => Promise<Configuration>);
+  | ((
+      baseWebpackConfig: Configuration,
+      buildOptions: CustomWebpackBrowserSchema,
+      targetOptions: TargetOptions
+    ) => Configuration)
+  | ((
+      baseWebpackConfig: Configuration,
+      buildOptions: CustomWebpackBrowserSchema,
+      targetOptions: TargetOptions
+    ) => Promise<Configuration>);
 
 export class CustomWebpackBuilder {
   static async buildWebpackConfig(
@@ -56,7 +64,6 @@ export class CustomWebpackBuilder {
 }
 
 function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  
   tsNodeRegister(path);
 
   const customWebpackConfig = require(path);
