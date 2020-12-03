@@ -5,6 +5,7 @@ import { getSystemPath, normalize } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
+import { CustomBuilderOptions } from './type-definition';
 import { tsNodeRegister } from './utils';
 
 export const customWebpackConfigTransformFactory: (
@@ -24,17 +25,17 @@ export const customWebpackConfigTransformFactory: (
 };
 
 export const indexHtmlTransformFactory: (
-  options: CustomWebpackSchema,
+  options: CustomBuilderOptions,
   context: BuilderContext
-) => IndexHtmlTransform = ({ indexTransform }, { workspaceRoot, target }) => {
+) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  tsNodeRegister(indexTransform);
+  tsNodeRegister(indexTransform, workspaceRoot, tsConfig);
   const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
 };
 
-export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({
+export const getTransforms = (options: CustomBuilderOptions, context: BuilderContext) => ({
   webpackConfiguration: customWebpackConfigTransformFactory(options, context),
   indexHtml: indexHtmlTransformFactory(options, context),
 });

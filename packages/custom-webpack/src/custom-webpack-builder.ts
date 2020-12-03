@@ -37,6 +37,9 @@ export class CustomWebpackBuilder {
 
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
     const path = `${getSystemPath(root)}/${webpackConfigPath}`;
+
+    tsNodeRegister(path, root, buildOptions.tsConfig);
+
     const configOrFactoryOrPromise = resolveCustomWebpackConfig(path);
 
     if (typeof configOrFactoryOrPromise === 'function') {
@@ -64,8 +67,6 @@ export class CustomWebpackBuilder {
 }
 
 function resolveCustomWebpackConfig(path: string): CustomWebpackConfig {
-  tsNodeRegister(path);
-
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file
   // then there are 2 cases for exporing an object. The first one is:
