@@ -35,10 +35,11 @@ export class CustomWebpackBuilder {
       return baseWebpackConfig;
     }
 
+    const systemPathRoot = getSystemPath(root);
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
-    const path = `${getSystemPath(root)}/${webpackConfigPath}`;
+    const path = `${systemPathRoot}/${webpackConfigPath}`;
 
-    tsNodeRegister(path, root, buildOptions.tsConfig);
+    tsNodeRegister(path, systemPathRoot, buildOptions.tsConfig);
 
     const configOrFactoryOrPromise = resolveCustomWebpackConfig(path);
 

@@ -12,16 +12,22 @@ export function tsNodeRegister(file: string = '', root: string, tsConfig: string
     return;
   }
 
+  if (!root || !tsConfig) {
+    throw new Error('No root or tsConfig present.');
+  }
+
   const tsConfigPath = resolve(root, tsConfig);
 
-  require('ts-node').register({
-    project: tsConfigPath,
-    compilerOptions: {
-      module: 'commonjs',
-    },
-  });
+  try {
+    require('ts-node').register({
+      project: tsConfigPath,
+      compilerOptions: {
+        module: 'commonjs',
+      },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
 
-  require('ts-node').register = function () {
-    /* prevent Karma to register its own version of `ts-node` */
-  };
+  // BUG: https://github.com/karma-runner/karma/pull/3274
 }
