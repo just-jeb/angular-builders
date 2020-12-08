@@ -6,7 +6,6 @@ import { Configuration } from 'webpack';
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
 import { tsNodeRegister } from './utils';
-import { CustomBuilderOptions } from './type-definition';
 
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
@@ -25,7 +24,7 @@ export const customWebpackConfigTransformFactory: (
 };
 
 export const indexHtmlTransformFactory: (
-  options: CustomBuilderOptions,
+  options: CustomWebpackSchema,
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
@@ -35,7 +34,7 @@ export const indexHtmlTransformFactory: (
   return async (indexHtml: string) => transform(target, indexHtml);
 };
 
-export const getTransforms = (options: CustomBuilderOptions, context: BuilderContext) => ({
+export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({
   webpackConfiguration: customWebpackConfigTransformFactory(options, context),
   indexHtml: indexHtmlTransformFactory(options, context),
 });
