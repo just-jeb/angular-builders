@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
   title = 'full-cycle-app';
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.version);
   }
 }

@@ -3,13 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@10.0.1...full-cycle-app@11.0.0-beta.1) (2020-11-17)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** update to angular 11 (#874)
+
+### Miscellaneous Chores
+
+- **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
+
+## [11.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@10.0.1...full-cycle-app@11.0.0-beta.0) (2020-11-17)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** update to angular 11 (#874)
+
+### Miscellaneous Chores
+
+- **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
+
+## <small>10.0.1 (2020-09-09)</small>
+
+**Note:** Version bump only for package full-cycle-app
+
 ## <small>10.0.1-beta.0 (2020-09-06)</small>
 
-* chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/issues/831)
-
-
-
-
+- chore: update dependencies (#831) ([b475080](https://github.com/just-jeb/angular-builders/commit/b475080)), closes [#831](https://github.com/just-jeb/angular-builders/issues/831)
 
 ## 10.0.0 (2020-07-21)
 

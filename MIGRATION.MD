@@ -1,3 +1,7 @@
+# Migration from version 10 to version 11
+
+## No action needed
+
 # Migration from version 9 to version 10
 
 ## Jest builder

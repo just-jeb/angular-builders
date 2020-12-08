@@ -2,13 +2,15 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders require Angular CLI 10
+## The latest version of all the builders require Angular CLI 11
 
 ## [Documentation for version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
 
 ## [Documentation for version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
 
 ## [Documentation for version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
+
+## [Documentation for version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
 
 ## [Migration guide](./MIGRATION.MD)
 
@@ -50,11 +52,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/jankeesvanandel"><img src="https://avatars1.githubusercontent.com/u/272120?v=4" width="100px;" alt=""/><br /><sub><b>Jan-Kees van Andel</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jankeesvanandel" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/gdoerr"><img src="https://avatars2.githubusercontent.com/u/6474127?v=4" width="100px;" alt=""/><br /><sub><b>Greg Doerr</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=gdoerr" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/arluko"><img src="https://avatars0.githubusercontent.com/u/70697565?v=4" width="100px;" alt=""/><br /><sub><b>arluko</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=arluko" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/zauni"><img src="https://avatars0.githubusercontent.com/u/663845?v=4" width="100px;" alt=""/><br /><sub><b>Matthias Zaunseder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=zauni" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/jsone-studios"><img src="https://avatars3.githubusercontent.com/u/13821543?v=4" width="100px;" alt=""/><br /><sub><b>Jonas</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=jsone-studios" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -7,19 +7,27 @@ import { resolve } from 'path';
  * @param root - path to project root
  * @param tsConfig - tsConfig file name
  */
-export function tsNodeRegister(file = '', root: string, tsConfig: string) {
+export function tsNodeRegister(file: string = '', root: string, tsConfig: string) {
   if (!file.endsWith('.ts')) {
     return;
   }
 
+  if (!root || !tsConfig) {
+    throw new Error('No root or tsConfig present.');
+  }
+
   const tsConfigPath = resolve(root, tsConfig);
 
-  const { register } = require('ts-node');
+  try {
+    require('ts-node').register({
+      project: tsConfigPath,
+      compilerOptions: {
+        module: 'commonjs',
+      },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
 
-  register({
-    project: tsConfigPath,
-    compilerOptions: {
-      module: 'commonjs',
-    },
-  });
+  // BUG: https://github.com/karma-runner/karma/pull/3274
 }
