@@ -41,7 +41,10 @@
           "configurations": {
             "production": {
               "customWebpackConfig": {
-                "path": "./func-webpack.config.ts"
+                "path": "./func-webpack.config.ts",
+                "mergeStrategies": {
+                  "plugins": "prepend"
+                }
               },
               "fileReplacements": [
                 {
@@ -94,7 +97,10 @@
           "builder": "@angular-builders/custom-webpack:karma",
           "options": {
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.ts"
+              "path": "./extra-webpack.config.ts",
+              "mergeStrategies": {
+                "plugins": "prepend"
+              }
             },
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
