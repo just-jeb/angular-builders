@@ -1,4 +1,4 @@
-import { Configuration, ProvidePlugin } from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import { CustomWebpackBrowserSchema, TargetOptions } from '@angular-builders/custom-webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 
@@ -17,7 +17,7 @@ export default (
       filename: 'footer.html',
       template: 'src/footer-template.html',
     }),
-    new ProvidePlugin({
+    new DefinePlugin({
       APP_VERSION: JSON.stringify(version),
     })
   );
