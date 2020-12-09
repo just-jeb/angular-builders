@@ -5,19 +5,24 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "target": "ES2015",
     "lib": [
-      "es2018",
-      "dom"
-    ]
+      "ES2018",
+      "DOM"
+    ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@environment": [
+        "src/environments/environment.ts"
+      ]
+    }
   }
 }
