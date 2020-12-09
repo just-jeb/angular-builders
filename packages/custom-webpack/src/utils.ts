@@ -10,13 +10,12 @@ export function tsNodeRegister(file: string = '', tsConfig?: string) {
   }
 
   try {
-    const res = require('ts-node').register({
+    require('ts-node').register({
       project: tsConfig,
       compilerOptions: {
         module: 'commonjs',
       },
     });
-    console.log(res);
   } catch (error) {
     throw new Error(error);
   }
