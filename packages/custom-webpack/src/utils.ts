@@ -1,30 +1,22 @@
-import { resolve } from 'path';
-
 /**
  * Register `ts-node` if webpack config file is a TypeScript file.
  *
  * @param file - webpack config file path
- * @param root - path to project root
  * @param tsConfig - tsConfig file name
  */
-export function tsNodeRegister(file: string = '', root: string, tsConfig: string) {
+export function tsNodeRegister(file: string = '', tsConfig?: string) {
   if (!file.endsWith('.ts')) {
     return;
   }
 
-  if (!root || !tsConfig) {
-    throw new Error('No root or tsConfig present.');
-  }
-
-  const tsConfigPath = resolve(root, tsConfig);
-
   try {
-    require('ts-node').register({
-      project: tsConfigPath,
+    const res = require('ts-node').register({
+      project: tsConfig,
       compilerOptions: {
         module: 'commonjs',
       },
     });
+    console.log(res);
   } catch (error) {
     throw new Error(error);
   }

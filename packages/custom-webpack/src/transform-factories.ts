@@ -28,8 +28,9 @@ export const indexHtmlTransformFactory: (
   context: BuilderContext
 ) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
   if (!indexTransform) return null;
-  tsNodeRegister(indexTransform, workspaceRoot, tsConfig);
-  const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
+  const workspaceRootNormalized = getSystemPath(normalize(workspaceRoot));
+  tsNodeRegister(indexTransform, `${workspaceRootNormalized}/${tsConfig}`);
+  const indexModule = require(`${workspaceRootNormalized}/${indexTransform}`);
   const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
 };
