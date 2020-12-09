@@ -12,17 +12,18 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "bootstrap:packages": "yarn lerna bootstrap --scope '@angular-builders/*'",
-    "bootstrap:examples": "yarn lerna bootstrap --ignore '@angular-builders/*'",
-    "build:packages": "yarn lerna run build --scope '@angular-builders/*'",
+    "bootstrap:packages": "lerna bootstrap --scope '@angular-builders/*'",
+    "bootstrap:examples": "lerna bootstrap --ignore '@angular-builders/*'",
+    "build:packages": "lerna run build --scope '@angular-builders/*'",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
+    "link-local": "lerna link --force-local",
     "lerna": "lerna",
     "postbuild": "yarn test && yarn run e2e",
     "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e",
     "format": "prettier --write \"**/*.{js,ts,html,md}\"",
-    "clean": "yarn lerna clean",
+    "clean": "lerna clean",
     "graduate": "lerna publish --conventional-commits --conventional-graduate"
   },
   "devDependencies": {
