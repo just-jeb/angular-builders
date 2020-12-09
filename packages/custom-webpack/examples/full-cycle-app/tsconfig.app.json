@@ -2,7 +2,10 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [
+      // NOTE: `node` is added because *protractor* has an issue compiling custom webpack without it
+      "node"
+    ]
   },
   "files": [
     "src/main.ts",
