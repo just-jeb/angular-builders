@@ -9,7 +9,7 @@ const DEFAULT_MERGE_RULES: MergeRules = {
       test: CustomizeRule.Match,
       use: {
         loader: CustomizeRule.Match,
-        options: CustomizeRule.Replace,
+        options: CustomizeRule.Append,
       },
     },
   },

@@ -181,7 +181,15 @@ describe('Webpack config merger test', () => {
           rules: [
             {
               test: /\.css$/,
-              use: [{ loader: 'style-loader' }, { loader: 'sass-loader' }],
+              use: [
+                {
+                  loader: 'style-loader',
+                  options: {
+                    someOption: 'blah',
+                  },
+                },
+                { loader: 'sass-loader' },
+              ],
             },
           ],
         },
@@ -215,6 +223,7 @@ describe('Webpack config merger test', () => {
                 loader: 'style-loader',
                 options: {
                   modules: true,
+                  someOption: 'blah',
                 },
               },
               { loader: 'sass-loader' },
