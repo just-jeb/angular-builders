@@ -1,6 +1,21 @@
 # Migration from version 10 to version 11
 
-## No action needed
+## Custom webpack builder
+1. `mergeStrategies` fieild in `customWebpackConfig` has been deprecated, use `mergeRules` instead as defined [here](https://github.com/survivejs/webpack-merge#mergewithrules).  
+In order to make this breaking change as backward compatible as possible, the default value of `mergeRules` is the following:
+```ts
+{
+  module: {
+    rules: {
+      test: "match",
+      use: {
+        loader: "match",
+        options: "replace",
+      },
+    },
+  },
+};
+```
 
 # Migration from version 9 to version 10
 
