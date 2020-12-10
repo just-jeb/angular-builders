@@ -9,7 +9,7 @@ const DEFAULT_MERGE_RULES: MergeRules = {
       test: CustomizeRule.Match,
       use: {
         loader: CustomizeRule.Match,
-        options: CustomizeRule.Append,
+        options: CustomizeRule.Append, //This is how it works in the deprecated smart strategy
       },
     },
   },
