@@ -1,3 +1,4 @@
+import { version } from '@project';
 import { AppPage } from './app.po';
 
 describe('workspace-project App', () => {
@@ -10,5 +11,10 @@ describe('workspace-project App', () => {
   it('should display paragraph coming from transform function', async () => {
     await page.navigateTo();
     expect(await page.getParagraphText()).toEqual('Configuration: itwcw');
+  });
+
+  it('should display version in div with `version` css class', async () => {
+    await page.navigateTo();
+    expect(await page.getVersionText()).toContain(version);
   });
 });
