@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare const APP_VERSION: string;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'full-cycle-app';
+  version = APP_VERSION;
 }

@@ -18,7 +18,10 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.ts"
+              "path": "./extra-webpack.config.ts",
+              "mergeRules": {
+                "plugins": "prepend"
+              }
             },
             "indexTransform": "./index-html.transform.js",
             "outputPath": "dist/full-cycle-app",
