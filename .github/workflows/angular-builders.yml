@@ -38,10 +38,9 @@ jobs:
       - name: Run CI scripts
         run: yarn ci
 
-      # Note: this has to be commented until Travis is disabled completely.
-      # - name: deploy
-      #   # Deploy only on the master branch.
-      #   if: github.ref == 'refs/heads/master'
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   run: bash scripts/default-registry.sh
+      - name: deploy
+        # Deploy only on the master branch.
+        if: github.ref == 'refs/heads/master'
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: bash scripts/default-registry.sh
