@@ -266,7 +266,7 @@ The following properties are available:
       test: "match",
       use: {
         loader: "match",
-        options: "replace",
+        options: "merge",
       },
     },
   },
