@@ -1,9 +1,9 @@
-import { MergeStrategy } from 'webpack-merge';
+import type { mergeWithRules } from 'webpack-merge';
 
-export type MergeStrategies = { [field: string]: MergeStrategy };
+export type MergeRules = Parameters<typeof mergeWithRules>[0];
 
 export interface CustomWebpackBuilderConfig {
   path?: string;
-  mergeStrategies?: MergeStrategies;
+  mergeRules?: MergeRules;
   replaceDuplicatePlugins?: boolean;
 }

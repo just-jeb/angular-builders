@@ -18,7 +18,6 @@
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
     "postbuild": "yarn test && yarn run e2e",
-    "build": "tsc && ts-node merge-schemes.ts",
     "test": "jest src",
     "e2e": "jest e2e",
     "format": "prettier --write \"**/*.{js,ts,html,md}\"",

@@ -7,10 +7,11 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 # This documentation is for the latest major version only
 
 # Notice about stable 11 version
+
 Stable release of @angular-builders/custom-webpack@11 will include a breaking change for the way `mergeStrategies` are configured.  
-This change is blocked by [this](https://github.com/survivejs/webpack-merge/pull/152) PR in webpack-merge and will be introduced as soon as the PR is merged. 
+This change is blocked by [this](https://github.com/survivejs/webpack-merge/pull/152) PR in webpack-merge and will be introduced as soon as the PR is merged.
 If you don't use `mergeStrategies` then it's safe for you to update to the beta version with `@next` tag.  
-If you do use `mergeStrategies` then you can still update to the beta version but keep in mind that one day it will break. 
+If you do use `mergeStrategies` then you can still update to the beta version but keep in mind that one day it will break.
 
 ## Previous versions
 
@@ -95,7 +96,7 @@ Builder options:
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
-        "mergeStrategies": {
+        "mergeRules": {
           "externals": "replace"
         }
       },
@@ -164,7 +165,7 @@ Builder options:
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
-        "mergeStrategies": {
+        "mergeRules": {
           "module.rules": "prepend"
         },
         "replaceDuplicatePlugins": true
@@ -263,13 +264,24 @@ The following properties are available:
   ```
   The builder will take care of merging the delta with the existing configuration provided by Angular.  
    In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
-- `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
-  - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
-  - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-  - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
-    See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
+- `mergeRules`: webpack config merge rules, as described [here](https://github.com/survivejs/webpack-merge#mergewithrules). Defaults to:
+
+```ts
+{
+  module: {
+    rules: {
+      test: "match",
+      use: {
+        loader: "match",
+        options: "merge",
+      },
+    },
+  },
+};
+```
+
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
-  **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
+  **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
 Webpack configuration can be also written in TypeScript. Given the following example:
 
@@ -343,7 +355,7 @@ The function is called with the base config the builder options and the target o
 `TargetOptions` follows `target` definition from [this](https://github.com/angular/angular-cli/blob/master/packages/angular_devkit/architect/src/input-schema.json) schema
 and can be used to manipulate your build based on the build target.
 
-In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no effect.
+In this case, `mergeRules` and `replaceDuplicatePlugins` options have no effect.
 
 `custom-webpack.config.js` example :
 
