@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.0.0-beta.3 (2020-12-13)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+
+
+
+
 ## 11.0.0-beta.2 (2020-12-13)
 
 **Note:** Version bump only for package @angular-builders/timestamp
