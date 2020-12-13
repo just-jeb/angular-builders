@@ -6,8 +6,6 @@ source local-registry.sh
 function cleanup {
   echo 'Cleaning up.'
   cd "$root_path"
-  # Uncomment when snapshot testing is enabled by default:
-  # rm ./packages/react-scripts/template/src/__snapshots__/App.test.js.snap
   rm -rf "$temp_app_path"
   # Restore the original NPM and Yarn registry URLs and stop Verdaccio
   stopLocalRegistry
@@ -53,3 +51,5 @@ npx lerna exec --ignore '@angular-builders/*' -- ./node_modules/protractor/bin/w
 npx lerna run ci
 
 cleanup
+
+

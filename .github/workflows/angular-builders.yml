@@ -8,12 +8,15 @@ on:
 
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, 'ci(release)')"
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: true
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
 
       - uses: actions/cache@v1
         id: node-modules
@@ -38,10 +41,13 @@ jobs:
       - name: Run CI scripts
         run: yarn ci
 
-      # Note: this has to be commented until Travis is disabled completely.
-      # - name: deploy
-      #   # Deploy only on the master branch.
-      #   if: github.ref == 'refs/heads/master'
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #   run: bash scripts/default-registry.sh
+      - name: Publish to NPM
+        if: github.ref == 'refs/heads/master'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          git reset --hard	
+          git config --global user.name ${{ secrets.GIT_USER }}
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          bash scripts/default-registry.sh
