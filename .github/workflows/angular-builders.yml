@@ -43,4 +43,6 @@ jobs:
         if: github.ref == 'refs/heads/master'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: bash scripts/default-registry.sh
+        run: |
+          git reset --hard	
+          bash scripts/default-registry.sh
