@@ -6,6 +6,12 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # This documentation is for the latest major version only
 
+# Notice about stable 11 version
+Stable release of @angular-builders/custom-webpack@11 will include a breaking change for the way `mergeStrategies` are configured.  
+This change is blocked by [this](https://github.com/survivejs/webpack-merge/pull/152) PR in webpack-merge and will be introduced as soon as the PR is merged. 
+If you don't use `mergeStrategies` then it's safe for you to update to the beta version with `@next` tag.  
+If you do use `mergeStrategies` then you can still update to the beta version but keep in mind that one day it will break. 
+
 ## Previous versions
 
 - [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
