@@ -1,5 +1,5 @@
 import { MergeRules } from './custom-webpack-builder-config';
-import { CustomizeRule, mergeWithRules, merge as webpackMerge } from 'webpack-merge';
+import { CustomizeRule, mergeWithRules } from 'webpack-merge';
 import { Configuration } from 'webpack';
 import { differenceWith, keyBy, merge } from 'lodash';
 
@@ -21,10 +21,8 @@ export function mergeConfigs(
   mergeRules: MergeRules = DEFAULT_MERGE_RULES,
   replacePlugins = false
 ): Configuration {
-  //default in smartStrategy is append
-  const mergedConfig: Configuration = mergeRules
-    ? mergeWithRules(mergeRules)(webpackConfig1, webpackConfig2)
-    : webpackMerge(webpackConfig1, webpackConfig2);
+  const mergedConfig: Configuration = mergeWithRules(mergeRules)(webpackConfig1, webpackConfig2);
+
   if (webpackConfig1.plugins && webpackConfig2.plugins) {
     const conf1ExceptConf2 = differenceWith(
       webpackConfig1.plugins,
