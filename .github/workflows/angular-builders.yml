@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
 
       - uses: actions/cache@v1
         id: node-modules
