@@ -1,6 +1,6 @@
 import { mergeConfigs } from './webpack-config-merger';
 import * as webpack from 'webpack';
-import { CustomizeRule } from 'webpack-merge';
+import merge, { CustomizeRule } from 'webpack-merge';
 
 describe('Webpack config merger test', () => {
   it('Should replace plugins', () => {
@@ -234,5 +234,76 @@ describe('Webpack config merger test', () => {
     };
 
     expect(output).toEqual(expected);
+  });
+
+  it('should append loaders even if there is not intersection between configs', () => {
+    const conf1 = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    outputStyle: 'expanded',
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+    const conf2 = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: ['src/styles/includes.scss'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    const expected = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    outputStyle: 'expanded',
+                  },
+                },
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: ['src/styles/includes.scss'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    expect(mergeConfigs(conf1, conf2)).toEqual(expected);
   });
 });
