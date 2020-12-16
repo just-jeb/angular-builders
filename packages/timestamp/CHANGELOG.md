@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.0.0-beta.4 (2020-12-16)
+
+
+### Bug Fixes
+
+* **custom-webpack:** fix loaders merge scenario ([#909](https://github.com/just-jeb/angular-builders/issues/909)) ([0f0ad3d](https://github.com/just-jeb/angular-builders/commit/0f0ad3d174ea589538c4474b0509ad3b5f925bf1))
+
+
+
 ## 11.0.0-beta.3 (2020-12-15)
 
 **Note:** Version bump only for package @angular-builders/timestamp
