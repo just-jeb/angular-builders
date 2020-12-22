@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.0.0-beta.5 (2020-12-22)
+
+
+### Bug Fixes
+
+* **custom-webpack:** allow merging loader name with loader object ([#912](https://github.com/just-jeb/angular-builders/issues/912)) ([a89a35d](https://github.com/just-jeb/angular-builders/commit/a89a35d30276a3d284d304ee710442ee03da351b))
+
+
+
 ## 11.0.0-beta.4 (2020-12-16)
 
 
