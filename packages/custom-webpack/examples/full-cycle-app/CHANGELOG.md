@@ -3,47 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.0.0](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@11.0.0-beta.6...full-cycle-app@11.0.0) (2020-12-27)
+
+**Note:** Version bump only for package full-cycle-app
+
 ## 11.0.0-beta.6 (2020-12-27)
 
 **Note:** Version bump only for package full-cycle-app
 
-
-
-
-
 ## 11.0.0-beta.5 (2020-12-22)
-
 
 ### Bug Fixes
 
-* **custom-webpack:** allow merging loader name with loader object ([#912](https://github.com/just-jeb/angular-builders/issues/912)) ([a89a35d](https://github.com/just-jeb/angular-builders/commit/a89a35d30276a3d284d304ee710442ee03da351b))
-
-
+- **custom-webpack:** allow merging loader name with loader object ([#912](https://github.com/just-jeb/angular-builders/issues/912)) ([a89a35d](https://github.com/just-jeb/angular-builders/commit/a89a35d30276a3d284d304ee710442ee03da351b))
 
 ## 11.0.0-beta.4 (2020-12-16)
 
-
 ### Bug Fixes
 
-* **custom-webpack:** fix loaders merge scenario ([#909](https://github.com/just-jeb/angular-builders/issues/909)) ([0f0ad3d](https://github.com/just-jeb/angular-builders/commit/0f0ad3d174ea589538c4474b0509ad3b5f925bf1))
-
-
+- **custom-webpack:** fix loaders merge scenario ([#909](https://github.com/just-jeb/angular-builders/issues/909)) ([0f0ad3d](https://github.com/just-jeb/angular-builders/commit/0f0ad3d174ea589538c4474b0509ad3b5f925bf1))
 
 ## 11.0.0-beta.3 (2020-12-15)
 
 **Note:** Version bump only for package full-cycle-app
 
-
-
-
-
 ## 11.0.0-beta.2 (2020-12-14)
 
 **Note:** Version bump only for package full-cycle-app
-
-
-
-
 
 ## [11.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@10.0.1...full-cycle-app@11.0.0-beta.1) (2020-11-17)
 
