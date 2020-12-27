@@ -15,7 +15,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Prerequisites:
 
-- [Angular CLI 10](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 11](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
