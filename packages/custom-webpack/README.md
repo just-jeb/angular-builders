@@ -159,7 +159,9 @@ Builder options:
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
         "mergeRules": {
-          "module.rules": "prepend"
+          "module": {
+            "rules": "prepend"
+          }
         },
         "replaceDuplicatePlugins": true
       },
