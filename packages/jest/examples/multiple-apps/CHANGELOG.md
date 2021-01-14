@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 11.0.1-beta.1 (2021-01-14)
+
+**Note:** Version bump only for package multiple-apps
+
+
+
+
+
 ### 11.0.1-beta.0 (2020-12-27)
 
 **Note:** Version bump only for package multiple-apps
