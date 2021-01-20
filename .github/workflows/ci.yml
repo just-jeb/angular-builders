@@ -14,9 +14,13 @@ jobs:
       fail-fast: true
 
     steps:
-      - uses: actions/checkout@v2
+      - if: github.event.pull_request.head.repo.full_name == github.repository
+        uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
+
+      - if: github.event.pull_request.head.repo.full_name != github.repository
+        uses: actions/checkout@v2
 
       - uses: actions/cache@v1
         id: node-modules
