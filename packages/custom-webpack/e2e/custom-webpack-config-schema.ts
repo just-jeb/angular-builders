@@ -3,7 +3,11 @@ export const customWebpackConfig = {
   description: 'Custom webpack configuration',
   properties: {
     path: { type: 'string', description: 'Path to the custom webpack configuration file' },
-    mergeStrategies: { type: 'object', description: 'Merge strategies per webpack config field' },
+    mergeRules: {
+      type: 'object',
+      description:
+        'Merge rules as described here: https://github.com/survivejs/webpack-merge#mergewithrules',
+    },
     replaceDuplicatePlugins: {
       type: 'boolean',
       description: 'Flag that indicates whether to replace duplicate webpack plugins or not',

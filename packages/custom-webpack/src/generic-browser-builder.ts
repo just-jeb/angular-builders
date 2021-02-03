@@ -4,7 +4,7 @@ import {
   BuilderHandlerFn,
 } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
-import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/write-index-html';
+import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/index-html-generator';
 import { from } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Configuration } from 'webpack';

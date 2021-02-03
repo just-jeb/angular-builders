@@ -1,4 +1,4 @@
-# @angular-builders [![Build Status](https://travis-ci.com/just-jeb/angular-builders.svg?branch=master)](https://travis-ci.com/just-jeb/angular-builders) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
+# @angular-builders ![build](https://github.com/just-jeb/angular-builders/workflows/ci/badge.svg) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg) [![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
@@ -57,6 +57,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/michelherv"><img src="https://avatars1.githubusercontent.com/u/12019057?v=4" width="100px;" alt=""/><br /><sub><b>Michel Hervé NGOUNOU</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=michelherv" title="Code">💻</a></td>
+    <td align="center"><a href="https://marvin.digital/"><img src="https://avatars3.githubusercontent.com/u/11534760?v=4" width="100px;" alt=""/><br /><sub><b>Marvin Heilemann</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=muuvmuuv" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/briananderson1222"><img src="https://avatars2.githubusercontent.com/u/4603907?v=4" width="100px;" alt=""/><br /><sub><b>Brian Anderson</b></sub></a><br /><a href="#question-briananderson1222" title="Answering Questions">💬</a></td>
   </tr>
 </table>
 
