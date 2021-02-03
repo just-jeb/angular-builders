@@ -1,5 +1,6 @@
-import * as webpack from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import { version } from '@project';
 
 /**
  * This is where you define your additional webpack configuration items to be appended to
@@ -11,5 +12,8 @@ export default {
       filename: 'footer.html',
       template: 'src/footer-template.html',
     }),
+    new DefinePlugin({
+      APP_VERSION: JSON.stringify(version),
+    }),
   ],
-} as webpack.Configuration;
+} as Configuration;

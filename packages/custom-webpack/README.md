@@ -261,35 +261,35 @@ The following properties are available:
    In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
 - `mergeRules`: webpack config merge rules, as described [here](https://github.com/survivejs/webpack-merge#mergewithrules). Defaults to:
 
-```ts
-{
-  module: {
-    rules: {
-      test: "match",
-      use: {
-        loader: "match",
-        options: "merge",
+  ```ts
+  {
+    module: {
+      rules: {
+        test: "match",
+        use: {
+          loader: "match",
+          options: "merge",
+        },
       },
     },
-  },
-};
-```
+  };
+  ```
 
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
   **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
-Webpack configuration can be also written in TypeScript. Given the following example:
+Webpack configuration can be also written in TypeScript. In this case, it is the appliaction's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
 
 ```ts
 // extra-webpack.config.ts
-import * as webpack from 'webpack';
+import { Configuration } from 'webpack';
 
 export default {
   output: {
     library: 'shop',
     libraryTarget: 'umd',
   },
-} as webpack.Configuration;
+} as Configuration;
 ```
 
 Do not forget to specify the correct path to this file:
@@ -421,6 +421,7 @@ module.exports = async config => {
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
+If `indexTransform` is writes in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
 
 ```typescript
 (options: TargetOptions, indexHtmlContent: string) => string|Promise<string>;
