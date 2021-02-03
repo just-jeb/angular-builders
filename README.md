@@ -56,6 +56,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/sonallux"><img src="https://avatars3.githubusercontent.com/u/13821543?v=4" width="100px;" alt=""/><br /><sub><b>Jonas</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=sonallux" title="Code">💻</a></td>
   </tr>
   <tr>
+    <td align="center"><a href="https://marvin.digital/"><img src="https://avatars3.githubusercontent.com/u/11534760?v=4" width="100px;" alt=""/><br /><sub><b>Marvin Heilemann</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=muuvmuuv" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/briananderson1222"><img src="https://avatars2.githubusercontent.com/u/4603907?v=4" width="100px;" alt=""/><br /><sub><b>Brian Anderson</b></sub></a><br /><a href="#question-briananderson1222" title="Answering Questions">💬</a></td>
   </tr>
 </table>
