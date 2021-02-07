@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 11.1.0-beta.0 (2021-02-03)
+
+
+### Features
+
+* **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
+
+
+
 ### 11.0.1-beta.4 (2021-02-03)
 
 **Note:** Version bump only for package multiple-apps

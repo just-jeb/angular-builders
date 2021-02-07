@@ -8,30 +8,31 @@ on:
 
 jobs:
   build:
-    if: "!contains(github.event.head_commit.message, 'ci(release)')"
+    if: (!contains(github.event.head_commit.message, 'ci(release)'))
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: true
 
     steps:
-      - if: (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository))
+      - if: (!github.event.pull_request)
         uses: actions/checkout@v2
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
+          fetch-depth: 0
 
-      - if: (github.event.pull_request && (github.event.pull_request.head.repo.full_name != github.repository))
+      - if: github.event.pull_request
         uses: actions/checkout@v2
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         id: node-modules
         with:
           path: |
             node_modules
-            */*/node_modules
+            **/node_modules
           key: ${{ runner.os }}-node-modules
           restore-keys: ${{ runner.os }}-node-modules
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: 12.12
           registry-url: 'https://registry.npmjs.org'
