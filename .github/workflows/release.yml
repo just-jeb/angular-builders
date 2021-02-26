@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_graduate:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/cache@v2
+        id: node-modules
+        with:
+          path: |
+            node_modules
+            **/node_modules
+          key: ${{ runner.os }}-node-modules
+          restore-keys: ${{ runner.os }}-node-modules
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.12
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: yarn --non-interactive --no-progress
+
+      - name: Bootstrap packages
+        run: yarn bootstrap:packages
+
+      - name: Run CI scripts
+        run: yarn ci
+
+      - name: Graduate beta release to NPM
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          git reset --hard	
+          git config --global user.name ${{ secrets.GIT_USER }}
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm run graduate
