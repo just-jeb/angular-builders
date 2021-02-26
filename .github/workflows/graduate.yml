@@ -46,4 +46,4 @@ jobs:
           git config --global user.name ${{ secrets.GIT_USER }}
           git config --global user.email ${{ secrets.GIT_EMAIL }}
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          npm run graduate
+          npm run graduate -- --yes
