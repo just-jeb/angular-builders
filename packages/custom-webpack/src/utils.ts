@@ -10,7 +10,6 @@ export function tsNodeRegister(file: string = '', tsConfig?: string) {
       project: tsConfig,
       compilerOptions: {
         module: 'CommonJS',
-        target: 'ESNext', // NOTE: because interpreter is `node`, it is not necessary to spend a lot time for compiling
         types: [
           'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
         ],
