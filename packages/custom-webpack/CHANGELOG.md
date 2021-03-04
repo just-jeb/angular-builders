@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0...@angular-builders/custom-webpack@11.1.1-beta.0) (2021-03-04)
+
+
+### Bug Fixes
+
+* **custom-webpack:** change `ts-node` compilation target to include TS features ([#941](https://github.com/just-jeb/angular-builders/issues/941)) ([88ad0f5](https://github.com/just-jeb/angular-builders/commit/88ad0f59e3bce9257df84b8741f86bb0b76c7da8))
+
+
+
 ## [11.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0-beta.2...@angular-builders/custom-webpack@11.1.0) (2021-02-26)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
