@@ -9,7 +9,7 @@ A clear and concise description of what the bug is.
 
 ## Minimal Reproduction
 
-**Note:** Our policy is that issues reported without a reproduction will be closed immediately and then reopened once a reproduction has been provided. Please respect the developers of this project by doing this. We give of our personal time to work on this project and would rather be spending our time fixing or enhancing the library than chasing down badly described or unreproducable issues.
+**Note:** Our policy is that issues reported without a reproduction will be closed immediately and then reopened once a reproduction has been provided. Please respect the developers of this project by doing this. We give of our personal time to work on this project and would rather be spending our time fixing or enhancing the library than chasing down badly described or unreproducible issues.
 Please delete this note once you have read it.
 
 <!-- Please create and share minimal reproduction -->
