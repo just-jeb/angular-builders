@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.1.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1-beta.0...@angular-builders/custom-webpack@11.1.1-beta.1) (2021-03-04)
+
+
+### Bug Fixes
+
+* target option typing bug ([a80f3d3](https://github.com/just-jeb/angular-builders/commit/a80f3d32b3f2abd0d5e0c5be37dfda23a2df3a16))
+* use karma-coverage instead of karma-coverage-istanbul-reporter ([6c2ea5b](https://github.com/just-jeb/angular-builders/commit/6c2ea5b70e0640c6c278a0e1ab18021efad27fd8))
+* use puppeteer for karma testing browser bin to avoid using none-existing local binary ([79894c2](https://github.com/just-jeb/angular-builders/commit/79894c2d3a4b849b176ac927e00513acfca5ebad))
+
+
+
 ### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0...@angular-builders/custom-webpack@11.1.1-beta.0) (2021-03-04)
 
 
