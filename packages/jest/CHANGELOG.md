@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.0...@angular-builders/jest@11.1.1-beta.0) (2021-03-08)
+
+
+### Bug Fixes
+
+* **jest:** sync latest jest-preset-angular ([805eb8d](https://github.com/just-jeb/angular-builders/commit/805eb8d0d0dbe37582a32621e0239d0ee107e6b9))
+
+
+
 ## [11.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.0-beta.0...@angular-builders/jest@11.1.0) (2021-02-26)
 
 **Note:** Version bump only for package @angular-builders/jest
