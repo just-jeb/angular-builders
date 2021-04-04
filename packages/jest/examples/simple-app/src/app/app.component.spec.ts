@@ -14,10 +14,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'simple-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('simple-app');
+  it(`should have all the global mocks defined`, () => {
+    expect(window.getComputedStyle).toBeTruthy();
+    expect(document.doctype).toBeTruthy();
+    expect(window.matchMedia).toBeTruthy();
+    expect(document.body.style.transform).toBeTruthy();
   });
 
   it('should render title in a h1 tag', () => {
