@@ -4,9 +4,17 @@
   "description": "Jest runner options",
   "properties": {
     "configPath": {
-      "type": "string",
       "description": "Path to jest config file.",
+      "type": "string",
       "default": "jest.config.js"
+    },
+    "globalMocks": {
+      "description": "Enabled global mocks",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": ["getComputedStyle", "doctype", "styleTransform", "matchMedia"]
     },
     "all": {
       "description": "The opposite of `onlyChanged`. If `onlyChanged` is set by default, running jest with `--all` will force Jest to run all tests instead of running only tests related to changed files."

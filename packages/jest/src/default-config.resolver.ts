@@ -1,14 +1,32 @@
-import { getSystemPath, join, Path } from '@angular-devkit/core';
+import { getSystemPath, join, normalize, Path } from '@angular-devkit/core';
 import defaultConfig from './jest-config/default-config';
+import { SchemaObject as JestBuilderSchema } from './schema';
+import { pick } from 'lodash';
 
 export const testPattern = `/**/*(*.)@(spec|test).[tj]s?(x)`;
 export const tsConfigName = 'tsconfig.spec.json';
 
+const globalMocks = {
+  getComputedStyle: 'computed-style.js',
+  doctype: 'doctype.js',
+  matchMedia: 'match-media.js',
+  styleTransform: 'style-transform.js',
+};
+
+const getMockFiles = (enabledMocks: string[] = []): string[] =>
+  Object.values(pick(globalMocks, enabledMocks)).map(fileName =>
+    getSystemPath(normalize(`${__dirname}/global-mocks/${fileName}`))
+  );
+
 export class DefaultConfigResolver {
-  constructor(private tsConfig?: string) {}
+  constructor(private options: JestBuilderSchema) {}
 
   resolveGlobal(): any {
-    return defaultConfig;
+    const setupFilesAfterEnv = [
+      ...defaultConfig.setupFilesAfterEnv,
+      ...getMockFiles(this.options.globalMocks),
+    ];
+    return { ...defaultConfig, setupFilesAfterEnv };
   }
 
   resolveForProject(projectRoot: Path): any {
@@ -17,7 +35,7 @@ export class DefaultConfigResolver {
         'ts-jest': {
           // Join with the default `tsConfigName` if the `tsConfig` option
           // is not provided
-          tsconfig: getSystemPath(join(projectRoot, this.tsConfig || tsConfigName)),
+          tsconfig: getSystemPath(join(projectRoot, this.options.tsConfig || tsConfigName)),
         },
       },
       testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
