@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.2.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.1...@angular-builders/jest@11.2.0-beta.0) (2021-04-13)
+
+
+### Features
+
+* **jest:** support configurable global mocks ([#965](https://github.com/just-jeb/angular-builders/issues/965)) ([ba6af13](https://github.com/just-jeb/angular-builders/commit/ba6af1308e6782bba873bce4236abf9251124345))
+
+
+
 ### [11.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.1-beta.0...@angular-builders/jest@11.1.1) (2021-03-09)
 
 **Note:** Version bump only for package @angular-builders/jest
