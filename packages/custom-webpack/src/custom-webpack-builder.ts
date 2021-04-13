@@ -75,5 +75,3 @@ function resolveCustomWebpackConfig(path: string, tsConfig: string): CustomWebpa
   // `{ default: { ... } }`
   return customWebpackConfig.default || customWebpackConfig;
 }
-
-// Dummy changes
