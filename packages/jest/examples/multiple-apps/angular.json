@@ -78,7 +78,8 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "./configs/tsconfig.spec.json"
+            "tsConfig": "./configs/tsconfig.spec.json",
+            "globalMocks": ["getComputedStyle", "styleTransform"]
           }
         },
         "lint": {

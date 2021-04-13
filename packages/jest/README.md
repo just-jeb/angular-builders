@@ -87,7 +87,17 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
-- `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
+- `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.  
+- `globalMocks` - there are 4 global mocks (that lack implementation in JSDom) enabled by default: 
+  `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
+  Their implementation can be found [here](./src/global-mocks).  
+  If you want to disable one or more of these mocks just pass an updated array in options.  
+  For example:  
+  ```json
+  "options": {
+    "globalMocks": ["getComputedStyle", "doctype"]
+  }
+  ```
 - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
 
   ```json
