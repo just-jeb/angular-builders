@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have all the global mocks defined`, () => {
+  it(`should have only two of the global mocks defined`, () => {
     expect(window.getComputedStyle).toBeTruthy();
     expect(document.body.style.transform).toBeTruthy();
-    expect(document.doctype).toBeFalsy();
+    expect(document.doctype).not.toEqual('<!DOCTYPE html>');
     expect(window.matchMedia).toBeFalsy();
   });
 
