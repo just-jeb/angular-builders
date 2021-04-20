@@ -196,7 +196,7 @@
     "maxWorkers": {
       "alias": "w",
       "description": "Specifies the maximum number of workers the worker-pool will spawn for running tests. This defaults to the number of the cores available on your machine. (its usually best not to override this default)",
-      "type": "number"
+      "type": ["integer", "string"]
     },
     "moduleDirectories": {
       "description": "An array of directory names to be searched recursively up from the requiring module's location.",

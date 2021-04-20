@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [11.2.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.2.0-beta.0...@angular-builders/jest@11.2.0-beta.1) (2021-04-20)
+
+
+### Bug Fixes
+
+* **jest:** correct maxWorkers type ([#970](https://github.com/just-jeb/angular-builders/issues/970)) ([eddb4db](https://github.com/just-jeb/angular-builders/commit/eddb4db9d1de883eb937549ce27866b59eb120cb))
+
+
+
 ## [11.2.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.1...@angular-builders/jest@11.2.0-beta.0) (2021-04-13)
 
 
