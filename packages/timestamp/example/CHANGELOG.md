@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.1.3-beta.0](https://github.com/just-jeb/angular-builders/compare/example@11.1.2...example@11.1.3-beta.0) (2021-04-28)
+
+**Note:** Version bump only for package example
+
+
+
+
+
 ### [11.1.2](https://github.com/just-jeb/angular-builders/compare/example@11.1.2-beta.3...example@11.1.2) (2021-04-20)
 
 **Note:** Version bump only for package example
