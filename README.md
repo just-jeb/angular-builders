@@ -61,6 +61,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/briananderson1222"><img src="https://avatars2.githubusercontent.com/u/4603907?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Anderson</b></sub></a><br /><a href="#question-briananderson1222" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://github.com/AnthonyJungmann"><img src="https://avatars.githubusercontent.com/u/8911909?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anthony Jungmann</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=AnthonyJungmann" title="Documentation">📖</a></td>
     <td align="center"><a href="http://matheo.co"><img src="https://avatars.githubusercontent.com/u/260185?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateo Tibaquirá</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=matheo" title="Code">💻</a></td>
+    <td align="center"><a href="https://juri.dev"><img src="https://avatars.githubusercontent.com/u/542458?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juri Strumpflohner</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=juristr" title="Code">💻</a></td>
   </tr>
 </table>
 
