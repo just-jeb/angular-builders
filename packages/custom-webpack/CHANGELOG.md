@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [11.1.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1...@angular-builders/custom-webpack@11.1.2-beta.0) (2021-05-07)
+
+
+### Bug Fixes
+
+* **custom-webpack:** specify possible types of customWebpackConfig values ([#971](https://github.com/just-jeb/angular-builders/issues/971)) ([01f5427](https://github.com/just-jeb/angular-builders/commit/01f542752ee1573618c48984530848c605b87753))
+
+
+
 ### [11.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1-beta.1...@angular-builders/custom-webpack@11.1.1) (2021-03-09)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
