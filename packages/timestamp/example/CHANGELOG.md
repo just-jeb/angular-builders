@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/example@11.1.3-beta.2...example@12.0.0-beta.0) (2021-05-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to angular 12
+
+* chore(deps): update to node 12.14 on CI
+
+* Update html-webpack-plugin in example
+
+### Miscellaneous Chores
+
+* **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
+
+
+
 ### [11.1.3-beta.2](https://github.com/just-jeb/angular-builders/compare/example@11.1.3-beta.1...example@11.1.3-beta.2) (2021-05-07)
 
 **Note:** Version bump only for package example
