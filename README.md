@@ -4,17 +4,15 @@ The purpose of this repository is to consolidate all the community builders for 
 
 ## The latest version of all the builders require Angular CLI 12
 
-## [Documentation for version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
-
-## [Documentation for version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
-
-## [Documentation for version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
-
-## [Documentation for version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
-
-## [Documentation for version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
-
 ## [Migration guide](./MIGRATION.MD)
+
+## Previous versions
+
+ - [Version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
+ - [Version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
+ - [Version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
+ - [Version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
+ - [Version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
 
 # Builders
 
