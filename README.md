@@ -4,6 +4,8 @@ The purpose of this repository is to consolidate all the community builders for 
 
 ## The latest version of all the builders require Angular CLI 12
 
+Builders' and Angular **major** versions **must** match.
+
 ## [Migration guide](./MIGRATION.MD)
 
 ## Previous versions
