@@ -22,7 +22,8 @@
     "e2e": "jest e2e",
     "format": "prettier --write \"**/*.{js,ts,html,md}\"",
     "clean": "lerna clean",
-    "graduate": "lerna publish --conventional-commits --conventional-graduate"
+    "graduate": "lerna publish --conventional-commits --conventional-graduate",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@angular/compiler": "^12.0.0",
@@ -47,12 +48,6 @@
     "ts-jest": "^26.1.1",
     "ts-node": "~9.1.1",
     "typescript": "4.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [
