@@ -1,3 +1,7 @@
+# Migration from version 11 to version 12
+
+No breaking changes (except for updating to Angular 12)
+
 # Migration from version 10 to version 11
 
 ## Custom webpack builder

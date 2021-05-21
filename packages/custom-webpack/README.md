@@ -8,14 +8,15 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Previous versions
 
-- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
-- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
-- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+- [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/custom-webpack/README.md)
 - [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
 
 ## Prerequisites:
 
-- [Angular CLI 11](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 12](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
