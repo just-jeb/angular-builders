@@ -3,122 +3,79 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.2.0...@angular-builders/jest@12.0.0-beta.0) (2021-05-14)
+## [12.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.0.0-beta.0...@angular-builders/jest@12.0.0) (2021-05-21)
 
+**Note:** Version bump only for package @angular-builders/jest
+
+## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.2.0...@angular-builders/jest@12.0.0-beta.0) (2021-05-14)
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to angular 12
+- **deps:** update to angular 12
 
-* chore(deps): update to node 12.14 on CI
+- chore(deps): update to node 12.14 on CI
 
-* Update html-webpack-plugin in example
+- Update html-webpack-plugin in example
 
 ### Miscellaneous Chores
 
-* **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
-
-
+- **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
 
 ## [11.2.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.2.0-beta.1...@angular-builders/jest@11.2.0) (2021-04-20)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ## [11.2.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.2.0-beta.0...@angular-builders/jest@11.2.0-beta.1) (2021-04-20)
-
 
 ### Bug Fixes
 
-* **jest:** correct maxWorkers type ([#970](https://github.com/just-jeb/angular-builders/issues/970)) ([eddb4db](https://github.com/just-jeb/angular-builders/commit/eddb4db9d1de883eb937549ce27866b59eb120cb))
-
-
+- **jest:** correct maxWorkers type ([#970](https://github.com/just-jeb/angular-builders/issues/970)) ([eddb4db](https://github.com/just-jeb/angular-builders/commit/eddb4db9d1de883eb937549ce27866b59eb120cb))
 
 ## [11.2.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.1...@angular-builders/jest@11.2.0-beta.0) (2021-04-13)
 
-
 ### Features
 
-* **jest:** support configurable global mocks ([#965](https://github.com/just-jeb/angular-builders/issues/965)) ([ba6af13](https://github.com/just-jeb/angular-builders/commit/ba6af1308e6782bba873bce4236abf9251124345))
-
-
+- **jest:** support configurable global mocks ([#965](https://github.com/just-jeb/angular-builders/issues/965)) ([ba6af13](https://github.com/just-jeb/angular-builders/commit/ba6af1308e6782bba873bce4236abf9251124345))
 
 ### [11.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.1-beta.0...@angular-builders/jest@11.1.1) (2021-03-09)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.0...@angular-builders/jest@11.1.1-beta.0) (2021-03-08)
-
 
 ### Bug Fixes
 
-* **jest:** sync latest jest-preset-angular ([805eb8d](https://github.com/just-jeb/angular-builders/commit/805eb8d0d0dbe37582a32621e0239d0ee107e6b9))
-
-
+- **jest:** sync latest jest-preset-angular ([805eb8d](https://github.com/just-jeb/angular-builders/commit/805eb8d0d0dbe37582a32621e0239d0ee107e6b9))
 
 ## [11.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.1.0-beta.0...@angular-builders/jest@11.1.0) (2021-02-26)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ## 11.1.0-beta.0 (2021-02-03)
-
 
 ### Features
 
-* **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
-
-
+- **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
 
 ### 11.0.1-beta.4 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### 11.0.1-beta.3 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/jest
-
-
-
-
 
 ### 11.0.1-beta.2 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### 11.0.1-beta.1 (2021-01-14)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### 11.0.1-beta.0 (2020-12-27)
 
 **Note:** Version bump only for package @angular-builders/jest
-
-
-
-
 
 ## [11.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@11.0.0-beta.6...@angular-builders/jest@11.0.0) (2020-12-27)
 

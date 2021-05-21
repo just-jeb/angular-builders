@@ -3,132 +3,85 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.2-beta.0...@angular-builders/custom-webpack@12.0.0-beta.0) (2021-05-14)
+## [12.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@12.0.0-beta.0...@angular-builders/custom-webpack@12.0.0) (2021-05-21)
 
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
+## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.2-beta.0...@angular-builders/custom-webpack@12.0.0-beta.0) (2021-05-14)
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to angular 12
+- **deps:** update to angular 12
 
-* chore(deps): update to node 12.14 on CI
+- chore(deps): update to node 12.14 on CI
 
-* Update html-webpack-plugin in example
+- Update html-webpack-plugin in example
 
 ### Miscellaneous Chores
 
-* **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
-
-
+- **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
 
 ### [11.1.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1...@angular-builders/custom-webpack@11.1.2-beta.0) (2021-05-07)
 
-
 ### Bug Fixes
 
-* **custom-webpack:** specify possible types of customWebpackConfig values ([#971](https://github.com/just-jeb/angular-builders/issues/971)) ([01f5427](https://github.com/just-jeb/angular-builders/commit/01f542752ee1573618c48984530848c605b87753))
-
-
+- **custom-webpack:** specify possible types of customWebpackConfig values ([#971](https://github.com/just-jeb/angular-builders/issues/971)) ([01f5427](https://github.com/just-jeb/angular-builders/commit/01f542752ee1573618c48984530848c605b87753))
 
 ### [11.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1-beta.1...@angular-builders/custom-webpack@11.1.1) (2021-03-09)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### [11.1.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.1-beta.0...@angular-builders/custom-webpack@11.1.1-beta.1) (2021-03-04)
-
 
 ### Bug Fixes
 
-* target option typing bug ([a80f3d3](https://github.com/just-jeb/angular-builders/commit/a80f3d32b3f2abd0d5e0c5be37dfda23a2df3a16))
-* use karma-coverage instead of karma-coverage-istanbul-reporter ([6c2ea5b](https://github.com/just-jeb/angular-builders/commit/6c2ea5b70e0640c6c278a0e1ab18021efad27fd8))
-* use puppeteer for karma testing browser bin to avoid using none-existing local binary ([79894c2](https://github.com/just-jeb/angular-builders/commit/79894c2d3a4b849b176ac927e00513acfca5ebad))
-
-
+- target option typing bug ([a80f3d3](https://github.com/just-jeb/angular-builders/commit/a80f3d32b3f2abd0d5e0c5be37dfda23a2df3a16))
+- use karma-coverage instead of karma-coverage-istanbul-reporter ([6c2ea5b](https://github.com/just-jeb/angular-builders/commit/6c2ea5b70e0640c6c278a0e1ab18021efad27fd8))
+- use puppeteer for karma testing browser bin to avoid using none-existing local binary ([79894c2](https://github.com/just-jeb/angular-builders/commit/79894c2d3a4b849b176ac927e00513acfca5ebad))
 
 ### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0...@angular-builders/custom-webpack@11.1.1-beta.0) (2021-03-04)
 
-
 ### Bug Fixes
 
-* **custom-webpack:** change `ts-node` compilation target to include TS features ([#941](https://github.com/just-jeb/angular-builders/issues/941)) ([88ad0f5](https://github.com/just-jeb/angular-builders/commit/88ad0f59e3bce9257df84b8741f86bb0b76c7da8))
-
-
+- **custom-webpack:** change `ts-node` compilation target to include TS features ([#941](https://github.com/just-jeb/angular-builders/issues/941)) ([88ad0f5](https://github.com/just-jeb/angular-builders/commit/88ad0f59e3bce9257df84b8741f86bb0b76c7da8))
 
 ## [11.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0-beta.2...@angular-builders/custom-webpack@11.1.0) (2021-02-26)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ## [11.1.0-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0-beta.1...@angular-builders/custom-webpack@11.1.0-beta.2) (2021-02-15)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
-
-
-
-
 
 ## [11.1.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.1.0-beta.0...@angular-builders/custom-webpack@11.1.0-beta.1) (2021-02-14)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ## 11.1.0-beta.0 (2021-02-03)
-
 
 ### Features
 
-* **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
-
-
+- **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
 
 ### 11.0.1-beta.4 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### 11.0.1-beta.3 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
-
-
-
-
 
 ### 11.0.1-beta.2 (2021-02-03)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### 11.0.1-beta.1 (2021-01-14)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### 11.0.1-beta.0 (2020-12-27)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
-
-
-
-
 
 ## [11.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@11.0.0-beta.6...@angular-builders/custom-webpack@11.0.0) (2020-12-27)
 
