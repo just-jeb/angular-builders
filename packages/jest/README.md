@@ -9,14 +9,15 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 ## Previous versions
 
-- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
-- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
-- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
-- [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
+- [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/jest/README.md)
+- [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/jest/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/jest/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/jest/README.md)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md)
 
 ## Prerequisites
 
-- [Angular CLI 11](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 12](https://www.npmjs.com/package/@angular/cli)
 - [Jest 26](https://www.npmjs.com/package/jest)
 
 ## Installation
@@ -26,7 +27,10 @@ The builder comes to provide zero configuration setup for Jest while keeping the
    npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
    rm ./karma.conf.js ./src/test.ts
    ```
-2. Install the builder (and `jest` if you still haven't): `npm i -D jest @types/jest @angular-builders/jest`
+2. Install the builder (and `jest` if you still haven't):
+   ```console
+   npm i -D jest @types/jest @angular-builders/jest
+   ```
 
 ## Updating Typescript configurations
 
@@ -88,6 +92,16 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
 - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
+- `globalMocks` - there are 4 global mocks (that lack implementation in JSDom) enabled by default:
+  `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
+  Their implementation can be found [here](./src/global-mocks).  
+  If you want to disable one or more of these mocks just pass an updated array in options.  
+  For example:
+  ```json
+  "options": {
+    "globalMocks": ["getComputedStyle", "doctype"]
+  }
+  ```
 - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
 
   ```json

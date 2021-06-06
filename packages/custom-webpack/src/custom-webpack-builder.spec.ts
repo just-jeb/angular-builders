@@ -5,6 +5,7 @@ import { CustomizeRule } from 'webpack-merge';
 import { CustomWebpackBuilder, defaultWebpackConfigPath } from './custom-webpack-builder';
 import { MergeRules } from './custom-webpack-builder-config';
 import * as webpackConfigMerger from './webpack-config-merger';
+import { TargetOptions } from './type-definition';
 
 const baseWebpackConfig = {
   entry: './main.ts',
@@ -14,7 +15,7 @@ const buildOptions = {
   env: 'prod',
 };
 
-const targetOptions = {
+const targetOptions: TargetOptions = {
   project: 'application',
   configuration: 'production',
   target: 'serve',
@@ -70,7 +71,7 @@ describe('CustomWebpackBuilder', () => {
       null,
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     expect(mergedConfig).toEqual(baseWebpackConfig);
@@ -79,7 +80,13 @@ describe('CustomWebpackBuilder', () => {
   it('should load webpack.config.js if no path specified', async () => {
     const spy = jest.spyOn(webpackConfigMerger, 'mergeConfigs');
     createConfigFile(defaultWebpackConfigPath, customWebpackConfig);
-    await CustomWebpackBuilder.buildWebpackConfig(__dirname as Path, {}, baseWebpackConfig, {}, {});
+    await CustomWebpackBuilder.buildWebpackConfig(
+      __dirname as Path,
+      {},
+      baseWebpackConfig,
+      {},
+      targetOptions
+    );
 
     try {
       expect(spy).toHaveBeenCalledWith(
@@ -103,7 +110,7 @@ describe('CustomWebpackBuilder', () => {
       { path: fileName },
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     try {
@@ -128,7 +135,7 @@ describe('CustomWebpackBuilder', () => {
       { mergeRules },
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     try {
@@ -152,7 +159,7 @@ describe('CustomWebpackBuilder', () => {
       { replaceDuplicatePlugins: true },
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     try {
@@ -163,7 +170,7 @@ describe('CustomWebpackBuilder', () => {
   });
 
   it('should pass build options to the webpack config function', async () => {
-    const spy = jest.fn((config, options) => config);
+    const spy = jest.fn((config, options, targetOptions) => config);
     createConfigFile(defaultWebpackConfigPath, spy);
     await CustomWebpackBuilder.buildWebpackConfig(
       __dirname as Path,
@@ -183,7 +190,7 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     expect(mergedConfig).toEqual(customWebpackFunctionObj);
@@ -207,7 +214,7 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     expect(result).toBeInstanceOf(Promise);
@@ -236,7 +243,7 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      {}
+      targetOptions
     );
 
     expect(result).toBeInstanceOf(Promise);

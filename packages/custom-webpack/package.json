@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/custom-webpack",
-  "version": "11.0.0-beta.4",
+  "version": "12.0.1-beta.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "dist/index.js",
   "files": [
@@ -15,7 +15,7 @@
   "author": "JeB Barabanov",
   "license": "MIT",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.14.1"
   },
   "keywords": [
     "cli",
@@ -37,11 +37,12 @@
   },
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": ">=0.1100.0 < 0.1200.0",
-    "@angular-devkit/build-angular": ">=0.1100.0 < 0.1200.0",
-    "@angular-devkit/core": "^11.0.0",
+    "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0",
+    "@angular-devkit/build-angular": "^12.0.0",
+    "@angular-devkit/core": "^12.0.0",
     "lodash": "^4.17.15",
-    "ts-node": "^9.0.0",
-    "webpack-merge": "^5.7.2"
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "webpack-merge": "^5.7.3"
   }
 }

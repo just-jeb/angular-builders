@@ -27,10 +27,6 @@ export async function getRoots(
     throw new Error('Must either have a target from the context or a default project.');
   }
 
-  // const projectRoot = resolve(
-  //     workspace.root,
-  //     normalize(workspace.getProject(projectName).root),
-  // );
   const { root } = workspace.projects.get(projectName);
   return {
     projectRoot: normalize(root),
@@ -49,7 +45,7 @@ export function runJest(
     const { workspaceRoot, projectRoot } = await getRoots(context);
 
     const configuration = new JestConfigurationBuilder(
-      new DefaultConfigResolver(options.tsConfig),
+      new DefaultConfigResolver(options),
       new CustomConfigResolver(context.logger.createChild('Jest runner'))
     ).buildConfiguration(projectRoot, workspaceRoot, options.configPath);
     delete options.configPath;

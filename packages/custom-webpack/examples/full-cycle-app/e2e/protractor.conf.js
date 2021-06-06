@@ -19,12 +19,20 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {},
+    print: function () {},
   },
   onPrepare() {
+    const tsConfig = require('path').join(__dirname, './tsconfig.json');
     require('ts-node').register({
-      project: require('path').join(__dirname, './tsconfig.json'),
+      project: tsConfig,
     });
+
+    // Register paths in tsConfig
+    const tsconfigPaths = require('tsconfig-paths');
+    const { absoluteBaseUrl: baseUrl, paths } = tsconfigPaths.loadConfig(tsConfig);
+    if (baseUrl && paths) {
+      tsconfigPaths.register({ baseUrl, paths });
+    }
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
   },
 };

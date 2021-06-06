@@ -1,3 +1,7 @@
+# Migration from version 11 to version 12
+
+No breaking changes (except for updating to Angular 12)
+
 # Migration from version 10 to version 11
 
 ## Custom webpack builder
@@ -18,7 +22,8 @@ In order to make this breaking change as backward compatible as possible, the de
 };
 ```
 This is as close as possible to the [`smart` merge strategy](https://github.com/survivejs/webpack-merge/tree/v4.2.2#smart-merging) that was used before, so ideally if you didn't use `mergeStrategies` then your configuration should work just as it worked before.  
-Otherwise you'll have to adjust the `mergeRules` in accordance with your needs.
+Otherwise you'll have to adjust the `mergeRules` in accordance with your needs.  
+If you don't want to invest time in learning how the `mergeRules` work or you have a complicated use case then consider using [Custom Webpack Config Function](./packages/custom-webpack#custom-webpack-config-function). This way you'll have full control over the configuration without relying on any merging mechanism.
 
 ## Jest builder
 1. `jest-preset-angular` has been updated to version 9, which uses Angular compiler instead of `ts-jest` in order to transform the TS files. Make sure you understand the implications and perform all the necessary changes to your code base as described in `jest-preset-angular` [CHANGELOG](https://github.com/thymikee/jest-preset-angular/blob/master/CHANGELOG.md).

@@ -306,4 +306,59 @@ describe('Webpack config merger test', () => {
 
     expect(mergeConfigs(conf1, conf2)).toEqual(expected);
   });
+
+  it('should merge loader name with loader object', () => {
+    const conf1 = {
+      module: {
+        rules: [
+          {
+            test: 'some-test',
+            use: ['hello-loader'],
+          },
+        ],
+      },
+    };
+
+    const conf2 = {
+      module: {
+        rules: [
+          {
+            test: 'another-test',
+            use: [
+              {
+                loader: 'another-loader',
+                options: {
+                  someoption: 'hey',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    const expected = {
+      module: {
+        rules: [
+          {
+            test: 'some-test',
+            use: ['hello-loader'],
+          },
+          {
+            test: 'another-test',
+            use: [
+              {
+                loader: 'another-loader',
+                options: {
+                  someoption: 'hey',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    expect(mergeConfigs(conf1, conf2)).toEqual(expected);
+  });
 });
