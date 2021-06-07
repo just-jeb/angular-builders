@@ -65,10 +65,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
   ```
 - Run the tests: `ng test`
 
-## Ivy compatibility
-
-Ivy compiler is enabled by default in version 9 so if you use it, make sure you run `ngcc` in a `postinstall` hook. For more details refer to [this](https://github.com/just-jeb/angular-builders/issues/679#issuecomment-587525674) issue.
-
 ## Multi-projects workspace support
 
 The builder supports multi-project workspaces out of the box, the only thing required is editing _tsconfig.spec.json_ in the relevant project directory as described [above](#updating-typescript-configurations).
