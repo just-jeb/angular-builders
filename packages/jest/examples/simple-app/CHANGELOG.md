@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/simple-app@12.0.0...simple-app@12.1.0-beta.0) (2021-06-07)
+
+### Features
+
+- **jest:** update to jest-preset-angular@9 ([#913](https://github.com/just-jeb/angular-builders/issues/913)) ([6bd90f8](https://github.com/just-jeb/angular-builders/commit/6bd90f898289466832f91cde9e1304955a7d43e3))
+
 ## [12.0.0](https://github.com/just-jeb/angular-builders/compare/simple-app@12.0.0-beta.0...simple-app@12.0.0) (2021-05-21)
 
 **Note:** Version bump only for package simple-app
