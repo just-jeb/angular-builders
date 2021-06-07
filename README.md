@@ -10,11 +10,11 @@ Builders' and Angular **major** versions **must** match.
 
 ## Previous versions
 
- - [Version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
- - [Version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
- - [Version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
- - [Version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
- - [Version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
+- [Version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
+- [Version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
+- [Version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
+- [Version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
+- [Version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
 
 # Builders
 

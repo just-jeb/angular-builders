@@ -1,6 +1,13 @@
 # Migration from version 11 to version 12
 
+## Custom webpack builder
+
 No breaking changes (except for updating to Angular 12)
+
+## Jest builder (since 12.1.0)
+1. Jest 27 is required now 
+2. `jest-preset-angular` has been updated to version 9, which uses Angular compiler instead of `ts-jest` in order to transform the TS files. Make sure you understand the implications and perform all the necessary changes to your code base as described in `jest-preset-angular` [CHANGELOG](https://github.com/thymikee/jest-preset-angular/blob/master/CHANGELOG.md).
+
 
 # Migration from version 10 to version 11
 
