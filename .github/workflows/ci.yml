@@ -40,8 +40,8 @@ jobs:
       - name: Install dependencies
         run: yarn --non-interactive --no-progress
 
-      - name: Bootstrap packages
-        run: yarn bootstrap:packages
+      # - name: Bootstrap packages
+      #   run: yarn bootstrap:packages
 
       - name: Run CI scripts
         run: yarn ci
