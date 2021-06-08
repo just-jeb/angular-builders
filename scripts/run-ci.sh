@@ -53,7 +53,7 @@ upgradeLocals
 
 # Get travis's chrome version and download the appropriate webdriver-manager for protractor
 CHROME_VERSION=`google-chrome --version | egrep -o '[0-9.]+' | head -1`
-npx lerna exec --ignore '@angular-builders/*' -- ./node_modules/protractor/bin/webdriver-manager update --versions.chrome $CHROME_VERSION
+npx lerna exec --ignore '@angular-builders/*' -- yarn webdriver-manager update --versions.chrome $CHROME_VERSION
 
 npx lerna run ci
 
