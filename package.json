@@ -7,7 +7,11 @@
   },
   "private": true,
   "workspaces": {
-    "packages": ["packages/*", "packages/*/examples/*", "packages/*/example"]
+    "packages": [
+      "packages/*",
+      "packages/*/examples/*",
+      "packages/*/example"
+    ]
   },
   "author": "Evgeny Barabanov",
   "license": "MIT",
@@ -35,12 +39,6 @@
     "lerna": "^4.0.0",
     "lint-staged": "^11.0.0",
     "prettier": "^2.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [
