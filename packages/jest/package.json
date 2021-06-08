@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/jest",
-  "version": "11.0.0-beta.1",
+  "version": "12.1.0",
   "description": "Jest runner for Angular build facade. Allows ng test run with Jest instead of Karma",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "author": "JeB Barabanov",
   "license": "MIT",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.14.1"
   },
   "main": "dist/index.js",
   "files": [
@@ -39,16 +39,16 @@
     "ci": "./scripts/ci.sh"
   },
   "dependencies": {
-    "@angular-devkit/architect": ">=0.1100.0 < 0.1200.0",
-    "@angular-devkit/core": "^11.0.0",
-    "jest-preset-angular": "^8.3.2",
+    "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0",
+    "@angular-devkit/core": "^12.0.0",
+    "jest-preset-angular": "^9.0.1",
     "lodash": "^4.17.15"
   },
   "peerDependencies": {
-    "jest": ">=26"
+    "jest": ">=27"
   },
   "devDependencies": {
-    "jest": "^26.1.0",
+    "jest": "^27.0.0",
     "rimraf": "^3.0.0",
     "cpy-cli": "^3.0.0",
     "quicktype": "^15.0.174",

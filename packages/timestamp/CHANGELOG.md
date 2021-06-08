@@ -3,6 +3,146 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.1-beta.2...@angular-builders/timestamp@12.0.1) (2021-06-08)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [12.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.1-beta.1...@angular-builders/timestamp@12.0.1-beta.2) (2021-05-28)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [12.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.1-beta.0...@angular-builders/timestamp@12.0.1-beta.1) (2021-05-27)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [12.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.0...@angular-builders/timestamp@12.0.1-beta.0) (2021-05-27)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [12.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.0-beta.1...@angular-builders/timestamp@12.0.0) (2021-05-21)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [12.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.0-beta.0...@angular-builders/timestamp@12.0.0-beta.1) (2021-05-17)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [12.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.3-beta.2...@angular-builders/timestamp@12.0.0-beta.0) (2021-05-14)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** update to angular 12
+
+- chore(deps): update to node 12.14 on CI
+
+- Update html-webpack-plugin in example
+
+### Miscellaneous Chores
+
+- **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
+
+### [11.1.3-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.3-beta.1...@angular-builders/timestamp@11.1.3-beta.2) (2021-05-07)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.3-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.3-beta.0...@angular-builders/timestamp@11.1.3-beta.1) (2021-04-30)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.3-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.2...@angular-builders/timestamp@11.1.3-beta.0) (2021-04-28)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.2-beta.3...@angular-builders/timestamp@11.1.2) (2021-04-20)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.2-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.2-beta.2...@angular-builders/timestamp@11.1.2-beta.3) (2021-04-12)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.2-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.2-beta.1...@angular-builders/timestamp@11.1.2-beta.2) (2021-03-26)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.2-beta.0...@angular-builders/timestamp@11.1.2-beta.1) (2021-03-18)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.1...@angular-builders/timestamp@11.1.2-beta.0) (2021-03-11)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.1-beta.0...@angular-builders/timestamp@11.1.1) (2021-03-09)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### [11.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.0...@angular-builders/timestamp@11.1.1-beta.0) (2021-03-04)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [11.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.0-beta.1...@angular-builders/timestamp@11.1.0) (2021-02-26)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [11.1.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.1.0-beta.0...@angular-builders/timestamp@11.1.0-beta.1) (2021-02-23)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## 11.1.0-beta.0 (2021-02-03)
+
+### Features
+
+- **custom-webpack:** use application tsconfig file for indexTransform and customWebpackConfig ([#879](https://github.com/just-jeb/angular-builders/issues/879)) ([c85cd10](https://github.com/just-jeb/angular-builders/commit/c85cd103af6047fefbea273ace1d9446829f3651))
+
+### 11.0.1-beta.4 (2021-02-03)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### 11.0.1-beta.3 (2021-02-03)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### 11.0.1-beta.2 (2021-02-03)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### 11.0.1-beta.1 (2021-01-14)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+### 11.0.1-beta.0 (2020-12-27)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## [11.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@11.0.0-beta.6...@angular-builders/timestamp@11.0.0) (2020-12-27)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## 11.0.0-beta.6 (2020-12-27)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## 11.0.0-beta.5 (2020-12-22)
+
+### Bug Fixes
+
+- **custom-webpack:** allow merging loader name with loader object ([#912](https://github.com/just-jeb/angular-builders/issues/912)) ([a89a35d](https://github.com/just-jeb/angular-builders/commit/a89a35d30276a3d284d304ee710442ee03da351b))
+
+## 11.0.0-beta.4 (2020-12-16)
+
+### Bug Fixes
+
+- **custom-webpack:** fix loaders merge scenario ([#909](https://github.com/just-jeb/angular-builders/issues/909)) ([0f0ad3d](https://github.com/just-jeb/angular-builders/commit/0f0ad3d174ea589538c4474b0509ad3b5f925bf1))
+
+## 11.0.0-beta.3 (2020-12-15)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
+## 11.0.0-beta.2 (2020-12-14)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
 ## [11.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@10.0.2-beta.13...@angular-builders/timestamp@11.0.0-beta.1) (2020-11-17)
 
 ### ⚠ BREAKING CHANGES

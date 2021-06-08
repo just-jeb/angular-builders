@@ -6,8 +6,6 @@ source local-registry.sh
 function cleanup {
   echo 'Cleaning up.'
   cd "$root_path"
-  # Uncomment when snapshot testing is enabled by default:
-  # rm ./packages/react-scripts/template/src/__snapshots__/App.test.js.snap
   rm -rf "$temp_app_path"
   # Restore the original NPM and Yarn registry URLs and stop Verdaccio
   stopLocalRegistry
@@ -53,6 +51,12 @@ publishToLocalRegistry
 
 upgradeLocals
 
+# Get travis's chrome version and download the appropriate webdriver-manager for protractor
+CHROME_VERSION=`google-chrome --version | egrep -o '[0-9.]+' | head -1`
+npx lerna exec --ignore '@angular-builders/*' -- ./node_modules/protractor/bin/webdriver-manager update --versions.chrome $CHROME_VERSION
+
 npx lerna run ci
 
 cleanup
+
+

@@ -18,7 +18,10 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.ts"
+              "path": "./extra-webpack.config.ts",
+              "mergeRules": {
+                "plugins": "prepend"
+              }
             },
             "indexTransform": "./index-html.transform.js",
             "outputPath": "dist/full-cycle-app",
@@ -50,7 +53,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -129,7 +131,8 @@
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "full-cycle-app:serve",
-            "port": 4220
+            "port": 4220,
+            "webdriverUpdate": false
           },
           "configurations": {
             "production": {

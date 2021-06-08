@@ -1,8 +1,11 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from '@app/app.component';
+
 describe('AppComponent', () => {
   beforeEach(
     waitForAsync(() => {
+      Object.defineProperty(window, 'APP_VERSION', { value: `fake version`, writable: false });
+
       TestBed.configureTestingModule({
         declarations: [AppComponent],
       }).compileComponents();
@@ -31,6 +34,15 @@ describe('AppComponent', () => {
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
       expect(compiled.querySelector('h1').textContent).toContain('Welcome to full-cycle-app!');
+    })
+  );
+  it(
+    'should render `version` in div with `version` css class',
+    waitForAsync(() => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('.version').textContent).toContain('fake version');
     })
   );
 });

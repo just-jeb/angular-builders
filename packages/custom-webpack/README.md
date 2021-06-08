@@ -8,14 +8,15 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Previous versions
 
-- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
-- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
-- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+- [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/custom-webpack/README.md)
 - [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
 
 ## Prerequisites:
 
-- [Angular CLI 10](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 12](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
@@ -29,7 +30,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
         "architect": {
           ...
           "[architect-target]": {
-            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server]"
+            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server|extract-i18n]"
             "options": {
               ...
             }
@@ -89,7 +90,7 @@ Builder options:
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
-        "mergeStrategies": {
+        "mergeRules": {
           "externals": "replace"
         }
       },
@@ -158,8 +159,10 @@ Builder options:
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
-        "mergeStrategies": {
-          "module.rules": "prepend"
+        "mergeRules": {
+          "module": {
+            "rules": "prepend"
+          }
         },
         "replaceDuplicatePlugins": true
       },
@@ -257,26 +260,37 @@ The following properties are available:
   ```
   The builder will take care of merging the delta with the existing configuration provided by Angular.  
    In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
-- `mergeStrategies`: webpack config merge strategies, can be `append | prepend | replace` per webpack config entry. Defaults to `append`.
-  - `append`: appends the given entry configuration (in custom webpack config) to the existing Angular CLI webpack configuration.
-  - `prepend`: prepends the given entry configuration (in custom webpack config) to the existing field configuration (in Angular CLI webpack config). The custom loaders config will be added to the _beginning_ of the existing loaders array.
-  - `replace`: replaces the given entry configuration entirely. The custom webpack config will replace the Angular CLI webpack config (for this particular entry).
-    See [webpack-merge](https://github.com/survivejs/webpack-merge) for more info.
-- `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
-  **Note that if `true`, this option will override `mergeStrategies` for `plugins` field.**
+- `mergeRules`: webpack config merge rules, as described [here](https://github.com/survivejs/webpack-merge#mergewithrules). Defaults to:
 
-Webpack configuration can be also written in TypeScript. Given the following example:
+  ```ts
+  {
+    module: {
+      rules: {
+        test: "match",
+        use: {
+          loader: "match",
+          options: "merge",
+        },
+      },
+    },
+  };
+  ```
+
+- `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
+  **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
+
+Webpack configuration can be also written in TypeScript. In this case, it is the appliaction's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
 
 ```ts
 // extra-webpack.config.ts
-import * as webpack from 'webpack';
+import { Configuration } from 'webpack';
 
 export default {
   output: {
     library: 'shop',
     libraryTarget: 'umd',
   },
-} as webpack.Configuration;
+} as Configuration;
 ```
 
 Do not forget to specify the correct path to this file:
@@ -337,7 +351,7 @@ The function is called with the base config the builder options and the target o
 `TargetOptions` follows `target` definition from [this](https://github.com/angular/angular-cli/blob/master/packages/angular_devkit/architect/src/input-schema.json) schema
 and can be used to manipulate your build based on the build target.
 
-In this case, `mergeStrategies` and `replaceDuplicatePlugins` options have no effect.
+In this case, `mergeRules` and `replaceDuplicatePlugins` options have no effect.
 
 `custom-webpack.config.js` example :
 
@@ -408,6 +422,7 @@ module.exports = async config => {
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
+If `indexTransform` is writes in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
 
 ```typescript
 (options: TargetOptions, indexHtmlContent: string) => string|Promise<string>;

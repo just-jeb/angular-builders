@@ -1,5 +1,6 @@
 import { mergeConfigs } from './webpack-config-merger';
 import * as webpack from 'webpack';
+import merge, { CustomizeRule } from 'webpack-merge';
 
 describe('Webpack config merger test', () => {
   it('Should replace plugins', () => {
@@ -141,7 +142,7 @@ describe('Webpack config merger test', () => {
     }
   });
 
-  it('Should replace plugins while working properly with other strategies', () => {
+  it('Should replace plugins while working properly with merging rules', () => {
     const plugin1 = new webpack.HotModuleReplacementPlugin({
       multiStep: true,
       fullBuildTimeout: 3000,
@@ -161,7 +162,7 @@ describe('Webpack config merger test', () => {
         externals: ['c', 'd'],
         plugins: [plugin2],
       },
-      { externals: 'prepend' },
+      { externals: CustomizeRule.Prepend },
       true
     );
 
@@ -180,7 +181,15 @@ describe('Webpack config merger test', () => {
           rules: [
             {
               test: /\.css$/,
-              use: [{ loader: 'style-loader' }, { loader: 'sass-loader' }],
+              use: [
+                {
+                  loader: 'style-loader',
+                  options: {
+                    someOption: 'blah',
+                  },
+                },
+                { loader: 'sass-loader' },
+              ],
             },
           ],
         },
@@ -214,9 +223,10 @@ describe('Webpack config merger test', () => {
                 loader: 'style-loader',
                 options: {
                   modules: true,
+                  someOption: 'blah',
                 },
               },
-              'sass-loader',
+              { loader: 'sass-loader' },
             ],
           },
         ],
@@ -224,5 +234,131 @@ describe('Webpack config merger test', () => {
     };
 
     expect(output).toEqual(expected);
+  });
+
+  it('should append loaders even if there is not intersection between configs', () => {
+    const conf1 = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    outputStyle: 'expanded',
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+    const conf2 = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: ['src/styles/includes.scss'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    const expected = {
+      module: {
+        rules: [
+          {
+            test: '/\\.scss$|\\.sass$/',
+            use: [
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: true,
+                  sassOptions: {
+                    precision: 8,
+                    outputStyle: 'expanded',
+                  },
+                },
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: ['src/styles/includes.scss'],
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    expect(mergeConfigs(conf1, conf2)).toEqual(expected);
+  });
+
+  it('should merge loader name with loader object', () => {
+    const conf1 = {
+      module: {
+        rules: [
+          {
+            test: 'some-test',
+            use: ['hello-loader'],
+          },
+        ],
+      },
+    };
+
+    const conf2 = {
+      module: {
+        rules: [
+          {
+            test: 'another-test',
+            use: [
+              {
+                loader: 'another-loader',
+                options: {
+                  someoption: 'hey',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    const expected = {
+      module: {
+        rules: [
+          {
+            test: 'some-test',
+            use: ['hello-loader'],
+          },
+          {
+            test: 'another-test',
+            use: [
+              {
+                loader: 'another-loader',
+                options: {
+                  someoption: 'hey',
+                },
+              },
+            ],
+          },
+        ],
+      },
+    };
+
+    expect(mergeConfigs(conf1, conf2)).toEqual(expected);
   });
 });

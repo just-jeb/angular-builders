@@ -12,4 +12,8 @@ export class AppPage {
   getParagraphText() {
     return element(by.css('body>p')).getText();
   }
+
+  getVersionText() {
+    return element(by.css('body .version')).getText();
+  }
 }
