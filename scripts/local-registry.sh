@@ -30,5 +30,5 @@ function stopLocalRegistry {
 }
 
 function publishToLocalRegistry {
-  yarn lerna publish prerelease --yes --force-publish=* --no-git-tag-version --no-git-reset --canary --no-commit-hooks --no-push --exact --dist-tag=next --registry="$custom_registry_url"
+  yarn lerna publish from-package --yes --force-publish=* --no-git-tag-version --no-git-reset --canary --no-commit-hooks --no-push --exact --dist-tag=next --registry="$custom_registry_url"
 }
