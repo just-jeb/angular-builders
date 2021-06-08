@@ -26,10 +26,11 @@ function handle_exit {
 }
 
 function upgradeLocals() {
-    yarn workspace simple-app upgrade @angular-builders/custom-webpack
-    yarn workspace multiple-apps upgrade @angular-builders/custom-webpack
+    yarn workspace sanity-app upgrade @angular-builders/custom-webpack
+    yarn workspace full-cycle-app upgrade @angular-builders/custom-webpack
     yarn workspace simple-app upgrade @angular-builders/jest
     yarn workspace multiple-apps upgrade @angular-builders/jest
+    yarn workspace example upgrade @angular-builders/timestamp
 }
 
 # Exit the script with a helpful error message when any error is encountered
