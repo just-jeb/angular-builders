@@ -422,7 +422,7 @@ module.exports = async config => {
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
-If `indexTransform` is writes in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
+If `indexTransform` is written in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
 
 ```typescript
 (options: TargetOptions, indexHtmlContent: string) => string|Promise<string>;
