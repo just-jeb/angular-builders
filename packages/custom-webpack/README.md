@@ -279,7 +279,7 @@ The following properties are available:
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
   **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
-Webpack configuration can be also written in TypeScript. In this case, it is the appliaction's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
+Webpack configuration can be also written in TypeScript. In this case, it is the application's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
 
 ```ts
 // extra-webpack.config.ts
