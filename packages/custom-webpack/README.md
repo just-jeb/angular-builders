@@ -154,7 +154,7 @@ Builder options:
 ```js
 "architect": {
   ...
-  "build": {
+  "serve": {
     "builder": "@angular-builders/custom-webpack:server"
     "options": {
       "customWebpackConfig": {
