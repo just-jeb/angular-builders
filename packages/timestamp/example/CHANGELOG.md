@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.0.2-beta.5](https://github.com/just-jeb/angular-builders/compare/example@12.0.2-beta.4...example@12.0.2-beta.5) (2021-07-29)
+
+**Note:** Version bump only for package example
+
 ### [12.0.2-beta.4](https://github.com/just-jeb/angular-builders/compare/example@12.0.2-beta.3...example@12.0.2-beta.4) (2021-07-12)
 
 **Note:** Version bump only for package example
