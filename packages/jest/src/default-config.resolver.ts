@@ -3,6 +3,7 @@ import defaultConfig from './jest-config/default-config';
 import { SchemaObject as JestBuilderSchema } from './schema';
 import { pick } from 'lodash';
 
+export const testPattern = `/**/*(*.)@(spec|test).[tj]s?(x)`;
 export const tsConfigName = 'tsconfig.spec.json';
 
 const globalMocks = {
@@ -37,7 +38,7 @@ export class DefaultConfigResolver {
           tsconfig: getSystemPath(join(projectRoot, this.options.tsConfig || tsConfigName)),
         },
       },
-      rootDir: `${getSystemPath(projectRoot)}`,
+      testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
     };
   }
 }
