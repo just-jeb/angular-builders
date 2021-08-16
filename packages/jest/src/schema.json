@@ -481,5 +481,6 @@
       "description": "The path to the TypeScript configuration file.",
       "type": "string"
     }
-  }
+  },
+  "additionalProperties": { "type": "array", "items": { "type": "string" } }
 }

@@ -26,4 +26,9 @@ describe('Convert options to Jest CLI arguments', () => {
     const argv = optionsConverter.convertToCliArgs({ arrayOption: ['1', '2'] } as any);
     expect(argv).toEqual(['--arrayOption=1', '--arrayOption=2']);
   });
+
+  it('Should convert additionalProperties into a separate arg entry', () => {
+    const argv = optionsConverter.convertToCliArgs({ '--': ['non-flag-1', 'non-flag-2'] } as any);
+    expect(argv).toEqual(['non-flag-1 non-flag-2']);
+  });
 });
