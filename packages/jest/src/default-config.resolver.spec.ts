@@ -1,4 +1,4 @@
-import { DefaultConfigResolver, tsConfigName } from './default-config.resolver';
+import { DefaultConfigResolver, testPattern, tsConfigName } from './default-config.resolver';
 import { getSystemPath, normalize } from '@angular-devkit/core';
 
 import defaultConfig from './jest-config/default-config';
@@ -24,9 +24,11 @@ describe('Resolve project default configuration', () => {
     );
   });
 
-  it('Should set rootDir to a project root', () => {
+  it('Should resolve testMatch pattern relatively to project root', () => {
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-    expect(config.rootDir).toEqual(`${getSystemPath(normalize('/some/cool/directory'))}`);
+    expect(config.testMatch).toEqual([
+      `${getSystemPath(normalize('/some/cool/directory'))}${testPattern}`,
+    ]);
   });
 });
 
