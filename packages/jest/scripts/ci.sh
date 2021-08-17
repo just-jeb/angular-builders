@@ -78,7 +78,7 @@ multiAppTestOptions=(
     "yarn test my-first-app|--testNamePattern=^AppComponent should create the app$|1|1|1|3|2||"
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
     "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.component.spec.ts$,--testPathPattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
-    "yarn test my-shared-library|--findRelatedTests, projects/my-shared-library/src/lib/my-shared-library.service.ts|1|1|1|1|||"
+    "yarn test my-shared-library|--findRelatedTests,projects/my-shared-library/src/lib/my-shared-library.service.ts|1|1|1|1|||"
     "yarn test my-shared-library|--rootDir=`pwd`/examples/multiple-apps/projects/my-shared-library|2|2|2|2|||--configPath=../../../../scripts/symlinks-custom-root-jest.config.js"
 )
 (ciApp ./examples/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions --configPath=../../scripts/symlinks-jest.config.js)
