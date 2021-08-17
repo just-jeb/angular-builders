@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.0...@angular-builders/jest@12.1.1-beta.0) (2021-08-17)
+
+### Bug Fixes
+
+- **jest:** allow passing file paths as argument to ng test ([#1025](https://github.com/just-jeb/angular-builders/issues/1025)) ([11cd5d0](https://github.com/just-jeb/angular-builders/commit/11cd5d061ce416bb813c312140bc203b75d9b90c))
+
 ## [12.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.0-beta.0...@angular-builders/jest@12.1.0) (2021-06-08)
 
 **Note:** Version bump only for package @angular-builders/jest
