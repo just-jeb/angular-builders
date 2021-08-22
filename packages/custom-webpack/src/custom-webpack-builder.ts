@@ -5,7 +5,7 @@ import { mergeConfigs } from './webpack-config-merger';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { tsNodeRegister } from './utils';
 import { TargetOptions } from './type-definition';
-import { CustomWebpackBrowserSchema } from './browser';
+import { BrowserBuilderOptions } from './custom-webpack-schema';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
@@ -14,12 +14,12 @@ type CustomWebpackConfig =
   | Promise<Configuration>
   | ((
       baseWebpackConfig: Configuration,
-      buildOptions: CustomWebpackBrowserSchema,
+      buildOptions: BrowserBuilderOptions,
       targetOptions: TargetOptions
     ) => Configuration)
   | ((
       baseWebpackConfig: Configuration,
-      buildOptions: CustomWebpackBrowserSchema,
+      buildOptions: BrowserBuilderOptions,
       targetOptions: TargetOptions
     ) => Promise<Configuration>);
 

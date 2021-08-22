@@ -7,12 +7,36 @@ import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
 import { tsNodeRegister } from './utils';
 
-export const customWebpackConfigTransformFactory: (
+export type WebpackConfigurationTransform = ExecutionTransformer<Configuration>;
+
+export type WebpackConfigurationTransformFactory = (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => ExecutionTransformer<Configuration> =
-  (options, { workspaceRoot, target }) =>
-  browserWebpackConfig => {
+) => WebpackConfigurationTransform;
+
+export type IndexHtmlTransformFactory = (
+  options: CustomWebpackSchema,
+  context: BuilderContext
+) => IndexHtmlTransform;
+
+export type Transforms = {
+  webpackConfiguration?: ExecutionTransformer<Configuration>;
+  indexHtml?: IndexHtmlTransform;
+};
+
+export type TransformsFactory = (
+  options: CustomWebpackSchema,
+  context: BuilderContext,
+  webpackConfigurationTransformFactory: WebpackConfigurationTransformFactory,
+  indexHtmlTransformFactory: IndexHtmlTransformFactory
+) => Transforms;
+
+export const customWebpackConfigurationTransformFactory: WebpackConfigurationTransformFactory =
+  (
+    options: CustomWebpackSchema,
+    { workspaceRoot, target }: BuilderContext
+  ): WebpackConfigurationTransform =>
+  (browserWebpackConfig: Configuration) => {
     return CustomWebpackBuilder.buildWebpackConfig(
       normalize(workspaceRoot),
       options.customWebpackConfig,
@@ -22,10 +46,10 @@ export const customWebpackConfigTransformFactory: (
     );
   };
 
-export const indexHtmlTransformFactory: (
-  options: CustomWebpackSchema,
-  context: BuilderContext
-) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
+export const indexHtmlTransformFactory: IndexHtmlTransformFactory = (
+  { indexTransform, tsConfig }: CustomWebpackSchema,
+  { workspaceRoot, target }: BuilderContext
+): IndexHtmlTransform => {
   if (!indexTransform) return null;
   tsNodeRegister(indexTransform, `${getSystemPath(normalize(workspaceRoot))}/${tsConfig}`);
   const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
@@ -33,7 +57,12 @@ export const indexHtmlTransformFactory: (
   return async (indexHtml: string) => transform(target, indexHtml);
 };
 
-export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({
-  webpackConfiguration: customWebpackConfigTransformFactory(options, context),
+export const transformsFactory: TransformsFactory = (
+  options: CustomWebpackSchema,
+  context: BuilderContext,
+  webpackConfigurationTransformFactory: WebpackConfigurationTransformFactory,
+  indexHtmlTransformFactory: IndexHtmlTransformFactory
+): Transforms => ({
+  webpackConfiguration: webpackConfigurationTransformFactory(options, context),
   indexHtml: indexHtmlTransformFactory(options, context),
 });

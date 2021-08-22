@@ -1,22 +1,17 @@
-/**
- * Created by Evgeny Barabanov on 28/06/2018.
- */
+import { BuilderContext as Context, createBuilder } from '@angular-devkit/architect';
+import { executeServerBuilder } from '@angular-devkit/build-angular';
+import { customWebpack, CustomWebpack } from '../custom-webpack';
+import { ServerBuilderOptions as Options } from '../custom-webpack-schema';
 
-import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
-import { executeServerBuilder, ServerBuilderOptions } from '@angular-devkit/build-angular';
-import { json } from '@angular-devkit/core';
-import { Observable } from 'rxjs';
-import { customWebpackConfigTransformFactory } from '../transform-factories';
-import { CustomWebpackSchema } from '../custom-webpack-schema';
+function initialize(options: Options, context: Context): CustomWebpack {
+  return customWebpack(options, context);
+}
 
-export type CustomWebpackServerSchema = ServerBuilderOptions & CustomWebpackSchema;
+export function execute(
+  options: Options,
+  context: Context
+): ReturnType<typeof executeServerBuilder> {
+  return initialize(options, context).executeServerBuilder();
+}
 
-export const buildCustomWebpackServer = (
-  options: CustomWebpackServerSchema,
-  context: BuilderContext
-): ReturnType<typeof executeServerBuilder> =>
-  executeServerBuilder(options, context, {
-    webpackConfiguration: customWebpackConfigTransformFactory(options, context),
-  });
-
-export default createBuilder<json.JsonObject & CustomWebpackServerSchema>(buildCustomWebpackServer);
+export default createBuilder<Options>(execute);

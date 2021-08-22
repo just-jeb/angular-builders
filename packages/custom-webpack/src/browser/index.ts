@@ -1,17 +1,17 @@
-import { BuilderContext, createBuilder } from '@angular-devkit/architect';
-import { BrowserBuilderOptions, executeBrowserBuilder } from '@angular-devkit/build-angular';
-import { json } from '@angular-devkit/core';
-import { getTransforms } from '../transform-factories';
-import { CustomWebpackSchema } from '../custom-webpack-schema';
+import { BuilderContext as Context, createBuilder } from '@angular-devkit/architect';
+import { executeBrowserBuilder } from '@angular-devkit/build-angular';
+import { customWebpack, CustomWebpack } from '../custom-webpack';
+import { BrowserBuilderOptions as Options } from '../custom-webpack-schema';
 
-export type CustomWebpackBrowserSchema = BrowserBuilderOptions & CustomWebpackSchema;
+function initialize(options: Options, context: Context): CustomWebpack {
+  return customWebpack(options, context);
+}
 
-export const buildCustomWebpackBrowser = (
-  options: CustomWebpackBrowserSchema,
-  context: BuilderContext
-): ReturnType<typeof executeBrowserBuilder> =>
-  executeBrowserBuilder(options, context, getTransforms(options, context));
+export function execute(
+  options: Options,
+  context: Context
+): ReturnType<typeof executeBrowserBuilder> {
+  return initialize(options, context).executeBrowserBuilder();
+}
 
-export default createBuilder<json.JsonObject & CustomWebpackBrowserSchema>(
-  buildCustomWebpackBrowser
-);
+export default createBuilder<Options>(execute);

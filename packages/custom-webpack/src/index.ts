@@ -1,11 +1,9 @@
-/**
- * Created by Evgeny Barabanov on 01/07/2018.
- */
-export * from './browser';
-export * from './karma';
-export * from './server';
-export * from './dev-server';
-export * from './extract-i18n';
+export { execute as executeBrowserBuilder } from './browser';
+export { execute as executeDevServerBuilder } from './dev-server';
+export { execute as executeExtractI18nBuilder } from './extract-i18n';
+export { execute as executeKarmaBuilder } from './karma';
+export { execute as executeServerBuilder } from './server';
+export * from './custom-webpack';
+export * from './custom-webpack-schema';
 export * from './transform-factories';
-export * from './generic-browser-builder';
 export { TargetOptions } from './type-definition';

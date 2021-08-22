@@ -1,23 +1,17 @@
-/**
- * Created by Evgeny Barabanov on 05/10/2018.
- */
+import { BuilderContext as Context, createBuilder } from '@angular-devkit/architect';
+import { executeKarmaBuilder } from '@angular-devkit/build-angular';
+import { KarmaBuilderOptions as Options } from '../custom-webpack-schema';
+import { customWebpack, CustomWebpack } from '../custom-webpack';
 
-import { BuilderContext, createBuilder } from '@angular-devkit/architect';
-import { executeKarmaBuilder, KarmaBuilderOptions } from '@angular-devkit/build-angular';
-import { json } from '@angular-devkit/core';
-import { customWebpackConfigTransformFactory } from '../transform-factories';
-import { CustomWebpackSchema } from '../custom-webpack-schema';
+function initialize(options: Options, context: Context): CustomWebpack {
+  return customWebpack(options, context);
+}
 
-export type CustomWebpackKarmaBuildSchema = KarmaBuilderOptions & CustomWebpackSchema;
+export function execute(
+  options: Options,
+  context: Context
+): ReturnType<typeof executeKarmaBuilder> {
+  return initialize(options, context).executeKarmaBuilder();
+}
 
-export const buildCustomWebpackKarma = (
-  options: CustomWebpackKarmaBuildSchema,
-  context: BuilderContext
-): ReturnType<typeof executeKarmaBuilder> =>
-  executeKarmaBuilder(options, context, {
-    webpackConfiguration: customWebpackConfigTransformFactory(options, context),
-  });
-
-export default createBuilder<json.JsonObject & CustomWebpackKarmaBuildSchema>(
-  buildCustomWebpackKarma
-);
+export default createBuilder<Options>(execute);
