@@ -5,5 +5,6 @@ export { execute as executeKarmaBuilder } from './karma';
 export { execute as executeServerBuilder } from './server';
 export * from './custom-webpack';
 export * from './custom-webpack-schema';
+export * from './transform-factories.di';
 export * from './transform-factories';
 export { TargetOptions } from './type-definition';

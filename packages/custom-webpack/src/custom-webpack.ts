@@ -6,6 +6,7 @@ import {
   executeKarmaBuilder,
   executeServerBuilder,
 } from '@angular-devkit/build-angular';
+import { Provider, InjectionToken, ReflectiveInjector } from 'injection-js';
 import {
   BrowserBuilderOptions,
   DevServerBuilderOptions,
@@ -13,12 +14,13 @@ import {
   KarmaBuilderOptions,
   ServerBuilderOptions,
 } from './custom-webpack-schema';
+import { Transforms } from './transform-factories';
 import {
-  customWebpackConfigurationTransformFactory,
-  indexHtmlTransformFactory,
-  Transforms,
-  transformsFactory,
-} from './transform-factories';
+  BUILD_CONTEXT_TOKEN,
+  CUSTOM_WEBPACK_SCHEMA_TOKEN,
+  TRANSFORMS_PROVIDERS,
+  TRANSFORMS_TOKEN,
+} from './transform-factories.di';
 
 type Options =
   | BrowserBuilderOptions
@@ -29,11 +31,19 @@ type Options =
   | ServerBuilderOptions;
 
 export class CustomWebpack {
-  constructor(
-    protected options: Options,
-    protected context: BuilderContext,
-    protected transforms: Transforms
-  ) {}
+  private transformsToken: InjectionToken<Transforms> = TRANSFORMS_TOKEN;
+
+  constructor(protected providers: Provider[]) {}
+
+  withProviders(providers: Provider[]): CustomWebpack {
+    this.providers = [...this.providers, ...providers];
+    return this;
+  }
+
+  withTransformsToken(token: InjectionToken<Transforms>): CustomWebpack {
+    this.transformsToken = token;
+    return this;
+  }
 
   executeBrowserBuilder(): ReturnType<typeof executeBrowserBuilder> {
     return executeBrowserBuilder(
@@ -72,16 +82,21 @@ export class CustomWebpack {
       webpackConfiguration,
     });
   }
+
+  protected get context(): BuilderContext {
+    const injector = ReflectiveInjector.resolveAndCreate(this.providers);
+    return injector.get(BUILD_CONTEXT_TOKEN) as BuilderContext;
+  }
+
+  protected get options(): Options {
+    const injector = ReflectiveInjector.resolveAndCreate(this.providers);
+    return injector.get(CUSTOM_WEBPACK_SCHEMA_TOKEN);
+  }
+
+  protected get transforms(): Transforms {
+    const injector = ReflectiveInjector.resolveAndCreate(this.providers);
+    return injector.get(this.transformsToken) as Transforms;
+  }
 }
 
-export const customWebpack = (options: Options, context: BuilderContext): CustomWebpack =>
-  new CustomWebpack(
-    options,
-    context,
-    transformsFactory(
-      options,
-      context,
-      customWebpackConfigurationTransformFactory,
-      indexHtmlTransformFactory
-    )
-  );
+export const customWebpack = (): CustomWebpack => new CustomWebpack([...TRANSFORMS_PROVIDERS]);

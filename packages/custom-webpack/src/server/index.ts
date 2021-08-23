@@ -2,9 +2,13 @@ import { BuilderContext as Context, createBuilder } from '@angular-devkit/archit
 import { executeServerBuilder } from '@angular-devkit/build-angular';
 import { customWebpack, CustomWebpack } from '../custom-webpack';
 import { ServerBuilderOptions as Options } from '../custom-webpack-schema';
+import { BUILD_CONTEXT_TOKEN, CUSTOM_WEBPACK_SCHEMA_TOKEN } from '../transform-factories.di';
 
 function initialize(options: Options, context: Context): CustomWebpack {
-  return customWebpack(options, context);
+  return customWebpack().withProviders([
+    { provide: CUSTOM_WEBPACK_SCHEMA_TOKEN, useValue: options },
+    { provide: BUILD_CONTEXT_TOKEN, useValue: context },
+  ]);
 }
 
 export function execute(

@@ -8,9 +8,13 @@ import { from, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { DevServerBuilderOptions as Options } from '../custom-webpack-schema';
 import { customWebpack, CustomWebpack } from '../custom-webpack';
+import { BUILD_CONTEXT_TOKEN, CUSTOM_WEBPACK_SCHEMA_TOKEN } from '../transform-factories.di';
 
 function initialize(options: Options, context: Context): CustomWebpack {
-  return customWebpack(options, context);
+  return customWebpack().withProviders([
+    { provide: CUSTOM_WEBPACK_SCHEMA_TOKEN, useValue: options },
+    { provide: BUILD_CONTEXT_TOKEN, useValue: context },
+  ]);
 }
 
 export function execute(options: Options, context: Context): Observable<DevServerBuilderOutput> {
