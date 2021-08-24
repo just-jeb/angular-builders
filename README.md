@@ -66,6 +66,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://juri.dev"><img src="https://avatars.githubusercontent.com/u/542458?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juri Strumpflohner</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=juristr" title="Code">💻</a></td>
     <td align="center"><a href="https://www.git-pull.com"><img src="https://avatars.githubusercontent.com/u/26336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tony Narlock</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=tony" title="Documentation">📖</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/kroeder"><img src="https://avatars.githubusercontent.com/u/5478899?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kai Röder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=kroeder" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
