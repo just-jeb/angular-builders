@@ -18,7 +18,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Prerequisites
 
 - [Angular CLI 12](https://www.npmjs.com/package/@angular/cli)
-- [Jest 26](https://www.npmjs.com/package/jest)
+- [Jest 27](https://www.npmjs.com/package/jest)
 
 ## Installation
 
