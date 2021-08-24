@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.2-beta.5...@angular-builders/timestamp@12.0.2) (2021-08-18)
+
+**Note:** Version bump only for package @angular-builders/timestamp
+
 ### [12.0.2-beta.5](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@12.0.2-beta.4...@angular-builders/timestamp@12.0.2-beta.5) (2021-07-29)
 
 **Note:** Version bump only for package @angular-builders/timestamp
