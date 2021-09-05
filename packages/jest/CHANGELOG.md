@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.2-beta.0...@angular-builders/jest@12.1.2-beta.1) (2021-09-05)
+
+### Bug Fixes
+
+- **jest:** accept no-cache option ([#1033](https://github.com/just-jeb/angular-builders/issues/1033)) ([25c03b9](https://github.com/just-jeb/angular-builders/commit/25c03b9c3f2fca7f733e996684726560a9790656))
+
 ### [12.1.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.1...@angular-builders/jest@12.1.2-beta.0) (2021-08-24)
 
 **Note:** Version bump only for package @angular-builders/jest
