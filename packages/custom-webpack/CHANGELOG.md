@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@12.1.1...@angular-builders/custom-webpack@12.1.2-beta.0) (2021-09-07)
+
+### Bug Fixes
+
+- **custom-webpack:** register ts-node only once ([#1035](https://github.com/just-jeb/angular-builders/issues/1035)) ([359a4c4](https://github.com/just-jeb/angular-builders/commit/359a4c4c6200bbe522516c9c7eda30614b2ede3c)), closes [#1031](https://github.com/just-jeb/angular-builders/issues/1031) [#1031](https://github.com/just-jeb/angular-builders/issues/1031) [#1031](https://github.com/just-jeb/angular-builders/issues/1031)
+
 ### [12.1.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@12.1.1-beta.0...@angular-builders/custom-webpack@12.1.1) (2021-08-18)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
