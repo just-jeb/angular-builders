@@ -1,4 +1,4 @@
-// Base schemes from build-angular@0.1102.0
+// Base schemes from build-angular@0.1202.7
 module.exports = [
   {
     originalSchemaPath: '@angular-devkit/build-angular/src/browser/schema.json',
