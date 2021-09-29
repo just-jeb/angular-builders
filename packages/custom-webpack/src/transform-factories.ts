@@ -11,23 +11,24 @@ export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
 ) => ExecutionTransformer<Configuration> =
-  (options, { workspaceRoot, target }) =>
+  (options, { workspaceRoot, target, logger }) =>
   browserWebpackConfig => {
     return CustomWebpackBuilder.buildWebpackConfig(
       normalize(workspaceRoot),
       options.customWebpackConfig,
       browserWebpackConfig,
       options,
-      target
+      target,
+      logger
     );
   };
 
 export const indexHtmlTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target }) => {
+) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target, logger }) => {
   if (!indexTransform) return null;
-  tsNodeRegister(indexTransform, `${getSystemPath(normalize(workspaceRoot))}/${tsConfig}`);
+  tsNodeRegister(indexTransform, `${getSystemPath(normalize(workspaceRoot))}/${tsConfig}`, logger);
   const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
   const transform = indexModule.default || indexModule;
   return async (indexHtml: string) => transform(target, indexHtml);
