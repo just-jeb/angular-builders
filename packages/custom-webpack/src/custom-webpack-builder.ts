@@ -1,4 +1,4 @@
-import { getSystemPath, Path } from '@angular-devkit/core';
+import { getSystemPath, Path, logging } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 
 import { mergeConfigs } from './webpack-config-merger';
@@ -29,7 +29,8 @@ export class CustomWebpackBuilder {
     config: CustomWebpackBuilderConfig,
     baseWebpackConfig: Configuration,
     buildOptions: any,
-    targetOptions: TargetOptions
+    targetOptions: TargetOptions,
+    logger: logging.LoggerApi
   ): Promise<Configuration> {
     if (!config) {
       return baseWebpackConfig;
@@ -38,7 +39,7 @@ export class CustomWebpackBuilder {
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
     const path = `${getSystemPath(root)}/${webpackConfigPath}`;
     const tsConfig = `${getSystemPath(root)}/${buildOptions.tsConfig}`;
-    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path, tsConfig);
+    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path, tsConfig, logger);
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // That exported function can be synchronous either
@@ -64,8 +65,12 @@ export class CustomWebpackBuilder {
   }
 }
 
-function resolveCustomWebpackConfig(path: string, tsConfig: string): CustomWebpackConfig {
-  tsNodeRegister(path, tsConfig);
+function resolveCustomWebpackConfig(
+  path: string,
+  tsConfig: string,
+  logger: logging.LoggerApi
+): CustomWebpackConfig {
+  tsNodeRegister(path, tsConfig, logger);
 
   const customWebpackConfig = require(path);
   // If the user provides a configuration in TS file
