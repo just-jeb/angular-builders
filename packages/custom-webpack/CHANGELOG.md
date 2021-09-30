@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [12.1.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@12.1.3-beta.1...@angular-builders/custom-webpack@12.1.3) (2021-09-30)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ### [12.1.3-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@12.1.3-beta.0...@angular-builders/custom-webpack@12.1.3-beta.1) (2021-09-29)
 
 ### Bug Fixes
