@@ -1,0 +1,29 @@
+{
+    "name": "@bazel/angular",
+    "description": "Run Bazel under the Angular CLI",
+    "license": "Apache-2.0",
+    "version": "0.0.0-PLACEHOLDER",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bazelbuild/rules_nodejs.git",
+        "directory": "packages/angular"
+    },
+    "bugs": {
+        "url": "https://github.com/bazelbuild/rules_nodejs/issues"
+    },
+    "keywords": [
+        "angular",
+        "bazel"
+    ],
+    "builders": "./src/builders/builders.json",
+    "dependencies": {
+        "@bazel/bazelisk": "^1.4.0",
+        "@bazel/ibazel": "^0.13.1",
+        "@angular-devkit/architect": "^0.901.7"
+    },
+    "devDependencies": {
+        "@angular-devkit/core": "^9.1.7",
+        "@types/node": "^14.0.5",
+        "typescript": "^3.9.3"
+    }
+}
