@@ -1,0 +1,6 @@
+# Writes "hello world" to ./bazel-bin/out
+genrule(
+    name = "hello_world",
+    outs = ["out"],
+    cmd = "echo 'hello world' >$@",
+)
