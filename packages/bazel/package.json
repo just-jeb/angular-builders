@@ -1,12 +1,12 @@
 {
-    "name": "@bazel/angular",
+    "name": "@angular-builders/bazel",
     "description": "Run Bazel under the Angular CLI",
     "license": "Apache-2.0",
     "version": "0.0.0-PLACEHOLDER",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bazelbuild/rules_nodejs.git",
-        "directory": "packages/angular"
+        "url": "https://github.com/just-jeb/angular-builders.git",
+        "directory": "packages/bazel"
     },
     "bugs": {
         "url": "https://github.com/bazelbuild/rules_nodejs/issues"
@@ -15,15 +15,26 @@
         "angular",
         "bazel"
     ],
-    "builders": "./src/builders/builders.json",
+    "builders": "./builders.json",
+    "main": "dist/index.js",
+    "files": [
+      "dist",
+      "builders.json"
+    ],
+    "scripts": {
+        "prebuild": "yarn clean && yarn generate",
+        "build": "../../node_modules/.bin/tsc",
+        "postbuild": "yarn copy",
+        "clean": "../../node_modules/.bin/rimraf dist src/schema.ts",
+        "copy": "../../node_modules/.bin/cpy src/schema.json dist",
+        "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts"
+    },
     "dependencies": {
         "@bazel/bazelisk": "^1.4.0",
         "@bazel/ibazel": "^0.13.1",
-        "@angular-devkit/architect": "^0.901.7"
+        "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0"
     },
     "devDependencies": {
-        "@angular-devkit/core": "^9.1.7",
-        "@types/node": "^14.0.5",
-        "typescript": "^3.9.3"
+        "@angular-devkit/core": "^12.0.0"
     }
 }
