@@ -13,7 +13,7 @@ package for a quickstart to creating a Bazel workspace, or look at examples in [
 To use it, you would just install this package (it doesn't hook into `ng add` because it has no schematics):
 
 ```sh
-$ npm install --save-dev @bazel/angular
+$ npm install --save-dev @angular-builders/bazel
 ```
 
 Then edit your `angular.json` to invoke Bazel. For example, to have `ng build` do `bazel build //:all` you would edit the `architect` block to have:
@@ -21,7 +21,7 @@ Then edit your `angular.json` to invoke Bazel. For example, to have `ng build` d
 ```json
 "architect": {
   "build": {
-    "builder": "@bazel/angular:build",
+    "builder": "@angular-builders/bazel:build",
     "options": {
       "targetLabel": "//:all",
       "bazelCommand": "build"

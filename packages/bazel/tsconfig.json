@@ -1,8 +1,10 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "target": "ES2018",
-        "module": "CommonJS",
-        "types": ["node"]
-    }
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "noImplicitAny": false
+  },
+  "files": [
+    "src/index.ts"
+  ]
 }
