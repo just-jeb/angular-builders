@@ -18,8 +18,8 @@
     "builders": "./builders.json",
     "main": "dist/index.js",
     "files": [
-      "dist",
-      "builders.json"
+        "dist",
+        "builders.json"
     ],
     "scripts": {
         "prebuild": "yarn clean && yarn generate",
@@ -30,9 +30,9 @@
         "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts"
     },
     "dependencies": {
+        "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0",
         "@bazel/bazelisk": "^1.4.0",
-        "@bazel/ibazel": "^0.13.1",
-        "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0"
+        "@bazel/ibazel": "^0.13.1"
     },
     "devDependencies": {
         "@angular-devkit/core": "^12.0.0"
