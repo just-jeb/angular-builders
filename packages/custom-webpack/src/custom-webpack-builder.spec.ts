@@ -71,7 +71,8 @@ describe('CustomWebpackBuilder', () => {
       null,
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     expect(mergedConfig).toEqual(baseWebpackConfig);
@@ -85,7 +86,8 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     try {
@@ -110,7 +112,8 @@ describe('CustomWebpackBuilder', () => {
       { path: fileName },
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     try {
@@ -135,7 +138,8 @@ describe('CustomWebpackBuilder', () => {
       { mergeRules },
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     try {
@@ -159,7 +163,8 @@ describe('CustomWebpackBuilder', () => {
       { replaceDuplicatePlugins: true },
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     try {
@@ -177,7 +182,8 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       buildOptions,
-      targetOptions
+      targetOptions,
+      {} as any
     );
     expect(spy).toHaveBeenCalledWith(baseWebpackConfig, buildOptions, targetOptions);
   });
@@ -190,7 +196,8 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     expect(mergedConfig).toEqual(customWebpackFunctionObj);
@@ -214,7 +221,8 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     expect(result).toBeInstanceOf(Promise);
@@ -243,7 +251,8 @@ describe('CustomWebpackBuilder', () => {
       {},
       baseWebpackConfig,
       {},
-      targetOptions
+      targetOptions,
+      {} as any
     );
 
     expect(result).toBeInstanceOf(Promise);
