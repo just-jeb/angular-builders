@@ -25,6 +25,7 @@
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
     "prepare": "husky install",
     "update:packages": "lerna exec --concurrency 1 --scope '@angular-builders/*' node ../../scripts/update-package.js",
+    "update:examples": "lerna exec --concurrency 1 --ignore '@angular-builders/*' node ../../scripts/update-examples.js",
     "update:root": "node ./scripts/update-package.js"
   },
   "devDependencies": {
