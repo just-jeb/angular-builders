@@ -6,7 +6,7 @@
     "example": {
       "architect": {
         "build": {
-          "builder": "@angular-builders/bazel",
+          "builder": "@angular-builders/bazel:build",
           "options": {
             "targetLabel": "//:all",
             "bazelCommand": "build"
