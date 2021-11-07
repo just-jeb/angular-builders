@@ -2,5 +2,5 @@
 genrule(
     name = "hello_world",
     outs = ["out"],
-    cmd = "echo 'hello world' > ./out",
+    cmd = "echo 'hello world' >$@",
 )
