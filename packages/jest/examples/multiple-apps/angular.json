@@ -86,19 +86,6 @@
             "globalMocks": ["getComputedStyle", "styleTransform"]
           }
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/my-first-app/tsconfig.app.json",
-              "projects/my-first-app/tsconfig.spec.json",
-              "projects/my-first-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -197,19 +184,6 @@
         "test": {
           "builder": "@angular-builders/jest:run"
         },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/my-second-app/tsconfig.app.json",
-              "projects/my-second-app/tsconfig.spec.json",
-              "projects/my-second-app/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
@@ -249,18 +223,6 @@
 },
         "test": {
           "builder": "@angular-builders/jest:run"
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/my-shared-library/tsconfig.lib.json",
-              "projects/my-shared-library/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
         }
       }
     }},

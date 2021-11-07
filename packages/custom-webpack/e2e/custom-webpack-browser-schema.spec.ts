@@ -9,7 +9,7 @@ describe('custom webpack browser builder test', () => {
   });
 
   it('Should fit the schema of @angular-devkit/build-angular:browser', () => {
-    const originalBrowserSchema = require('@angular-devkit/build-angular/src/browser/schema.json');
+    const originalBrowserSchema = require('@angular-devkit/build-angular/src/builders/browser/schema.json');
     customWebpackBrowserSchema.properties['customWebpackConfig'] = undefined;
     customWebpackBrowserSchema.properties['indexTransform'] = undefined;
     expect(originalBrowserSchema.properties).toEqual(customWebpackBrowserSchema.properties);
