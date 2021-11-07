@@ -1,8 +1,8 @@
 {
   "builders": {
     "build": {
-      "implementation": "./index",
-      "schema": "./schema.json",
+      "implementation": "./dist",
+      "schema": "./dist/schema.json",
       "description": "Executes Bazel on a target."
     }
   }
