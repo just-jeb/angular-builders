@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.2...@angular-builders/jest@13.0.0-beta.0) (2021-11-07)
+
+### ⚠ BREAKING CHANGES
+
+- version 13 (#1051)
+
+### Miscellaneous Chores
+
+- version 13 ([#1051](https://github.com/just-jeb/angular-builders/issues/1051)) ([1a8157c](https://github.com/just-jeb/angular-builders/commit/1a8157c0ab7d3fc535c00909e449f00c85813682))
+
 ### [12.1.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@12.1.2-beta.1...@angular-builders/jest@12.1.2) (2021-09-08)
 
 **Note:** Version bump only for package @angular-builders/jest

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/simple-app@12.1.0...simple-app@13.0.0-beta.0) (2021-11-07)
+
+### ⚠ BREAKING CHANGES
+
+- version 13 (#1051)
+
+### Miscellaneous Chores
+
+- version 13 ([#1051](https://github.com/just-jeb/angular-builders/issues/1051)) ([1a8157c](https://github.com/just-jeb/angular-builders/commit/1a8157c0ab7d3fc535c00909e449f00c85813682))
+
 ## [12.1.0](https://github.com/just-jeb/angular-builders/compare/simple-app@12.1.0-beta.0...simple-app@12.1.0) (2021-06-08)
 
 **Note:** Version bump only for package simple-app
