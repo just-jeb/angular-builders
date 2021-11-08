@@ -9,7 +9,7 @@ describe('custom webpack server builder test', () => {
   });
 
   it('Should fit the schema of @angular-devkit/build-angular:server', () => {
-    const originalBrowserSchema = require('@angular-devkit/build-angular/src/server/schema.json');
+    const originalBrowserSchema = require('@angular-devkit/build-angular/src/builders/server/schema.json');
     customWebpackBrowserSchema.properties['customWebpackConfig'] = undefined;
     customWebpackBrowserSchema.properties['indexTransform'] = undefined;
     expect(originalBrowserSchema.properties).toEqual(customWebpackBrowserSchema.properties);

@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/timestamp",
-  "version": "12.0.2",
+  "version": "13.0.0-beta.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/just-jeb/angular-builders",
@@ -14,7 +14,7 @@
     "builders.json"
   ],
   "engines": {
-    "node": ">=12.14.1"
+    "node": ">=12.20.0"
   },
   "builders": "builders.json",
   "scripts": {
@@ -29,8 +29,8 @@
     "@types/dateformat": "^3.0.1"
   },
   "dependencies": {
-    "@angular-devkit/architect": ">=0.1200.0 < 0.1300.0",
-    "@angular-devkit/core": "^12.0.0",
+    "@angular-devkit/architect": ">=0.1300.0 < 0.1400.0",
+    "@angular-devkit/core": "^13.0.0",
     "dateformat": "^4.3.1"
   }
 }
