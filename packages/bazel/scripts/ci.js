@@ -16,7 +16,7 @@ function runBuild() {
 
 function compareResults() {
   const expectedOut = 'hello world\n';
-  const bazelOut = readFileSync('./bazel-bin/out');
+  const bazelOut = readFileSync('./bazel-bin/out', { encoding: 'utf-8' });
   if (bazelOut !== expectedOut) {
     console.log(`ERROR: Expected bazel output is ${expectedOut}, actual is ${bazelOut}`);
     exit(1);
