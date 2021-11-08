@@ -46,10 +46,9 @@ yarn bootstrap:examples
 
 # Get travis's chrome version and download the appropriate webdriver-manager for protractor
 CHROME_VERSION=`google-chrome --version | egrep -o '[0-9.]+' | head -1`
-npx lerna exec --ignore '@angular-builders/*' -- ./node_modules/protractor/bin/webdriver-manager update --versions.chrome $CHROME_VERSION
+WEBDRIVER_MANAGER_BIN=./node_modules/protractor/bin/webdriver-manager; 
+yarn lerna exec --ignore '@angular-builders/*' "[ -f $WEBDRIVER_MANAGER_BIN ] && $WEBDRIVER_MANAGER_BIN update --versions.chrome $CHROME_VERSION || echo \`pwd\`: No webdriver-manager found"
 
-npx lerna run ci
+yarn lerna run ci
 
 cleanup
-
-
