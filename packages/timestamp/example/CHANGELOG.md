@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 13.0.0-beta.1 (2021-11-08)
+
+### ⚠ BREAKING CHANGES
+
+- version 13 (#1051)
+- **deps:** update to angular 12
+
+- chore(deps): update to node 12.14 on CI
+
+- Update html-webpack-plugin in example
+- **deps:** update to angular 11 (#874)
+- update to Angular 10 (#782)
+- direct dependency on @angular-devkit 9
+
+### Features
+
+- add @angular-builders/bazel package ([#1048](https://github.com/just-jeb/angular-builders/issues/1048)) ([c651c3a](https://github.com/just-jeb/angular-builders/commit/c651c3a338555ea7f082d884d6fe3cc18344c0cd)), closes [#1047](https://github.com/just-jeb/angular-builders/issues/1047)
+
+### Bug Fixes
+
+- adjust devkit version range to fit 0.9xx.0 ([#709](https://github.com/just-jeb/angular-builders/issues/709)) ([99e061f](https://github.com/just-jeb/angular-builders/commit/99e061f74118858d064329dcafc4a901575c8a58))
+
+### Build System
+
+- direct dependency on [@angular-devkit](https://github.com/angular-devkit) 9 ([6f0ac12](https://github.com/just-jeb/angular-builders/commit/6f0ac12b1e7a9eeff0f7af1bff8847c57fc14c11))
+- update to Angular 10 ([#782](https://github.com/just-jeb/angular-builders/issues/782)) ([409f356](https://github.com/just-jeb/angular-builders/commit/409f3563a8d9b753c2c60ec6be120d35cf99b31c))
+
+### Miscellaneous Chores
+
+- **deps:** update to angular 11 ([#874](https://github.com/just-jeb/angular-builders/issues/874)) ([e0900dd](https://github.com/just-jeb/angular-builders/commit/e0900dd5e89750a6d7c129ce82d71354dc8882be)), closes [#854](https://github.com/just-jeb/angular-builders/issues/854) [#873](https://github.com/just-jeb/angular-builders/issues/873)
+- **deps:** update to angular 12 ([#980](https://github.com/just-jeb/angular-builders/issues/980)) ([ad2772b](https://github.com/just-jeb/angular-builders/commit/ad2772b33d6b62806e791dd908696945a77e7a98)), closes [#972](https://github.com/just-jeb/angular-builders/issues/972)
+- version 13 ([#1051](https://github.com/just-jeb/angular-builders/issues/1051)) ([1a8157c](https://github.com/just-jeb/angular-builders/commit/1a8157c0ab7d3fc535c00909e449f00c85813682))
+
+### 7.1.1 (2018-12-04)
+
 ## [13.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/example@12.0.2...example@13.0.0-beta.0) (2021-11-07)
 
 ### ⚠ BREAKING CHANGES

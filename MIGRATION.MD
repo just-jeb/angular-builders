@@ -1,3 +1,16 @@
+# Migration from version 12 to version 13
+
+## Custom webpack builder
+
+No breaking changes (except for updating to Angular 13)
+
+## Jest builder
+
+`jest-preset-angular` has been updated to version 11. 
+
+ - If you use it without custom configuration then no action required.  
+ - If you use it with custom configuration, you might need to [update it](https://thymikee.github.io/jest-preset-angular/docs/next/guides/angular-13+/).
+ 
 # Migration from version 11 to version 12
 
 ## Custom webpack builder
