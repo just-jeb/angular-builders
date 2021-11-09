@@ -76,6 +76,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/kroeder"><img src="https://avatars.githubusercontent.com/u/5478899?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kai Röder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=kroeder" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.gerkindevelopment.net"><img src="https://avatars.githubusercontent.com/u/8212504?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gerkin</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=GerkinDev" title="Code">💻</a></td>
+    <td align="center"><a href="http://alexeagle.github.io"><img src="https://avatars.githubusercontent.com/u/47395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Eagle</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alexeagle" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/alan-agius4"><img src="https://avatars.githubusercontent.com/u/17563226?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alan Agius</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alan-agius4" title="Code">💻</a></td>
   </tr>
 </table>
