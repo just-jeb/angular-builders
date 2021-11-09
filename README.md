@@ -2,7 +2,7 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders require Angular CLI 12
+## The latest version of all the builders require Angular CLI 13
 
 Builders' and Angular **major** versions **must** match.
 
@@ -10,11 +10,17 @@ Builders' and Angular **major** versions **must** match.
 
 ## Previous versions
 
+<details>
+  <summary>Click to expand</summary>
+
+- [Version 12](https://github.com/just-jeb/angular-builders/tree/12.x.x)
 - [Version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
 - [Version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
 - [Version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
 - [Version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
 - [Version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
+
+</details>
 
 # Builders
 
@@ -71,6 +77,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/kroeder"><img src="https://avatars.githubusercontent.com/u/5478899?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kai Röder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=kroeder" title="Documentation">📖</a></td>
     <td align="center"><a href="https://www.gerkindevelopment.net"><img src="https://avatars.githubusercontent.com/u/8212504?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gerkin</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=GerkinDev" title="Code">💻</a></td>
     <td align="center"><a href="http://alexeagle.github.io"><img src="https://avatars.githubusercontent.com/u/47395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Eagle</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alexeagle" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/alan-agius4"><img src="https://avatars.githubusercontent.com/u/17563226?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alan Agius</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alan-agius4" title="Code">💻</a></td>
   </tr>
 </table>
 
