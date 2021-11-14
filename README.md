@@ -36,7 +36,7 @@ Have any questions? Would like to discuss something?
 
 # Further reading
 
-[Angular CLI under the hood - builders demystified](https://blog.angularindepth.com/angular-cli-under-the-hood-builders-demystified-v2-e73ee0f2d811)
+[Angular CLI under the hood - builders demystified](https://www.justjeb.com/post/angular-cli-under-the-hood-builders-demystified)
 
 ## Contributors ✨
 
