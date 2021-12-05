@@ -127,7 +127,14 @@ The builder supports multi-project workspaces out of the box, the only thing req
   });
   ```
 
-  Use the following command: `ng test --testNamePattern="My cool suite Should do one thing"`
+  Use the following command: `ng test --test-name-pattern="My cool suite Should do one thing"`
+
+  **Notice** that for array-like arguments you should use `,` delimiter instead of space delimiter. These are limitations of Angular CLI.  
+  Thus, if you want to provide multiple arguments to `find-related-tests` option you should be passing it like this:
+
+  ```sh
+  ng test --find-related-tests file1,file2
+  ```
 
 ## Migrating existing tests to Jest
 
