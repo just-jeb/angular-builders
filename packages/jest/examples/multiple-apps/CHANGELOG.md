@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [13.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/multiple-apps@13.0.0...multiple-apps@13.0.1-beta.0) (2021-12-05)
+
+### Bug Fixes
+
+- **jest:** find-related-tests schema.json ([#1067](https://github.com/just-jeb/angular-builders/issues/1067)) ([3cd4b8b](https://github.com/just-jeb/angular-builders/commit/3cd4b8b44e8486c3bda5c8adee3041e629bd215c))
+
 ## [13.0.0](https://github.com/just-jeb/angular-builders/compare/multiple-apps@13.0.0-beta.0...multiple-apps@13.0.0) (2021-11-09)
 
 **Note:** Version bump only for package multiple-apps
