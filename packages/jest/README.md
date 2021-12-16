@@ -21,6 +21,8 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 </details>
 
+## [Quick guide](https://www.justjeb.com/post/angular-cli-ng-test-with-jest)
+
 ## Prerequisites
 
 - [Angular CLI 13](https://www.npmjs.com/package/@angular/cli)
