@@ -20,6 +20,8 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 </details>
 
+## [Quick guide](https://www.justjeb.com/post/customizing-angular-cli-build)
+
 ## Prerequisites:
 
 - [Angular CLI 13](https://www.npmjs.com/package/@angular/cli)
