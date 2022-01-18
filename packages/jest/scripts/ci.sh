@@ -42,8 +42,8 @@ function validateAllTestRuns() {
 
 function ciApp() {
     appDir=$1;
-    local -n testOptions=$3;
-    ngTestParams=$4;
+    local -n testOptions=$2;
+    ngTestParams=$3;
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
     (
         cd ${appDir};
