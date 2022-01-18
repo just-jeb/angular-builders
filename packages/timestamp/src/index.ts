@@ -4,7 +4,7 @@ import { Observable, bindNodeCallback, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { getSystemPath, normalize, json } from '@angular-devkit/core';
 import { writeFile } from 'fs';
-import * as dateFormat from 'dateformat';
+import dateFormat from 'dateformat';
 
 export function createTimestamp(
   { path, format }: TimestampBuilderSchema,
