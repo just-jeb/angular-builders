@@ -42,7 +42,6 @@ function validateAllTestRuns() {
 
 function ciApp() {
     appDir=$1;
-    e2eOptions=$2;
     local -n testOptions=$3;
     ngTestParams=$4;
     packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
@@ -50,7 +49,7 @@ function ciApp() {
         cd ${appDir};
         validateAllTestRuns testOptions ${ngTestParams}
         set -x;
-        yarn e2e ${e2eOptions};
+        yarn e2e;
         set +x
     )
 }
@@ -81,5 +80,5 @@ multiAppTestOptions=(
 )
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
-(ciApp ../../examples/jest/multiple-apps --configuration=ci multiAppTestOptions)
+(ciApp ../../examples/jest/multiple-apps multiAppTestOptions)
 
