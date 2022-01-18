@@ -2,22 +2,31 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders require Angular CLI 11
+## The latest version of all the builders require Angular CLI 13
 
-## [Documentation for version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
-
-## [Documentation for version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
-
-## [Documentation for version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
-
-## [Documentation for version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
+Builders' and Angular **major** versions **must** match.
 
 ## [Migration guide](./MIGRATION.MD)
+
+## Previous versions
+
+<details>
+  <summary>Click to expand</summary>
+
+- [Version 12](https://github.com/just-jeb/angular-builders/tree/12.x.x)
+- [Version 11](https://github.com/just-jeb/angular-builders/tree/11.x.x)
+- [Version 10](https://github.com/just-jeb/angular-builders/tree/10.x.x)
+- [Version 9](https://github.com/just-jeb/angular-builders/tree/9.x.x)
+- [Version 8](https://github.com/just-jeb/angular-builders/tree/8.x.x)
+- [Version 7](https://github.com/just-jeb/angular-builders/tree/7.x.x)
+
+</details>
 
 # Builders
 
 - [Custom webpack builders](./packages/custom-webpack) (an alternative to `ng eject`) [![npm version](https://img.shields.io/npm/v/@angular-builders/custom-webpack.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/custom-webpack/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/custom-webpack.svg)](https://www.npmjs.com/package/@angular-builders/custom-webpack)
 - [Jest builder](./packages/jest) (allows running `ng test` with Jest) [![npm version](https://img.shields.io/npm/v/@angular-builders/jest.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/jest/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/jest.svg)](https://www.npmjs.com/package/@angular-builders/jest)
+- [Bazel builder](./packages/bazel) (`ng` wrapper for `Bazel` build) [![npm version](https://img.shields.io/npm/v/@angular-builders/bazel.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/bazel/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/bazel.svg)](https://www.npmjs.com/package/@angular-builders/bazek)
 - [Timestamp builder](./packages/timestamp) (an example builder from [this](https://medium.com/@justjeb/angular-cli-6-under-the-hood-builders-demystified-f0690ebcf01) article) [![npm version](https://img.shields.io/npm/v/@angular-builders/timestamp.svg) ![npm (tag)](https://img.shields.io/npm/v/@angular-builders/timestamp/next.svg) ![npm](https://img.shields.io/npm/dm/@angular-builders/timestamp.svg)](https://www.npmjs.com/package/@angular-builders/timestamp)
 
 # Get in touch
@@ -27,7 +36,7 @@ Have any questions? Would like to discuss something?
 
 # Further reading
 
-[Angular CLI under the hood - builders demystified](https://blog.angularindepth.com/angular-cli-under-the-hood-builders-demystified-v2-e73ee0f2d811)
+[Angular CLI under the hood - builders demystified](https://www.justjeb.com/post/angular-cli-under-the-hood-builders-demystified)
 
 ## Contributors ✨
 
@@ -61,6 +70,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/briananderson1222"><img src="https://avatars2.githubusercontent.com/u/4603907?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brian Anderson</b></sub></a><br /><a href="#question-briananderson1222" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://github.com/AnthonyJungmann"><img src="https://avatars.githubusercontent.com/u/8911909?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anthony Jungmann</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=AnthonyJungmann" title="Documentation">📖</a></td>
     <td align="center"><a href="http://matheo.co"><img src="https://avatars.githubusercontent.com/u/260185?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateo Tibaquirá</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=matheo" title="Code">💻</a></td>
+    <td align="center"><a href="https://juri.dev"><img src="https://avatars.githubusercontent.com/u/542458?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Juri Strumpflohner</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=juristr" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.git-pull.com"><img src="https://avatars.githubusercontent.com/u/26336?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tony Narlock</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=tony" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/kroeder"><img src="https://avatars.githubusercontent.com/u/5478899?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kai Röder</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=kroeder" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://www.gerkindevelopment.net"><img src="https://avatars.githubusercontent.com/u/8212504?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gerkin</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=GerkinDev" title="Code">💻</a></td>
+    <td align="center"><a href="http://alexeagle.github.io"><img src="https://avatars.githubusercontent.com/u/47395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Eagle</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alexeagle" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/alan-agius4"><img src="https://avatars.githubusercontent.com/u/17563226?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alan Agius</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alan-agius4" title="Code">💻</a></td>
   </tr>
 </table>
 

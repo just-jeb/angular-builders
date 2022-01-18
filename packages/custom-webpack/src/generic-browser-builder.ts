@@ -25,20 +25,19 @@ export type BuilderExecutor<O extends BrowserTargetOptions & json.JsonObject> = 
   }
 ) => any;
 
-export const executeBrowserBasedBuilder = <O extends BrowserTargetOptions & json.JsonObject>(
-  executebBuilder: BuilderExecutor<O>
-): BuilderHandlerFn<O> => (
-  options: O,
-  context: BuilderContext
-): ReturnType<typeof executebBuilder> => {
-  async function setup() {
-    const browserTarget = targetFromTargetString(options.browserTarget);
-    return (context.getTargetOptions(browserTarget) as unknown) as CustomWebpackSchema;
-  }
+export const executeBrowserBasedBuilder =
+  <O extends BrowserTargetOptions & json.JsonObject>(
+    executebBuilder: BuilderExecutor<O>
+  ): BuilderHandlerFn<O> =>
+  (options: O, context: BuilderContext): ReturnType<typeof executebBuilder> => {
+    async function setup() {
+      const browserTarget = targetFromTargetString(options.browserTarget);
+      return context.getTargetOptions(browserTarget) as unknown as CustomWebpackSchema;
+    }
 
-  return from(setup()).pipe(
-    switchMap(customWebpackOptions =>
-      executebBuilder(options, context, getTransforms(customWebpackOptions, context))
-    )
-  );
-};
+    return from(setup()).pipe(
+      switchMap(customWebpackOptions =>
+        executebBuilder(options, context, getTransforms(customWebpackOptions, context))
+      )
+    );
+  };

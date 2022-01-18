@@ -6,14 +6,20 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "examples/*",
+      "examples/custom-webpack/*",
+      "examples/jest/*"
+    ]
+  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.20.0"
   },
   "scripts": {
-    "bootstrap:packages": "lerna bootstrap --scope '@angular-builders/*'",
-    "bootstrap:examples": "lerna bootstrap --ignore '@angular-builders/*'",
     "build:packages": "lerna run build --scope '@angular-builders/*'",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
@@ -22,37 +28,24 @@
     "e2e": "jest e2e",
     "format": "prettier --write \"**/*.{js,ts,html,md}\"",
     "clean": "lerna clean",
-    "graduate": "lerna publish --conventional-commits --conventional-graduate"
+    "graduate": "lerna publish --conventional-commits --conventional-graduate",
+    "prepare": "husky install",
+    "update:packages": "lerna exec --concurrency 1 --scope '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-package.js'",
+    "update:examples": "lerna exec --concurrency 1 --ignore '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-example.js'",
+    "update:root": "node ./scripts/update-package.js"
   },
   "devDependencies": {
-    "@angular/compiler": "^11.0.0",
-    "@angular/compiler-cli": "^11.0.0",
-    "@commitlint/cli": "^12.0.0",
-    "@commitlint/config-conventional": "^12.0.0",
-    "@types/jest": "^26.0.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/lodash": "^4.14.118",
-    "@types/node": "~15.0.0",
-    "@types/webpack": "^5.0.0",
-    "@types/webpack-dev-server": "^3.1.5",
-    "@types/webpack-merge": "^5.0.0",
-    "cpy-cli": "^3.0.0",
-    "husky": "^6.0.0",
-    "jest": "^26.2.1",
+    "@types/node": "^16.0.0",
+    "husky": "^7.0.0",
+    "jest": "^27.0.0",
     "lerna": "^4.0.0",
-    "lint-staged": "^10.0.0",
+    "lint-staged": "^11.0.0",
     "lodash": "^4.17.11",
     "prettier": "^2.0.0",
-    "quicktype": "^15.0.174",
-    "rimraf": "^3.0.0",
-    "ts-jest": "^26.1.1",
-    "ts-node": "~9.1.1",
-    "typescript": "4.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "ts-jest": "^27.1.3"
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [

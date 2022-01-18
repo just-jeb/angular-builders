@@ -9,15 +9,24 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 ## Previous versions
 
-- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
-- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
-- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
-- [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
+<details>
+  <summary>Click to expand</summary>
+
+- [Version 12](https://github.com/just-jeb/angular-builders/blob/12.x.x/packages/jest/README.md)
+- [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/jest/README.md)
+- [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/jest/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/jest/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/jest/README.md)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/jest/README.md)
+
+</details>
+
+## [Quick guide](https://www.justjeb.com/post/angular-cli-ng-test-with-jest)
 
 ## Prerequisites
 
-- [Angular CLI 11](https://www.npmjs.com/package/@angular/cli)
-- [Jest 26](https://www.npmjs.com/package/jest)
+- [Angular CLI 13](https://www.npmjs.com/package/@angular/cli)
+- [Jest 27](https://www.npmjs.com/package/jest)
 
 ## Installation
 
@@ -26,7 +35,10 @@ The builder comes to provide zero configuration setup for Jest while keeping the
    npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
    rm ./karma.conf.js ./src/test.ts
    ```
-2. Install the builder (and `jest` if you still haven't): `npm i -D jest @types/jest @angular-builders/jest`
+2. Install the builder (and `jest` if you still haven't):
+   ```console
+   npm i -D jest @types/jest @angular-builders/jest
+   ```
 
 ## Updating Typescript configurations
 
@@ -61,10 +73,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
   ```
 - Run the tests: `ng test`
 
-## Ivy compatibility
-
-Ivy compiler is enabled by default in version 9 so if you use it, make sure you run `ngcc` in a `postinstall` hook. For more details refer to [this](https://github.com/just-jeb/angular-builders/issues/679#issuecomment-587525674) issue.
-
 ## Multi-projects workspace support
 
 The builder supports multi-project workspaces out of the box, the only thing required is editing _tsconfig.spec.json_ in the relevant project directory as described [above](#updating-typescript-configurations).
@@ -87,12 +95,12 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
-- `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.  
-- `globalMocks` - there are 4 global mocks (that lack implementation in JSDom) enabled by default: 
+- `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
+- `globalMocks` - there are 4 global mocks (that lack implementation in JSDom) enabled by default:
   `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
   Their implementation can be found [here](./src/global-mocks).  
   If you want to disable one or more of these mocks just pass an updated array in options.  
-  For example:  
+  For example:
   ```json
   "options": {
     "globalMocks": ["getComputedStyle", "doctype"]
@@ -121,7 +129,14 @@ The builder supports multi-project workspaces out of the box, the only thing req
   });
   ```
 
-  Use the following command: `ng test --testNamePattern="My cool suite Should do one thing"`
+  Use the following command: `ng test --test-name-pattern="My cool suite Should do one thing"`
+
+  **Notice** that for array-like arguments you should use `,` delimiter instead of space delimiter. These are limitations of Angular CLI.  
+  Thus, if you want to provide multiple arguments to `find-related-tests` option you should be passing it like this:
+
+  ```sh
+  ng test --find-related-tests file1,file2
+  ```
 
 ## Migrating existing tests to Jest
 

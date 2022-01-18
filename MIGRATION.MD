@@ -1,3 +1,27 @@
+# Migration from version 12 to version 13
+
+## Custom webpack builder
+
+No breaking changes (except for updating to Angular 13)
+
+## Jest builder
+
+`jest-preset-angular` has been updated to version 11. 
+
+ - If you use it without custom configuration then no action required.  
+ - If you use it with custom configuration, you might need to [update it](https://thymikee.github.io/jest-preset-angular/docs/next/guides/angular-13+/).
+ 
+# Migration from version 11 to version 12
+
+## Custom webpack builder
+
+No breaking changes (except for updating to Angular 12)
+
+## Jest builder (since 12.1.0)
+1. Jest 27 is required now 
+2. `jest-preset-angular` has been updated to version 9, which uses Angular compiler instead of `ts-jest` in order to transform the TS files. Make sure you understand the implications and perform all the necessary changes to your code base as described in `jest-preset-angular` [CHANGELOG](https://github.com/thymikee/jest-preset-angular/blob/master/CHANGELOG.md).
+
+
 # Migration from version 10 to version 11
 
 ## Custom webpack builder

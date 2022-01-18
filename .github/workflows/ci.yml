@@ -34,14 +34,11 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: 12.12
+          node-version: 12.20.0
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: yarn --non-interactive --no-progress
-
-      - name: Bootstrap packages
-        run: yarn bootstrap:packages
 
       - name: Run CI scripts
         run: yarn ci

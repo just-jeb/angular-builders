@@ -8,14 +8,23 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Previous versions
 
-- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
-- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
-- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+<details>
+  <summary>Click to expand</summary>
+
+- [Version 12](https://github.com/just-jeb/angular-builders/blob/12.x.x/packages/custom-webpack/README.md)
+- [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/custom-webpack/README.md)
 - [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
+- [Version 9](https://github.com/just-jeb/angular-builders/blob/9.x.x/packages/custom-webpack/README.md)
+- [Version 8](https://github.com/just-jeb/angular-builders/blob/8.x.x/packages/custom-webpack/README.md)
+- [Version 7](https://github.com/just-jeb/angular-builders/blob/7.x.x/packages/custom-webpack/README.md)
+
+</details>
+
+## [Quick guide](https://www.justjeb.com/post/customizing-angular-cli-build)
 
 ## Prerequisites:
 
-- [Angular CLI 11](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 13](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
@@ -278,7 +287,7 @@ The following properties are available:
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
   **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
-Webpack configuration can be also written in TypeScript. In this case, it is the appliaction's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
+Webpack configuration can be also written in TypeScript. In this case, it is the application's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
 
 ```ts
 // extra-webpack.config.ts
@@ -421,7 +430,7 @@ module.exports = async config => {
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
-If `indexTransform` is writes in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
+If `indexTransform` is written in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
 
 ```typescript
 (options: TargetOptions, indexHtmlContent: string) => string|Promise<string>;
@@ -483,7 +492,7 @@ export default (targetOptions: TargetOptions, indexHtml: string) => {
 
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
-Full example [here](./examples/full-cycle-app).
+Full example [here](../../examples/custom-webpack/full-cycle-app).
 
 # Further Reading
 

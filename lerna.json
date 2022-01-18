@@ -1,11 +1,7 @@
 {
   "npmClient": "yarn",
-  "npmClientArgs": ["--no-lockfile"],
-  "packages": [
-    "packages/*",
-    "packages/*/examples/*",
-    "packages/timestamp/example"
-  ],
+  "useWorkspaces": true,
+  "stream": true,
   "command": {
     "publish": {
       "conventionalCommits": true,
@@ -14,7 +10,7 @@
       "registry": "https://registry.npmjs.org/"
     },
     "bootstrap": {
-      "ci": false 
+      "ci": false
     }
   },
   "version": "independent"
