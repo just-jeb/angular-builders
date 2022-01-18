@@ -7,7 +7,9 @@
     "build": "ng build && ng run example:timestamp",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -29,9 +31,11 @@
     "@angular/cli": "^13.0.1",
     "@angular/compiler-cli": "^13.0.0",
     "@angular/language-service": "^13.0.0",
+    "@cypress/schematic": "1.6.0",
     "@types/jasmine": "~3.10.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^16.0.0",
+    "cypress": "latest",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.2",
