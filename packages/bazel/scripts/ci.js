@@ -5,7 +5,7 @@ const { exit } = require('process');
 runTests();
 
 function runTests() {
-  process.chdir('./example');
+  process.chdir('../../examples/bazel');
   runBuild();
   compareResults();
 }
