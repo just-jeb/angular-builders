@@ -1,10 +1,10 @@
 {
   "npmClient": "yarn",
-  "npmClientArgs": ["--no-lockfile"],
+  "useWorkspaces": true,
+  "stream": true,
   "packages": [
     "packages/*",
-    "packages/*/examples/*",
-    "packages/*/example"
+    "examples/**/*"
   ],
   "command": {
     "publish": {
