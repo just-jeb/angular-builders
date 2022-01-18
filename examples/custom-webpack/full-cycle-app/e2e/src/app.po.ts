@@ -1,19 +1,21 @@
-import { browser, by, element } from 'protractor';
-
 export class AppPage {
   navigateTo() {
-    return browser.get('/');
+    return cy.visit('/');
   }
 
-  getDivText() {
-    return element(by.css('body>div')).getText();
+  getTitle() {
+    return cy.get('app-root h1');
   }
 
-  getParagraphText() {
-    return element(by.css('body>p')).getText();
+  getDiv() {
+    return cy.get('body>div');
   }
 
-  getVersionText() {
-    return element(by.css('body .version')).getText();
+  getParagraph() {
+    return cy.get('body>p');
+  }
+
+  getVersion() {
+    return cy.get('body .version');
   }
 }

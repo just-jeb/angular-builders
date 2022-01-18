@@ -6,7 +6,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +44,7 @@
     "protractor": "~7.0.0",
     "puppeteer": "^5.5.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.4",
+    "cypress": "latest"
   }
 }
