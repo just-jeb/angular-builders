@@ -80,6 +80,6 @@ multiAppTestOptions=(
     "yarn test my-shared-library|--find-related-tests;src/lib/my-shared-library.service.ts,src/lib/my-shared-library.component.ts|2|2|2|2|||"
 )
 
-(ciApp ../../examples/jest/simple-app --protractor-config=./e2e/protractor-ci.conf.js simpleAppTestOptions)
+(ciApp ../../examples/jest/simple-app simpleAppTestOptions)
 (ciApp ../../examples/jest/multiple-apps --configuration=ci multiAppTestOptions)
 
