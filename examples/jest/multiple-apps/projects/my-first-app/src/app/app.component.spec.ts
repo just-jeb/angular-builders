@@ -17,7 +17,7 @@ describe('AppComponent', () => {
   it(`should have only two of the global mocks defined`, () => {
     expect(window.getComputedStyle).toBeTruthy();
     expect(document.body.style.transform).toBeTruthy();
-    expect(document.doctype).not.toEqual('<!DOCTYPE html>');
+    expect(document.doctype as any).not.toEqual('<!DOCTYPE html>');
     expect(window.matchMedia).toBeFalsy();
   });
 
