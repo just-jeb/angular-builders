@@ -1,0 +1,12 @@
+{
+  "extends": [
+    ":dependencyDashboard",
+    ":prConcurrentLimit10",
+    "group:monorepos",
+    "group:recommended",
+    "workarounds:all",
+    ":preserveSemverRanges"
+  ],
+  "prHourlyLimit": 3,
+  "updateInternalDeps": true
+}
