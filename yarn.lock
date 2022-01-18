@@ -10,47 +10,6 @@
     "@jridgewell/resolve-uri" "1.0.0"
     sourcemap-codec "1.4.8"
 
-"@angular-builders/bazel@latest":
-  version "13.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@angular-builders/bazel/-/bazel-13.1.0.tgz#eca2035ef8e8d33e0c2419dff531934f3dc506b5"
-  integrity sha1-7KIDXvjo0z4MJBnf9TGTTz3FBrU=
-  dependencies:
-    "@angular-devkit/architect" ">=0.1300.0 < 0.1400.0"
-    "@bazel/bazelisk" "^1.4.0"
-    "@bazel/ibazel" "^0.13.1"
-
-"@angular-builders/custom-webpack@latest":
-  version "13.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@angular-builders/custom-webpack/-/custom-webpack-13.0.0.tgz#d44fc216a4f1e9893eb09d2940d5df0ffda38ea8"
-  integrity sha1-1E/CFqTx6Yk+sJ0pQNXfD/2jjqg=
-  dependencies:
-    "@angular-devkit/architect" ">=0.1300.0 < 0.1400.0"
-    "@angular-devkit/build-angular" "^13.0.0"
-    "@angular-devkit/core" "^13.0.0"
-    lodash "^4.17.15"
-    ts-node "^10.0.0"
-    tsconfig-paths "^3.9.0"
-    webpack-merge "^5.7.3"
-
-"@angular-builders/jest@latest":
-  version "13.0.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@angular-builders/jest/-/jest-13.0.2.tgz#b23b7238895f9c060fb7d7a5dece75886504602a"
-  integrity sha1-sjtyOIlfnAYPt9el3s51iGUEYCo=
-  dependencies:
-    "@angular-devkit/architect" ">=0.1300.0 < 0.1400.0"
-    "@angular-devkit/core" "^13.0.0"
-    jest-preset-angular "11.0.1"
-    lodash "^4.17.15"
-
-"@angular-builders/timestamp@latest":
-  version "13.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@angular-builders/timestamp/-/timestamp-13.0.0.tgz#0374a2e3ea12e1a5a86ca657916af34f97b2e96f"
-  integrity sha1-A3Si4+oS4aWobKZXkWrzT5ey6W8=
-  dependencies:
-    "@angular-devkit/architect" ">=0.1300.0 < 0.1400.0"
-    "@angular-devkit/core" "^13.0.0"
-    dateformat "^4.3.1"
-
 "@angular-devkit/architect@0.1301.3", "@angular-devkit/architect@>=0.1300.0 < 0.1400.0":
   version "0.1301.3"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@angular-devkit/architect/-/architect-0.1301.3.tgz#197f92c984adf22776798ce568e64396e464a03d"
@@ -2641,7 +2600,7 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@tsconfig/node14/-/node14-1.0.1.tgz#95f2d167ffb9b8d2068b0b235302fafd4df711f2"
   integrity sha1-lfLRZ/+5uNIGiwsjUwL6/U33EfI=
 
-"@tsconfig/node16@^1.0.1", "@tsconfig/node16@^1.0.2":
+"@tsconfig/node16@^1.0.2":
   version "1.0.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha1-Qjx3h30Fadsg4fyAiFrEEYMUAQ4=
@@ -2789,11 +2748,6 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/jasmine/-/jasmine-3.6.11.tgz#4b1d77aa9dfc757407cb9e277216d8e83553f09d"
   integrity sha1-Sx13qp38dXQHy54nchbY6DVT8J0=
 
-"@types/jasmine@~3.8.1":
-  version "3.8.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/jasmine/-/jasmine-3.8.2.tgz#27ab0aaac29581bcbde5774e1843f90df977078e"
-  integrity sha1-J6sKqsKVgby95XdOGEP5Dfl3B44=
-
 "@types/jasminewd2@~2.0.3":
   version "2.0.10"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/jasminewd2/-/jasminewd2-2.0.10.tgz#ae31c237aa6421bde30f1058b1d20f4577e54443"
@@ -2839,20 +2793,10 @@
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/node/-/node-17.0.9.tgz#0b7f161afb5b1cc12518d29b2cdc7175d5490628"
   integrity sha1-C38WGvtbHMElGNKbLNxxddVJBig=
 
-"@types/node@^12.11.1":
-  version "12.20.42"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/node/-/node-12.20.42.tgz#2f021733232c2130c26f9eabbdd3bfd881774733"
-  integrity sha1-LwIXMyMsITDCb56rvdO/2IF3RzM=
-
 "@types/node@^16.0.0":
   version "16.11.20"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/node/-/node-16.11.20.tgz#334b116c6d41143c92599965e14b5a3dd68c5d1f"
   integrity sha1-M0sRbG1BFDySWZll4UtaPdaMXR8=
-
-"@types/node@~16.4.0":
-  version "16.4.14"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@types/node/-/node-16.4.14.tgz#e27705ec2278b2355bd59f1952de23a152b9f208"
-  integrity sha1-4ncF7CJ4sjVb1Z8ZUt4joVK58gg=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -4756,11 +4700,6 @@ dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha1-puN0maTZqc+F71hyBE1ikByYia4=
-
-dateformat@^4.3.1:
-  version "4.6.3"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/dateformat/-/dateformat-4.6.3.tgz#556fa6497e5217fedb78821424f8a1c22fa3f4b5"
-  integrity sha1-VW+mSX5SF/7beIIUJPihwi+j9LU=
 
 dateformat@^5.0.2:
   version "5.0.2"
@@ -7462,22 +7401,10 @@ jasmine-core@~3.6.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/jasmine-core/-/jasmine-core-3.6.0.tgz#491f3bb23941799c353ceb7a45b38a950ebc5a20"
   integrity sha1-SR87sjlBeZw1POt6RbOKlQ68WiA=
 
-jasmine-core@~3.8.0:
-  version "3.8.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/jasmine-core/-/jasmine-core-3.8.0.tgz#815399aae5aa5d9beeb1262805f981b99ffc9bf0"
-  integrity sha1-gVOZquWqXZvusSYoBfmBuZ/8m/A=
-
 jasmine-spec-reporter@~5.0.0:
   version "5.0.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/jasmine-spec-reporter/-/jasmine-spec-reporter-5.0.2.tgz#b61288ab074ad440dc2477c4d42840b0e74a6b95"
   integrity sha1-thKIqwdK1EDcJHfE1ChAsOdKa5U=
-  dependencies:
-    colors "1.4.0"
-
-jasmine-spec-reporter@~7.0.0:
-  version "7.0.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/jasmine-spec-reporter/-/jasmine-spec-reporter-7.0.0.tgz#94b939448e63d4e2bd01668142389f20f0a8ea49"
-  integrity sha1-lLk5RI5j1OK9AWaBQjifIPCo6kk=
   dependencies:
     colors "1.4.0"
 
@@ -8159,7 +8086,7 @@ karma-source-map-support@1.4.0:
   dependencies:
     source-map-support "^0.5.5"
 
-karma@~6.3.0, karma@~6.3.2:
+karma@~6.3.2:
   version "6.3.11"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/karma/-/karma-6.3.11.tgz#2c2fb09f1a9f52e1a0739adeedace2a68d4c0d34"
   integrity sha1-LC+wnxqfUuGgc5re7azipo1MDTQ=
@@ -11389,26 +11316,12 @@ rxjs@6.6.7, rxjs@^6.5.0, rxjs@^6.6.0:
   dependencies:
     tslib "^1.9.0"
 
-rxjs@^7.2.0, rxjs@^7.5.1:
+rxjs@^7.2.0, rxjs@^7.5.1, rxjs@^7.5.2:
   version "7.5.2"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/rxjs/-/rxjs-7.5.2.tgz#11e4a3a1dfad85dbf7fb6e33cbba17668497490b"
   integrity sha1-EeSjod+thdv3+24zy7oXZoSXSQs=
   dependencies:
     tslib "^2.1.0"
-
-rxjs@~6.5.2:
-  version "6.5.5"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/rxjs/-/rxjs-6.5.5.tgz#c5c884e3094c8cfee31bf27eb87e54ccfc87f9ec"
-  integrity sha1-xciE4wlMjP7jG/J+uH5UzPyH+ew=
-  dependencies:
-    tslib "^1.9.0"
-
-rxjs@~7.4.0:
-  version "7.4.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/rxjs/-/rxjs-7.4.0.tgz#a12a44d7eebf016f5ff2441b87f28c9a51cebc68"
-  integrity sha1-oSpE1+6/AW9f8kQbh/KMmlHOvGg=
-  dependencies:
-    tslib "~2.1.0"
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -12648,44 +12561,6 @@ ts-node@^9:
     source-map-support "^0.5.17"
     yn "3.1.1"
 
-ts-node@~10.1.0:
-  version "10.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ts-node/-/ts-node-10.1.0.tgz#e656d8ad3b61106938a867f69c39a8ba6efc966e"
-  integrity sha1-5lbYrTthEGk4qGf2nDmoum78lm4=
-  dependencies:
-    "@tsconfig/node10" "^1.0.7"
-    "@tsconfig/node12" "^1.0.7"
-    "@tsconfig/node14" "^1.0.0"
-    "@tsconfig/node16" "^1.0.1"
-    arg "^4.1.0"
-    create-require "^1.1.0"
-    diff "^4.0.1"
-    make-error "^1.1.1"
-    source-map-support "^0.5.17"
-    yn "3.1.1"
-
-ts-node@~8.1.1:
-  version "8.1.1"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ts-node/-/ts-node-8.1.1.tgz#2b9621934a0471f0e13c1b75be54ee0f46c31479"
-  integrity sha1-K5Yhk0oEcfDhPBt1vlTuD0bDFHk=
-  dependencies:
-    arg "^4.1.0"
-    diff "^4.0.1"
-    make-error "^1.1.1"
-    source-map-support "^0.5.6"
-    yn "^3.0.0"
-
-ts-node@~8.2.0:
-  version "8.2.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/ts-node/-/ts-node-8.2.0.tgz#4a89754b00560bb24cd54526e1685fa38c45f240"
-  integrity sha1-Sol1SwBWC7JM1UUm4Whfo4xF8kA=
-  dependencies:
-    arg "^4.1.0"
-    diff "^4.0.1"
-    make-error "^1.1.1"
-    source-map-support "^0.5.6"
-    yn "^3.0.0"
-
 tsconfig-paths@^3.9.0:
   version "3.12.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tsconfig-paths/-/tsconfig-paths-3.12.0.tgz#19769aca6ee8f6a1a341e38c8fa45dd9fb18899b"
@@ -12705,11 +12580,6 @@ tslib@^1.9.0:
   version "1.14.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
-
-tslib@~2.1.0:
-  version "2.1.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
@@ -13603,7 +13473,7 @@ yauzl@^2.10.0:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
 
-yn@3.1.1, yn@^3.0.0:
+yn@3.1.1:
   version "3.1.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/yn/-/yn-3.1.1.tgz#1e87401a09d767c1d5eab26a6e4c185182d2eb50"
   integrity sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=

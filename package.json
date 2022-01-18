@@ -9,7 +9,9 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "examples/**/*"
+      "examples/*",
+      "examples/custom-webpack/*",
+      "examples/jest/*"
     ]
   },
   "author": "Evgeny Barabanov",
@@ -36,7 +38,7 @@
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@types/lodash": "^4.14.118",
-    "@types/node": "~16.4.0",
+    "@types/node": "^16.0.0",
     "husky": "^7.0.0",
     "jest": "^27.0.0",
     "lerna": "^4.0.0",
