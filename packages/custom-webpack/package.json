@@ -31,11 +31,11 @@
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "../../node_modules/.bin/tsc && ../../node_modules/.bin/ts-node ../../merge-schemes.ts",
+    "build": "tsc && ts-node ../../merge-schemes.ts",
     "postbuild": "yarn test && yarn run e2e",
-    "test": "../../node_modules/.bin/jest --config ../../jest-ut.config.js",
-    "e2e": "../../node_modules/.bin/jest --config ../../jest-e2e.config.js",
-    "clean": "../../node_modules/.bin/rimraf dist",
+    "test": "jest --config ../../jest-ut.config.js",
+    "e2e": "jest --config ../../jest-e2e.config.js",
+    "clean": "rimraf dist",
     "ci": "./scripts/ci.sh"
   },
   "builders": "builders.json",
@@ -47,5 +47,10 @@
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.9.0",
     "webpack-merge": "^5.7.3"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4",
+    "jest": "^27.4.7"
   }
 }

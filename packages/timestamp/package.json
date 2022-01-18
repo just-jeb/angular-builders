@@ -22,18 +22,21 @@
   "builders": "builders.json",
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "../../node_modules/.bin/tsc",
+    "build": "tsc",
     "postbuild": "yarn copy",
-    "clean": "../../node_modules/.bin/rimraf dist src/schema.ts",
-    "copy": "../../node_modules/.bin/cpy src/schema.json dist",
-    "generate": "../../node_modules/.bin/quicktype -s schema src/schema.json -o src/schema.ts"
-  },
-  "devDependencies": {
-    "@types/dateformat": "^3.0.1"
+    "clean": "rimraf dist src/schema.ts",
+    "copy": "cpy src/schema.json dist",
+    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "dependencies": {
     "@angular-devkit/architect": ">=0.1300.0 < 0.1400.0",
     "@angular-devkit/core": "^13.0.0",
-    "dateformat": "^4.3.1"
+    "dateformat": "^5.0.2"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4",
+    "jest": "^27.4.7",
+    "@types/dateformat": "^5.0.0"
   }
 }
