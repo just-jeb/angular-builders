@@ -65,7 +65,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-first-app:build"
+            "browserTarget": "my-first-app:build",
+            "port": 5002
           },
           "configurations": {
             "production": {
@@ -83,24 +84,43 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "tsConfig": "./configs/tsconfig.spec.json",
-            "globalMocks": ["getComputedStyle", "styleTransform"]
+            "globalMocks": [
+              "getComputedStyle",
+              "styleTransform"
+            ]
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "protractorConfig": "projects/my-first-app/e2e/protractor.conf.js",
             "devServerTarget": "my-first-app:serve",
             "port": 4210,
-            "webdriverUpdate": false
+            "project": "projects/my-first-app"
           },
           "configurations": {
             "production": {
               "devServerTarget": "my-first-app:serve:production"
-            },
-            "ci": {
-              "protractorConfig": "projects/my-first-app/e2e/protractor-ci.conf.js"
             }
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "my-first-app:serve",
+            "project": "projects/my-first-app"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-first-app:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false,
+            "project": "projects/my-first-app"
           }
         }
       }
@@ -167,7 +187,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-second-app:build"
+            "browserTarget": "my-second-app:build",
+            "port": 5002
           },
           "configurations": {
             "production": {
@@ -185,20 +206,36 @@
           "builder": "@angular-builders/jest:run"
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "protractorConfig": "projects/my-second-app/e2e/protractor.conf.js",
             "devServerTarget": "my-second-app:serve",
             "port": 4211,
-            "webdriverUpdate": false
+            "project": "projects/my-second-app"
           },
           "configurations": {
             "production": {
               "devServerTarget": "my-second-app:serve:production"
-            },
-            "ci": {
-              "protractorConfig": "projects/my-second-app/e2e/protractor-ci.conf.js"
             }
+          }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "my-second-app:serve",
+            "project": "projects/my-second-app"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "my-second-app:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false,
+            "project": "projects/my-second-app"
           }
         }
       }
@@ -214,18 +251,19 @@
           "options": {
             "tsConfig": "projects/my-shared-library/tsconfig.lib.json",
             "project": "projects/my-shared-library/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "projects/my-shared-library/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "test": {
           "builder": "@angular-builders/jest:run"
         }
       }
-    }},
+    }
+  },
   "defaultProject": "my-first-app",
   "cli": {
     "packageManager": "yarn"

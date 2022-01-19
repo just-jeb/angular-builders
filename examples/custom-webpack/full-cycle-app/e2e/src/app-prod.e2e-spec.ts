@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display generated Hello World div', () => {
+  it('should display paragraph coming from transform function', () => {
     page.navigateTo();
-    page.getDiv().should('have.text', 'Hello World');
+    page.getParagraph().should('have.text', 'Configuration: production');
   });
 
   it('should display version in div with `version` css class', () => {

@@ -4,7 +4,7 @@
 cd ../../examples/custom-webpack/sanity-app
 #ng build is verified during lerna run
 yarn test --browsers=ChromeHeadlessCI
-yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
+yarn e2e
 
 #Check scenarios with custom webpack config
 cd ../full-cycle-app
@@ -12,8 +12,8 @@ cd ../full-cycle-app
 #check karma builder
 yarn test --browsers=ChromeHeadlessCI
 #check browser and dev-server
-yarn e2e --protractor-config=./e2e/protractor-ci.conf.js
-yarn e2e --protractor-config=./e2e/protractor-ci-prod.conf.js --prod
-yarn e2e --protractor-config=./e2e/protractor-ci-itwcw.conf.js -c itwcw
+yarn e2e
+yarn e2e -c production
+yarn e2e -c itwcw
 
 
