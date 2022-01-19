@@ -1,6 +1,6 @@
 {
   "name": "sanity-app",
-  "version": "13.0.1-beta.5",
+  "version": "13.0.1-beta.6",
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
@@ -25,13 +25,14 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^13.0.1-beta.1",
+    "@angular-builders/custom-webpack": "^13.0.1-beta.2",
     "@angular-devkit/build-angular": "^13.0.1",
     "@angular/cli": "^13.0.1",
     "@angular/compiler-cli": "^13.0.0",
     "@angular/language-service": "^13.0.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^16.0.0",
+    "cypress": "latest",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.2",
     "karma-chrome-launcher": "~3.1.0",
@@ -40,7 +41,6 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "puppeteer": "^13.0.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.5.4",
-    "cypress": "latest"
+    "typescript": "^4.5.4"
   }
 }
