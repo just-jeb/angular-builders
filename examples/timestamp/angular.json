@@ -108,7 +108,9 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "example:serve"
+            "devServerTarget": "example:serve",
+            "browser": "chrome",
+            "port": 4223
           },
           "configurations": {
             "production": {
