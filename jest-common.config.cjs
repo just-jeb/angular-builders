@@ -8,5 +8,5 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
-  testEnvironment: './jest-custom-environment',
+  testEnvironment: './jest-custom-environment.cjs',
 };

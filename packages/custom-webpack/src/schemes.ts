@@ -1,5 +1,11 @@
 // Base schemes from build-angular@0.1202.7
-module.exports = [
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default [
   {
     originalSchemaPath: '@angular-devkit/build-angular/src/builders/browser/schema.json',
     schemaExtensionPaths: [`${__dirname}/browser/schema.ext.json`, `${__dirname}/schema.ext.json`],

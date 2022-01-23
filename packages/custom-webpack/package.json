@@ -3,6 +3,7 @@
   "version": "13.0.1-beta.2",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "dist/index.js",
+  "type": "module",
   "files": [
     "dist",
     "builders.json"
@@ -31,10 +32,11 @@
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "tsc && ts-node ../../merge-schemes.ts",
+    "build:tsc": "tsc",
+    "build": "tsc && node --loader ts-node/esm --experimental-specifier-resolution=node ../../merge-schemes.ts",
     "postbuild": "yarn test && yarn run e2e",
-    "test": "jest --config ../../jest-ut.config.js",
-    "e2e": "jest --config ../../jest-e2e.config.js",
+    "test": "jest --config ../../jest-ut.config.cjs",
+    "e2e": "jest --config ../../jest-e2e.config.cjs",
     "clean": "rimraf dist",
     "ci": "./scripts/ci.sh"
   },

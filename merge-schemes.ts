@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import { merge } from 'lodash';
+import { merge } from 'lodash-es';
 
 interface CustomSchema {
   originalSchemaPath: string;
@@ -8,11 +8,15 @@ interface CustomSchema {
 }
 
 const wd = process.cwd();
-const schemesToMerge: CustomSchema[] = require(`${wd}/src/schemes`);
+const { default: schemesToMerge }: { default: CustomSchema[] } = await import(`${wd}/src/schemes`);
+console.log(schemesToMerge);
 
 for (const { originalSchemaPath, schemaExtensionPaths, newSchemaPath } of schemesToMerge) {
-  const originalSchema = require(`${originalSchemaPath}`);
-  const schemaExtensions = schemaExtensionPaths.map((path: string) => require(path));
+  const { default: originalSchema } = await import(`${originalSchemaPath}`);
+  console.log(originalSchema);
+  const schemaExtensions = await Promise.all(
+    schemaExtensionPaths.map((path: string) => import(path).then(({ default: schema }) => schema))
+  );
   const newSchema = schemaExtensions.reduce(
     (extendedSchema: any, currentExtension: any) => merge(extendedSchema, currentExtension),
     originalSchema

@@ -39,7 +39,7 @@ export class CustomWebpackBuilder {
     const webpackConfigPath = config.path || defaultWebpackConfigPath;
     const path = `${getSystemPath(root)}/${webpackConfigPath}`;
     const tsConfig = `${getSystemPath(root)}/${buildOptions.tsConfig}`;
-    const configOrFactoryOrPromise = resolveCustomWebpackConfig(path, tsConfig, logger);
+    const configOrFactoryOrPromise = await resolveCustomWebpackConfig(path, tsConfig, logger);
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // That exported function can be synchronous either
@@ -65,14 +65,14 @@ export class CustomWebpackBuilder {
   }
 }
 
-function resolveCustomWebpackConfig(
+async function resolveCustomWebpackConfig(
   path: string,
   tsConfig: string,
   logger: logging.LoggerApi
-): CustomWebpackConfig {
+): Promise<CustomWebpackConfig> {
   tsNodeRegister(path, tsConfig, logger);
 
-  const customWebpackConfig = require(path);
+  const customWebpackConfig = await import(path);
   // If the user provides a configuration in TS file
   // then there are 2 cases for exporing an object. The first one is:
   // `module.exports = { ... }`. And the second one is:
