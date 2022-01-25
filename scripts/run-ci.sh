@@ -54,7 +54,8 @@ root_path=$PWD
 #[ -f $WEBDRIVER_MANAGER_BIN ] && $WEBDRIVER_MANAGER_BIN update --versions.chrome $CHROME_VERSION || echo \`pwd\`: No webdriver-manager found
 
 # Start Xvfb server for Cypress tests, should be removed once Cypress doesn't require Xvfb
-[[ "$OSTYPE" == "linux-gnu"* ]] && Xvfb :99 & && export DISPLAY=:99
+[[ "$OSTYPE" == "linux-gnu"* ]] && Xvfb :99 & 
+[[ "$OSTYPE" == "linux-gnu"* ]] && export DISPLAY=:99
 
 yarn lerna run ci
 
