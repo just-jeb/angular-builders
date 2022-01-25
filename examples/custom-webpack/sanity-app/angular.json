@@ -54,6 +54,16 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "esm": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.js"
+              }
+            },
+            "cjs": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.cjs"
+              }
             }
           }
         },
