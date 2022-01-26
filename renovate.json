@@ -1,5 +1,19 @@
 {
   "extends": [
-    "config:base"
+    ":dependencyDashboard",
+    ":prConcurrentLimit10",
+    "group:monorepos",
+    "group:recommended",
+    "workarounds:all",
+  ],
+  "prHourlyLimit": 3,
+  "updateInternalDeps": true,
+  "packageRules": [
+    {
+      "matchPaths": [
+        "packages/*"
+      ],
+      "rangeStrategy": "replace"
+    }
   ]
 }
