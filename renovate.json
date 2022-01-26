@@ -4,15 +4,13 @@
     ":prConcurrentLimit10",
     "group:monorepos",
     "group:recommended",
-    "workarounds:all",
+    "workarounds:all"
   ],
   "prHourlyLimit": 3,
   "updateInternalDeps": true,
   "packageRules": [
     {
-      "matchPaths": [
-        "packages/*"
-      ],
+      "matchPaths": ["packages/**"],
       "rangeStrategy": "replace"
     }
   ]
