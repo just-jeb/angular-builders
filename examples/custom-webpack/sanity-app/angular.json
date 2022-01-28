@@ -57,13 +57,15 @@
             },
             "esm": {
               "customWebpackConfig": {
-                "path": "custom-webpack.config.js"
-              }
+                "path": "custom-webpack.config.mjs"
+              },
+              "indexTransform": "index.transform.mjs"
             },
             "cjs": {
               "customWebpackConfig": {
-                "path": "custom-webpack.config.cjs"
-              }
+                "path": "custom-webpack.config.js"
+              },
+              "indexTransform": "index.transform.js"
             }
           }
         },
