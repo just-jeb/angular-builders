@@ -4,9 +4,19 @@
     ":prConcurrentLimit10",
     "group:monorepos",
     "group:recommended",
-    "workarounds:all",
-    ":preserveSemverRanges"
+    "workarounds:all"
   ],
   "prHourlyLimit": 3,
-  "updateInternalDeps": true
+  "updateInternalDeps": true,
+  "postUpdateOptions": ["yarnDedupeFewer"],
+  "packageRules": [
+    {
+      "matchPaths": ["packages/**"],
+      "rangeStrategy": "replace"
+    },
+    {
+      "matchPaths": ["examples/**"],
+      "rangeStrategy": "pin"
+    }
+  ]
 }
