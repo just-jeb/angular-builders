@@ -1,13 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "cli": {
+    "packageManager": "yarn"
+  },
   "newProjectRoot": "projects",
   "projects": {
-    "sanity-app": {
+    "sanity-app-esm": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/sanity-app",
+            "outputPath": "dist/sanity-app-esm",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,71 +30,80 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             },
             "esm": {
-              "customWebpackConfig": {
-                "path": "custom-webpack.config.mjs"
-              },
-              "indexTransform": "index.transform.mjs"
-            },
-            "cjs": {
               "customWebpackConfig": {
                 "path": "custom-webpack.config.js"
               },
               "indexTransform": "index.transform.js"
+            },
+            "cjs": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.cjs"
+              },
+              "indexTransform": "index.transform.cjs"
             }
-          }
+          },
+          "defaultConfiguration": "production,esm"
         },
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "sanity-app:build",
-            "port": 5001
+            "port": 5005
           },
           "configurations": {
             "production": {
-              "browserTarget": "sanity-app:build:production"
+              "browserTarget": "sanity-app-esm:build:production"
             },
-            "esm": {
-              "browserTarget": "sanity-app:build:esm"
+            "development": {
+              "browserTarget": "sanity-app-esm:build:development"
             },
             "cjs": {
-              "browserTarget": "sanity-app:build:cjs"
+              "browserTarget": "sanity-app-esm:build:cjs"
+            },
+            "esm": {
+              "browserTarget": "sanity-app-esm:build:esm"
             }
           },
-          "defaultConfiguration": "cjs"
+          "defaultConfiguration": "esm"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sanity-app:build"
+            "browserTarget": "sanity-app-esm:build"
           }
         },
         "test": {
@@ -106,39 +118,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
         },
-        "e2e": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "sanity-app:serve",
-            "browser": "chrome",
-            "port": 4221
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "sanity-app:serve:production"
-            },
-            "esm": {
-              "devServerTarget": "sanity-app:serve:esm"
-            },
-            "cjs": {
-              "devServerTarget": "sanity-app:serve:cjs"
-            }
-          },
-          "defaultConfiguration": "cjs"
-        },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "sanity-app:serve"
+            "devServerTarget": "sanity-app-esm:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sanity-app:serve:production"
+              "devServerTarget": "sanity-app-esm:serve:production"
             }
           }
         },
@@ -148,12 +140,29 @@
             "watch": true,
             "headless": false
           }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "sanity-app-esm:serve",
+            "browser": "chrome",
+            "port": 4224
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sanity-app-esm:serve:production"
+            },
+            "esm": {
+              "devServerTarget": "sanity-app-esm:serve:esm"
+            },
+            "cjs": {
+              "devServerTarget": "sanity-app-esm:serve:cjs"
+            }
+          },
+          "defaultConfiguration": "esm"
         }
       }
     }
   },
-  "defaultProject": "sanity-app",
-  "cli": {
-    "packageManager": "yarn"
-  }
+  "defaultProject": "sanity-app-esm"
 }

@@ -1,0 +1,46 @@
+{
+  "name": "sanity-app-esm",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "13.2.0",
+    "@angular/common": "13.2.0",
+    "@angular/compiler": "13.2.0",
+    "@angular/core": "13.2.0",
+    "@angular/forms": "13.2.0",
+    "@angular/platform-browser": "13.2.0",
+    "@angular/platform-browser-dynamic": "13.2.0",
+    "@angular/router": "13.2.0",
+    "rxjs": "7.5.2",
+    "tslib": "2.3.1",
+    "zone.js": "0.11.4"
+  },
+  "devDependencies": {
+    "@angular-builders/custom-webpack": "13.0.1-beta.2",
+    "@angular-devkit/build-angular": "13.2.0",
+    "@angular/cli": "13.2.0",
+    "@angular/compiler-cli": "13.2.0",
+    "@cypress/schematic": "^1.6.0",
+    "@types/jasmine": "3.10.3",
+    "@types/node": "16.11.21",
+    "jasmine-core": "4.0.0",
+    "karma": "6.3.12",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-coverage": "2.1.0",
+    "karma-jasmine": "4.0.1",
+    "karma-jasmine-html-reporter": "1.7.0",
+    "typescript": "4.5.5",
+    "cypress": "latest"
+  }
+}
