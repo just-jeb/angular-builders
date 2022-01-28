@@ -1,14 +1,10 @@
-import { getSystemPath, Path, logging } from '@angular-devkit/core';
+import { getSystemPath, logging, Path } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
-
-import { mergeConfigs } from './webpack-config-merger';
-import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
-import { tsNodeRegister } from './utils';
-import { TargetOptions } from './type-definition';
 import { CustomWebpackBrowserSchema } from './browser';
-import { pathToFileURL } from 'url';
-import { extname } from 'path';
-import { existsSync } from 'fs';
+import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
+import { TargetOptions } from './type-definition';
+import { loadModule, tsNodeRegister } from './utils';
+import { mergeConfigs } from './webpack-config-merger';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
 
@@ -75,56 +71,5 @@ async function resolveCustomWebpackConfig(
 ): Promise<CustomWebpackConfig> {
   tsNodeRegister(path, tsConfig, logger);
 
-  const customWebpackConfig = await getWebpackConfig(path);
-  // If the user provides a configuration in TS file
-  // then there are 2 cases for exporing an object. The first one is:
-  // `module.exports = { ... }`. And the second one is:
-  // `export default { ... }`. The ESM format is compiled into:
-  // `{ default: { ... } }`
-  return (customWebpackConfig as any).default || customWebpackConfig;
-}
-
-/**
- * This uses a dynamic import to load a module which may be ESM.
- * CommonJS code can load ESM code via a dynamic import. Unfortunately, TypeScript
- * will currently, unconditionally downlevel dynamic import into a require call.
- * require calls cannot load ESM code and will result in a runtime error. To workaround
- * this, a Function constructor is used to prevent TypeScript from changing the dynamic import.
- * Once TypeScript provides support for keeping the dynamic import this workaround can
- * be dropped.
- *
- * @param modulePath The path of the module to load.
- * @returns A Promise that resolves to the dynamically imported module.
- */
-function loadEsmModule<T>(modulePath: string | URL): Promise<T> {
-  return new Function('modulePath', `return import(modulePath);`)(modulePath) as Promise<T>;
-}
-
-export async function getWebpackConfig(configPath: string): Promise<CustomWebpackConfig> {
-  switch (extname(configPath)) {
-    case '.mjs':
-      // Load the ESM configuration file using the TypeScript dynamic import workaround.
-      // Once TypeScript provides support for keeping the dynamic import this workaround can be
-      // changed to a direct dynamic import.
-      return (await loadEsmModule<{ default: CustomWebpackConfig }>(pathToFileURL(configPath)))
-        .default;
-    case '.cjs':
-      return require(configPath);
-    default:
-      // The file could be either CommonJS or ESM.
-      // CommonJS is tried first then ESM if loading fails.
-      try {
-        return require(configPath);
-      } catch (e: any) {
-        if (e.code === 'ERR_REQUIRE_ESM') {
-          // Load the ESM configuration file using the TypeScript dynamic import workaround.
-          // Once TypeScript provides support for keeping the dynamic import this workaround can be
-          // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: CustomWebpackConfig }>(pathToFileURL(configPath)))
-            .default;
-        }
-
-        throw e;
-      }
-  }
+  return loadModule(path);
 }
