@@ -75,6 +75,12 @@
                 "path": "custom-webpack.config.cjs"
               },
               "indexTransform": "index.transform.cjs"
+            },
+            "tsEsm": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.ts"
+              },
+              "indexTransform": "index.transform.ts"
             }
           },
           "defaultConfiguration": "production,esm"
@@ -96,6 +102,9 @@
             },
             "esm": {
               "browserTarget": "sanity-app-esm:build:esm"
+            },
+            "tsEsm": {
+              "browserTarget": "sanity-app-esm:build:tsEsm"
             }
           }
         },
