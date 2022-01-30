@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@13.0.1-beta.2...@angular-builders/custom-webpack@13.1.0-beta.0) (2022-01-30)
+
+### Features
+
+- **custom-webpack:** support ESM ([#1117](https://github.com/just-jeb/angular-builders/issues/1117)) ([9d8cd2d](https://github.com/just-jeb/angular-builders/commit/9d8cd2d9a5ee8ad859c2b89203e6450c4be16502))
+
 ### [13.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@13.0.1-beta.1...@angular-builders/custom-webpack@13.0.1-beta.2) (2022-01-19)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
