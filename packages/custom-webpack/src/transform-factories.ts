@@ -1,11 +1,15 @@
-import { BuilderContext } from '@angular-devkit/architect';
+import { BuilderContext, Target } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
 import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/index-html-generator';
 import { getSystemPath, normalize } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
-import { tsNodeRegister } from './utils';
+import { loadModule, tsNodeRegister } from './utils';
+
+interface IndexHtmlTransformWithOptions {
+  (options: Target, indexHtml: string): Promise<string>;
+}
 
 export const customWebpackConfigTransformFactory: (
   options: CustomWebpackSchema,
@@ -29,9 +33,13 @@ export const indexHtmlTransformFactory: (
 ) => IndexHtmlTransform = ({ indexTransform, tsConfig }, { workspaceRoot, target, logger }) => {
   if (!indexTransform) return null;
   tsNodeRegister(indexTransform, `${getSystemPath(normalize(workspaceRoot))}/${tsConfig}`, logger);
-  const indexModule = require(`${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`);
-  const transform = indexModule.default || indexModule;
-  return async (indexHtml: string) => transform(target, indexHtml);
+
+  return async (indexHtml: string) => {
+    const transform = await loadModule<IndexHtmlTransformWithOptions>(
+      `${getSystemPath(normalize(workspaceRoot))}/${indexTransform}`
+    );
+    return transform(target, indexHtml);
+  };
 };
 
 export const getTransforms = (options: CustomWebpackSchema, context: BuilderContext) => ({

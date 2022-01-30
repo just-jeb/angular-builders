@@ -287,7 +287,7 @@ The following properties are available:
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
   **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
-Webpack configuration can be also written in TypeScript. In this case, it is the application's `tsConfig` file which will be use by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
+Webpack configuration can be also written in TypeScript. In this case, it is the application's `tsConfig` file which will be used by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
 
 ```ts
 // extra-webpack.config.ts
@@ -493,6 +493,15 @@ export default (targetOptions: TargetOptions, indexHtml: string) => {
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
 Full example [here](../../examples/custom-webpack/full-cycle-app).
+
+# ES Modules (ESM) Support
+
+Custom Webpack builder fully supports ESM.
+
+- If your app has `"type": "module"` both `custom-webpack.js` and `index-transform.js` will be treated as ES modules, unless you change their file extension to `.cjs`. In that case they'll be treated as CommonJS Modules. [Example](../../examples/custom-webpack/sanity-app-esm).
+- For `"type": "commonjs"` (or unspecified type) both `custom-webpack.js` and `index-transform.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-webpack/sanity-app).
+- If you want to use TS config in ESM app, you must set the loader to `ts-node/esm` when running `ng build`. Also, in that case `tsconfig.json` for `ts-node` no longer defaults to `tsConfig` from the `browser` target - you have to specify it manually via environment variable. [Example](../../examples/custom-webpack/sanity-app-esm/package.json#L10).  
+  _Note that tsconfig paths are not supported in TS configs within ESM apps. That is because [tsconfig-paths](https://github.com/dividab/tsconfig-paths) do not support ESM._
 
 # Further Reading
 

@@ -54,6 +54,18 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "esm": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.mjs"
+              },
+              "indexTransform": "index.transform.mjs"
+            },
+            "cjs": {
+              "customWebpackConfig": {
+                "path": "custom-webpack.config.js"
+              },
+              "indexTransform": "index.transform.js"
             }
           }
         },
@@ -66,8 +78,15 @@
           "configurations": {
             "production": {
               "browserTarget": "sanity-app:build:production"
+            },
+            "esm": {
+              "browserTarget": "sanity-app:build:esm"
+            },
+            "cjs": {
+              "browserTarget": "sanity-app:build:cjs"
             }
-          }
+          },
+          "defaultConfiguration": "cjs"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -102,6 +121,12 @@
           "configurations": {
             "production": {
               "devServerTarget": "sanity-app:serve:production"
+            },
+            "esm": {
+              "devServerTarget": "sanity-app:serve:esm"
+            },
+            "cjs": {
+              "devServerTarget": "sanity-app:serve:cjs"
             }
           }
         },
