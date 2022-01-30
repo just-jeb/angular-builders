@@ -12,7 +12,7 @@ yarn test --browsers=ChromeHeadlessCI
 yarn e2e # no custom config at all
 yarn e2e -c esm # esm custom config
 yarn e2e -c cjs # cjs custom config
-yarn build-ts # ts custom config with ESM imports
+yarn build-ts -c tsEsm # ts custom config with ESM imports
 
 #Check scenarios with custom webpack config
 cd ../full-cycle-app
