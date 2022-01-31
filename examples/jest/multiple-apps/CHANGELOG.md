@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.1.0](https://github.com/just-jeb/angular-builders/compare/multiple-apps@13.1.0-beta.0...multiple-apps@13.1.0) (2022-01-31)
+
+**Note:** Version bump only for package multiple-apps
+
 ## [13.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/multiple-apps@13.0.2-beta.14...multiple-apps@13.1.0-beta.0) (2022-01-30)
 
 ### Features
