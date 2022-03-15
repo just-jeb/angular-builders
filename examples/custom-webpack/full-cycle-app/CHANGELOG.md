@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [13.1.1-beta.23](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@13.1.1-beta.22...full-cycle-app@13.1.1-beta.23) (2022-03-15)
+
+**Note:** Version bump only for package full-cycle-app
+
 ### [13.1.1-beta.22](https://github.com/just-jeb/angular-builders/compare/full-cycle-app@13.1.1-beta.21...full-cycle-app@13.1.1-beta.22) (2022-03-15)
 
 **Note:** Version bump only for package full-cycle-app
