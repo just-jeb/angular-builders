@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [13.1.2-beta.6](https://github.com/just-jeb/angular-builders/compare/bazel-example@13.1.2-beta.5...bazel-example@13.1.2-beta.6) (2022-04-04)
+
+**Note:** Version bump only for package bazel-example
+
 ### [13.1.2-beta.5](https://github.com/just-jeb/angular-builders/compare/bazel-example@13.1.2-beta.4...bazel-example@13.1.2-beta.5) (2022-03-13)
 
 **Note:** Version bump only for package bazel-example
