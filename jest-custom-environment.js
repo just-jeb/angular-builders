@@ -1,6 +1,6 @@
-const NodeEnvironment = require('jest-environment-node');
+const { TestEnvironment } = require('jest-environment-node');
 
-class JestCustomEnvironment extends NodeEnvironment {
+class JestCustomEnvironment extends TestEnvironment {
   constructor(config) {
     super(config);
     this.jestErrorHasInstance = this.global.Error[Symbol.hasInstance];

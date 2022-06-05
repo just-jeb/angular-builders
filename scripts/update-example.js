@@ -13,7 +13,7 @@ const runNgUpdate = () => {
 
 const updateNonAngularApp = () => {
   console.log(`Updating non Angular app ${package.name}`);
-  execSync(`yarn add @angular/cli@${version}`);
+  execSync(`yarn add -D @angular/cli@^${version}.0.0`);
   console.log(`Successfully updated ${package.name} to Angular CLI ${version}`);
   console.log('Committing the changes');
   execSync(`git commit -am 'chore(deps): update ${package.name} to Angular CLI ${version}'`);

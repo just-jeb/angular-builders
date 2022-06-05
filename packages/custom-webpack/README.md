@@ -11,6 +11,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 <details>
   <summary>Click to expand</summary>
 
+- [Version 13](https://github.com/just-jeb/angular-builders/blob/13.x.x/packages/custom-webpack/README.md)
 - [Version 12](https://github.com/just-jeb/angular-builders/blob/12.x.x/packages/custom-webpack/README.md)
 - [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/custom-webpack/README.md)
 - [Version 10](https://github.com/just-jeb/angular-builders/blob/10.x.x/packages/custom-webpack/README.md)
@@ -24,7 +25,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Prerequisites:
 
-- [Angular CLI 13](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 14](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
