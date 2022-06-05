@@ -1,0 +1,61 @@
+name: graduate
+
+on: 
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'New angular version'     
+        required: true
+
+jobs:
+  update_and_push:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: true
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GH_PERSONAL_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ~/.cache # Default cache directory for both Yarn and Cypress
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 12.20.0
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: yarn --non-interactive --no-progress --frozen-lockfile
+
+      #- name: Run CI scripts
+      #  run: yarn ci
+      - name: Update root package.json
+        run: yarn update:root ${{ github.event.inputs.version }}
+        
+      - name: Update builders
+        run: yarn update:packages ${{ github.event.inputs.version }}
+      
+      - name: Install updated dependencies
+        run: yarn --non-interactive --no-progress
+        
+      - name: Commit updates
+        run: git add . && git commit -m "chore:\ update dependencies"
+        
+      - name: Update examples
+        run: yarn update:examples ${{ github.event.inputs.version }}
+        
+      - name: Push the changes
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          git config --global user.name ${{ secrets.GIT_USER }}
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          git push
