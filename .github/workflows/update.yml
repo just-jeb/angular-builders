@@ -29,16 +29,19 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 12.20.0
+          node-version: 16.13.0
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: yarn --non-interactive --no-progress --frozen-lockfile
-
-      #- name: Run CI scripts
-      #  run: yarn ci
-      - name: Update root package.json
-        run: yarn update:root ${{ github.event.inputs.version }}
+      
+      - name: Set Git credentials
+        run: | 
+          git config --global user.name ${{ secrets.GIT_USER }}
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+        
+      - name: Update examples
+        run: yarn update:examples ${{ github.event.inputs.version }}
         
       - name: Update builders
         run: yarn update:packages ${{ github.event.inputs.version }}
@@ -47,15 +50,8 @@ jobs:
         run: yarn --non-interactive --no-progress
         
       - name: Commit updates
-        run: git add . && git commit -m "chore:\ update dependencies"
-        
-      - name: Update examples
-        run: yarn update:examples ${{ github.event.inputs.version }}
+        run: | 
+          git add . && git commit -m "chore: update dependencies"
         
       - name: Push the changes
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          git config --global user.name ${{ secrets.GIT_USER }}
-          git config --global user.email ${{ secrets.GIT_EMAIL }}
-          git push
+        run: git push
