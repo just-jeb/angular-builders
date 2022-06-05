@@ -47,10 +47,10 @@ jobs:
         run: yarn --non-interactive --no-progress
         
       - name: Commit updates
-        run: git add . && git commit -m "chore: update dependencies"    
+        run: git add . && git commit -m "chore: update dependencies"
         
       - name: Update examples
-        run: yarn update:root ${{ github.event.inputs.version }}
+        run: yarn update:examples ${{ github.event.inputs.version }}
         
       - name: Push the changes
         env:
