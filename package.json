@@ -23,7 +23,7 @@
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
-    "node": ">=12.20.0"
+    "node": ">=14.15.0"
   },
   "scripts": {
     "build:packages": "lerna run build --scope '@angular-builders/*'",
@@ -37,8 +37,7 @@
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
     "prepare": "husky install",
     "update:packages": "lerna exec --concurrency 1 --scope '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-package.js'",
-    "update:examples": "lerna exec --concurrency 1 --ignore '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-example.js'",
-    "update:root": "node ./scripts/update-package.js"
+    "update:examples": "lerna exec --concurrency 1 --ignore '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-example.js'"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.0",
