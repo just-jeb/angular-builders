@@ -14,7 +14,7 @@ function validateSingleTestRun() {
 
     IFS=';' read -ra testCommandArgs <<< "$testCommandArgsString";
     set -x;
-    ${testCommand} "${ngTestParams}" "${testCommandArgs[@]}" 2>&1 | tee tests.log;
+    ${testCommand} ${ngTestParams} "${testCommandArgs[@]}" 2>&1 | tee tests.log;
     set +x;
     if [[ ! -z ${additionalStep} ]]; then
         ${additionalStep}
@@ -65,7 +65,7 @@ function checkJunit() {
 
 simpleAppTestOptions=(
     "yarn test||1|1|3|3|||"
-    "yarn test|--testNamePattern=^AppComponent should create the app$|1|1|1|3|2||"
+    "yarn test|--test-name-pattern=^AppComponent should create the app$|1|1|1|3|2||"
     "yarn test|--reporters=default;--reporters=jest-junit|1|1|3|3||checkJunit"
 )
 
@@ -73,9 +73,9 @@ multiAppTestOptions=(
     "yarn test my-first-app||1|1|3|3|||"
     "yarn test my-second-app||1|1|3|3|||"
     "yarn test my-shared-library||2|2|2|2|||"
-    "yarn test my-first-app|--testNamePattern=^AppComponent should create the app$|1|1|1|3|2||"
-    "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
-    "yarn test my-shared-library|--testPathPattern=src/lib/my-shared-library.component.spec.ts$;--testPathPattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
+    "yarn test my-first-app|--test-name-pattern=^AppComponent should create the app$|1|1|1|3|2||"
+    "yarn test my-shared-library|--test-path-pattern=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
+    "yarn test my-shared-library|--test-path-pattern=src/lib/my-shared-library.component.spec.ts$;--test-path-pattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
     "yarn test my-shared-library|--find-related-tests;src/lib/my-shared-library.service.ts,src/lib/my-shared-library.component.ts|2|2|2|2|||"
 )
 

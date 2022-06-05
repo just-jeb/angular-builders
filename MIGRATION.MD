@@ -1,3 +1,19 @@
+# Migration from version 13 to version 14
+## Custom webpack builder 
+
+ - Node 12 is no longer supported
+
+## Jest builder 
+
+ - Node 12 is no longer supported
+ - Minimal required version of Jest is 28
+ - Command line arguments in camelCase are no longer supported, use kebab-case instead
+ - If you use it with custom configuration, make sure you read [this](https://github.com/thymikee/jest-preset-angular/blob/main/CHANGELOG.md#breaking-changes)
+
+## Bazel builder
+
+ - Node 12 is no longer supported
+
 # Migration from version 12 to version 13
 
 ## Custom webpack builder
