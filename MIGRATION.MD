@@ -8,6 +8,7 @@
  - Node 12 is no longer supported
  - Minimal required version of Jest is 28
  - Command line arguments in camelCase are no longer supported, use kebab-case instead
+ - The default value of `getComputedStyle` global mock is `{}` instead of `{display: 'none', appearance: ['-webkit-appearance']}`
  - If you use it with custom configuration, make sure you read [this](https://github.com/thymikee/jest-preset-angular/blob/main/CHANGELOG.md#breaking-changes)
 
 ## Bazel builder
