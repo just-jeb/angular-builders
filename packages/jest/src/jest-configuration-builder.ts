@@ -33,23 +33,22 @@ function concatArrayProperties(objValue: any[], srcValue: unknown, property: str
   return objValue.concat(srcValue);
 }
 
-export const buildConfiguration = (
-  defaultConfigResolver: DefaultConfigResolver,
-  customConfigResolver: CustomConfigResolver
-) => (projectRoot: Path, workspaceRoot: Path, configPath: string = 'jest.config.js') => {
-  const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
-  const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
-  const globalCustomConfig = customConfigResolver.resolveGlobal(workspaceRoot);
-  const projectCustomConfig = customConfigResolver.resolveForProject(projectRoot, configPath);
+export const buildConfiguration =
+  (defaultConfigResolver: DefaultConfigResolver, customConfigResolver: CustomConfigResolver) =>
+  (projectRoot: Path, workspaceRoot: Path, configPath: string = 'jest.config.js') => {
+    const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
+    const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
+    const globalCustomConfig = customConfigResolver.resolveGlobal(workspaceRoot);
+    const projectCustomConfig = customConfigResolver.resolveForProject(projectRoot, configPath);
 
-  return mergeWith(
-    globalDefaultConfig,
-    projectDefaultConfig,
-    globalCustomConfig,
-    projectCustomConfig,
-    concatArrayProperties
-  );
-};
+    return mergeWith(
+      globalDefaultConfig,
+      projectDefaultConfig,
+      globalCustomConfig,
+      projectCustomConfig,
+      concatArrayProperties
+    );
+  };
 
 export class JestConfigurationBuilder {
   constructor(

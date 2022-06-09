@@ -167,7 +167,7 @@ describe('Build Jest configuration object', () => {
     customConfigResolver.resolveForProject.mockReturnValue({
       globals: {
         'ts-jest': {
-          astTransformers: {}
+          astTransformers: {},
         },
       },
     });
