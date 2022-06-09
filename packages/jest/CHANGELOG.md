@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@13.0.4...@angular-builders/jest@14.0.0-beta.0) (2022-06-09)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** update to Angular CLI 14 and Jest 28
+
+### Bug Fixes
+
+- **jest:** default value for computed style global mock ([60b2005](https://github.com/just-jeb/angular-builders/commit/60b20058e4464e0996c9baa5ec8df7c25ed64393))
+
+### Miscellaneous Chores
+
+- **deps:** update to Angular CLI 14 and Jest 28 ([3b09c27](https://github.com/just-jeb/angular-builders/commit/3b09c27bca0830c4fbd934c9b628df232149a948))
+
 ### [13.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@13.0.4-beta.1...@angular-builders/jest@13.0.4) (2022-05-12)
 
 **Note:** Version bump only for package @angular-builders/jest
