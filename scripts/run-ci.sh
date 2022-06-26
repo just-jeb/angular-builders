@@ -8,7 +8,7 @@ function cleanup {
   cd "$root_path"
   rm -rf "$temp_app_path"
   # Restore the original NPM and Yarn registry URLs and stop Verdaccio
-  stopLocalRegistry
+  #stopLocalRegistry
 }
 
 # Error messages are redirected to stderr

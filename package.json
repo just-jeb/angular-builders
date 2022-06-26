@@ -26,7 +26,7 @@
     "node": "^14.15.0 || >=16.10.0"
   },
   "scripts": {
-    "build:packages": "yarn workspaces foreach --parallel --include '@angular-builders/*' run build",
+    "build:packages": "yarn workspaces foreach -vip --include '@angular-builders/*' run build",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
