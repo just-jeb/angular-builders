@@ -37,7 +37,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: yarn --non-interactive --no-progress --frozen-lockfile
+        run: yarn --immutable
 
       - name: Run CI scripts
         run: yarn ci

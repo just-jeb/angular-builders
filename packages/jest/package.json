@@ -32,7 +32,7 @@
   "builders": "builders.json",
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "tsc",
+    "build": "yarn prebuild && tsc && yarn postbuild",
     "postbuild": "yarn copy && yarn test",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",

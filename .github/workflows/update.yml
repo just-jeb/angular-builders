@@ -33,7 +33,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
-        run: yarn --non-interactive --no-progress --frozen-lockfile
+        run: yarn --immutable
       
       - name: Set Git credentials
         run: | 
@@ -47,7 +47,7 @@ jobs:
         run: yarn update:packages ${{ github.event.inputs.version }}
       
       - name: Install updated dependencies
-        run: yarn --non-interactive --no-progress
+        run: yarn
         
       - name: Commit updates
         run: | 

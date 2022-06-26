@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "tsc",
+    "build": "yarn prebuild && tsc && yarn postbuild",
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy src/schema.json dist",

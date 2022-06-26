@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "tsc && ts-node ../../merge-schemes.ts",
+    "build": "yarn prebuild && tsc && ts-node ../../merge-schemes.ts && yarn postbuild",
     "postbuild": "yarn test && yarn run e2e",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
