@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [14.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.0...@angular-builders/jest@14.0.1-beta.0) (2022-06-27)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+
+
+
+
 ## [14.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.0-beta.0...@angular-builders/jest@14.0.0) (2022-06-13)
 
 **Note:** Version bump only for package @angular-builders/jest
