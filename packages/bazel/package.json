@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "tsc",
+    "build": "yarn prebuild && tsc && yarn postbuild",
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy src/schema.json dist",
@@ -40,6 +40,8 @@
   },
   "devDependencies": {
     "@angular-devkit/core": "^14.0.0",
+    "cpy-cli": "^3.1.1",
+    "quicktype": "^15.0.260",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4"
   }

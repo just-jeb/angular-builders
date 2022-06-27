@@ -15,10 +15,10 @@
     ]
   },
   "resolutions": {
-    "**/@cypress/schematic/@angular-devkit/architect": ">=0.1400.0 < 0.1500.0",
-    "**/@cypress/schematic/@angular-devkit/core": "^14",
-    "**/@cypress/schematic/@angular-devkit/schematics": "^14",
-    "**/@cypress/schematic/@schematics/angular": "^14"
+    "@cypress/schematic/@angular-devkit/architect": ">=0.1400.0 < 0.1500.0",
+    "@cypress/schematic/@angular-devkit/core": "^14",
+    "@cypress/schematic/@angular-devkit/schematics": "^14",
+    "@cypress/schematic/@schematics/angular": "^14"
   },
   "author": "Evgeny Barabanov",
   "license": "MIT",
@@ -26,13 +26,15 @@
     "node": "^14.15.0 || >=16.10.0"
   },
   "scripts": {
-    "build:packages": "lerna run build --scope '@angular-builders/*'",
+    "build:packages": "yarn workspaces foreach -vip --include '@angular-builders/*' run build",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
     "prepare": "husky install",
-    "update:packages": "lerna exec --concurrency 1 --scope '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-package.js'",
-    "update:examples": "lerna exec --concurrency 1 --ignore '@angular-builders/*' 'node \"$LERNA_ROOT_PATH\"/scripts/update-example.js'"
+    "update:package": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-package.js",
+    "update:example": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-example.js",
+    "update:packages": "yarn workspaces foreach --include '@angular-builders/*' run update:package",
+    "update:examples": "yarn workspaces foreach --exclude '@angular-builders/*' run update:example"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.0",
@@ -59,6 +61,5 @@
     "bracketSpacing": true,
     "arrowParens": "avoid",
     "singleQuote": true
-  },
-  "dependencies": {}
+  }
 }
