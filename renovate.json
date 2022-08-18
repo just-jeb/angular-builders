@@ -17,6 +17,11 @@
     {
       "matchPaths": ["examples/**"],
       "rangeStrategy": "pin"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
     }
   ]
 }
