@@ -72,7 +72,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/timestamp@^14.0.1-beta.1, @angular-builders/timestamp@workspace:packages/timestamp":
+"@angular-builders/timestamp@npm:14.0.0":
+  version: 14.0.0
+  resolution: "@angular-builders/timestamp@npm:14.0.0"
+  dependencies:
+    "@angular-devkit/architect": ">=0.1400.0 < 0.1500.0"
+    "@angular-devkit/core": ^14.0.0
+    dateformat: ^5.0.2
+  checksum: bc15697a4e652fef59eee06c187f464bad4669b598fb699ea8991b29b2ae0158b65d8b72ffcb1471b6474466e0c30d34480d5a0868422965e4b31c820c5528bd
+  languageName: node
+  linkType: hard
+
+"@angular-builders/timestamp@workspace:packages/timestamp":
   version: 0.0.0-use.local
   resolution: "@angular-builders/timestamp@workspace:packages/timestamp"
   dependencies:
@@ -16803,7 +16814,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "timestamp-example@workspace:examples/timestamp"
   dependencies:
-    "@angular-builders/timestamp": ^14.0.1-beta.1
+    "@angular-builders/timestamp": 14.0.0
     "@angular-devkit/build-angular": 14.0.4
     "@angular/animations": 14.1.3
     "@angular/cli": 14.0.4
