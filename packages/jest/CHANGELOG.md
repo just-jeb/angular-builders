@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### [14.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.0...@angular-builders/jest@14.0.2-beta.1) (2022-10-18)
+
+
+### Bug Fixes
+
+* remove conflicting commands and aliases ([#1281](https://github.com/just-jeb/angular-builders/issues/1281)) ([38e5aa9](https://github.com/just-jeb/angular-builders/commit/38e5aa96ce823a6264c2c7a43fc63aed27fde671))
+
+
+
 ### [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1...@angular-builders/jest@14.0.2-beta.0) (2022-09-28)
 
 **Note:** Version bump only for package @angular-builders/jest
