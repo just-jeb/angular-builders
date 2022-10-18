@@ -32,10 +32,6 @@
       "description": "Respect the \"browser\" field in package.json when resolving modules. Some packages export different versions based on whether they are operating in node.js or a browser.",
       "type": "boolean"
     },
-    "cache": {
-      "description": "Whether to use the transform cache. Disable the cache using --no-cache.",
-      "type": "boolean"
-    },
     "cacheDirectory": {
       "description": "The directory where Jest should store its cached  dependency information.",
       "type": "string"
@@ -82,7 +78,6 @@
       "type": "boolean"
     },
     "config": {
-      "alias": "c",
       "description": "The path to a jest config file specifying how to find and execute tests. If no rootDir is set in the config, the directory containing the config file is assumed to be the rootDir for the project.This can also be a JSON encoded value which Jest will use as configuration.",
       "type": "string"
     },
