@@ -64,7 +64,7 @@ function checkJunit() {
 }
 
 simpleAppTestOptions=(
-    "yarn test||1|1|3|3|||"
+    "yarn test|--no-cache|1|1|3|3|||"
     "yarn test|--test-name-pattern=^AppComponent should create the app$|1|1|1|3|2||"
     "yarn test|--reporters=default;--reporters=jest-junit|1|1|3|3||checkJunit"
 )

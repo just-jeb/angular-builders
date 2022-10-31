@@ -32,6 +32,10 @@
       "description": "Respect the \"browser\" field in package.json when resolving modules. Some packages export different versions based on whether they are operating in node.js or a browser.",
       "type": "boolean"
     },
+    "cache": {
+      "description": "Whether to use the transform cache. Disable the cache using --no-cache.",
+      "type": "boolean"
+    },
     "cacheDirectory": {
       "description": "The directory where Jest should store its cached  dependency information.",
       "type": "string"
@@ -227,10 +231,6 @@
       "items": {
         "type": "string"
       }
-    },
-    "no-cache": {
-      "description": "An alternative way to specify --cache=false",
-      "type": "boolean"
     },
     "noStackTrace": {
       "description": "Disables stack trace in test results output",
