@@ -57,7 +57,7 @@ root_path=$PWD
 [[ "$OSTYPE" == "linux-gnu"* ]] && Xvfb :99 & 
 [[ "$OSTYPE" == "linux-gnu"* ]] && export DISPLAY=:99
 
-yarn workspaces foreach run ci
+yarn workspaces foreach -vip run ci
 
 pkill Xvfb
 
