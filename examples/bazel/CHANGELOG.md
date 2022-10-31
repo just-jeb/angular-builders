@@ -3,37 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-### [14.0.1](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.4...bazel-example@14.0.1) (2022-08-23)
+## [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1...bazel-example@14.0.2-beta.0) (2022-10-31)
 
 **Note:** Version bump only for package bazel-example
 
+### [14.0.1](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.4...bazel-example@14.0.1) (2022-08-23)
 
-
-
+**Note:** Version bump only for package bazel-example
 
 ### [14.0.1-beta.4](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.3...bazel-example@14.0.1-beta.4) (2022-07-04)
 
 **Note:** Version bump only for package bazel-example
 
-
-
-
-
 ### [14.0.1-beta.3](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.2...bazel-example@14.0.1-beta.3) (2022-07-03)
 
 **Note:** Version bump only for package bazel-example
 
-
-
-
-
 ### [14.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.1...bazel-example@14.0.1-beta.2) (2022-06-27)
 
 **Note:** Version bump only for package bazel-example
-
-
-
-
 
 ### [14.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/bazel-example@14.0.1-beta.0...bazel-example@14.0.1-beta.1) (2022-06-23)
 

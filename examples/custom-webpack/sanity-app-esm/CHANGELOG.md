@@ -3,253 +3,133 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.0.2](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.10...sanity-app-esm@1.0.2) (2022-10-31)
+## [1.0.3-beta.0](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2...sanity-app-esm@1.0.3-beta.0) (2022-10-31)
 
 **Note:** Version bump only for package sanity-app-esm
 
+## [1.0.2](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.10...sanity-app-esm@1.0.2) (2022-10-31)
 
-
-
+**Note:** Version bump only for package sanity-app-esm
 
 ### [1.0.2-beta.10](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.9...sanity-app-esm@1.0.2-beta.10) (2022-10-19)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.2-beta.9](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.8...sanity-app-esm@1.0.2-beta.9) (2022-10-19)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.2-beta.8](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.7...sanity-app-esm@1.0.2-beta.8) (2022-10-19)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.2-beta.7](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.6...sanity-app-esm@1.0.2-beta.7) (2022-10-18)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.2-beta.6](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.5...sanity-app-esm@1.0.2-beta.6) (2022-09-29)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.2-beta.5](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.4...sanity-app-esm@1.0.2-beta.5) (2022-09-29)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.2-beta.4](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.3...sanity-app-esm@1.0.2-beta.4) (2022-09-29)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.2...sanity-app-esm@1.0.2-beta.3) (2022-09-29)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.1...sanity-app-esm@1.0.2-beta.2) (2022-09-28)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.2-beta.0...sanity-app-esm@1.0.2-beta.1) (2022-09-28)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1...sanity-app-esm@1.0.2-beta.0) (2022-09-28)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.20...sanity-app-esm@1.0.1) (2022-08-23)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.20](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.19...sanity-app-esm@1.0.1-beta.20) (2022-08-22)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.19](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.18...sanity-app-esm@1.0.1-beta.19) (2022-08-22)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.18](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.17...sanity-app-esm@1.0.1-beta.18) (2022-08-19)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.17](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.16...sanity-app-esm@1.0.1-beta.17) (2022-08-19)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.16](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.15...sanity-app-esm@1.0.1-beta.16) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.15](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.14...sanity-app-esm@1.0.1-beta.15) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.14](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.13...sanity-app-esm@1.0.1-beta.14) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.13](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.12...sanity-app-esm@1.0.1-beta.13) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.12](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.11...sanity-app-esm@1.0.1-beta.12) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.11](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.10...sanity-app-esm@1.0.1-beta.11) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.10](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.9...sanity-app-esm@1.0.1-beta.10) (2022-08-18)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.9](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.8...sanity-app-esm@1.0.1-beta.9) (2022-07-22)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.8](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.7...sanity-app-esm@1.0.1-beta.8) (2022-07-11)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.7](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.6...sanity-app-esm@1.0.1-beta.7) (2022-07-11)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.6](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.5...sanity-app-esm@1.0.1-beta.6) (2022-07-04)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.5](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.4...sanity-app-esm@1.0.1-beta.5) (2022-07-03)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.4](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.3...sanity-app-esm@1.0.1-beta.4) (2022-07-03)
 
 **Note:** Version bump only for package sanity-app-esm
 
-
-
-
-
 ### [1.0.1-beta.3](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.2...sanity-app-esm@1.0.1-beta.3) (2022-06-27)
 
 **Note:** Version bump only for package sanity-app-esm
-
-
-
-
 
 ### [1.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@1.0.1-beta.1...sanity-app-esm@1.0.1-beta.2) (2022-06-23)
 

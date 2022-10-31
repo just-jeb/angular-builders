@@ -3,261 +3,137 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [14.0.2](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.10...timestamp-example@14.0.2) (2022-10-31)
+## [14.0.3-beta.0](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2...timestamp-example@14.0.3-beta.0) (2022-10-31)
 
 **Note:** Version bump only for package timestamp-example
 
+## [14.0.2](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.10...timestamp-example@14.0.2) (2022-10-31)
 
-
-
+**Note:** Version bump only for package timestamp-example
 
 ### [14.0.2-beta.10](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.9...timestamp-example@14.0.2-beta.10) (2022-10-19)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.2-beta.9](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.8...timestamp-example@14.0.2-beta.9) (2022-10-19)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.2-beta.8](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.7...timestamp-example@14.0.2-beta.8) (2022-10-19)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.2-beta.7](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.6...timestamp-example@14.0.2-beta.7) (2022-10-18)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.2-beta.6](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.5...timestamp-example@14.0.2-beta.6) (2022-09-29)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.2-beta.5](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.4...timestamp-example@14.0.2-beta.5) (2022-09-29)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.2-beta.4](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.3...timestamp-example@14.0.2-beta.4) (2022-09-29)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.2...timestamp-example@14.0.2-beta.3) (2022-09-29)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.1...timestamp-example@14.0.2-beta.2) (2022-09-28)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.2-beta.0...timestamp-example@14.0.2-beta.1) (2022-09-28)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1...timestamp-example@14.0.2-beta.0) (2022-09-28)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.21...timestamp-example@14.0.1) (2022-08-23)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.21](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.20...timestamp-example@14.0.1-beta.21) (2022-08-22)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.20](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.19...timestamp-example@14.0.1-beta.20) (2022-08-22)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.19](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.18...timestamp-example@14.0.1-beta.19) (2022-08-19)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.18](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.17...timestamp-example@14.0.1-beta.18) (2022-08-19)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.17](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.16...timestamp-example@14.0.1-beta.17) (2022-08-19)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.16](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.15...timestamp-example@14.0.1-beta.16) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.15](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.14...timestamp-example@14.0.1-beta.15) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.14](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.13...timestamp-example@14.0.1-beta.14) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.13](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.12...timestamp-example@14.0.1-beta.13) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.12](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.11...timestamp-example@14.0.1-beta.12) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.11](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.10...timestamp-example@14.0.1-beta.11) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.10](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.9...timestamp-example@14.0.1-beta.10) (2022-08-18)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.9](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.8...timestamp-example@14.0.1-beta.9) (2022-07-22)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.8](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.7...timestamp-example@14.0.1-beta.8) (2022-07-11)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.7](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.6...timestamp-example@14.0.1-beta.7) (2022-07-11)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.6](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.5...timestamp-example@14.0.1-beta.6) (2022-07-04)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.5](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.4...timestamp-example@14.0.1-beta.5) (2022-07-03)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.4](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.3...timestamp-example@14.0.1-beta.4) (2022-07-03)
 
 **Note:** Version bump only for package timestamp-example
 
-
-
-
-
 ### [14.0.1-beta.3](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.2...timestamp-example@14.0.1-beta.3) (2022-06-27)
 
 **Note:** Version bump only for package timestamp-example
-
-
-
-
 
 ### [14.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/timestamp-example@14.0.1-beta.1...timestamp-example@14.0.1-beta.2) (2022-06-23)
 
