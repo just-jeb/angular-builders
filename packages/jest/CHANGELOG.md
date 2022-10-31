@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.1...@angular-builders/jest@14.0.2-beta.2) (2022-10-31)
+
+
+### Bug Fixes
+
+* jest no-cache option ([#1290](https://github.com/just-jeb/angular-builders/issues/1290)) ([4cc057c](https://github.com/just-jeb/angular-builders/commit/4cc057cbb46c5a581dd519443a836d54de40d092))
+
+
+
 ### [14.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.0...@angular-builders/jest@14.0.2-beta.1) (2022-10-18)
 
 
