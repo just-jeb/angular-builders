@@ -18,6 +18,24 @@ export const customWebpackConfig = {
           type: 'boolean',
           description: 'Flag that indicates whether to replace duplicate webpack plugins or not',
         },
+        verbose: {
+          type: 'object',
+          description: 'Determines whether to log configuration properties into a console',
+          properties: {
+            properties: {
+              description:
+                "A list of properties to log into a console, for instance, `['plugins', 'mode', 'entry']`",
+              type: 'array',
+              items: {
+                type: 'string',
+              },
+            },
+            serializationDepth: {
+              type: 'number',
+              description: 'The number of times to recurse the object while formatting',
+            },
+          },
+        },
       },
     },
     {
