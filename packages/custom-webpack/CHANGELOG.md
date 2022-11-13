@@ -3,37 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-### [14.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1-beta.2...@angular-builders/custom-webpack@14.0.1) (2022-08-23)
+## [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1...@angular-builders/custom-webpack@14.0.2-beta.0) (2022-11-13)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
+### [14.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1-beta.2...@angular-builders/custom-webpack@14.0.1) (2022-08-23)
 
-
-
+**Note:** Version bump only for package @angular-builders/custom-webpack
 
 ### [14.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1-beta.1...@angular-builders/custom-webpack@14.0.1-beta.2) (2022-08-19)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### [14.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1-beta.0...@angular-builders/custom-webpack@14.0.1-beta.1) (2022-08-18)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
 
-
-
-
-
 ### [14.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.0...@angular-builders/custom-webpack@14.0.1-beta.0) (2022-06-27)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
-
-
-
-
 
 ## [14.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.0-beta.0...@angular-builders/custom-webpack@14.0.0) (2022-06-13)
 
