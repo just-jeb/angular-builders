@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.2-beta.0...@angular-builders/custom-webpack@14.1.0-beta.0) (2022-11-13)
+
+### Features
+
+* **custom-webpack:** provide `verbose` option ([#1307](https://github.com/just-jeb/angular-builders/issues/1307)) ([fb5c228](https://github.com/just-jeb/angular-builders/commit/fb5c2286524a2e6a05dab755d3cd5066168b194a))
+
 ## [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@14.0.1...@angular-builders/custom-webpack@14.0.2-beta.0) (2022-11-13)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
