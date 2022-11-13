@@ -528,7 +528,7 @@ Custom Webpack builder fully supports ESM.
 
 # Verbose Logging
 
-Custom Webpack allows enabling verbose logging for configuration properties. This might be encouraged by providing the `verbose` object in builder options. Given the following example:
+Custom Webpack allows enabling verbose logging for configuration properties. This can be achieved by providing the `verbose` object in builder options. Given the following example:
 
 ```json
 {
