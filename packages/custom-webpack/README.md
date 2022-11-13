@@ -4,6 +4,28 @@
 
 Allow customizing build configuration without ejecting webpack configuration (`ng eject`)
 
+# Table of Contents
+
+- [Usage](#usage)
+  - [For Example](#for-example)
+- [Builders](#builders)
+  - [Custom Webpack `browser`](#custom-webpack-browser)
+  - [Custom Webpack `dev-server`](#custom-webpack-dev-server)
+    - [Example](#example)
+  - [Custom Webpack `server`](#custom-webpack-server)
+  - [Custom Webpack `karma`](#custom-webpack-karma)
+  - [Custom Webpack `extract-i18n`](#custom-webpack-extract-i18n)
+    - [Example](#example-1)
+- [Custom Webpack Config Object](#custom-webpack-config-object)
+  - [Merging Plugins Configuration:](#merging-plugins-configuration-)
+  - [Custom Webpack Promisified Config](#custom-webpack-promisified-config)
+  - [Custom Webpack Config Function](#custom-webpack-config-function)
+- [Index Transform](#index-transform)
+  - [Example](#example-2)
+- [ES Modules (ESM) Support](#es-modules-esm-support)
+- [Verbose Logging](#verbose-logging)
+- [Further Reading](#further-reading)
+
 # This documentation is for the latest major version only
 
 ## Previous versions
@@ -503,6 +525,39 @@ Custom Webpack builder fully supports ESM.
 - For `"type": "commonjs"` (or unspecified type) both `custom-webpack.js` and `index-transform.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-webpack/sanity-app).
 - If you want to use TS config in ESM app, you must set the loader to `ts-node/esm` when running `ng build`. Also, in that case `tsconfig.json` for `ts-node` no longer defaults to `tsConfig` from the `browser` target - you have to specify it manually via environment variable. [Example](../../examples/custom-webpack/sanity-app-esm/package.json#L10).  
   _Note that tsconfig paths are not supported in TS configs within ESM apps. That is because [tsconfig-paths](https://github.com/dividab/tsconfig-paths) do not support ESM._
+
+# Verbose Logging
+
+Custom Webpack allows enabling verbose logging for configuration properties. This can be achieved by providing the `verbose` object in builder options. Given the following example:
+
+```json
+{
+  "builder": "@angular-builders/custom-webpack:browser",
+  "options": {
+    "customWebpackConfig": {
+      "verbose": {
+        "properties": ["entry"]
+      }
+    }
+  }
+}
+```
+
+`properties` is an array of strings that supports individual or deeply nested keys (`output.publicPath` and `plugins[0]` are valid keys). The number of times to recurse the object while formatting before it's logged is controlled by the `serializationDepth` property:
+
+```json
+{
+  "builder": "@angular-builders/custom-webpack:browser",
+  "options": {
+    "customWebpackConfig": {
+      "verbose": {
+        "properties": ["plugins[0]"],
+        "serializationDepth": 5
+      }
+    }
+  }
+}
+```
 
 # Further Reading
 

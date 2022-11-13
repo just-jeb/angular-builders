@@ -1,4 +1,6 @@
+import { inspect } from 'util';
 import { getSystemPath, logging, Path } from '@angular-devkit/core';
+import { get } from 'lodash';
 import { Configuration } from 'webpack';
 import { CustomWebpackBrowserSchema } from './browser';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
@@ -25,7 +27,7 @@ type CustomWebpackConfig =
 export class CustomWebpackBuilder {
   static async buildWebpackConfig(
     root: Path,
-    config: CustomWebpackBuilderConfig,
+    config: CustomWebpackBuilderConfig | null,
     baseWebpackConfig: Configuration,
     buildOptions: any,
     targetOptions: TargetOptions,
@@ -41,26 +43,33 @@ export class CustomWebpackBuilder {
     const configOrFactoryOrPromise = await resolveCustomWebpackConfig(path, tsConfig, logger);
 
     if (typeof configOrFactoryOrPromise === 'function') {
-      // That exported function can be synchronous either
-      // asynchronous. Given the following example:
-      // `module.exports = async (config) => { ... }`
-      return configOrFactoryOrPromise(baseWebpackConfig, buildOptions, targetOptions);
+      // The exported function can return a new configuration synchronously
+      // or return a promise that resolves to a new configuration.
+      const finalWebpackConfig = await configOrFactoryOrPromise(
+        baseWebpackConfig,
+        buildOptions,
+        targetOptions
+      );
+      logConfigProperties(config, finalWebpackConfig, logger);
+      return finalWebpackConfig;
     }
 
-    // The user can also export a `Promise` that resolves `Configuration`
-    // object. Given the following example:
+    // The user can also export a promise that resolves to a `Configuration` object.
+    // Suppose the following example:
     // `module.exports = new Promise(resolve => resolve({ ... }))`
-    // If the user has exported a plain object, like:
-    // `module.exports = { ... }`
-    // then it will promisified and awaited
+    // This is valid both for promise and non-promise cases. If users export
+    // a plain object, for instance, `module.exports = { ... }`, then it will
+    // be wrapped into a promise and also `awaited`.
     const resolvedConfig = await configOrFactoryOrPromise;
 
-    return mergeConfigs(
+    const finalWebpackConfig = mergeConfigs(
       baseWebpackConfig,
       resolvedConfig,
       config.mergeRules,
       config.replaceDuplicatePlugins
     );
+    logConfigProperties(config, finalWebpackConfig, logger);
+    return finalWebpackConfig;
   }
 }
 
@@ -72,4 +81,24 @@ async function resolveCustomWebpackConfig(
   tsNodeRegister(path, tsConfig, logger);
 
   return loadModule(path);
+}
+
+function logConfigProperties(
+  config: CustomWebpackBuilderConfig,
+  webpackConfig: Configuration,
+  logger: logging.LoggerApi
+): void {
+  // There's no reason to log the entire configuration object
+  // since Angular's Webpack configuration is huge by default
+  // and doesn't bring any meaningful context by being printed
+  // entirely. Users can provide a list of properties they want to be logged.
+  if (config.verbose?.properties) {
+    for (const property of config.verbose.properties) {
+      const value = get(webpackConfig, property);
+      if (value) {
+        const message = inspect(value, /* showHidden */ false, config.verbose.serializationDepth);
+        logger.info(message);
+      }
+    }
+  }
 }

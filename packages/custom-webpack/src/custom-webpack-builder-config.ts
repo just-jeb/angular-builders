@@ -6,4 +6,8 @@ export interface CustomWebpackBuilderConfig {
   path?: string;
   mergeRules?: MergeRules;
   replaceDuplicatePlugins?: boolean;
+  verbose?: {
+    properties?: string[];
+    serializationDepth?: number;
+  };
 }
