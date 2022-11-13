@@ -61,7 +61,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
         "architect": {
           ...
           "[architect-target]": {
-            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server|extract-i18n]"
+            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server|extract-i18n]",
             "options": {
               ...
             }
@@ -85,7 +85,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
       "architect": {
         ...
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser"
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             ...
           }
@@ -117,7 +117,7 @@ Builder options:
 "architect": {
   ...
   "build": {
-    "builder": "@angular-builders/custom-webpack:browser"
+    "builder": "@angular-builders/custom-webpack:browser",
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
@@ -186,7 +186,7 @@ Builder options:
 "architect": {
   ...
   "build": {
-    "builder": "@angular-builders/custom-webpack:server"
+    "builder": "@angular-builders/custom-webpack:server",
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js",
@@ -222,7 +222,7 @@ Builder options:
 "architect": {
   ...
   "test": {
-    "builder": "@angular-builders/custom-webpack:karma"
+    "builder": "@angular-builders/custom-webpack:karma",
     "options": {
       "customWebpackConfig": {
         "path": "./extra-webpack.config.js"
@@ -480,7 +480,7 @@ It is useful when you want to transform your `index.html` according to the build
 "architect": {
   ...
   "build": {
-    "builder": "@angular-builders/custom-webpack:browser"
+    "builder": "@angular-builders/custom-webpack:browser",
     "options": {
       "indexTransform": "./index-html-transform.js"
       ...
