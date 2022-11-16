@@ -482,6 +482,10 @@
     "tsConfig": {
       "description": "The path to the TypeScript configuration file.",
       "type": "string"
+    },
+    "shard": {
+      "description": "The test suite shard to execute in a format of (?<shardIndex>\\d+)/(?<shardCount>\\d+).\n\nshardIndex describes which shard to select while shardCount controls the number of shards the suite should be split into.\n\nshardIndex and shardCount have to be 1-based, positive numbers, and shardIndex has to be lower than or equal to shardCount.\n\nWhen shard is specified the configured testSequencer has to implement a shard method.\n\nFor example, to split the suite into three shards, each running one third of the tests:",
+      "type": "string"
     }
   },
   "additionalProperties": { "type": "array", "items": { "type": "string" } }
