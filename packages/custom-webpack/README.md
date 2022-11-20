@@ -129,7 +129,7 @@ Builder options:
       "outputPath": "dist/my-cool-client",
       "index": "src/index.html",
       "main": "src/main.ts",
-      "polyfills": "src/polyfills.ts",
+      "polyfills": ["zone.js"],
       "tsConfig": "src/tsconfig.app.json"
     }
 ```
@@ -228,7 +228,7 @@ Builder options:
         "path": "./extra-webpack.config.js"
       },
       "main": "src/test.ts",
-      "polyfills": "src/polyfills.ts",
+      "polyfills": ["zone.js"],
       "tsConfig": "src/tsconfig.spec.json",
       "karmaConfig": "src/karma.conf.js",
     }

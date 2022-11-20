@@ -23,7 +23,7 @@
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
-    "node": "^14.15.0 || >=16.10.0"
+    "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
   },
   "scripts": {
     "build:packages": "yarn workspaces foreach -vip --include '@angular-builders/*' run build",
