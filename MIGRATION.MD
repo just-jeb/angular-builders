@@ -1,20 +1,16 @@
 # Migration from version 14 to version 15
 
-## Custom webpack builder
+## Custom Webpack builder
 
-- ...
+- No breaking changes (except for updating to Angular 15)
 
 ## Jest builder
 
-- ...
-
-## Bazel builder
-
-- ...
+- No breaking changes (except for updating to Angular 15)
 
 # Migration from version 13 to version 14
 
-## Custom webpack builder
+## Custom Webpack builder
 
 - Node 12 is no longer supported
 
@@ -32,7 +28,7 @@
 
 # Migration from version 12 to version 13
 
-## Custom webpack builder
+## Custom Webpack builder
 
 No breaking changes (except for updating to Angular 13)
 
@@ -45,7 +41,7 @@ No breaking changes (except for updating to Angular 13)
 
 # Migration from version 11 to version 12
 
-## Custom webpack builder
+## Custom Webpack builder
 
 No breaking changes (except for updating to Angular 12)
 
@@ -56,7 +52,7 @@ No breaking changes (except for updating to Angular 12)
 
 # Migration from version 10 to version 11
 
-## Custom webpack builder
+## Custom Webpack builder
 
 1. `mergeStrategies` field in `customWebpackConfig` has been deprecated, use `mergeRules` instead as defined [here](https://github.com/survivejs/webpack-merge#mergewithrules).
 
@@ -100,12 +96,12 @@ If you don't want to invest time in learning how the `mergeRules` work or you ha
 
 # Migration from version 7 to version 8
 
-## Custom webpack builder
+## Custom Webpack builder
 
 1. `index.html` is no longer generated with Webpack. This means if your solution uses Webpack to alter `index.html` it will stop working the moment you upgrade to version 8.  
    Instead you should use [`indexTransform`](https://github.com/just-jeb/angular-builders/blob/master/packages/custom-webpack/README.md#index-transform) property.
 
-## Dev server builder
+## Dev-server builder
 
 1. `@angular-builders/dev-server:generic` has been deprecated. Use [`@angular-builders/custom-webpack:dev-server`](https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack#Custom-webpack-dev-server) instead.
 
