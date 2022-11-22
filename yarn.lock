@@ -26,7 +26,7 @@ __metadata:
     cpy-cli: ^3.1.1
     quicktype: ^15.0.260
     rimraf: ^3.0.2
-    typescript: ^4.6.4
+    typescript: 4.8.2
   languageName: unknown
   linkType: soft
 
@@ -42,7 +42,7 @@ __metadata:
     rimraf: ^3.0.2
     ts-node: ^10.0.0
     tsconfig-paths: ^3.9.0
-    typescript: 4.7.4
+    typescript: 4.8.2
     webpack-merge: ^5.7.3
   peerDependencies:
     "@angular/compiler-cli": ^15.0.0
@@ -76,15 +76,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/timestamp@workspace:packages/timestamp"
   dependencies:
-    "@angular-devkit/architect": ">=0.1400.0 < 0.1500.0"
-    "@angular-devkit/core": ^14.0.0
+    "@angular-devkit/architect": ">=0.1500.0 < 0.1600.0"
+    "@angular-devkit/core": ^15.0.0
     "@types/dateformat": ^5.0.0
     cpy-cli: ^3.1.1
     dateformat: ^5.0.2
     jest: 28.1.3
     quicktype: ^15.0.260
     rimraf: ^3.0.2
-    typescript: 4.7.4
+    typescript: 4.8.2
   languageName: unknown
   linkType: soft
 
@@ -218,7 +218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:14.0.2, @angular-devkit/core@npm:^14.0.0":
+"@angular-devkit/core@npm:14.0.2":
   version: 14.0.2
   resolution: "@angular-devkit/core@npm:14.0.2"
   dependencies:
@@ -16774,16 +16774,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.7.4":
-  version: 4.7.4
-  resolution: "typescript@npm:4.7.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 5750181b1cd7e6482c4195825547e70f944114fb47e58e4aa7553e62f11b3f3173766aef9c281783edfd881f7b8299cf35e3ca8caebe73d8464528c907a164df
-  languageName: node
-  linkType: hard
-
 "typescript@npm:4.8.2":
   version: 4.8.2
   resolution: "typescript@npm:4.8.2"
@@ -16811,16 +16801,6 @@ __metadata:
     tsc: ./bin/tsc
     tsserver: ./bin/tsserver
   checksum: 58ce62fa1c18ba7e241502b52b2d99f2ea7d94f04f43eb69a10a4afcd7745351e7a59e434dc17d3f4dc753576cf817e7aaa7a2e2baad39aa4a744dc2a09dba9f
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@4.7.4#~builtin<compat/typescript>":
-  version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
   languageName: node
   linkType: hard
 
