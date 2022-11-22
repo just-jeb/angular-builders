@@ -1,55 +1,60 @@
 #!/usr/bin/env bash
-set -eE;
+set -eE
 trap 'echo ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND >&2;' ERR
 
 function validateSingleTestRun() {
-    testCommand=$1;
-    testCommandArgsString=$2;
-    suits=$3;
-    suitsTotal=$4;
-    tests=$5;
-    testsTotal=$6;
-    testsSkipped=$7;
-    additionalStep=$8;
+    testCommand=$1
+    testCommandArgsString=$2
+    suits=$3
+    suitsTotal=$4
+    tests=$5
+    testsTotal=$6
+    testsSkipped=$7
+    testsSuitesSkipped=$8
+    additionalStep=$9
 
-    IFS=';' read -ra testCommandArgs <<< "$testCommandArgsString";
-    set -x;
-    ${testCommand} ${ngTestParams} "${testCommandArgs[@]}" 2>&1 | tee tests.log;
-    set +x;
+    IFS=';' read -ra testCommandArgs <<<"$testCommandArgsString"
+    set -x
+    ${testCommand} ${ngTestParams} "${testCommandArgs[@]}" 2>&1 | tee tests.log
+    set +x
     if [[ ! -z ${additionalStep} ]]; then
         ${additionalStep}
     fi
-    testPrefix="Tests:       ";
+    testPrefix="Tests:       "
     if [[ ! -z ${testsSkipped} ]]; then
         echo inside: $7
         testPrefix="${testPrefix}${testsSkipped} skipped, "
     fi
-    set -x;
-    grep -q "Test Suites: ${suits} passed, ${suitsTotal} total" ./tests.log;
-    grep -q "${testPrefix}${tests} passed, ${testsTotal} total" ./tests.log;
-    set +x;
+    testSuitesPrefix="Test Suites: "
+    if [[ ! -z ${testsSuitesSkipped} ]]; then
+        echo inside: $7
+        testSuitesPrefix="${testSuitesPrefix}${testsSuitesSkipped} skipped, "
+    fi
+    set -x
+    grep -q "${testSuitesPrefix}${suits} passed, ${suitsTotal} total" ./tests.log
+    grep -q "${testPrefix}${tests} passed, ${testsTotal} total" ./tests.log
+    set +x
 }
 
 function validateAllTestRuns() {
-    local -n allTests=$1;
-    ngTestParams=$2;
+    local -n allTests=$1
+    ngTestParams=$2
     for testOpt in "${allTests[@]}"; do
-        IFS='|' read -ra testParams <<< "$testOpt";
-        validateSingleTestRun "${testParams[@]}" "${ngTestParams}";
+        IFS='|' read -ra testParams <<<"$testOpt"
+        validateSingleTestRun "${testParams[@]}" "${ngTestParams}"
     done
 }
 
-
 function ciApp() {
-    appDir=$1;
-    local -n testOptions=$2;
-    ngTestParams=$3;
-    packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}");
+    appDir=$1
+    local -n testOptions=$2
+    ngTestParams=$3
+    packagePath=$(realpath --relative-to="$appDir" "$(pwd)/${filename}")
     (
-        cd ${appDir};
+        cd ${appDir}
         validateAllTestRuns testOptions ${ngTestParams}
-        set -x;
-        yarn e2e;
+        set -x
+        yarn e2e
         set +x
     )
 }
@@ -64,9 +69,11 @@ function checkJunit() {
 }
 
 simpleAppTestOptions=(
-    "yarn test|--no-cache|1|1|3|3|||"
-    "yarn test|--test-name-pattern=^AppComponent should create the app$|1|1|1|3|2||"
-    "yarn test|--reporters=default;--reporters=jest-junit|1|1|3|3||checkJunit"
+    "yarn test|--no-cache|2|2|4|4||||"
+    "yarn test|--test-name-pattern=^AppComponent should create the app$|1|1 of 2|1|4|3|1||"
+    "yarn test|--reporters=default;--reporters=jest-junit|2|2|4|4|||checkJunit"
+    "yarn test|--shard=1/2|1|1|1|1|||"
+    "yarn test|--shard=2/2|1|1|3|3|||"
 )
 
 multiAppTestOptions=(
@@ -81,4 +88,3 @@ multiAppTestOptions=(
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
 (ciApp ../../examples/jest/multiple-apps multiAppTestOptions)
-

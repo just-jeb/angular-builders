@@ -3,79 +3,59 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.1.0...@angular-builders/jest@14.1.1-beta.0) (2022-11-17)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [14.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.1.0-beta.0...@angular-builders/jest@14.1.0) (2022-11-16)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [14.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2...@angular-builders/jest@14.1.0-beta.0) (2022-11-16)
+
+### Features
+
+* **jest:** support shard CLI options ([#1314](https://github.com/just-jeb/angular-builders/issues/1314)) ([#1315](https://github.com/just-jeb/angular-builders/issues/1315)) ([7ddad99](https://github.com/just-jeb/angular-builders/commit/7ddad997c39507c97b099907ab63c36fd0bfead2))
+
 ## [14.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.2...@angular-builders/jest@14.0.2) (2022-10-31)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ## [14.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.1...@angular-builders/jest@14.0.2-beta.2) (2022-10-31)
-
 
 ### Bug Fixes
 
 * jest no-cache option ([#1290](https://github.com/just-jeb/angular-builders/issues/1290)) ([4cc057c](https://github.com/just-jeb/angular-builders/commit/4cc057cbb46c5a581dd519443a836d54de40d092))
 
-
-
 ### [14.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.0...@angular-builders/jest@14.0.2-beta.1) (2022-10-18)
-
 
 ### Bug Fixes
 
 * remove conflicting commands and aliases ([#1281](https://github.com/just-jeb/angular-builders/issues/1281)) ([38e5aa9](https://github.com/just-jeb/angular-builders/commit/38e5aa96ce823a6264c2c7a43fc63aed27fde671))
 
-
-
 ### [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1...@angular-builders/jest@14.0.2-beta.0) (2022-09-28)
 
 **Note:** Version bump only for package @angular-builders/jest
-
-
-
-
 
 ### [14.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1-beta.3...@angular-builders/jest@14.0.1) (2022-08-23)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### [14.0.1-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1-beta.2...@angular-builders/jest@14.0.1-beta.3) (2022-08-19)
 
 **Note:** Version bump only for package @angular-builders/jest
-
-
-
-
 
 ### [14.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1-beta.1...@angular-builders/jest@14.0.1-beta.2) (2022-08-18)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### [14.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1-beta.0...@angular-builders/jest@14.0.1-beta.1) (2022-08-18)
 
 **Note:** Version bump only for package @angular-builders/jest
 
-
-
-
-
 ### [14.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.0...@angular-builders/jest@14.0.1-beta.0) (2022-06-27)
 
 **Note:** Version bump only for package @angular-builders/jest
-
-
-
-
 
 ## [14.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.0-beta.0...@angular-builders/jest@14.0.0) (2022-06-13)
 
