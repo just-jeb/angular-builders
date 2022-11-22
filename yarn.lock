@@ -6284,7 +6284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:^7.0.0, cosmiconfig@npm:^7.0.1":
+"cosmiconfig@npm:7.0.1, cosmiconfig@npm:^7.0.0, cosmiconfig@npm:^7.0.1":
   version: 7.0.1
   resolution: "cosmiconfig@npm:7.0.1"
   dependencies:
@@ -6809,10 +6809,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:0.0.981744":
-  version: 0.0.981744
-  resolution: "devtools-protocol@npm:0.0.981744"
-  checksum: 609901bff551f5fbe98e272bdda7269de527e28fab138de371ffd7e9a06fa68ca2eec2e961bd1cd6fd98223ccee562c55b7ce3235d4e37cc8d85d6681bc45593
+"devtools-protocol@npm:0.0.1056733":
+  version: 0.0.1056733
+  resolution: "devtools-protocol@npm:0.0.1056733"
+  checksum: d81b474d656d5cdfa0ec6afb8725e8707ba8b38ad7fc68abe05e5accdef1967a6bc1a1545744c8b69cb22ec5d3b3e5225d4bc0313b6a017c94a32a43f3d2c3d3
   languageName: node
   linkType: hard
 
@@ -8711,7 +8711,7 @@ __metadata:
     karma-coverage: 2.2.0
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.0.0
-    puppeteer: 13.7.0
+    puppeteer: 19.2.2
     rxjs: 7.5.7
     ts-node: 10.9.1
     tslib: 2.4.1
@@ -13772,7 +13772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pkg-dir@npm:4.2.0, pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
+"pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
   version: 4.2.0
   resolution: "pkg-dir@npm:4.2.0"
   dependencies:
@@ -14126,23 +14126,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer@npm:13.7.0":
-  version: 13.7.0
-  resolution: "puppeteer@npm:13.7.0"
+"puppeteer-core@npm:19.2.2":
+  version: 19.2.2
+  resolution: "puppeteer-core@npm:19.2.2"
   dependencies:
     cross-fetch: 3.1.5
     debug: 4.3.4
-    devtools-protocol: 0.0.981744
+    devtools-protocol: 0.0.1056733
     extract-zip: 2.0.1
     https-proxy-agent: 5.0.1
-    pkg-dir: 4.2.0
-    progress: 2.0.3
     proxy-from-env: 1.1.0
     rimraf: 3.0.2
     tar-fs: 2.1.1
     unbzip2-stream: 1.4.3
-    ws: 8.5.0
-  checksum: 4062b3ac3330e70d58095c1e0c5a46cada39a3fc5608e0e0e204448a400aef4d785a3b21d9e7733b2b2dc8cf686a476abf016f05d2e9108b3753dd41d62b9d1c
+    ws: 8.10.0
+  checksum: 5d275456667b57f3fb3caedfa4bc00474bd24f6028e3b1520281404584675dfb5e1b7d2daf6a57f62ca52f71eea899b0cc429aca5b65a9646da8b4588786431c
+  languageName: node
+  linkType: hard
+
+"puppeteer@npm:19.2.2":
+  version: 19.2.2
+  resolution: "puppeteer@npm:19.2.2"
+  dependencies:
+    cosmiconfig: 7.0.1
+    devtools-protocol: 0.0.1056733
+    https-proxy-agent: 5.0.1
+    progress: 2.0.3
+    proxy-from-env: 1.1.0
+    puppeteer-core: 19.2.2
+  checksum: 8b66180ee62e624bd494c5fdcb36e023caca4058a151c30a99e938346c74a33951132c17149b72c90a87cb04ad1a5e220b554d69fd0bcd206345c9983d71edbe
   languageName: node
   linkType: hard
 
@@ -14986,7 +14998,7 @@ __metadata:
     karma-coverage: 2.2.0
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.0.0
-    puppeteer: 13.7.0
+    puppeteer: 19.2.2
     rxjs: 7.5.7
     tslib: 2.4.1
     typescript: 4.8.2
@@ -15020,7 +15032,7 @@ __metadata:
     karma-coverage: 2.2.0
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.0.0
-    puppeteer: 13.7.0
+    puppeteer: 19.2.2
     rxjs: 7.5.7
     ts-node: 10.9.1
     tslib: 2.4.1
@@ -17705,7 +17717,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:8.5.0, ws@npm:^8.2.3, ws@npm:^8.4.2":
+"ws@npm:8.10.0":
+  version: 8.10.0
+  resolution: "ws@npm:8.10.0"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 3a32e15dffe633dd5ce99659793dbcf1440ea25d2da1060c88cbd22efdfb7986a6933e68aaa4b098fc3f1f7870cb386afd378a1ceaca4b31748471576d5a8b52
+  languageName: node
+  linkType: hard
+
+"ws@npm:^8.2.3, ws@npm:^8.4.2":
   version: 8.5.0
   resolution: "ws@npm:8.5.0"
   peerDependencies:
