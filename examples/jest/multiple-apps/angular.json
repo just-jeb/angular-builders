@@ -16,7 +16,9 @@
             "outputPath": "dist/my-first-app",
             "index": "projects/my-first-app/src/index.html",
             "main": "projects/my-first-app/src/main.ts",
-            "polyfills": "projects/my-first-app/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/my-first-app/tsconfig.app.json",
             "assets": [
               "projects/my-first-app/src/favicon.ico",
@@ -139,7 +141,9 @@
             "outputPath": "dist/my-second-app",
             "index": "projects/my-second-app/src/index.html",
             "main": "projects/my-second-app/src/main.ts",
-            "polyfills": "projects/my-second-app/src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "projects/my-second-app/tsconfig.app.json",
             "assets": [
               "projects/my-second-app/src/favicon.ico",

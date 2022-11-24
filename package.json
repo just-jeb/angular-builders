@@ -15,15 +15,15 @@
     ]
   },
   "resolutions": {
-    "@cypress/schematic/@angular-devkit/architect": ">=0.1400.0 < 0.1500.0",
-    "@cypress/schematic/@angular-devkit/core": "^14",
-    "@cypress/schematic/@angular-devkit/schematics": "^14",
-    "@cypress/schematic/@schematics/angular": "^14"
+    "@cypress/schematic/@angular-devkit/architect": ">=0.1500.0 < 0.1600.0",
+    "@cypress/schematic/@angular-devkit/core": "^15",
+    "@cypress/schematic/@angular-devkit/schematics": "^15",
+    "@cypress/schematic/@schematics/angular": "^15"
   },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
-    "node": "^14.15.0 || >=16.10.0"
+    "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
   },
   "scripts": {
     "build:packages": "yarn workspaces foreach -vip --include '@angular-builders/*' run build",

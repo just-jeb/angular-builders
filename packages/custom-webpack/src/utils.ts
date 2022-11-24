@@ -18,8 +18,7 @@ const _tsNodeRegister = (() => {
 
     lastTsConfig = tsConfig;
 
-    // Register ts-node
-    require('ts-node').register({
+    loadTsNode().register({
       project: tsConfig,
       compilerOptions: {
         module: 'CommonJS',
@@ -29,11 +28,15 @@ const _tsNodeRegister = (() => {
       },
     });
 
-    // Register paths in tsConfig
-    const tsconfigPaths = require('tsconfig-paths');
-    const { absoluteBaseUrl: baseUrl, paths } = tsconfigPaths.loadConfig(tsConfig);
-    if (baseUrl && paths) {
-      tsconfigPaths.register({ baseUrl, paths });
+    const tsConfigPaths = loadTsConfigPaths();
+    const result = tsConfigPaths.loadConfig(tsConfig);
+    // The `loadConfig` returns a `ConfigLoaderResult` which must be guarded with
+    // the `resultType` check.
+    if (result.resultType === 'success') {
+      const { absoluteBaseUrl: baseUrl, paths } = result;
+      if (baseUrl && paths) {
+        tsConfigPaths.register({ baseUrl, paths });
+      }
     }
   };
 })();
@@ -44,7 +47,7 @@ const _tsNodeRegister = (() => {
  * @todo tsNodeRegistration: require ts-node if file extension is TypeScript
  */
 export function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
-  if (file && file.endsWith('.ts')) {
+  if (file?.endsWith('.ts')) {
     // Register TS compiler lazily
     _tsNodeRegister(tsConfig, logger);
   }
@@ -112,4 +115,20 @@ export async function loadModule<T>(path: string): Promise<T> {
         throw e;
       }
   }
+}
+
+/**
+ * Loads `ts-node` lazily. Moved to a separate function to declare
+ * a return type, more readable than an inline variant.
+ */
+function loadTsNode(): typeof import('ts-node') {
+  return require('ts-node');
+}
+
+/**
+ * Loads `tsconfig-paths` lazily. Moved to a separate function to declare
+ * a return type, more readable than an inline variant.
+ */
+function loadTsConfigPaths(): typeof import('tsconfig-paths') {
+  return require('tsconfig-paths');
 }
