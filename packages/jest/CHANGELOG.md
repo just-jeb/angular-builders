@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.1.1-beta.0...@angular-builders/jest@15.0.0-beta.0) (2022-11-24)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 15, tsconfig-paths 4 (#1319)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 15, tsconfig-paths 4 ([#1319](https://github.com/just-jeb/angular-builders/issues/1319)) ([dd47762](https://github.com/just-jeb/angular-builders/commit/dd47762b7da037f7b1bf3ebf6f8ebed4a9819ecb))
+
 ## [14.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.1.0...@angular-builders/jest@14.1.1-beta.0) (2022-11-17)
 
 **Note:** Version bump only for package @angular-builders/jest
