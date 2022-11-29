@@ -1,4 +1,5 @@
 import { normalize } from '@angular-devkit/core';
+
 import { JestConfigurationBuilder } from './jest-configuration-builder';
 
 describe('Build Jest configuration object', () => {
@@ -21,25 +22,33 @@ describe('Build Jest configuration object', () => {
     );
   });
 
-  it('Should use project root for resolving the configuration', () => {
+  it('Should use project root for resolving the configuration', async () => {
     const projectRoot = normalize('/my/root');
-    jestConfigurationBuilder.buildConfiguration(projectRoot, normalize('./'), 'jest.config.js');
+    await jestConfigurationBuilder.buildConfiguration(
+      projectRoot,
+      normalize('./'),
+      'jest.config.js'
+    );
     expect(defaultConfigResolver.resolveForProject.mock.calls[0][0]).toEqual(projectRoot);
     expect(customConfigResolver.resolveForProject.mock.calls[0][0]).toEqual(projectRoot);
   });
 
-  it('Should use jest.config.js path if configPath is not provided', () => {
-    jestConfigurationBuilder.buildConfiguration(normalize(''), normalize('./'));
+  it('Should use jest.config.js path if configPath is not provided', async () => {
+    await jestConfigurationBuilder.buildConfiguration(normalize(''), normalize('./'));
     expect(customConfigResolver.resolveForProject.mock.calls[0][1]).toEqual('jest.config.js');
   });
 
-  it('Should use provided configPath when resolving custom project configuration', () => {
+  it('Should use provided configPath when resolving custom project configuration', async () => {
     const jestConfigPath = '../my-jest.config.js';
-    jestConfigurationBuilder.buildConfiguration(normalize(''), normalize('./'), jestConfigPath);
+    await jestConfigurationBuilder.buildConfiguration(
+      normalize(''),
+      normalize('./'),
+      jestConfigPath
+    );
     expect(customConfigResolver.resolveForProject.mock.calls[0][1]).toEqual(jestConfigPath);
   });
 
-  it('Should merge configs in the following order: defaultGlobalConfig <- defaultProjectConfig <- customGlobalConfig <- customProjectConfig', () => {
+  it('Should merge configs in the following order: defaultGlobalConfig <- defaultProjectConfig <- customGlobalConfig <- customProjectConfig', async () => {
     defaultConfigResolver.resolveGlobal.mockReturnValue({
       global: {
         default: 0,
@@ -73,9 +82,9 @@ describe('Build Jest configuration object', () => {
         default: 5,
       },
     });
-    const config = jestConfigurationBuilder.buildConfiguration(
+    const config = await jestConfigurationBuilder.buildConfiguration(
       normalize(''),
-      undefined,
+      normalize('./'),
       normalize('./')
     );
 
@@ -92,7 +101,7 @@ describe('Build Jest configuration object', () => {
     });
   });
 
-  it('Should concat "setupFilesAfterEnv" and "astTransformers" properties only', () => {
+  it('Should concat "setupFilesAfterEnv" and "astTransformers" properties only', async () => {
     defaultConfigResolver.resolveGlobal.mockReturnValue({
       globals: {
         'ts-jest': {
@@ -120,9 +129,9 @@ describe('Build Jest configuration object', () => {
       setupFilesAfterEnv: ['setupC'],
     });
 
-    const config = jestConfigurationBuilder.buildConfiguration(
+    const config = await jestConfigurationBuilder.buildConfiguration(
       normalize(''),
-      undefined,
+      normalize('./'),
       normalize('./')
     );
 
@@ -137,7 +146,7 @@ describe('Build Jest configuration object', () => {
     });
   });
 
-  it('Should work with object style configuration for "astTransformers"', () => {
+  it('Should work with object style configuration for "astTransformers"', async () => {
     defaultConfigResolver.resolveGlobal.mockReturnValue({
       globals: {
         'ts-jest': {
@@ -172,9 +181,9 @@ describe('Build Jest configuration object', () => {
       },
     });
 
-    const config = jestConfigurationBuilder.buildConfiguration(
+    const config = await jestConfigurationBuilder.buildConfiguration(
       normalize(''),
-      undefined,
+      normalize('./'),
       normalize('./')
     );
 
@@ -191,9 +200,13 @@ describe('Build Jest configuration object', () => {
     });
   });
 
-  it('Should call the default config resolver resolveGlobal method', () => {
+  it('Should call the default config resolver resolveGlobal method', async () => {
     const workspaceRoot = normalize('my/workspace/root');
-    jestConfigurationBuilder.buildConfiguration(normalize(''), workspaceRoot, normalize('./'));
+    await jestConfigurationBuilder.buildConfiguration(
+      normalize(''),
+      workspaceRoot,
+      normalize('./')
+    );
     expect(defaultConfigResolver.resolveGlobal).toHaveBeenCalledTimes(1);
   });
 });

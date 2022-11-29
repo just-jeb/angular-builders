@@ -1,6 +1,7 @@
-import { DefaultConfigResolver, testPattern, tsConfigName } from './default-config.resolver';
+import { DefaultConfigResolver, testPattern } from './default-config.resolver';
 import { getSystemPath, normalize } from '@angular-devkit/core';
 
+import { tsConfigName } from './utils';
 import defaultConfig from './jest-config/default-config';
 
 const defaultConfigResolver = new DefaultConfigResolver({});

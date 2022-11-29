@@ -1,5 +1,7 @@
 import { Path, resolve } from '@angular-devkit/core';
 import { isArray, mergeWith } from 'lodash';
+
+import { JestConfig } from './types';
 import { CustomConfigResolver } from './custom-config.resolver';
 import { DefaultConfigResolver } from './default-config.resolver';
 
@@ -33,22 +35,26 @@ function concatArrayProperties(objValue: any[], srcValue: unknown, property: str
   return objValue.concat(srcValue);
 }
 
-export const buildConfiguration =
-  (defaultConfigResolver: DefaultConfigResolver, customConfigResolver: CustomConfigResolver) =>
-  (projectRoot: Path, workspaceRoot: Path, configPath: string = 'jest.config.js') => {
-    const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
-    const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
-    const globalCustomConfig = customConfigResolver.resolveGlobal(workspaceRoot);
-    const projectCustomConfig = customConfigResolver.resolveForProject(projectRoot, configPath);
+const buildConfiguration = async (
+  defaultConfigResolver: DefaultConfigResolver,
+  customConfigResolver: CustomConfigResolver,
+  projectRoot: Path,
+  workspaceRoot: Path,
+  configPath = 'jest.config.js'
+) => {
+  const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
+  const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
+  const globalCustomConfig = await customConfigResolver.resolveGlobal(workspaceRoot);
+  const projectCustomConfig = await customConfigResolver.resolveForProject(projectRoot, configPath);
 
-    return mergeWith(
-      globalDefaultConfig,
-      projectDefaultConfig,
-      globalCustomConfig,
-      projectCustomConfig,
-      concatArrayProperties
-    );
-  };
+  return mergeWith(
+    globalDefaultConfig,
+    projectDefaultConfig,
+    globalCustomConfig,
+    projectCustomConfig,
+    concatArrayProperties
+  );
+};
 
 export class JestConfigurationBuilder {
   constructor(
@@ -56,14 +62,16 @@ export class JestConfigurationBuilder {
     private customConfigResolver: CustomConfigResolver
   ) {}
 
-  buildConfiguration(
+  async buildConfiguration(
     projectRoot: Path,
     workspaceRoot: Path,
-    configPath: string = 'jest.config.js'
-  ): any {
+    configPath = 'jest.config.js'
+  ): Promise<JestConfig> {
     const pathToProject: Path = resolve(workspaceRoot, projectRoot);
 
-    return buildConfiguration(this.defaultConfigResolver, this.customConfigResolver)(
+    return await buildConfiguration(
+      this.defaultConfigResolver,
+      this.customConfigResolver,
       pathToProject,
       workspaceRoot,
       configPath

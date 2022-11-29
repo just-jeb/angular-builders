@@ -1,23 +1,36 @@
-import { getSystemPath, join, Path } from '@angular-devkit/core';
 import { existsSync } from 'fs';
-import { Logger } from '@angular-devkit/core/src/logger';
+import { getSystemPath, join, logging, Path } from '@angular-devkit/core';
+
+import { JestConfig } from './types';
+import { SchemaObject as JestBuilderSchema } from './schema';
+import { getTsConfigPath, loadModule, tsNodeRegister } from './utils';
 
 export class CustomConfigResolver {
-  constructor(private logger: Logger) {}
+  // https://jestjs.io/docs/configuration
+  private allowedExtensions = ['js', 'ts', 'mjs', 'cjs', 'json'];
 
-  resolveGlobal(workspaceRoot: Path): any {
+  constructor(private options: JestBuilderSchema, private logger: logging.LoggerApi) {}
+
+  async resolveGlobal(workspaceRoot: Path): Promise<JestConfig> {
     const packageJsonPath = getSystemPath(join(workspaceRoot, 'package.json'));
     const packageJson = require(packageJsonPath);
-    const workspaceJestConfigPath = getSystemPath(join(workspaceRoot, 'jest.config.js'));
 
-    return (
-      packageJson.jest ||
-      (existsSync(workspaceJestConfigPath) && require(workspaceJestConfigPath)) ||
-      {}
+    if (packageJson.jest) {
+      return packageJson.jest;
+    }
+
+    const tsConfig = getTsConfigPath(workspaceRoot, this.options);
+    const workspaceJestConfigPaths = this.allowedExtensions.map(extension =>
+      getSystemPath(join(workspaceRoot, `jest.config.${extension}`))
     );
+    const workspaceJestConfigPath = workspaceJestConfigPaths.find(path => existsSync(path));
+
+    return workspaceJestConfigPath
+      ? await resolveJestConfig(workspaceJestConfigPath, tsConfig, this.logger)
+      : {};
   }
 
-  resolveForProject(projectRoot: Path, configPath: string) {
+  async resolveForProject(projectRoot: Path, configPath: string): Promise<JestConfig> {
     const jestConfigPath = getSystemPath(join(projectRoot, configPath));
     if (!existsSync(jestConfigPath)) {
       this.logger.warn(
@@ -25,6 +38,16 @@ export class CustomConfigResolver {
       );
       return {};
     }
-    return require(jestConfigPath);
+    const tsConfig = getTsConfigPath(projectRoot, this.options);
+    return await resolveJestConfig(jestConfigPath, tsConfig, this.logger);
   }
+}
+
+async function resolveJestConfig(
+  jestConfigPath: string,
+  tsConfig: string,
+  logger: logging.LoggerApi
+): Promise<JestConfig> {
+  tsNodeRegister(jestConfigPath, tsConfig, logger);
+  return await loadModule(jestConfigPath);
 }
