@@ -32,13 +32,13 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Installation
 
 1. Remove Karma related libraries and files:
-   ```console
-   npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
-   rm ./karma.conf.js ./src/test.ts
+   ```sh
+   $ npm remove karma karma-chrome-launcher karma-coverage-istanbul-reporter karma-jasmine karma-jasmine-html-reporter
+   $ rm ./karma.conf.js ./src/test.ts
    ```
 2. Install the builder (and `jest` if you still haven't):
-   ```console
-   npm i -D jest @types/jest @angular-builders/jest
+   ```sh
+   $ npm i -D jest @types/jest @angular-builders/jest
    ```
 
 ## Updating Typescript configurations
@@ -59,18 +59,19 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Running with Angular CLI
 
 - In your `angular.json`:
-  ```js
+  ```json
   "projects": {
-      ...
-      "[your-project]": {
-           ...
-           "architect": {
-                  ...
-                  "test": {
-                            "builder": "@angular-builders/jest:run"
-                            "options": {
-                                  ... //see below
-                            }
+    "[your-project]": {
+      "architect": {
+        "test": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            // see below
+          }
+        }
+      }
+    }
+  }
   ```
 - Run the tests: `ng test`
 
@@ -80,8 +81,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
 
 ## Builder options
 
-- `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`.
-  The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
+- `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. Other extensions are also supported. The Jest configuration might be written is TypeScript, but you should explicitly specify the path to the `jest.config.ts`. The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
   The way the configurations are merged is as following:
 
   1.  Take the [default configuration](https://github.com/just-jeb/angular-builders/blob/master/packages/jest/src/jest-config/default-config.ts) from the library
@@ -136,7 +136,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Thus, if you want to provide multiple arguments to `find-related-tests` option you should be passing it like this:
 
   ```sh
-  ng test --find-related-tests file1,file2
+  $ ng test --find-related-tests file1,file2
   ```
 
 ## Migrating existing tests to Jest

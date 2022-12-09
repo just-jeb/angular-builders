@@ -43,11 +43,15 @@ export function runJest(
     const optionsConverter = new OptionsConverter();
 
     const { workspaceRoot, projectRoot } = await getRoots(context);
-
-    const configuration = new JestConfigurationBuilder(
+    const builder = new JestConfigurationBuilder(
       new DefaultConfigResolver(options),
-      new CustomConfigResolver(context.logger.createChild('Jest runner'))
-    ).buildConfiguration(projectRoot, workspaceRoot, options.configPath);
+      new CustomConfigResolver(options, context.logger.createChild('Jest runner'))
+    );
+    const configuration = await builder.buildConfiguration(
+      projectRoot,
+      workspaceRoot,
+      options.configPath
+    );
     delete options.configPath;
     const argv = optionsConverter.convertToCliArgs(options);
 

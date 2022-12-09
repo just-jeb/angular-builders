@@ -86,5 +86,10 @@ multiAppTestOptions=(
     "yarn test my-shared-library|--find-related-tests;src/lib/my-shared-library.service.ts,src/lib/my-shared-library.component.ts|2|2|2|2|||"
 )
 
+cd ../../examples/jest/simple-app
+yarn test:ts
+yarn test:esm
+cd ../../../packages/jest
+
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
 (ciApp ../../examples/jest/multiple-apps multiAppTestOptions)

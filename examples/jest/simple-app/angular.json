@@ -90,6 +90,18 @@
           "builder": "@angular-builders/jest:run",
           "options": {}
         },
+        "test-ts-config": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.ts"
+          }
+        },
+        "test-esm-config": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "configPath": "./jest.config.mjs"
+          }
+        },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
