@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.0-beta.4](https://github.com/just-jeb/angular-builders/compare/simple-app@15.0.0-beta.3...simple-app@15.0.0-beta.4) (2022-12-09)
+
+### Features
+
+* **jest:** support Jest config in different formats ([#1325](https://github.com/just-jeb/angular-builders/issues/1325)) ([bc19a54](https://github.com/just-jeb/angular-builders/commit/bc19a5425585fac6d0aa3c8ac4e6b0640a0d2a0c))
+
 ## [15.0.0-beta.3](https://github.com/just-jeb/angular-builders/compare/simple-app@15.0.0-beta.2...simple-app@15.0.0-beta.3) (2022-11-26)
 
 **Note:** Version bump only for package simple-app
