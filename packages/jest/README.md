@@ -97,14 +97,19 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
 - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
-- `globalMocks` - there are 4 global mocks (that lack implementation in JSDom) enabled by default:
+- `globalMocks` - there are 4 global mocks enabled by default:
   `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
-  Their implementation can be found [here](./src/global-mocks).  
+  The mocks implementation can be found [here](./src/global-mocks). 
+  
+  `styleTransform` and `matchMedia` are not implemented in jsdom. 
+  `getComputedStyle` and `doctype` are implemented but do not support 100% of cases. 
+  In the next major release, we'll still provide global mocks for implemented jsdom functions but they won't be enabled by default.
+  
   If you want to disable one or more of these mocks just pass an updated array in options.  
   For example:
   ```json
   "options": {
-    "globalMocks": ["getComputedStyle", "doctype"]
+    "globalMocks": ["styleTransform", "matchMedia"]
   }
   ```
 - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
