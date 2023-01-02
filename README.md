@@ -82,6 +82,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center"><a href="http://alexeagle.github.io"><img src="https://avatars.githubusercontent.com/u/47395?v=4?s=100" width="100px;" alt="Alex Eagle"/><br /><sub><b>Alex Eagle</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alexeagle" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/alan-agius4"><img src="https://avatars.githubusercontent.com/u/17563226?v=4?s=100" width="100px;" alt="Alan Agius"/><br /><sub><b>Alan Agius</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=alan-agius4" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/lme-agicap"><img src="https://avatars.githubusercontent.com/u/116797118?v=4?s=100" width="100px;" alt="lme-agicap"/><br /><sub><b>lme-agicap</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=lme-agicap" title="Code">💻</a></td>
+      <td align="center"><a href="https://github.com/flavianh"><img src="https://avatars.githubusercontent.com/u/5397842?v=4?s=100" width="100px;" alt="Flavian Hautbois"/><br /><sub><b>Flavian Hautbois</b></sub></a><br /><a href="https://github.com/just-jeb/angular-builders/commits?author=flavianh" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
