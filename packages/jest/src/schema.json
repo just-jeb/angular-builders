@@ -104,7 +104,7 @@
       "description": "A list of reporter names that Jest uses when writing coverage reports. Any istanbul reporter can be used.",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": ["string", { "$ref": "#/definitions/reporterConfig" }]
       }
     },
     "coverageThreshold": {
@@ -284,7 +284,7 @@
       "description": "A list of custom reporters for the test suite.",
       "type": "array",
       "items": {
-        "type": "string"
+        "type": ["string", { "$ref": "#/definitions/reporterConfig" }]
       }
     },
     "resetMocks": {
@@ -488,5 +488,14 @@
       "type": "string"
     }
   },
-  "additionalProperties": { "type": "array", "items": { "type": "string" } }
+  "additionalProperties": { "type": "array", "items": { "type": "string" } },
+  "definitions": {
+    "reporterConfig": {
+      "type": "array",
+      "items": [
+        { "type": "string" },
+        { "type": "object" }
+      ]
+    }
+  }
 }
