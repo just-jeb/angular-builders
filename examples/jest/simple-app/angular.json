@@ -102,6 +102,17 @@
             "configPath": "./jest.config.mjs"
           }
         },
+        "test-reporters-config": {
+            "builder": "@angular-builders/jest:run",
+            "options": {
+              "configPath": "./jest.config.ts",
+              "coverageReporters": [
+                "text",
+                ["clover", { "file": "clover.xml" }]
+              ],
+              "reporters": ["summary", "default"]
+            }
+          },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {

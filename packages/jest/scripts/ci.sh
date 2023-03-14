@@ -89,6 +89,7 @@ multiAppTestOptions=(
 cd ../../examples/jest/simple-app
 yarn test:ts
 yarn test:esm
+yarn test:reporters
 cd ../../../packages/jest
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
