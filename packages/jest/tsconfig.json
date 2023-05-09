@@ -1,12 +1,13 @@
 {
   "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "noImplicitAny": false
-  },
-  "files": [
-    "src/index.ts"
-  ],
-  "types": ["jest"],
-  "include": ["src/jest-config", "src/global-mocks"]
+  "files": [],
+  "include": [],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

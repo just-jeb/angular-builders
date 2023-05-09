@@ -4,5 +4,4 @@ export default {
   moduleNameMapper: {
     '\\.(jpg|jpeg|png)$': `${__dirname}/mock-module.js`,
   },
-  globalSetup: 'jest-preset-angular/global-setup',
 };
