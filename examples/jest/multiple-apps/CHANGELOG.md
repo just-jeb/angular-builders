@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/multiple-apps@15.0.1-beta.2...multiple-apps@17.0.0-beta.0) (2023-05-17)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 16 (#1357)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 16 ([#1357](https://github.com/just-jeb/angular-builders/issues/1357)) ([06392ae](https://github.com/just-jeb/angular-builders/commit/06392ae894896f2ba863991e486b57a7abc80c3c))
+
 ## [15.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/multiple-apps@15.0.1-beta.1...multiple-apps@15.0.1-beta.2) (2023-03-14)
 
 **Note:** Version bump only for package multiple-apps

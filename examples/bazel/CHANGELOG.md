@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/bazel-example@15.0.0...bazel-example@17.0.0-beta.0) (2023-05-17)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 16 (#1357)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 16 ([#1357](https://github.com/just-jeb/angular-builders/issues/1357)) ([06392ae](https://github.com/just-jeb/angular-builders/commit/06392ae894896f2ba863991e486b57a7abc80c3c))
+
 ## [15.0.0](https://github.com/just-jeb/angular-builders/compare/bazel-example@15.0.0-beta.1...bazel-example@15.0.0) (2022-12-20)
 
 **Note:** Version bump only for package bazel-example
