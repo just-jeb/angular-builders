@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "noImplicitAny": false
+  },
+  "files": ["src/index.ts"],
+  "types": ["jest"],
+  "include": ["src/jest-config", "src/global-mocks"]
+}

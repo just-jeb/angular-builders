@@ -21,6 +21,9 @@ const getMockFiles = (enabledMocks: string[] = []): string[] =>
   );
 
 export class DefaultConfigResolver {
+  // Exposed publicly for testing purposes.
+  readonly tsJestTransformRegExp = '^.+\\.tsx?$';
+
   constructor(private options: JestBuilderSchema) {}
 
   resolveGlobal(): JestConfig {
@@ -33,14 +36,16 @@ export class DefaultConfigResolver {
 
   resolveForProject(projectRoot: Path): JestConfig {
     return {
-      globals: {
-        'ts-jest': {
-          // Join with the default `tsConfigName` if the `tsConfig` option
-          // is not provided
-          tsconfig: getTsConfigPath(projectRoot, this.options),
-        },
-      },
       testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
+      transform: {
+        [this.tsJestTransformRegExp]: [
+          'ts-jest',
+          {
+            // Join with the default `tsConfigName` if the `tsConfig` option is not provided
+            tsconfig: getTsConfigPath(projectRoot, this.options),
+          },
+        ],
+      },
     };
   }
 }

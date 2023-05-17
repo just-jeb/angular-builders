@@ -1,3 +1,14 @@
+# Migration from version 15 to version 16
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 16)
+
+## Jest builder
+
+1. Jest 29 is required now, refer to its [CHANGELOG](https://github.com/kulshekhar/ts-jest/blob/main/CHANGELOG.md#2900-2022-09-08) for details.
+2. `jest-preset-angular` has been updated to version 13. Make sure you understand the implications and perform all the necessary changes to your code base as described in `jest-preset-angular` [CHANGELOG](https://github.com/thymikee/jest-preset-angular/blob/main/CHANGELOG.md#1300-2023-02-18).
+
 # Migration from version 14 to version 15
 
 ## Custom Webpack builder
