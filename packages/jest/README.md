@@ -12,6 +12,8 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 <details>
   <summary>Click to expand</summary>
 
+- [Version 15](https://github.com/just-jeb/angular-builders/blob/15.x.x/packages/jest/README.md)
+- [Version 14](https://github.com/just-jeb/angular-builders/blob/14.x.x/packages/jest/README.md)
 - [Version 13](https://github.com/just-jeb/angular-builders/blob/13.x.x/packages/jest/README.md)
 - [Version 12](https://github.com/just-jeb/angular-builders/blob/12.x.x/packages/jest/README.md)
 - [Version 11](https://github.com/just-jeb/angular-builders/blob/11.x.x/packages/jest/README.md)
@@ -26,8 +28,8 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 ## Prerequisites
 
-- [Angular CLI 14](https://www.npmjs.com/package/@angular/cli)
-- [Jest 28](https://www.npmjs.com/package/jest)
+- [Angular CLI 16](https://www.npmjs.com/package/@angular/cli)
+- [Jest 29](https://www.npmjs.com/package/jest)
 
 ## Installation
 
@@ -99,19 +101,21 @@ The builder supports multi-project workspaces out of the box, the only thing req
 - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
 - `globalMocks` - there are 4 global mocks enabled by default:
   `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
-  The mocks implementation can be found [here](./src/global-mocks). 
-  
-  `styleTransform` and `matchMedia` are not implemented in jsdom. 
-  `getComputedStyle` and `doctype` are implemented but do not support 100% of cases. 
+  The mocks implementation can be found [here](./src/global-mocks).
+
+  `styleTransform` and `matchMedia` are not implemented in jsdom.
+  `getComputedStyle` and `doctype` are implemented but do not support 100% of cases.
   In the next major release, we'll still provide global mocks for implemented jsdom functions but they won't be enabled by default.
-  
+
   If you want to disable one or more of these mocks just pass an updated array in options.  
   For example:
+
   ```json
   "options": {
     "globalMocks": ["styleTransform", "matchMedia"]
   }
   ```
+
 - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
 
   ```json
@@ -160,9 +164,13 @@ One of the recommendations might require you to [transpile js files through babe
 In this case make sure you add `allowSyntheticDefaultImports` to the `ts-jest` configuration (see [here](https://github.com/7leads/ngx-cookie-service/issues/39) for an explanation of this setting).
 
 ```js
-'ts-jest': {
-  // other options here...
-  allowSyntheticDefaultImports: true
+transform: {
+  '^.+\\.tsx?$': [
+    'ts-jest',
+    {
+      allowSyntheticDefaultImports: true,
+    },
+  ],
 }
 ```
 
@@ -172,13 +180,14 @@ Your final `jest.config.js` file should look something like this:
 const esModules = ['[thir-party-lib]'].join('|');
 
 module.exports = {
-  globals: {
-    'ts-jest': {
-      allowSyntheticDefaultImports: true,
-    },
-  },
   transformIgnorePatterns: [`<rootDir>/node_modules/(?!${esModules})`],
   transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        allowSyntheticDefaultImports: true,
+      },
+    ],
     '^.+\\.js$': 'babel-jest',
   },
 };
