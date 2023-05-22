@@ -366,7 +366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:16.0.1, @angular-devkit/core@npm:^16, @angular-devkit/core@npm:^16.0.0":
+"@angular-devkit/core@npm:16.0.1, @angular-devkit/core@npm:^16.0.0":
   version: 16.0.1
   resolution: "@angular-devkit/core@npm:16.0.1"
   dependencies:
@@ -394,19 +394,6 @@ __metadata:
     ora: 5.4.1
     rxjs: 7.8.1
   checksum: f1406b2298e292e6637096ee26c7db763a7926511b07942699bb4866a01fa6f796c26a7cfb179fae3855de14d7f2ece27ff1bf84dddc6bf3eefa15cf45321c0d
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/schematics@npm:16.0.1, @angular-devkit/schematics@npm:^16":
-  version: 16.0.1
-  resolution: "@angular-devkit/schematics@npm:16.0.1"
-  dependencies:
-    "@angular-devkit/core": 16.0.1
-    jsonc-parser: 3.2.0
-    magic-string: 0.30.0
-    ora: 5.4.1
-    rxjs: 7.8.1
-  checksum: cacec3d24146a64f1ff781588a5a511fe6b4ed9bbeeb4a7934cc5ad5960742fa424a69b1bee7800844af969ad82e9951387d4aeafee5afe3a5bec64d7a54622c
   languageName: node
   linkType: hard
 
@@ -2214,20 +2201,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/schematic@npm:2.3.0":
-  version: 2.3.0
-  resolution: "@cypress/schematic@npm:2.3.0"
+"@cypress/schematic@npm:2.5.0":
+  version: 2.5.0
+  resolution: "@cypress/schematic@npm:2.5.0"
   dependencies:
-    "@angular-devkit/architect": ^0.1402.1
-    "@angular-devkit/core": ^14.2.1
-    "@angular-devkit/schematics": ^14.2.1
-    "@schematics/angular": ^14.2.1
     jsonc-parser: ^3.0.0
     rxjs: ~6.6.0
   peerDependencies:
-    "@angular/cli": ">=12"
-    "@angular/core": ">=12"
-  checksum: be3e7e9d482460512b267a95f5f7fe9027a749c5d9a9757b808f95675e6eacdc5b56576d7c2a26faedf21096cf518a32505c218a261847d9fe05091c23ff3947
+    "@angular/cli": ">=14"
+    "@angular/core": ">=14"
+  checksum: 8ebebea620c141226eff2c2f8769bda340dbad3aede352afcc0728ad133ad4acd5c4fb8461861879f46a79642cc4561cec88b7d5da275168c1067e9d0cb544a7
   languageName: node
   linkType: hard
 
@@ -3393,17 +3376,6 @@ __metadata:
     "@angular-devkit/schematics": 16.0.0
     jsonc-parser: 3.2.0
   checksum: 141b07e3b284724343a2b8428265ea93c079bf6363118a37e2af86b3827406c5e0a32e6dd9186b658c75936c6c2b0147c9696a27dee0ee72a2d0bf9b2eb5f3fb
-  languageName: node
-  linkType: hard
-
-"@schematics/angular@npm:^16":
-  version: 16.0.1
-  resolution: "@schematics/angular@npm:16.0.1"
-  dependencies:
-    "@angular-devkit/core": 16.0.1
-    "@angular-devkit/schematics": 16.0.1
-    jsonc-parser: 3.2.0
-  checksum: c1050eb521d6dc4aa154c75d7010a3c123695f793a3b01c892912d191f95cd8cce90326ef6c533c5b4ec643d8ccdcb97bc32bb79f9f5a1cd9886ea612e4fd546
   languageName: node
   linkType: hard
 
@@ -13890,7 +13862,7 @@ __metadata:
     "@angular/platform-browser": 16.0.0
     "@angular/platform-browser-dynamic": 16.0.0
     "@angular/router": 16.0.0
-    "@cypress/schematic": 2.3.0
+    "@cypress/schematic": 2.5.0
     "@types/jasmine": 4.3.0
     "@types/node": 16.18.3
     cypress: 10.11.0
@@ -15242,7 +15214,7 @@ __metadata:
     "@angular/platform-browser": 16.0.0
     "@angular/platform-browser-dynamic": 16.0.0
     "@angular/router": 16.0.0
-    "@cypress/schematic": 2.3.0
+    "@cypress/schematic": 2.5.0
     "@types/jasmine": 4.3.0
     "@types/node": 16.18.3
     cypress: 10.11.0
