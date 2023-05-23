@@ -3,16 +3,12 @@ import { AppComponent } from './app.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AppComponent', () => {
-  beforeEach(
-    waitForAsync(() => {
-      TestBed.configureTestingModule({
-        declarations: [AppComponent],
-        schemas: [
-          CUSTOM_ELEMENTS_SCHEMA
-        ]
-      }).compileComponents();
-    })
-  );
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    }).compileComponents();
+  }));
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -20,9 +16,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have all the global mocks defined`, () => {
-    expect(window.getComputedStyle).toBeTruthy();
-    expect(document.doctype as any).toEqual('<!DOCTYPE html>');
+  it(`should have all the default global mocks are defined`, () => {
     expect(window.matchMedia).toBeTruthy();
     expect(document.body.style.transform).toBeTruthy();
   });
