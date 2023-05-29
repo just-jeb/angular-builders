@@ -29,7 +29,7 @@
     "build": "yarn prebuild && tsc && yarn postbuild",
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
-    "copy": "cpy src/schema.json dist",
+    "copy": "cpy --flat src/schema.json dist",
     "generate": "quicktype -s schema src/schema.json -o src/schema.ts",
     "ci": "node ./scripts/ci.js"
   },

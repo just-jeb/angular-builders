@@ -37,7 +37,7 @@
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist src/schema.ts",
-    "copy": "cpy src/schema.json dist",
+    "copy": "cpy --flat src/schema.json dist",
     "generate": "quicktype -s schema src/schema.json -o src/schema.ts",
     "ci": "./scripts/ci.sh"
   },
