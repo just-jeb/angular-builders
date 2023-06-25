@@ -2731,7 +2731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:2.4.2":
+"@lerna-lite/cli@npm:2.4.2, @lerna-lite/cli@npm:^2.0.0":
   version: 2.4.2
   resolution: "@lerna-lite/cli@npm:2.4.2"
   dependencies:
@@ -2759,71 +2759,6 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: 58404e737e1f927f3b250dc0c5ea3903d4579399de1048f173037b8e2732c407434753907954fff8328eb7a287796aac3fe79274afe01816e7558971528c1aaa
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/cli@npm:^2.0.0":
-  version: 2.4.1
-  resolution: "@lerna-lite/cli@npm:2.4.1"
-  dependencies:
-    "@lerna-lite/core": 2.4.1
-    "@lerna-lite/init": 2.4.1
-    dedent: ^0.7.0
-    dotenv: ^16.1.4
-    import-local: ^3.1.0
-    load-json-file: ^7.0.1
-    npmlog: ^7.0.1
-    yargs: ^17.7.2
-  peerDependenciesMeta:
-    "@lerna-lite/exec":
-      optional: true
-    "@lerna-lite/list":
-      optional: true
-    "@lerna-lite/publish":
-      optional: true
-    "@lerna-lite/run":
-      optional: true
-    "@lerna-lite/version":
-      optional: true
-    "@lerna-lite/watch":
-      optional: true
-  bin:
-    lerna: dist/cli.js
-  checksum: eb8ab573eea12aeb2b5238a98e4f8a7d72cda28da64c7d320440aee08a692ea8f00067dd446e2900621a62b5bec6c4901ba4101729b57db52e2f39414ef69087
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/core@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@lerna-lite/core@npm:2.4.1"
-  dependencies:
-    "@npmcli/run-script": ^6.0.2
-    chalk: ^5.2.0
-    clone-deep: ^4.0.1
-    config-chain: ^1.1.13
-    cosmiconfig: ^8.2.0
-    dedent: ^0.7.0
-    execa: ^7.1.1
-    fs-extra: ^11.1.1
-    glob-parent: ^6.0.2
-    globby: ^13.1.4
-    inquirer: ^9.2.7
-    is-ci: ^3.0.1
-    json5: ^2.2.3
-    load-json-file: ^7.0.1
-    minimatch: ^9.0.1
-    npm-package-arg: ^10.1.0
-    npmlog: ^7.0.1
-    p-map: ^6.0.0
-    p-queue: ^7.3.4
-    resolve-from: ^5.0.0
-    semver: ^7.5.1
-    slash: ^5.1.0
-    strong-log-transformer: ^2.1.0
-    write-file-atomic: ^5.0.1
-    write-json-file: ^5.0.0
-    write-pkg: ^5.1.0
-  checksum: 5918e9e590e728e4c1468b889e12c3e410020e529f3db624b29f7a691726fc6c6157ce720a04795f8a07df1b9b651598aca28ce49296249ffade18c2e4652b21
   languageName: node
   linkType: hard
 
@@ -2858,18 +2793,6 @@ __metadata:
     write-json-file: ^5.0.0
     write-pkg: ^5.1.0
   checksum: d0ddfd1c66a7153d92bea142a5f44f08d165bdaebe43b7e48d031046854886c7339884f325c85eb32c71445ac538e3343f5398a14aa1b5b9501c432989fe75d4
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/init@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@lerna-lite/init@npm:2.4.1"
-  dependencies:
-    "@lerna-lite/core": 2.4.1
-    fs-extra: ^11.1.1
-    p-map: ^6.0.0
-    write-json-file: ^5.0.0
-  checksum: 6257386a6def9d952b9eff9ca0d63d70be3746d646ee0fde520f22c1e3a0046217b628c1b713a49c1e5ddc04c22f2d72bf19f44e5fe1bff81b621679d7a60348
   languageName: node
   linkType: hard
 
@@ -6725,13 +6648,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^16.1.4":
-  version: 16.1.4
-  resolution: "dotenv@npm:16.1.4"
-  checksum: c1b2e13df4d374a6a29e134c56c7b040ba20500677fe8b9939ea654f3b3badb9aaa0b172e40e4dfa1233a4177dbb8fb79d84cc79a50ac9c9641fe2ad98c14876
-  languageName: node
-  linkType: hard
-
 "dotenv@npm:^16.3.1":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
@@ -8191,7 +8107,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^13.1.1, globby@npm:^13.1.4":
+"globby@npm:^13.1.1":
   version: 13.1.4
   resolution: "globby@npm:13.1.4"
   dependencies:
@@ -13831,7 +13747,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.7, semver@npm:^7.5.1":
+"semver@npm:^7.3.7":
   version: 7.5.1
   resolution: "semver@npm:7.5.1"
   dependencies:
