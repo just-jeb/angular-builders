@@ -10,7 +10,7 @@ describe('Resolve project default configuration', () => {
   it('Should resolve tsconfig relatively to project root', () => {
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
     expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
-      'ts-jest',
+      'jest-preset-angular',
       {
         tsconfig: getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)),
       },
@@ -23,7 +23,7 @@ describe('Resolve project default configuration', () => {
     });
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/project'));
     expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
-      'ts-jest',
+      'jest-preset-angular',
       {
         tsconfig: getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`)),
       },

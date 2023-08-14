@@ -1,5 +1,6 @@
 import { pick } from 'lodash';
 import { getSystemPath, normalize, Path } from '@angular-devkit/core';
+import { defaultTransformerOptions } from 'jest-preset-angular';
 
 import { JestConfig } from './types';
 import { getTsConfigPath } from './utils';
@@ -22,7 +23,7 @@ const getMockFiles = (enabledMocks: string[] = []): string[] =>
 
 export class DefaultConfigResolver {
   // Exposed publicly for testing purposes.
-  readonly tsJestTransformRegExp = '^.+\\.tsx?$';
+  readonly tsJestTransformRegExp = '^.+\\.(ts|js|mjs|html|svg)$';
 
   constructor(private options: JestBuilderSchema) {}
 
@@ -39,8 +40,9 @@ export class DefaultConfigResolver {
       testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
       transform: {
         [this.tsJestTransformRegExp]: [
-          'ts-jest',
+          'jest-preset-angular',
           {
+            ...defaultTransformerOptions,
             // Join with the default `tsConfigName` if the `tsConfig` option is not provided
             tsconfig: getTsConfigPath(projectRoot, this.options),
           },
