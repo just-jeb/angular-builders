@@ -1,6 +1,5 @@
 import { pick } from 'lodash';
 import { getSystemPath, normalize, Path } from '@angular-devkit/core';
-import { defaultTransformerOptions } from 'jest-preset-angular';
 
 import { JestConfig } from './types';
 import { getTsConfigPath } from './utils';
@@ -42,7 +41,8 @@ export class DefaultConfigResolver {
         [this.tsJestTransformRegExp]: [
           'jest-preset-angular',
           {
-            ...defaultTransformerOptions,
+            // see: jest-preset-angular defaultTransformerOptions https://github.com/thymikee/jest-preset-angular/blob/main/src/presets/index.ts#L11
+            stringifyContentPathRegex: '\\.(html|svg)$',
             // Join with the default `tsConfigName` if the `tsConfig` option is not provided
             tsconfig: getTsConfigPath(projectRoot, this.options),
           },

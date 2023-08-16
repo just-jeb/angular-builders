@@ -12,6 +12,7 @@ describe('Resolve project default configuration', () => {
     expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
       'jest-preset-angular',
       {
+        stringifyContentPathRegex: '\\.(html|svg)$',
         tsconfig: getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)),
       },
     ]);
@@ -25,6 +26,7 @@ describe('Resolve project default configuration', () => {
     expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
       'jest-preset-angular',
       {
+        stringifyContentPathRegex: '\\.(html|svg)$',
         tsconfig: getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`)),
       },
     ]);
