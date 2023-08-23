@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/simple-app@17.0.1...simple-app@17.0.2-beta.0) (2023-08-23)
+
+**Note:** Version bump only for package simple-app
+
 ## [17.0.1](https://github.com/just-jeb/angular-builders/compare/simple-app@17.0.1-beta.22...simple-app@17.0.1) (2023-08-23)
 
 **Note:** Version bump only for package simple-app
