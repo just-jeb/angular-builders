@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.1-beta.23](https://github.com/just-jeb/angular-builders/compare/multiple-apps@17.0.1-beta.22...multiple-apps@17.0.1-beta.23) (2023-08-23)
+
+### Bug Fixes
+
+* **jest:** set path to tsconfig correctly ([#1443](https://github.com/just-jeb/angular-builders/issues/1443)) ([2918f2b](https://github.com/just-jeb/angular-builders/commit/2918f2b7b1ea33a0798527b4fcef97b5d6e26a66)), closes [#1408](https://github.com/just-jeb/angular-builders/issues/1408)
+
 ## [17.0.1-beta.22](https://github.com/just-jeb/angular-builders/compare/multiple-apps@17.0.1-beta.21...multiple-apps@17.0.1-beta.22) (2023-07-13)
 
 **Note:** Version bump only for package multiple-apps
