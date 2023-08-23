@@ -22,7 +22,7 @@ const getMockFiles = (enabledMocks: string[] = []): string[] =>
 
 export class DefaultConfigResolver {
   // Exposed publicly for testing purposes.
-  readonly tsJestTransformRegExp = '^.+\\.tsx?$';
+  readonly tsJestTransformRegExp = '^.+\\.(ts|js|mjs|html|svg)$';
 
   constructor(private options: JestBuilderSchema) {}
 
@@ -39,8 +39,10 @@ export class DefaultConfigResolver {
       testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
       transform: {
         [this.tsJestTransformRegExp]: [
-          'ts-jest',
+          'jest-preset-angular',
           {
+            // see: jest-preset-angular defaultTransformerOptions https://github.com/thymikee/jest-preset-angular/blob/main/src/presets/index.ts#L11
+            stringifyContentPathRegex: '\\.(html|svg)$',
             // Join with the default `tsConfigName` if the `tsConfig` option is not provided
             tsconfig: getTsConfigPath(projectRoot, this.options),
           },
