@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.1](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@17.0.1-beta.30...sanity-app-esm@17.0.1) (2023-08-23)
+
+**Note:** Version bump only for package sanity-app-esm
+
 ## [17.0.1-beta.30](https://github.com/just-jeb/angular-builders/compare/sanity-app-esm@17.0.1-beta.29...sanity-app-esm@17.0.1-beta.30) (2023-07-18)
 
 **Note:** Version bump only for package sanity-app-esm
