@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.2-beta.27](https://github.com/just-jeb/angular-builders/compare/multiple-apps@17.0.2-beta.26...multiple-apps@17.0.2-beta.27) (2023-10-13)
+
+**Note:** Version bump only for package multiple-apps
+
 ## [17.0.2-beta.26](https://github.com/just-jeb/angular-builders/compare/multiple-apps@17.0.2-beta.25...multiple-apps@17.0.2-beta.26) (2023-10-07)
 
 **Note:** Version bump only for package multiple-apps
