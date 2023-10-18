@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.2-beta.25](https://github.com/just-jeb/angular-builders/compare/timestamp-example@17.0.2-beta.24...timestamp-example@17.0.2-beta.25) (2023-10-18)
+
+**Note:** Version bump only for package timestamp-example
+
 ## [17.0.2-beta.24](https://github.com/just-jeb/angular-builders/compare/timestamp-example@17.0.2-beta.23...timestamp-example@17.0.2-beta.24) (2023-10-13)
 
 **Note:** Version bump only for package timestamp-example
