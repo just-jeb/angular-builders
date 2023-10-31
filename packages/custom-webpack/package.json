@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/custom-webpack",
-  "version": "16.0.2-beta.2",
+  "version": "17.0.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "dist/index.js",
   "files": [
@@ -40,20 +40,20 @@
   },
   "builders": "builders.json",
   "dependencies": {
-    "@angular-devkit/architect": ">=0.1600.0 < 0.1700.0",
-    "@angular-devkit/build-angular": "^16.0.0",
-    "@angular-devkit/core": "^16.0.0",
+    "@angular-devkit/architect": ">=0.1700.0-rc.2 < 0.1800.0",
+    "@angular-devkit/build-angular": "^17.0.0-rc.2",
+    "@angular-devkit/core": "^17.0.0-rc.2",
     "lodash": "^4.17.15",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^4.1.0",
     "webpack-merge": "^5.7.3"
   },
   "peerDependencies": {
-    "@angular/compiler-cli": "^16.0.0"
+    "@angular/compiler-cli": "^17.0.0-next.0"
   },
   "devDependencies": {
     "jest": "29.7.0",
     "rimraf": "^5.0.0",
-    "typescript": "5.0.4"
+    "typescript": "5.2.2"
   }
 }

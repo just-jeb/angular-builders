@@ -1,3 +1,13 @@
+# Migration from version 16 to version 17
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 17)
+
+## Jest builder
+
+- No breaking changes
+
 # Migration from version 15 to version 16
 
 ## Custom Webpack builder

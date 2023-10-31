@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/jest",
-  "version": "16.0.2-beta.3",
+  "version": "17.0.0",
   "description": "Jest runner for Angular build facade. Allows ng test run with Jest instead of Karma",
   "repository": {
     "type": "git",
@@ -42,17 +42,17 @@
     "ci": "./scripts/ci.sh"
   },
   "dependencies": {
-    "@angular-devkit/architect": ">=0.1600.0 < 0.1700.0",
-    "@angular-devkit/core": "^16.0.0",
+    "@angular-devkit/architect": ">=0.1700.0-rc.2 < 0.1800.0",
+    "@angular-devkit/core": "^17.0.0-rc.2",
     "jest-preset-angular": "13.1.2",
     "lodash": "^4.17.15",
     "tsconfig-paths": "^4.1.0"
   },
   "peerDependencies": {
-    "@angular-devkit/build-angular": "^16.0.0",
-    "@angular/compiler-cli": "^16.0.0",
-    "@angular/core": "^16.0.0",
-    "@angular/platform-browser-dynamic": "^16.0.0",
+    "@angular-devkit/build-angular": "^17.0.0-rc.2",
+    "@angular/compiler-cli": "^17.0.0-next.0",
+    "@angular/core": "^17.0.0-next.0",
+    "@angular/platform-browser-dynamic": "^17.0.0-next.0",
     "jest": ">=29"
   },
   "devDependencies": {
@@ -61,6 +61,6 @@
     "jest": "29.7.0",
     "quicktype": "^15.0.260",
     "rimraf": "^5.0.0",
-    "typescript": "5.0.4"
+    "typescript": "5.2.2"
   }
 }
