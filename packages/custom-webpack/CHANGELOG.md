@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@16.0.2-beta.2...@angular-builders/custom-webpack@17.0.0-beta.0) (2023-11-13)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 17 (#1518)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 17 ([#1518](https://github.com/just-jeb/angular-builders/issues/1518)) ([236d0ac](https://github.com/just-jeb/angular-builders/commit/236d0acf7c46dc70787d8447fad79912a71e880b))
+
 ## [16.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@16.0.2-beta.1...@angular-builders/custom-webpack@16.0.2-beta.2) (2023-09-12)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
