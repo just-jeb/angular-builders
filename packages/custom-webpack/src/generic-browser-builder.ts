@@ -13,7 +13,8 @@ import { getTransforms } from './transform-factories';
 import { json } from '@angular-devkit/core';
 
 export interface BrowserTargetOptions {
-  browserTarget: string;
+  buildTarget?: string;
+  browserTarget?: string;
 }
 
 export type BuilderExecutor<O extends BrowserTargetOptions & json.JsonObject> = (
@@ -31,7 +32,10 @@ export const executeBrowserBasedBuilder =
   ): BuilderHandlerFn<O> =>
   (options: O, context: BuilderContext): ReturnType<typeof executebBuilder> => {
     async function setup() {
-      const browserTarget = targetFromTargetString(options.browserTarget);
+      const browserTarget = targetFromTargetString(
+        // `browserTarget` has been deprecated.
+        options.buildTarget ?? options.browserTarget!
+      );
       return context.getTargetOptions(browserTarget) as unknown as CustomWebpackSchema;
     }
 
