@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/sanity-app@17.0.2-beta.26...sanity-app@18.0.0-beta.1) (2023-11-13)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 17 (#1514)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 17 ([#1514](https://github.com/just-jeb/angular-builders/issues/1514)) ([7a6ca08](https://github.com/just-jeb/angular-builders/commit/7a6ca0832665e659b66702154e6c8eafdb652100))
+
 ## [18.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/sanity-app@17.0.2-beta.26...sanity-app@18.0.0-beta.0) (2023-11-13)
 
 ### ⚠ BREAKING CHANGES
