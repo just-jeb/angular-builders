@@ -3702,7 +3702,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:2.6.0, @lerna-lite/cli@npm:^2.0.0":
+"@lerna-lite/cli@npm:2.6.0":
   version: 2.6.0
   resolution: "@lerna-lite/cli@npm:2.6.0"
   dependencies:
@@ -3730,6 +3730,37 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: 973d65173f2dd431f822f5548f3b6235b402c1fa40c2eeca166e19982e91991deb9fc29787ce1f03c91ff0b9968310650a4f1f6295c8b6e1c4c177316a26639f
+  languageName: node
+  linkType: hard
+
+"@lerna-lite/cli@npm:^2.0.0":
+  version: 2.7.0
+  resolution: "@lerna-lite/cli@npm:2.7.0"
+  dependencies:
+    "@lerna-lite/core": 2.7.0
+    "@lerna-lite/init": 2.7.0
+    dedent: ^1.5.1
+    dotenv: ^16.3.1
+    import-local: ^3.1.0
+    load-json-file: ^7.0.1
+    npmlog: ^7.0.1
+    yargs: ^17.7.2
+  peerDependenciesMeta:
+    "@lerna-lite/exec":
+      optional: true
+    "@lerna-lite/list":
+      optional: true
+    "@lerna-lite/publish":
+      optional: true
+    "@lerna-lite/run":
+      optional: true
+    "@lerna-lite/version":
+      optional: true
+    "@lerna-lite/watch":
+      optional: true
+  bin:
+    lerna: dist/cli.js
+  checksum: 6f82560f0e35fb6ff069e74dadf079949837e0825908c6156013d499a347967734e45a3d7c8299d1a87d4ee2c79bee99494c56262b8658a3796772ddc0b076ad
   languageName: node
   linkType: hard
 
@@ -3767,6 +3798,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lerna-lite/core@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@lerna-lite/core@npm:2.7.0"
+  dependencies:
+    "@npmcli/run-script": ^7.0.2
+    chalk: ^5.3.0
+    clone-deep: ^4.0.1
+    config-chain: ^1.1.13
+    cosmiconfig: ^8.3.6
+    dedent: ^1.5.1
+    execa: ^8.0.1
+    fs-extra: ^11.1.1
+    glob-parent: ^6.0.2
+    globby: ^13.2.2
+    inquirer: ^9.2.12
+    is-ci: ^3.0.1
+    json5: ^2.2.3
+    load-json-file: ^7.0.1
+    minimatch: ^9.0.3
+    npm-package-arg: ^11.0.1
+    npmlog: ^7.0.1
+    p-map: ^6.0.0
+    p-queue: ^7.4.1
+    resolve-from: ^5.0.0
+    semver: ^7.5.4
+    slash: ^5.1.0
+    strong-log-transformer: ^2.1.0
+    write-file-atomic: ^5.0.1
+    write-json-file: ^5.0.0
+    write-pkg: ^6.0.1
+  checksum: 7abe4fcf840ad0bc5a9ba0161fc4fb928ed4af6e9e645252b1cd03427b99894e3cb725f1337c31790ee173d12643a4da32cba906d7f21b96b848905003003485
+  languageName: node
+  linkType: hard
+
 "@lerna-lite/init@npm:2.6.0":
   version: 2.6.0
   resolution: "@lerna-lite/init@npm:2.6.0"
@@ -3776,6 +3841,18 @@ __metadata:
     p-map: ^6.0.0
     write-json-file: ^5.0.0
   checksum: 0eed7b5c4ba88d90948b8f38a431b4844993e913a9a30fbff6eb923c86819ca77ff758ced3ab401f65916b3553598f00f9c789b978c4efc95d4c8a9c5ae7a837
+  languageName: node
+  linkType: hard
+
+"@lerna-lite/init@npm:2.7.0":
+  version: 2.7.0
+  resolution: "@lerna-lite/init@npm:2.7.0"
+  dependencies:
+    "@lerna-lite/core": 2.7.0
+    fs-extra: ^11.1.1
+    p-map: ^6.0.0
+    write-json-file: ^5.0.0
+  checksum: b47e27bc81f0a9f5054bf2dce95992a75836a9208f9f879fa21efb9a54a06c4d48e226094e6260b8969dd08100d6596ed2d6c5bf87a09d3e30d9767c27c9d9f0
   languageName: node
   linkType: hard
 
@@ -3850,6 +3927,15 @@ __metadata:
     uuid: ^9.0.1
     write-json-file: ^5.0.0
   checksum: 158e7d94c5439daadab51be5d14a3953a590d3d38bbf3089584b03dc1055e9de01b777ebcf75e95b1e16da1072aacc493ae390419d982315260144cf872cbe8f
+  languageName: node
+  linkType: hard
+
+"@ljharb/through@npm:^2.3.11":
+  version: 2.3.11
+  resolution: "@ljharb/through@npm:2.3.11"
+  dependencies:
+    call-bind: ^1.0.2
+  checksum: 10502726028b8a4e0b270a2213e546821c04ed8d7fe411009a8e47497e4ae99c57eeb9ff3d13620ebdefd7c856b16fc873f27c433cad60465dc132fb4b997233
   languageName: node
   linkType: hard
 
@@ -4126,6 +4212,19 @@ __metadata:
     read-package-json-fast: ^3.0.0
     which: ^4.0.0
   checksum: 1713dda8bfe8e6ed0c82ca1f061d4deea5e87f4de5595e109d12d3fc1a0a9ada71d42ee5fc436d72c59d6ab3503ef8178a84a425edd355e4cc9c839d095554b8
+  languageName: node
+  linkType: hard
+
+"@npmcli/run-script@npm:^7.0.2":
+  version: 7.0.2
+  resolution: "@npmcli/run-script@npm:7.0.2"
+  dependencies:
+    "@npmcli/node-gyp": ^3.0.0
+    "@npmcli/promise-spawn": ^7.0.0
+    node-gyp: ^10.0.0
+    read-package-json-fast: ^3.0.0
+    which: ^4.0.0
+  checksum: 15bf62b7bbe2dd5f619c445dc32f0f5af2be512dbb09d40b2dabbf9c4fa00c2c3e653834352d3c5e28a9df93800165d8b4236af6ffe896efd075b9685dcc766d
   languageName: node
   linkType: hard
 
@@ -6370,6 +6469,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"call-bind@npm:^1.0.2":
+  version: 1.0.5
+  resolution: "call-bind@npm:1.0.5"
+  dependencies:
+    function-bind: ^1.1.2
+    get-intrinsic: ^1.2.1
+    set-function-length: ^1.1.1
+  checksum: 449e83ecbd4ba48e7eaac5af26fea3b50f8f6072202c2dd7c5a6e7a6308f2421abe5e13a3bbd55221087f76320c5e09f25a8fdad1bab2b77c68ae74d92234ea5
+  languageName: node
+  linkType: hard
+
 "callsites@npm:^3.0.0":
   version: 3.1.0
   resolution: "callsites@npm:3.1.0"
@@ -7778,6 +7888,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"define-data-property@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "define-data-property@npm:1.1.1"
+  dependencies:
+    get-intrinsic: ^1.2.1
+    gopd: ^1.0.1
+    has-property-descriptors: ^1.0.0
+  checksum: a29855ad3f0630ea82e3c5012c812efa6ca3078d5c2aa8df06b5f597c1cde6f7254692df41945851d903e05a1668607b6d34e778f402b9ff9ffb38111f1a3f0d
+  languageName: node
+  linkType: hard
+
 "define-lazy-prop@npm:^2.0.0":
   version: 2.0.0
   resolution: "define-lazy-prop@npm:2.0.0"
@@ -8995,6 +9116,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exponential-backoff@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "exponential-backoff@npm:3.1.1"
+  checksum: 3d21519a4f8207c99f7457287291316306255a328770d320b401114ec8481986e4e467e854cb9914dd965e0a1ca810a23ccb559c642c88f4c7f55c55778a9b48
+  languageName: node
+  linkType: hard
+
 "express@npm:^4.17.3":
   version: 4.18.2
   resolution: "express@npm:4.18.2"
@@ -9686,6 +9814,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-intrinsic@npm:^1.1.3, get-intrinsic@npm:^1.2.1, get-intrinsic@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "get-intrinsic@npm:1.2.2"
+  dependencies:
+    function-bind: ^1.1.2
+    has-proto: ^1.0.1
+    has-symbols: ^1.0.3
+    hasown: ^2.0.0
+  checksum: 447ff0724df26829908dc033b62732359596fcf66027bc131ab37984afb33842d9cd458fd6cecadfe7eac22fd8a54b349799ed334cf2726025c921c7250e7417
+  languageName: node
+  linkType: hard
+
 "get-package-type@npm:^0.1.0":
   version: 0.1.0
   resolution: "get-package-type@npm:0.1.0"
@@ -10022,6 +10162,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gopd@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "gopd@npm:1.0.1"
+  dependencies:
+    get-intrinsic: ^1.1.3
+  checksum: a5ccfb8806e0917a94e0b3de2af2ea4979c1da920bc381667c260e00e7cafdbe844e2cb9c5bcfef4e5412e8bf73bab837285bc35c7ba73aaaf0134d4583393a6
+  languageName: node
+  linkType: hard
+
 "graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.10, graceful-fs@npm:^4.2.11, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
   version: 4.2.11
   resolution: "graceful-fs@npm:4.2.11"
@@ -10081,6 +10230,22 @@ __metadata:
   version: 4.0.0
   resolution: "has-flag@npm:4.0.0"
   checksum: 261a1357037ead75e338156b1f9452c016a37dcd3283a972a30d9e4a87441ba372c8b81f818cd0fbcd9c0354b4ae7e18b9e1afa1971164aef6d18c2b6095a8ad
+  languageName: node
+  linkType: hard
+
+"has-property-descriptors@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "has-property-descriptors@npm:1.0.1"
+  dependencies:
+    get-intrinsic: ^1.2.2
+  checksum: 2bcc6bf6ec6af375add4e4b4ef586e43674850a91ad4d46666d0b28ba8e1fd69e424c7677d24d60f69470ad0afaa2f3197f508b20b0bb7dd99a8ab77ffc4b7c4
+  languageName: node
+  linkType: hard
+
+"has-proto@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "has-proto@npm:1.0.1"
+  checksum: febc5b5b531de8022806ad7407935e2135f1cc9e64636c3916c6842bd7995994ca3b29871ecd7954bd35f9e2986c17b3b227880484d22259e2f8e6ce63fd383e
   languageName: node
   linkType: hard
 
@@ -10657,6 +10822,29 @@ __metadata:
     strip-ansi: ^6.0.1
     wrap-ansi: ^6.2.0
   checksum: af59b422eb6005dac90f6c5e8295013d0611ac5471ff4fbf4ad3e228136e0f41db73af2d5a68e36770f9e31ac203ae1589d35c3e970acbc6110bb5df905928f9
+  languageName: node
+  linkType: hard
+
+"inquirer@npm:^9.2.12":
+  version: 9.2.12
+  resolution: "inquirer@npm:9.2.12"
+  dependencies:
+    "@ljharb/through": ^2.3.11
+    ansi-escapes: ^4.3.2
+    chalk: ^5.3.0
+    cli-cursor: ^3.1.0
+    cli-width: ^4.1.0
+    external-editor: ^3.1.0
+    figures: ^5.0.0
+    lodash: ^4.17.21
+    mute-stream: 1.0.0
+    ora: ^5.4.1
+    run-async: ^3.0.0
+    rxjs: ^7.8.1
+    string-width: ^4.2.3
+    strip-ansi: ^6.0.1
+    wrap-ansi: ^6.2.0
+  checksum: 8c372832367f5adb4bb08a0c3ee3b8b16e83202c125d1a681ece2c0ef2f00a5d7d6589a501fd58a0249b4ad49a8013584ac58ae12a20d29b1c24a0ec450927a5
   languageName: node
   linkType: hard
 
@@ -13605,6 +13793,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-gyp@npm:^10.0.0":
+  version: 10.0.1
+  resolution: "node-gyp@npm:10.0.1"
+  dependencies:
+    env-paths: ^2.2.0
+    exponential-backoff: ^3.1.1
+    glob: ^10.3.10
+    graceful-fs: ^4.2.6
+    make-fetch-happen: ^13.0.0
+    nopt: ^7.0.0
+    proc-log: ^3.0.0
+    semver: ^7.3.5
+    tar: ^6.1.2
+    which: ^4.0.0
+  bin:
+    node-gyp: bin/node-gyp.js
+  checksum: 60a74e66d364903ce02049966303a57f898521d139860ac82744a5fdd9f7b7b3b61f75f284f3bfe6e6add3b8f1871ce305a1d41f775c7482de837b50c792223f
+  languageName: node
+  linkType: hard
+
 "node-gyp@npm:^9.0.0, node-gyp@npm:latest":
   version: 9.3.1
   resolution: "node-gyp@npm:9.3.1"
@@ -15332,7 +15540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"read-pkg@npm:^8.0.0":
+"read-pkg@npm:^8.0.0, read-pkg@npm:^8.1.0":
   version: 8.1.0
   resolution: "read-pkg@npm:8.1.0"
   dependencies:
@@ -16233,6 +16441,18 @@ __metadata:
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
   checksum: 6e65a05f7cf7ebdf8b7c75b101e18c0b7e3dff4940d480efed8aad3a36a4005140b660fa1d804cb8bce911cac290441dc728084a30504d3516ac2ff7ad607b02
+  languageName: node
+  linkType: hard
+
+"set-function-length@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "set-function-length@npm:1.1.1"
+  dependencies:
+    define-data-property: ^1.1.1
+    get-intrinsic: ^1.2.1
+    gopd: ^1.0.1
+    has-property-descriptors: ^1.0.0
+  checksum: c131d7569cd7e110cafdfbfbb0557249b538477624dfac4fc18c376d879672fa52563b74029ca01f8f4583a8acb35bb1e873d573a24edb80d978a7ee607c6e06
   languageName: node
   linkType: hard
 
@@ -17705,6 +17925,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^4.6.0":
+  version: 4.8.1
+  resolution: "type-fest@npm:4.8.1"
+  checksum: faffb32d9ab7fe28c91ca6ee6a69da290b66550e114c3f03dccd1c46d7b8e8e73dec3bd8e39e70be2a8e88ad6460e31eda97f9a314bb929a9010c21a1332f663
+  languageName: node
+  linkType: hard
+
 "type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
@@ -18643,6 +18870,19 @@ __metadata:
     type-fest: ^3.13.0
     write-json-file: ^5.0.0
   checksum: 4af8a88516603ead280827019a6681d0a450e1e57c5626efca57889121cedc3558e7b80c4881c16350f12364d3d31a367f59bc487268635b185d9da4f332bf6b
+  languageName: node
+  linkType: hard
+
+"write-pkg@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "write-pkg@npm:6.0.1"
+  dependencies:
+    deepmerge-ts: ^5.1.0
+    read-pkg: ^8.1.0
+    sort-keys: ^5.0.0
+    type-fest: ^4.6.0
+    write-json-file: ^5.0.0
+  checksum: d482355662774945a7243bea2e03d32bf1173571211646d3793c18df5a41516c2eb35eca2ebbe65563b9d20c643560bd3751ea32ae57aa9144b3f81b79512a60
   languageName: node
   linkType: hard
 
