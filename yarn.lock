@@ -426,6 +426,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular/cli@npm:17.0.0":
+  version: 17.0.0
+  resolution: "@angular/cli@npm:17.0.0"
+  dependencies:
+    "@angular-devkit/architect": 0.1700.0
+    "@angular-devkit/core": 17.0.0
+    "@angular-devkit/schematics": 17.0.0
+    "@schematics/angular": 17.0.0
+    "@yarnpkg/lockfile": 1.1.0
+    ansi-colors: 4.1.3
+    ini: 4.1.1
+    inquirer: 9.2.11
+    jsonc-parser: 3.2.0
+    npm-package-arg: 11.0.1
+    npm-pick-manifest: 9.0.0
+    open: 8.4.2
+    ora: 5.4.1
+    pacote: 17.0.4
+    resolve: 1.22.8
+    semver: 7.5.4
+    symbol-observable: 4.0.0
+    yargs: 17.7.2
+  bin:
+    ng: bin/ng.js
+  checksum: c3398f5099f1ee8ac93d3ab28fe8f3e9592330f0b9fdd64d2e706470cea5519007c324116aa98100d7d640de7ee6444e311d32ea612fa83d08bd09964af5b36c
+  languageName: node
+  linkType: hard
+
 "@angular/cli@npm:17.0.1":
   version: 17.0.1
   resolution: "@angular/cli@npm:17.0.1"
@@ -451,34 +479,6 @@ __metadata:
   bin:
     ng: bin/ng.js
   checksum: f27b3406140ca84a4cca9f0a5a66600b94adecce979e0bb5aa60001fa915808850be986577bdf7f3a4584c9309ef64ba12561f432fbac9978b20ededd6d9ed82
-  languageName: node
-  linkType: hard
-
-"@angular/cli@npm:^17.0.0":
-  version: 17.0.0
-  resolution: "@angular/cli@npm:17.0.0"
-  dependencies:
-    "@angular-devkit/architect": 0.1700.0
-    "@angular-devkit/core": 17.0.0
-    "@angular-devkit/schematics": 17.0.0
-    "@schematics/angular": 17.0.0
-    "@yarnpkg/lockfile": 1.1.0
-    ansi-colors: 4.1.3
-    ini: 4.1.1
-    inquirer: 9.2.11
-    jsonc-parser: 3.2.0
-    npm-package-arg: 11.0.1
-    npm-pick-manifest: 9.0.0
-    open: 8.4.2
-    ora: 5.4.1
-    pacote: 17.0.4
-    resolve: 1.22.8
-    semver: 7.5.4
-    symbol-observable: 4.0.0
-    yargs: 17.7.2
-  bin:
-    ng: bin/ng.js
-  checksum: c3398f5099f1ee8ac93d3ab28fe8f3e9592330f0b9fdd64d2e706470cea5519007c324116aa98100d7d640de7ee6444e311d32ea612fa83d08bd09964af5b36c
   languageName: node
   linkType: hard
 
@@ -5984,7 +5984,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": ^17.0.0
+    "@angular/cli": 17.0.0
   languageName: unknown
   linkType: soft
 
