@@ -389,19 +389,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/schematics@npm:17.0.0":
-  version: 17.0.0
-  resolution: "@angular-devkit/schematics@npm:17.0.0"
-  dependencies:
-    "@angular-devkit/core": 17.0.0
-    jsonc-parser: 3.2.0
-    magic-string: 0.30.5
-    ora: 5.4.1
-    rxjs: 7.8.1
-  checksum: 89322e6d6f78a070063b9690437a19d6f95a7ebc90bf93666a2c1dadfc76907de0993088bfc440d6102b2cfbf2ff3839d80e72319baaad96b705148b69c0f6e3
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/schematics@npm:17.0.1":
   version: 17.0.1
   resolution: "@angular-devkit/schematics@npm:17.0.1"
@@ -423,34 +410,6 @@ __metadata:
   peerDependencies:
     "@angular/core": 17.0.2
   checksum: 6986331b93a788b143f6a2ae08673642706d7046acfadb4f9d558d3da10dc71a4c0ddefbb9bcb2cf56aab1878155532915b1371775089a08c9115e2319f88f5e
-  languageName: node
-  linkType: hard
-
-"@angular/cli@npm:17.0.0":
-  version: 17.0.0
-  resolution: "@angular/cli@npm:17.0.0"
-  dependencies:
-    "@angular-devkit/architect": 0.1700.0
-    "@angular-devkit/core": 17.0.0
-    "@angular-devkit/schematics": 17.0.0
-    "@schematics/angular": 17.0.0
-    "@yarnpkg/lockfile": 1.1.0
-    ansi-colors: 4.1.3
-    ini: 4.1.1
-    inquirer: 9.2.11
-    jsonc-parser: 3.2.0
-    npm-package-arg: 11.0.1
-    npm-pick-manifest: 9.0.0
-    open: 8.4.2
-    ora: 5.4.1
-    pacote: 17.0.4
-    resolve: 1.22.8
-    semver: 7.5.4
-    symbol-observable: 4.0.0
-    yargs: 17.7.2
-  bin:
-    ng: bin/ng.js
-  checksum: c3398f5099f1ee8ac93d3ab28fe8f3e9592330f0b9fdd64d2e706470cea5519007c324116aa98100d7d640de7ee6444e311d32ea612fa83d08bd09964af5b36c
   languageName: node
   linkType: hard
 
@@ -4478,17 +4437,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schematics/angular@npm:17.0.0":
-  version: 17.0.0
-  resolution: "@schematics/angular@npm:17.0.0"
-  dependencies:
-    "@angular-devkit/core": 17.0.0
-    "@angular-devkit/schematics": 17.0.0
-    jsonc-parser: 3.2.0
-  checksum: a4277cd2e9deb5991e6d6383cd852350cdfda970191c5ba00d3316d866dc0eb7d9460492be8e8bdfc762fe1670b49a07881a02e38fdaca454a3e5e8628d379f6
-  languageName: node
-  linkType: hard
-
 "@schematics/angular@npm:17.0.1":
   version: 17.0.1
   resolution: "@schematics/angular@npm:17.0.1"
@@ -5984,7 +5932,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": 17.0.0
+    "@angular/cli": 17.0.1
   languageName: unknown
   linkType: soft
 
