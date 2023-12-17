@@ -64,10 +64,12 @@
               "buildTarget": "sanity-esbuild-app:build:production"
             },
             "esm": {
-              "buildTarget": "sanity-esbuild-app:build:esm"
+              "buildTarget": "sanity-esbuild-app:build:esm",
+              "middlewares": ["esbuild/send-hello-middleware.mjs"]
             },
             "cjs": {
-              "buildTarget": "sanity-esbuild-app:build:cjs"
+              "buildTarget": "sanity-esbuild-app:build:cjs",
+              "middlewares": ["esbuild/send-hello-middleware.js"]
             }
           },
           "defaultConfiguration": "cjs"
