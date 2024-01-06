@@ -3698,38 +3698,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:3.1.0":
-  version: 3.1.0
-  resolution: "@lerna-lite/cli@npm:3.1.0"
-  dependencies:
-    "@lerna-lite/core": 3.1.0
-    "@lerna-lite/init": 3.1.0
-    dedent: ^1.5.1
-    dotenv: ^16.3.1
-    import-local: ^3.1.0
-    load-json-file: ^7.0.1
-    npmlog: ^7.0.1
-    yargs: ^17.7.2
-  peerDependenciesMeta:
-    "@lerna-lite/exec":
-      optional: true
-    "@lerna-lite/list":
-      optional: true
-    "@lerna-lite/publish":
-      optional: true
-    "@lerna-lite/run":
-      optional: true
-    "@lerna-lite/version":
-      optional: true
-    "@lerna-lite/watch":
-      optional: true
-  bin:
-    lerna: dist/cli.js
-  checksum: 4bf3294863d96688416fbf52693dcb956a3b3516bb5ada2accefa5609907c489132a3cb49762a1e58bdf75557f11090b1eabf783ffd9ac2aa1e7e84b8b93cb88
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/cli@npm:^3.0.0":
+"@lerna-lite/cli@npm:3.2.0, @lerna-lite/cli@npm:^3.0.0":
   version: 3.2.0
   resolution: "@lerna-lite/cli@npm:3.2.0"
   dependencies:
@@ -3757,40 +3726,6 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: 5b339fe9d599886dd1fa89d1815288a64ac55ef6ccbe7c4b5f4c4a217b92a5e54d602cfe02e91e68141041f94c52cfb794dbadddf86c49a364e150c0ccdbdd91
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/core@npm:3.1.0":
-  version: 3.1.0
-  resolution: "@lerna-lite/core@npm:3.1.0"
-  dependencies:
-    "@npmcli/run-script": ^7.0.2
-    chalk: ^5.3.0
-    clone-deep: ^4.0.1
-    config-chain: ^1.1.13
-    cosmiconfig: ^9.0.0
-    dedent: ^1.5.1
-    execa: ^8.0.1
-    fs-extra: ^11.2.0
-    glob-parent: ^6.0.2
-    globby: ^14.0.0
-    inquirer: ^9.2.12
-    is-ci: ^3.0.1
-    json5: ^2.2.3
-    load-json-file: ^7.0.1
-    minimatch: ^9.0.3
-    npm-package-arg: ^11.0.1
-    npmlog: ^7.0.1
-    p-map: ^7.0.0
-    p-queue: ^8.0.0
-    resolve-from: ^5.0.0
-    semver: ^7.5.4
-    slash: ^5.1.0
-    strong-log-transformer: ^2.1.0
-    write-file-atomic: ^5.0.1
-    write-json-file: ^5.0.0
-    write-pkg: ^6.0.1
-  checksum: cddea82862b8c9162083333622a7d5e5380a6ac669045fac02d048f0ce30847ded168589a63cccf1361d8633e7ef03a12f6f58e098b598acdb376f0241008f00
   languageName: node
   linkType: hard
 
@@ -3828,18 +3763,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/init@npm:3.1.0":
-  version: 3.1.0
-  resolution: "@lerna-lite/init@npm:3.1.0"
-  dependencies:
-    "@lerna-lite/core": 3.1.0
-    fs-extra: ^11.2.0
-    p-map: ^7.0.0
-    write-json-file: ^5.0.0
-  checksum: a5b9ab78387df1a6f0ad820548e5e2133b9110f6644d449c960df37955bdf4bd7f94e1c2d9abedf3cbf73dca80f1402ddabc365fa51563f4677aeb26bcb7c583
-  languageName: node
-  linkType: hard
-
 "@lerna-lite/init@npm:3.2.0":
   version: 3.2.0
   resolution: "@lerna-lite/init@npm:3.2.0"
@@ -3853,12 +3776,12 @@ __metadata:
   linkType: hard
 
 "@lerna-lite/publish@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "@lerna-lite/publish@npm:3.1.0"
+  version: 3.2.0
+  resolution: "@lerna-lite/publish@npm:3.2.0"
   dependencies:
-    "@lerna-lite/cli": 3.1.0
-    "@lerna-lite/core": 3.1.0
-    "@lerna-lite/version": 3.1.0
+    "@lerna-lite/cli": 3.2.0
+    "@lerna-lite/core": 3.2.0
+    "@lerna-lite/version": 3.2.0
     "@npmcli/arborist": ^7.2.2
     byte-size: ^8.1.1
     chalk: ^5.3.0
@@ -3873,7 +3796,7 @@ __metadata:
     npm-packlist: ^8.0.1
     npm-registry-fetch: ^16.1.0
     npmlog: ^7.0.1
-    p-map: ^7.0.0
+    p-map: ^7.0.1
     p-pipe: ^4.0.0
     pacote: ^17.0.5
     pify: ^6.1.0
@@ -3882,16 +3805,16 @@ __metadata:
     ssri: ^10.0.5
     tar: ^6.2.0
     temp-dir: ^3.0.0
-  checksum: 133439e33c2e9a10a3cabcf11e50e0b4f613384859b4405c58e9c2addc6bbeb59e141436b5eee64db4ce9a1d207e5d668feb6768c1b8ce9306b7134dc533d88c
+  checksum: 64f7dcc5d71915e244e87cf542947a73b712227a5978325f9cd8b7170c02f8df942823aa758c678f71d7efba296633704909940b02ad82db88787a5a500a8603
   languageName: node
   linkType: hard
 
-"@lerna-lite/version@npm:3.1.0":
-  version: 3.1.0
-  resolution: "@lerna-lite/version@npm:3.1.0"
+"@lerna-lite/version@npm:3.2.0":
+  version: 3.2.0
+  resolution: "@lerna-lite/version@npm:3.2.0"
   dependencies:
-    "@lerna-lite/cli": 3.1.0
-    "@lerna-lite/core": 3.1.0
+    "@lerna-lite/cli": 3.2.0
+    "@lerna-lite/core": 3.2.0
     "@octokit/plugin-enterprise-rest": ^6.0.1
     "@octokit/rest": ^20.0.2
     chalk: ^5.3.0
@@ -3903,7 +3826,7 @@ __metadata:
     dedent: ^1.5.1
     fs-extra: ^11.2.0
     get-stream: ^8.0.1
-    git-url-parse: ^13.1.1
+    git-url-parse: ^14.0.0
     graceful-fs: ^4.2.11
     is-stream: ^3.0.0
     load-json-file: ^7.0.1
@@ -3913,7 +3836,7 @@ __metadata:
     node-fetch: ^3.3.2
     npm-package-arg: ^11.0.1
     npmlog: ^7.0.1
-    p-map: ^7.0.0
+    p-map: ^7.0.1
     p-pipe: ^4.0.0
     p-reduce: ^3.0.0
     pify: ^6.1.0
@@ -3922,7 +3845,7 @@ __metadata:
     temp-dir: ^3.0.0
     uuid: ^9.0.1
     write-json-file: ^5.0.0
-  checksum: c8991418920a3dea4b908fe426c7f9266bee5f481a32bb1f3ef22e3be532a9744f11ee11abdb4e0f492bd2efd4515adeac2554a260759c45cc6154044e05199a
+  checksum: 95eab6059b613c132b8f430beb91e4dd448c7d9da668d2e8ec996b6a5b1844974671b07fac588209367b451b124d4c278555185c165957e248f32f3c501e2121
   languageName: node
   linkType: hard
 
@@ -9870,12 +9793,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"git-url-parse@npm:^13.1.1":
-  version: 13.1.1
-  resolution: "git-url-parse@npm:13.1.1"
+"git-url-parse@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "git-url-parse@npm:14.0.0"
   dependencies:
     git-up: ^7.0.0
-  checksum: 8a6111814f4dfff304149b22c8766dc0a90c10e4ea5b5d103f7c3f14b0a711c7b20fc5a9e03c0e2d29123486ac648f9e19f663d8132f69549bee2de49ee96989
+  checksum: b011c5de652e60e5f19de9815d1b78b2f725deb07e73d1b9ff8ca6657406d0a6c691fbe4460017822676a80635f93099345cadbd06361b76f53c4556265d3e48
   languageName: node
   linkType: hard
 
@@ -14247,13 +14170,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-map@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "p-map@npm:7.0.0"
-  checksum: a2ab53c2bfc26a583e81320ffda5a645810aa5a6fddcb7531711e0905c237d62396bc74ba8fc7845c46e69aabf8adbf8401caca0e3fed71c01d4d7b9ce985837
-  languageName: node
-  linkType: hard
-
 "p-map@npm:^7.0.1":
   version: 7.0.1
   resolution: "p-map@npm:7.0.1"
@@ -14265,16 +14181,6 @@ __metadata:
   version: 4.0.0
   resolution: "p-pipe@npm:4.0.0"
   checksum: d2638c08e15e049e37835f3d999f0063ecd063ccac45a90925701c604f342ca376c8373ecf945e322f5112cc630644ef99ec55084e4eeb70c90cff9237b89296
-  languageName: node
-  linkType: hard
-
-"p-queue@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "p-queue@npm:8.0.0"
-  dependencies:
-    eventemitter3: ^5.0.1
-    p-timeout: ^6.1.2
-  checksum: bdbe608b628b518d8ebe4ae2cf8f3e55107d29858c467fdae653ab2f7ff51e42aa6b4cba6b3314dce32efab53ace0f4b4ade712acc061a996adcafb7dfa36896
   languageName: node
   linkType: hard
 
