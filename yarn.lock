@@ -3698,38 +3698,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:3.2.0":
-  version: 3.2.0
-  resolution: "@lerna-lite/cli@npm:3.2.0"
-  dependencies:
-    "@lerna-lite/core": 3.2.0
-    "@lerna-lite/init": 3.2.0
-    dedent: ^1.5.1
-    dotenv: ^16.3.1
-    import-local: ^3.1.0
-    load-json-file: ^7.0.1
-    npmlog: ^7.0.1
-    yargs: ^17.7.2
-  peerDependenciesMeta:
-    "@lerna-lite/exec":
-      optional: true
-    "@lerna-lite/list":
-      optional: true
-    "@lerna-lite/publish":
-      optional: true
-    "@lerna-lite/run":
-      optional: true
-    "@lerna-lite/version":
-      optional: true
-    "@lerna-lite/watch":
-      optional: true
-  bin:
-    lerna: dist/cli.js
-  checksum: 5b339fe9d599886dd1fa89d1815288a64ac55ef6ccbe7c4b5f4c4a217b92a5e54d602cfe02e91e68141041f94c52cfb794dbadddf86c49a364e150c0ccdbdd91
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/cli@npm:^3.0.0":
+"@lerna-lite/cli@npm:3.2.1, @lerna-lite/cli@npm:^3.0.0":
   version: 3.2.1
   resolution: "@lerna-lite/cli@npm:3.2.1"
   dependencies:
@@ -3757,40 +3726,6 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: bf5bf97f78e9078e2b48e80273d310034ace09fa8a7822ec9491c37bf420bc7a9fad006763d50cba15b8e8c8a2faf7dd38f7469f9ef032afbcedd8794e7262eb
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/core@npm:3.2.0":
-  version: 3.2.0
-  resolution: "@lerna-lite/core@npm:3.2.0"
-  dependencies:
-    "@npmcli/run-script": ^7.0.3
-    chalk: ^5.3.0
-    clone-deep: ^4.0.1
-    config-chain: ^1.1.13
-    cosmiconfig: ^9.0.0
-    dedent: ^1.5.1
-    execa: ^8.0.1
-    fs-extra: ^11.2.0
-    glob-parent: ^6.0.2
-    globby: ^14.0.0
-    inquirer: ^9.2.12
-    is-ci: ^3.0.1
-    json5: ^2.2.3
-    load-json-file: ^7.0.1
-    minimatch: ^9.0.3
-    npm-package-arg: ^11.0.1
-    npmlog: ^7.0.1
-    p-map: ^7.0.1
-    p-queue: ^8.0.1
-    resolve-from: ^5.0.0
-    semver: ^7.5.4
-    slash: ^5.1.0
-    strong-log-transformer: ^2.1.0
-    write-file-atomic: ^5.0.1
-    write-json-file: ^5.0.0
-    write-pkg: ^6.0.1
-  checksum: c4e1c63f427308b9caad537a29cd668270d265e895a2c6f381c14759a624e008ad0ce859b44762a358682e321adcef508dc812f7a400808594d92cf84df11549
   languageName: node
   linkType: hard
 
@@ -3828,18 +3763,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/init@npm:3.2.0":
-  version: 3.2.0
-  resolution: "@lerna-lite/init@npm:3.2.0"
-  dependencies:
-    "@lerna-lite/core": 3.2.0
-    fs-extra: ^11.2.0
-    p-map: ^7.0.1
-    write-json-file: ^5.0.0
-  checksum: 4e0fefce2913c0daa07b49bf95a3a604422266d0f0b210edcb29775e04ec0b2f65c769ff2a52836b9b0be533aa3c2e8008a6da53172705afa4bb8dac34714ff6
-  languageName: node
-  linkType: hard
-
 "@lerna-lite/init@npm:3.2.1":
   version: 3.2.1
   resolution: "@lerna-lite/init@npm:3.2.1"
@@ -3853,13 +3776,13 @@ __metadata:
   linkType: hard
 
 "@lerna-lite/publish@npm:^3.0.0":
-  version: 3.2.0
-  resolution: "@lerna-lite/publish@npm:3.2.0"
+  version: 3.2.1
+  resolution: "@lerna-lite/publish@npm:3.2.1"
   dependencies:
-    "@lerna-lite/cli": 3.2.0
-    "@lerna-lite/core": 3.2.0
-    "@lerna-lite/version": 3.2.0
-    "@npmcli/arborist": ^7.2.2
+    "@lerna-lite/cli": 3.2.1
+    "@lerna-lite/core": 3.2.1
+    "@lerna-lite/version": 3.2.1
+    "@npmcli/arborist": ^7.3.0
     byte-size: ^8.1.1
     chalk: ^5.3.0
     columnify: ^1.6.0
@@ -3870,7 +3793,7 @@ __metadata:
     libnpmpublish: ^9.0.3
     normalize-path: ^3.0.0
     npm-package-arg: ^11.0.1
-    npm-packlist: ^8.0.1
+    npm-packlist: ^8.0.2
     npm-registry-fetch: ^16.1.0
     npmlog: ^7.0.1
     p-map: ^7.0.1
@@ -3882,16 +3805,16 @@ __metadata:
     ssri: ^10.0.5
     tar: ^6.2.0
     temp-dir: ^3.0.0
-  checksum: 64f7dcc5d71915e244e87cf542947a73b712227a5978325f9cd8b7170c02f8df942823aa758c678f71d7efba296633704909940b02ad82db88787a5a500a8603
+  checksum: f7f61615e6e990d71afde1e8770bb60104d9b193b6b854687b777a10b61d2f097a84ab051ab1a7c35686ffed7203b74c9115ddf1798eae442f63e023ca72aaba
   languageName: node
   linkType: hard
 
-"@lerna-lite/version@npm:3.2.0":
-  version: 3.2.0
-  resolution: "@lerna-lite/version@npm:3.2.0"
+"@lerna-lite/version@npm:3.2.1":
+  version: 3.2.1
+  resolution: "@lerna-lite/version@npm:3.2.1"
   dependencies:
-    "@lerna-lite/cli": 3.2.0
-    "@lerna-lite/core": 3.2.0
+    "@lerna-lite/cli": 3.2.1
+    "@lerna-lite/core": 3.2.1
     "@octokit/plugin-enterprise-rest": ^6.0.1
     "@octokit/rest": ^20.0.2
     chalk: ^5.3.0
@@ -3922,7 +3845,7 @@ __metadata:
     temp-dir: ^3.0.0
     uuid: ^9.0.1
     write-json-file: ^5.0.0
-  checksum: 95eab6059b613c132b8f430beb91e4dd448c7d9da668d2e8ec996b6a5b1844974671b07fac588209367b451b124d4c278555185c165957e248f32f3c501e2121
+  checksum: 01c5f1ed0bc5111aa9ebab980a7dcc560fb3fad408a6b7d0dd4f6248e236f618fde83eae47788a5071795742e3a91ad21f6ef966fdcf3b752a8abe269aaaf9d0
   languageName: node
   linkType: hard
 
@@ -4027,9 +3950,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@npmcli/arborist@npm:^7.2.2":
-  version: 7.2.2
-  resolution: "@npmcli/arborist@npm:7.2.2"
+"@npmcli/arborist@npm:^7.3.0":
+  version: 7.3.0
+  resolution: "@npmcli/arborist@npm:7.3.0"
   dependencies:
     "@isaacs/string-locale-compare": ^1.1.0
     "@npmcli/fs": ^3.1.0
@@ -4066,7 +3989,7 @@ __metadata:
     walk-up-path: ^3.0.1
   bin:
     arborist: bin/index.js
-  checksum: 0300694d7ca7f8b409df431e50272251cd29e78c2f45c1e4937a94f44dd9d82f163ed680b42f4053426e805775fde4d800220bde68e8c7942b20ccb7a6d043cb
+  checksum: a407fc48db726abada3053dc422a86decf08da7200d72333dd6218d2e80b7c3cd6b3bd51e123bbc64d227ff0efd488ec09409763d73147b78ad71f75576a9e4a
   languageName: node
   linkType: hard
 
@@ -13832,12 +13755,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-packlist@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "npm-packlist@npm:8.0.1"
+"npm-packlist@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "npm-packlist@npm:8.0.2"
   dependencies:
     ignore-walk: ^6.0.4
-  checksum: f271c564c3bd196916a0a82e88f15be29d4ba2db714180d2214515a3852af1575ec86f81be88a086210ab657f9b1b7fcce40181ccc61d0f616ad859ea7502009
+  checksum: c75ae66b285503409e07878274d0580c1915e8db3a52539e7588a00d8c7c27b5c3c8459906d26142ffd772f0e8f291e9aa4ea076bb44a4ab0ba7e0f25b46423b
   languageName: node
   linkType: hard
 
