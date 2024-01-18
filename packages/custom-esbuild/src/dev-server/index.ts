@@ -9,7 +9,7 @@ import { Observable, from, switchMap } from 'rxjs';
 import type { Plugin } from 'esbuild';
 import type { Connect } from 'vite';
 
-import { loadModules } from '../load-modules';
+import { loadModule } from '../utils';
 import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
@@ -33,31 +33,26 @@ export function executeCustomDevServerBuilder(
   const workspaceRoot = normalize(context.workspaceRoot);
 
   return from(getBuildTargetOptions()).pipe(
-    switchMap(buildOptions => {
+    switchMap(async buildOptions => {
       const tsConfig = `${getSystemPath(workspaceRoot)}/${buildOptions.tsConfig}`;
 
-      return Promise.all([
-        // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-        loadModules<Connect.NextHandleFunction>(
-          workspaceRoot,
-          options.middlewares,
-          tsConfig,
-          context.logger
-        ),
+      const middleware = await Promise.all(
+        (options.middlewares || []).map(path =>
+          // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
+          loadModule<Connect.NextHandleFunction>(workspaceRoot, path, tsConfig, context.logger)
+        )
+      );
 
-        loadModules<Plugin>(workspaceRoot, buildOptions.plugins, tsConfig, context.logger),
-      ]);
+      const buildPlugins = await Promise.all(
+        (buildOptions.plugins || []).map(path =>
+          loadModule<Plugin>(workspaceRoot, path, tsConfig, context.logger)
+        )
+      );
+
+      return { middleware, buildPlugins };
     }),
-    switchMap(([middlewares, plugins]) =>
-      executeDevServerBuilder(
-        options,
-        context,
-        /* transforms */ {},
-        {
-          buildPlugins: plugins,
-          middleware: middlewares,
-        }
-      )
+    switchMap(extensions =>
+      executeDevServerBuilder(options, context, /* transforms */ {}, extensions)
     )
   );
 }

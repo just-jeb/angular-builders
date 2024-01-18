@@ -1,4 +1,4 @@
-import { logging } from '@angular-devkit/core';
+import { Path, getSystemPath, logging } from '@angular-devkit/core';
 import { extname } from 'path';
 import { pathToFileURL } from 'url';
 
@@ -46,7 +46,7 @@ const _tsNodeRegister = (() => {
  * @param file: file name or file directory are allowed
  * @todo tsNodeRegistration: require ts-node if file extension is TypeScript
  */
-export function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
+function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
   if (file?.endsWith('.ts')) {
     // Register TS compiler lazily
     _tsNodeRegister(tsConfig, logger);
@@ -71,10 +71,16 @@ function loadEsmModule<T>(modulePath: string | URL): Promise<T> {
 
 /**
  * Loads CJS and ESM modules based on extension
- * @param path path to the module
- * @returns
  */
-export async function loadModule<T>(path: string): Promise<T> {
+export async function loadModule<T>(
+  workspaceRoot: Path,
+  relativePath: string,
+  tsConfig: string,
+  logger: logging.LoggerApi
+): Promise<T> {
+  const path = `${getSystemPath(workspaceRoot)}/${relativePath}`;
+  tsNodeRegister(path, tsConfig, logger);
+
   switch (extname(path)) {
     case '.mjs':
       // Load the ESM configuration file using the TypeScript dynamic import workaround.

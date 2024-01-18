@@ -2,6 +2,7 @@ import { ApplicationBuilderOptions, DevServerBuilderOptions } from '@angular-dev
 
 export type CustomEsbuildApplicationSchema = ApplicationBuilderOptions & {
   plugins?: string[];
+  indexHtmlTransformer?: string;
 };
 
 export type CustomEsbuildDevServerSchema = DevServerBuilderOptions & {
