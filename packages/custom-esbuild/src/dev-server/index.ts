@@ -10,6 +10,7 @@ import type { Plugin } from 'esbuild';
 import type { Connect } from 'vite';
 
 import { loadModule } from '../utils';
+import { patchBuilderContext } from './patch-builder-context';
 import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
@@ -24,6 +25,8 @@ export function executeCustomDevServerBuilder(
       // `browserTarget` has been deprecated.
       options.buildTarget ?? options.browserTarget!
     );
+
+    patchBuilderContext(context, buildTarget);
 
     return (await context.getTargetOptions(
       buildTarget
