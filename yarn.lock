@@ -6571,15 +6571,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromium-bidi@npm:0.5.2":
-  version: 0.5.2
-  resolution: "chromium-bidi@npm:0.5.2"
+"chromium-bidi@npm:0.5.4":
+  version: 0.5.4
+  resolution: "chromium-bidi@npm:0.5.4"
   dependencies:
     mitt: 3.0.1
     urlpattern-polyfill: 9.0.0
   peerDependencies:
     devtools-protocol: "*"
-  checksum: baf9ff25065c73264d84bc5c28e81c27ef9c7fca0d38dfbb0f5d6a0446f3687e1988871e031a9c0f62b81f3173bde590a80301831beb60879500374bff0186b2
+  checksum: ac256ae94a9f792a220303379c81a7cff49f5aedd07dd0fcd0cd28c79b204a468ef26a9ef6fa9132d65a477ee624fff6372bebdd51b88cb4e7c7ad2275fb9b77
   languageName: node
   linkType: hard
 
@@ -7254,24 +7254,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig@npm:8.3.6, cosmiconfig@npm:^8.2.0, cosmiconfig@npm:^8.3.6":
-  version: 8.3.6
-  resolution: "cosmiconfig@npm:8.3.6"
-  dependencies:
-    import-fresh: ^3.3.0
-    js-yaml: ^4.1.0
-    parse-json: ^5.2.0
-    path-type: ^4.0.0
-  peerDependencies:
-    typescript: ">=4.9.5"
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: dc339ebea427898c9e03bf01b56ba7afbac07fc7d2a2d5a15d6e9c14de98275a9565da949375aee1809591c152c0a3877bb86dbeaf74d5bd5aaa79955ad9e7a0
-  languageName: node
-  linkType: hard
-
-"cosmiconfig@npm:^9.0.0":
+"cosmiconfig@npm:9.0.0, cosmiconfig@npm:^9.0.0":
   version: 9.0.0
   resolution: "cosmiconfig@npm:9.0.0"
   dependencies:
@@ -7285,6 +7268,23 @@ __metadata:
     typescript:
       optional: true
   checksum: a30c424b53d442ea0bdd24cb1b3d0d8687c8dda4a17ab6afcdc439f8964438801619cdb66e8e79f63b9caa3e6586b60d8bab9ce203e72df6c5e80179b971fe8f
+  languageName: node
+  linkType: hard
+
+"cosmiconfig@npm:^8.2.0, cosmiconfig@npm:^8.3.6":
+  version: 8.3.6
+  resolution: "cosmiconfig@npm:8.3.6"
+  dependencies:
+    import-fresh: ^3.3.0
+    js-yaml: ^4.1.0
+    parse-json: ^5.2.0
+    path-type: ^4.0.0
+  peerDependencies:
+    typescript: ">=4.9.5"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: dc339ebea427898c9e03bf01b56ba7afbac07fc7d2a2d5a15d6e9c14de98275a9565da949375aee1809591c152c0a3877bb86dbeaf74d5bd5aaa79955ad9e7a0
   languageName: node
   linkType: hard
 
@@ -7868,10 +7868,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:0.0.1203626":
-  version: 0.0.1203626
-  resolution: "devtools-protocol@npm:0.0.1203626"
-  checksum: 7bbcb1e637cf9c957aeae11284d2c4cd5fb45c0324839c9074b046889982a53f5cfca190f404aa9468523113714909db126b70a04baf1ec59f9905945a4b5975
+"devtools-protocol@npm:0.0.1232444":
+  version: 0.0.1232444
+  resolution: "devtools-protocol@npm:0.0.1232444"
+  checksum: b421a3c20506d597211d101c3ed4e550db2ca195d59c3371b2e04a8d057f33be60e732bafc80dc53b34546593a7751857321971e235e9ce9f1c5a9523fd8fa20
   languageName: node
   linkType: hard
 
@@ -9560,7 +9560,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.1.0
-    puppeteer: 21.7.0
+    puppeteer: 21.9.0
     rxjs: 7.8.1
     ts-node: 10.9.2
     tslib: 2.6.2
@@ -14992,30 +14992,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer-core@npm:21.7.0":
-  version: 21.7.0
-  resolution: "puppeteer-core@npm:21.7.0"
+"puppeteer-core@npm:21.9.0":
+  version: 21.9.0
+  resolution: "puppeteer-core@npm:21.9.0"
   dependencies:
     "@puppeteer/browsers": 1.9.1
-    chromium-bidi: 0.5.2
+    chromium-bidi: 0.5.4
     cross-fetch: 4.0.0
     debug: 4.3.4
-    devtools-protocol: 0.0.1203626
+    devtools-protocol: 0.0.1232444
     ws: 8.16.0
-  checksum: 8166137f9cee88509ec60340435442915f82419ed10054403a3c43a9d638013f13e2a80409aa4bb6b14ad671d4c2cf117d9f4d26c5db8992b05bba6fb09a1380
+  checksum: 7c92cc0bbbb33fc647ec7dde2902cca47732a5cba65bf95bd46f352c9275e30097ae26a42714d7b6407c83f1940bad82f42d8640e3051efb309fe47b8385ceea
   languageName: node
   linkType: hard
 
-"puppeteer@npm:21.7.0":
-  version: 21.7.0
-  resolution: "puppeteer@npm:21.7.0"
+"puppeteer@npm:21.9.0":
+  version: 21.9.0
+  resolution: "puppeteer@npm:21.9.0"
   dependencies:
     "@puppeteer/browsers": 1.9.1
-    cosmiconfig: 8.3.6
-    puppeteer-core: 21.7.0
+    cosmiconfig: 9.0.0
+    puppeteer-core: 21.9.0
   bin:
     puppeteer: lib/esm/puppeteer/node/cli.js
-  checksum: bb5f0f76f16cf09ae9a52d68a6ed7c8c06256b33e89c77898cba9b0f1863b9e76014d01b86371265fc7d1ea6b5f7c7a12e164159744145ee3a4251777ef59bfa
+  checksum: 0cb28d29a183af04869022ff30632116be65f1f8ec4ba729cc36a22332aefee697909adc7c4a15ceae53fdf657c9450aa9b8d8eacab05535adf4972ef2e50038
   languageName: node
   linkType: hard
 
@@ -15849,7 +15849,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.1.0
-    puppeteer: 21.7.0
+    puppeteer: 21.9.0
     rxjs: 7.8.1
     tslib: 2.6.2
     typescript: 5.3.3
@@ -15883,7 +15883,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.1.0
-    puppeteer: 21.7.0
+    puppeteer: 21.9.0
     rxjs: 7.8.1
     ts-node: 10.9.2
     tslib: 2.6.2
