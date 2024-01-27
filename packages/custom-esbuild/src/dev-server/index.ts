@@ -1,9 +1,11 @@
+import * as path from 'node:path';
 import { BuilderContext, createBuilder, targetFromTargetString } from '@angular-devkit/architect';
 import {
   DevServerBuilderOptions,
   DevServerBuilderOutput,
   executeDevServerBuilder,
 } from '@angular-devkit/build-angular';
+import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/index-html-generator';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import type { Plugin } from 'esbuild';
@@ -20,14 +22,12 @@ export function executeCustomDevServerBuilder(
   options: CustomEsbuildDevServerSchema,
   context: BuilderContext
 ): Observable<DevServerBuilderOutput> {
+  const buildTarget = targetFromTargetString(
+    // `browserTarget` has been deprecated.
+    options.buildTarget ?? options.browserTarget!
+  );
+
   async function getBuildTargetOptions() {
-    const buildTarget = targetFromTargetString(
-      // `browserTarget` has been deprecated.
-      options.buildTarget ?? options.browserTarget!
-    );
-
-    patchBuilderContext(context, buildTarget);
-
     return (await context.getTargetOptions(
       buildTarget
     )) as unknown as CustomEsbuildApplicationSchema;
@@ -37,7 +37,7 @@ export function executeCustomDevServerBuilder(
 
   return from(getBuildTargetOptions()).pipe(
     switchMap(async buildOptions => {
-      const tsConfig = `${getSystemPath(workspaceRoot)}/${buildOptions.tsConfig}`;
+      const tsConfig = path.join(getSystemPath(workspaceRoot), buildOptions.tsConfig);
 
       const middleware = await Promise.all(
         (options.middlewares || []).map(path =>
@@ -52,10 +52,24 @@ export function executeCustomDevServerBuilder(
         )
       );
 
-      return { middleware, buildPlugins };
+      const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer
+        ? await loadModule(
+            workspaceRoot,
+            buildOptions.indexHtmlTransformer,
+            tsConfig,
+            context.logger
+          )
+        : undefined;
+
+      patchBuilderContext(context, buildTarget);
+
+      return {
+        transforms: { indexHtml: indexHtmlTransformer },
+        extensions: { middleware, buildPlugins },
+      };
     }),
-    switchMap(extensions =>
-      executeDevServerBuilder(options, context, /* transforms */ {}, extensions)
+    switchMap(({ transforms, extensions }) =>
+      executeDevServerBuilder(options, context, transforms, extensions)
     )
   );
 }

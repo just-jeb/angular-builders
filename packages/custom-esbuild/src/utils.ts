@@ -1,6 +1,6 @@
 import { Path, getSystemPath, logging } from '@angular-devkit/core';
-import { extname } from 'path';
-import { pathToFileURL } from 'url';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
 const _tsNodeRegister = (() => {
   let lastTsConfig: string | undefined;
@@ -78,29 +78,29 @@ export async function loadModule<T>(
   tsConfig: string,
   logger: logging.LoggerApi
 ): Promise<T> {
-  const path = `${getSystemPath(workspaceRoot)}/${relativePath}`;
-  tsNodeRegister(path, tsConfig, logger);
+  const modulePath = path.join(getSystemPath(workspaceRoot), relativePath);
+  tsNodeRegister(modulePath, tsConfig, logger);
 
-  switch (extname(path)) {
+  switch (path.extname(modulePath)) {
     case '.mjs':
       // Load the ESM configuration file using the TypeScript dynamic import workaround.
       // Once TypeScript provides support for keeping the dynamic import this workaround can be
       // changed to a direct dynamic import.
-      return (await loadEsmModule<{ default: T }>(pathToFileURL(path))).default;
+      return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
     case '.cjs':
-      return require(path);
+      return require(modulePath);
     case '.ts':
       try {
         // If it's a TS file then there are 2 cases for exporing an object.
         // The first one is `export blah`, transpiled into `module.exports = { blah} `.
         // The second is `export default blah`, transpiled into `{ default: { ... } }`.
-        return require(path).default || require(path);
+        return require(modulePath).default || require(modulePath);
       } catch (e: any) {
         if (e.code === 'ERR_REQUIRE_ESM') {
           // Load the ESM configuration file using the TypeScript dynamic import workaround.
           // Once TypeScript provides support for keeping the dynamic import this workaround can be
           // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(pathToFileURL(path))).default;
+          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
         }
         throw e;
       }
@@ -109,13 +109,13 @@ export async function loadModule<T>(
       // The file could be either CommonJS or ESM.
       // CommonJS is tried first then ESM if loading fails.
       try {
-        return require(path);
+        return require(modulePath);
       } catch (e: any) {
         if (e.code === 'ERR_REQUIRE_ESM') {
           // Load the ESM configuration file using the TypeScript dynamic import workaround.
           // Once TypeScript provides support for keeping the dynamic import this workaround can be
           // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(pathToFileURL(path))).default;
+          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
         }
 
         throw e;
