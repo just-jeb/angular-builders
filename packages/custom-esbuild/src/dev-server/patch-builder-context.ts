@@ -13,6 +13,13 @@ function cleanBuildTargetOptions(options: any) {
 
 export function patchBuilderContext(context: BuilderContext, buildTarget: Target): void {
   const originalGetBuilderNameForTarget = context.getBuilderNameForTarget;
+
+  // We have to patch `getBuilderNameForTarget` because Angular CLI checks
+  // whether the runnable target is `@angular-devkit/build-angular:application`
+  // and then defines the server to run. If the `builderName` (returned by
+  // `context.getBuilderNameForTarget`) is not an `@angular-devkit/build-angular:application`,
+  // then it will use the Webpack server for the `dev-server target`. By patching
+  // the return value, Angular will use the Vite server for the `dev-server` target.
   context.getBuilderNameForTarget = async target => {
     const builderName = await originalGetBuilderNameForTarget(target);
 
