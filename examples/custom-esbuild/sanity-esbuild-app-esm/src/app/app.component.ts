@@ -11,7 +11,7 @@ declare const buildText: string;
   imports: [CommonModule],
 })
 export class AppComponent {
-  buildText = typeof buildText !== 'undefined' ? buildText : null;
+  buildText = typeof buildText !== 'undefined' ? buildText : '';
 
-  title = 'sanity-esbuild-app-esm: ' + this.buildText;
+  title = this.buildText ? `sanity-esbuild-app-esm: ${this.buildText}` : 'sanity-esbuild-app-esm';
 }

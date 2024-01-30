@@ -126,13 +126,14 @@ The `@angular-builders/custom-esbuild:dev-server` is an enhanced version of the 
   "build": {
     "builder": "@angular-builders/custom-esbuild:application",
     "options": {
-      "plugins"; ["./esbuild/plugin-1.js"]
+      "plugins": ["./esbuild/plugin-1.js"]
       ...
     }
   },
   "serve": {
     "builder": "@angular-builders/custom-esbuild:dev-server",
     "options": {
+      "middlewares": ["./esbuild/my-middleware.js"],
       "buildTarget": "my-project:build"
     }
   }
