@@ -9,8 +9,8 @@ import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/inde
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import type { Connect } from 'vite';
+import { loadModule } from '@angular-builders/common';
 
-import { loadModule } from '../utils';
 import { loadPlugins } from '../load-plugins';
 import { patchBuilderContext } from './patch-builder-context';
 import {
@@ -33,16 +33,20 @@ export function executeCustomDevServerBuilder(
     )) as unknown as CustomEsbuildApplicationSchema;
   }
 
-  const workspaceRoot = normalize(context.workspaceRoot);
+  const workspaceRoot = getSystemPath(normalize(context.workspaceRoot));
 
   return from(getBuildTargetOptions()).pipe(
     switchMap(async buildOptions => {
-      const tsConfig = path.join(getSystemPath(workspaceRoot), buildOptions.tsConfig);
+      const tsConfig = path.join(workspaceRoot, buildOptions.tsConfig);
 
       const middleware = await Promise.all(
-        (options.middlewares || []).map(path =>
+        (options.middlewares || []).map(middlewarePath =>
           // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<Connect.NextHandleFunction>(workspaceRoot, path, tsConfig, context.logger)
+          loadModule<Connect.NextHandleFunction>(
+            path.join(workspaceRoot, middlewarePath),
+            tsConfig,
+            context.logger
+          )
         )
       );
 
@@ -55,8 +59,7 @@ export function executeCustomDevServerBuilder(
 
       const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer
         ? await loadModule(
-            workspaceRoot,
-            buildOptions.indexHtmlTransformer,
+            path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
             tsConfig,
             context.logger
           )

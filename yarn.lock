@@ -30,10 +30,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@angular-builders/common@workspace:*, @angular-builders/common@workspace:packages/common":
+  version: 0.0.0-use.local
+  resolution: "@angular-builders/common@workspace:packages/common"
+  dependencies:
+    "@angular-devkit/core": ^17.1.0
+    rimraf: ^5.0.0
+    ts-node: ^10.0.0
+    tsconfig-paths: ^4.1.0
+    typescript: 5.3.3
+  languageName: unknown
+  linkType: soft
+
 "@angular-builders/custom-esbuild@workspace:*, @angular-builders/custom-esbuild@workspace:packages/custom-esbuild":
   version: 0.0.0-use.local
   resolution: "@angular-builders/custom-esbuild@workspace:packages/custom-esbuild"
   dependencies:
+    "@angular-builders/common": "workspace:*"
     "@angular-devkit/architect": ">=0.1701.0 < 0.1800.0"
     "@angular-devkit/build-angular": ^17.1.0
     "@angular-devkit/core": ^17.1.0
@@ -41,7 +54,6 @@ __metadata:
     jest: 29.7.0
     rimraf: ^5.0.0
     ts-node: ^10.0.0
-    tsconfig-paths: ^4.1.0
     typescript: 5.3.3
   peerDependencies:
     "@angular/compiler-cli": ^17.1.0
@@ -52,6 +64,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/custom-webpack@workspace:packages/custom-webpack"
   dependencies:
+    "@angular-builders/common": "workspace:*"
     "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
     "@angular-devkit/build-angular": ^17.0.0
     "@angular-devkit/core": ^17.0.0
@@ -59,7 +72,6 @@ __metadata:
     lodash: ^4.17.15
     rimraf: ^5.0.0
     ts-node: ^10.0.0
-    tsconfig-paths: ^4.1.0
     typescript: 5.3.3
     webpack-merge: ^5.7.3
   peerDependencies:
@@ -71,6 +83,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/jest@workspace:packages/jest"
   dependencies:
+    "@angular-builders/common": "workspace:*"
     "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
     "@angular-devkit/core": ^17.0.0
     "@types/jest": ^29.5.1
@@ -80,7 +93,6 @@ __metadata:
     lodash: ^4.17.15
     quicktype: ^15.0.260
     rimraf: ^5.0.0
-    tsconfig-paths: ^4.1.0
     typescript: 5.3.3
   peerDependencies:
     "@angular-devkit/build-angular": ^17.0.0

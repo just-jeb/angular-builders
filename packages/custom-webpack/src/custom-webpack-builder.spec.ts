@@ -11,10 +11,6 @@ const baseWebpackConfig = {
   entry: './main.ts',
 };
 
-const buildOptions = {
-  env: 'prod',
-};
-
 const targetOptions: TargetOptions = {
   project: 'application',
   configuration: 'production',
@@ -56,6 +52,8 @@ const customWebpackFunctionObj = {
   },
 };
 
+const tsConfig = './tsconfig.app.json';
+
 function createConfigFile<T>(fileName: string, content: T) {
   jest.mock(`${__dirname}/${fileName}`, () => content, { virtual: true });
 }
@@ -70,7 +68,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       null,
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -85,7 +83,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -111,7 +109,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { path: fileName },
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -137,7 +135,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { mergeRules },
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -162,7 +160,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       { replaceDuplicatePlugins: true },
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -175,6 +173,7 @@ describe('CustomWebpackBuilder', () => {
   });
 
   it('should pass build options to the webpack config function', async () => {
+    const buildOptions = { tsConfig, env: 'prod' };
     const spy = jest.fn((config, options, targetOptions) => config);
     createConfigFile(defaultWebpackConfigPath, spy);
     await CustomWebpackBuilder.buildWebpackConfig(
@@ -195,7 +194,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -220,7 +219,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -250,7 +249,7 @@ describe('CustomWebpackBuilder', () => {
       __dirname as Path,
       {},
       baseWebpackConfig,
-      {},
+      { tsConfig },
       targetOptions,
       {} as any
     );
@@ -288,7 +287,7 @@ describe('CustomWebpackBuilder', () => {
           },
         },
         baseWebpackConfig,
-        {},
+        { tsConfig },
         targetOptions,
         logger
       );
@@ -313,7 +312,7 @@ describe('CustomWebpackBuilder', () => {
           },
         },
         baseWebpackConfig,
-        {},
+        { tsConfig },
         targetOptions,
         logger
       );
@@ -346,7 +345,7 @@ describe('CustomWebpackBuilder', () => {
           },
         },
         baseWebpackConfig,
-        {},
+        { tsConfig },
         targetOptions,
         logger
       );
