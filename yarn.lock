@@ -19,8 +19,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/bazel@workspace:packages/bazel"
   dependencies:
-    "@angular-devkit/architect": ">=0.1701.0 < 0.1800.0"
-    "@angular-devkit/core": ^17.1.0
+    "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
+    "@angular-devkit/core": ^17.0.0
     "@bazel/bazelisk": ^1.4.0
     "@bazel/ibazel": ^0.24.0
     cpy-cli: ^5.0.0
@@ -52,9 +52,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/custom-webpack@workspace:packages/custom-webpack"
   dependencies:
-    "@angular-devkit/architect": ">=0.1701.0 < 0.1800.0"
-    "@angular-devkit/build-angular": ^17.1.0
-    "@angular-devkit/core": ^17.1.0
+    "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
+    "@angular-devkit/build-angular": ^17.0.0
+    "@angular-devkit/core": ^17.0.0
     jest: 29.7.0
     lodash: ^4.17.15
     rimraf: ^5.0.0
@@ -63,7 +63,7 @@ __metadata:
     typescript: 5.3.3
     webpack-merge: ^5.7.3
   peerDependencies:
-    "@angular/compiler-cli": ^17.1.0
+    "@angular/compiler-cli": ^17.0.0
   languageName: unknown
   linkType: soft
 
@@ -71,8 +71,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/jest@workspace:packages/jest"
   dependencies:
-    "@angular-devkit/architect": ">=0.1701.0 < 0.1800.0"
-    "@angular-devkit/core": ^17.1.0
+    "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
+    "@angular-devkit/core": ^17.0.0
     "@types/jest": ^29.5.1
     cpy-cli: ^5.0.0
     jest: 29.7.0
@@ -83,10 +83,10 @@ __metadata:
     tsconfig-paths: ^4.1.0
     typescript: 5.3.3
   peerDependencies:
-    "@angular-devkit/build-angular": ^17.1.0
-    "@angular/compiler-cli": ^17.1.0
-    "@angular/core": ^17.1.0
-    "@angular/platform-browser-dynamic": ^17.1.0
+    "@angular-devkit/build-angular": ^17.0.0
+    "@angular/compiler-cli": ^17.0.0
+    "@angular/core": ^17.0.0
+    "@angular/platform-browser-dynamic": ^17.0.0
     jest: ">=29"
   languageName: unknown
   linkType: soft
@@ -95,8 +95,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/timestamp@workspace:packages/timestamp"
   dependencies:
-    "@angular-devkit/architect": ">=0.1701.0 < 0.1800.0"
-    "@angular-devkit/core": ^17.1.0
+    "@angular-devkit/architect": ">=0.1700.0 < 0.1800.0"
+    "@angular-devkit/core": ^17.0.0
     "@types/dateformat": ^5.0.0
     cpy-cli: ^5.0.0
     dateformat: ^5.0.2
@@ -107,7 +107,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-devkit/architect@npm:0.1701.1, @angular-devkit/architect@npm:>=0.1701.0 < 0.1800.0":
+"@angular-devkit/architect@npm:0.1701.1, @angular-devkit/architect@npm:>=0.1700.0 < 0.1800.0, @angular-devkit/architect@npm:>=0.1701.0 < 0.1800.0":
   version: 0.1701.1
   resolution: "@angular-devkit/architect@npm:0.1701.1"
   dependencies:
@@ -117,7 +117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/build-angular@npm:17.1.1, @angular-devkit/build-angular@npm:^17.1.0":
+"@angular-devkit/build-angular@npm:17.1.1, @angular-devkit/build-angular@npm:^17.0.0, @angular-devkit/build-angular@npm:^17.1.0":
   version: 17.1.1
   resolution: "@angular-devkit/build-angular@npm:17.1.1"
   dependencies:
@@ -243,7 +243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:17.1.1, @angular-devkit/core@npm:^17.1.0":
+"@angular-devkit/core@npm:17.1.1, @angular-devkit/core@npm:^17.0.0, @angular-devkit/core@npm:^17.1.0":
   version: 17.1.1
   resolution: "@angular-devkit/core@npm:17.1.1"
   dependencies:
