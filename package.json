@@ -10,15 +10,16 @@
     "packages": [
       "packages/*",
       "examples/*",
+      "examples/custom-esbuild/*",
       "examples/custom-webpack/*",
       "examples/jest/*"
     ]
   },
   "resolutions": {
-    "@cypress/schematic/@angular-devkit/architect": ">=0.1700.0 < 0.1800.0",
-    "@cypress/schematic/@angular-devkit/core": "^17",
-    "@cypress/schematic/@angular-devkit/schematics": "^17",
-    "@cypress/schematic/@schematics/angular": "^17"
+    "@cypress/schematic/@angular-devkit/architect": ">=0.1701.0 < 0.1800.0",
+    "@cypress/schematic/@angular-devkit/core": "^17.1",
+    "@cypress/schematic/@angular-devkit/schematics": "^17.1",
+    "@cypress/schematic/@schematics/angular": "^17.1"
   },
   "author": "Evgeny Barabanov",
   "license": "MIT",
@@ -46,7 +47,8 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.0.0",
     "lodash": "^4.17.15",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "ts-jest": "29.1.1"
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [

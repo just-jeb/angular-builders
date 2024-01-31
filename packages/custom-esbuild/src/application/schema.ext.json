@@ -1,0 +1,19 @@
+{
+  "$id": "BuildCustomApplicationSchema",
+  "title": "Custom application schema for Build Facade",
+  "description": "Application target options",
+  "properties": {
+    "plugins": {
+      "description": "A list of paths to ESBuild plugins",
+      "default": [],
+      "items": {
+        "type": "string",
+        "uniqueItems": true
+      }
+    },
+    "indexHtmlTransformer": {
+      "description": "A path to the file with index.html transform function",
+      "type": "string"
+    }
+  }
+}
