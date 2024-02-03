@@ -1,11 +1,21 @@
 import type { Plugin, PluginBuild } from 'esbuild';
 
-const defineTextPlugin: Plugin = {
-  name: 'define-text',
+const defineTitlePlugin: Plugin = {
+  name: 'define-title',
   setup(build: PluginBuild) {
     const options = build.initialOptions;
-    options.define!['buildText'] = JSON.stringify('This text is provided during the compilation');
+    options.define!['title'] = JSON.stringify('sanity-esbuild-app-esm (compilation provided)');
   },
 };
 
-export default defineTextPlugin;
+const defineSubtitlePlugin: Plugin = {
+  name: 'define-subtitle',
+  setup(build: PluginBuild) {
+    const options = build.initialOptions;
+    options.define!['subtitle'] = JSON.stringify(
+      'sanity-esbuild-app-esm subtitle (compilation provided)'
+    );
+  },
+};
+
+export default [defineTitlePlugin, defineSubtitlePlugin];

@@ -6,4 +6,8 @@ export class AppPage {
   getTitle() {
     return cy.get('app-root h1');
   }
+
+  getSubtitle() {
+    return cy.get('app-root h2');
+  }
 }
