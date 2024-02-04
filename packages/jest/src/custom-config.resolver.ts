@@ -33,7 +33,7 @@ export class CustomConfigResolver {
       return {};
     }
 
-    return await loadModule<JestConfig>(workspaceJestConfigPath, tsConfig, this.logger);
+    return await loadModule<JestConfig>(workspaceJestConfigPath, tsConfig);
   }
 
   async resolveForProject(projectRoot: Path, configPath: string): Promise<JestConfig> {
@@ -45,6 +45,6 @@ export class CustomConfigResolver {
       return {};
     }
     const tsConfig = getTsConfigPath(projectRoot, this.options);
-    return await loadModule<JestConfig>(jestConfigPath, tsConfig, this.logger);
+    return await loadModule<JestConfig>(jestConfigPath, tsConfig);
   }
 }
