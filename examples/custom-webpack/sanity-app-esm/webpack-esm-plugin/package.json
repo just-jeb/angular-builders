@@ -1,0 +1,17 @@
+{
+  "name": "webpack-esm-plugin",
+  "version": "0.0.1",
+  "module": "./webpack-esm-plugin.mjs",
+  "typings": "./webpack-esm-plugin.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./webpack-esm-plugin.d.ts",
+      "node": "./webpack-esm-plugin.mjs",
+      "default": "./webpack-esm-plugin.mjs"
+    }
+  },
+  "sideEffects": false
+}

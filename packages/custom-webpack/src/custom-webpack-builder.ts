@@ -47,8 +47,7 @@ export class CustomWebpackBuilder {
     );
     const configOrFactoryOrPromise = await loadModule<CustomWebpackConfig>(
       webpackConfigPath,
-      tsConfig,
-      logger
+      tsConfig
     );
 
     if (typeof configOrFactoryOrPromise === 'function') {

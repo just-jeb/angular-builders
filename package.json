@@ -27,7 +27,10 @@
     "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
   },
   "scripts": {
-    "build:packages": "yarn workspace @angular-builders/common run build && yarn workspaces foreach -vip --include '@angular-builders/*' --exclude @angular-builders/common run build",
+    "// - BUILD": "The `common` must be built first because other packages are being built in parallel, which means the `common` package may not be ready yet.",
+    "build:common": "yarn workspace @angular-builders/common run build",
+    "build:packages:except:common": "yarn workspaces foreach -vip --exclude '@angular-builders/common' --include '@angular-builders/*' run build",
+    "build:packages": "yarn build:common && yarn build:packages:except:common",
     "ci": "yarn build:packages && ./scripts/run-ci.sh",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
