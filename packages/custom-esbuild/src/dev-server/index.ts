@@ -45,8 +45,7 @@ export function executeCustomDevServerBuilder(
         middleware.push(
           await loadModule<Middleware>(
             path.join(workspaceRoot, middlewarePath),
-            tsConfig,
-            context.logger
+            tsConfig
           )
         );
       }
@@ -55,7 +54,6 @@ export function executeCustomDevServerBuilder(
         buildOptions.plugins,
         workspaceRoot,
         tsConfig,
-        context.logger,
         options,
         context.target
       );
@@ -64,7 +62,6 @@ export function executeCustomDevServerBuilder(
         ? await loadIndexHtmlTransformer(
             path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
             tsConfig,
-            context.logger,
             context.target
           )
         : undefined;

@@ -20,7 +20,6 @@ export function buildCustomEsbuildApplication(
       options.plugins,
       workspaceRoot,
       tsConfig,
-      context.logger,
       options,
       context.target
     );
@@ -29,7 +28,6 @@ export function buildCustomEsbuildApplication(
       ? await loadIndexHtmlTransformer(
           path.join(workspaceRoot, options.indexHtmlTransformer),
           tsConfig,
-          context.logger,
           context.target
         )
       : undefined;

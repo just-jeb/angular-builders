@@ -32,19 +32,14 @@ export const customWebpackConfigTransformFactory: (
 export const indexHtmlTransformFactory: (
   options: CustomWebpackSchema,
   context: BuilderContext
-) => IndexHtmlTransform = (options, { workspaceRoot, target, logger }) => {
+) => IndexHtmlTransform = (options, { workspaceRoot, target }) => {
   if (!options.indexTransform) return null;
 
   const transformPath = path.join(getSystemPath(normalize(workspaceRoot)), options.indexTransform);
   const tsConfig = path.join(getSystemPath(normalize(workspaceRoot)), options.tsConfig);
 
   return async (indexHtml: string) => {
-    const transform = await loadModule<IndexHtmlTransformWithOptions>(
-      transformPath,
-      tsConfig,
-      logger
-    );
-
+    const transform = await loadModule<IndexHtmlTransformWithOptions>(transformPath, tsConfig);
     return transform(target, indexHtml);
   };
 };
