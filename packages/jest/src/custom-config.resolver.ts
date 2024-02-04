@@ -1,15 +1,19 @@
 import { existsSync } from 'fs';
 import { getSystemPath, join, logging, Path } from '@angular-devkit/core';
+import { loadModule } from '@angular-builders/common';
 
 import { JestConfig } from './types';
 import { SchemaObject as JestBuilderSchema } from './schema';
-import { getTsConfigPath, loadModule, tsNodeRegister } from './utils';
+import { getTsConfigPath } from './utils';
 
 export class CustomConfigResolver {
   // https://jestjs.io/docs/configuration
   private allowedExtensions = ['js', 'ts', 'mjs', 'cjs', 'json'];
 
-  constructor(private options: JestBuilderSchema, private logger: logging.LoggerApi) {}
+  constructor(
+    private options: JestBuilderSchema,
+    private logger: logging.LoggerApi
+  ) {}
 
   async resolveGlobal(workspaceRoot: Path): Promise<JestConfig> {
     const packageJsonPath = getSystemPath(join(workspaceRoot, 'package.json'));
@@ -25,9 +29,11 @@ export class CustomConfigResolver {
     );
     const workspaceJestConfigPath = workspaceJestConfigPaths.find(path => existsSync(path));
 
-    return workspaceJestConfigPath
-      ? await resolveJestConfig(workspaceJestConfigPath, tsConfig, this.logger)
-      : {};
+    if (!workspaceJestConfigPath) {
+      return {};
+    }
+
+    return await loadModule<JestConfig>(workspaceJestConfigPath, tsConfig, this.logger);
   }
 
   async resolveForProject(projectRoot: Path, configPath: string): Promise<JestConfig> {
@@ -39,15 +45,6 @@ export class CustomConfigResolver {
       return {};
     }
     const tsConfig = getTsConfigPath(projectRoot, this.options);
-    return await resolveJestConfig(jestConfigPath, tsConfig, this.logger);
+    return await loadModule<JestConfig>(jestConfigPath, tsConfig, this.logger);
   }
-}
-
-async function resolveJestConfig(
-  jestConfigPath: string,
-  tsConfig: string,
-  logger: logging.LoggerApi
-): Promise<JestConfig> {
-  tsNodeRegister(jestConfigPath, tsConfig, logger);
-  return await loadModule(jestConfigPath);
 }

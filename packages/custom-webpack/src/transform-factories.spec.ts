@@ -4,9 +4,6 @@ jest.mock('ts-node', () => ({
 jest.mock('tsconfig-paths', () => ({
   loadConfig: jest.fn().mockReturnValue({}),
 }));
-import * as utils from './utils';
-jest.spyOn(utils, 'tsNodeRegister');
-
 import { getTransforms } from './transform-factories';
 
 const logger = { warn: jest.fn(msg => console.log(msg)) };
@@ -34,16 +31,6 @@ describe('getTransforms', () => {
     );
     transforms.webpackConfiguration({});
 
-    expect(utils.tsNodeRegister).toHaveBeenCalledWith(
-      'test/webpack.test.config.ts',
-      'test/tsconfig.test.json',
-      logger
-    );
-    expect(utils.tsNodeRegister).toHaveBeenCalledWith(
-      'index-transform.test.ts',
-      'test/tsconfig.test.json',
-      logger
-    );
     expect(tsNode.register).toHaveBeenCalledTimes(1);
     expect(logger.warn).not.toHaveBeenCalled();
 

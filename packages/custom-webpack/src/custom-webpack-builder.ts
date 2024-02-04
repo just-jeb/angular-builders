@@ -1,11 +1,13 @@
+import * as path from 'node:path';
 import { inspect } from 'util';
 import { getSystemPath, logging, Path } from '@angular-devkit/core';
 import { get } from 'lodash';
 import { Configuration } from 'webpack';
+import { loadModule } from '@angular-builders/common';
+
 import { CustomWebpackBrowserSchema } from './browser';
 import { CustomWebpackBuilderConfig } from './custom-webpack-builder-config';
 import { TargetOptions } from './type-definition';
-import { loadModule, tsNodeRegister } from './utils';
 import { mergeConfigs } from './webpack-config-merger';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
@@ -37,10 +39,17 @@ export class CustomWebpackBuilder {
       return baseWebpackConfig;
     }
 
-    const webpackConfigPath = config.path || defaultWebpackConfigPath;
-    const path = `${getSystemPath(root)}/${webpackConfigPath}`;
-    const tsConfig = `${getSystemPath(root)}/${buildOptions.tsConfig}`;
-    const configOrFactoryOrPromise = await resolveCustomWebpackConfig(path, tsConfig, logger);
+    const normalizedRootPath = getSystemPath(root);
+    const tsConfig = path.join(normalizedRootPath, buildOptions.tsConfig);
+    const webpackConfigPath = path.join(
+      normalizedRootPath,
+      config.path || defaultWebpackConfigPath
+    );
+    const configOrFactoryOrPromise = await loadModule<CustomWebpackConfig>(
+      webpackConfigPath,
+      tsConfig,
+      logger
+    );
 
     if (typeof configOrFactoryOrPromise === 'function') {
       // The exported function can return a new configuration synchronously
@@ -71,16 +80,6 @@ export class CustomWebpackBuilder {
     logConfigProperties(config, finalWebpackConfig, logger);
     return finalWebpackConfig;
   }
-}
-
-async function resolveCustomWebpackConfig(
-  path: string,
-  tsConfig: string,
-  logger: logging.LoggerApi
-): Promise<CustomWebpackConfig> {
-  tsNodeRegister(path, tsConfig, logger);
-
-  return loadModule(path);
 }
 
 function logConfigProperties(
