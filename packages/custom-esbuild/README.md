@@ -100,7 +100,7 @@ Builder options:
   "build": {
     "builder": "@angular-builders/custom-esbuild:application",
     "options": {
-      "plugins": ["./esbuild/plugin-1.js", "./esbuild/plugin-2.js"],
+      "plugins": ["./esbuild/plugins.ts", "./esbuild/plugin-2.js"],
       "indexHtmlTransformer": "./esbuild/index-html-transformer.js",
       "outputPath": "dist/my-cool-client",
       "index": "src/index.html",
@@ -111,6 +111,49 @@ Builder options:
 ```
 
 In the above example, we specify the list of `plugins` that should implement the ESBuild plugin schema. These plugins are custom user plugins and are added to the original ESBuild Angular configuration. Additionally, the `indexHtmlTransformer` property is used to specify the path to the file that exports the function used to modify the `index.html`.
+
+The plugin file can export either a single plugin or a list of plugins:
+
+```ts
+// esbuild/plugins.ts
+import type { Plugin, PluginBuild } from 'esbuild';
+
+const defineTextPlugin: Plugin = {
+  name: 'define-text',
+  setup(build: PluginBuild) {
+    const options = build.initialOptions;
+    options.define.buildText = JSON.stringify('This text is provided during the compilation');
+  },
+};
+
+export default defineTextPlugin;
+```
+
+Or:
+
+```ts
+// esbuild/plugins.ts
+import type { Plugin, PluginBuild } from 'esbuild';
+
+const defineTextPlugin: Plugin = {
+  name: 'define-text',
+  setup(build: PluginBuild) {
+    const options = build.initialOptions;
+    options.define.buildText = JSON.stringify('This text is provided during the compilation');
+  },
+};
+
+const updateExternalPlugin: Plugin = {
+  name: 'update-external',
+  setup(build: PluginBuild) {
+    const options = build.initialOptions;
+    options.external ??= [];
+    options.external.push('elysia');
+  },
+};
+
+export default [defineTextPlugin, updateExternalPlugin];
+```
 
 ## Custom ESBuild `dev-server`
 

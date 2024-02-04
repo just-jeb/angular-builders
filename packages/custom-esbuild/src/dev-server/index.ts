@@ -8,10 +8,10 @@ import {
 import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/index-html-generator';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
-import type { Plugin } from 'esbuild';
 import type { Connect } from 'vite';
 
 import { loadModule } from '../utils';
+import { loadPlugins } from '../load-plugins';
 import { patchBuilderContext } from './patch-builder-context';
 import {
   CustomEsbuildApplicationSchema,
@@ -46,10 +46,11 @@ export function executeCustomDevServerBuilder(
         )
       );
 
-      const buildPlugins = await Promise.all(
-        (buildOptions.plugins || []).map(path =>
-          loadModule<Plugin>(workspaceRoot, path, tsConfig, context.logger)
-        )
+      const buildPlugins = await loadPlugins(
+        buildOptions.plugins,
+        workspaceRoot,
+        tsConfig,
+        context.logger
       );
 
       const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer

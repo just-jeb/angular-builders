@@ -1,9 +1,19 @@
-const defineTextPlugin = {
-  name: 'define-text',
+const defineTitlePlugin = {
+  name: 'define-title',
   setup(build) {
     const options = build.initialOptions;
-    options.define.buildText = JSON.stringify('This text is provided during the compilation');
+    options.define.title = JSON.stringify('sanity-esbuild-app-esm (compilation provided)');
   },
 };
 
-module.exports = defineTextPlugin;
+const defineSubtitlePlugin = {
+  name: 'define-subtitle',
+  setup(build) {
+    const options = build.initialOptions;
+    options.define.subtitle = JSON.stringify(
+      'sanity-esbuild-app-esm subtitle (compilation provided)'
+    );
+  },
+};
+
+module.exports = [defineTitlePlugin, defineSubtitlePlugin];

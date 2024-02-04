@@ -9,12 +9,8 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    page
-      .getTitle()
-      .should(
-        'have.text',
-        'Welcome to sanity-esbuild-app: This text is provided during the compilation!'
-      );
+    page.getTitle().should('have.text', 'sanity-esbuild-app (compilation provided)');
+    page.getSubtitle().should('have.text', 'sanity-esbuild-app subtitle (compilation provided)');
   });
 
   it('should display text from custom middleware', () => {
