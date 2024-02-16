@@ -17,7 +17,15 @@
         "build": {
           "builder": "@angular-builders/custom-esbuild:application",
           "options": {
-            "plugins": ["esbuild/define-text-plugin.js"],
+            "plugins": [
+              "esbuild/define-text-plugin.js",
+              {
+                "path": "esbuild/define-text-by-option-plugin.js",
+                "options": {
+                  "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                }
+              }
+            ],
             "outputPath": "dist/sanity-esbuild-app-esm",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -45,13 +53,37 @@
               "outputHashing": "all"
             },
             "esm": {
-              "plugins": ["esbuild/define-text-plugin.js"]
+              "plugins": [
+                "esbuild/define-text-plugin.js",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.js",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             },
             "cjs": {
-              "plugins": ["esbuild/define-text-plugin.cjs"]
+              "plugins": [
+                "esbuild/define-text-plugin.cjs",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.cjs",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             },
             "tsEsm": {
-              "plugins": ["esbuild/define-text-plugin.ts"]
+              "plugins": [
+                "esbuild/define-text-plugin.ts",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.ts",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"

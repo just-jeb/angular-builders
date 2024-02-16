@@ -32,7 +32,8 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "yarn prebuild && tsc && ts-node ../../merge-schemes.ts && yarn postbuild",
-    "postbuild": "yarn run e2e",
+    "postbuild": "yarn test && yarn run e2e",
+    "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist",
     "ci": "./scripts/ci.sh"
