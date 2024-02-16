@@ -8,7 +8,25 @@
       "description": "A list of paths to ESBuild plugins",
       "default": [],
       "items": {
-        "type": "string",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "options": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        ],
         "uniqueItems": true
       }
     },
