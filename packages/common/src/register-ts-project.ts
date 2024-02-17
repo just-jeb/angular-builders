@@ -25,6 +25,7 @@ function registerTsNodeService(tsConfig: string): VoidFunction {
   const { register } = require('ts-node') as typeof import('ts-node');
 
   const service = register({
+    transpileOnly: true,
     project: tsConfig,
     compilerOptions: {
       module: 'CommonJS',
