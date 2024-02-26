@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@17.1.1-beta.0...@angular-builders/custom-esbuild@17.1.1-beta.1) (2024-02-26)
+
+### Bug Fixes
+
+* **custom-esbuild:** add type to schema extension ([#1689](https://github.com/just-jeb/angular-builders/issues/1689)) ([133f413](https://github.com/just-jeb/angular-builders/commit/133f41340936fd6055b289e9b5851d1b8d745708))
+
 ## [17.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@17.1.0...@angular-builders/custom-esbuild@17.1.1-beta.0) (2024-02-20)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild
