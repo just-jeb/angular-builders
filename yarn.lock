@@ -3318,7 +3318,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:3.3.0, @lerna-lite/cli@npm:^3.0.0":
+"@lerna-lite/cli@npm:3.3.0":
   version: 3.3.0
   resolution: "@lerna-lite/cli@npm:3.3.0"
   dependencies:
@@ -3346,6 +3346,37 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: 60cd5d035429e84afc40aef6742fb9ea214d9325b140559362b31e42f46bcf25219cda4042a71205121fb48cd8331762e49dca1d4f9f3e148981f144d0fe4786
+  languageName: node
+  linkType: hard
+
+"@lerna-lite/cli@npm:^3.0.0":
+  version: 3.3.1
+  resolution: "@lerna-lite/cli@npm:3.3.1"
+  dependencies:
+    "@lerna-lite/core": 3.3.1
+    "@lerna-lite/init": 3.3.1
+    dedent: ^1.5.1
+    dotenv: ^16.4.5
+    import-local: ^3.1.0
+    load-json-file: ^7.0.1
+    npmlog: ^7.0.1
+    yargs: ^17.7.2
+  peerDependenciesMeta:
+    "@lerna-lite/exec":
+      optional: true
+    "@lerna-lite/list":
+      optional: true
+    "@lerna-lite/publish":
+      optional: true
+    "@lerna-lite/run":
+      optional: true
+    "@lerna-lite/version":
+      optional: true
+    "@lerna-lite/watch":
+      optional: true
+  bin:
+    lerna: dist/cli.js
+  checksum: 29f2e5c9275054ebb2a8e8151145b3f57af043bc11c880fcf9e7d78bd55777a2d440dae930ec071edaa9db062be5a2196296da0c427f5feb46c2a51450755fd1
   languageName: node
   linkType: hard
 
@@ -3383,6 +3414,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lerna-lite/core@npm:3.3.1":
+  version: 3.3.1
+  resolution: "@lerna-lite/core@npm:3.3.1"
+  dependencies:
+    "@npmcli/run-script": ^7.0.4
+    chalk: ^5.3.0
+    clone-deep: ^4.0.1
+    config-chain: ^1.1.13
+    cosmiconfig: ^9.0.0
+    dedent: ^1.5.1
+    execa: ^8.0.1
+    fs-extra: ^11.2.0
+    glob-parent: ^6.0.2
+    globby: ^14.0.1
+    inquirer: ^9.2.15
+    is-ci: ^3.0.1
+    json5: ^2.2.3
+    load-json-file: ^7.0.1
+    minimatch: ^9.0.3
+    npm-package-arg: ^11.0.1
+    npmlog: ^7.0.1
+    p-map: ^7.0.1
+    p-queue: ^8.0.1
+    resolve-from: ^5.0.0
+    semver: ^7.6.0
+    slash: ^5.1.0
+    strong-log-transformer: ^2.1.0
+    write-file-atomic: ^5.0.1
+    write-json-file: ^5.0.0
+    write-pkg: ^6.0.1
+  checksum: 62fbddf7b39e7ae195f33572b4598d10056f1052ef22910722d2451e66a6aed7423d16ec5d467d18b0c94055ff9d6645a019546286ff0ffa777baf553260a15f
+  languageName: node
+  linkType: hard
+
 "@lerna-lite/init@npm:3.3.0":
   version: 3.3.0
   resolution: "@lerna-lite/init@npm:3.3.0"
@@ -3392,6 +3457,18 @@ __metadata:
     p-map: ^7.0.1
     write-json-file: ^5.0.0
   checksum: c23db113e0ca89bb5ce533ea65e5f27cd5b2f2ec5bf0dd37433a453695cda9a0ba6ccc9630a81df4a276ff4ab76d5571c7210e523c8cef2e4b0fde89b146bd93
+  languageName: node
+  linkType: hard
+
+"@lerna-lite/init@npm:3.3.1":
+  version: 3.3.1
+  resolution: "@lerna-lite/init@npm:3.3.1"
+  dependencies:
+    "@lerna-lite/core": 3.3.1
+    fs-extra: ^11.2.0
+    p-map: ^7.0.1
+    write-json-file: ^5.0.0
+  checksum: 844781e870b72790707d2a0f7287156bc8d8da61016ce8839129547983a22f639f690c61ea0567cf2d73aa21488b2ce2ee720b5f6aedd0995215628171aa3cf9
   languageName: node
   linkType: hard
 
@@ -4139,6 +4216,13 @@ __metadata:
   version: 1.0.0
   resolution: "@sindresorhus/merge-streams@npm:1.0.0"
   checksum: 453c2a28164113a5ec4fd23ba636e291a4112f6ee9e91cd5476b9a96e0fc9ee5ff40d405fe81bbf284c9773b7ed718a3a0f31df7895a0efd413b1f9775d154fe
+  languageName: node
+  linkType: hard
+
+"@sindresorhus/merge-streams@npm:^2.1.0":
+  version: 2.3.0
+  resolution: "@sindresorhus/merge-streams@npm:2.3.0"
+  checksum: e989d53dee68d7e49b4ac02ae49178d561c461144cea83f66fa91ff012d981ad0ad2340cbd13f2fdb57989197f5c987ca22a74eb56478626f04e79df84291159
   languageName: node
   linkType: hard
 
@@ -7397,6 +7481,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 301a12c3d44fd49888b74eb9ccf9f07a1f5df43f489e7fcb89647a2edcd84c42d6bc349dc8df099cd18f07c35c7b04685c1a4f3e6a6a9e6b30f8d48c15b7f49c
+  languageName: node
+  linkType: hard
+
 "duplexer2@npm:~0.1.4":
   version: 0.1.4
   resolution: "duplexer2@npm:0.1.4"
@@ -9065,6 +9156,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globby@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "globby@npm:14.0.1"
+  dependencies:
+    "@sindresorhus/merge-streams": ^2.1.0
+    fast-glob: ^3.3.2
+    ignore: ^5.2.4
+    path-type: ^5.0.0
+    slash: ^5.1.0
+    unicorn-magic: ^0.1.0
+  checksum: 33568444289afb1135ad62d52d5e8412900cec620e3b6ece533afa46d004066f14b97052b643833d7cf4ee03e7fac571430130cde44c333df91a45d313105170
+  languageName: node
+  linkType: hard
+
 "gopd@npm:^1.0.1":
   version: 1.0.1
   resolution: "gopd@npm:1.0.1"
@@ -9694,6 +9799,29 @@ __metadata:
     strip-ansi: ^6.0.1
     wrap-ansi: ^6.2.0
   checksum: a4e4d6eaa295dee1a4e658f51646a19644f7a747566fc445ca14ba4401dbbf1819edb6832d8b1f5c3fb2baa3d1bf26251ea33fe087ee45a7ae45381911443833
+  languageName: node
+  linkType: hard
+
+"inquirer@npm:^9.2.15":
+  version: 9.2.15
+  resolution: "inquirer@npm:9.2.15"
+  dependencies:
+    "@ljharb/through": ^2.3.12
+    ansi-escapes: ^4.3.2
+    chalk: ^5.3.0
+    cli-cursor: ^3.1.0
+    cli-width: ^4.1.0
+    external-editor: ^3.1.0
+    figures: ^3.2.0
+    lodash: ^4.17.21
+    mute-stream: 1.0.0
+    ora: ^5.4.1
+    run-async: ^3.0.0
+    rxjs: ^7.8.1
+    string-width: ^4.2.3
+    strip-ansi: ^6.0.1
+    wrap-ansi: ^6.2.0
+  checksum: 98e385ef2900a6071e6576ab9fbf0b04e908ed386aaae5163bd467d32dc80a76bcd33bd03d34cd35a93ce99e47cbd52d62ae48ace9bfb20aff4a45e9bc1323d3
   languageName: node
   linkType: hard
 
