@@ -182,6 +182,28 @@ The `@angular-builders/custom-esbuild:dev-server` is an enhanced version of the 
   }
 ```
 
+## Custom ESBuild `extract-i18n`
+
+Angular `extract-i18n` task expects builder name to equal `@angular-devkit/build-angular:application` or `@angular-devkit/build-angular:application` in order to run esbuild-based i18n messages extraction.
+
+The `@angular-builders/custom-esbuild:extract-i18n` is an enhanced version of the `@angular-devkit/build-angular:extract-i18n` builder.
+It mimics the real builder name and strips additional configuration properties (`indexHtmlTransformer`, `plugins`) to ensure the process succeeds.
+
+### Example
+
+`angular.json`:
+
+```js
+"architect": {
+  ...
+  "extract-i18n": {
+    "builder": "@angular-builders/custom-esbuild:extract-i18n",
+      "options": {
+      "buildTarget": "my-project:build"
+    }
+  }
+```
+
 # Index Transform
 
 Since Angular 8, `index.html` is not generated as part of the build. If you want to modify your `index.html`, you should use the `indexHtmlTransformer` option. `indexHtmlTransformer` is a path (relative to the workspace root) to a `.js` or `.ts` file that exports a transformation function for `index.html`. If `indexHtmlTransformer` is written in TypeScript, the application's `tsConfig` file will be used by `tsnode` for its execution:
