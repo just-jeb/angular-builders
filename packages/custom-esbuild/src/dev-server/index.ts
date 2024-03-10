@@ -42,27 +42,14 @@ export function executeCustomDevServerBuilder(
       const middleware = await Promise.all(
         (options.middlewares || []).map(middlewarePath =>
           // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<Connect.NextHandleFunction>(
-            path.join(workspaceRoot, middlewarePath),
-            tsConfig,
-            context.logger
-          )
+          loadModule<Connect.NextHandleFunction>(path.join(workspaceRoot, middlewarePath), tsConfig)
         )
       );
 
-      const buildPlugins = await loadPlugins(
-        buildOptions.plugins,
-        workspaceRoot,
-        tsConfig,
-        context.logger
-      );
+      const buildPlugins = await loadPlugins(buildOptions.plugins, workspaceRoot, tsConfig);
 
       const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer
-        ? await loadModule(
-            path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
-            tsConfig,
-            context.logger
-          )
+        ? await loadModule(path.join(workspaceRoot, buildOptions.indexHtmlTransformer), tsConfig)
         : undefined;
 
       patchBuilderContext(context, buildTarget);
