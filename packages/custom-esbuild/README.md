@@ -100,19 +100,25 @@ Builder options:
   "build": {
     "builder": "@angular-builders/custom-esbuild:application",
     "options": {
-      "plugins": ["./esbuild/plugins.ts", "./esbuild/plugin-2.js"],
+      "plugins": ["./esbuild/plugins.ts", { "path": "./esbuild/define-env.ts", "options": { "stage": "development" } }],
       "indexHtmlTransformer": "./esbuild/index-html-transformer.js",
       "outputPath": "dist/my-cool-client",
       "index": "src/index.html",
       "browser": "src/main.ts",
       "polyfills": ["zone.js"],
       "tsConfig": "src/tsconfig.app.json"
+    },
+    "configurations": {
+      "production": {
+        "plugins": ["./esbuild/plugins.ts", { "path": "./esbuild/define-env.ts", "options": { "stage": "production" } }]
+      }
     }
+  }
 ```
 
 In the above example, we specify the list of `plugins` that should implement the ESBuild plugin schema. These plugins are custom user plugins and are added to the original ESBuild Angular configuration. Additionally, the `indexHtmlTransformer` property is used to specify the path to the file that exports the function used to modify the `index.html`.
 
-The plugin file can export either a single plugin or a list of plugins:
+The plugin file can export either a single plugin or a list of plugins. If a plugin accepts configuration then the config should be provided in `angular.json`:
 
 ```ts
 // esbuild/plugins.ts
@@ -127,6 +133,25 @@ const defineTextPlugin: Plugin = {
 };
 
 export default defineTextPlugin;
+```
+
+OR:
+
+```ts
+// esbuild/plugins.ts
+import type { Plugin, PluginBuild } from 'esbuild';
+
+function defineEnv(pluginOptions: { stage: string }): Plugin {
+  return {
+    name: 'define-env',  
+    setup(build: PluginBuild) {
+      const buildOptions = build.initialOptions;
+      buildOptions.define.stage = JSON.stringify(pluginOptions.stage);
+    },
+  };
+};
+
+export default defineEnv;
 ```
 
 Or:
