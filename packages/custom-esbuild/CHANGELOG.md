@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [17.1.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@17.1.2-beta.3...@angular-builders/custom-esbuild@17.1.2) (2024-04-02)
+
+**Note:** Version bump only for package @angular-builders/custom-esbuild
+
 ## [17.1.2-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@17.1.2-beta.2...@angular-builders/custom-esbuild@17.1.2-beta.3) (2024-03-31)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild
