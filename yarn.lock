@@ -3144,38 +3144,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:3.3.1":
-  version: 3.3.1
-  resolution: "@lerna-lite/cli@npm:3.3.1"
-  dependencies:
-    "@lerna-lite/core": 3.3.1
-    "@lerna-lite/init": 3.3.1
-    dedent: ^1.5.1
-    dotenv: ^16.4.5
-    import-local: ^3.1.0
-    load-json-file: ^7.0.1
-    npmlog: ^7.0.1
-    yargs: ^17.7.2
-  peerDependenciesMeta:
-    "@lerna-lite/exec":
-      optional: true
-    "@lerna-lite/list":
-      optional: true
-    "@lerna-lite/publish":
-      optional: true
-    "@lerna-lite/run":
-      optional: true
-    "@lerna-lite/version":
-      optional: true
-    "@lerna-lite/watch":
-      optional: true
-  bin:
-    lerna: dist/cli.js
-  checksum: 29f2e5c9275054ebb2a8e8151145b3f57af043bc11c880fcf9e7d78bd55777a2d440dae930ec071edaa9db062be5a2196296da0c427f5feb46c2a51450755fd1
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/cli@npm:^3.0.0":
+"@lerna-lite/cli@npm:3.3.2, @lerna-lite/cli@npm:^3.0.0":
   version: 3.3.2
   resolution: "@lerna-lite/cli@npm:3.3.2"
   dependencies:
@@ -3203,40 +3172,6 @@ __metadata:
   bin:
     lerna: dist/cli.js
   checksum: 6657289280b522294269361d2a21bbee752355599a4028b43418a04cf4bf8ff4ce1eaaca6a7927b98cb288ed6adb12c8bfcbc9ef72c0a05152d4b1a8fe2201f8
-  languageName: node
-  linkType: hard
-
-"@lerna-lite/core@npm:3.3.1":
-  version: 3.3.1
-  resolution: "@lerna-lite/core@npm:3.3.1"
-  dependencies:
-    "@npmcli/run-script": ^7.0.4
-    chalk: ^5.3.0
-    clone-deep: ^4.0.1
-    config-chain: ^1.1.13
-    cosmiconfig: ^9.0.0
-    dedent: ^1.5.1
-    execa: ^8.0.1
-    fs-extra: ^11.2.0
-    glob-parent: ^6.0.2
-    globby: ^14.0.1
-    inquirer: ^9.2.15
-    is-ci: ^3.0.1
-    json5: ^2.2.3
-    load-json-file: ^7.0.1
-    minimatch: ^9.0.3
-    npm-package-arg: ^11.0.1
-    npmlog: ^7.0.1
-    p-map: ^7.0.1
-    p-queue: ^8.0.1
-    resolve-from: ^5.0.0
-    semver: ^7.6.0
-    slash: ^5.1.0
-    strong-log-transformer: ^2.1.0
-    write-file-atomic: ^5.0.1
-    write-json-file: ^5.0.0
-    write-pkg: ^6.0.1
-  checksum: 62fbddf7b39e7ae195f33572b4598d10056f1052ef22910722d2451e66a6aed7423d16ec5d467d18b0c94055ff9d6645a019546286ff0ffa777baf553260a15f
   languageName: node
   linkType: hard
 
@@ -3274,18 +3209,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/init@npm:3.3.1":
-  version: 3.3.1
-  resolution: "@lerna-lite/init@npm:3.3.1"
-  dependencies:
-    "@lerna-lite/core": 3.3.1
-    fs-extra: ^11.2.0
-    p-map: ^7.0.1
-    write-json-file: ^5.0.0
-  checksum: 844781e870b72790707d2a0f7287156bc8d8da61016ce8839129547983a22f639f690c61ea0567cf2d73aa21488b2ce2ee720b5f6aedd0995215628171aa3cf9
-  languageName: node
-  linkType: hard
-
 "@lerna-lite/init@npm:3.3.2":
   version: 3.3.2
   resolution: "@lerna-lite/init@npm:3.3.2"
@@ -3299,18 +3222,18 @@ __metadata:
   linkType: hard
 
 "@lerna-lite/publish@npm:^3.0.0":
-  version: 3.3.1
-  resolution: "@lerna-lite/publish@npm:3.3.1"
+  version: 3.3.2
+  resolution: "@lerna-lite/publish@npm:3.3.2"
   dependencies:
-    "@lerna-lite/cli": 3.3.1
-    "@lerna-lite/core": 3.3.1
-    "@lerna-lite/version": 3.3.1
+    "@lerna-lite/cli": 3.3.2
+    "@lerna-lite/core": 3.3.2
+    "@lerna-lite/version": 3.3.2
     "@npmcli/arborist": ^7.4.0
     byte-size: ^8.1.1
     chalk: ^5.3.0
     columnify: ^1.6.0
     fs-extra: ^11.2.0
-    glob: ^10.3.10
+    glob: ^10.3.12
     has-unicode: ^2.0.1
     libnpmaccess: ^8.0.2
     libnpmpublish: ^9.0.4
@@ -3326,18 +3249,18 @@ __metadata:
     read-package-json: ^7.0.0
     semver: ^7.6.0
     ssri: ^10.0.5
-    tar: ^6.2.0
+    tar: ^6.2.1
     temp-dir: ^3.0.0
-  checksum: f37bc890ed57269a0c5e75364372bec9eea6996882063e73f0c57ed0bc872b40c3ec9cd05e7524ee9539ce95129d49f1fa3a4112e68f6e40cd33c2aa76b3a57f
+  checksum: 6d4961ea821f0ea290d34b3902cf0a703cabbe01a0f66776e76ca47806f1fff5f3b72f5da43b1c1b645b12464aee21c3ab2668cb56fc1289095898a6de3f26bc
   languageName: node
   linkType: hard
 
-"@lerna-lite/version@npm:3.3.1":
-  version: 3.3.1
-  resolution: "@lerna-lite/version@npm:3.3.1"
+"@lerna-lite/version@npm:3.3.2":
+  version: 3.3.2
+  resolution: "@lerna-lite/version@npm:3.3.2"
   dependencies:
-    "@lerna-lite/cli": 3.3.1
-    "@lerna-lite/core": 3.3.1
+    "@lerna-lite/cli": 3.3.2
+    "@lerna-lite/core": 3.3.2
     "@octokit/plugin-enterprise-rest": ^6.0.1
     "@octokit/rest": ^20.0.2
     chalk: ^5.3.0
@@ -3348,13 +3271,13 @@ __metadata:
     conventional-recommended-bump: ^9.0.0
     dedent: ^1.5.1
     fs-extra: ^11.2.0
-    get-stream: ^8.0.1
+    get-stream: ^9.0.1
     git-url-parse: ^14.0.0
     graceful-fs: ^4.2.11
     is-stream: ^4.0.1
     load-json-file: ^7.0.1
     make-dir: ^4.0.0
-    minimatch: ^9.0.3
+    minimatch: ^9.0.4
     new-github-release-url: ^2.0.0
     node-fetch: ^3.3.2
     npm-package-arg: ^11.0.1
@@ -3368,7 +3291,7 @@ __metadata:
     temp-dir: ^3.0.0
     uuid: ^9.0.1
     write-json-file: ^5.0.0
-  checksum: 1abab1f32db9b47e75eb7b8a3a507f62044e61c8be988e30f7295f145b7cc963c86375fe3f24c3a9819f0f2d941d702cc65a05c7a2799bc8e32158c19d54131b
+  checksum: 316f5b47e38041db0c291d107325776a698307e14760a258c81644e11eee4fc2a7db7865747a3086bc72d7bb968b8e8d6a34f8a1a3f74f074d31022748300e42
   languageName: node
   linkType: hard
 
@@ -3981,6 +3904,13 @@ __metadata:
     "@angular-devkit/schematics": 17.3.3
     jsonc-parser: 3.2.1
   checksum: 755ce6275343f3450e5f0b6cb846974c980eb3948fa07abb4a08fd993afbd6e8fc117e947c87ca42fc8e82d5aee093731823497f73f731ff3150b7be0acff1b4
+  languageName: node
+  linkType: hard
+
+"@sec-ant/readable-stream@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "@sec-ant/readable-stream@npm:0.4.1"
+  checksum: eb56f72a70995f725269f1c1c206d6dbeb090e88413b1302a456c600041175a7a484c2f0172454f7bed65a8ab95ffed7647d8ad03e6c23b1e3bbc9845f78cd17
   languageName: node
   linkType: hard
 
@@ -8719,6 +8649,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-stream@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "get-stream@npm:9.0.1"
+  dependencies:
+    "@sec-ant/readable-stream": ^0.4.1
+    is-stream: ^4.0.1
+  checksum: 631df71d7bd60a7f373094d3c352e2ce412b82d30b1b0ec562e5a4aced976173a4cc0dabef019050e1aceaffb1f0e086349ab3d14377b0b7280510bd75bd3e1e
+  languageName: node
+  linkType: hard
+
 "get-uri@npm:^6.0.1":
   version: 6.0.2
   resolution: "get-uri@npm:6.0.2"
@@ -8845,6 +8785,21 @@ __metadata:
   bin:
     glob: dist/esm/bin.mjs
   checksum: 4f2fe2511e157b5a3f525a54092169a5f92405f24d2aed3142f4411df328baca13059f4182f1db1bf933e2c69c0bd89e57ae87edd8950cba8c7ccbe84f721cf3
+  languageName: node
+  linkType: hard
+
+"glob@npm:^10.3.12":
+  version: 10.3.12
+  resolution: "glob@npm:10.3.12"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^2.3.6
+    minimatch: ^9.0.1
+    minipass: ^7.0.4
+    path-scurry: ^1.10.2
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 2b0949d6363021aaa561b108ac317bf5a97271b8a5d7a5fac1a176e40e8068ecdcccc992f8a7e958593d501103ac06d673de92adc1efcbdab45edefe35f8d7c6
   languageName: node
   linkType: hard
 
@@ -9512,7 +9467,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inquirer@npm:9.2.15, inquirer@npm:^9.2.15":
+"inquirer@npm:9.2.15":
   version: 9.2.15
   resolution: "inquirer@npm:9.2.15"
   dependencies:
@@ -10032,7 +9987,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jackspeak@npm:^2.3.5":
+"jackspeak@npm:^2.3.5, jackspeak@npm:^2.3.6":
   version: 2.3.6
   resolution: "jackspeak@npm:2.3.6"
   dependencies:
@@ -11385,7 +11340,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^10.0.1, lru-cache@npm:^9.1.1 || ^10.0.0":
+"lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0, lru-cache@npm:^9.1.1 || ^10.0.0":
   version: 10.2.0
   resolution: "lru-cache@npm:10.2.0"
   checksum: eee7ddda4a7475deac51ac81d7dd78709095c6fa46e8350dc2d22462559a1faa3b81ed931d5464b13d48cbd7e08b46100b6f768c76833912bc444b99c37e25db
@@ -11817,7 +11772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^5.0.0 || ^6.0.2 || ^7.0.0, minipass@npm:^7.0.2, minipass@npm:^7.0.3":
+"minipass@npm:^5.0.0 || ^6.0.2 || ^7.0.0, minipass@npm:^7.0.2, minipass@npm:^7.0.3, minipass@npm:^7.0.4":
   version: 7.0.4
   resolution: "minipass@npm:7.0.4"
   checksum: 87585e258b9488caf2e7acea242fd7856bbe9a2c84a7807643513a338d66f368c7d518200ad7b70a508664d408aa000517647b2930c259a8b1f9f0984f344a21
@@ -13011,6 +12966,16 @@ __metadata:
     lru-cache: ^9.1.1 || ^10.0.0
     minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
   checksum: e2557cff3a8fb8bc07afdd6ab163a92587884f9969b05bbbaf6fe7379348bfb09af9ed292af12ed32398b15fb443e81692047b786d1eeb6d898a51eb17ed7d90
+  languageName: node
+  linkType: hard
+
+"path-scurry@npm:^1.10.2":
+  version: 1.10.2
+  resolution: "path-scurry@npm:1.10.2"
+  dependencies:
+    lru-cache: ^10.2.0
+    minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
+  checksum: 6739b4290f7d1a949c61c758b481c07ac7d1a841964c68cf5e1fa153d7e18cbde4872b37aadf9c5173c800d627f219c47945859159de36c977dd82419997b9b8
   languageName: node
   linkType: hard
 
@@ -15445,7 +15410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tar@npm:^6.1.11, tar@npm:^6.1.2, tar@npm:^6.2.0":
+"tar@npm:^6.1.11, tar@npm:^6.1.2":
   version: 6.2.0
   resolution: "tar@npm:6.2.0"
   dependencies:
@@ -15456,6 +15421,20 @@ __metadata:
     mkdirp: ^1.0.3
     yallist: ^4.0.0
   checksum: db4d9fe74a2082c3a5016630092c54c8375ff3b280186938cfd104f2e089c4fd9bad58688ef6be9cf186a889671bf355c7cda38f09bbf60604b281715ca57f5c
+  languageName: node
+  linkType: hard
+
+"tar@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "tar@npm:6.2.1"
+  dependencies:
+    chownr: ^2.0.0
+    fs-minipass: ^2.0.0
+    minipass: ^5.0.0
+    minizlib: ^2.1.1
+    mkdirp: ^1.0.3
+    yallist: ^4.0.0
+  checksum: f1322768c9741a25356c11373bce918483f40fa9a25c69c59410c8a1247632487edef5fe76c5f12ac51a6356d2f1829e96d2bc34098668a2fc34d76050ac2b6c
   languageName: node
   linkType: hard
 
@@ -16818,19 +16797,6 @@ __metadata:
     type-fest: ^4.6.0
     write-json-file: ^5.0.0
   checksum: fd38402f1088f0f8c9b59795988abaf8229962e5cfa7da0664ec06acadca0ec330028ae33c40a925256f812c9e1b89c7522c6f49f5701af56b36afb763eda6fd
-  languageName: node
-  linkType: hard
-
-"write-pkg@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "write-pkg@npm:6.0.1"
-  dependencies:
-    deepmerge-ts: ^5.1.0
-    read-pkg: ^8.1.0
-    sort-keys: ^5.0.0
-    type-fest: ^4.6.0
-    write-json-file: ^5.0.0
-  checksum: d482355662774945a7243bea2e03d32bf1173571211646d3793c18df5a41516c2eb35eca2ebbe65563b9d20c643560bd3751ea32ae57aa9144b3f81b79512a60
   languageName: node
   linkType: hard
 
