@@ -19,8 +19,7 @@ describe('Custom ESBuild schema tests', () => {
   });
 
   it('should fit the schema of the `@angular-devkit/build-angular:dev-server`', () => {
-    const path = resolvePackagePath('@angular/build', 'src/builders/dev-server/schema.json');
-    const originalDevServerSchema = require(path);
+    const originalDevServerSchema = require('@angular-devkit/build-angular/src/builders/dev-server/schema.json');
     customEsbuildDevServerSchema.properties['middlewares'] = undefined;
     expect(originalDevServerSchema.properties).toEqual(customEsbuildDevServerSchema.properties);
   });
