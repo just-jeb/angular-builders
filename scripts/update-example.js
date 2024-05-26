@@ -4,11 +4,16 @@ const version = Number.parseInt(process.argv.slice(2));
 
 const runNgUpdate = () => {
   console.log(`Updating Angular version for ${package.name}`);
-  execSync(`ng update @angular/core@${version} @angular/cli@${version} --create-commits`, {
-    cwd: process.cwd(),
-    stdio: 'inherit',
-  });
-  console.log(`Successfully updated ${package.name} to Angular ${version}`);
+  try {
+    execSync(`ng update @angular/core@${version} @angular/cli@${version} --create-commits`, {
+      cwd: process.cwd(),
+      stdio: 'inherit',
+    });
+    console.log(`Successfully updated ${package.name} to Angular ${version}`);
+  } catch (error) {
+    console.log(`Failed to update ${package.name} to Angular ${version}: ${error.message}`);
+  }
+
   // console.log('Committing the changes');
   // execSync(`git commit -am 'chore(deps): update ${package.name} to Angular ${version}'`);
   // console.log('Successfully committed the changes');
