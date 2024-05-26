@@ -14,7 +14,9 @@ const runNgUpdate = () => {
     );
     console.log(`Successfully updated ${package.name} to Angular ${version}`);
   } catch (error) {
-    console.log(`Failed to update ${package.name} to Angular ${version}: ${error.message}`);
+    console.log(
+      `Failed to update ${package.name} to Angular ${version}: ${error.message}\n${error.stack}`
+    );
   }
 
   // console.log('Committing the changes');
