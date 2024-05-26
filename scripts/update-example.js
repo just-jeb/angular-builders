@@ -4,7 +4,10 @@ const version = Number.parseInt(process.argv.slice(2));
 
 const runNgUpdate = () => {
   console.log(`Updating Angular version for ${package.name}`);
-  execSync(`ng update @angular/core@${version} @angular/cli@${version}`);
+  execSync(`ng update @angular/core@${version} @angular/cli@${version}`, {
+    cwd: process.cwd(),
+    stdio: 'inherit',
+  });
   console.log(`Successfully updated ${package.name} to Angular ${version}`);
   console.log('Committing the changes');
   execSync(`git commit -am 'chore(deps): update ${package.name} to Angular ${version}'`);
@@ -21,6 +24,7 @@ const updateNonAngularApp = () => {
 };
 
 const updateExample = () => {
+  console.log('Current working directory:', process.cwd());
   if (package.name === 'bazel-example') {
     updateNonAngularApp();
   } else {
