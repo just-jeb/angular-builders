@@ -5,7 +5,7 @@ import {
   DevServerBuilderOutput,
   executeDevServerBuilder,
 } from '@angular-devkit/build-angular';
-import { IndexHtmlTransform } from '@angular-devkit/build-angular/src/utils/index-file/index-html-generator';
+import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import type { Connect } from 'vite';
