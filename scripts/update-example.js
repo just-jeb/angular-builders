@@ -6,7 +6,7 @@ const runNgUpdate = () => {
   console.log(`Updating Angular version for ${package.name}`);
   try {
     execSync(
-      `ng update @angular/core@${version} @angular/cli@${version} --create-commits --verbose`,
+      `ng update @angular/core@${version} @angular/cli@${version} --create-commits --allow-dirty --verbose`,
       {
         cwd: process.cwd(),
         stdio: 'inherit',
