@@ -1,3 +1,17 @@
+# Migration from version 17 to version 18
+
+## Custom ESBuild builder
+
+- No breaking changes (except for updating to Angular 18)
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 18)
+
+## Jest builder
+
+- No breaking changes
+
 # Migration from version 16 to version 17
 
 ## Custom Webpack builder
