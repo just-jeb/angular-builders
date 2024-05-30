@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@17.0.4-beta.3...@angular-builders/jest@18.0.0-beta.0) (2024-05-30)
+
+### ⚠ BREAKING CHANGES
+
+- update to Angular 18 (#1787)
+
+### Miscellaneous Chores
+
+- update to Angular 18 ([#1787](https://github.com/just-jeb/angular-builders/issues/1787)) ([eba47d5](https://github.com/just-jeb/angular-builders/commit/eba47d5749cdee361646895cc3d53e96868aa9d1))
+
 ## [17.0.4-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@17.0.4-beta.2...@angular-builders/jest@17.0.4-beta.3) (2024-05-22)
 
 **Note:** Version bump only for package @angular-builders/jest
@@ -75,11 +85,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 17 (#1518)
+- **deps:** update to Angular 17 (#1518)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 17 ([#1518](https://github.com/just-jeb/angular-builders/issues/1518)) ([236d0ac](https://github.com/just-jeb/angular-builders/commit/236d0acf7c46dc70787d8447fad79912a71e880b))
+- **deps:** update to Angular 17 ([#1518](https://github.com/just-jeb/angular-builders/issues/1518)) ([236d0ac](https://github.com/just-jeb/angular-builders/commit/236d0acf7c46dc70787d8447fad79912a71e880b))
 
 ## [16.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@16.0.2-beta.2...@angular-builders/jest@16.0.2-beta.3) (2023-10-01)
 
@@ -105,7 +115,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* **jest:** set path to tsconfig correctly ([#1443](https://github.com/just-jeb/angular-builders/issues/1443)) ([2918f2b](https://github.com/just-jeb/angular-builders/commit/2918f2b7b1ea33a0798527b4fcef97b5d6e26a66)), closes [#1408](https://github.com/just-jeb/angular-builders/issues/1408)
+- **jest:** set path to tsconfig correctly ([#1443](https://github.com/just-jeb/angular-builders/issues/1443)) ([2918f2b](https://github.com/just-jeb/angular-builders/commit/2918f2b7b1ea33a0798527b4fcef97b5d6e26a66)), closes [#1408](https://github.com/just-jeb/angular-builders/issues/1408)
 
 ## [16.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@16.0.1-beta.1...@angular-builders/jest@16.0.1-beta.2) (2023-07-06)
 
@@ -143,11 +153,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 16 (#1357)
+- **deps:** update to Angular 16 (#1357)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 16 ([#1357](https://github.com/just-jeb/angular-builders/issues/1357)) ([06392ae](https://github.com/just-jeb/angular-builders/commit/06392ae894896f2ba863991e486b57a7abc80c3c))
+- **deps:** update to Angular 16 ([#1357](https://github.com/just-jeb/angular-builders/issues/1357)) ([06392ae](https://github.com/just-jeb/angular-builders/commit/06392ae894896f2ba863991e486b57a7abc80c3c))
 
 ## [15.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@15.0.1-beta.0...@angular-builders/jest@15.0.1-beta.1) (2023-03-14)
 
@@ -165,7 +175,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **jest:** support Jest config in different formats ([#1325](https://github.com/just-jeb/angular-builders/issues/1325)) ([bc19a54](https://github.com/just-jeb/angular-builders/commit/bc19a5425585fac6d0aa3c8ac4e6b0640a0d2a0c))
+- **jest:** support Jest config in different formats ([#1325](https://github.com/just-jeb/angular-builders/issues/1325)) ([bc19a54](https://github.com/just-jeb/angular-builders/commit/bc19a5425585fac6d0aa3c8ac4e6b0640a0d2a0c))
 
 ## [15.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@15.0.0-beta.0...@angular-builders/jest@15.0.0-beta.1) (2022-11-26)
 
@@ -175,11 +185,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 15, tsconfig-paths 4 (#1319)
+- **deps:** update to Angular 15, tsconfig-paths 4 (#1319)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 15, tsconfig-paths 4 ([#1319](https://github.com/just-jeb/angular-builders/issues/1319)) ([dd47762](https://github.com/just-jeb/angular-builders/commit/dd47762b7da037f7b1bf3ebf6f8ebed4a9819ecb))
+- **deps:** update to Angular 15, tsconfig-paths 4 ([#1319](https://github.com/just-jeb/angular-builders/issues/1319)) ([dd47762](https://github.com/just-jeb/angular-builders/commit/dd47762b7da037f7b1bf3ebf6f8ebed4a9819ecb))
 
 ## [14.1.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.1.0...@angular-builders/jest@14.1.1-beta.0) (2022-11-17)
 
@@ -193,7 +203,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **jest:** support shard CLI options ([#1314](https://github.com/just-jeb/angular-builders/issues/1314)) ([#1315](https://github.com/just-jeb/angular-builders/issues/1315)) ([7ddad99](https://github.com/just-jeb/angular-builders/commit/7ddad997c39507c97b099907ab63c36fd0bfead2))
+- **jest:** support shard CLI options ([#1314](https://github.com/just-jeb/angular-builders/issues/1314)) ([#1315](https://github.com/just-jeb/angular-builders/issues/1315)) ([7ddad99](https://github.com/just-jeb/angular-builders/commit/7ddad997c39507c97b099907ab63c36fd0bfead2))
 
 ## [14.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.2...@angular-builders/jest@14.0.2) (2022-10-31)
 
@@ -203,13 +213,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Bug Fixes
 
-* jest no-cache option ([#1290](https://github.com/just-jeb/angular-builders/issues/1290)) ([4cc057c](https://github.com/just-jeb/angular-builders/commit/4cc057cbb46c5a581dd519443a836d54de40d092))
+- jest no-cache option ([#1290](https://github.com/just-jeb/angular-builders/issues/1290)) ([4cc057c](https://github.com/just-jeb/angular-builders/commit/4cc057cbb46c5a581dd519443a836d54de40d092))
 
 ### [14.0.2-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.2-beta.0...@angular-builders/jest@14.0.2-beta.1) (2022-10-18)
 
 ### Bug Fixes
 
-* remove conflicting commands and aliases ([#1281](https://github.com/just-jeb/angular-builders/issues/1281)) ([38e5aa9](https://github.com/just-jeb/angular-builders/commit/38e5aa96ce823a6264c2c7a43fc63aed27fde671))
+- remove conflicting commands and aliases ([#1281](https://github.com/just-jeb/angular-builders/issues/1281)) ([38e5aa9](https://github.com/just-jeb/angular-builders/commit/38e5aa96ce823a6264c2c7a43fc63aed27fde671))
 
 ### [14.0.2-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@14.0.1...@angular-builders/jest@14.0.2-beta.0) (2022-09-28)
 
