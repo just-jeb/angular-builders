@@ -1,7 +1,8 @@
-// Base schemes from build-angular@17.3.2
+// Base schemes from build-angular@18.0.0
 module.exports = [
   {
-    originalSchemaPath: '@angular-devkit/build-angular/src/builders/application/schema.json',
+    originalSchemaPackage: '@angular/build',
+    originalSchemaPath: 'src/builders/application/schema.json',
     schemaExtensionPaths: [`${__dirname}/application/schema.ext.json`],
     newSchemaPath: `${__dirname}/../dist/application/schema.json`,
   },

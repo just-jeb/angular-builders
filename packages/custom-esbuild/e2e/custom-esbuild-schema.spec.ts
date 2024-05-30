@@ -1,3 +1,5 @@
+import { resolvePackagePath } from '@angular-builders/common';
+
 describe('Custom ESBuild schema tests', () => {
   let customEsbuildApplicationSchema: any;
   let customEsbuildDevServerSchema: any;
@@ -9,7 +11,8 @@ describe('Custom ESBuild schema tests', () => {
   });
 
   it('should fit the schema of the `@angular-devkit/build-angular:application`', () => {
-    const originalApplicationSchema = require('@angular-devkit/build-angular/src/builders/application/schema.json');
+    const path = resolvePackagePath('@angular/build', 'src/builders/application/schema.json');
+    const originalApplicationSchema = require(path);
     customEsbuildApplicationSchema.properties['plugins'] = undefined;
     customEsbuildApplicationSchema.properties['indexHtmlTransformer'] = undefined;
     expect(originalApplicationSchema.properties).toEqual(customEsbuildApplicationSchema.properties);

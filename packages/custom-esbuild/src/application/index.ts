@@ -2,7 +2,7 @@ import * as path from 'node:path';
 import { BuilderContext, createBuilder } from '@angular-devkit/architect';
 import { buildApplication } from '@angular-devkit/build-angular';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
-import { ApplicationBuilderExtensions } from '@angular-devkit/build-angular/src/builders/application/options';
+import type { ApplicationBuilderExtensions } from '@angular/build/src/builders/application/options';
 import { defer, switchMap } from 'rxjs';
 import { loadModule } from '@angular-builders/common';
 

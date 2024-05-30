@@ -30,7 +30,7 @@ Allow customizing ESBuild configuration
 
 ## Prerequisites:
 
-- [Angular CLI 17.1](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 18](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 

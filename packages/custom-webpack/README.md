@@ -33,6 +33,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 <details>
   <summary>Click to expand</summary>
 
+- [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/custom-webpack/README.md)
 - [Version 16](https://github.com/just-jeb/angular-builders/blob/16.x.x/packages/custom-webpack/README.md)
 - [Version 15](https://github.com/just-jeb/angular-builders/blob/15.x.x/packages/custom-webpack/README.md)
 - [Version 14](https://github.com/just-jeb/angular-builders/blob/14.x.x/packages/custom-webpack/README.md)
@@ -50,7 +51,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Prerequisites:
 
-- [Angular CLI 17](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 18](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 

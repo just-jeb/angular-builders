@@ -2,7 +2,7 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders requires Angular CLI 17
+## The latest version of all the builders requires Angular CLI 18
 
 Builders' and Angular **major** versions **must** match.
 
@@ -13,6 +13,7 @@ Builders' and Angular **major** versions **must** match.
 <details>
   <summary>Click to expand</summary>
 
+- [Version 17](https://github.com/just-jeb/angular-builders/tree/17.x.x)
 - [Version 16](https://github.com/just-jeb/angular-builders/tree/16.x.x)
 - [Version 15](https://github.com/just-jeb/angular-builders/tree/15.x.x)
 - [Version 14](https://github.com/just-jeb/angular-builders/tree/14.x.x)
