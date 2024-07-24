@@ -311,14 +311,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/animations@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/animations@npm:18.1.1"
+"@angular/animations@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/animations@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 18.1.1
-  checksum: d8013b25fdf5de7aa7f6cc03d9f406d08ffcef2567c3b0a0b9d34f2deddab76b88757865f2f5f430b5f1ef87d1f264482a4e8a59814e3e44c8a097aabea80163
+    "@angular/core": 18.1.2
+  checksum: 3c32d056b6abbcdd77b9338104f3e334f2c9566eb077ea429e189bb15a52acf94f0aa42b5b40ab6887373434a29bab52a16e36d49d98ceea0a017e7c197c965a
   languageName: node
   linkType: hard
 
@@ -416,23 +416,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/common@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/common@npm:18.1.1"
+"@angular/common@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/common@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 18.1.1
+    "@angular/core": 18.1.2
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: fb79c99ed48080dbc4b8287af4861840851d6ab7f9ffb5f2bc3f45f01cebd209c671184ce84efacedce40ecb4505b3cc1452b71df84b836c6e39bda5d71d573f
+  checksum: a760943903d948a3ac35266d8ed31d2e16bdebd57e839ce4298a6421d543f49d10f57d80c02a62137194646723c787d673022305c5dd2507a2128dec14d23763
   languageName: node
   linkType: hard
 
-"@angular/compiler-cli@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/compiler-cli@npm:18.1.1"
+"@angular/compiler-cli@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/compiler-cli@npm:18.1.2"
   dependencies:
-    "@babel/core": 7.24.7
+    "@babel/core": 7.24.9
     "@jridgewell/sourcemap-codec": ^1.4.14
     chokidar: ^3.0.0
     convert-source-map: ^1.5.1
@@ -441,104 +441,104 @@ __metadata:
     tslib: ^2.3.0
     yargs: ^17.2.1
   peerDependencies:
-    "@angular/compiler": 18.1.1
+    "@angular/compiler": 18.1.2
     typescript: ">=5.4 <5.6"
   bin:
     ng-xi18n: bundles/src/bin/ng_xi18n.js
     ngc: bundles/src/bin/ngc.js
     ngcc: bundles/ngcc/index.js
-  checksum: 94082e1b45680ae08ecfe6dc82d4c590fd7e66855d827f7e232918b483e46c6d48f08a1aa3a652e83c5021adc8454f5109fd3d96086a5c9a043ad2baadeba71c
+  checksum: 970cc1ab734c84222bf316b0b9af415bef7f0f867e4bc6c240c6b40686e2a2c21092180ba6fa0d7c148c49773348e7079e3e50979ae55ed3553c58e16dbd28f4
   languageName: node
   linkType: hard
 
-"@angular/compiler@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/compiler@npm:18.1.1"
+"@angular/compiler@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/compiler@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/core": 18.1.1
+    "@angular/core": 18.1.2
   peerDependenciesMeta:
     "@angular/core":
       optional: true
-  checksum: bd4b98b4d9e625f8aa3bda588b2a7b8c851f71e6581f28efc21c8b7b86bb41c63bf3441b96f16d92f20ba12fbc2e68864a7e733daebb792ff5c7a389c4452894
+  checksum: fcfd4275627d620b4622b9a2c61b7ec89f15c4f991c1b6304540d65f1948ea58844ba20d51ed9f4f25fad0052482904d5b4517486e5809d3f02e0153b4eb3ea1
   languageName: node
   linkType: hard
 
-"@angular/core@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/core@npm:18.1.1"
+"@angular/core@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/core@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
     rxjs: ^6.5.3 || ^7.4.0
     zone.js: ~0.14.0
-  checksum: 524024c7dae84d680d20c6785d5bef9b8d3090bbb972210f0882d72fd5d6a525a767d18f84fbde064d07a23b9aaede510ef3f689ce5fe32232b1e19d1bca3e0c
+  checksum: 1d06f62446e17d84c4cfb017bb59369ccd308285b37aff69ae0aba9842b149f59714d517c879eb8f9f5f4f9d503734d08252e0d50c489bca2835f010174edb9f
   languageName: node
   linkType: hard
 
-"@angular/forms@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/forms@npm:18.1.1"
+"@angular/forms@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/forms@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/platform-browser": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/platform-browser": 18.1.2
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 86d8e00b77d17a7760f1f0724306775b612e1b3783dc248febd4323964d76efd5fa54afe0433245b1aa5dc19f58f05f03bea0ddc7a9ea3453585379da4b865c9
+  checksum: dea9805b10859796ec6032c1aa27e03fce32754196ba6f2b0bb8f404266be4869ea1a4df0190adaf141086cefe32062a6b33c0973f28d51e4514b1f33ed922e1
   languageName: node
   linkType: hard
 
-"@angular/language-service@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/language-service@npm:18.1.1"
-  checksum: 6ccc37305280c81b33bd2a7f61397002ea6da237522ba2364beda4aa411048431f7eca3bfb6c52fdbf530bbd45c5d8af6d031cbcae3e0d9acf7131c851204dd6
+"@angular/language-service@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/language-service@npm:18.1.2"
+  checksum: b9459b859b11e4775a59e4f47760d8361944a83ab5704504ae3b06fc474adebf3f1f5bf4215c8ce5d5a4df4543f6705d7ad5520869cfce049ac3875804fcd399
   languageName: node
   linkType: hard
 
-"@angular/platform-browser-dynamic@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/platform-browser-dynamic@npm:18.1.1"
+"@angular/platform-browser-dynamic@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/platform-browser-dynamic@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/platform-browser": 18.1.1
-  checksum: cae4080f142dd9bb391ad02d3025a5e5f4ad44ce1d564e1c648f436b7eb1449c69b777947745b3d7e21f8bd962a4d1663b7351d055705208931d01ffb7958e98
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/platform-browser": 18.1.2
+  checksum: 6df345a47f8c893472c70063452c03f46ee3853a8c38925d6ee0ce20e84712f40f3f7eebb77238901ddcd06ba510b879e7cceec42bb0394081eaf269254deba6
   languageName: node
   linkType: hard
 
-"@angular/platform-browser@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/platform-browser@npm:18.1.1"
+"@angular/platform-browser@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/platform-browser@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/animations": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/core": 18.1.1
+    "@angular/animations": 18.1.2
+    "@angular/common": 18.1.2
+    "@angular/core": 18.1.2
   peerDependenciesMeta:
     "@angular/animations":
       optional: true
-  checksum: ca2e8707e54feb0ddab3824c176b26ea03b8a222f60f5dcee99173d1b48cc7ac1174c9a425fe7247596b2ceb61aacfaef375d144a6109690e1c45ea52259e357
+  checksum: 5ba0c1a6a10a77fa3655f27faeeba9d2df656f675b8105f5d3c76e7fb81057da096f011cfd85c651a05691483d2a425138897dd73442340019d185828b7426de
   languageName: node
   linkType: hard
 
-"@angular/router@npm:18.1.1":
-  version: 18.1.1
-  resolution: "@angular/router@npm:18.1.1"
+"@angular/router@npm:18.1.2":
+  version: 18.1.2
+  resolution: "@angular/router@npm:18.1.2"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/platform-browser": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/platform-browser": 18.1.2
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 6d47441b1a2dc4283ec558c5c142d587510d0837c8f04757b0ba589d44550d868f4be752ebf4d8da2bf654b325448598c37b0f96c75ca1f08144748bd11633fc
+  checksum: 30a1984613c7777ed1827482a0ccdc4157cac7625c84640dc00d9a614e4bb3748a404641ec17cb5b88d6deeb6fea629f268ea890d8014d1b06ede698ac9c9383
   languageName: node
   linkType: hard
 
@@ -582,7 +582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.23.9":
+"@babel/core@npm:7.24.9, @babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.23.9":
   version: 7.24.9
   resolution: "@babel/core@npm:7.24.9"
   dependencies:
@@ -8442,17 +8442,17 @@ __metadata:
   dependencies:
     "@angular-builders/custom-webpack": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -11776,17 +11776,17 @@ __metadata:
   dependencies:
     "@angular-builders/jest": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -14059,16 +14059,16 @@ __metadata:
   dependencies:
     "@angular-builders/custom-webpack": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@cypress/schematic": 2.5.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
@@ -14093,17 +14093,17 @@ __metadata:
   dependencies:
     "@angular-builders/custom-webpack": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -14128,17 +14128,17 @@ __metadata:
   dependencies:
     "@angular-builders/custom-esbuild": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.2
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -14163,17 +14163,17 @@ __metadata:
   dependencies:
     "@angular-builders/custom-esbuild": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.2
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -14506,17 +14506,17 @@ __metadata:
   dependencies:
     "@angular-builders/jest": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
     cypress: 13.13.1
@@ -15384,17 +15384,17 @@ __metadata:
   dependencies:
     "@angular-builders/timestamp": "workspace:*"
     "@angular-devkit/build-angular": 18.1.1
-    "@angular/animations": 18.1.1
+    "@angular/animations": 18.1.2
     "@angular/cli": 18.1.1
-    "@angular/common": 18.1.1
-    "@angular/compiler": 18.1.1
-    "@angular/compiler-cli": 18.1.1
-    "@angular/core": 18.1.1
-    "@angular/forms": 18.1.1
-    "@angular/language-service": 18.1.1
-    "@angular/platform-browser": 18.1.1
-    "@angular/platform-browser-dynamic": 18.1.1
-    "@angular/router": 18.1.1
+    "@angular/common": 18.1.2
+    "@angular/compiler": 18.1.2
+    "@angular/compiler-cli": 18.1.2
+    "@angular/core": 18.1.2
+    "@angular/forms": 18.1.2
+    "@angular/language-service": 18.1.2
+    "@angular/platform-browser": 18.1.2
+    "@angular/platform-browser-dynamic": 18.1.2
+    "@angular/router": 18.1.2
     "@cypress/schematic": 2.5.2
     "@types/jasmine": 5.1.4
     "@types/node": 20.14.12
