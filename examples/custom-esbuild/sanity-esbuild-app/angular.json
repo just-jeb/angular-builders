@@ -17,7 +17,15 @@
         "build": {
           "builder": "@angular-builders/custom-esbuild:application",
           "options": {
-            "plugins": ["esbuild/define-text-plugin.js"],
+            "plugins": [
+              "esbuild/define-text-plugin.js",
+              {
+                "path": "esbuild/define-text-by-option-plugin.js",
+                "options": {
+                  "title": "sanity-esbuild-app optionTitle (compilation provided)"
+                }
+              }
+            ],
             "outputPath": "dist/sanity-esbuild-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -45,10 +53,26 @@
               "outputHashing": "all"
             },
             "esm": {
-              "plugins": ["esbuild/define-text-plugin.mjs"]
+              "plugins": [
+                "esbuild/define-text-plugin.mjs",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.mjs",
+                  "options": {
+                    "title": "sanity-esbuild-app optionTitle (compilation provided)"
+                  }
+                }
+              ]
             },
             "cjs": {
-              "plugins": ["esbuild/define-text-plugin.js"]
+              "plugins": [
+                "esbuild/define-text-plugin.js",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.js",
+                  "options": {
+                    "title": "sanity-esbuild-app optionTitle (compilation provided)"
+                  }
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
