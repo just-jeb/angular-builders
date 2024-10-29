@@ -15,17 +15,18 @@
     "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
   },
   "scripts": {
-    "prebuild": "yarn clean",
-    "build": "yarn prebuild && tsc",
+    "prebuild": "pnpm clean",
+    "build": "pnpm prebuild && tsc",
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@angular-devkit/core": "^18.0.0",
+		"@angular-devkit/core": "19.0.0-next.13",
+    "tsx": "^4.19.2",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^4.1.0"
   },
   "devDependencies": {
     "rimraf": "^5.0.0",
-    "typescript": "5.4.5"
+		"typescript": "^5.6.3"
   }
 }

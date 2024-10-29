@@ -4,27 +4,24 @@ import {
   DevServerBuilderOptions,
   DevServerBuilderOutput,
   executeDevServerBuilder,
-} from '@angular-devkit/build-angular';
-import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
+} from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
-import type { Connect } from 'vite';
 import { loadModule } from '@angular-builders/common';
 
 import { loadPlugins } from '../load-plugins';
-import { patchBuilderContext } from './patch-builder-context';
 import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
 } from '../custom-esbuild-schema';
+import { IndexHtmlTransform } from '@angular/build/private';
 
 export function executeCustomDevServerBuilder(
   options: CustomEsbuildDevServerSchema,
   context: BuilderContext
 ): Observable<DevServerBuilderOutput> {
   const buildTarget = targetFromTargetString(
-    // `browserTarget` has been deprecated.
-    options.buildTarget ?? options.browserTarget!
+    options.buildTarget
   );
 
   async function getBuildTargetOptions() {
@@ -42,7 +39,7 @@ export function executeCustomDevServerBuilder(
       const middleware = await Promise.all(
         (options.middlewares || []).map(middlewarePath =>
           // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<Connect.NextHandleFunction>(
+          loadModule<any>(
             path.join(workspaceRoot, middlewarePath),
             tsConfig,
             context.logger
@@ -65,15 +62,12 @@ export function executeCustomDevServerBuilder(
           )
         : undefined;
 
-      patchBuilderContext(context, buildTarget);
+      // patchBuilderContext(context, buildTarget);
 
-      return {
-        transforms: { indexHtml: indexHtmlTransformer },
-        extensions: { middleware, buildPlugins },
-      };
+      return { middleware, buildPlugins, indexHtmlTransformer };
     }),
-    switchMap(({ transforms, extensions }) =>
-      executeDevServerBuilder(options, context, transforms, extensions)
+    switchMap((extensions) =>
+      executeDevServerBuilder(options, context, extensions)
     )
   );
 }

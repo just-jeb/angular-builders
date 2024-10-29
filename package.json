@@ -6,21 +6,6 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "examples/*",
-      "examples/custom-esbuild/*",
-      "examples/custom-webpack/*",
-      "examples/jest/*"
-    ]
-  },
-  "resolutions": {
-    "@cypress/schematic/@angular-devkit/architect": ">=0.1800.0 < 0.1900.0",
-    "@cypress/schematic/@angular-devkit/core": "^18.0.0",
-    "@cypress/schematic/@angular-devkit/schematics": "^18.0.0",
-    "@cypress/schematic/@schematics/angular": "^18.0.0"
-  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
@@ -44,16 +29,9 @@
     "@lerna-lite/publish": "^3.0.0",
     "@types/lodash": "^4.14.118",
     "@types/node": "^20.0.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^15.0.0",
     "lodash": "^4.17.15",
     "prettier": "^3.0.0",
     "ts-jest": "29.2.3"
-  },
-  "lint-staged": {
-    "*.{js,ts,html,md}": [
-      "prettier --write"
-    ]
   },
   "prettier": {
     "semi": true,
@@ -64,6 +42,5 @@
     "bracketSpacing": true,
     "arrowParens": "avoid",
     "singleQuote": true
-  },
-  "packageManager": "yarn@3.8.3"
+  }
 }
