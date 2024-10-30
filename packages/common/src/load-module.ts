@@ -21,7 +21,7 @@ const _tsNodeRegister = (() => {
     loadTsNode().register({
       project: tsConfig,
       compilerOptions: {
-        module: 'CommonJS',
+        module: "Preserve",
         types: [
           'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
         ],
@@ -77,14 +77,14 @@ export async function loadModule<T>(
   tsConfig: string,
   logger: logging.LoggerApi
 ): Promise<T> {
-  tsNodeRegister(modulePath, tsConfig, logger);
+  // tsNodeRegister(modulePath, tsConfig, logger);
 
   switch (path.extname(modulePath)) {
     case '.mjs':
       // Load the ESM configuration file using the TypeScript dynamic import workaround.
       // Once TypeScript provides support for keeping the dynamic import this workaround can be
       // changed to a direct dynamic import.
-      return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
+      return import(modulePath).then((module) => module.default);
     case '.cjs':
       return require(modulePath);
     case '.ts':
@@ -98,7 +98,7 @@ export async function loadModule<T>(
           // Load the ESM configuration file using the TypeScript dynamic import workaround.
           // Once TypeScript provides support for keeping the dynamic import this workaround can be
           // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
+          return import(modulePath).then((module) => module.default);
         }
         throw e;
       }
@@ -113,7 +113,7 @@ export async function loadModule<T>(
           // Load the ESM configuration file using the TypeScript dynamic import workaround.
           // Once TypeScript provides support for keeping the dynamic import this workaround can be
           // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
+          return import(modulePath).then((module) => module.default);
         }
 
         throw e;

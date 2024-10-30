@@ -1,13 +1,13 @@
 import * as path from 'node:path';
 import { BuilderContext, createBuilder } from '@angular-devkit/architect';
-import { buildApplication } from '@angular-devkit/build-angular';
+import { buildApplication } from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
-import type { ApplicationBuilderExtensions } from '@angular/build/src/builders/application/options';
 import { defer, switchMap } from 'rxjs';
 import { loadModule } from '@angular-builders/common';
 
 import { loadPlugins } from '../load-plugins';
 import { CustomEsbuildApplicationSchema } from '../custom-esbuild-schema';
+import { IndexHtmlTransform } from '@angular/build/private';
 
 export function buildCustomEsbuildApplication(
   options: CustomEsbuildApplicationSchema,
@@ -19,7 +19,7 @@ export function buildCustomEsbuildApplication(
   return defer(async () => {
     const codePlugins = await loadPlugins(options.plugins, workspaceRoot, tsConfig, context.logger);
 
-    const indexHtmlTransformer = options.indexHtmlTransformer
+    const indexHtmlTransformer: IndexHtmlTransform = options.indexHtmlTransformer
       ? await loadModule(
           path.join(workspaceRoot, options.indexHtmlTransformer),
           tsConfig,
@@ -27,8 +27,8 @@ export function buildCustomEsbuildApplication(
         )
       : undefined;
 
-    return { codePlugins, indexHtmlTransformer } as ApplicationBuilderExtensions;
-  }).pipe(switchMap(extensions => buildApplication(options, context, extensions)));
+    return codePlugins;
+  }).pipe(switchMap(plugins => buildApplication(options, context, plugins)));
 }
 
 export default createBuilder<json.JsonObject & CustomEsbuildApplicationSchema>(

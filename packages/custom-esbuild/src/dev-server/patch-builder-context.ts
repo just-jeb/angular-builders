@@ -1,8 +1,8 @@
 import { BuilderContext, Target } from '@angular-devkit/architect';
 
 const executorToBuilderMap = new Map<string, string>([
-  ['@angular-builders/custom-esbuild', '@angular-devkit/build-angular:application'],
-  ['@angular-builders/custom-esbuild:application', '@angular-devkit/build-angular:application'],
+  ['@angular-builders/custom-esbuild', '@angular/build:application'],
+  ['@angular-builders/custom-esbuild:application', '@angular/build:application'],
 ]);
 
 function cleanBuildTargetOptions(options: any) {
