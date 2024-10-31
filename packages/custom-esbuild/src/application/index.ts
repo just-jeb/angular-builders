@@ -17,14 +17,10 @@ export function buildCustomEsbuildApplication(
   const tsConfig = path.join(workspaceRoot, options.tsConfig);
 
   return defer(async () => {
-    const codePlugins = await loadPlugins(options.plugins, workspaceRoot, tsConfig, context.logger);
+    const codePlugins = await loadPlugins(options.plugins, workspaceRoot, tsConfig);
 
     const indexHtmlTransformer = options.indexHtmlTransformer
-      ? await loadModule(
-          path.join(workspaceRoot, options.indexHtmlTransformer),
-          tsConfig,
-          context.logger
-        )
+      ? await loadModule(path.join(workspaceRoot, options.indexHtmlTransformer), tsConfig)
       : undefined;
 
     return { codePlugins, indexHtmlTransformer } as ApplicationBuilderExtensions;
