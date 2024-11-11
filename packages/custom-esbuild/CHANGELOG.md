@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [18.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@18.0.1-beta.0...@angular-builders/custom-esbuild@18.1.0-beta.0) (2024-11-11)
+
+### Features
+
+* **custom-esbuild:** add support for plugin configuration ([#1683](https://github.com/just-jeb/angular-builders/issues/1683)) ([9fbd32b](https://github.com/just-jeb/angular-builders/commit/9fbd32b0cc279bd9b6eaac1625d25b0c5c78406b))
+
 ## [18.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@18.0.0...@angular-builders/custom-esbuild@18.0.1-beta.0) (2024-07-23)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild
