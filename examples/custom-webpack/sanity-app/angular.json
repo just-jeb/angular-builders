@@ -74,18 +74,18 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "sanity-app:build",
+            "buildTarget": "sanity-app:build",
             "port": 5001
           },
           "configurations": {
             "production": {
-              "browserTarget": "sanity-app:build:production"
+              "buildTarget": "sanity-app:build:production"
             },
             "esm": {
-              "browserTarget": "sanity-app:build:esm"
+              "buildTarget": "sanity-app:build:esm"
             },
             "cjs": {
-              "browserTarget": "sanity-app:build:cjs"
+              "buildTarget": "sanity-app:build:cjs"
             }
           },
           "defaultConfiguration": "cjs"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sanity-app:build"
+            "buildTarget": "sanity-app:build"
           }
         },
         "test": {

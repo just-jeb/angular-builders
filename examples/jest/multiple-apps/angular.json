@@ -67,19 +67,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-first-app:build",
+            "buildTarget": "my-first-app:build",
             "port": 5002
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-first-app:build:production"
+              "buildTarget": "my-first-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-first-app:build"
+            "buildTarget": "my-first-app:build"
           }
         },
         "test": {
@@ -192,19 +192,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "my-second-app:build",
+            "buildTarget": "my-second-app:build",
             "port": 5002
           },
           "configurations": {
             "production": {
-              "browserTarget": "my-second-app:build:production"
+              "buildTarget": "my-second-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my-second-app:build"
+            "buildTarget": "my-second-app:build"
           }
         },
         "test": {

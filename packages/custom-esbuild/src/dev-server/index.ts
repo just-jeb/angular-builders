@@ -8,9 +8,9 @@ import {
 import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
-import type { Connect } from 'vite';
 import { loadModule } from '@angular-builders/common';
 
+import type { Middleware } from './types';
 import { loadPlugins } from '../load-plugins';
 import { patchBuilderContext } from './patch-builder-context';
 import {
@@ -22,10 +22,7 @@ export function executeCustomDevServerBuilder(
   options: CustomEsbuildDevServerSchema,
   context: BuilderContext
 ): Observable<DevServerBuilderOutput> {
-  const buildTarget = targetFromTargetString(
-    // `browserTarget` has been deprecated.
-    options.buildTarget ?? options.browserTarget!
-  );
+  const buildTarget = targetFromTargetString(options.buildTarget);
 
   async function getBuildTargetOptions() {
     return (await context.getTargetOptions(
@@ -39,16 +36,20 @@ export function executeCustomDevServerBuilder(
     switchMap(async buildOptions => {
       const tsConfig = path.join(workspaceRoot, buildOptions.tsConfig);
 
-      const middleware = await Promise.all(
-        (options.middlewares || []).map(middlewarePath =>
-          // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<Connect.NextHandleFunction>(
+      const middleware: Middleware[] = [];
+
+      // Not using `Promise.all` preserves the order of middlewares as they
+      // are declared in the configuration list.
+      for (const middlewarePath of options.middlewares || []) {
+        // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
+        middleware.push(
+          await loadModule<Middleware>(
             path.join(workspaceRoot, middlewarePath),
             tsConfig,
             context.logger
           )
-        )
-      );
+        );
+      }
 
       const buildPlugins = await loadPlugins(
         buildOptions.plugins,
