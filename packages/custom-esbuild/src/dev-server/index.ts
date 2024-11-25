@@ -5,7 +5,6 @@ import {
   DevServerBuilderOutput,
   executeDevServerBuilder,
 } from '@angular-devkit/build-angular';
-import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import type { Connect } from 'vite';
@@ -17,6 +16,7 @@ import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
 } from '../custom-esbuild-schema';
+import { loadIndexHtmlTransformer } from '../load-index-html-transformer';
 
 export function executeCustomDevServerBuilder(
   options: CustomEsbuildDevServerSchema,
@@ -57,11 +57,12 @@ export function executeCustomDevServerBuilder(
         context.logger
       );
 
-      const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer
-        ? await loadModule(
+      const indexHtmlTransformer = buildOptions.indexHtmlTransformer
+        ? await loadIndexHtmlTransformer(
             path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
             tsConfig,
-            context.logger
+            context.logger,
+            context.target
           )
         : undefined;
 
