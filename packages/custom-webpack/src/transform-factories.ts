@@ -1,7 +1,7 @@
 import * as path from 'node:path';
 import { BuilderContext, Target } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
-import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
+import type { IndexHtmlTransform } from '@angular/build/private';
 import { getSystemPath, normalize } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 import { loadModule } from '@angular-builders/common';
