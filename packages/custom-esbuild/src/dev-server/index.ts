@@ -9,6 +9,7 @@ import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import { loadModule } from '@angular-builders/common';
 
+import type { Middleware } from './types';
 import { loadPlugins } from '../load-plugins';
 import {
   CustomEsbuildApplicationSchema,
@@ -39,7 +40,7 @@ export function executeCustomDevServerBuilder(
       const middleware = await Promise.all(
         (options.middlewares || []).map(middlewarePath =>
           // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<any>(
+          loadModule<Middleware>(
             path.join(workspaceRoot, middlewarePath),
             tsConfig,
             context.logger
