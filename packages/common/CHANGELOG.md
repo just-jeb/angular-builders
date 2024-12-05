@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@2.0.0...@angular-builders/common@3.0.0-beta.0) (2024-12-05)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 19 (#1871)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+
 ## [2.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@2.0.0-beta.1...@angular-builders/common@2.0.0) (2024-06-17)
 
 **Note:** Version bump only for package @angular-builders/common
