@@ -6,6 +6,9 @@ import {
 import { json } from '@angular-devkit/core';
 import { executeBrowserBasedBuilder } from '../generic-browser-builder';
 
-export default createBuilder<ExtractI18nBuilderOptions & json.JsonObject>(
+type CustomWebpackI18nSchema = ExtractI18nBuilderOptions &
+  json.JsonObject & { buildTarget: string };
+
+export default createBuilder<CustomWebpackI18nSchema>(
   executeBrowserBasedBuilder(executeExtractI18nBuilder)
 );

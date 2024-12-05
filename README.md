@@ -13,6 +13,7 @@ Builders' and Angular **major** versions **must** match.
 <details>
   <summary>Click to expand</summary>
 
+- [Version 18](https://github.com/just-jeb/angular-builders/tree/18.x.x)
 - [Version 17](https://github.com/just-jeb/angular-builders/tree/17.x.x)
 - [Version 16](https://github.com/just-jeb/angular-builders/tree/16.x.x)
 - [Version 15](https://github.com/just-jeb/angular-builders/tree/15.x.x)

@@ -81,22 +81,22 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "full-cycle-app:build",
+            "buildTarget": "full-cycle-app:build",
             "port": 5000
           },
           "configurations": {
             "production": {
-              "browserTarget": "full-cycle-app:build:production"
+              "buildTarget": "full-cycle-app:build:production"
             },
             "itwcw": {
-              "browserTarget": "full-cycle-app:build:itwcw"
+              "buildTarget": "full-cycle-app:build:itwcw"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "full-cycle-app:build"
+            "buildTarget": "full-cycle-app:build"
           }
         },
         "test": {

@@ -95,26 +95,26 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "sanity-app-esm:build:production"
+              "buildTarget": "sanity-app-esm:build:production"
             },
             "development": {
-              "browserTarget": "sanity-app-esm:build:development"
+              "buildTarget": "sanity-app-esm:build:development"
             },
             "cjs": {
-              "browserTarget": "sanity-app-esm:build:cjs"
+              "buildTarget": "sanity-app-esm:build:cjs"
             },
             "esm": {
-              "browserTarget": "sanity-app-esm:build:esm"
+              "buildTarget": "sanity-app-esm:build:esm"
             },
             "tsEsm": {
-              "browserTarget": "sanity-app-esm:build:tsEsm"
+              "buildTarget": "sanity-app-esm:build:tsEsm"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sanity-app-esm:build"
+            "buildTarget": "sanity-app-esm:build"
           }
         },
         "test": {

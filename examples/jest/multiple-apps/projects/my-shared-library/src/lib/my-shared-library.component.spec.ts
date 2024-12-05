@@ -8,7 +8,7 @@ describe('MySharedLibraryComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [MySharedLibraryComponent],
+      imports: [MySharedLibraryComponent],
     }).compileComponents();
   }));
 

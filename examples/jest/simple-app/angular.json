@@ -71,19 +71,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "simple-app:build",
+            "buildTarget": "simple-app:build",
             "port": 5003
           },
           "configurations": {
             "production": {
-              "browserTarget": "simple-app:build:production"
+              "buildTarget": "simple-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "simple-app:build"
+            "buildTarget": "simple-app:build"
           }
         },
         "test": {
