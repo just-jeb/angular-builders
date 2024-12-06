@@ -20,7 +20,8 @@
     "update:package": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-package.js",
     "update:example": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-example.js",
     "update:packages": "yarn workspaces foreach --include '@angular-builders/*' run update:package",
-    "update:examples": "yarn workspaces foreach --exclude '@angular-builders/*' run update:example"
+    "update:examples": "yarn workspaces foreach --exclude '@angular-builders/*' run update:example",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.0",
