@@ -16,17 +16,10 @@
             "outputPath": "dist/my-first-app",
             "index": "projects/my-first-app/src/index.html",
             "main": "projects/my-first-app/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/my-first-app/tsconfig.app.json",
-            "assets": [
-              "projects/my-first-app/src/favicon.ico",
-              "projects/my-first-app/src/assets"
-            ],
-            "styles": [
-              "projects/my-first-app/src/styles.css"
-            ],
+            "assets": ["projects/my-first-app/src/favicon.ico", "projects/my-first-app/src/assets"],
+            "styles": ["projects/my-first-app/src/styles.css"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -86,10 +79,7 @@
           "builder": "@angular-builders/jest:run",
           "options": {
             "tsConfig": "./configs/tsconfig.spec.json",
-            "globalMocks": [
-              "getComputedStyle",
-              "styleTransform"
-            ]
+            "globalMocks": ["getComputedStyle", "styleTransform"]
           }
         },
         "e2e": {
@@ -141,17 +131,13 @@
             "outputPath": "dist/my-second-app",
             "index": "projects/my-second-app/src/index.html",
             "main": "projects/my-second-app/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/my-second-app/tsconfig.app.json",
             "assets": [
               "projects/my-second-app/src/favicon.ico",
               "projects/my-second-app/src/assets"
             ],
-            "styles": [
-              "projects/my-second-app/src/styles.css"
-            ],
+            "styles": ["projects/my-second-app/src/styles.css"],
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,
