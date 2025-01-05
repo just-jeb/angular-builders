@@ -2,7 +2,7 @@
 
 The purpose of this repository is to consolidate all the community builders for Angular build facade.
 
-## The latest version of all the builders requires Angular CLI 18
+## The latest version of all the builders requires Angular CLI 19
 
 Builders' and Angular **major** versions **must** match.
 
