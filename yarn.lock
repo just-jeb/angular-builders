@@ -2109,19 +2109,19 @@ __metadata:
   linkType: hard
 
 "@commitlint/cli@npm:^19.0.0":
-  version: 19.6.0
-  resolution: "@commitlint/cli@npm:19.6.0"
+  version: 19.6.1
+  resolution: "@commitlint/cli@npm:19.6.1"
   dependencies:
     "@commitlint/format": ^19.5.0
     "@commitlint/lint": ^19.6.0
-    "@commitlint/load": ^19.5.0
+    "@commitlint/load": ^19.6.1
     "@commitlint/read": ^19.5.0
     "@commitlint/types": ^19.5.0
     tinyexec: ^0.3.0
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: 3dd359dd4446b46061103de4dce4014c00ae5dbea231bef8ec842a196dcb87fd254b0df72ebab5c58cda969c798ce6fa31b3c95755b90023ba431e9100cad134
+  checksum: 06f51969fe22b3cd0102073603584b170fc2f6adcd8938ac6bb04ad223c623b9eed7f323480924b29ace614718a756af904456fdc1384bcb15b78935c111ec5b
   languageName: node
   linkType: hard
 
@@ -2198,9 +2198,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^19.5.0":
-  version: 19.5.0
-  resolution: "@commitlint/load@npm:19.5.0"
+"@commitlint/load@npm:^19.6.1":
+  version: 19.6.1
+  resolution: "@commitlint/load@npm:19.6.1"
   dependencies:
     "@commitlint/config-validator": ^19.5.0
     "@commitlint/execute-rule": ^19.5.0
@@ -2208,11 +2208,11 @@ __metadata:
     "@commitlint/types": ^19.5.0
     chalk: ^5.3.0
     cosmiconfig: ^9.0.0
-    cosmiconfig-typescript-loader: ^5.0.0
+    cosmiconfig-typescript-loader: ^6.1.0
     lodash.isplainobject: ^4.0.6
     lodash.merge: ^4.6.2
     lodash.uniq: ^4.5.0
-  checksum: 87a9450c768632c09e9d98993752a5622aee698642eee5a9b31c3c48625455e043406b7ea6e02a8f41d86c524c9ecbdb9b823caf67da3048f0d96531177fda28
+  checksum: f340060751016de8e06f67137373f9ec51aff85ceb7ac8d5eec1bfb3693df38f7ad2c231fd1dd61acf58affb2f514761c12281328aacceaacef455d25d58c2ce
   languageName: node
   linkType: hard
 
@@ -7582,16 +7582,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cosmiconfig-typescript-loader@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "cosmiconfig-typescript-loader@npm:5.1.0"
+"cosmiconfig-typescript-loader@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "cosmiconfig-typescript-loader@npm:6.1.0"
   dependencies:
-    jiti: ^1.21.6
+    jiti: ^2.4.1
   peerDependencies:
     "@types/node": "*"
-    cosmiconfig: ">=8.2"
-    typescript: ">=4"
-  checksum: 1cb36546ab1bebaf945063139e33ecc98eca978eb015be751f8af17122fc23c845c6e083fe731e34e7029544659ba05b3bf2f53242bc0ea92f66468c30eb6cee
+    cosmiconfig: ">=9"
+    typescript: ">=5"
+  checksum: 45114854faaa97178abd2ccad511363faa57c03321c7e39ad16619c63842b3f6147dd20118f9f07c9530a242a39c3107c791708bb0b987dad374e71f23f9468b
   languageName: node
   linkType: hard
 
@@ -11580,12 +11580,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^1.20.0, jiti@npm:^1.21.6":
+"jiti@npm:^1.20.0":
   version: 1.21.6
   resolution: "jiti@npm:1.21.6"
   bin:
     jiti: bin/jiti.js
   checksum: 9ea4a70a7bb950794824683ed1c632e2ede26949fbd348e2ba5ec8dc5efa54dc42022d85ae229cadaa60d4b95012e80ea07d625797199b688cc22ab0e8891d32
+  languageName: node
+  linkType: hard
+
+"jiti@npm:^2.4.1":
+  version: 2.4.2
+  resolution: "jiti@npm:2.4.2"
+  bin:
+    jiti: lib/jiti-cli.mjs
+  checksum: c6c30c7b6b293e9f26addfb332b63d964a9f143cdd2cf5e946dbe5143db89f7c1b50ad9223b77fb1f6ddb0b9c5ecef995fea024ecf7d2861d285d779cde66e1e
   languageName: node
   linkType: hard
 
