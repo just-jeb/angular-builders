@@ -4,10 +4,10 @@ import { buildApplication } from '@angular-devkit/build-angular';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import type { ApplicationBuilderExtensions } from '@angular/build/src/builders/application/options';
 import { defer, switchMap } from 'rxjs';
-import { loadModule } from '@angular-builders/common';
 
 import { loadPlugins } from '../load-plugins';
 import { CustomEsbuildApplicationSchema } from '../custom-esbuild-schema';
+import { loadIndexHtmlTransformer } from '../load-index-html-transformer';
 
 export function buildCustomEsbuildApplication(
   options: CustomEsbuildApplicationSchema,
@@ -20,10 +20,11 @@ export function buildCustomEsbuildApplication(
     const codePlugins = await loadPlugins(options.plugins, workspaceRoot, tsConfig, context.logger);
 
     const indexHtmlTransformer = options.indexHtmlTransformer
-      ? await loadModule(
+      ? await loadIndexHtmlTransformer(
           path.join(workspaceRoot, options.indexHtmlTransformer),
           tsConfig,
-          context.logger
+          context.logger,
+          context.target
         )
       : undefined;
 
