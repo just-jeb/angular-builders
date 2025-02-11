@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [19.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@19.0.0...@angular-builders/custom-esbuild@19.1.0-beta.0) (2025-02-11)
+
+### Features
+
+* **custom-esbuild:** expose current target to index html transform ([#1877](https://github.com/just-jeb/angular-builders/issues/1877)) ([78e2006](https://github.com/just-jeb/angular-builders/commit/78e200609bbdbc7d5d9bc76f5675283bdefc871b))
+
 ## [19.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@19.0.0-beta.0...@angular-builders/custom-esbuild@19.0.0) (2025-01-05)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild
