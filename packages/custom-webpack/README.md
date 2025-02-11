@@ -33,6 +33,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 <details>
   <summary>Click to expand</summary>
 
+- [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/custom-webpack/README.md)
 - [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/custom-webpack/README.md)
 - [Version 16](https://github.com/just-jeb/angular-builders/blob/16.x.x/packages/custom-webpack/README.md)
 - [Version 15](https://github.com/just-jeb/angular-builders/blob/15.x.x/packages/custom-webpack/README.md)
@@ -51,7 +52,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Prerequisites:
 
-- [Angular CLI 18](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 19](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
@@ -167,7 +168,7 @@ Thus, if you use `@angular-builders/custom-webpack:dev-server` along with `@angu
   "serve": {
     "builder": "@angular-builders/custom-webpack:dev-server",
     "options": {
-      "browserTarget": "my-project:build"
+      "buildTarget": "my-project:build"
     }
   }
 ```
@@ -265,7 +266,7 @@ Thus, if you use `@angular-builders/custom-webpack:extract-i18n` along with `@an
   "extract-i18n": {
     "builder": "@angular-builders/custom-webpack:extract-i18n",
     "options": {
-      "browserTarget": "my-project:build"
+      "buildTarget": "my-project:build"
     }
   }
 ```
