@@ -55,7 +55,9 @@ export function executeCustomDevServerBuilder(
         buildOptions.plugins,
         workspaceRoot,
         tsConfig,
-        context.logger
+        context.logger,
+        options,
+        context.target
       );
 
       const indexHtmlTransformer = buildOptions.indexHtmlTransformer
