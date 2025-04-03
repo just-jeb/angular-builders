@@ -41,10 +41,14 @@ jobs:
           git config --global user.email ${{ secrets.GIT_EMAIL }}
         
       - name: Update examples
-        run: yarn update:examples ${{ github.event.inputs.version }}
+        env:
+          NEW_VERSION: ${{ github.event.inputs.version }}      
+        run: yarn update:examples $NEW_VERSION
         
       - name: Update builders
-        run: yarn update:packages ${{ github.event.inputs.version }}
+        env:
+          NEW_VERSION: ${{ github.event.inputs.version }}     
+        run: yarn update:packages $NEW_VERSION
       
       - name: Install updated dependencies
         run: yarn
