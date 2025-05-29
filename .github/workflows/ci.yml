@@ -5,6 +5,7 @@ on:
     branches:
       - master
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -12,7 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
-
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: 'true'
     steps:
       - if: (!github.event.pull_request)
         uses: actions/checkout@v4
@@ -33,11 +35,16 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install dependencies
         run: yarn --immutable
+
+      - name: Fetch Chrome for Puppeteer
+        run: yarn dlx @puppeteer/browsers install chrome@115.0.5790.98 --path "$HOME/.cache/puppeteer"
+      - name: Fetch Chrome for Puppeteer
+        run: yarn dlx @puppeteer/browsers install chrome@121.0.6167.85 --path "$HOME/.cache/puppeteer"
 
       - name: Run CI scripts
         run: yarn ci
