@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@ampproject/remapping@npm:2.3.0, @ampproject/remapping@npm:^2.2.0":
+"@ampproject/remapping@npm:2.3.0, @ampproject/remapping@npm:^2.2.0, @ampproject/remapping@npm:^2.3.0":
   version: 2.3.0
   resolution: "@ampproject/remapping@npm:2.3.0"
   dependencies:
@@ -9205,10 +9205,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^13.0.0":
-  version: 13.1.0
-  resolution: "commander@npm:13.1.0"
-  checksum: 8ca2fcb33caf2aa06fba3722d7a9440921331d54019dabf906f3603313e7bf334b009b862257b44083ff65d5a3ab19e83ad73af282bd5319f01dc228bdf87ef0
+"commander@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "commander@npm:14.0.0"
+  checksum: 6e9bdaf2e8e4f512855ffc10579eeae2e84c4a7697a91b1a5f62aab3c9849182207855268dd7c3952ae7a2334312a7138f58e929e4b428aef5bf8af862685c9b
   languageName: node
   linkType: hard
 
@@ -9258,13 +9258,6 @@ __metadata:
   version: 1.8.2
   resolution: "common-tags@npm:1.8.2"
   checksum: 767a6255a84bbc47df49a60ab583053bb29a7d9687066a18500a516188a062c4e4cd52de341f22de0b07062e699b1b8fe3cfa1cb55b241cb9301aeb4f45b4dff
-  languageName: node
-  linkType: hard
-
-"commondir@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "commondir@npm:1.0.1"
-  checksum: 59715f2fc456a73f68826285718503340b9f0dd89bfffc42749906c5cf3d4277ef11ef1cca0350d0e79204f00f1f6d83851ececc9095dc88512a697ac0b9bdcb
   languageName: node
   linkType: hard
 
@@ -11427,17 +11420,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "find-cache-dir@npm:3.3.2"
-  dependencies:
-    commondir: ^1.0.1
-    make-dir: ^3.0.2
-    pkg-dir: ^4.1.0
-  checksum: 1e61c2e64f5c0b1c535bd85939ae73b0e5773142713273818cc0b393ee3555fb0fd44e1a5b161b8b6c3e03e98c2fcc9c227d784850a13a90a8ab576869576817
-  languageName: node
-  linkType: hard
-
 "find-cache-dir@npm:^4.0.0":
   version: 4.0.0
   resolution: "find-cache-dir@npm:4.0.0"
@@ -11448,6 +11430,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"find-cache-directory@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "find-cache-directory@npm:6.0.0"
+  dependencies:
+    common-path-prefix: ^3.0.0
+    pkg-dir: ^8.0.0
+  checksum: d0864b74ac556e21b1b4dc09d37f0b85ba8620f8cecc08727e8b2348e94828595d7368095deb79e804234629db56900c0f953beecf3cf2373e615fb809cc2033
+  languageName: node
+  linkType: hard
+
 "find-replace@npm:^1.0.3":
   version: 1.0.3
   resolution: "find-replace@npm:1.0.3"
@@ -11455,6 +11447,13 @@ __metadata:
     array-back: ^1.0.4
     test-value: ^2.1.0
   checksum: fd95f44e59bd54ea1c0169480952b339a4642cd62d81236fef7f87146d3bc00a042b17d81f896712e8542e01fe5c84e82ac37b6b77b4e3422abbcf7c13bbacfd
+  languageName: node
+  linkType: hard
+
+"find-up-simple@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "find-up-simple@npm:1.0.1"
+  checksum: 6e374bffda9f8425314eab47ef79752b6e77dcc95c0ad17d257aef48c32fe07bbc41bcafbd22941c25bb94fffaaaa8e178d928867d844c58100c7fe19ec82f72
   languageName: node
   linkType: hard
 
@@ -14659,7 +14658,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:0.30.17":
+"magic-string@npm:0.30.17, magic-string@npm:^0.30.17":
   version: 0.30.17
   resolution: "magic-string@npm:0.30.17"
   dependencies:
@@ -14684,15 +14683,6 @@ __metadata:
     pify: ^4.0.1
     semver: ^5.6.0
   checksum: 043548886bfaf1820323c6a2997e6d2fa51ccc2586ac14e6f14634f7458b4db2daf15f8c310e2a0abd3e0cddc64df1890d8fc7263033602c47bb12cbfcf86aab
-  languageName: node
-  linkType: hard
-
-"make-dir@npm:^3.0.2":
-  version: 3.1.0
-  resolution: "make-dir@npm:3.1.0"
-  dependencies:
-    semver: ^6.0.0
-  checksum: 484200020ab5a1fdf12f393fe5f385fc8e4378824c940fba1729dcd198ae4ff24867bc7a5646331e50cead8abff5d9270c456314386e629acec6dff4b8016b78
   languageName: node
   linkType: hard
 
@@ -15240,24 +15230,24 @@ __metadata:
   resolution: "multiple-apps@workspace:examples/jest/multiple-apps"
   dependencies:
     "@angular-builders/jest": "workspace:*"
-    "@angular-devkit/build-angular": 19.2.6
-    "@angular/animations": 19.2.5
-    "@angular/cli": 19.2.6
-    "@angular/common": 19.2.5
-    "@angular/compiler": 19.2.5
-    "@angular/compiler-cli": 19.2.5
-    "@angular/core": 19.2.5
-    "@angular/forms": 19.2.5
-    "@angular/language-service": 19.2.5
-    "@angular/platform-browser": 19.2.5
-    "@angular/platform-browser-dynamic": 19.2.5
-    "@angular/router": 19.2.5
+    "@angular-devkit/build-angular": 20.0.2
+    "@angular/animations": 20.0.3
+    "@angular/cli": 20.0.2
+    "@angular/common": 20.0.3
+    "@angular/compiler": 20.0.3
+    "@angular/compiler-cli": 20.0.3
+    "@angular/core": 20.0.3
+    "@angular/forms": 20.0.3
+    "@angular/language-service": 20.0.3
+    "@angular/platform-browser": 20.0.3
+    "@angular/platform-browser-dynamic": 20.0.3
+    "@angular/router": 20.0.3
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     cypress: 13.16.1
     jasmine-core: 5.5.0
     jest: 29.7.0
-    ng-packagr: 19.2.1
+    ng-packagr: 20.0.0
     rxjs: 7.8.1
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -15359,36 +15349,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ng-packagr@npm:19.2.1":
-  version: 19.2.1
-  resolution: "ng-packagr@npm:19.2.1"
+"ng-packagr@npm:20.0.0":
+  version: 20.0.0
+  resolution: "ng-packagr@npm:20.0.0"
   dependencies:
+    "@ampproject/remapping": ^2.3.0
     "@rollup/plugin-json": ^6.1.0
     "@rollup/wasm-node": ^4.24.0
     ajv: ^8.17.1
     ansi-colors: ^4.1.3
     browserslist: ^4.22.1
     chokidar: ^4.0.1
-    commander: ^13.0.0
-    convert-source-map: ^2.0.0
+    commander: ^14.0.0
     dependency-graph: ^1.0.0
     esbuild: ^0.25.0
-    fast-glob: ^3.3.2
-    find-cache-dir: ^3.3.2
+    find-cache-directory: ^6.0.0
     injection-js: ^2.4.0
     jsonc-parser: ^3.3.1
     less: ^4.2.0
-    ora: ^5.1.0
-    piscina: ^4.7.0
+    ora: ^8.2.0
+    piscina: ^5.0.0
     postcss: ^8.4.47
     rollup: ^4.24.0
+    rollup-plugin-dts: ^6.2.0
     rxjs: ^7.8.1
     sass: ^1.81.0
+    tinyglobby: ^0.2.12
   peerDependencies:
-    "@angular/compiler-cli": ^19.0.0 || ^19.1.0-next.0 || ^19.2.0-next.0
+    "@angular/compiler-cli": ^20.0.0 || ^20.0.0-next.0 || ^20.1.0-next.0
     tailwindcss: ^2.0.0 || ^3.0.0 || ^4.0.0
     tslib: ^2.3.0
-    typescript: ">=5.5 <5.9"
+    typescript: ">=5.8 <5.9"
   dependenciesMeta:
     rollup:
       optional: true
@@ -15396,8 +15387,8 @@ __metadata:
     tailwindcss:
       optional: true
   bin:
-    ng-packagr: cli/main.js
-  checksum: f9f83c6d54b0a5dc0ac8c963dcd1de5ed93597f774e9d42e9b194320884d1c3c85a39233b80f60133debf30db4efd1fa7531100cdc1f383e268cbc57019f4d3f
+    ng-packagr: src/cli/main.js
+  checksum: 690b0a7816e28497972d093f36a057df1972d2028ba1955aa361de433742bf7682da06bc9345f90a0616a9aab89d5f5ce1c9e3006bff1f1b249ba7cc0cf0f8bf
   languageName: node
   linkType: hard
 
@@ -15951,7 +15942,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:5.4.1, ora@npm:^5.1.0":
+"ora@npm:5.4.1":
   version: 5.4.1
   resolution: "ora@npm:5.4.1"
   dependencies:
@@ -15968,7 +15959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ora@npm:8.2.0":
+"ora@npm:8.2.0, ora@npm:^8.2.0":
   version: 8.2.0
   resolution: "ora@npm:8.2.0"
   dependencies:
@@ -16676,19 +16667,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"piscina@npm:^4.7.0":
-  version: 4.9.2
-  resolution: "piscina@npm:4.9.2"
+"piscina@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "piscina@npm:5.1.0"
   dependencies:
     "@napi-rs/nice": ^1.0.1
   dependenciesMeta:
     "@napi-rs/nice":
       optional: true
-  checksum: cb2d8b4bda70623516ff120bdd58ab4a684a051df477a9fd28e302a4bbd5487b085700f844bb4ada265f226abaac2ef4db79f6854721d4decdacfba9318bda92
+  checksum: be9a44a8d245bc9c6c5ee8d79c9b3d2c702c23917227bfb9588c2596bf9a1473db08c311e5ee0dee9b36ac6ce9bb54e66b7b0ac902d7cec4fe0c2efcb5100243
   languageName: node
   linkType: hard
 
-"pkg-dir@npm:^4.1.0, pkg-dir@npm:^4.2.0":
+"pkg-dir@npm:^4.2.0":
   version: 4.2.0
   resolution: "pkg-dir@npm:4.2.0"
   dependencies:
@@ -16703,6 +16694,15 @@ __metadata:
   dependencies:
     find-up: ^6.3.0
   checksum: 94298b20a446bfbbd66604474de8a0cdd3b8d251225170970f15d9646f633e056c80520dd5b4c1d1050c9fed8f6a9e5054b141c93806439452efe72e57562c03
+  languageName: node
+  linkType: hard
+
+"pkg-dir@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "pkg-dir@npm:8.0.0"
+  dependencies:
+    find-up-simple: ^1.0.0
+  checksum: e589abebd1b76cbc3669a45df64f63cc1b041fd3a6588b45d4c692207df126f2a67478a804e5beeb729e75efea06cd405fb84445c879e7af346ba46a4a30b1ff
   languageName: node
   linkType: hard
 
@@ -17662,6 +17662,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rollup-plugin-dts@npm:^6.2.0":
+  version: 6.2.1
+  resolution: "rollup-plugin-dts@npm:6.2.1"
+  dependencies:
+    "@babel/code-frame": ^7.26.2
+    magic-string: ^0.30.17
+  peerDependencies:
+    rollup: ^3.29.4 || ^4
+    typescript: ^4.5 || ^5.0
+  dependenciesMeta:
+    "@babel/code-frame":
+      optional: true
+  checksum: b87966913482eb0b39a6ac0d506138be2a5be4b0a7d79ef400e2f1d9b317b0aaca8f467ef559d902531ee1b95d24b3ad1b233d7231b752c8a65c4fbdd057f345
+  languageName: node
+  linkType: hard
+
 "rollup@npm:4.34.8":
   version: 4.34.8
   resolution: "rollup@npm:4.34.8"
@@ -18323,7 +18339,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0, semver@npm:^6.3.0, semver@npm:^6.3.1":
+"semver@npm:^6.3.0, semver@npm:^6.3.1":
   version: 6.3.1
   resolution: "semver@npm:6.3.1"
   bin:
