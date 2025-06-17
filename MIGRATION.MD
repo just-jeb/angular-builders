@@ -1,3 +1,31 @@
+# Migration from version 19 to version 20
+
+## Custom ESBuild builder
+
+- No breaking changes (except for updating to Angular 20)
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 20)
+
+## Jest builder
+
+- No breaking changes (except for updating to Angular 20)
+
+# Migration from version 18 to version 19
+
+## Custom ESBuild builder
+
+- No breaking changes (except for updating to Angular 19)
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 19)
+
+## Jest builder
+
+- No breaking changes (except for updating to Angular 19)
+
 # Migration from version 17 to version 18
 
 ## Custom ESBuild builder
