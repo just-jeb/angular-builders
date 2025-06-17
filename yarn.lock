@@ -21,7 +21,7 @@ __metadata:
   dependencies:
     "@angular-devkit/architect": ">=0.2000.0 < 0.2100.0"
     "@angular-devkit/core": ^20.0.0
-    "@bazel/bazelisk": ^1.4.0
+    "@bazel/bazelisk": ^1.26.0
     "@bazel/ibazel": ^0.25.0
     cpy-cli: ^5.0.0
     quicktype: ^15.0.260
@@ -37,7 +37,7 @@ __metadata:
     "@angular-devkit/core": ^20.0.0
     rimraf: ^5.0.0
     ts-node: ^10.0.0
-    tsconfig-paths: ^4.1.0
+    tsconfig-paths: ^4.2.0
     typescript: 5.8.3
   languageName: unknown
   linkType: soft
@@ -91,7 +91,7 @@ __metadata:
     "@types/jest": ^29.5.1
     cpy-cli: ^5.0.0
     jest: 29.7.0
-    jest-preset-angular: 14.5.4
+    jest-preset-angular: 14.6.0
     lodash: ^4.17.15
     quicktype: ^15.0.260
     rimraf: ^5.0.0
@@ -113,7 +113,7 @@ __metadata:
     "@angular-devkit/core": ^20.0.0
     "@types/dateformat": ^5.0.0
     cpy-cli: ^5.0.0
-    dateformat: ^5.0.2
+    dateformat: ^5.0.3
     jest: 29.7.0
     quicktype: ^15.0.260
     rimraf: ^5.0.0
@@ -2073,13 +2073,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bazel/bazelisk@npm:^1.4.0":
-  version: 1.24.1
-  resolution: "@bazel/bazelisk@npm:1.24.1"
+"@bazel/bazelisk@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@bazel/bazelisk@npm:1.26.0"
   bin:
     bazel: bazelisk.js
     bazelisk: bazelisk.js
-  checksum: 9284d02d3ec1e27b449766461f2186259567c22d615ae593ab67e817f8c463543f8383cd176c299f236fbbd2889f3869e831d61c0eab3f943918a0cbd91e7293
+  checksum: b82a0b0526fa4e9958eb76bd5b0b9ce9ee1a0b1e04f80708eb103db1ef47c8a6019d7e61a978059de583e3c3594a650105c5351f3082aa44d5d947d5a51ec5a8
   languageName: node
   linkType: hard
 
@@ -8177,7 +8177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dateformat@npm:^5.0.2":
+"dateformat@npm:^5.0.3":
   version: 5.0.3
   resolution: "dateformat@npm:5.0.3"
   checksum: 4d2f5b0b04c32c234af93bbf5fe9b41b5b1a9b4d5962cfb0ebb2e28e8425a912674512f61be5270a870604c5d5a4d6f0b57f1fa98fd29089723dc8a96fc13cd9
@@ -11652,9 +11652,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-preset-angular@npm:14.5.4":
-  version: 14.5.4
-  resolution: "jest-preset-angular@npm:14.5.4"
+"jest-preset-angular@npm:14.6.0":
+  version: 14.6.0
+  resolution: "jest-preset-angular@npm:14.6.0"
   dependencies:
     bs-logger: ^0.2.6
     esbuild: ">=0.15.13"
@@ -11664,9 +11664,9 @@ __metadata:
     pretty-format: ^29.7.0
     ts-jest: ^29.3.0
   peerDependencies:
-    "@angular/compiler-cli": ">=15.0.0 <20.0.0"
-    "@angular/core": ">=15.0.0 <20.0.0"
-    "@angular/platform-browser-dynamic": ">=15.0.0 <20.0.0"
+    "@angular/compiler-cli": ">=15.0.0 <21.0.0"
+    "@angular/core": ">=15.0.0 <21.0.0"
+    "@angular/platform-browser-dynamic": ">=15.0.0 <21.0.0"
     jest: ^29.0.0
     jsdom: ">=20.0.0"
     typescript: ">=4.8"
@@ -11676,7 +11676,7 @@ __metadata:
   peerDependenciesMeta:
     jsdom:
       optional: true
-  checksum: 8101179d173d72753119e9301ab5dd7383cbf8be4baec57562af0c6e1c37e2e0919df68722d46a8b1687c0a530c0fdfedd6eec00816d0e2b6680e3882d0c5032
+  checksum: 4825cdd89d9409fb5eadc170317e92c7278ee734e6f28eb8193063efed28fbf657f004e70c33c4dea4434fc71898f802757cf559399a36474510a10ad061281f
   languageName: node
   linkType: hard
 
@@ -17733,7 +17733,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tsconfig-paths@npm:^4.1.0":
+"tsconfig-paths@npm:^4.2.0":
   version: 4.2.0
   resolution: "tsconfig-paths@npm:4.2.0"
   dependencies:
