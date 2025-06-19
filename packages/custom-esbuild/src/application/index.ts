@@ -1,8 +1,7 @@
 import * as path from 'node:path';
 import { BuilderContext, createBuilder } from '@angular-devkit/architect';
-import { buildApplication } from '@angular-devkit/build-angular';
+import { buildApplication } from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
-import type { ApplicationBuilderExtensions } from '@angular/build/src/builders/application/options';
 import { defer, switchMap } from 'rxjs';
 
 import { loadPlugins } from '../load-plugins';
@@ -17,7 +16,14 @@ export function buildCustomEsbuildApplication(
   const tsConfig = path.join(workspaceRoot, options.tsConfig);
 
   return defer(async () => {
-    const codePlugins = await loadPlugins(options.plugins, workspaceRoot, tsConfig, context.logger);
+    const codePlugins = await loadPlugins(
+      options.plugins,
+      workspaceRoot,
+      tsConfig,
+      context.logger,
+      options,
+      context.target
+    );
 
     const indexHtmlTransformer = options.indexHtmlTransformer
       ? await loadIndexHtmlTransformer(
@@ -28,7 +34,7 @@ export function buildCustomEsbuildApplication(
         )
       : undefined;
 
-    return { codePlugins, indexHtmlTransformer } as ApplicationBuilderExtensions;
+    return { codePlugins, indexHtmlTransformer };
   }).pipe(switchMap(extensions => buildApplication(options, context, extensions)));
 }
 
