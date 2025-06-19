@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@19.1.0...@angular-builders/custom-esbuild@20.0.0-beta.0) (2025-06-19)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade to Angular 20
+
+### Features
+
+* **custom-esbuild:** expose builder options to plugins ([2c114d9](https://github.com/just-jeb/angular-builders/commit/2c114d9ccf105d8bbf024de9e67a69d625ce2742))
+* migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
+
+### Miscellaneous Chores
+
+* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+
 ## [19.1.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@19.1.0-beta.2...@angular-builders/custom-esbuild@19.1.0) (2025-04-07)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@19.0.1...@angular-builders/bazel@20.0.0-beta.0) (2025-06-19)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade to Angular 20
+
+### Miscellaneous Chores
+
+* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+
 ## [19.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@19.0.1-beta.0...@angular-builders/bazel@19.0.1) (2025-04-07)
 
 **Note:** Version bump only for package @angular-builders/bazel
