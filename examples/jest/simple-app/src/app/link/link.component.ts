@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinkComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+    // TODO: Add component initialization logic
+    console.log('LinkComponent initialized');
   }
 
 }

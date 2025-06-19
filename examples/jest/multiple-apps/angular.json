@@ -125,6 +125,16 @@
             "headless": false,
             "project": "projects/my-first-app"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-first-app//**/*.ts",
+              "projects/my-first-app//**/*.html"
+            ],
+            "eslintConfig": "projects/my-first-app/eslint.config.js"
+          }
         }
       }
     },
@@ -243,6 +253,16 @@
             "headless": false,
             "project": "projects/my-second-app"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-second-app//**/*.ts",
+              "projects/my-second-app//**/*.html"
+            ],
+            "eslintConfig": "projects/my-second-app/eslint.config.js"
+          }
         }
       }
     },
@@ -266,6 +286,16 @@
         },
         "test": {
           "builder": "@angular-builders/jest:run"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/my-shared-library/**/*.ts",
+              "projects/my-shared-library/**/*.html"
+            ],
+            "eslintConfig": "projects/my-shared-library/eslint.config.js"
+          }
         }
       }
     }
@@ -273,5 +303,31 @@
   "cli": {
     "packageManager": "yarn",
     "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }

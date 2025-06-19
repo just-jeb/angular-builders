@@ -6,7 +6,7 @@ describe('MySharedLibraryService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MySharedLibraryService = TestBed.get(MySharedLibraryService);
+    const service: MySharedLibraryService = TestBed.inject(MySharedLibraryService);
     expect(service).toBeTruthy();
   });
 });

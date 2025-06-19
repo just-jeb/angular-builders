@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class MySharedLibraryComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // TODO: Add component initialization logic
+    console.log('MySharedLibraryComponent initialized');
+  }
 }
