@@ -1,4 +1,4 @@
-import { ApplicationBuilderOptions, DevServerBuilderOptions } from '@angular-devkit/build-angular';
+import { ApplicationBuilderOptions, DevServerBuilderOptions } from '@angular/build';
 
 export type PluginConfig = string | { path: string; options?: Record<string, unknown> };
 

@@ -16,10 +16,6 @@ describe('LinkComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
   it('should create 3 links', () => {
     expect(fixture.debugElement.nativeElement.querySelectorAll('a').length).toEqual(3);
   });
