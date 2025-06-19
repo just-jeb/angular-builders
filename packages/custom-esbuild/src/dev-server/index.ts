@@ -4,7 +4,7 @@ import {
   DevServerBuilderOptions,
   DevServerBuilderOutput,
   executeDevServerBuilder,
-} from '@angular-devkit/build-angular';
+} from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { Observable, from, switchMap } from 'rxjs';
 import { loadModule } from '@angular-builders/common';
@@ -55,7 +55,9 @@ export function executeCustomDevServerBuilder(
         buildOptions.plugins,
         workspaceRoot,
         tsConfig,
-        context.logger
+        context.logger,
+        options,
+        context.target
       );
 
       const indexHtmlTransformer = buildOptions.indexHtmlTransformer
@@ -69,13 +71,10 @@ export function executeCustomDevServerBuilder(
 
       patchBuilderContext(context, buildTarget);
 
-      return {
-        transforms: { indexHtml: indexHtmlTransformer },
-        extensions: { middleware, buildPlugins },
-      };
+      return { middleware, buildPlugins, indexHtmlTransformer };
     }),
-    switchMap(({ transforms, extensions }) =>
-      executeDevServerBuilder(options, context, transforms, extensions)
+    switchMap((extensions) =>
+      executeDevServerBuilder(options, context, extensions)
     )
   );
 }
