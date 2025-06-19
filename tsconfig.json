@@ -1,14 +1,9 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "es6",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2016",
-      "es2017"
-    ],
+    "moduleResolution": "Node16",
+    "module": "Node16",
+    "target": "ES2022",
+    "lib": ["DOM", "ES2022"],
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -20,9 +15,7 @@
     "stripInternal": true,
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "compileOnSave": false,
   "buildOnSave": false
 }
