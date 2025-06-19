@@ -33,6 +33,32 @@
 
 2. **Migration to @angular/build:** The custom-esbuild package now uses `@angular/build` instead of `@angular-devkit/build-angular` for better performance and modern build tooling.
 
+3. **New Feature:** Plugins can now access builder options and target information through factory functions. This is a **non-breaking** enhancement - existing plugins continue to work unchanged.
+
+   **New capability:**
+   ```ts
+   // esbuild/plugins.ts
+   import type { Plugin } from 'esbuild';
+   import type { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
+   import type { Target } from '@angular-devkit/architect';
+
+   export default (builderOptions: ApplicationBuilderOptions, target: Target): Plugin => {
+     return {
+       name: 'project-aware-plugin',
+       setup(build) {
+         // Access current project name
+         build.initialOptions.define.PROJECT_NAME = JSON.stringify(target.project);
+         
+         // Access builder options like outputPath, tsConfig, etc.
+         console.log('Building for project:', target.project);
+         console.log('Output path:', builderOptions.outputPath);
+       },
+     };
+   };
+   ```
+
+   This enables more sophisticated plugins that can adapt their behavior based on the current build target and configuration.
+
 ## Custom Webpack builder
 
 - No breaking changes (except for updating to Angular 20)

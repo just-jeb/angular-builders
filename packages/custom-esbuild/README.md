@@ -120,7 +120,7 @@ Builder options:
 
 In the above example, we specify the list of `plugins` that should implement the ESBuild plugin schema. These plugins are custom user plugins and are added to the original ESBuild Angular configuration. Additionally, the `indexHtmlTransformer` property is used to specify the path to the file that exports the function used to modify the `index.html`.
 
-The plugin file can export either a single plugin or a list of plugins. If a plugin accepts configuration then the config should be provided in `angular.json`:
+The plugin file can export either a single plugin, a list of plugins or a factory function that returns a plugin or list of plugins. If a plugin accepts configuration then the config should be provided in `angular.json`:
 
 ```ts
 // esbuild/plugins.ts
@@ -145,13 +145,13 @@ import type { Plugin, PluginBuild } from 'esbuild';
 
 function defineEnv(pluginOptions: { stage: string }): Plugin {
   return {
-    name: 'define-env',  
+    name: 'define-env',
     setup(build: PluginBuild) {
       const buildOptions = build.initialOptions;
       buildOptions.define.stage = JSON.stringify(pluginOptions.stage);
     },
   };
-};
+}
 
 export default defineEnv;
 ```
@@ -180,6 +180,25 @@ const updateExternalPlugin: Plugin = {
 };
 
 export default [defineTextPlugin, updateExternalPlugin];
+```
+
+Or:
+
+```ts
+// esbuild/plugins.ts
+import type { Plugin, PluginBuild } from 'esbuild';
+import type { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
+import type { Target } from '@angular-devkit/architect';
+
+export default (builderOptions: ApplicationBuilderOptions, target: Target): Plugin => {
+  return {
+    name: 'define-text',
+    setup(build: PluginBuild) {
+      const options = build.initialOptions;
+      options.define.currentProject = JSON.stringify(target.project);
+    },
+  };
+};
 ```
 
 ## Custom ESBuild `dev-server`
@@ -241,7 +260,7 @@ It is useful when you want to transform your `index.html` according to the build
 `index-html-transformer.js`:
 
 ```js
-module.exports = (indexHtml) => {
+module.exports = indexHtml => {
   const i = indexHtml.indexOf('</body>');
   const content = `<p>Dynamically inserted content</p>`;
   return `${indexHtml.slice(0, i)}

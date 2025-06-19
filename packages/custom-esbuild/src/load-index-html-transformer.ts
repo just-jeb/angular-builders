@@ -1,7 +1,7 @@
 import { loadModule } from '@angular-builders/common';
 import { logging } from '@angular-devkit/core';
 import { Target } from '@angular-devkit/architect';
-import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
+import type { IndexHtmlTransform } from '@angular/build/private';
 
 export async function loadIndexHtmlTransformer(
   indexHtmlTransformerPath: string,
