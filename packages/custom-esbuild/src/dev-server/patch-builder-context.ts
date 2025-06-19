@@ -1,8 +1,8 @@
 import { BuilderContext, Target } from '@angular-devkit/architect';
 
 const executorToBuilderMap = new Map<string, string>([
-  ['@angular-builders/custom-esbuild', '@angular-devkit/build-angular:application'],
-  ['@angular-builders/custom-esbuild:application', '@angular-devkit/build-angular:application'],
+  ['@angular-builders/custom-esbuild', '@angular/build:application'],
+  ['@angular-builders/custom-esbuild:application', '@angular/build:application'],
 ]);
 
 function cleanBuildTargetOptions(options: any) {
@@ -15,9 +15,9 @@ export function patchBuilderContext(context: BuilderContext, buildTarget: Target
   const originalGetBuilderNameForTarget = context.getBuilderNameForTarget;
 
   // We have to patch `getBuilderNameForTarget` because Angular CLI checks
-  // whether the runnable target is `@angular-devkit/build-angular:application`
+  // whether the runnable target is `@angular/build:application`
   // and then defines the server to run. If the `builderName` (returned by
-  // `context.getBuilderNameForTarget`) is not an `@angular-devkit/build-angular:application`,
+  // `context.getBuilderNameForTarget`) is not an `@angular/build:application`,
   // then it will use the Webpack server for the `dev-server target`. By patching
   // the return value, Angular will use the Vite server for the `dev-server` target.
   context.getBuilderNameForTarget = async target => {
