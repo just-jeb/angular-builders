@@ -1,8 +1,37 @@
 # Migration from version 19 to version 20
 
+## Breaking Changes
+
+### Node.js Version Requirements
+- **Minimum Node.js version is now 20.19.0** (previously 18.19.1)
+- Node.js 18 is no longer supported
+
 ## Custom ESBuild builder
 
-- No breaking changes (except for updating to Angular 20)
+1. The `forceEsbuild` property has been removed from the dev-server configuration. This property is no longer supported since the builder now uses `@angular/build` directly, which uses esbuild by default.
+
+   **Before:**
+   ```json
+   "serve": {
+     "builder": "@angular-builders/custom-esbuild:dev-server",
+     "options": {
+       "forceEsbuild": true,
+       "port": 5006
+     }
+   }
+   ```
+
+   **After:**
+   ```json
+   "serve": {
+     "builder": "@angular-builders/custom-esbuild:dev-server",
+     "options": {
+       "port": 5006
+     }
+   }
+   ```
+
+2. **Migration to @angular/build:** The custom-esbuild package now uses `@angular/build` instead of `@angular-devkit/build-angular` for better performance and modern build tooling.
 
 ## Custom Webpack builder
 
