@@ -29,11 +29,18 @@
             "outputPath": "dist/sanity-esbuild-app-esm",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -99,15 +106,21 @@
             },
             "esm": {
               "buildTarget": "sanity-esbuild-app-esm:build:esm",
-              "middlewares": ["esbuild/send-hello-middleware.js"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.js"
+              ]
             },
             "cjs": {
               "buildTarget": "sanity-esbuild-app-esm:build:cjs",
-              "middlewares": ["esbuild/send-hello-middleware.cjs"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.cjs"
+              ]
             },
             "tsEsm": {
               "buildTarget": "sanity-esbuild-app-esm:build:tsEsm",
-              "middlewares": ["esbuild/send-hello-middleware.ts"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.ts"
+              ]
             }
           },
           "defaultConfiguration": "cjs"
@@ -115,12 +128,20 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.cjs",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -164,13 +185,25 @@
             "watch": true,
             "headless": false
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
     "analytics": false,
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   },
   "schematics": {
     "@schematics/angular:component": {
