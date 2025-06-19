@@ -6,6 +6,9 @@
 - **Minimum Node.js version is now 20.19.0** (previously 18.19.1)
 - Node.js 18 is no longer supported
 
+### Example Projects: TSLint → ESLint Migration
+All example projects have been migrated from the deprecated TSLint to modern ESLint using Angular's official migration tools. If you're using these examples as reference, update your linting setup accordingly by running `ng add @angular-eslint/schematics`.
+
 ## Custom ESBuild builder
 
 1. The `forceEsbuild` property has been removed from the dev-server configuration. This property is no longer supported since the builder now uses `@angular/build` directly, which uses esbuild by default.
