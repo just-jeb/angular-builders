@@ -1,8 +1,66 @@
 # Migration from version 19 to version 20
 
+## Breaking Changes
+
+### Node.js Version Requirements
+- **Minimum Node.js version is now 20.19.0** (previously 18.19.1)
+- Node.js 18 is no longer supported
+
+### Example Projects: TSLint → ESLint Migration
+All example projects have been migrated from the deprecated TSLint to modern ESLint using Angular's official migration tools. If you're using these examples as reference, update your linting setup accordingly by running `ng add @angular-eslint/schematics`.
+
 ## Custom ESBuild builder
 
-- No breaking changes (except for updating to Angular 20)
+1. The `forceEsbuild` property has been removed from the dev-server configuration. This property is no longer supported since the builder now uses `@angular/build` directly, which uses esbuild by default.
+
+   **Before:**
+   ```json
+   "serve": {
+     "builder": "@angular-builders/custom-esbuild:dev-server",
+     "options": {
+       "forceEsbuild": true,
+       "port": 5006
+     }
+   }
+   ```
+
+   **After:**
+   ```json
+   "serve": {
+     "builder": "@angular-builders/custom-esbuild:dev-server",
+     "options": {
+       "port": 5006
+     }
+   }
+   ```
+
+2. **New Feature:** Plugins can now access builder options and target information through factory functions. This is a **non-breaking** enhancement - existing plugins continue to work unchanged.
+
+   **New capability:**
+   ```ts
+   // esbuild/plugins.ts
+   import type { Plugin } from 'esbuild';
+   import type { ApplicationBuilderOptions } from '@angular-devkit/build-angular';
+   import type { Target } from '@angular-devkit/architect';
+
+   export default (builderOptions: ApplicationBuilderOptions, target: Target): Plugin => {
+     return {
+       name: 'project-aware-plugin',
+       setup(build) {
+         // Access current project name
+         build.initialOptions.define.PROJECT_NAME = JSON.stringify(target.project);
+         
+         // Access builder options like outputPath, tsConfig, etc.
+         console.log('Building for project:', target.project);
+         console.log('Output path:', builderOptions.outputPath);
+       },
+     };
+   };
+   ```
+
+   This enables more sophisticated plugins that can adapt their behavior based on the current build target and configuration.
+
+3. **Migration to @angular/build:** The custom-esbuild package now uses `@angular/build` instead of `@angular-devkit/build-angular` for better performance and modern build tooling.
 
 ## Custom Webpack builder
 
