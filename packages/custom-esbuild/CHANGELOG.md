@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@20.0.0-beta.0...@angular-builders/custom-esbuild@20.0.0) (2025-06-25)
+
+**Note:** Version bump only for package @angular-builders/custom-esbuild
+
 ## [20.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@19.1.0...@angular-builders/custom-esbuild@20.0.0-beta.0) (2025-06-19)
 
 ### ⚠ BREAKING CHANGES

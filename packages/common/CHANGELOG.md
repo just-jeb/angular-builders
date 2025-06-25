@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@4.0.0-beta.0...@angular-builders/common@4.0.0) (2025-06-25)
+
+**Note:** Version bump only for package @angular-builders/common
+
 ## [4.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@3.0.1...@angular-builders/common@4.0.0-beta.0) (2025-06-19)
 
 ### ⚠ BREAKING CHANGES
