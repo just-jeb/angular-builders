@@ -240,6 +240,30 @@ Builder options:
     }
 ```
 
+External `karma.conf.js` configuration:
+
+Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
+
+Fix this by:
+- adding `'@angular-devkit/build-angular'` to the `frameworks` array
+- adding `'@angular-devkit/build-angular/plugins/karma'` to the `plugins` array
+
+`karma.conf.js` example:
+```js
+module.exports = function (config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma'),
+    ],
+    // ...
+```
+
 ## Custom Webpack `extract-i18n`
 
 Enhanced `@angular-devkit/build-angular:extract-i18n` builder that leverages the custom webpack builder to get webpack configuration.
