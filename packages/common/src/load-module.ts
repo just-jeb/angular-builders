@@ -107,7 +107,7 @@ export async function loadModule<T>(
       // The file could be either CommonJS or ESM.
       // CommonJS is tried first then ESM if loading fails.
       try {
-        return require(modulePath);
+        return require(modulePath).default || require(modulePath);
       } catch (e: any) {
         if (e.code === 'ERR_REQUIRE_ESM') {
           // Load the ESM configuration file using the TypeScript dynamic import workaround.

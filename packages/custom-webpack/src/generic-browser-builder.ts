@@ -4,7 +4,7 @@ import {
   BuilderHandlerFn,
 } from '@angular-devkit/architect';
 import { ExecutionTransformer } from '@angular-devkit/build-angular';
-import type { IndexHtmlTransform } from '@angular/build/src/utils/index-file/index-html-generator';
+import type { IndexHtmlTransform } from '@angular/build/private';
 import { from } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { Configuration } from 'webpack';
@@ -12,12 +12,11 @@ import { CustomWebpackSchema } from './custom-webpack-schema';
 import { getTransforms } from './transform-factories';
 import { json } from '@angular-devkit/core';
 
-export interface BrowserTargetOptions {
-  buildTarget?: string;
-  browserTarget?: string;
+export interface BuildTargetOptions {
+  buildTarget: string;
 }
 
-export type BuilderExecutor<O extends BrowserTargetOptions & json.JsonObject> = (
+export type BuilderExecutor<O extends BuildTargetOptions & json.JsonObject> = (
   options: O,
   context: BuilderContext,
   transforms?: {
@@ -27,15 +26,12 @@ export type BuilderExecutor<O extends BrowserTargetOptions & json.JsonObject> = 
 ) => any;
 
 export const executeBrowserBasedBuilder =
-  <O extends BrowserTargetOptions & json.JsonObject>(
+  <O extends BuildTargetOptions & json.JsonObject>(
     executebBuilder: BuilderExecutor<O>
   ): BuilderHandlerFn<O> =>
   (options: O, context: BuilderContext): ReturnType<typeof executebBuilder> => {
     async function setup() {
-      const browserTarget = targetFromTargetString(
-        // `browserTarget` has been deprecated.
-        options.buildTarget ?? options.browserTarget!
-      );
+      const browserTarget = targetFromTargetString(options.buildTarget);
       return context.getTargetOptions(browserTarget) as unknown as CustomWebpackSchema;
     }
 

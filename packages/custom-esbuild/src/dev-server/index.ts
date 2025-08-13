@@ -15,15 +15,13 @@ import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
 } from '../custom-esbuild-schema';
-import { IndexHtmlTransform } from '@angular/build/private';
+import { loadIndexHtmlTransformer } from '../load-index-html-transformer';
 
 export function executeCustomDevServerBuilder(
   options: CustomEsbuildDevServerSchema,
   context: BuilderContext
 ): Observable<DevServerBuilderOutput> {
-  const buildTarget = targetFromTargetString(
-    options.buildTarget
-  );
+  const buildTarget = targetFromTargetString(options.buildTarget);
 
   async function getBuildTargetOptions() {
     return (await context.getTargetOptions(
@@ -37,29 +35,36 @@ export function executeCustomDevServerBuilder(
     switchMap(async buildOptions => {
       const tsConfig = path.join(workspaceRoot, buildOptions.tsConfig);
 
-      const middleware = await Promise.all(
-        (options.middlewares || []).map(middlewarePath =>
-          // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
-          loadModule<Middleware>(
+      const middleware: Middleware[] = [];
+
+      // Not using `Promise.all` preserves the order of middlewares as they
+      // are declared in the configuration list.
+      for (const middlewarePath of options.middlewares || []) {
+        // https://github.com/angular/angular-cli/pull/26212/files#diff-a99020cbdb97d20b2bc686bcb64b31942107d56db06fd880171b0a86f7859e6eR52
+        middleware.push(
+          await loadModule<Middleware>(
             path.join(workspaceRoot, middlewarePath),
             tsConfig,
             context.logger
           )
-        )
-      );
+        );
+      }
 
       const buildPlugins = await loadPlugins(
         buildOptions.plugins,
         workspaceRoot,
         tsConfig,
-        context.logger
+        context.logger,
+        options,
+        context.target
       );
 
-      const indexHtmlTransformer: IndexHtmlTransform = buildOptions.indexHtmlTransformer
-        ? await loadModule(
+      const indexHtmlTransformer = buildOptions.indexHtmlTransformer
+        ? await loadIndexHtmlTransformer(
             path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
             tsConfig,
-            context.logger
+            context.logger,
+            context.target
           )
         : undefined;
 

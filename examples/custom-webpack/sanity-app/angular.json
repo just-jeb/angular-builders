@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "sanity-app:build",
+            "buildTarget": "sanity-app:build",
             "port": 5001
           },
           "configurations": {
             "production": {
-              "browserTarget": "sanity-app:build:production"
+              "buildTarget": "sanity-app:build:production"
             },
             "esm": {
-              "browserTarget": "sanity-app:build:esm"
+              "buildTarget": "sanity-app:build:esm"
             },
             "cjs": {
-              "browserTarget": "sanity-app:build:cjs"
+              "buildTarget": "sanity-app:build:cjs"
             }
           },
           "defaultConfiguration": "cjs"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sanity-app:build"
+            "buildTarget": "sanity-app:build"
           }
         },
         "test": {
@@ -137,12 +137,50 @@
             "watch": true,
             "headless": false
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
     "packageManager": "yarn",
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }

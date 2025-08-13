@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@20.0.0-beta.0...@angular-builders/jest@20.0.0) (2025-06-25)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [20.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.1...@angular-builders/jest@20.0.0-beta.0) (2025-06-19)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** upgrade to Angular 20
+
+### Features
+
+* migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
+
+### Miscellaneous Chores
+
+* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+
+## [19.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.1-beta.1...@angular-builders/jest@19.0.1) (2025-04-07)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [19.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.1-beta.0...@angular-builders/jest@19.0.1-beta.1) (2025-04-06)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [19.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.0...@angular-builders/jest@19.0.1-beta.0) (2025-04-06)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [19.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.0-beta.1...@angular-builders/jest@19.0.0) (2025-01-05)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [19.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.0-beta.0...@angular-builders/jest@19.0.0-beta.1) (2024-12-06)
+
+**Note:** Version bump only for package @angular-builders/jest
+
+## [19.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@18.0.1-beta.2...@angular-builders/jest@19.0.0-beta.0) (2024-12-05)
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update to Angular 19 (#1871)
+
+### Miscellaneous Chores
+
+* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+
 ## [18.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@18.0.1-beta.1...@angular-builders/jest@18.0.1-beta.2) (2024-10-30)
 
 **Note:** Version bump only for package @angular-builders/jest

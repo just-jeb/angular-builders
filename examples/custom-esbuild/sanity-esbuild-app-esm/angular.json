@@ -17,15 +17,30 @@
         "build": {
           "builder": "@angular-builders/custom-esbuild:application",
           "options": {
-            "plugins": ["esbuild/define-text-plugin.js"],
+            "plugins": [
+              "esbuild/define-text-plugin.js",
+              {
+                "path": "esbuild/define-text-by-option-plugin.js",
+                "options": {
+                  "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                }
+              }
+            ],
             "outputPath": "dist/sanity-esbuild-app-esm",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -45,13 +60,37 @@
               "outputHashing": "all"
             },
             "esm": {
-              "plugins": ["esbuild/define-text-plugin.js"]
+              "plugins": [
+                "esbuild/define-text-plugin.js",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.js",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             },
             "cjs": {
-              "plugins": ["esbuild/define-text-plugin.cjs"]
+              "plugins": [
+                "esbuild/define-text-plugin.cjs",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.cjs",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             },
             "tsEsm": {
-              "plugins": ["esbuild/define-text-plugin.ts"]
+              "plugins": [
+                "esbuild/define-text-plugin.ts",
+                {
+                  "path": "esbuild/define-text-by-option-plugin.ts",
+                  "options": {
+                    "title": "sanity-esbuild-app-esm optionTitle (compilation provided)"
+                  }
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -59,7 +98,6 @@
         "serve": {
           "builder": "@angular-builders/custom-esbuild:dev-server",
           "options": {
-            "forceEsbuild": true,
             "port": 5007
           },
           "configurations": {
@@ -68,15 +106,21 @@
             },
             "esm": {
               "buildTarget": "sanity-esbuild-app-esm:build:esm",
-              "middlewares": ["esbuild/send-hello-middleware.js"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.js"
+              ]
             },
             "cjs": {
               "buildTarget": "sanity-esbuild-app-esm:build:cjs",
-              "middlewares": ["esbuild/send-hello-middleware.cjs"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.cjs"
+              ]
             },
             "tsEsm": {
               "buildTarget": "sanity-esbuild-app-esm:build:tsEsm",
-              "middlewares": ["esbuild/send-hello-middleware.ts"]
+              "middlewares": [
+                "esbuild/send-hello-middleware.ts"
+              ]
             }
           },
           "defaultConfiguration": "cjs"
@@ -84,12 +128,20 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.cjs",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -133,12 +185,50 @@
             "watch": true,
             "headless": false
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
     "analytics": false,
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }

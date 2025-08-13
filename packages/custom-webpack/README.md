@@ -33,6 +33,8 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 <details>
   <summary>Click to expand</summary>
 
+- [Version 19](https://github.com/just-jeb/angular-builders/blob/19.x.x/packages/custom-webpack/README.md)
+- [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/custom-webpack/README.md)
 - [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/custom-webpack/README.md)
 - [Version 16](https://github.com/just-jeb/angular-builders/blob/16.x.x/packages/custom-webpack/README.md)
 - [Version 15](https://github.com/just-jeb/angular-builders/blob/15.x.x/packages/custom-webpack/README.md)
@@ -51,7 +53,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 ## Prerequisites:
 
-- [Angular CLI 18](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 20](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 
@@ -167,7 +169,7 @@ Thus, if you use `@angular-builders/custom-webpack:dev-server` along with `@angu
   "serve": {
     "builder": "@angular-builders/custom-webpack:dev-server",
     "options": {
-      "browserTarget": "my-project:build"
+      "buildTarget": "my-project:build"
     }
   }
 ```
@@ -238,6 +240,30 @@ Builder options:
     }
 ```
 
+External `karma.conf.js` configuration:
+
+Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
+
+Fix this by:
+- adding `'@angular-devkit/build-angular'` to the `frameworks` array
+- adding `'@angular-devkit/build-angular/plugins/karma'` to the `plugins` array
+
+`karma.conf.js` example:
+```js
+module.exports = function (config) {
+  config.set({
+    basePath: '',
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma'),
+    ],
+    // ...
+```
+
 ## Custom Webpack `extract-i18n`
 
 Enhanced `@angular-devkit/build-angular:extract-i18n` builder that leverages the custom webpack builder to get webpack configuration.
@@ -265,7 +291,7 @@ Thus, if you use `@angular-builders/custom-webpack:extract-i18n` along with `@an
   "extract-i18n": {
     "builder": "@angular-builders/custom-webpack:extract-i18n",
     "options": {
-      "browserTarget": "my-project:build"
+      "buildTarget": "my-project:build"
     }
   }
 ```

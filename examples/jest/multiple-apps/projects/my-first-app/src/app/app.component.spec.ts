@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      imports: [AppComponent],
     }).compileComponents();
   }));
 
@@ -17,6 +17,7 @@ describe('AppComponent', () => {
   it(`should have only two of the global mocks defined`, () => {
     expect(window.getComputedStyle).toBeTruthy();
     expect(document.body.style.transform).toBeTruthy();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(document.doctype as any).not.toEqual('<!DOCTYPE html>');
     expect(window.matchMedia).toBeFalsy();
   });

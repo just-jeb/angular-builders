@@ -6,10 +6,25 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "examples/*",
+      "examples/custom-esbuild/*",
+      "examples/custom-webpack/*",
+      "examples/jest/*"
+    ]
+  },
+  "resolutions": {
+    "@cypress/schematic/@angular-devkit/architect": ">=0.2000.0 < 0.2100.0",
+    "@cypress/schematic/@angular-devkit/core": "^20.0.0",
+    "@cypress/schematic/@angular-devkit/schematics": "^20.0.0",
+    "@cypress/schematic/@schematics/angular": "^20.0.0"
+  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
-    "node": "^14.20.0 || ^16.13.0 || >=18.10.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   },
   "scripts": {
     "build:packages": "yarn workspace @angular-builders/common run build && yarn workspaces foreach -vip --include '@angular-builders/*' --exclude @angular-builders/common run build",
@@ -32,7 +47,7 @@
     "@types/node": "^20.0.0",
     "lodash": "^4.17.15",
     "prettier": "^3.0.0",
-    "ts-jest": "29.2.3"
+    "ts-jest": "29.2.5"
   },
   "prettier": {
     "semi": true,
@@ -43,5 +58,6 @@
     "bracketSpacing": true,
     "arrowParens": "avoid",
     "singleQuote": true
-  }
+  },
+  "packageManager": "yarn@3.8.7"
 }
