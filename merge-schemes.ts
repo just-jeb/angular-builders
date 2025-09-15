@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import { merge } from 'lodash';
+import { mergeWith } from 'lodash';
 import { resolvePackagePath } from './packages/common/src';
 
 interface CustomSchema {
@@ -26,8 +26,19 @@ for (const {
   const originalSchema = require(resolvedOriginalSchemaPath);
   const schemaExtensions = schemaExtensionPaths.map((path: string) => require(path));
   const newSchema = schemaExtensions.reduce(
-    (extendedSchema: any, currentExtension: any) => merge(extendedSchema, currentExtension),
+    (extendedSchema: any, currentExtension: any) =>
+      mergeWith(extendedSchema, currentExtension, schemaMerger),
     originalSchema
   );
-  writeFileSync(newSchemaPath, JSON.stringify(newSchema, null, 2), 'utf-8');
+  writeFileSync(newSchemaPath, JSON.stringify(newSchema, schemaValueReplacer, 2), 'utf-8');
+}
+
+function schemaMerger(resultSchemaValue: unknown, extensionSchemaValue: unknown) {
+  if (Array.isArray(extensionSchemaValue) && extensionSchemaValue[0] === '__REPLACE__') {
+    return extensionSchemaValue.slice(1);
+  }
+}
+
+function schemaValueReplacer(key: unknown, value: unknown) {
+  return value === '__DELETE__' ? undefined : value;
 }

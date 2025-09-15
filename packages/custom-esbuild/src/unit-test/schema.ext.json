@@ -1,0 +1,40 @@
+{
+  "$id": "UnitTestCustomApplicationSchema",
+  "title": "Custom application schema for Unit Test Facade",
+  "description": "Unit testing options for Angular applications.",
+  "properties": {
+    "runner": "__DELETE__",
+    "plugins": {
+      "type": "array",
+      "description": "A list of paths to ESBuild plugins",
+      "default": [],
+      "items": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "options": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        ],
+        "uniqueItems": true
+      }
+    }
+  },
+  "required": [
+    "__REPLACE__",
+    "buildTarget",
+    "tsConfig"
+  ]
+}
