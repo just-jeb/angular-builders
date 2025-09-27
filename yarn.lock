@@ -2345,7 +2345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^3.0.8":
+"@cypress/request@npm:^3.0.9":
   version: 3.0.9
   resolution: "@cypress/request@npm:3.0.9"
   dependencies:
@@ -5828,6 +5828,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/tmp@npm:^0.2.3":
+  version: 0.2.6
+  resolution: "@types/tmp@npm:0.2.6"
+  checksum: 0b24bb6040cc289440a609e10ec99a704978c890a5828ff151576489090b2257ce2e2570b0f320ace9c8099c3642ea6221fbdf6d8f2e22b7cd1f4fbf6e989e3e
+  languageName: node
+  linkType: hard
+
 "@types/tough-cookie@npm:*":
   version: 4.0.5
   resolution: "@types/tough-cookie@npm:4.0.5"
@@ -6886,7 +6893,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"async@npm:^3.2.0, async@npm:^3.2.6":
+"async@npm:^3.2.6":
   version: 3.2.6
   resolution: "async@npm:3.2.6"
   checksum: ee6eb8cd8a0ab1b58bd2a3ed6c415e93e773573a91d31df9d5ef559baafa9dab37d3b096fa7993e84585cac3697b2af6ddb9086f45d3ac8cae821bb2aab65682
@@ -7662,13 +7669,6 @@ __metadata:
   version: 2.1.1
   resolution: "check-error@npm:2.1.1"
   checksum: d785ed17b1d4a4796b6e75c765a9a290098cf52ff9728ce0756e8ffd4293d2e419dd30c67200aee34202463b474306913f2fcfaf1890641026d9fc6966fea27a
-  languageName: node
-  linkType: hard
-
-"check-more-types@npm:^2.24.0":
-  version: 2.24.0
-  resolution: "check-more-types@npm:2.24.0"
-  checksum: b09080ec3404d20a4b0ead828994b2e5913236ef44ed3033a27062af0004cf7d2091fbde4b396bf13b7ce02fb018bc9960b48305e6ab2304cd82d73ed7a51ef4
   languageName: node
   linkType: hard
 
@@ -8625,21 +8625,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:14.4.1":
-  version: 14.4.1
-  resolution: "cypress@npm:14.4.1"
+"cypress@npm:15.3.0":
+  version: 15.3.0
+  resolution: "cypress@npm:15.3.0"
   dependencies:
-    "@cypress/request": ^3.0.8
+    "@cypress/request": ^3.0.9
     "@cypress/xvfb": ^1.2.4
     "@types/sinonjs__fake-timers": 8.1.1
     "@types/sizzle": ^2.3.2
+    "@types/tmp": ^0.2.3
     arch: ^2.2.0
     blob-util: ^2.0.2
     bluebird: ^3.7.2
     buffer: ^5.7.1
     cachedir: ^2.3.0
     chalk: ^4.1.0
-    check-more-types: ^2.24.0
     ci-info: ^4.1.0
     cli-cursor: ^3.1.0
     cli-table3: 0.6.1
@@ -8654,9 +8654,8 @@ __metadata:
     extract-zip: 2.0.1
     figures: ^3.2.0
     fs-extra: ^9.1.0
-    getos: ^3.2.1
+    hasha: 5.2.2
     is-installed-globally: ~0.4.0
-    lazy-ass: ^1.6.0
     listr2: ^3.8.3
     lodash: ^4.17.21
     log-symbols: ^4.0.0
@@ -8668,13 +8667,14 @@ __metadata:
     request-progress: ^3.0.0
     semver: ^7.7.1
     supports-color: ^8.1.1
-    tmp: ~0.2.3
+    systeminformation: 5.27.7
+    tmp: ~0.2.4
     tree-kill: 1.2.2
     untildify: ^4.0.0
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: ed3390efb4db01519e1ef57b1c359cf99a6445fe34e30340e660d7f07056b330a962004a29e6977efbcae4bad99b7890fbef44acc89a9b3db393b6d406b8de81
+  checksum: d21523672c17ab657b839399c54cf13b393b29c8fa71e241d98d9e2cb9136ec8e12fc737428ee2004dcdfb938bbe34dc7721a8376c6b2421dcecfb35fd9dbc5b
   languageName: node
   linkType: hard
 
@@ -10669,7 +10669,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     html-webpack-plugin: 5.6.3
     jasmine-core: 5.5.0
@@ -10808,15 +10808,6 @@ __metadata:
     data-uri-to-buffer: ^6.0.2
     debug: ^4.3.4
   checksum: aef94dbecde44bc9cd23f5c1b6af5bf772a3d16612c0fc37d3a4056ffd202f2cdd329746d4fdc2124813ea6c8b1c5279f3749d27226a2b161df43dbcb70082e3
-  languageName: node
-  linkType: hard
-
-"getos@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "getos@npm:3.2.1"
-  dependencies:
-    async: ^3.2.0
-  checksum: 42fd78a66d47cebd3e09de5566cc0044e034b08f4a000a310dbd89a77b02c65d8f4002554bfa495ea5bdc4fa9d515f5ac785a7cc474ba45383cc697f865eeaf1
   languageName: node
   linkType: hard
 
@@ -11094,6 +11085,16 @@ __metadata:
   version: 1.0.4
   resolution: "has@npm:1.0.4"
   checksum: 8a11ba062e0627c9578a1d08285401e39f1d071a9692ddf793199070edb5648b21c774dd733e2a181edd635bf6862731885f476f4ccf67c998d7a5ff7cef2550
+  languageName: node
+  linkType: hard
+
+"hasha@npm:5.2.2":
+  version: 5.2.2
+  resolution: "hasha@npm:5.2.2"
+  dependencies:
+    is-stream: ^2.0.0
+    type-fest: ^0.8.0
+  checksum: 06cc474bed246761ff61c19d629977eb5f53fa817be4313a255a64ae0f433e831a29e83acb6555e3f4592b348497596f1d1653751008dda4f21c9c21ca60ac5a
   languageName: node
   linkType: hard
 
@@ -13174,13 +13175,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lazy-ass@npm:^1.6.0":
-  version: 1.6.0
-  resolution: "lazy-ass@npm:1.6.0"
-  checksum: 5a3ebb17915b03452320804466345382a6c25ac782ec4874fecdb2385793896cd459be2f187dc7def8899180c32ee0ab9a1aa7fe52193ac3ff3fe29bb0591729
-  languageName: node
-  linkType: hard
-
 "lcid@npm:^2.0.0":
   version: 2.0.0
   resolution: "lcid@npm:2.0.0"
@@ -14350,7 +14344,7 @@ __metadata:
     "@types/jest": ^30.0.0
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     jest: 29.7.0
     ng-packagr: 20.0.0
@@ -16896,7 +16890,7 @@ __metadata:
     "@cypress/schematic": 4.1.3
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
-    cypress: 14.4.1
+    cypress: 15.3.0
     jasmine-core: 5.5.0
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
@@ -16933,7 +16927,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     jasmine-core: 5.5.0
     karma: 6.4.4
@@ -16972,7 +16966,7 @@ __metadata:
     "@eslint/js": ^9.29.0
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     puppeteer: 24.10.1
     rxjs: 7.8.2
@@ -17005,7 +16999,7 @@ __metadata:
     "@eslint/js": ^9.29.0
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     puppeteer: 24.10.1
     rxjs: 7.8.2
@@ -17446,7 +17440,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     jasmine-core: 5.5.0
     jest: 29.7.0
@@ -18165,6 +18159,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"systeminformation@npm:5.27.7":
+  version: 5.27.7
+  resolution: "systeminformation@npm:5.27.7"
+  bin:
+    systeminformation: lib/cli.js
+  checksum: 3d800de2e4ac9ab2c1f3f0a29901756c3ca08ed25f541b75452b545e6eb2c8c8ef4a82f8fbf0fe25c4b0865ef9bc7f8efd7ded813acc9f22c287d4daf6141a49
+  conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
+  languageName: node
+  linkType: hard
+
 "table-layout@npm:^0.4.3":
   version: 0.4.5
   resolution: "table-layout@npm:0.4.5"
@@ -18397,7 +18401,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
-    cypress: 14.4.1
+    cypress: 15.3.0
     eslint: ^9.29.0
     jasmine-core: 5.5.0
     karma: 6.4.4
@@ -18501,7 +18505,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tmp@npm:^0.2.1, tmp@npm:~0.2.3":
+"tmp@npm:^0.2.1, tmp@npm:~0.2.4":
   version: 0.2.5
   resolution: "tmp@npm:0.2.5"
   checksum: 9d18e58060114154939930457b9e198b34f9495bcc05a343bc0a0a29aa546d2c1c2b343dae05b87b17c8fde0af93ab7d8fe8574a8f6dc2cd8fd3f2ca1ad0d8e1
@@ -18802,6 +18806,13 @@ __metadata:
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
   checksum: e6b32a3b3877f04339bae01c193b273c62ba7bfc9e325b8703c4ee1b32dc8fe4ef5dfa54bf78265e069f7667d058e360ae0f37be5af9f153b22382cd55a9afe0
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^0.8.0":
+  version: 0.8.1
+  resolution: "type-fest@npm:0.8.1"
+  checksum: d61c4b2eba24009033ae4500d7d818a94fd6d1b481a8111612ee141400d5f1db46f199c014766b9fa9b31a6a7374d96fc748c6d688a78a3ce5a33123839becb7
   languageName: node
   linkType: hard
 
