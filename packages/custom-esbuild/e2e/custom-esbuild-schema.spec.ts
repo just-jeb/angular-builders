@@ -36,6 +36,5 @@ describe('Custom ESBuild schema tests', () => {
     customEsbuildUnitTestSchema.properties['plugins'] = undefined;
     expect(originalUnitTestSchema.properties).toEqual(customEsbuildUnitTestSchema.properties);
     expect(originalUnitTestSchema.required).toEqual(customEsbuildUnitTestSchema.required);
-    console.log(customEsbuildUnitTestSchema.required);
   });
 });
