@@ -14,6 +14,10 @@ export function executeCustomEsbuildUnitTestBuilder(
   options: CustomEsbuildUnitTestSchema,
   context: BuilderContext
 ) {
+  if (Array.isArray(options.browsers) && !options.browsers.length) {
+    delete options.browsers;
+  }
+
   const buildTarget = targetFromTargetString(options.buildTarget);
 
   async function getBuildTargetOptions() {
