@@ -204,7 +204,7 @@ __metadata:
     "@angular-devkit/architect": ">=0.2001.0 < 0.2100.0"
     "@angular-devkit/core": ^20.1.0
     "@angular/build": ^20.1.0
-    esbuild: 0.25.9
+    esbuild: ~0.25.1
     jest: 29.7.0
     rimraf: ^5.0.0
     ts-node: ^10.0.0
@@ -626,7 +626,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:^20.0.0, @angular/cli@npm:^20.1.0":
+"@angular/cli@npm:^20.0.0, @angular/cli@npm:^20.0.2, @angular/cli@npm:^20.1.0":
   version: 20.3.3
   resolution: "@angular/cli@npm:20.3.3"
   dependencies:
@@ -7208,7 +7208,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": ^20.0.0
+    "@angular/cli": ^20.0.2
   languageName: unknown
   linkType: soft
 
@@ -9544,7 +9544,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:>=0.15.13, esbuild@npm:^0.25.0":
+"esbuild@npm:>=0.15.13, esbuild@npm:^0.25.0, esbuild@npm:~0.25.1":
   version: 0.25.10
   resolution: "esbuild@npm:0.25.10"
   dependencies:
