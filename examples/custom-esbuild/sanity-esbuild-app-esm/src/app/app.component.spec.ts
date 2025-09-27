@@ -1,23 +1,46 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  let fixture: ComponentFixture<AppComponent>;
+  let appElem: HTMLElement;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
-  }));
+
+    fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    appElem = fixture.debugElement.nativeElement;
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
+  it(`should have as title 'sanity-esbuild-app-esm'`, () => {
+    const app = fixture.debugElement.componentInstance;
+    expect(app.title).toEqual('sanity-esbuild-app-esm (compilation provided)');
+  });
+
   it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('sanity-esbuild-app-esm');
+    expect(appElem.querySelector('h1')!.textContent).toContain(
+      'sanity-esbuild-app-esm (compilation provided)'
+    );
+  });
+
+  it('should render subtitle in a h2 tag', () => {
+    expect(appElem.querySelector('h2')!.textContent).toContain(
+      'sanity-esbuild-app-esm subtitle (compilation provided)'
+    );
+  });
+
+  it('should render titleByOption in a h3 tag', () => {
+    expect(appElem.querySelector('h3')!.textContent).toContain(
+      'sanity-esbuild-app-esm optionTitle (compilation provided)'
+    );
   });
 });

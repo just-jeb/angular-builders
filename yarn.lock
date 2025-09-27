@@ -202,7 +202,7 @@ __metadata:
   dependencies:
     "@angular-builders/common": "workspace:*"
     "@angular-devkit/architect": ">=0.2001.0 < 0.2100.0"
-    "@angular-devkit/core": ^20.3.0
+    "@angular-devkit/core": ^20.1.0
     "@angular/build": ^20.1.0
     esbuild: 0.25.9
     jest: 29.7.0
@@ -264,7 +264,7 @@ __metadata:
   dependencies:
     "@angular-devkit/architect": ">=0.2001.0 < 0.2100.0"
     "@angular-devkit/core": ^20.1.0
-    "@types/dateformat": ^5.0.0
+    "@types/dateformat": 5.0.2
     cpy-cli: ^5.0.0
     dateformat: ^5.0.3
     jest: 29.7.0
@@ -274,25 +274,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-devkit/architect@npm:0.2003.2":
-  version: 0.2003.2
-  resolution: "@angular-devkit/architect@npm:0.2003.2"
+"@angular-devkit/architect@npm:0.2003.3, @angular-devkit/architect@npm:>= 0.2000.0 < 0.2100.0, @angular-devkit/architect@npm:>=0.2001.0 < 0.2100.0":
+  version: 0.2003.3
+  resolution: "@angular-devkit/architect@npm:0.2003.3"
   dependencies:
-    "@angular-devkit/core": 20.3.2
+    "@angular-devkit/core": 20.3.3
     rxjs: 7.8.2
-  checksum: 3d5b5fdff353e8c635d2763862367ae1bb05c4d27cafea050fe949cbc122b89da033d09dd6eb2bcb340d45b1ca8b4c57a7eb5072178194fff935b2c67ca022c4
+  checksum: fbbd2dc524c77b86663537afdcf03e93575a650e5c245f1ed0ca6c69f35fba9a31819ac7aafb68cdd1d0c1e1046bb802b53eac43996cf44cd18557f70b441028
   languageName: node
   linkType: hard
 
-"@angular-devkit/build-angular@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@angular-devkit/build-angular@npm:20.3.2"
+"@angular-devkit/build-angular@npm:^20.1.0":
+  version: 20.3.3
+  resolution: "@angular-devkit/build-angular@npm:20.3.3"
   dependencies:
     "@ampproject/remapping": 2.3.0
-    "@angular-devkit/architect": 0.2003.2
-    "@angular-devkit/build-webpack": 0.2003.2
-    "@angular-devkit/core": 20.3.2
-    "@angular/build": 20.3.2
+    "@angular-devkit/architect": 0.2003.3
+    "@angular-devkit/build-webpack": 0.2003.3
+    "@angular-devkit/core": 20.3.3
+    "@angular/build": 20.3.3
     "@babel/core": 7.28.3
     "@babel/generator": 7.28.3
     "@babel/helper-annotate-as-pure": 7.27.3
@@ -303,7 +303,7 @@ __metadata:
     "@babel/preset-env": 7.28.3
     "@babel/runtime": 7.28.3
     "@discoveryjs/json-ext": 0.6.3
-    "@ngtools/webpack": 20.3.2
+    "@ngtools/webpack": 20.3.3
     ansi-colors: 4.1.3
     autoprefixer: 10.4.21
     babel-loader: 10.0.0
@@ -350,7 +350,7 @@ __metadata:
     "@angular/platform-browser": ^20.0.0
     "@angular/platform-server": ^20.0.0
     "@angular/service-worker": ^20.0.0
-    "@angular/ssr": ^20.3.2
+    "@angular/ssr": ^20.3.3
     "@web/test-runner": ^0.20.0
     browser-sync: ^3.0.2
     jest: ^29.5.0
@@ -392,26 +392,26 @@ __metadata:
       optional: true
     tailwindcss:
       optional: true
-  checksum: 2b16a243112d771b0d0d3f07b13f5b7ef858f90455632cef53940ab4b6afc3eb9e7714164c3be8981e08d3433f00934da4ad46a3be0a2e629799b0582c24c915
+  checksum: 4ddd39bc072123d7be3b88cda4c528b21837a91d8f239d9cf8671c7f9ba0a3fef1b1e8bd7cc3e59cc1a310eb7d8dfc7ae74f98b07642a496019e6a34452acb95
   languageName: node
   linkType: hard
 
-"@angular-devkit/build-webpack@npm:0.2003.2":
-  version: 0.2003.2
-  resolution: "@angular-devkit/build-webpack@npm:0.2003.2"
+"@angular-devkit/build-webpack@npm:0.2003.3":
+  version: 0.2003.3
+  resolution: "@angular-devkit/build-webpack@npm:0.2003.3"
   dependencies:
-    "@angular-devkit/architect": 0.2003.2
+    "@angular-devkit/architect": 0.2003.3
     rxjs: 7.8.2
   peerDependencies:
     webpack: ^5.30.0
     webpack-dev-server: ^5.0.2
-  checksum: cce906dabfdb16946ef755b31f05d86ed49eae2ddeffe5475723990fb8c660d2f324fa364185c43bdf18d96f307bc1a588578e3a82399f53e8f77c8946863777
+  checksum: c095582c5bcbda65e45ac8414c2f4e9653fced21b6bd62810cfcc3c384bde8448392926deb4b09caf537f4bcb33891b2835e456f125eb508a569f207a6f32315
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@angular-devkit/core@npm:20.3.2"
+"@angular-devkit/core@npm:20.3.3, @angular-devkit/core@npm:>= 20.0.0 < 21.0.0, @angular-devkit/core@npm:^20.1.0":
+  version: 20.3.3
+  resolution: "@angular-devkit/core@npm:20.3.3"
   dependencies:
     ajv: 8.17.1
     ajv-formats: 3.0.1
@@ -424,20 +424,20 @@ __metadata:
   peerDependenciesMeta:
     chokidar:
       optional: true
-  checksum: 036b5421c898cd35260df425b9b8c17e773eb122d2690146bd4480b095e3b86b28d62aea167fcd1aedeff08b1b30f50fc1ed596a253a031dd091dae1e14359c6
+  checksum: 75d0df414e306d957435e1ae0458f5515c53ef507a514b6b2fe17f04f7114b9b0d1ef02275e4d6773aeca1b0b6eed83ed5021193b030a2654e3da70b358ec3ab
   languageName: node
   linkType: hard
 
-"@angular-devkit/schematics@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@angular-devkit/schematics@npm:20.3.2"
+"@angular-devkit/schematics@npm:20.3.3, @angular-devkit/schematics@npm:>= 20.0.0 < 21.0.0":
+  version: 20.3.3
+  resolution: "@angular-devkit/schematics@npm:20.3.3"
   dependencies:
-    "@angular-devkit/core": 20.3.2
+    "@angular-devkit/core": 20.3.3
     jsonc-parser: 3.3.1
     magic-string: 0.30.17
     ora: 8.2.0
     rxjs: 7.8.2
-  checksum: b68f4a91a06fe8d1dd01cfdf3ee09c80b65c796e0694d2e7e1904c7e2fe3183c1bba3696d868761c1810caed32d45adc9da7f9e6f6f3aa8e52510acbe89fd0d8
+  checksum: e3b81b5134c5818e803b608fad865ead2c070e39499937b13ccb50c8750f2c3531cb9a912b3c552605b13eac20467774ecfe32dd37a9c01f7f8b45f2bae60903
   languageName: node
   linkType: hard
 
@@ -546,87 +546,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/build@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@angular/build@npm:20.3.2"
-  dependencies:
-    "@ampproject/remapping": 2.3.0
-    "@angular-devkit/architect": 0.2003.2
-    "@babel/core": 7.28.3
-    "@babel/helper-annotate-as-pure": 7.27.3
-    "@babel/helper-split-export-declaration": 7.24.7
-    "@inquirer/confirm": 5.1.14
-    "@vitejs/plugin-basic-ssl": 2.1.0
-    beasties: 0.3.5
-    browserslist: ^4.23.0
-    esbuild: 0.25.9
-    https-proxy-agent: 7.0.6
-    istanbul-lib-instrument: 6.0.3
-    jsonc-parser: 3.3.1
-    listr2: 9.0.1
-    lmdb: 3.4.2
-    magic-string: 0.30.17
-    mrmime: 2.0.1
-    parse5-html-rewriting-stream: 8.0.0
-    picomatch: 4.0.3
-    piscina: 5.1.3
-    rolldown: 1.0.0-beta.32
-    sass: 1.90.0
-    semver: 7.7.2
-    source-map-support: 0.5.21
-    tinyglobby: 0.2.14
-    vite: 7.1.5
-    watchpack: 2.4.4
-  peerDependencies:
-    "@angular/compiler": ^20.0.0
-    "@angular/compiler-cli": ^20.0.0
-    "@angular/core": ^20.0.0
-    "@angular/localize": ^20.0.0
-    "@angular/platform-browser": ^20.0.0
-    "@angular/platform-server": ^20.0.0
-    "@angular/service-worker": ^20.0.0
-    "@angular/ssr": ^20.3.2
-    karma: ^6.4.0
-    less: ^4.2.0
-    ng-packagr: ^20.0.0
-    postcss: ^8.4.0
-    tailwindcss: ^2.0.0 || ^3.0.0 || ^4.0.0
-    tslib: ^2.3.0
-    typescript: ">=5.8 <6.0"
-    vitest: ^3.1.1
-  dependenciesMeta:
-    lmdb:
-      optional: true
-  peerDependenciesMeta:
-    "@angular/core":
-      optional: true
-    "@angular/localize":
-      optional: true
-    "@angular/platform-browser":
-      optional: true
-    "@angular/platform-server":
-      optional: true
-    "@angular/service-worker":
-      optional: true
-    "@angular/ssr":
-      optional: true
-    karma:
-      optional: true
-    less:
-      optional: true
-    ng-packagr:
-      optional: true
-    postcss:
-      optional: true
-    tailwindcss:
-      optional: true
-    vitest:
-      optional: true
-  checksum: c1c9e32b4b4466ee57d991c2ee9e3429a60ab8da86be0b42c1e201037f1af195f92ee9647ec3d4ec63f7247f6452724b13d82fd4cd7dc7185115e24b984774da
-  languageName: node
-  linkType: hard
-
-"@angular/build@npm:^20.1.0":
+"@angular/build@npm:20.3.3, @angular/build@npm:^20.1.0":
   version: 20.3.3
   resolution: "@angular/build@npm:20.3.3"
   dependencies:
@@ -4248,7 +4168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/wasm-runtime@npm:^1.0.3, @napi-rs/wasm-runtime@npm:^1.0.5":
+"@napi-rs/wasm-runtime@npm:^1.0.5":
   version: 1.0.5
   resolution: "@napi-rs/wasm-runtime@npm:1.0.5"
   dependencies:
@@ -4259,14 +4179,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ngtools/webpack@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@ngtools/webpack@npm:20.3.2"
+"@ngtools/webpack@npm:20.3.3":
+  version: 20.3.3
+  resolution: "@ngtools/webpack@npm:20.3.3"
   peerDependencies:
     "@angular/compiler-cli": ^20.0.0
     typescript: ">=5.8 <6.0"
     webpack: ^5.54.0
-  checksum: 5fc4fa28b4fc85f8b89148f979f59ce4c35aef1d7f7c6490c7569741ad6eedad73dda4058d6ee4ee959962d77a347e1bd85a77d41e6e5363593f88b2b3088e8a
+  checksum: 8ff0d036ac56c619e1761e9429fc59facfc6fb89e330905399362481000145836a4b3de57852526fedabc43646b5ab610d72ace012fa567543e77f109297ef9c
   languageName: node
   linkType: hard
 
@@ -4735,20 +4655,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@oxc-project/runtime@npm:=0.81.0":
-  version: 0.81.0
-  resolution: "@oxc-project/runtime@npm:0.81.0"
-  checksum: 836b5fbb4c1a6277b123af46846888fcdb7fd7cdb413005a0983edf2653e6b971b0c2286c2e74f265c8e51c8af0b1968fa89bbaec4b107a0e3871d209b400226
-  languageName: node
-  linkType: hard
-
-"@oxc-project/types@npm:=0.81.0":
-  version: 0.81.0
-  resolution: "@oxc-project/types@npm:0.81.0"
-  checksum: 0c8a8d46fcefaebec16ade5bb390ba3a1c9c77b569d4f5fbf7232a76fe26c335631786d0bc6ed12b4c3e749f9bd50642fa555b559ee423c93e0c96b019ae2cca
-  languageName: node
-  linkType: hard
-
 "@oxc-project/types@npm:=0.89.0":
   version: 0.89.0
   resolution: "@oxc-project/types@npm:0.89.0"
@@ -4924,24 +4830,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-android-arm64@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-android-arm64@npm:1.0.0-beta.32"
-  conditions: os=android & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-android-arm64@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-android-arm64@npm:1.0.0-beta.38"
   conditions: os=android & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-darwin-arm64@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-darwin-arm64@npm:1.0.0-beta.32"
-  conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
@@ -4952,24 +4844,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-darwin-x64@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-darwin-x64@npm:1.0.0-beta.32"
-  conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-darwin-x64@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-darwin-x64@npm:1.0.0-beta.38"
   conditions: os=darwin & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-freebsd-x64@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-freebsd-x64@npm:1.0.0-beta.32"
-  conditions: os=freebsd & cpu=x64
   languageName: node
   linkType: hard
 
@@ -4980,24 +4858,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-linux-arm-gnueabihf@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-linux-arm-gnueabihf@npm:1.0.0-beta.32"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-linux-arm-gnueabihf@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-linux-arm-gnueabihf@npm:1.0.0-beta.38"
   conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-linux-arm64-gnu@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-linux-arm64-gnu@npm:1.0.0-beta.32"
-  conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
@@ -5008,24 +4872,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-linux-arm64-musl@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-linux-arm64-musl@npm:1.0.0-beta.32"
-  conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-linux-arm64-musl@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-linux-arm64-musl@npm:1.0.0-beta.38"
   conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-linux-x64-gnu@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-linux-x64-gnu@npm:1.0.0-beta.32"
-  conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
@@ -5036,13 +4886,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-linux-x64-musl@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-linux-x64-musl@npm:1.0.0-beta.32"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-linux-x64-musl@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-linux-x64-musl@npm:1.0.0-beta.38"
@@ -5050,26 +4893,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-openharmony-arm64@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-openharmony-arm64@npm:1.0.0-beta.32"
-  conditions: os=openharmony & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-openharmony-arm64@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-openharmony-arm64@npm:1.0.0-beta.38"
   conditions: os=openharmony & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-wasm32-wasi@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-wasm32-wasi@npm:1.0.0-beta.32"
-  dependencies:
-    "@napi-rs/wasm-runtime": ^1.0.3
-  conditions: cpu=wasm32
   languageName: node
   linkType: hard
 
@@ -5082,24 +4909,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-win32-arm64-msvc@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-win32-arm64-msvc@npm:1.0.0-beta.32"
-  conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-win32-arm64-msvc@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-win32-arm64-msvc@npm:1.0.0-beta.38"
   conditions: os=win32 & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@rolldown/binding-win32-ia32-msvc@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-win32-ia32-msvc@npm:1.0.0-beta.32"
-  conditions: os=win32 & cpu=ia32
   languageName: node
   linkType: hard
 
@@ -5110,24 +4923,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rolldown/binding-win32-x64-msvc@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/binding-win32-x64-msvc@npm:1.0.0-beta.32"
-  conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-win32-x64-msvc@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "@rolldown/binding-win32-x64-msvc@npm:1.0.0-beta.38"
   conditions: os=win32 & cpu=x64
-  languageName: node
-  linkType: hard
-
-"@rolldown/pluginutils@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "@rolldown/pluginutils@npm:1.0.0-beta.32"
-  checksum: df22544ff08bdfce22eda91941ddb765a1adba0da910898ee55ff1066c5861c143ffdbbac2045f06746affb7b9046db4ef2aee5c71a1ce672181e724dc4a29f4
   languageName: node
   linkType: hard
 
@@ -5337,14 +5136,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schematics/angular@npm:20.3.2":
-  version: 20.3.2
-  resolution: "@schematics/angular@npm:20.3.2"
+"@schematics/angular@npm:20.3.3":
+  version: 20.3.3
+  resolution: "@schematics/angular@npm:20.3.3"
   dependencies:
-    "@angular-devkit/core": 20.3.2
-    "@angular-devkit/schematics": 20.3.2
+    "@angular-devkit/core": 20.3.3
+    "@angular-devkit/schematics": 20.3.3
     jsonc-parser: 3.3.1
-  checksum: 1834a6f8ceac9756662cc3874e34d373c0d53352d5f9ee7cf9b378fc4f070bb2e57fc1ea67a00fac4dff475c8493db76d3500f537face6de467fffa907e4ce96
+  checksum: 71b6bf9fd0dacfd9f4caea8dd91fef05aae78fd2a500525cbeb53ceb81c24575c9f17fed771a4e6e696144d912c59c5eb1698a6c1922beed17cf15f389ce5d1f
   languageName: node
   linkType: hard
 
@@ -5694,10 +5493,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/dateformat@npm:^5.0.0":
-  version: 5.0.3
-  resolution: "@types/dateformat@npm:5.0.3"
-  checksum: 7ec385f4914a476efe2670f7c56c342516f53d3288c7c3b5c426ed5f85c98eb08d361a8ecafb179fb323e15bd357106e83b8a27417eb192f18b6d6bbf9863f92
+"@types/dateformat@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@types/dateformat@npm:5.0.2"
+  checksum: a5b67411553ae636a04cf0f2dc15ced7730e3ad6280a3b71bd767493700b166a2f730868868b1c783886d31e325fcb6ae28c166e6018e6810538a1c3a7ec53ff
   languageName: node
   linkType: hard
 
@@ -16855,63 +16654,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rolldown@npm:1.0.0-beta.32":
-  version: 1.0.0-beta.32
-  resolution: "rolldown@npm:1.0.0-beta.32"
-  dependencies:
-    "@oxc-project/runtime": =0.81.0
-    "@oxc-project/types": =0.81.0
-    "@rolldown/binding-android-arm64": 1.0.0-beta.32
-    "@rolldown/binding-darwin-arm64": 1.0.0-beta.32
-    "@rolldown/binding-darwin-x64": 1.0.0-beta.32
-    "@rolldown/binding-freebsd-x64": 1.0.0-beta.32
-    "@rolldown/binding-linux-arm-gnueabihf": 1.0.0-beta.32
-    "@rolldown/binding-linux-arm64-gnu": 1.0.0-beta.32
-    "@rolldown/binding-linux-arm64-musl": 1.0.0-beta.32
-    "@rolldown/binding-linux-x64-gnu": 1.0.0-beta.32
-    "@rolldown/binding-linux-x64-musl": 1.0.0-beta.32
-    "@rolldown/binding-openharmony-arm64": 1.0.0-beta.32
-    "@rolldown/binding-wasm32-wasi": 1.0.0-beta.32
-    "@rolldown/binding-win32-arm64-msvc": 1.0.0-beta.32
-    "@rolldown/binding-win32-ia32-msvc": 1.0.0-beta.32
-    "@rolldown/binding-win32-x64-msvc": 1.0.0-beta.32
-    "@rolldown/pluginutils": 1.0.0-beta.32
-    ansis: ^4.0.0
-  dependenciesMeta:
-    "@rolldown/binding-android-arm64":
-      optional: true
-    "@rolldown/binding-darwin-arm64":
-      optional: true
-    "@rolldown/binding-darwin-x64":
-      optional: true
-    "@rolldown/binding-freebsd-x64":
-      optional: true
-    "@rolldown/binding-linux-arm-gnueabihf":
-      optional: true
-    "@rolldown/binding-linux-arm64-gnu":
-      optional: true
-    "@rolldown/binding-linux-arm64-musl":
-      optional: true
-    "@rolldown/binding-linux-x64-gnu":
-      optional: true
-    "@rolldown/binding-linux-x64-musl":
-      optional: true
-    "@rolldown/binding-openharmony-arm64":
-      optional: true
-    "@rolldown/binding-wasm32-wasi":
-      optional: true
-    "@rolldown/binding-win32-arm64-msvc":
-      optional: true
-    "@rolldown/binding-win32-ia32-msvc":
-      optional: true
-    "@rolldown/binding-win32-x64-msvc":
-      optional: true
-  bin:
-    rolldown: bin/cli.mjs
-  checksum: b88e100bd5ea0a34bf034298c7b1029bb78c1358d4f915261f045dff3e832a997936dd12a6c604348fd7f8a23e30e159cba9c76529a5b0c641855cd0c2ed6e0c
-  languageName: node
-  linkType: hard
-
 "rolldown@npm:1.0.0-beta.38":
   version: 1.0.0-beta.38
   resolution: "rolldown@npm:1.0.0-beta.38"
@@ -17228,17 +16970,10 @@ __metadata:
     "@angular/platform-browser-dynamic": ^20.1.0
     "@angular/router": ^20.1.0
     "@eslint/js": ^9.29.0
-    "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
     cypress: 14.4.1
     eslint: ^9.29.0
-    jasmine-core: 5.5.0
-    karma: 6.4.4
-    karma-chrome-launcher: 3.2.0
-    karma-coverage: 2.2.1
-    karma-jasmine: 5.1.0
-    karma-jasmine-html-reporter: 2.1.0
     puppeteer: 24.10.1
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -17268,17 +17003,10 @@ __metadata:
     "@angular/platform-browser-dynamic": ^20.1.0
     "@angular/router": ^20.1.0
     "@eslint/js": ^9.29.0
-    "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: ^20.1.0
     cypress: 14.4.1
     eslint: ^9.29.0
-    jasmine-core: 5.5.0
-    karma: 6.4.4
-    karma-chrome-launcher: 3.2.0
-    karma-coverage: 2.2.1
-    karma-jasmine: 5.1.0
-    karma-jasmine-html-reporter: 2.1.0
     puppeteer: 24.10.1
     rxjs: 7.8.2
     ts-node: 10.9.2
