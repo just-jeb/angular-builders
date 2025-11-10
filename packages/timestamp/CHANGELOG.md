@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.1.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@20.0.0...@angular-builders/timestamp@20.1.0-beta.0) (2025-11-10)
+
+### Features
+
+* **custom-esbuild:** add `unit-test` builder ([#1935](https://github.com/just-jeb/angular-builders/issues/1935)) ([00972a8](https://github.com/just-jeb/angular-builders/commit/00972a880d4747c521d4aa5f03b7268ec0b43e29))
+
 ## [20.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@20.0.0-beta.0...@angular-builders/timestamp@20.0.0) (2025-06-25)
 
 **Note:** Version bump only for package @angular-builders/timestamp
