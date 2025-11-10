@@ -13,6 +13,8 @@ Allow customizing ESBuild configuration
     - [Example](#example)
   - [Custom ESBuild `dev-server`](#custom-esbuild-dev-server)
     - [Example](#example)
+  - [Custom ESBuild `unit-test`](#custom-esbuild-unit-test)
+    - [Example](#example-1)
 - [Index Transform](#index-transform)
   - [Example](#example-2)
 - [ES Modules (ESM) Support](#es-modules-esm-support)
@@ -46,7 +48,7 @@ Allow customizing ESBuild configuration
         "architect": {
           ...
           "[architect-target]": {
-            "builder": "@angular-builders/custom-esbuild:[application|dev-server]",
+            "builder": "@angular-builders/custom-esbuild:[application|dev-server|unit-test]",
             "options": {
               ...
             }
@@ -54,7 +56,7 @@ Allow customizing ESBuild configuration
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [application|dev-server] one of the supported builders - [application](#Custom-webpack-browser) or [dev-server](#Custom-webpack-extract-i18n)
+    - [application|dev-server|unit-test] one of the supported builders - [application](#Custom-esbuild-application), [dev-server](#Custom-esbuild-dev-server), or [unit-test](#Custom-esbuild-unit-test)
 3.  If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it with `ng [architect-target]`
@@ -81,6 +83,7 @@ Allow customizing ESBuild configuration
 
 - [@angular-builders/custom-esbuild:application](#Custom-esbuild-application)
 - [@angular-builders/custom-esbuild:dev-server](#Custom-esbuild-dev-server)
+- [@angular-builders/custom-esbuild:unit-test](#Custom-esbuild-unit-test)
 
 ## Custom ESBuild `application`
 
@@ -226,6 +229,35 @@ The `@angular-builders/custom-esbuild:dev-server` is an enhanced version of the 
       "buildTarget": "my-project:build"
     }
   }
+```
+
+## Custom ESBuild `unit-test`
+
+The `@angular-builders/custom-esbuild:unit-test` builder is an enhanced version of the `@angular/build:unit-test` builder that reuses your application ESBuild plugins during test execution. It reads the `plugins` from the referenced `:application` build target and runs the official unit test builder with those plugins applied.
+There is no need to specify a `runner` option as the only supported test runner is Vitest.
+
+### Example-1
+
+`angular.json`:
+
+```js
+"architect": {
+  ...
+  "build": {
+    "builder": "@angular-builders/custom-esbuild:application",
+    "options": {
+      "plugins": ["./esbuild/plugin-1.js"]
+      ...
+    }
+  },
+  "test": {
+    "builder": "@angular-builders/custom-esbuild:unit-test",
+    "options": {
+      "buildTarget": "my-project:build",
+      "tsConfig": "src/tsconfig.spec.json"
+    }
+  }
+}
 ```
 
 # Index Transform

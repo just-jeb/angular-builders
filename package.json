@@ -15,12 +15,6 @@
       "examples/jest/*"
     ]
   },
-  "resolutions": {
-    "@cypress/schematic/@angular-devkit/architect": ">=0.2000.0 < 0.2100.0",
-    "@cypress/schematic/@angular-devkit/core": "^20.0.0",
-    "@cypress/schematic/@angular-devkit/schematics": "^20.0.0",
-    "@cypress/schematic/@schematics/angular": "^20.0.0"
-  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
@@ -48,7 +42,8 @@
     "lint-staged": "^15.0.0",
     "lodash": "^4.17.15",
     "prettier": "^3.0.0",
-    "ts-jest": "29.2.5"
+    "ts-jest": "29.2.5",
+    "vitest": "3.2.4"
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [

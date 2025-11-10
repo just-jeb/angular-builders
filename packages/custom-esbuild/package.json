@@ -41,15 +41,16 @@
   "builders": "builders.json",
   "dependencies": {
     "@angular-builders/common": "workspace:*",
-    "@angular-devkit/architect": ">=0.2000.0 < 0.2100.0",
-    "@angular-devkit/core": "^20.0.0",
-    "@angular/build": "^20.0.0"
+    "@angular-devkit/architect": ">=0.2001.0 < 0.2100.0",
+    "@angular-devkit/core": "^20.1.0",
+    "@angular/build": "^20.1.0"
   },
   "peerDependencies": {
-    "@angular/compiler-cli": "^20.0.0"
+    "@angular/compiler-cli": "^20.1.0",
+    "vitest": ">=2"
   },
   "devDependencies": {
-    "esbuild": "0.25.1",
+    "esbuild": "0.25.9",
     "jest": "29.7.0",
     "rimraf": "^5.0.0",
     "ts-node": "^10.0.0",

@@ -5,6 +5,7 @@ import { loadModule } from '@angular-builders/common';
 import {
   CustomEsbuildApplicationSchema,
   CustomEsbuildDevServerSchema,
+  CustomEsbuildUnitTestSchema,
   PluginConfig,
 } from './custom-esbuild-schema';
 import { Target } from '@angular-devkit/architect';
@@ -14,7 +15,7 @@ export async function loadPlugins(
   workspaceRoot: string,
   tsConfig: string,
   logger: logging.LoggerApi,
-  builderOptions: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema,
+  builderOptions: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema | CustomEsbuildUnitTestSchema,
   target: Target
 ): Promise<Plugin[]> {
   const plugins = await Promise.all(
