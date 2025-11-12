@@ -627,7 +627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:20.3.9, @angular/cli@npm:^20.0.2":
+"@angular/cli@npm:20.3.9":
   version: 20.3.9
   resolution: "@angular/cli@npm:20.3.9"
   dependencies:
@@ -3025,7 +3025,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.39.1, @eslint/js@npm:^9.29.0":
+"@eslint/js@npm:9.39.1":
   version: 9.39.1
   resolution: "@eslint/js@npm:9.39.1"
   checksum: b651930aec03a5aef97bc144627aebb05070afec5364cd3c5fd7c5dbb97f4fd82faf1b200b3be17572d5ebb7f8805211b655f463be96f2b02202ec7250868048
@@ -5837,6 +5837,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:30.0.0":
+  version: 30.0.0
+  resolution: "@types/jest@npm:30.0.0"
+  dependencies:
+    expect: ^30.0.0
+    pretty-format: ^30.0.0
+  checksum: d80c0c30b2689693a2b5f5975ccc898fc194acd5a947ad3bc728c6f2d4ffad53da021b1c39b0c939d3ed4ee945c74f4fda800b6f1bd6283170e52cd3fe798411
+  languageName: node
+  linkType: hard
+
 "@types/jest@npm:^29.5.1":
   version: 29.5.14
   resolution: "@types/jest@npm:29.5.14"
@@ -5844,16 +5854,6 @@ __metadata:
     expect: ^29.0.0
     pretty-format: ^29.0.0
   checksum: 18dba4623f26661641d757c63da2db45e9524c9be96a29ef713c703a9a53792df9ecee9f7365a0858ddbd6440d98fe6b65ca67895ca5884b73cbc7ffc11f3838
-  languageName: node
-  linkType: hard
-
-"@types/jest@npm:^30.0.0":
-  version: 30.0.0
-  resolution: "@types/jest@npm:30.0.0"
-  dependencies:
-    expect: ^30.0.0
-    pretty-format: ^30.0.0
-  checksum: d80c0c30b2689693a2b5f5975ccc898fc194acd5a947ad3bc728c6f2d4ffad53da021b1c39b0c939d3ed4ee945c74f4fda800b6f1bd6283170e52cd3fe798411
   languageName: node
   linkType: hard
 
@@ -7421,7 +7421,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": ^20.0.2
+    "@angular/cli": 20.3.9
   languageName: unknown
   linkType: soft
 
@@ -10048,7 +10048,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.29.0":
+"eslint@npm:9.39.1":
   version: 9.39.1
   resolution: "eslint@npm:9.39.1"
   dependencies:
@@ -10966,12 +10966,12 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     html-webpack-plugin: 5.6.4
     jasmine-core: 5.12.1
     karma: 6.4.4
@@ -14651,12 +14651,12 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
-    "@types/jest": ^30.0.0
+    "@eslint/js": 9.39.1
+    "@types/jest": 30.0.0
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     jest: 29.7.0
     ng-packagr: 20.3.0
     rxjs: 7.8.2
@@ -17305,12 +17305,12 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     jasmine-core: 5.12.1
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
@@ -17345,11 +17345,11 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     puppeteer: 24.29.1
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -17379,11 +17379,11 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     puppeteer: 24.29.1
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -17829,12 +17829,12 @@ __metadata:
     "@angular/platform-browser": 20.3.10
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     jasmine-core: 5.12.1
     jest: 29.7.0
     jest-junit: 16.0.0
@@ -18790,12 +18790,12 @@ __metadata:
     "@angular/platform-browser-dynamic": 20.3.10
     "@angular/router": 20.3.10
     "@cypress/schematic": 4.1.4
-    "@eslint/js": ^9.29.0
+    "@eslint/js": 9.39.1
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.6.0
     cypress: 15.6.0
-    eslint: ^9.29.0
+    eslint: 9.39.1
     jasmine-core: 5.12.1
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
