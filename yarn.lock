@@ -6821,7 +6821,7 @@ __metadata:
     lint-staged: ^15.0.0
     lodash: ^4.17.15
     prettier: ^3.0.0
-    ts-jest: 29.2.5
+    ts-jest: 29.4.5
     vitest: 3.2.4
   languageName: unknown
   linkType: soft
@@ -7098,13 +7098,6 @@ __metadata:
   version: 1.0.0
   resolution: "async-generator-function@npm:1.0.0"
   checksum: 74a71a4a2dd7afd06ebb612f6d612c7f4766a351bedffde466023bf6dae629e46b0d2cd38786239e0fbf245de0c7df76035465e16d1213774a0efb22fec0d713
-  languageName: node
-  linkType: hard
-
-"async@npm:^3.2.6":
-  version: 3.2.6
-  resolution: "async@npm:3.2.6"
-  checksum: ee6eb8cd8a0ab1b58bd2a3ed6c415e93e773573a91d31df9d5ef559baafa9dab37d3b096fa7993e84585cac3697b2af6ddb9086f45d3ac8cae821bb2aab65682
   languageName: node
   linkType: hard
 
@@ -9405,17 +9398,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ejs@npm:^3.1.10":
-  version: 3.1.10
-  resolution: "ejs@npm:3.1.10"
-  dependencies:
-    jake: ^10.8.5
-  bin:
-    ejs: bin/cli.js
-  checksum: ce90637e9c7538663ae023b8a7a380b2ef7cc4096de70be85abf5a3b9641912dde65353211d05e24d56b1f242d71185c6d00e02cb8860701d571786d92c71f05
-  languageName: node
-  linkType: hard
-
 "electron-to-chromium@npm:^1.5.238":
   version: 1.5.249
   resolution: "electron-to-chromium@npm:1.5.249"
@@ -10625,15 +10607,6 @@ __metadata:
   dependencies:
     flat-cache: ^4.0.0
   checksum: f67802d3334809048c69b3d458f672e1b6d26daefda701761c81f203b80149c35dea04d78ea4238969dd617678e530876722a0634c43031a0957f10cc3ed190f
-  languageName: node
-  linkType: hard
-
-"filelist@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "filelist@npm:1.0.4"
-  dependencies:
-    minimatch: ^5.0.1
-  checksum: a303573b0821e17f2d5e9783688ab6fbfce5d52aaac842790ae85e704a6f5e4e3538660a63183d6453834dedf1e0f19a9dadcebfa3e926c72397694ea11f5160
   languageName: node
   linkType: hard
 
@@ -12453,19 +12426,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jake@npm:^10.8.5":
-  version: 10.9.4
-  resolution: "jake@npm:10.9.4"
-  dependencies:
-    async: ^3.2.6
-    filelist: ^1.0.4
-    picocolors: ^1.1.1
-  bin:
-    jake: bin/cli.js
-  checksum: 1ca6f6a6fe1f2385ed32df82fcb71f9c7378f7fb591ed0b183e9d79a1801221cfe96f3dd9174db2d1a9705a13ae659f2af7004ad23645c910121fc7086a137ef
-  languageName: node
-  linkType: hard
-
 "jasmine-core@npm:5.12.1":
   version: 5.12.1
   resolution: "jasmine-core@npm:5.12.1"
@@ -12978,7 +12938,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:^29.0.0, jest-util@npm:^29.7.0":
+"jest-util@npm:^29.7.0":
   version: 29.7.0
   resolution: "jest-util@npm:29.7.0"
   dependencies:
@@ -14376,15 +14336,6 @@ __metadata:
   dependencies:
     brace-expansion: ^1.1.7
   checksum: c154e566406683e7bcb746e000b84d74465b3a832c45d59912b9b55cd50dee66e5c4b1e5566dba26154040e51672f9aa450a9aef0c97cfc7336b78b7afb9540a
-  languageName: node
-  linkType: hard
-
-"minimatch@npm:^5.0.1":
-  version: 5.1.6
-  resolution: "minimatch@npm:5.1.6"
-  dependencies:
-    brace-expansion: ^2.0.1
-  checksum: 7564208ef81d7065a370f788d337cd80a689e981042cb9a1d0e6580b6c6a8c9279eba80010516e258835a988363f99f54a6f711a315089b8b42694f5da9d0d77
   languageName: node
   linkType: hard
 
@@ -17509,7 +17460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.7.3, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.3, semver@npm:^7.7.1, semver@npm:^7.7.3":
+"semver@npm:7.7.3, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.7.1, semver@npm:^7.7.3":
   version: 7.7.3
   resolution: "semver@npm:7.7.3"
   bin:
@@ -18999,44 +18950,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.2.5":
-  version: 29.2.5
-  resolution: "ts-jest@npm:29.2.5"
-  dependencies:
-    bs-logger: ^0.2.6
-    ejs: ^3.1.10
-    fast-json-stable-stringify: ^2.1.0
-    jest-util: ^29.0.0
-    json5: ^2.2.3
-    lodash.memoize: ^4.1.2
-    make-error: ^1.3.6
-    semver: ^7.6.3
-    yargs-parser: ^21.1.1
-  peerDependencies:
-    "@babel/core": ">=7.0.0-beta.0 <8"
-    "@jest/transform": ^29.0.0
-    "@jest/types": ^29.0.0
-    babel-jest: ^29.0.0
-    jest: ^29.0.0
-    typescript: ">=4.3 <6"
-  peerDependenciesMeta:
-    "@babel/core":
-      optional: true
-    "@jest/transform":
-      optional: true
-    "@jest/types":
-      optional: true
-    babel-jest:
-      optional: true
-    esbuild:
-      optional: true
-  bin:
-    ts-jest: cli.js
-  checksum: d60d1e1d80936f6002b1bb27f7e062408bc733141b9d666565503f023c340a3196d506c836a4316c5793af81a5f910ab49bb9c13f66e2dc66de4e0f03851dbca
-  languageName: node
-  linkType: hard
-
-"ts-jest@npm:^29.3.0":
+"ts-jest@npm:29.4.5, ts-jest@npm:^29.3.0":
   version: 29.4.5
   resolution: "ts-jest@npm:29.4.5"
   dependencies:
