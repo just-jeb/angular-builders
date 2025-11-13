@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [20.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@20.0.1-beta.0...@angular-builders/custom-webpack@20.0.1-beta.1) (2025-11-13)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## [20.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@20.0.0...@angular-builders/custom-webpack@20.0.1-beta.0) (2025-08-05)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
