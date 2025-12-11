@@ -6,6 +6,13 @@
     "url": "https://github.com/just-jeb/angular-builders"
   },
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/common",
+      "packages/custom-esbuild",
+      "packages/custom-webpack"
+    ]
+  },
   "author": "Evgeny Barabanov",
   "license": "MIT",
   "engines": {
