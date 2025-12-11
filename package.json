@@ -8,11 +8,9 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*",
-      "examples/*",
-      "examples/custom-esbuild/*",
-      "examples/custom-webpack/*",
-      "examples/jest/*"
+      "packages/common",
+      "packages/custom-esbuild",
+      "packages/custom-webpack"
     ]
   },
   "author": "Evgeny Barabanov",
