@@ -25,7 +25,7 @@ export async function loadPlugins(
           | Plugin
           | Plugin[]
           | ((
-              options: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema,
+              options: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema | CustomEsbuildUnitTestSchema,
               target: Target
             ) => Plugin | Plugin[])
         >(path.join(workspaceRoot, pluginConfig), tsConfig, logger);

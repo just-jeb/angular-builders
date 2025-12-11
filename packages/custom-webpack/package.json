@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/custom-webpack",
-  "version": "20.0.1-beta.1",
+  "version": "21.0.0-beta.0",
   "description": "Custom webpack builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "dist/index.js",
   "files": [
@@ -41,15 +41,15 @@
   "builders": "builders.json",
   "dependencies": {
     "@angular-builders/common": "workspace:*",
-    "@angular-devkit/architect": ">=0.2000.0 < 0.2100.0",
-    "@angular-devkit/build-angular": "^20.0.0",
-    "@angular-devkit/core": "^20.0.0",
-    "@angular/build": "^20.0.0",
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0",
+    "@angular-devkit/build-angular": "^21.0.0",
+    "@angular-devkit/core": "^21.0.0",
+    "@angular/build": "^21.0.0",
     "lodash": "^4.17.15",
     "webpack-merge": "^6.0.0"
   },
   "peerDependencies": {
-    "@angular/compiler-cli": "^20.0.0"
+    "@angular/compiler-cli": "^21.0.0"
   },
   "devDependencies": {
     "jest": "29.7.0",

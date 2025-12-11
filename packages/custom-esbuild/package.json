@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/custom-esbuild",
-  "version": "20.1.0-beta.1",
+  "version": "21.0.0-beta.0",
   "description": "Custom esbuild builders for Angular build facade. Allow to modify Angular build configuration without ejecting it",
   "main": "dist/index.js",
   "files": [
@@ -41,12 +41,12 @@
   "builders": "builders.json",
   "dependencies": {
     "@angular-builders/common": "workspace:*",
-    "@angular-devkit/architect": ">=0.2001.0 < 0.2100.0",
-    "@angular-devkit/core": "^20.1.0",
-    "@angular/build": "^20.1.0"
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0",
+    "@angular-devkit/core": "^21.0.0",
+    "@angular/build": "^21.0.0"
   },
   "peerDependencies": {
-    "@angular/compiler-cli": "^20.1.0",
+    "@angular/compiler-cli": "^21.0.0",
     "vitest": ">=2"
   },
   "devDependencies": {
