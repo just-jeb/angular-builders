@@ -323,7 +323,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-builders/bazel@workspace:*, @angular-builders/bazel@workspace:packages/bazel":
+"@angular-builders/bazel@^21.0.0-beta.0, @angular-builders/bazel@workspace:packages/bazel":
   version: 0.0.0-use.local
   resolution: "@angular-builders/bazel@workspace:packages/bazel"
   dependencies:
@@ -338,7 +338,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/common@workspace:*, @angular-builders/common@workspace:packages/common":
+"@angular-builders/common@^5.0.0-beta.0, @angular-builders/common@workspace:packages/common":
   version: 0.0.0-use.local
   resolution: "@angular-builders/common@workspace:packages/common"
   dependencies:
@@ -350,11 +350,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/custom-esbuild@workspace:*, @angular-builders/custom-esbuild@workspace:packages/custom-esbuild":
+"@angular-builders/custom-esbuild@^21.0.0-beta.0, @angular-builders/custom-esbuild@workspace:packages/custom-esbuild":
   version: 0.0.0-use.local
   resolution: "@angular-builders/custom-esbuild@workspace:packages/custom-esbuild"
   dependencies:
-    "@angular-builders/common": "workspace:*"
+    "@angular-builders/common": ^5.0.0-beta.0
     "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@angular/build": ^21.0.0
@@ -369,11 +369,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/custom-webpack@workspace:*, @angular-builders/custom-webpack@workspace:packages/custom-webpack":
+"@angular-builders/custom-webpack@^21.0.0-beta.0, @angular-builders/custom-webpack@workspace:packages/custom-webpack":
   version: 0.0.0-use.local
   resolution: "@angular-builders/custom-webpack@workspace:packages/custom-webpack"
   dependencies:
-    "@angular-builders/common": "workspace:*"
+    "@angular-builders/common": ^5.0.0-beta.0
     "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/build-angular": ^21.0.0
     "@angular-devkit/core": ^21.0.0
@@ -389,11 +389,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/jest@workspace:*, @angular-builders/jest@workspace:packages/jest":
+"@angular-builders/jest@^21.0.0-beta.0, @angular-builders/jest@workspace:packages/jest":
   version: 0.0.0-use.local
   resolution: "@angular-builders/jest@workspace:packages/jest"
   dependencies:
-    "@angular-builders/common": "workspace:*"
+    "@angular-builders/common": ^5.0.0-beta.0
     "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@types/jest": ^29.5.1
@@ -413,7 +413,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-builders/timestamp@workspace:*, @angular-builders/timestamp@workspace:packages/timestamp":
+"@angular-builders/timestamp@^21.0.0-beta.0, @angular-builders/timestamp@workspace:packages/timestamp":
   version: 0.0.0-use.local
   resolution: "@angular-builders/timestamp@workspace:packages/timestamp"
   dependencies:
@@ -8083,7 +8083,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
-    "@angular-builders/bazel": "workspace:*"
+    "@angular-builders/bazel": ^21.0.0-beta.0
     "@angular/cli": ^20.0.2
   languageName: unknown
   linkType: soft
@@ -11712,7 +11712,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "full-cycle-app@workspace:examples/custom-webpack/full-cycle-app"
   dependencies:
-    "@angular-builders/custom-webpack": "workspace:*"
+    "@angular-builders/custom-webpack": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -15443,7 +15443,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "multiple-apps@workspace:examples/jest/multiple-apps"
   dependencies:
-    "@angular-builders/jest": "workspace:*"
+    "@angular-builders/jest": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -18181,7 +18181,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanity-app-esm@workspace:examples/custom-webpack/sanity-app-esm"
   dependencies:
-    "@angular-builders/custom-webpack": "workspace:*"
+    "@angular-builders/custom-webpack": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular/animations": 21.0.3
     "@angular/cli": 21.0.3
@@ -18215,7 +18215,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanity-app@workspace:examples/custom-webpack/sanity-app"
   dependencies:
-    "@angular-builders/custom-webpack": "workspace:*"
+    "@angular-builders/custom-webpack": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -18255,7 +18255,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanity-esbuild-app-esm@workspace:examples/custom-esbuild/sanity-esbuild-app-esm"
   dependencies:
-    "@angular-builders/custom-esbuild": "workspace:*"
+    "@angular-builders/custom-esbuild": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -18289,7 +18289,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanity-esbuild-app@workspace:examples/custom-esbuild/sanity-esbuild-app"
   dependencies:
-    "@angular-builders/custom-esbuild": "workspace:*"
+    "@angular-builders/custom-esbuild": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -18774,7 +18774,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "simple-app@workspace:examples/jest/simple-app"
   dependencies:
-    "@angular-builders/jest": "workspace:*"
+    "@angular-builders/jest": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3
@@ -19753,7 +19753,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "timestamp-example@workspace:examples/timestamp"
   dependencies:
-    "@angular-builders/timestamp": "workspace:*"
+    "@angular-builders/timestamp": ^21.0.0-beta.0
     "@angular-devkit/build-angular": 21.0.3
     "@angular-eslint/builder": 20.6.0
     "@angular/animations": 21.0.3

@@ -1,6 +1,6 @@
 {
   "name": "@angular-builders/jest",
-  "version": "20.0.1-beta.1",
+  "version": "21.0.0-beta.0",
   "description": "Jest runner for Angular build facade. Allows ng test run with Jest instead of Karma",
   "repository": {
     "type": "git",
@@ -42,7 +42,7 @@
     "ci": "./scripts/ci.sh"
   },
   "dependencies": {
-    "@angular-builders/common": "workspace:*",
+    "@angular-builders/common": "^5.0.0-beta.0",
     "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0",
     "@angular-devkit/core": "^21.0.0",
     "jest-preset-angular": "14.6.2",
