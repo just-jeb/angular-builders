@@ -6,7 +6,7 @@
     "sourceMap": true,
     "declaration": false,
     "module": "es2022",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
@@ -18,9 +18,15 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@environment": ["src/environments/environment.ts"],
-      "@project": ["package.json"]
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@environment": [
+        "src/environments/environment.ts"
+      ],
+      "@project": [
+        "package.json"
+      ]
     }
   }
 }
