@@ -8,6 +8,7 @@ const isStable = {
   '@angular-devkit/architect': false,
   '@angular/compiler': true,
   '@angular/compiler-cli': true,
+  '@angular/build': true,
 };
 
 const determineVersions = deps => {
