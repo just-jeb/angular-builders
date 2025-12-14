@@ -87,8 +87,8 @@ multiAppTestOptions=(
 )
 
 cd ../../examples/jest/simple-app
-yarn test:ts
-yarn test:esm
+yarn test:ts --no-cache
+yarn test:esm --no-cache
 cd ../../../packages/jest
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
