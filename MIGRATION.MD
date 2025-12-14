@@ -2,7 +2,9 @@
 
 ## Breaking Changes
 
-No breaking changes in this release.
+### Jest Builder: TypeScript Configuration Required
+
+Users of `@angular-builders/jest` must update their `tsconfig.spec.json` to include `module` and `moduleResolution` settings. See the Jest builder section below for details.
 
 ## Custom ESBuild builder
 
@@ -15,7 +17,28 @@ No breaking changes in this release.
 
 ## Jest builder
 
-- No breaking changes (except for updating to Angular 21)
+**Breaking Change:** `jest-preset-angular` has been updated from v14 to v16 to support Angular 21.
+
+### Required Changes
+
+1. **Update Jest to v30** - `jest-preset-angular` v16 requires Jest 30:
+   ```bash
+   npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
+   ```
+
+2. **Update `tsconfig.spec.json`** - Angular 21 uses `moduleResolution: "bundler"` by default, which is incompatible with Jest running in Node.js:
+   ```json
+   {
+     "extends": "./tsconfig.json",
+     "compilerOptions": {
+       "module": "Node16",
+       "moduleResolution": "Node16",
+       "isolatedModules": true
+     }
+   }
+   ```
+
+For more details, see the [jest-preset-angular v16 changelog](https://github.com/thymikee/jest-preset-angular/blob/main/CHANGELOG.md).
 
 ---
 
