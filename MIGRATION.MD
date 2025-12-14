@@ -1,3 +1,24 @@
+# Migration from version 20 to version 21
+
+## Breaking Changes
+
+No breaking changes in this release.
+
+## Custom ESBuild builder
+
+- Updated to support Angular 21's `@angular/build` schema changes
+- The `buildTarget` and `tsConfig` properties are no longer required in the unit-test builder (matching Angular 21's changes)
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 21)
+
+## Jest builder
+
+- No breaking changes (except for updating to Angular 21)
+
+---
+
 # Migration from version 19 to version 20
 
 ## Breaking Changes
