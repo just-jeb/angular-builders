@@ -45,6 +45,11 @@ export class DefaultConfigResolver {
             stringifyContentPathRegex: '\\.(html|svg)$',
             // Join with the default `tsConfigName` if the `tsConfig` option is not provided
             tsconfig: getTsConfigPath(projectRoot, this.options),
+            // Override moduleResolution for ts-jest compatibility
+            // Angular 21+ uses "bundler" which doesn't work with Node.js/ts-jest
+            compilerOptions: {
+              moduleResolution: 'node',
+            },
           },
         ],
       },
