@@ -32,8 +32,8 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 ## Prerequisites
 
-- [Angular CLI 20](https://www.npmjs.com/package/@angular/cli)
-- [Jest 29](https://www.npmjs.com/package/jest)
+- [Angular CLI 21](https://www.npmjs.com/package/@angular/cli)
+- [Jest 30](https://www.npmjs.com/package/jest)
 
 ## Installation
 
@@ -103,22 +103,25 @@ The builder supports multi-project workspaces out of the box, the only thing req
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
 - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.
-- `globalMocks` - there are 4 global mocks available:
-  `["getComputedStyle", "doctype", "styleTransform", "matchMedia"]`.  
-  The mocks implementation can be found [here](./src/global-mocks).
 
-  `styleTransform` and `matchMedia` are not implemented in jsdom, therefore these are enabled by default.
+- `zoneless` - boolean (default: `true`).
+  - `true` (default): For Angular 21+ applications using zoneless change detection (the new Angular default)
+  - `false`: For applications that rely on zone.js automatic change detection
 
-  `getComputedStyle` and `doctype` are implemented but do not support 100% of cases.
-
-  If you want to disable/enable one or more of these mocks just pass an updated list in options.  
-  For example:
+  **BREAKING CHANGE in v21:** Previous versions always used zone.js. If your app uses zone.js change detection, set `zoneless: false`:
 
   ```json
   "options": {
-    "globalMocks": ["styleTransform", "matchMedia", "getComputedStyle"]
+    "zoneless": false
   }
   ```
+
+- `globalMocks` - array (default: `["matchMedia"]`).
+  Only `matchMedia` is supported as jsdom still doesn't implement `window.matchMedia`.
+
+  **BREAKING CHANGE in v21:** The `styleTransform`, `getComputedStyle`, and `doctype` mocks have been removed as Jest 30's jsdom now supports these natively.
+
+  If you need custom browser API mocks, add your own setup file via `setupFilesAfterEnv` in your jest config.
 
 - `[jest-cli-option]` - any option from [Jest CLI options](https://jestjs.io/docs/en/cli.html). For example, to run unit tests without caching and with `junit-reporter` use:
 

@@ -85,11 +85,7 @@
         "test": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "tsConfig": "./configs/tsconfig.spec.json",
-            "globalMocks": [
-              "getComputedStyle",
-              "styleTransform"
-            ]
+            "tsConfig": "./configs/tsconfig.spec.json"
           }
         },
         "e2e": {
@@ -218,7 +214,10 @@
           }
         },
         "test": {
-          "builder": "@angular-builders/jest:run"
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "zoneless": false
+          }
         },
         "e2e": {
           "builder": "@cypress/schematic:cypress",

@@ -44,30 +44,40 @@ describe('Resolve global default configuration', () => {
   const getPathForMock = (fileName: string) =>
     getSystemPath(normalize(`${__dirname}/global-mocks/${fileName}`));
 
-  it('Should resolve default config from predefined config module', () => {
-    expect(defaultConfigResolver.resolveGlobal()).toEqual(defaultConfig);
+  it('Should resolve default config with zoneless setup by default', () => {
+    const config = defaultConfigResolver.resolveGlobal();
+    expect(config.preset).toEqual('jest-preset-angular');
+    expect(config.moduleNameMapper).toEqual(defaultConfig.moduleNameMapper);
+    expect(config.setupFilesAfterEnv[0]).toContain('setup-zoneless.js');
   });
 
-  it('Should add to setup files global mocks that were passed in options', () => {
-    const defaultConfigResolver = new DefaultConfigResolver({
-      globalMocks: ['getComputedStyle', 'doctype', 'styleTransform', 'matchMedia'],
+  it('Should use zoneless setup file when zoneless: true', () => {
+    const resolver = new DefaultConfigResolver({ zoneless: true });
+    const config = resolver.resolveGlobal();
+    expect(config.setupFilesAfterEnv[0]).toContain('setup-zoneless.js');
+  });
+
+  it('Should use zone setup file when zoneless: false', () => {
+    const resolver = new DefaultConfigResolver({ zoneless: false });
+    const config = resolver.resolveGlobal();
+    expect(config.setupFilesAfterEnv[0]).toContain('setup-zone.js');
+  });
+
+  it('Should add matchMedia mock when passed in globalMocks', () => {
+    const resolver = new DefaultConfigResolver({
+      globalMocks: ['matchMedia'],
     });
-    expect(defaultConfigResolver.resolveGlobal().setupFilesAfterEnv).toEqual(
-      expect.arrayContaining([
-        getPathForMock('computed-style.js'),
-        getPathForMock('doctype.js'),
-        getPathForMock('style-transform.js'),
-        getPathForMock('match-media.js'),
-      ])
+    expect(resolver.resolveGlobal().setupFilesAfterEnv).toEqual(
+      expect.arrayContaining([getPathForMock('match-media.js')])
     );
   });
 
-  it('Should not add to setup files global mocks that were not passed in options', () => {
-    const defaultConfigResolver = new DefaultConfigResolver({
-      globalMocks: ['doctype', 'styleTransform', 'matchMedia'],
+  it('Should not add matchMedia mock when not passed in globalMocks', () => {
+    const resolver = new DefaultConfigResolver({
+      globalMocks: [],
     });
-    expect(defaultConfigResolver.resolveGlobal().setupFilesAfterEnv).toEqual(
-      expect.not.arrayContaining([getPathForMock('computed-style.js')])
+    expect(resolver.resolveGlobal().setupFilesAfterEnv).toEqual(
+      expect.not.arrayContaining([getPathForMock('match-media.js')])
     );
   });
 });
