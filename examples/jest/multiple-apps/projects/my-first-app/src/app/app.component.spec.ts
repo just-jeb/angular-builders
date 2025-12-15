@@ -24,4 +24,17 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to my-first-app!');
   });
+
+  it('should update view automatically when signal changes (zoneless)', async () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    await fixture.whenStable();
+    const compiled = fixture.debugElement.nativeElement;
+
+    expect(compiled.querySelector('h1').textContent).toContain('my-first-app');
+
+    fixture.componentInstance.title.set('updated-title');
+    await fixture.whenStable();
+
+    expect(compiled.querySelector('h1').textContent).toContain('updated-title');
+  });
 });
