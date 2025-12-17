@@ -88,18 +88,22 @@
         },
         "test": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+            "zoneless": false
+          }
         },
         "test-ts-config": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "./jest.config.ts"
+            "configPath": "./jest.config.ts",
+            "zoneless": false
           }
         },
         "test-esm-config": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "./jest.config.mjs"
+            "configPath": "./jest.config.mjs",
+            "zoneless": false
           }
         },
         "e2e": {

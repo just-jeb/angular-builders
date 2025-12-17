@@ -1,4 +1,4 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MySharedLibraryComponent } from './my-shared-library.component';
 
@@ -6,16 +6,14 @@ describe('MySharedLibraryComponent', () => {
   let component: MySharedLibraryComponent;
   let fixture: ComponentFixture<MySharedLibraryComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [MySharedLibraryComponent],
     }).compileComponents();
-  }));
 
-  beforeEach(() => {
     fixture = TestBed.createComponent(MySharedLibraryComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    await fixture.whenStable();
   });
 
   it('should create', () => {

@@ -9,16 +9,18 @@ import { SchemaObject as JestBuilderSchema } from './schema';
 export const testPattern = `/**/*(*.)@(spec|test).[tj]s?(x)`;
 
 const globalMocks = {
-  getComputedStyle: 'computed-style.js',
-  doctype: 'doctype.js',
   matchMedia: 'match-media.js',
-  styleTransform: 'style-transform.js',
 };
 
 const getMockFiles = (enabledMocks: string[] = []): string[] =>
   Object.values(pick(globalMocks, enabledMocks)).map(fileName =>
     getSystemPath(normalize(`${__dirname}/global-mocks/${fileName}`))
   );
+
+const getSetupFile = (zoneless: boolean = true): string => {
+  const setupFileName = zoneless ? 'setup-zoneless.js' : 'setup-zone.js';
+  return getSystemPath(normalize(`${__dirname}/jest-config/${setupFileName}`));
+};
 
 export class DefaultConfigResolver {
   // Exposed publicly for testing purposes.
@@ -28,7 +30,7 @@ export class DefaultConfigResolver {
 
   resolveGlobal(): JestConfig {
     const setupFilesAfterEnv = [
-      ...defaultConfig.setupFilesAfterEnv,
+      getSetupFile(this.options.zoneless ?? true),
       ...getMockFiles(this.options.globalMocks),
     ];
     return { ...defaultConfig, setupFilesAfterEnv };
