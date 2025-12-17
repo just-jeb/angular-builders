@@ -16,9 +16,8 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have all the default global mocks are defined`, () => {
+  it(`should have matchMedia global mock defined`, () => {
     expect(window.matchMedia).toBeTruthy();
-    expect(document.body.style.transform).toBeTruthy();
   });
 
   it('should render title in a h1 tag', () => {

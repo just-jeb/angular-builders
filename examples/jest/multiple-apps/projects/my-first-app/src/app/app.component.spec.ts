@@ -1,12 +1,12 @@
-import { TestBed, waitForAsync } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
       imports: [AppComponent],
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -14,18 +14,27 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have only two of the global mocks defined`, () => {
-    expect(window.getComputedStyle).toBeTruthy();
-    expect(document.body.style.transform).toBeTruthy();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    expect(document.doctype as any).not.toEqual('<!DOCTYPE html>');
-    expect(window.matchMedia).toBeFalsy();
+  it(`should have matchMedia global mock defined by default`, () => {
+    expect(window.matchMedia).toBeTruthy();
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a h1 tag', async () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+    await fixture.whenStable();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to my-first-app!');
+  });
+
+  it('should update view automatically when signal changes (zoneless)', async () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    await fixture.whenStable();
+    const compiled = fixture.debugElement.nativeElement;
+
+    expect(compiled.querySelector('h1').textContent).toContain('my-first-app');
+
+    fixture.componentInstance.title.set('updated-title');
+    await fixture.whenStable();
+
+    expect(compiled.querySelector('h1').textContent).toContain('updated-title');
   });
 });
