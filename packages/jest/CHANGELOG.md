@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@20.0.1-beta.1...@angular-builders/jest@21.0.0-beta.1) (2025-12-17)
+
+### ⚠ BREAKING CHANGES
+
+* **jest:** configPath option renamed to config
+
+The config option now accepts:
+- File path (string): "jest.config.js"
+- JSON string: '{"verbose": true}'
+- Inline object in angular.json
+* **jest:** zoneless is now the default
+
+Apps using zone.js change detection must set zoneless: false in angular.json.
+
+globalMocks option now only supports matchMedia. The styleTransform,
+getComputedStyle, and doctype mocks have been removed as Jest 30's
+jsdom supports these natively.
+* **jest:** Requires Jest 30
+
+Users must upgrade:
+npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
+
+Also requires tsconfig.spec.json update for moduleResolution compatibility:
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "isolatedModules": true
+  }
+}
+
+Schema changes:
+- testPathPattern renamed to testPathPatterns
+- Removed: browser, init, mapCoverage, testURL, timers
+* All packages now require Angular 21
+
+### Features
+
+* **jest:** add zoneless testing support ([1f23ca4](https://github.com/just-jeb/angular-builders/commit/1f23ca453017c40d4b78a9383eb8ccd19959a234)), closes [#1934](https://github.com/just-jeb/angular-builders/issues/1934)
+* **jest:** rename configPath to config with object support ([7bfe312](https://github.com/just-jeb/angular-builders/commit/7bfe31233d86cd04798055d19a552e7d8ab424a3)), closes [#108](https://github.com/just-jeb/angular-builders/issues/108)
+* **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
+
+### Miscellaneous Chores
+
+* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+
 ## [21.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@20.0.1-beta.1...@angular-builders/jest@21.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@20.0.1-beta.1...@angular-builders/custom-webpack@21.0.0-beta.1) (2025-12-17)
+
+### ⚠ BREAKING CHANGES
+
+* All packages now require Angular 21
+
+### Miscellaneous Chores
+
+* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+
 ## [21.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@20.0.1-beta.1...@angular-builders/custom-webpack@21.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES
