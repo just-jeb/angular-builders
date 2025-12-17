@@ -1,4 +1,4 @@
 
 #!/bin/bash
 
-yarn lerna publish --dist-tag=next --preid=beta --conventional-prerelease --yes --provenance
+NPM_CONFIG_PROVENANCE=true yarn lerna publish --dist-tag=next --preid=beta --conventional-prerelease --yes
