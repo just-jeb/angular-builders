@@ -73,4 +73,54 @@ describe('Resolve project custom config', () => {
     );
     expect(mockLogger.warn.mock.calls.length).toBe(1);
   });
+
+  it('Should parse and return inline JSON configuration', async () => {
+    const inlineConfig = { testTimeout: 10000, verbose: true };
+    const customConfig = await customConfigResolver.resolveForProject(
+      normalize('./myproject'),
+      JSON.stringify(inlineConfig)
+    );
+    expect(customConfig).toEqual(inlineConfig);
+    // Should not try to check file existence for JSON config
+    expect(existsSyncMock).not.toHaveBeenCalled();
+  });
+
+  it('Should treat non-JSON string as file path', async () => {
+    existsSyncMock.mockReturnValue(false);
+    await customConfigResolver.resolveForProject(
+      normalize('./myproject'),
+      'jest.config.js'
+    );
+    expect(existsSyncMock).toHaveBeenCalled();
+  });
+
+  it('Should treat invalid JSON as file path', async () => {
+    existsSyncMock.mockReturnValue(false);
+    await customConfigResolver.resolveForProject(
+      normalize('./myproject'),
+      '{invalid json'
+    );
+    expect(existsSyncMock).toHaveBeenCalled();
+  });
+
+  it('Should not treat JSON array as config', async () => {
+    existsSyncMock.mockReturnValue(false);
+    await customConfigResolver.resolveForProject(
+      normalize('./myproject'),
+      '["item1", "item2"]'
+    );
+    // Arrays should be treated as file paths, not config objects
+    expect(existsSyncMock).toHaveBeenCalled();
+  });
+
+  it('Should return object config directly when passed as object', async () => {
+    const objectConfig = { testTimeout: 10000, verbose: true };
+    const customConfig = await customConfigResolver.resolveForProject(
+      normalize('./myproject'),
+      objectConfig
+    );
+    expect(customConfig).toEqual(objectConfig);
+    // Should not try to check file existence for object config
+    expect(existsSyncMock).not.toHaveBeenCalled();
+  });
 });

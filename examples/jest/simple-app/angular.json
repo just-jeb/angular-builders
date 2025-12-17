@@ -95,14 +95,14 @@
         "test-ts-config": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "./jest.config.ts",
+            "config": "./jest.config.ts",
             "zoneless": false
           }
         },
         "test-esm-config": {
           "builder": "@angular-builders/jest:run",
           "options": {
-            "configPath": "./jest.config.mjs",
+            "config": "./jest.config.mjs",
             "zoneless": false
           }
         },

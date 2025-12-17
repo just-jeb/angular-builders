@@ -33,12 +33,12 @@ describe('Build Jest configuration object', () => {
     expect(customConfigResolver.resolveForProject.mock.calls[0][0]).toEqual(projectRoot);
   });
 
-  it('Should use jest.config.js path if configPath is not provided', async () => {
+  it('Should use jest.config.js path if config is not provided', async () => {
     await jestConfigurationBuilder.buildConfiguration(normalize(''), normalize('./'));
     expect(customConfigResolver.resolveForProject.mock.calls[0][1]).toEqual('jest.config.js');
   });
 
-  it('Should use provided configPath when resolving custom project configuration', async () => {
+  it('Should use provided config when resolving custom project configuration', async () => {
     const jestConfigPath = '../my-jest.config.js';
     await jestConfigurationBuilder.buildConfiguration(
       normalize(''),

@@ -50,10 +50,10 @@ export function runJest(
     const configuration = await builder.buildConfiguration(
       projectRoot,
       workspaceRoot,
-      options.configPath
+      options.config
     );
     // Remove builder-specific options before passing to Jest CLI
-    delete options.configPath;
+    delete options.config;
     delete options.globalMocks;
     delete options.zoneless;
     const argv = optionsConverter.convertToCliArgs(options);
