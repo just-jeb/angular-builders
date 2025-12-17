@@ -40,12 +40,12 @@ const buildConfiguration = async (
   customConfigResolver: CustomConfigResolver,
   projectRoot: Path,
   workspaceRoot: Path,
-  configPath = 'jest.config.js'
+  config: string | JestConfig = 'jest.config.js'
 ) => {
   const globalDefaultConfig = defaultConfigResolver.resolveGlobal();
   const projectDefaultConfig = defaultConfigResolver.resolveForProject(projectRoot);
   const globalCustomConfig = await customConfigResolver.resolveGlobal(workspaceRoot);
-  const projectCustomConfig = await customConfigResolver.resolveForProject(projectRoot, configPath);
+  const projectCustomConfig = await customConfigResolver.resolveForProject(projectRoot, config);
 
   return mergeWith(
     globalDefaultConfig,
@@ -65,7 +65,7 @@ export class JestConfigurationBuilder {
   async buildConfiguration(
     projectRoot: Path,
     workspaceRoot: Path,
-    configPath = 'jest.config.js'
+    config: string | JestConfig = 'jest.config.js'
   ): Promise<JestConfig> {
     const pathToProject: Path = resolve(workspaceRoot, projectRoot);
 
@@ -74,7 +74,7 @@ export class JestConfigurationBuilder {
       this.customConfigResolver,
       pathToProject,
       workspaceRoot,
-      configPath
+      config
     );
   }
 }

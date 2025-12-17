@@ -36,7 +36,22 @@ export class CustomConfigResolver {
     return await loadModule<JestConfig>(workspaceJestConfigPath, tsConfig, this.logger);
   }
 
-  async resolveForProject(projectRoot: Path, configPath: string): Promise<JestConfig> {
+  async resolveForProject(projectRoot: Path, config: string | JestConfig): Promise<JestConfig> {
+    // If config is already an object (from angular.json), return it directly
+    if (typeof config === 'object' && config !== null) {
+      return config;
+    }
+
+    // At this point, config is guaranteed to be a string
+    const configPath = config as string;
+
+    // Try parsing string as JSON (like Jest CLI behavior)
+    const inlineConfig = this.tryParseJsonConfig(configPath);
+    if (inlineConfig !== null) {
+      return inlineConfig;
+    }
+
+    // Treat as file path
     const jestConfigPath = getSystemPath(join(projectRoot, configPath));
     if (!existsSync(jestConfigPath)) {
       this.logger.warn(
@@ -46,5 +61,17 @@ export class CustomConfigResolver {
     }
     const tsConfig = getTsConfigPath(projectRoot, this.options);
     return await loadModule<JestConfig>(jestConfigPath, tsConfig, this.logger);
+  }
+
+  private tryParseJsonConfig(config: string): JestConfig | null {
+    try {
+      const parsed = JSON.parse(config);
+      if (typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed)) {
+        return parsed as JestConfig;
+      }
+    } catch {
+      // Not valid JSON, will be treated as file path
+    }
+    return null;
   }
 }

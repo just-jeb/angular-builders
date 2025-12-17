@@ -3,9 +3,9 @@
   "title": "Jest runner for build facade",
   "description": "Jest runner options",
   "properties": {
-    "configPath": {
-      "description": "Path to jest config file.",
-      "type": "string",
+    "config": {
+      "description": "Path to jest config file, or a Jest configuration object. If not specified, Jest will look for jest.config.js in the project root.",
+      "type": ["string", "object"],
       "default": "jest.config.js"
     },
     "globalMocks": {
@@ -82,10 +82,6 @@
     "colors": {
       "description": "Alias for `--color`.",
       "type": "boolean"
-    },
-    "config": {
-      "description": "The path to a jest config file specifying how to find and execute tests. If no rootDir is set in the config, the directory containing the config file is assumed to be the rootDir for the project.This can also be a JSON encoded value which Jest will use as configuration.",
-      "type": "string"
     },
     "coverage": {
       "description": "Indicates that test coverage information should be collected and reported in the output.",

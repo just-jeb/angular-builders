@@ -88,7 +88,18 @@ The builder supports multi-project workspaces out of the box, the only thing req
 
 ## Builder options
 
-- `configPath` - path to jest config file, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. Other extensions are also supported. The Jest configuration might be written is TypeScript, but you should explicitly specify the path to the `jest.config.ts`. The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
+- `config` - path to jest config file or a Jest configuration object, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. Other extensions are also supported. The Jest configuration might be written in TypeScript, but you should explicitly specify the path to the `jest.config.ts`. The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
+
+  You can also provide configuration directly as an object:
+  ```json
+  "options": {
+    "config": {
+      "testTimeout": 10000,
+      "verbose": true
+    }
+  }
+  ```
+
   The way the configurations are merged is as following:
 
   1.  Take the [default configuration](https://github.com/just-jeb/angular-builders/blob/master/packages/jest/src/jest-config/default-config.ts) from the library
@@ -100,7 +111,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
       **or**
       _jest.config.js_ from project directory (or src/ directory in case of non-project app) if exists.
 
-  Thus, if you don't provide `configPath` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.  
+  Thus, if you don't provide `config` in options, and you'd like to customize the configuration of a single project in your workspace, you only have to add _jest.config.js_ in this project's root directory and specify the configuration delta in this file.
   Or, if you'd like the same custom configuration to be applied to all the projects in the workspace, you just specify it in _package.json_. Another option in such a case is creating a single config file in the workspace root and specifying it in _angular.json_ for each project.
 
 - `tsConfig` - path to tsconfig file. If the path is relative then it is evaluated relative to the _project root_. Defaults to `tsconfig.spec.json` that is located in _project root_.

@@ -48,7 +48,13 @@ The following builder options have been **removed** (Jest 30 no longer supports 
 - `timers` - Removed (use `fakeTimers` in jest config instead)
 
 The following builder options have been **renamed**:
+- `configPath` → `config` (now also supports inline JSON configuration in addition to file paths)
 - `testPathPattern` → `testPathPatterns` (now accepts multiple patterns)
+
+The following **defaults have changed**:
+- `testRunner` - Default changed from `jasmine2` to `jest-circus/runner`
+- `globalMocks` - Default changed from `["styleTransform", "matchMedia"]` to `["matchMedia"]`. The `styleTransform`, `getComputedStyle`, and `doctype` mocks have been removed as Jest 30's jsdom now supports these natively.
+- `zoneless` - New option, defaults to `true` for Angular 21+ zoneless applications. Set to `false` if your app uses zone.js change detection.
 
 For more details, see the [Jest 30 changelog](https://jestjs.io/blog/2024/11/14/jest-30) and [jest-preset-angular v16 changelog](https://github.com/thymikee/jest-preset-angular/blob/main/CHANGELOG.md).
 
