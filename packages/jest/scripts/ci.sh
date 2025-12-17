@@ -81,14 +81,14 @@ multiAppTestOptions=(
     "yarn test my-second-app||1|1|3|3|||"
     "yarn test my-shared-library||2|2|2|2|||"
     "yarn test my-first-app|--test-name-pattern=^AppComponent should create the app$|1|1|1|3|2||"
-    "yarn test my-shared-library|--test-path-pattern=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
-    "yarn test my-shared-library|--test-path-pattern=src/lib/my-shared-library.component.spec.ts$;--test-path-pattern=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
-    "yarn test my-shared-library|--find-related-tests;src/lib/my-shared-library.service.ts,src/lib/my-shared-library.component.ts|2|2|2|2|||"
+    "yarn test my-shared-library|--test-path-patterns=src/lib/my-shared-library.service.spec.ts$|1|1|1|1|||"
+    "yarn test my-shared-library|--test-path-patterns=src/lib/my-shared-library.component.spec.ts$;--test-path-patterns=src/lib/my-shared-library.service.spec.ts$|2|2|2|2|||"
+    "yarn test my-shared-library|--find-related-tests;projects/my-shared-library/src/lib/my-shared-library.service.ts;projects/my-shared-library/src/lib/my-shared-library.component.ts|2|2|2|2|||"
 )
 
 cd ../../examples/jest/simple-app
-yarn test:ts
-yarn test:esm
+yarn test:ts --no-cache
+yarn test:esm --no-cache
 cd ../../../packages/jest
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)

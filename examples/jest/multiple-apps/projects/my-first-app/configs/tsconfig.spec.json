@@ -1,7 +1,10 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "isolatedModules": true
   },
   "include": [
     "../src/**/*.spec.ts",

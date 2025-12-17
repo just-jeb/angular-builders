@@ -14,7 +14,7 @@ export class OptionsConverter {
         argv.push(`--${option}=${optionValue}`);
       } else if (Array.isArray(optionValue)) {
         for (const item of optionValue) {
-          argv.push(`--${option}=${item}`);
+          argv.push(`--${option}`, item);
         }
       }
     }

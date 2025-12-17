@@ -22,6 +22,7 @@ const _tsNodeRegister = (() => {
       project: tsConfig,
       compilerOptions: {
         module: 'CommonJS',
+        moduleResolution: 'node',
         types: [
           'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
         ],
