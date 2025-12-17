@@ -12,6 +12,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 <details>
   <summary>Click to expand</summary>
 
+- [Version 20](https://github.com/just-jeb/angular-builders/blob/20.x.x/packages/jest/README.md)
 - [Version 19](https://github.com/just-jeb/angular-builders/blob/19.x.x/packages/jest/README.md)
 - [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/jest/README.md)
 - [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/jest/README.md)

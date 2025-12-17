@@ -1,4 +1,4 @@
-// Base schemes from @angular/build@20.1.0
+// Base schemes from @angular/build@21.0.0
 module.exports = [
   {
     originalSchemaPackage: '@angular/build',

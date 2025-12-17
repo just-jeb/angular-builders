@@ -26,6 +26,7 @@ Allow customizing ESBuild configuration
 <details>
   <summary>Click to expand</summary>
 
+- [Version 20](https://github.com/just-jeb/angular-builders/blob/20.x.x/packages/custom-esbuild/README.md)
 - [Version 19](https://github.com/just-jeb/angular-builders/blob/19.x.x/packages/custom-esbuild/README.md)
 - [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/custom-esbuild/README.md)
 - [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/custom-esbuild/README.md)
@@ -34,7 +35,7 @@ Allow customizing ESBuild configuration
 
 ## Prerequisites:
 
-- [Angular CLI 20](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 21](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
 

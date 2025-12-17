@@ -6,17 +6,13 @@
     "sourceMap": true,
     "declaration": false,
     "module": "es2022",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "importHelpers": true,
     "target": "es2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "es2022",
-      "dom"
-    ],
     "paths": {
       "my-shared-library": [
         "dist/my-shared-library"
