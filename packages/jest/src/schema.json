@@ -28,10 +28,6 @@
       "description": "Exit the test suite immediately upon the first failing test.",
       "type": "boolean"
     },
-    "browser": {
-      "description": "Respect the \"browser\" field in package.json when resolving modules. Some packages export different versions based on whether they are operating in node.js or a browser.",
-      "type": "boolean"
-    },
     "cache": {
       "description": "Whether to use the transform cache. Disable the cache using --no-cache.",
       "type": "boolean"
@@ -111,6 +107,11 @@
       "description": "A JSON string with which will be used to configure minimum threshold enforcement for coverage results",
       "type": "string"
     },
+    "coverageProvider": {
+      "description": "Select between Babel and V8 to collect coverage.",
+      "type": "string",
+      "enum": ["babel", "v8"]
+    },
     "debug": {
       "description": "Print debugging info about your jest config.",
       "type": "boolean"
@@ -170,8 +171,15 @@
       "description": "A JSON string with map of variables for the haste module system",
       "type": "string"
     },
-    "init": {
-      "description": "Generate a basic configuration file",
+    "ignoreProjects": {
+      "description": "Ignore the tests of the specified projects. Jest uses the attribute `displayName` in the configuration to identify each project.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "injectGlobals": {
+      "description": "Should Jest inject global variables or not.",
       "type": "boolean"
     },
     "json": {
@@ -191,9 +199,9 @@
       "description": "Logs the heap usage after every test. Useful to debug memory leaks. Use together with `--runInBand` and `--expose-gc` in node.",
       "type": "boolean"
     },
-    "mapCoverage": {
-      "description": "Maps code coverage reports against original source code when transformers supply source maps.\n\nDEPRECATED",
-      "type": "boolean"
+    "maxConcurrency": {
+      "description": "Specifies the maximum number of tests that are allowed to run concurrently. This only affects tests using `test.concurrent`.",
+      "type": "number"
     },
     "maxWorkers": {
       "alias": "w",
@@ -255,13 +263,17 @@
       "description": "Run tests that failed in the previous execution.",
       "type": "boolean"
     },
+    "openHandlesTimeout": {
+      "description": "Print a warning about probable open handles if Jest does not exit cleanly after this number of milliseconds. `0` to disable.",
+      "type": "number"
+    },
     "outputFile": {
       "description": "Write test results to a file when the --json option is also specified.",
       "type": "string"
     },
     "passWithNoTests": {
       "default": false,
-      "description": "Will not fail if no tests are found (for example while using `--testPathPattern`.)",
+      "description": "Will not fail if no tests are found (for example while using `--testPathPatterns`.)",
       "type": "boolean"
     },
     "preset": {
@@ -279,6 +291,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "randomize": {
+      "description": "Shuffle the order of the tests within a file. Use `--seed` to specify the seed value.",
+      "type": "boolean"
     },
     "reporters": {
       "description": "A list of custom reporters for the test suite.",
@@ -328,6 +344,17 @@
       "description": "Allows to use a custom runner instead of Jest's default test runner.",
       "type": "string"
     },
+    "seed": {
+      "description": "Sets a seed value that can be retrieved in a tests file via `jest.getSeed()`. The seed value must be between `-0x80000000` and `0x7fffffff` inclusive.",
+      "type": "number"
+    },
+    "selectProjects": {
+      "description": "Run the tests of the specified projects. Jest uses the attribute `displayName` in the configuration to identify each project.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "setupFiles": {
       "description": "The paths to modules that run some code to configure or set up the testing environment before each test. ",
       "type": "array",
@@ -341,6 +368,10 @@
     },
     "showConfig": {
       "description": "Print your jest config and then exits.",
+      "type": "boolean"
+    },
+    "showSeed": {
+      "description": "Prints the seed value in the test report summary. See `--seed` for how to set this value.",
       "type": "boolean"
     },
     "silent": {
@@ -394,8 +425,8 @@
         "type": "string"
       }
     },
-    "testPathPattern": {
-      "description": "A regexp pattern string that is matched against all tests paths before executing the test.",
+    "testPathPatterns": {
+      "description": "Regexp pattern strings matched against test paths. Pass multiple patterns separated by spaces or repeat the flag.",
       "type": "array",
       "items": {
         "type": "string"
@@ -413,16 +444,16 @@
       "type": "string"
     },
     "testRunner": {
-      "description": "Allows to specify a custom test runner. The default is  `jasmine2`. A path to a custom test runner can be provided: `<rootDir>/path/to/testRunner.js`.",
+      "description": "Allows to specify a custom test runner. The default is `jest-circus/runner`. A path to a custom test runner can be provided: `<rootDir>/path/to/testRunner.js`.",
       "type": "string"
     },
-    "testURL": {
-      "description": "This option sets the URL for the jsdom environment.",
+    "testSequencer": {
+      "description": "Allows to specify a custom test sequencer. The default is `@jest/test-sequencer`. A path to a custom test sequencer can be provided: `<rootDir>/path/to/testSequencer.js`.",
       "type": "string"
     },
-    "timers": {
-      "description": "Setting this value to fake allows the use of fake timers for functions such as setTimeout.",
-      "type": "string"
+    "testTimeout": {
+      "description": "This option sets the default timeouts of test cases.",
+      "type": "number"
     },
     "transform": {
       "description": "A JSON string which maps from regular expressions to paths to transformers.",
@@ -477,6 +508,14 @@
     },
     "watchman": {
       "description": "Whether to use watchman for file crawling. Disable using --no-watchman.",
+      "type": "boolean"
+    },
+    "waitForUnhandledRejections": {
+      "description": "Gives one event loop turn to handle `rejectionHandled`, `uncaughtException` or `unhandledRejection`.",
+      "type": "boolean"
+    },
+    "workerThreads": {
+      "description": "Whether to use worker threads for parallelization. Child processes are used by default.",
       "type": "boolean"
     },
     "tsConfig": {

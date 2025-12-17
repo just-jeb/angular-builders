@@ -153,6 +153,12 @@ The builder supports multi-project workspaces out of the box, the only thing req
   $ ng test --find-related-tests file1,file2
   ```
 
+  **Note:** For multi-project workspaces, paths must be relative to the workspace root, not the project root:
+
+  ```sh
+  $ ng test my-lib --find-related-tests projects/my-lib/src/lib/service.ts,projects/my-lib/src/lib/component.ts
+  ```
+
 ## Migrating existing tests to Jest
 
 Use [this](https://jestjs.io/docs/en/migration-guide) for automatic migration of your Jasmine tests to Jest framework.
