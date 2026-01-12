@@ -59,7 +59,6 @@ jobs:
         if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
         run: |
           git reset --hard
-          git pull origin master
           git config --global user.name ${{ secrets.GIT_USER }}
           git config --global user.email ${{ secrets.GIT_EMAIL }}
           if [ "${{ github.event.inputs.release_type }}" == "graduate" ]; then
