@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>5.0.3 (2026-01-14)</small>
+
+**Note:** Version bump only for package @angular-builders/common
+
 ## <small>5.0.3-beta.1 (2026-01-14)</small>
 
 * fix(common): add missing repository field for npm provenance validation (#1979) ([7c83889](https://github.com/just-jeb/angular-builders/commit/7c83889)), closes [#1979](https://github.com/just-jeb/angular-builders/issues/1979)
