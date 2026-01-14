@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>21.0.3-beta.0 (2026-01-14)</small>
+
+* ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
+* ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
+
 ## [21.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.1-beta.0...@angular-builders/timestamp@21.0.2) (2026-01-13)
 
 **Note:** Version bump only for package @angular-builders/timestamp
