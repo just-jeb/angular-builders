@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>21.0.3-beta.1 (2026-01-14)</small>
+
+**Note:** Version bump only for package @angular-builders/jest
+
 ## <small>21.0.3-beta.0 (2026-01-14)</small>
 
 * ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
