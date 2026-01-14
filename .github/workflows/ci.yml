@@ -55,6 +55,11 @@ jobs:
       - name: Run CI scripts
         run: yarn ci
 
+      # OIDC requires npm v11.5.1 or later
+      - name: Upgrade npm for OIDC
+        if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+        run: npm install -g npm@latest
+
       - name: Publish to NPM
         if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
         run: |
@@ -66,5 +71,3 @@ jobs:
           else
             bash scripts/default-registry.sh
           fi
-        env:
-          NPM_CONFIG_PROVENANCE: true
