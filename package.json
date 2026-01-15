@@ -22,7 +22,6 @@
   },
   "scripts": {
     "build:packages": "yarn workspace @angular-builders/common run build && yarn workspaces foreach -vip --include '@angular-builders/*' --exclude @angular-builders/common run build",
-    "ci": "yarn build:packages",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
     "prepare": "husky install",

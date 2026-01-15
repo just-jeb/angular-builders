@@ -11,132 +11,66 @@ This document tracks discoveries, issues, and solutions while testing the CI wor
 
 ---
 
-## Phase 1: Build Job
+## Issues and Solutions
 
-**Command**: `act push -j build --container-architecture linux/amd64`
-
-### Status: IN PROGRESS
-
-### Discoveries
-
-1. act requires initial config - created `~/Library/Application Support/act/actrc` with medium image
-2. Node 20.19.0 downloads and installs successfully
-3. Cache action works (cache miss expected on first run)
-
-### Issues Found
-
-**Issue 1**: `yarn: command not found`
+### Issue 1: `yarn: command not found`
 
 - The act Docker image doesn't have yarn pre-installed
 - Project uses Yarn 3.8.7 via corepack (specified in package.json `packageManager` field)
-- Need to enable corepack before running yarn
 
-### Solutions Applied
+**Solution**: Add `corepack enable` step before yarn commands in workflow
 
-**Solution 1**: Add `corepack enable` step before yarn commands in workflow
+### Issue 2: `SIGKILL` - Jest worker processes killed (OOM)
 
-**Issue 2**: `SIGKILL` - Jest worker processes killed (OOM)
-
-- Jest workers being killed with SIGKILL during parallel test execution
+- Jest workers killed with SIGKILL during parallel build/test execution
 - Error: "A jest worker process (pid=XXXX) was terminated by another process: signal=SIGKILL"
-- Cause: Docker container running out of memory when multiple packages build in parallel
-- Each package runs Jest tests during `postbuild`
+- Cause: Docker container running out of memory when multiple packages build in parallel with x64-on-ARM emulation
 
-**Solution 2**: OOM in act due to parallel builds + x64 emulation on ARM
+**Root Cause**: The `build:packages` script runs packages in parallel (`-vip` flag), each running Jest tests. Combined with x64-on-ARM emulation overhead, this exceeds memory limits.
 
-**Findings**:
+**Findings with different memory settings**:
 
 - 8GB: Still OOM on some tests
-- 12GB: Full image too large to pull
-- 16GB: Still OOM (x64 emulation overhead)
+- 16GB: Still OOM (x64 emulation overhead is significant)
 
-**Root Cause**: The `build:packages` script runs packages in parallel (`-vip` flag),
-each running Jest tests. Combined with x64-on-ARM emulation overhead, this exceeds memory limits.
+**Practical Solution**: This is a fundamental limitation of running x64 Docker on Apple Silicon. For local testing:
 
-**Decision**: This is an act-specific limitation, not a workflow issue. Real GHA runners
-have native x64 and more resources. We will:
+1. Build packages natively: `yarn build:packages`
+2. Run integration tests directly: `cd examples/jest/simple-app && yarn e2e`
 
-1. Test discover job separately (no heavy compilation)
-2. Verify workflow syntax is correct
-3. Accept that full local testing may require native Linux or more resources
+### Issue 3: Gitignore blocked `packages/*/tests/integration.js`
 
----
+The `.gitignore` patterns blocked new integration.js files from being committed.
 
-## Phase 2: Build + Discover
+**Solution**: Use `git add -f packages/*/tests/integration.js` to force-add
 
-**Command**: `act push -j discover --container-architecture linux/amd64`
+### Issue 4: Xvfb required for Cypress tests
 
-### Status: COMPLETED (discover only)
+Cypress E2E tests require a display server (Xvfb) on headless Linux environments.
 
-### Discoveries
+**How it was handled in old CI** (from `scripts/run-ci.sh`):
 
-1. Discover job runs fast (~2 seconds)
-2. Matrix JSON properly formatted with 41 tests:
-   - bazel: 1 test
-   - custom-esbuild: 13 tests
-   - custom-webpack: 13 tests
-   - jest: 15 tests
+```bash
+[[ "$OSTYPE" == "linux-gnu"* ]] && Xvfb :99 &
+[[ "$OSTYPE" == "linux-gnu"* ]] && export DISPLAY=:99
+```
 
-### Issues Found
+**Solution in new CI**: Added to workflow:
 
-**Issue 3**: `packages/custom-webpack/tests/integration.js` was blocked by gitignore
+```yaml
+- name: Install Xvfb
+  run: |
+    if ! command -v Xvfb &> /dev/null; then
+      sudo apt-get update && sudo apt-get install -y xvfb
+    fi
+- name: Run test
+  run: |
+    Xvfb :99 &
+    export DISPLAY=:99
+    ${{ matrix.command }}
+```
 
-The `.gitignore` has patterns that blocked the file from being committed normally.
-
-### Solutions Applied
-
-**Solution 3**: Use `git add -f` to force-add the file to git tracking
-
----
-
-## Phase 3: Single Integration Test
-
-**Command**: `act push -j build -j discover -j integration --matrix id:karma-builder-sanity-app --container-architecture linux/amd64`
-
-### Status: PENDING
-
-### Discoveries
-
-(To be filled)
-
-### Issues Found
-
-(None yet)
-
-### Solutions Applied
-
-(None yet)
-
----
-
-## Phase 4: Full Workflow + Port Isolation
-
-**Command**: `act push --container-architecture linux/amd64`
-
-### Status: PENDING
-
-### Port Isolation Testing
-
-Key question: Do parallel integration jobs conflict on ports when running locally via `act`?
-
-**Options if port conflicts occur**:
-
-1. `--container-options "--network=host"` - Uses host network (may still conflict)
-2. Sequential execution with `--job` flags
-3. Rely on Cypress automatic port discovery
-4. Use `--container-options "--network=bridge"` with separate networks per job
-
-### Discoveries
-
-(To be filled)
-
-### Issues Found
-
-(None yet)
-
-### Solutions Applied
-
-(None yet)
+**For act**: The default `catthehacker/ubuntu:act-latest` image doesn't have Xvfb. The workflow installs it if missing.
 
 ---
 
@@ -146,24 +80,55 @@ Key question: Do parallel integration jobs conflict on ports when running locall
 | --------------------- | ------- | -------- | ---------------------------------- |
 | 1. Build              | PARTIAL | ~1m20s   | OOM (SIGKILL) due to x64 emulation |
 | 2. Discover           | PASSED  | ~2s      | gitignore blocked file (fixed)     |
-| 3. Single Integration | SKIPPED | -        | Requires build artifacts           |
-| 4. Full Workflow      | SKIPPED | -        | Blocked by build OOM               |
+| 3. Single Integration | N/A     | -        | Blocked by build OOM in act        |
+| 4. Full Workflow      | N/A     | -        | Blocked by build OOM in act        |
 
 ---
 
-## Final Recommendations
+## Recommendations
 
-### For Local Development
+### For Local Development on Apple Silicon
 
-1. **Don't rely on act for full CI testing on Apple Silicon** - x64 emulation overhead causes OOM issues
-2. **Use act for workflow syntax validation** - `act push -j discover` works great
-3. **Run individual tests directly** - `cd examples/*/app && yarn test/e2e`
+The build step OOM in act is a fundamental x64-emulation limitation. **Recommended approach**:
 
-### For CI
+1. **Build packages natively** (fast, native ARM):
 
-1. **Workflow is ready for GHA** - syntax validated, matrix generation works
-2. **Port isolation is automatic** - each matrix job runs in its own GHA runner
-3. **corepack enable is required** - added to all jobs using yarn
+   ```bash
+   yarn build:packages
+   ```
+
+2. **Run integration tests directly** (no Docker needed):
+
+   ```bash
+   # Jest builder tests
+   cd examples/jest/simple-app && yarn test:ts --no-cache
+
+   # Cypress tests (with local server)
+   cd examples/custom-webpack/full-cycle-app && yarn e2e
+   ```
+
+3. **Use act only for workflow validation**:
+   ```bash
+   act push -j discover --container-architecture linux/amd64
+   ```
+
+### For Native Linux or CI
+
+On native x64 Linux (including GHA runners), the full workflow runs successfully:
+
+```bash
+# Run full workflow
+act push --container-architecture linux/amd64
+
+# Run specific test
+act push -j integration --matrix id:cli-no-cache --container-architecture linux/amd64
+```
+
+### Port Isolation
+
+- **GHA**: Each matrix job runs in isolated runner - no port conflicts
+- **act locally**: Matrix jobs run sequentially by default - no port conflicts
+- **Manual local testing**: All apps use port 4200 - run one test at a time
 
 ### act Command Reference
 
@@ -171,15 +136,9 @@ Key question: Do parallel integration jobs conflict on ports when running locall
 # Validate workflow syntax + test discovery
 act push -j discover --container-architecture linux/amd64
 
-# Run specific integration test (if build artifacts available)
-act push -j integration --matrix id:karma-builder-sanity-app --container-architecture linux/amd64
+# List discovered tests
+act push -j discover --container-architecture linux/amd64 2>&1 | grep "matrix="
 
-# Full workflow (requires native Linux or high-memory machine)
-act push --container-architecture linux/amd64 --container-options "-m 16g"
+# Run on native Linux (or high-memory x64 VM)
+act push --container-architecture linux/amd64 --artifact-server-path /tmp/artifacts
 ```
-
-### Port Isolation
-
-- **GHA**: Each matrix job runs in isolated runner - no conflicts
-- **act locally**: Matrix jobs run sequentially by default - no conflicts
-- **Manual local testing**: All apps use port 4200 - run one at a time
