@@ -2,8 +2,7 @@ name: ci
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
   workflow_dispatch:
     inputs:
@@ -12,58 +11,90 @@ on:
         required: true
         default: 'beta'
         type: choice
-        options:
-          - beta
-          - graduate
+        options: [beta, graduate]
 
 jobs:
   build:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.0
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - run: yarn --immutable
+      - run: yarn build:packages
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: packages/*/dist
+
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.discover.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: discover
+        run: node scripts/discover-tests.js >> $GITHUB_OUTPUT
+
+  integration:
+    needs: [build, discover]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.19.0
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: packages
+      - run: yarn --immutable
+      - name: ${{ matrix.purpose }}
+        run: |
+          cd ${{ matrix.app }}
+          ${{ matrix.command }}
+
+  publish:
+    needs: [integration]
+    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
-    strategy:
-      fail-fast: true
-
     steps:
       - if: github.event_name != 'pull_request'
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
           fetch-depth: 0
-
       - if: github.event_name == 'pull_request'
         uses: actions/checkout@v4
-
-      - uses: actions/cache@v4
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: ~/.cache # Default cache directory for both Yarn and Cypress
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
-
-      - name: Install dependencies
-        run: yarn --immutable
-
-      - name: Run CI scripts
-        run: yarn ci
-
-      # OIDC requires npm v11.5.1 or later
-      - name: Upgrade npm for OIDC
-        if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
-        run: npm install -g npm@latest
-
-      - name: Publish to NPM
-        if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+      - run: yarn --immutable
+      - run: yarn build:packages
+      - run: npm install -g npm@latest
+      - name: Publish
         run: |
-          git reset --hard
           git config --global user.name ${{ secrets.GIT_USER }}
           git config --global user.email ${{ secrets.GIT_EMAIL }}
           if [ "${{ github.event.inputs.release_type }}" == "graduate" ]; then
