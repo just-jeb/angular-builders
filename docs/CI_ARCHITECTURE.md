@@ -9,9 +9,19 @@ angular-builders/
 ├── packages/           # Published npm packages (builders)
 │   ├── common/         # Shared utilities
 │   ├── custom-webpack/ # Webpack customization builders
+│   │   └── tests/
+│   │       └── integration.js  # Package-owned test definitions
 │   ├── custom-esbuild/ # ESBuild customization builders
+│   │   └── tests/
+│   │       └── integration.js
 │   ├── jest/           # Jest test runner builder
+│   │   └── tests/
+│   │       ├── integration.js
+│   │       └── validate.js  # Package-owned validation logic
 │   ├── bazel/          # Bazel integration builder
+│   │   └── tests/
+│   │       ├── integration.js
+│   │       └── validate.js
 │   └── timestamp/      # Example/demo builder
 └── examples/           # Integration test apps
     ├── custom-webpack/ # Apps using custom-webpack builders
@@ -55,9 +65,93 @@ The CI validates builders through multiple test layers, each with a distinct sem
 │ Purpose: Verify builders work correctly in real Angular apps        │
 │ Location: examples/*/                                               │
 │ Runner: Various (Cypress, Karma, Vitest, Jest)                      │
-│ When: CI scripts (packages/*/scripts/ci.sh)                         │
+│ When: CI matrix jobs (discovered from packages/*/tests/integration.js) │
 └─────────────────────────────────────────────────────────────────────┘
 ```
+
+---
+
+## Package-Owned Test Definitions
+
+Each package defines its own integration tests in `packages/*/tests/integration.js`. This ensures:
+
+- **Locality**: Test definitions live with the package code
+- **Self-documenting**: Each test has a clear `purpose` field
+- **Single source of truth**: Adding a new test only requires updating one file
+
+Example structure:
+
+```javascript
+// packages/custom-webpack/tests/integration.js
+module.exports = [
+  {
+    id: 'karma-builder-sanity-app',
+    purpose: 'Karma builder executes unit tests with custom webpack config',
+    app: 'examples/custom-webpack/sanity-app',
+    command: 'yarn test --browsers=ChromeHeadlessCI',
+  },
+  // ... more tests
+];
+```
+
+The CI discovers all `packages/*/tests/integration.js` files and creates a matrix job for each test entry.
+
+---
+
+## CI Workflow
+
+```
+GitHub Actions Workflow (.github/workflows/ci.yml)
+
+1. Build Job
+   ├── Install dependencies
+   ├── yarn build:packages
+   │   └── Includes Layer 1 (UT) + Layer 2 (schema tests)
+   └── Upload dist artifacts
+
+2. Discover Job
+   ├── Read all packages/*/tests/integration.js
+   └── Generate matrix JSON
+
+3. Integration Job (Matrix - ~41 parallel jobs)
+   ├── Download dist artifacts
+   ├── Install dependencies
+   └── For each matrix entry:
+       ├── cd ${{ matrix.app }}
+       └── ${{ matrix.command }}
+
+4. Publish Job (if on master)
+   └── Publish to npm
+```
+
+**Key Benefits**:
+
+- **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
+- **Isolation**: Each matrix job runs in its own environment (no port conflicts)
+- **Local parity**: Can run same workflow locally with `act`
+
+---
+
+## Local Development
+
+### Running Tests Locally
+
+```bash
+# Run full CI locally (requires Docker + act)
+act push
+
+# Run specific test
+act -j integration --matrix id:karma-builder-sanity-app
+
+# Run single test without act
+cd examples/custom-webpack/sanity-app && yarn e2e
+```
+
+### Adding New Tests
+
+1. Edit `packages/<package>/tests/integration.js`
+2. Add new test entry with `id`, `purpose`, `app`, and `command`
+3. Commit - CI will automatically discover and run it
 
 ---
 
@@ -141,7 +235,7 @@ The CI validates builders through multiple test layers, each with a distinct sem
 
 #### Test Matrix
 
-The Jest builder tests are different - they validate **CLI option passthrough** by running Jest with various flags and checking the output matches expected test counts.
+The Jest builder tests validate **CLI option passthrough** by running Jest with various flags and checking the output matches expected test counts using `packages/jest/tests/validate.js`.
 
 **simple-app validations**:
 
@@ -175,10 +269,10 @@ The Jest builder tests are different - they validate **CLI option passthrough** 
 
 **What it tests**: Bazel builder correctly invokes Bazel and Angular CLI integration works.
 
-#### Test (ci.js)
+#### Test
 
 1. Runs `yarn build` (which invokes `ng build` → Bazel)
-2. Compares `bazel-bin/out` content to expected "hello world"
+2. Compares `bazel-bin/out` content to expected "hello world" using `packages/bazel/tests/validate.js`
 
 ---
 
@@ -188,71 +282,35 @@ The Jest builder tests are different - they validate **CLI option passthrough** 
 
 ---
 
-## Current CI Flow
+## Port Configuration
 
-```
-yarn ci
-├── yarn build:packages
-│   ├── Build @angular-builders/common first
-│   └── Build other packages (parallel)
-│       └── For each package: tsc → merge-schemes → postbuild
-│           └── postbuild: yarn test (UT) && yarn e2e (schema tests)
-│
-└── ./scripts/run-ci.sh
-    ├── Start Xvfb (Linux only, for Cypress)
-    └── yarn workspaces foreach -vip run ci
-        ├── @angular-builders/custom-webpack → scripts/ci.sh
-        ├── @angular-builders/custom-esbuild → scripts/ci.sh
-        ├── @angular-builders/jest → scripts/ci.sh
-        └── @angular-builders/bazel → scripts/ci.js
-```
-
-**Note**: The `-p` flag means packages run their `ci` scripts in parallel, but within each script, tests run sequentially.
-
----
-
-## Port Assignments (Current)
-
-Each example app has hardcoded ports to avoid conflicts:
-
-| App                         | Serve Port | Cypress Port |
-| --------------------------- | ---------- | ------------ |
-| sanity-app                  | 5001       | 4221         |
-| sanity-app-esm              | 5007       | 4224         |
-| full-cycle-app              | 5008       | 4220         |
-| sanity-esbuild-app          | 5006       | 4225         |
-| sanity-esbuild-app-esm      | 5009       | 4226         |
-| simple-app                  | 5003       | 4222         |
-| multiple-apps/my-first-app  | 5002       | 4210         |
-| multiple-apps/my-second-app | 5002       | 4211         |
-| timestamp                   | 5004       | 4223         |
+All example apps use Angular CLI's default port (`4200`). Since matrix jobs run in isolated environments, there are no port conflicts. Port configurations were removed from `angular.json` files.
 
 ---
 
 ## Test Count Summary
 
-| Category                 | Count      | Details                                    |
-| ------------------------ | ---------- | ------------------------------------------ |
-| Package unit tests       | ~varies    | Run during build, test internal code       |
-| Schema E2E tests         | ~10        | Validate schema compatibility              |
-| Karma tests              | 3 apps     | sanity-app, sanity-app-esm, full-cycle-app |
-| Vitest tests             | 5 configs  | 2 apps × 2-3 configs each                  |
-| Cypress E2E              | 17 configs | Various app/config combinations            |
-| Jest CLI validations     | 12         | Various flag combinations                  |
-| Bazel                    | 1          | Build + output comparison                  |
-| **Total parallelizable** | **~38**    | At matrix level                            |
+| Category             | Count   | Details                                    |
+| -------------------- | ------- | ------------------------------------------ |
+| Package unit tests   | ~varies | Run during build, test internal code       |
+| Schema E2E tests     | ~10     | Validate schema compatibility              |
+| Karma tests          | 3       | sanity-app, sanity-app-esm, full-cycle-app |
+| Vitest tests         | 5       | 2 apps × 2-3 configs each                  |
+| Cypress E2E          | 17      | Various app/config combinations            |
+| Jest CLI validations | 12      | Various flag combinations                  |
+| Bazel                | 1       | Build + output comparison                  |
+| **Total**            | **~41** | All run in parallel via matrix             |
 
 ---
 
 ## Key Files
 
-| File                                    | Purpose                                             |
-| --------------------------------------- | --------------------------------------------------- |
-| `.github/workflows/ci.yml`              | GitHub Actions workflow                             |
-| `scripts/run-ci.sh`                     | Main CI orchestrator (starts Xvfb, runs workspaces) |
-| `packages/custom-webpack/scripts/ci.sh` | Custom-webpack integration tests                    |
-| `packages/custom-esbuild/scripts/ci.sh` | Custom-esbuild integration tests                    |
-| `packages/jest/scripts/ci.sh`           | Jest builder validation tests                       |
-| `packages/bazel/scripts/ci.js`          | Bazel builder tests                                 |
-| `jest-ut.config.js`                     | Jest config for package unit tests                  |
-| `jest-e2e.config.js`                    | Jest config for package schema tests                |
+| File                               | Purpose                                      |
+| ---------------------------------- | -------------------------------------------- |
+| `.github/workflows/ci.yml`         | GitHub Actions workflow with matrix strategy |
+| `scripts/discover-tests.js`        | Discovers all package test definitions       |
+| `packages/*/tests/integration.js`  | Package-owned test definitions               |
+| `packages/jest/tests/validate.js`  | Jest package validation logic                |
+| `packages/bazel/tests/validate.js` | Bazel package validation logic               |
+| `jest-ut.config.js`                | Jest config for package unit tests           |
+| `jest-e2e.config.js`               | Jest config for package schema tests         |
