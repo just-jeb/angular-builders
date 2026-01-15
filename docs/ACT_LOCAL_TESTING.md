@@ -76,12 +76,24 @@ Cypress E2E tests require a display server (Xvfb) on headless Linux environments
 
 ## Summary
 
-| Phase                 | Status  | Duration | Issues                             |
-| --------------------- | ------- | -------- | ---------------------------------- |
-| 1. Build              | PARTIAL | ~1m20s   | OOM (SIGKILL) due to x64 emulation |
-| 2. Discover           | PASSED  | ~2s      | gitignore blocked file (fixed)     |
-| 3. Single Integration | N/A     | -        | Blocked by build OOM in act        |
-| 4. Full Workflow      | N/A     | -        | Blocked by build OOM in act        |
+### GitHub Actions (CI)
+
+| Phase          | Status  | Duration | Tests                        |
+| -------------- | ------- | -------- | ---------------------------- |
+| 1. Build       | PASSED  | ~3m      | Packages built + unit tests  |
+| 2. Discover    | PASSED  | ~3s      | 41 tests discovered          |
+| 3. Integration | PASSED  | ~2-3m    | 41 tests run in parallel     |
+| 4. Publish     | SKIPPED | -        | Only runs on master/dispatch |
+
+**Total CI time**: ~6-7 minutes (vs. 8-9 minutes previously)
+
+### Local act Testing
+
+| Phase          | Status  | Duration | Issues                             |
+| -------------- | ------- | -------- | ---------------------------------- |
+| 1. Build       | BLOCKED | -        | OOM (SIGKILL) due to x64 emulation |
+| 2. Discover    | PASSED  | ~2s      | Works correctly                    |
+| 3. Integration | N/A     | -        | Blocked by build OOM               |
 
 ---
 
