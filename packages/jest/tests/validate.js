@@ -16,11 +16,14 @@ for (let i = 2; i < process.argv.length; i++) {
   }
 }
 
-console.log(`Running: yarn test ${jestArgs.join(' ')}`);
+// Quote args that contain spaces
+const quotedArgs = jestArgs.map(arg => (arg.includes(' ') ? `"${arg}"` : arg));
+
+console.log(`Running: yarn test ${quotedArgs.join(' ')}`);
 console.log(`Expectations:`, expectations);
 
 // Capture both stdout and stderr
-const output = execSync(`yarn test ${jestArgs.join(' ')} 2>&1`, {
+const output = execSync(`yarn test ${quotedArgs.join(' ')} 2>&1`, {
   encoding: 'utf-8',
 });
 
