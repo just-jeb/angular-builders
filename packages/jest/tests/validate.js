@@ -41,7 +41,8 @@ if (expectations.suites) {
 
 // Validate tests
 if (expectations.tests) {
-  const match = output.match(/Tests:\s+(\d+)\s+passed/);
+  // Match "X passed" anywhere in the line (handles "3 skipped, 1 passed, 4 total")
+  const match = output.match(/Tests:.*?(\d+)\s+passed/);
   if (!match || match[1] !== expectations.tests) {
     console.error(`✗ Expected ${expectations.tests} tests passed, got ${match?.[1] || 'none'}`);
     process.exit(1);
