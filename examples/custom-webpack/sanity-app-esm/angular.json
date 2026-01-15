@@ -91,7 +91,7 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "port": 5005
+            "buildTarget": "sanity-app-esm:build"
           },
           "configurations": {
             "production": {
@@ -160,7 +160,6 @@
           "options": {
             "devServerTarget": "sanity-app-esm:serve",
             "browser": "chrome",
-            "port": 4224
           },
           "configurations": {
             "production": {

@@ -82,7 +82,6 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "buildTarget": "full-cycle-app:build",
-            "port": 5008
           },
           "configurations": {
             "production": {
@@ -123,7 +122,6 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "full-cycle-app:serve",
-            "port": 4220,
             "spec": "e2e/src/app.e2e-spec.ts",
             "browser": "chrome"
           },

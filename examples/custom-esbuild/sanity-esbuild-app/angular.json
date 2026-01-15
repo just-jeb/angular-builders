@@ -87,7 +87,7 @@
         "serve": {
           "builder": "@angular-builders/custom-esbuild:dev-server",
           "options": {
-            "port": 5006
+            "buildTarget": "sanity-esbuild-app:build"
           },
           "configurations": {
             "production": {
@@ -129,7 +129,6 @@
           "options": {
             "devServerTarget": "sanity-esbuild-app:serve",
             "browser": "chrome",
-            "port": 4225
           },
           "configurations": {
             "production": {

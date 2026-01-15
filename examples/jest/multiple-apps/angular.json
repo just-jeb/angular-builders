@@ -66,7 +66,6 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "my-first-app:build",
-            "port": 5002
           },
           "configurations": {
             "production": {
@@ -90,7 +89,6 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "my-first-app:serve",
-            "port": 4210,
             "project": "projects/my-first-app",
             "browser": "chrome"
           },
@@ -197,7 +195,6 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "my-second-app:build",
-            "port": 5002
           },
           "configurations": {
             "production": {
@@ -221,7 +218,6 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "my-second-app:serve",
-            "port": 4211,
             "project": "projects/my-second-app",
             "browser": "chrome"
           },
