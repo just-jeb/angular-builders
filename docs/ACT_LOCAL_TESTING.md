@@ -142,15 +142,44 @@ Key question: Do parallel integration jobs conflict on ports when running locall
 
 ## Summary
 
-| Phase                 | Status  | Duration | Issues |
-| --------------------- | ------- | -------- | ------ |
-| 1. Build              | PENDING | -        | -      |
-| 2. Discover           | PENDING | -        | -      |
-| 3. Single Integration | PENDING | -        | -      |
-| 4. Full Workflow      | PENDING | -        | -      |
+| Phase                 | Status  | Duration | Issues                             |
+| --------------------- | ------- | -------- | ---------------------------------- |
+| 1. Build              | PARTIAL | ~1m20s   | OOM (SIGKILL) due to x64 emulation |
+| 2. Discover           | PASSED  | ~2s      | gitignore blocked file (fixed)     |
+| 3. Single Integration | SKIPPED | -        | Requires build artifacts           |
+| 4. Full Workflow      | SKIPPED | -        | Blocked by build OOM               |
 
 ---
 
 ## Final Recommendations
 
-(To be filled after all phases complete)
+### For Local Development
+
+1. **Don't rely on act for full CI testing on Apple Silicon** - x64 emulation overhead causes OOM issues
+2. **Use act for workflow syntax validation** - `act push -j discover` works great
+3. **Run individual tests directly** - `cd examples/*/app && yarn test/e2e`
+
+### For CI
+
+1. **Workflow is ready for GHA** - syntax validated, matrix generation works
+2. **Port isolation is automatic** - each matrix job runs in its own GHA runner
+3. **corepack enable is required** - added to all jobs using yarn
+
+### act Command Reference
+
+```bash
+# Validate workflow syntax + test discovery
+act push -j discover --container-architecture linux/amd64
+
+# Run specific integration test (if build artifacts available)
+act push -j integration --matrix id:karma-builder-sanity-app --container-architecture linux/amd64
+
+# Full workflow (requires native Linux or high-memory machine)
+act push --container-architecture linux/amd64 --container-options "-m 16g"
+```
+
+### Port Isolation
+
+- **GHA**: Each matrix job runs in isolated runner - no conflicts
+- **act locally**: Matrix jobs run sequentially by default - no conflicts
+- **Manual local testing**: All apps use port 4200 - run one at a time
