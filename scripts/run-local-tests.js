@@ -8,8 +8,9 @@
 //   node scripts/run-local-tests.js --package jest  # Run tests for specific package
 //   node scripts/run-local-tests.js --id cli-no-cache  # Run specific test by ID
 //   node scripts/run-local-tests.js --concurrency 4    # Limit parallel tests
+//   node scripts/run-local-tests.js --affected    # Run tests only for packages affected by git changes
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -20,6 +21,7 @@ const options = {
   ids: [],
   concurrency: null,
   verbose: args.includes('--verbose') || args.includes('-v'),
+  affected: args.includes('--affected'),
 };
 
 for (let i = 0; i < args.length; i++) {
@@ -29,6 +31,29 @@ for (let i = 0; i < args.length; i++) {
     options.ids.push(args[++i]);
   } else if (args[i] === '--concurrency' && args[i + 1]) {
     options.concurrency = parseInt(args[++i], 10);
+  }
+}
+
+// Get affected packages using Turborepo
+function getAffectedPackages() {
+  try {
+    const output = execSync('yarn turbo build --affected --dry-run=json 2>/dev/null', {
+      cwd: path.join(__dirname, '..'),
+      encoding: 'utf-8',
+    });
+    const data = JSON.parse(output);
+    // Extract unique package names from tasks
+    const packages = [...new Set(data.tasks.map(t => t.package))];
+    // Filter to only @angular-builders/* packages and extract the short name
+    return packages
+      .filter(p => p.startsWith('@angular-builders/'))
+      .map(p => p.replace('@angular-builders/', ''));
+  } catch (err) {
+    console.error('Warning: Could not determine affected packages, running all tests');
+    if (options.verbose) {
+      console.error(err.message);
+    }
+    return null;
   }
 }
 
@@ -153,6 +178,20 @@ async function main() {
   console.log('Discovering tests...\n');
 
   let tests = discoverTests();
+
+  // Filter by affected packages if --affected flag is used
+  if (options.affected) {
+    console.log('Detecting affected packages...');
+    const affectedPackages = getAffectedPackages();
+    if (affectedPackages) {
+      if (affectedPackages.length === 0) {
+        console.log('No packages affected by current changes. No tests to run.\n');
+        process.exit(0);
+      }
+      console.log('Affected packages: ' + affectedPackages.join(', ') + '\n');
+      tests = tests.filter(t => affectedPackages.includes(t.package));
+    }
+  }
 
   if (options.package) {
     tests = tests.filter(t => t.package === options.package);

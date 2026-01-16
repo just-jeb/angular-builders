@@ -2,6 +2,10 @@
 const fs = require('fs');
 const path = require('path');
 
+// Parse --affected=pkg1,pkg2 from command line arguments
+const affectedArg = process.argv.find(a => a.startsWith('--affected='));
+const affected = affectedArg ? affectedArg.split('=')[1].split(',').filter(Boolean) : null;
+
 // Find all packages/*/tests/integration.js files
 const packagesDir = path.join(__dirname, '..', 'packages');
 const packages = fs
@@ -24,5 +28,8 @@ for (const pkg of packages) {
   }
 }
 
+// Filter tests by affected packages if specified
+const filteredTests = affected ? tests.filter(t => affected.includes(t.package)) : tests;
+
 // Output for GitHub Actions
-console.log(`matrix=${JSON.stringify({ include: tests })}`);
+console.log(`matrix=${JSON.stringify({ include: filteredTests })}`);
