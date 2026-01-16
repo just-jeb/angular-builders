@@ -74,7 +74,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "buildTarget": "sanity-app:build"
+            "buildTarget": "sanity-app:build",
+            "port": 0
           },
           "configurations": {
             "production": {

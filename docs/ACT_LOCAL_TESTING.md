@@ -1,156 +1,193 @@
-# Local CI Testing with act - Discovery Log
+# Local CI Testing
 
-This document tracks discoveries, issues, and solutions while testing the CI workflow locally using `act`.
+This document describes approaches for testing CI locally and related discoveries.
 
-## Environment
+## Quick Start - Local Test Runner
 
-- **act version**: 0.2.84
-- **Docker version**: 29.1.3
-- **Platform**: Apple Silicon (M-series)
-- **Date**: 2026-01-15
+The recommended way to run integration tests locally is the native test runner:
+
+```bash
+# Run all integration tests in parallel
+yarn test:local
+
+# Run tests for a specific package
+yarn test:local --package custom-webpack
+
+# Run specific tests by ID
+yarn test:local --id browser-builder-basic --id esm-package-default
+
+# Limit concurrency (useful for memory-constrained systems)
+yarn test:local --concurrency 4
+
+# Verbose output
+yarn test:local --verbose
+```
+
+### Features
+
+- **Parallel execution**: All tests run simultaneously by default
+- **Port isolation**: Uses `port: 0` in all Angular apps for automatic port assignment
+- **Same test definitions**: Uses the same `packages/*/tests/integration.js` files as CI
+- **Native performance**: No Docker overhead, runs directly on your machine
+
+### Example Output
+
+```
+Discovering tests...
+
+Found 13 test(s) to run
+
+Running all tests in parallel
+
+------------------------------------------------------------
+
+PASS [10.5s] karma-builder-sanity-app: Karma builder executes unit tests
+PASS [18.5s] karma-builder-sanity-app-esm: Karma builder works in ESM package
+PASS [26.5s] browser-builder-basic: Browser + dev-server work with no custom config
+...
+
+------------------------------------------------------------
+
+Results: 13 passed, 0 failed (30.9s total)
+
+All tests passed!
+```
 
 ---
 
-## Issues and Solutions
+## How Port Isolation Works
 
-### Issue 1: `yarn: command not found`
+All example apps have `port: 0` configured in their `angular.json` serve options:
 
-- The act Docker image doesn't have yarn pre-installed
-- Project uses Yarn 3.8.7 via corepack (specified in package.json `packageManager` field)
-
-**Solution**: Add `corepack enable` step before yarn commands in workflow
-
-### Issue 2: `SIGKILL` - Jest worker processes killed (OOM)
-
-- Jest workers killed with SIGKILL during parallel build/test execution
-- Error: "A jest worker process (pid=XXXX) was terminated by another process: signal=SIGKILL"
-- Cause: Docker container running out of memory when multiple packages build in parallel with x64-on-ARM emulation
-
-**Root Cause**: The `build:packages` script runs packages in parallel (`-vip` flag), each running Jest tests. Combined with x64-on-ARM emulation overhead, this exceeds memory limits.
-
-**Findings with different memory settings**:
-
-- 8GB: Still OOM on some tests
-- 16GB: Still OOM (x64 emulation overhead is significant)
-
-**Practical Solution**: This is a fundamental limitation of running x64 Docker on Apple Silicon. For local testing:
-
-1. Build packages natively: `yarn build:packages`
-2. Run integration tests directly: `cd examples/jest/simple-app && yarn e2e`
-
-### Issue 3: Gitignore blocked `packages/*/tests/integration.js`
-
-The `.gitignore` patterns blocked new integration.js files from being committed.
-
-**Solution**: Use `git add -f packages/*/tests/integration.js` to force-add
-
-### Issue 4: Xvfb required for Cypress tests
-
-Cypress E2E tests require a display server (Xvfb) on headless Linux environments.
-
-**How it was handled in old CI** (from `scripts/run-ci.sh`):
-
-```bash
-[[ "$OSTYPE" == "linux-gnu"* ]] && Xvfb :99 &
-[[ "$OSTYPE" == "linux-gnu"* ]] && export DISPLAY=:99
+```json
+{
+  "serve": {
+    "options": {
+      "port": 0
+    }
+  }
+}
 ```
 
-**Solution in new CI**: Added to workflow:
+This tells Angular CLI to automatically select an available port. The Cypress schematic (`@cypress/schematic:cypress`) receives the actual port via `devServerTarget` and passes it to Cypress, overriding any hardcoded `baseUrl`.
 
-```yaml
-- name: Install Xvfb
-  run: |
-    if ! command -v Xvfb &> /dev/null; then
-      sudo apt-get update && sudo apt-get install -y xvfb
-    fi
-- name: Run test
-  run: |
-    Xvfb :99 &
-    export DISPLAY=:99
-    ${{ matrix.command }}
-```
-
-**For act**: The default `catthehacker/ubuntu:act-latest` image doesn't have Xvfb. The workflow installs it if missing.
+**Result**: Multiple e2e tests can run in parallel without port conflicts.
 
 ---
 
-## Summary
+## Alternative: act for Full Workflow Testing
 
-### GitHub Actions (CI)
+`act` can run the full GitHub Actions workflow locally using Docker.
 
-| Phase          | Status  | Duration | Tests                        |
-| -------------- | ------- | -------- | ---------------------------- |
-| 1. Build       | PASSED  | ~3m      | Packages built + unit tests  |
-| 2. Discover    | PASSED  | ~3s      | 41 tests discovered          |
-| 3. Integration | PASSED  | ~2-3m    | 41 tests run in parallel     |
-| 4. Publish     | SKIPPED | -        | Only runs on master/dispatch |
-
-**Total CI time**: ~6-7 minutes (vs. 8-9 minutes previously)
-
-### Local act Testing
-
-| Phase          | Status  | Duration | Issues                             |
-| -------------- | ------- | -------- | ---------------------------------- |
-| 1. Build       | BLOCKED | -        | OOM (SIGKILL) due to x64 emulation |
-| 2. Discover    | PASSED  | ~2s      | Works correctly                    |
-| 3. Integration | N/A     | -        | Blocked by build OOM               |
-
----
-
-## Recommendations
-
-### For Local Development on Apple Silicon
-
-The build step OOM in act is a fundamental x64-emulation limitation. **Recommended approach**:
-
-1. **Build packages natively** (fast, native ARM):
-
-   ```bash
-   yarn build:packages
-   ```
-
-2. **Run integration tests directly** (no Docker needed):
-
-   ```bash
-   # Jest builder tests
-   cd examples/jest/simple-app && yarn test:ts --no-cache
-
-   # Cypress tests (with local server)
-   cd examples/custom-webpack/full-cycle-app && yarn e2e
-   ```
-
-3. **Use act only for workflow validation**:
-   ```bash
-   act push -j discover --container-architecture linux/amd64
-   ```
-
-### For Native Linux or CI
-
-On native x64 Linux (including GHA runners), the full workflow runs successfully:
+### Prerequisites
 
 ```bash
-# Run full workflow
-act push --container-architecture linux/amd64
-
-# Run specific test
-act push -j integration --matrix id:cli-no-cache --container-architecture linux/amd64
+brew install act
 ```
 
-### Port Isolation
+### Known Issues on Apple Silicon
 
-- **GHA**: Each matrix job runs in isolated runner - no port conflicts
-- **act locally**: Matrix jobs run sequentially by default - no port conflicts
-- **Manual local testing**: All apps use port 4200 - run one test at a time
+The `act` tool runs x64 Docker containers on ARM Macs via emulation. This causes:
 
-### act Command Reference
+1. **OOM during build**: Parallel Jest execution exceeds memory limits
+2. **Slow performance**: x64 emulation adds significant overhead
+
+### Practical act Usage
 
 ```bash
-# Validate workflow syntax + test discovery
+# Test workflow discovery (lightweight, works well)
 act push -j discover --container-architecture linux/amd64
 
 # List discovered tests
 act push -j discover --container-architecture linux/amd64 2>&1 | grep "matrix="
 
-# Run on native Linux (or high-memory x64 VM)
+# On native x64 Linux (or high-memory VM), full workflow works:
 act push --container-architecture linux/amd64 --artifact-server-path /tmp/artifacts
+```
+
+### When to Use act vs Local Runner
+
+| Scenario                      | Recommended Approach           |
+| ----------------------------- | ------------------------------ |
+| Run integration tests locally | `yarn test:local`              |
+| Test workflow YAML syntax     | `act push -j discover`         |
+| Validate matrix discovery     | `act push -j discover`         |
+| Debug CI-specific issues      | Push to branch, check GHA logs |
+| Full workflow on native x64   | `act push`                     |
+
+---
+
+## CI Architecture Reference
+
+See [CI_ARCHITECTURE.md](CI_ARCHITECTURE.md) for the full CI architecture documentation.
+
+### GitHub Actions Summary
+
+| Job         | Duration      | Description                        |
+| ----------- | ------------- | ---------------------------------- |
+| build       | ~3m           | Build packages + run unit tests    |
+| discover    | ~3s           | Discover 41 integration tests      |
+| integration | ~2-3m         | Run all tests in parallel (matrix) |
+| publish     | (conditional) | Only on master/dispatch            |
+
+**Total CI time**: ~6-7 minutes
+
+---
+
+## Development Workflow
+
+### Build + Test All
+
+```bash
+# Build packages
+yarn build:packages
+
+# Run all integration tests
+yarn test:local
+```
+
+### Test Single Package
+
+```bash
+# Build changed package
+yarn workspace @angular-builders/custom-webpack run build
+
+# Run its tests
+yarn test:local --package custom-webpack
+```
+
+### Test Single Test
+
+```bash
+yarn test:local --id browser-builder-basic --verbose
+```
+
+---
+
+## Troubleshooting
+
+### "Port already in use" errors
+
+All apps should have `port: 0` in angular.json. If not:
+
+```bash
+# Quick fix - specify port at runtime
+cd examples/custom-webpack/sanity-app
+yarn ng e2e --port 0
+```
+
+### Cypress "Xvfb not found" (Linux only)
+
+```bash
+sudo apt-get install xvfb
+Xvfb :99 &
+export DISPLAY=:99
+```
+
+### act OOM on Apple Silicon
+
+Use the native local runner instead:
+
+```bash
+yarn test:local
 ```

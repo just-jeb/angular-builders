@@ -98,7 +98,8 @@
         "serve": {
           "builder": "@angular-builders/custom-esbuild:dev-server",
           "options": {
-            "buildTarget": "sanity-esbuild-app-esm:build"
+            "buildTarget": "sanity-esbuild-app-esm:build",
+            "port": 0
           },
           "configurations": {
             "production": {
@@ -148,7 +149,7 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "sanity-esbuild-app-esm:serve",
-            "browser": "chrome",
+            "browser": "chrome"
           },
           "configurations": {
             "production": {

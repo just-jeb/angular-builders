@@ -66,6 +66,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "my-first-app:build",
+            "port": 0
           },
           "configurations": {
             "production": {
@@ -194,7 +195,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "my-second-app:build",
+            "buildTarget": "my-second-app:build"
           },
           "configurations": {
             "production": {
