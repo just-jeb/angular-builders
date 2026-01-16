@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>21.0.4-beta.0 (2026-01-16)</small>
+
+* ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
+
 ## <small>21.0.3 (2026-01-14)</small>
 
 **Note:** Version bump only for package @angular-builders/bazel
