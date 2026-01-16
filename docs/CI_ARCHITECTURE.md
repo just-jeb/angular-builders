@@ -128,7 +128,7 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 
 - **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
 - **Isolation**: Each matrix job runs in its own environment (no port conflicts)
-- **Local parity**: Can run same workflow locally with `act`
+- **Local parity**: Same test definitions run locally via `yarn test:local`
 
 ---
 
@@ -136,16 +136,30 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 
 ### Running Tests Locally
 
+The recommended way to run integration tests locally is the native test runner:
+
 ```bash
-# Run full CI locally (requires Docker + act)
-act push
+# Run all integration tests in parallel
+yarn test:local
 
-# Run specific test
-act -j integration --matrix id:karma-builder-sanity-app
+# Run tests for a specific package
+yarn test:local --package custom-webpack
 
-# Run single test without act
-cd examples/custom-webpack/sanity-app && yarn e2e
+# Run specific tests by ID
+yarn test:local --id browser-builder-basic --id esm-package-default
+
+# Limit concurrency (useful for memory-constrained systems)
+yarn test:local --concurrency 4
+
+# Verbose output
+yarn test:local --verbose
 ```
+
+The local runner:
+
+- Uses the same test definitions as CI (`packages/*/tests/integration.js`)
+- Runs all tests in parallel by default
+- Uses `port: 0` for automatic port assignment (no conflicts)
 
 ### Adding New Tests
 
@@ -284,7 +298,22 @@ The Jest builder tests validate **CLI option passthrough** by running Jest with 
 
 ## Port Configuration
 
-All example apps use Angular CLI's default port (`4200`). Since matrix jobs run in isolated environments, there are no port conflicts. Port configurations were removed from `angular.json` files.
+All example apps have `port: 0` configured in their `angular.json` serve options:
+
+```json
+{
+  "serve": {
+    "options": {
+      "port": 0
+    }
+  }
+}
+```
+
+This tells Angular CLI to automatically select an available port. The Cypress schematic receives the actual port via `devServerTarget` and passes it to Cypress, enabling:
+
+- **CI**: Matrix jobs run in isolated environments (port doesn't matter)
+- **Local**: Multiple tests can run in parallel without port conflicts
 
 ---
 
@@ -309,6 +338,7 @@ All example apps use Angular CLI's default port (`4200`). Since matrix jobs run 
 | ---------------------------------- | -------------------------------------------- |
 | `.github/workflows/ci.yml`         | GitHub Actions workflow with matrix strategy |
 | `scripts/discover-tests.js`        | Discovers all package test definitions       |
+| `scripts/run-local-tests.js`       | Local test runner for development            |
 | `packages/*/tests/integration.js`  | Package-owned test definitions               |
 | `packages/jest/tests/validate.js`  | Jest package validation logic                |
 | `packages/bazel/tests/validate.js` | Bazel package validation logic               |
