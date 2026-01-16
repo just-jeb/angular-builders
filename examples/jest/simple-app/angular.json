@@ -72,7 +72,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "simple-app:build",
-            "port": 5003
+            "port": 0
           },
           "configurations": {
             "production": {
@@ -110,8 +110,7 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "simple-app:serve",
-            "browser": "chrome",
-            "port": 4222
+            "browser": "chrome"
           },
           "configurations": {
             "production": {

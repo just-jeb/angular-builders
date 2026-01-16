@@ -38,8 +38,7 @@
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
-    "generate": "quicktype -s schema src/schema.json -o src/schema.ts",
-    "ci": "./scripts/ci.sh"
+    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "dependencies": {
     "@angular-builders/common": "workspace:*",

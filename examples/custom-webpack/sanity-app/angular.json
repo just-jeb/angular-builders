@@ -75,7 +75,7 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "buildTarget": "sanity-app:build",
-            "port": 5001
+            "port": 0
           },
           "configurations": {
             "production": {
@@ -120,8 +120,7 @@
           "builder": "@cypress/schematic:cypress",
           "options": {
             "devServerTarget": "sanity-app:serve",
-            "browser": "chrome",
-            "port": 4221
+            "browser": "chrome"
           },
           "configurations": {
             "production": {

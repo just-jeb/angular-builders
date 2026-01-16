@@ -8,7 +8,7 @@ export default defineConfig({
       // implement node event listeners here
     },
     specPattern: 'e2e/src/**/*.e2e-spec.ts',
-    baseUrl: 'http://localhost:5002',
+    baseUrl: 'http://localhost:4200',
     supportFile: false,
   },
 });
