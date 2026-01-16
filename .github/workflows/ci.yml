@@ -37,19 +37,13 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn --immutable
       - name: Build affected packages
-        run: yarn turbo build --affected --filter='@angular-builders/*'
-        env:
-          TURBO_SCM_BASE: ${{ github.event.pull_request.base.sha || 'master' }}
-          TURBO_SCM_HEAD: ${{ github.sha }}
+        run: yarn turbo build --filter='@angular-builders/*...[origin/master]'
       - name: Get affected packages
         id: affected
         run: |
-          AFFECTED=$(yarn turbo build --affected --filter='@angular-builders/*' --dry-run=json 2>/dev/null | jq -r '[.tasks[].package | select(startswith("@angular-builders/")) | sub("@angular-builders/"; "")] | unique | join(",")')
+          AFFECTED=$(yarn turbo build --filter='@angular-builders/*...[origin/master]' --dry-run=json 2>/dev/null | jq -r '[.tasks[].package | select(startswith("@angular-builders/")) | sub("@angular-builders/"; "")] | unique | join(",")')
           echo "packages=$AFFECTED" >> $GITHUB_OUTPUT
           echo "Affected packages: $AFFECTED"
-        env:
-          TURBO_SCM_BASE: ${{ github.event.pull_request.base.sha || 'master' }}
-          TURBO_SCM_HEAD: ${{ github.sha }}
       - uses: actions/upload-artifact@v4
         with:
           name: dist
