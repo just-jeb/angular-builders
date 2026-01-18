@@ -27,9 +27,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for turbo to compare branches
-      - name: Fetch base branch for comparison
-        run: git fetch origin master:master || true
+          fetch-depth: 0
+      - run: git fetch origin master:master || true
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
@@ -40,23 +39,20 @@ jobs:
           path: |
             node_modules
             .yarn
-          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
       - uses: actions/cache@v4
         if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
           path: ~/.cache
-          key: ${{ runner.os }}-yarn-dl-${{ hashFiles('yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-dl-
+          key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: yarn-dl-${{ runner.os }}-
       - run: yarn --immutable
         if: steps.deps-cache.outputs.cache-hit != 'true'
-      - name: Build affected packages
-        run: yarn build:packages
-      - name: Discover tests
-        id: discover
+      - run: yarn build:packages
+      - id: discover
         run: |
           MATRIX=$(node scripts/discover-tests.js)
           echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
-          # Check if matrix has tests
           TEST_COUNT=$(echo "$MATRIX" | jq '.include | length')
           if [ "$TEST_COUNT" -gt 0 ]; then
             echo "has_tests=true" >> $GITHUB_OUTPUT
@@ -83,24 +79,22 @@ jobs:
         with:
           node-version: 20.19.0
       - run: corepack enable
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
           path: |
             node_modules
             .yarn
-          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
       - uses: actions/download-artifact@v4
         with:
           name: dist
           path: packages
-      - name: Install Xvfb
-        run: |
+      - run: |
           if ! command -v Xvfb &> /dev/null; then
             sudo apt-get update && sudo apt-get install -y xvfb
           fi
       - name: ${{ matrix.purpose }}
         run: |
-          # Start Xvfb for Cypress tests on Linux
           Xvfb :99 &
           export DISPLAY=:99
           cd ${{ matrix.app }}
@@ -126,13 +120,16 @@ jobs:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
           path: |
             node_modules
             .yarn
-          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
-      - run: yarn build:packages
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: packages
       - run: npm install -g npm@latest
       - name: Publish
         run: |
