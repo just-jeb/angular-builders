@@ -36,15 +36,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn --immutable
-      - name: Get affected packages
+      - name: Build affected packages
+        run: yarn turbo build --filter='@angular-builders/*...[origin/master]' --summarize
+      - name: Get affected packages from build summary
         id: affected
         run: |
-          # Run dry-run first (fast) to extract affected packages list
-          AFFECTED=$(yarn turbo build --filter='@angular-builders/*...[origin/master]' --dry-run=json 2>/dev/null | jq -r '[.tasks[].package | select(startswith("@angular-builders/")) | sub("@angular-builders/"; "")] | unique | join(",")')
+          # Extract affected packages from turbo's summary file (created by --summarize)
+          AFFECTED=$(find .turbo/runs -name "*.json" -exec cat {} \; | jq -r '[.tasks[].package | select(startswith("@angular-builders/")) | sub("@angular-builders/"; "")] | unique | join(",")')
           echo "packages=$AFFECTED" >> $GITHUB_OUTPUT
           echo "Affected packages: $AFFECTED"
-      - name: Build affected packages
-        run: yarn turbo build --filter='@angular-builders/*...[origin/master]'
       - uses: actions/upload-artifact@v4
         with:
           name: dist
