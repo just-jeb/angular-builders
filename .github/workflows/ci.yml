@@ -18,11 +18,12 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
     runs-on: ubuntu-latest
     outputs:
-      affected: ${{ steps.affected.outputs.packages }}
+      matrix: ${{ steps.discover.outputs.matrix }}
+      has_tests: ${{ steps.discover.outputs.has_tests }}
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for turbo --affected to compare branches
+          fetch-depth: 0 # Required for turbo to compare branches
       - name: Fetch base branch for comparison
         run: git fetch origin master:master || true
       - uses: actions/setup-node@v4
@@ -37,54 +38,32 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn --immutable
       - name: Build affected packages
-        run: yarn turbo build --filter='@angular-builders/*...[origin/master]' --summarize
-      - name: Get affected packages from build summary
-        id: affected
+        run: yarn build:packages
+      - name: Discover tests
+        id: discover
         run: |
-          # Extract affected packages from turbo's summary file (created by --summarize)
-          AFFECTED=$(find .turbo/runs -name "*.json" -exec cat {} \; | jq -r '[.tasks[].package | select(startswith("@angular-builders/")) | sub("@angular-builders/"; "")] | unique | join(",")')
-          echo "packages=$AFFECTED" >> $GITHUB_OUTPUT
-          echo "Affected packages: $AFFECTED"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: packages/*/dist
-
-  discover:
-    needs: build
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.discover.outputs.matrix }}
-      has_tests: ${{ steps.discover.outputs.has_tests }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: discover
-        run: |
-          AFFECTED="${{ needs.build.outputs.affected }}"
-          if [ -n "$AFFECTED" ]; then
-            echo "Filtering tests for affected packages: $AFFECTED"
-            node scripts/discover-tests.js --affected="$AFFECTED" >> $GITHUB_OUTPUT
-          else
-            echo "No affected packages, outputting empty matrix"
-            echo 'matrix={"include":[]}' >> $GITHUB_OUTPUT
-          fi
+          MATRIX=$(node scripts/discover-tests.js)
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
           # Check if matrix has tests
-          MATRIX_OUTPUT=$(cat $GITHUB_OUTPUT | grep '^matrix=' | cut -d'=' -f2-)
-          TEST_COUNT=$(echo "$MATRIX_OUTPUT" | jq '.include | length')
+          TEST_COUNT=$(echo "$MATRIX" | jq '.include | length')
           if [ "$TEST_COUNT" -gt 0 ]; then
             echo "has_tests=true" >> $GITHUB_OUTPUT
           else
             echo "has_tests=false" >> $GITHUB_OUTPUT
           fi
           echo "Test count: $TEST_COUNT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: packages/*/dist
 
   integration:
-    needs: [build, discover]
-    if: needs.discover.outputs.has_tests == 'true'
+    needs: build
+    if: needs.build.outputs.has_tests == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.build.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -118,8 +97,8 @@ jobs:
   # This job runs when there are no integration tests to run
   # It ensures the workflow doesn't fail when the matrix is empty
   integration-skip:
-    needs: [build, discover]
-    if: needs.discover.outputs.has_tests == 'false'
+    needs: build
+    if: needs.build.outputs.has_tests == 'false'
     runs-on: ubuntu-latest
     steps:
       - run: echo "No integration tests to run for affected packages"
