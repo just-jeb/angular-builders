@@ -125,8 +125,9 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
        ├── cd ${{ matrix.app }}
        └── ${{ matrix.command }}
 
-3. Publish Job (if on master)
+3. Publish Job (if on master or workflow_dispatch)
    └── Waits for integration (success or skipped)
+   └── Only runs on push to master or manual workflow_dispatch
    └── Publish to npm
 ```
 
