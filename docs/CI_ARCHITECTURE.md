@@ -128,7 +128,9 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 3. Publish Job (if on master or workflow_dispatch)
    └── Waits for integration (success or skipped)
    └── Only runs on push to master or manual workflow_dispatch
-   └── Publish to npm
+   └── Publish to npm via lerna-lite
+   └── Uses OIDC (trusted publishing) - no npm tokens required
+   └── Automatically generates provenance attestations
 ```
 
 **Key Benefits**:
@@ -137,6 +139,32 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 - **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
 - **Isolation**: Each matrix job runs in its own environment (no port conflicts)
 - **Local parity**: Same test definitions run locally via `yarn test:local`
+
+---
+
+## Publishing & Security
+
+### OIDC (Trusted Publishing)
+
+The publish job uses **OIDC (OpenID Connect)** for authentication, which means:
+
+- **No npm tokens required**: Authentication happens automatically via GitHub Actions OIDC
+- **Automatic provenance**: Provenance attestations are generated automatically linking packages to source commits
+- **More secure**: No long-lived tokens to manage or rotate
+- **lerna-lite handles it**: The `@lerna-lite/publish` package manages OIDC authentication internally
+
+**Requirements**:
+
+- GitHub Actions workflow with `permissions: id-token: write` (already configured)
+- Public repository (source must be public for provenance)
+- Trusted publisher configured on npmjs.com matching the GitHub Actions workflow
+- npm CLI version (handled by lerna-lite internally)
+
+**Configuration**:
+
+- `lerna.json` specifies `npmClient: "yarn"` for dependency management
+- Publishing still uses npm registry API (via lerna-lite's `libnpmpublish`)
+- OIDC authentication is automatic when `id-token: write` permission is present
 
 ---
 

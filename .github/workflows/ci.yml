@@ -40,6 +40,7 @@ jobs:
             node_modules
             .yarn
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          restore-keys: deps-${{ runner.os }}-node20-
       - uses: actions/cache@v4
         if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
@@ -85,14 +86,12 @@ jobs:
             node_modules
             .yarn
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
         with:
           name: dist
           path: packages
-      - run: |
-          if ! command -v Xvfb &> /dev/null; then
-            sudo apt-get update && sudo apt-get install -y xvfb
-          fi
+      - run: sudo apt-get update && sudo apt-get install -y xvfb
       - name: ${{ matrix.purpose }}
         run: |
           Xvfb :99 &
@@ -126,10 +125,15 @@ jobs:
             node_modules
             .yarn
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
         with:
           name: dist
           path: packages
+      # Update npm for trusted publishing (OIDC) support
+      # npm 11.5.1+ required for full trusted publishing features
+      # Node 20.19.0 bundles npm 10.8.2, which is sufficient for basic provenance
+      # but insufficient for trusted publishing (OIDC) which lerna-lite uses
       - run: npm install -g npm@latest
       - name: Publish
         run: |
