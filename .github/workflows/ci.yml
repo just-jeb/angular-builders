@@ -17,8 +17,15 @@ jobs:
   build:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.discover.outputs.matrix }}
+      has_tests: ${{ steps.discover.outputs.has_tests }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required for turbo to compare branches
+      - name: Fetch base branch for comparison
+        run: git fetch origin master:master || true
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
@@ -30,27 +37,33 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn --immutable
-      - run: yarn build:packages
+      - name: Build affected packages
+        run: yarn build:packages
+      - name: Discover tests
+        id: discover
+        run: |
+          MATRIX=$(node scripts/discover-tests.js)
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+          # Check if matrix has tests
+          TEST_COUNT=$(echo "$MATRIX" | jq '.include | length')
+          if [ "$TEST_COUNT" -gt 0 ]; then
+            echo "has_tests=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_tests=false" >> $GITHUB_OUTPUT
+          fi
+          echo "Test count: $TEST_COUNT"
       - uses: actions/upload-artifact@v4
         with:
           name: dist
           path: packages/*/dist
 
-  discover:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.discover.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: discover
-        run: node scripts/discover-tests.js >> $GITHUB_OUTPUT
-
   integration:
-    needs: [build, discover]
+    needs: build
+    if: needs.build.outputs.has_tests == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.discover.outputs.matrix) }}
+      matrix: ${{ fromJson(needs.build.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -82,20 +95,20 @@ jobs:
           ${{ matrix.command }}
 
   publish:
-    needs: [integration]
-    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
+    needs: integration
+    if: |
+      always() &&
+      (needs.integration.result == 'success' || needs.integration.result == 'skipped') &&
+      (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     permissions:
       contents: write
       id-token: write
     steps:
-      - if: github.event_name != 'pull_request'
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
           fetch-depth: 0
-      - if: github.event_name == 'pull_request'
-        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0

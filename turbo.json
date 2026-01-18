@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    ".github/workflows/**",
+    "tsconfig.json",
+    "jest-ut.config.js",
+    "jest-e2e.config.js",
+    "jest-common.config.js",
+    "jest-custom-environment.js"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "inputs": [
+        "src/**",
+        "tsconfig.json",
+        "tsconfig.*.json",
+        "package.json",
+        "builders.json"
+      ]
+    }
+  }
+}

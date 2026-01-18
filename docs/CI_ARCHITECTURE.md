@@ -100,35 +100,111 @@ The CI discovers all `packages/*/tests/integration.js` files and creates a matri
 
 ## CI Workflow
 
+The CI uses **Turborepo** for affected detection, building and testing only packages that have changed.
+
 ```
 GitHub Actions Workflow (.github/workflows/ci.yml)
 
 1. Build Job
    ├── Install dependencies
-   ├── yarn build:packages
+   ├── turbo build --filter='@angular-builders/*...[origin/master]' --summarize
+   │   └── Only builds packages affected by the change
    │   └── Includes Layer 1 (UT) + Layer 2 (schema tests)
+   │   └── Creates .turbo/runs/*.json summary file
+   ├── Discover tests (reads turbo summary)
+   │   └── scripts/discover-tests.js reads .turbo/runs/*.json
+   │   └── Filters packages/*/tests/integration.js by affected packages
+   │   └── Outputs filtered matrix JSON
    └── Upload dist artifacts
 
-2. Discover Job
-   ├── Read all packages/*/tests/integration.js
-   └── Generate matrix JSON
-
-3. Integration Job (Matrix - ~41 parallel jobs)
+2. Integration Job (Matrix - only affected tests)
+   ├── Runs only if has_tests == 'true'
    ├── Download dist artifacts
    ├── Install dependencies
    └── For each matrix entry:
        ├── cd ${{ matrix.app }}
        └── ${{ matrix.command }}
 
-4. Publish Job (if on master)
+3. Publish Job (if on master or workflow_dispatch)
+   └── Waits for integration (success or skipped)
+   └── Only runs on push to master or manual workflow_dispatch
    └── Publish to npm
 ```
 
 **Key Benefits**:
 
+- **Affected Detection**: Only builds/tests packages changed by the PR
 - **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
 - **Isolation**: Each matrix job runs in its own environment (no port conflicts)
 - **Local parity**: Same test definitions run locally via `yarn test:local`
+
+---
+
+## Turborepo and Affected Detection
+
+The CI uses Turborepo to detect which packages are affected by changes and only build/test those.
+
+### How It Works
+
+Turborepo uses git diff to compare the current branch against the base branch and determines which workspace packages have changed. It then:
+
+1. Builds only affected packages (and their dependencies)
+2. Creates a summary file (`.turbo/runs/*.json`) with metadata about the build
+3. The test discovery script (`scripts/discover-tests.js`) reads this summary to extract affected packages
+4. Filters integration tests to only run those for affected packages
+
+### Configuration
+
+**Root `turbo.json`**:
+
+```json
+{
+  "globalDependencies": [
+    ".github/workflows/**",
+    "tsconfig.json",
+    "jest-ut.config.js",
+    "jest-e2e.config.js",
+    "jest-common.config.js",
+    "jest-custom-environment.js"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "tsconfig.json", "tsconfig.*.json", "package.json", "builders.json"]
+    }
+  }
+}
+```
+
+- **globalDependencies**: Files that invalidate ALL packages when changed (CI workflow, root tsconfig, jest configs)
+- **dependsOn: ["^build"]**: Build dependencies first (e.g., common before other packages)
+- **outputs**: What gets cached (dist folders)
+- **inputs**: What triggers rebuilds (source files)
+
+### Dependency Mapping
+
+| If you change...             | Packages affected | Tests run    |
+| ---------------------------- | ----------------- | ------------ |
+| `packages/common/*`          | ALL packages      | ALL 41 tests |
+| `packages/custom-webpack/*`  | custom-webpack    | 13 tests     |
+| `packages/custom-esbuild/*`  | custom-esbuild    | 13 tests     |
+| `packages/jest/*`            | jest              | 14 tests     |
+| `packages/bazel/*`           | bazel             | 1 test       |
+| `examples/jest/simple-app/*` | (none)            | ~7 tests     |
+| `.github/workflows/*`        | ALL packages      | ALL 41 tests |
+| `tsconfig.json` (root)       | ALL packages      | ALL 41 tests |
+| `docs/*`, `README.md`        | (none)            | 0 tests      |
+
+### Tool Relationships
+
+Turborepo is an **addition** to the existing tooling, not a replacement:
+
+| Tool            | Role                    | Status    |
+| --------------- | ----------------------- | --------- |
+| Yarn Workspaces | Monorepo structure      | Unchanged |
+| Lerna           | Publishing & versioning | Unchanged |
+| Turborepo       | Task orchestration      | **New**   |
 
 ---
 
@@ -141,6 +217,10 @@ The recommended way to run integration tests locally is the native test runner:
 ```bash
 # Run all integration tests in parallel
 yarn test:local
+
+# Run tests only for packages affected by your changes (automatic if turbo summary exists)
+# First build: yarn build:packages
+# Then: yarn test:local (automatically filters to affected packages)
 
 # Run tests for a specific package
 yarn test:local --package custom-webpack
@@ -158,6 +238,8 @@ yarn test:local --verbose
 The local runner:
 
 - Uses the same test definitions as CI (`packages/*/tests/integration.js`)
+- Automatically filters to affected packages if `.turbo/runs/*.json` exists (from `yarn build:packages`)
+- Falls back to all tests if no turbo summary is found
 - Runs all tests in parallel by default
 - Uses `port: 0` for automatic port assignment (no conflicts)
 
@@ -334,13 +416,14 @@ This tells Angular CLI to automatically select an available port. The Cypress sc
 
 ## Key Files
 
-| File                               | Purpose                                      |
-| ---------------------------------- | -------------------------------------------- |
-| `.github/workflows/ci.yml`         | GitHub Actions workflow with matrix strategy |
-| `scripts/discover-tests.js`        | Discovers all package test definitions       |
-| `scripts/run-local-tests.js`       | Local test runner for development            |
-| `packages/*/tests/integration.js`  | Package-owned test definitions               |
-| `packages/jest/tests/validate.js`  | Jest package validation logic                |
-| `packages/bazel/tests/validate.js` | Bazel package validation logic               |
-| `jest-ut.config.js`                | Jest config for package unit tests           |
-| `jest-e2e.config.js`               | Jest config for package schema tests         |
+| File                               | Purpose                                                                            |
+| ---------------------------------- | ---------------------------------------------------------------------------------- |
+| `.github/workflows/ci.yml`         | GitHub Actions workflow with matrix strategy                                       |
+| `turbo.json`                       | Turborepo config (affected detection, caching)                                     |
+| `scripts/discover-tests.js`        | Discovers all package test definitions, reads turbo summary for affected detection |
+| `scripts/run-local-tests.js`       | Local test runner for development                                                  |
+| `packages/*/tests/integration.js`  | Package-owned test definitions                                                     |
+| `packages/jest/tests/validate.js`  | Jest package validation logic                                                      |
+| `packages/bazel/tests/validate.js` | Bazel package validation logic                                                     |
+| `jest-ut.config.js`                | Jest config for package unit tests                                                 |
+| `jest-e2e.config.js`               | Jest config for package schema tests                                               |

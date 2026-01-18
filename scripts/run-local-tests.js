@@ -4,14 +4,14 @@
 // Uses the same test definitions as CI from packages/*/tests/integration.js
 //
 // Usage:
-//   node scripts/run-local-tests.js              # Run all tests
+//   node scripts/run-local-tests.js              # Run all tests (or affected if turbo summary exists)
 //   node scripts/run-local-tests.js --package jest  # Run tests for specific package
 //   node scripts/run-local-tests.js --id cli-no-cache  # Run specific test by ID
 //   node scripts/run-local-tests.js --concurrency 4    # Limit parallel tests
 
 const { spawn } = require('child_process');
-const fs = require('fs');
 const path = require('path');
+const { discoverTests } = require('./discover-tests');
 
 // Parse command line arguments
 const args = process.argv.slice(2);
@@ -30,33 +30,6 @@ for (let i = 0; i < args.length; i++) {
   } else if (args[i] === '--concurrency' && args[i + 1]) {
     options.concurrency = parseInt(args[++i], 10);
   }
-}
-
-// Discover all tests
-function discoverTests() {
-  const packagesDir = path.join(__dirname, '..', 'packages');
-  const packages = fs
-    .readdirSync(packagesDir, { withFileTypes: true })
-    .filter(dirent => dirent.isDirectory())
-    .map(dirent => dirent.name);
-
-  const tests = [];
-
-  for (const pkg of packages) {
-    const testFile = path.join(packagesDir, pkg, 'tests', 'integration.js');
-    if (fs.existsSync(testFile)) {
-      delete require.cache[require.resolve(testFile)];
-      const entries = require(testFile);
-      for (const entry of entries) {
-        tests.push({
-          package: pkg,
-          ...entry,
-        });
-      }
-    }
-  }
-
-  return tests;
 }
 
 // Run a single test
@@ -152,7 +125,8 @@ function printResult(result) {
 async function main() {
   console.log('Discovering tests...\n');
 
-  let tests = discoverTests();
+  // Use shared discovery logic (automatically filters by affected if turbo summary exists)
+  let tests = discoverTests().include;
 
   if (options.package) {
     tests = tests.filter(t => t.package === options.package);
