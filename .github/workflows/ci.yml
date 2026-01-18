@@ -49,6 +49,14 @@ jobs:
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
       - run: yarn --immutable
+      # Ensure Puppeteer Chrome binary is downloaded (needed for Karma tests in integration jobs)
+      # Puppeteer downloads Chrome on first use, so we trigger it here to include it in cache
+      - run: |
+          for app in examples/custom-webpack/*/; do
+            if [ -f "$app/package.json" ] && grep -q "puppeteer" "$app/package.json"; then
+              (cd "$app" && node -e "try { require('puppeteer').executablePath(); } catch(e) {}" || true)
+            fi
+          done
       - run: yarn build:packages
       - id: discover
         run: |
