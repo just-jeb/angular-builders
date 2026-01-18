@@ -2,12 +2,14 @@ module.exports = [
   // Config file loading
   {
     id: 'config-typescript',
+    name: 'jest: loads jest.config.ts',
     purpose: 'Builder loads jest.config.ts',
     app: 'examples/jest/simple-app',
     command: 'yarn test:ts --no-cache',
   },
   {
     id: 'config-esm',
+    name: 'jest: loads jest.config.mjs',
     purpose: 'Builder loads jest.config.mjs',
     app: 'examples/jest/simple-app',
     command: 'yarn test:esm --no-cache',
@@ -16,6 +18,7 @@ module.exports = [
   // CLI passthrough - validated tests
   {
     id: 'cli-no-cache',
+    name: 'jest: --no-cache flag',
     purpose: '--no-cache flag passes through to Jest',
     app: 'examples/jest/simple-app',
     command:
@@ -23,6 +26,7 @@ module.exports = [
   },
   {
     id: 'cli-test-filter',
+    name: 'jest: --test-name-pattern',
     purpose: '--test-name-pattern filters tests correctly',
     app: 'examples/jest/simple-app',
     command:
@@ -30,6 +34,7 @@ module.exports = [
   },
   {
     id: 'cli-reporters',
+    name: 'jest: --reporters flag',
     purpose: '--reporters flag enables custom reporters',
     app: 'examples/jest/simple-app',
     command:
@@ -37,6 +42,7 @@ module.exports = [
   },
   {
     id: 'cli-shard-first',
+    name: 'jest: --shard=1/2',
     purpose: '--shard=1/2 runs first half of tests',
     app: 'examples/jest/simple-app',
     command:
@@ -44,6 +50,7 @@ module.exports = [
   },
   {
     id: 'cli-shard-second',
+    name: 'jest: --shard=2/2',
     purpose: '--shard=2/2 runs second half of tests',
     app: 'examples/jest/simple-app',
     command:
@@ -53,6 +60,7 @@ module.exports = [
   // Multi-project workspace
   {
     id: 'multi-project-first-app',
+    name: 'jest: multi-project first app',
     purpose: 'Can run tests for specific project',
     app: 'examples/jest/multiple-apps',
     command:
@@ -60,6 +68,7 @@ module.exports = [
   },
   {
     id: 'multi-project-second-app',
+    name: 'jest: multi-project second app',
     purpose: 'Can run tests for another project',
     app: 'examples/jest/multiple-apps',
     command:
@@ -67,6 +76,7 @@ module.exports = [
   },
   {
     id: 'multi-project-library',
+    name: 'jest: multi-project library',
     purpose: 'Can run tests for library',
     app: 'examples/jest/multiple-apps',
     command:
@@ -74,6 +84,7 @@ module.exports = [
   },
   {
     id: 'multi-project-filter',
+    name: 'jest: multi-project filter',
     purpose: 'Filtering works with project selection',
     app: 'examples/jest/multiple-apps',
     command:
@@ -81,6 +92,7 @@ module.exports = [
   },
   {
     id: 'multi-project-path-pattern',
+    name: 'jest: --test-path-patterns',
     purpose: '--test-path-patterns filters by file path',
     app: 'examples/jest/multiple-apps',
     command:
@@ -88,6 +100,7 @@ module.exports = [
   },
   {
     id: 'multi-project-find-related',
+    name: 'jest: --find-related-tests',
     purpose: '--find-related-tests finds tests for changed files',
     app: 'examples/jest/multiple-apps',
     command:
@@ -97,12 +110,14 @@ module.exports = [
   // E2E sanity
   {
     id: 'e2e-simple-app',
+    name: 'jest: E2E simple app',
     purpose: 'App built with Jest builder renders correctly',
     app: 'examples/jest/simple-app',
     command: 'yarn e2e',
   },
   {
     id: 'e2e-multiple-apps',
+    name: 'jest: E2E multiple apps',
     purpose: 'Multi-project app renders correctly',
     app: 'examples/jest/multiple-apps',
     command: 'yarn e2e',

@@ -56,10 +56,16 @@ jobs:
         with:
           name: dist
           path: packages/*/dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
+          retention-days: 1
 
   integration:
     needs: build
     if: needs.build.outputs.has_tests == 'true'
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -70,17 +76,14 @@ jobs:
         with:
           node-version: 20.19.0
       - run: corepack enable
-      - uses: actions/cache@v4
+      - uses: actions/download-artifact@v4
         with:
-          path: ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          name: node_modules
+          path: node_modules
       - uses: actions/download-artifact@v4
         with:
           name: dist
           path: packages
-      - run: yarn --immutable
       - name: Install Xvfb
         run: |
           if ! command -v Xvfb &> /dev/null; then
@@ -114,7 +117,10 @@ jobs:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
-      - run: yarn --immutable
+      - uses: actions/download-artifact@v4
+        with:
+          name: node_modules
+          path: node_modules
       - run: yarn build:packages
       - run: npm install -g npm@latest
       - name: Publish
