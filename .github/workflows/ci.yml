@@ -62,10 +62,10 @@ jobs:
           path: packages/*/dist
       - uses: actions/upload-artifact@v4
         with:
-          name: node_modules
+          name: dependencies
           path: |
             node_modules
-            .yarn/install-state.gz
+            .yarn
           retention-days: 1
 
   integration:
@@ -84,7 +84,7 @@ jobs:
       - run: corepack enable
       - uses: actions/download-artifact@v4
         with:
-          name: node_modules
+          name: dependencies
           path: .
       - uses: actions/download-artifact@v4
         with:
@@ -125,7 +125,7 @@ jobs:
       - run: corepack enable
       - uses: actions/download-artifact@v4
         with:
-          name: node_modules
+          name: dependencies
           path: .
       - run: yarn build:packages
       - run: npm install -g npm@latest
