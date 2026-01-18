@@ -40,6 +40,7 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
+            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           restore-keys: deps-${{ runner.os }}-node20-
       - uses: actions/cache@v4
@@ -94,6 +95,7 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
+            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
@@ -134,6 +136,7 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
+            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
