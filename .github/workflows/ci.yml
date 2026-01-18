@@ -39,6 +39,7 @@ jobs:
           path: |
             node_modules
             .yarn
+            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           restore-keys: deps-${{ runner.os }}-node20-
       - uses: actions/cache@v4
@@ -48,7 +49,6 @@ jobs:
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
       - run: yarn --immutable
-        if: steps.deps-cache.outputs.cache-hit != 'true'
       - run: yarn build:packages
       - id: discover
         run: |
@@ -85,6 +85,7 @@ jobs:
           path: |
             node_modules
             .yarn
+            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
@@ -124,6 +125,7 @@ jobs:
           path: |
             node_modules
             .yarn
+            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
