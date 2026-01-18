@@ -85,7 +85,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: node_modules
-          path: node_modules
+          path: .
       - uses: actions/download-artifact@v4
         with:
           name: dist
@@ -126,7 +126,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: node_modules
-          path: node_modules
+          path: .
       - run: yarn build:packages
       - run: npm install -g npm@latest
       - name: Publish
