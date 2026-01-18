@@ -35,12 +35,14 @@ jobs:
           node-version: 20.19.0
       - run: corepack enable
       - uses: actions/cache@v4
+        id: deps-cache
         with:
-          path: ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: |
+            node_modules
+            .yarn
+          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
       - run: yarn --immutable
+        if: steps.deps-cache.outputs.cache-hit != 'true'
       - name: Build affected packages
         run: yarn build:packages
       - name: Discover tests
@@ -60,13 +62,6 @@ jobs:
         with:
           name: dist
           path: packages/*/dist
-      - uses: actions/upload-artifact@v4
-        with:
-          name: dependencies
-          path: |
-            node_modules
-            .yarn
-          retention-days: 1
 
   integration:
     needs: build
@@ -82,10 +77,12 @@ jobs:
         with:
           node-version: 20.19.0
       - run: corepack enable
-      - uses: actions/download-artifact@v4
+      - uses: actions/cache@v4
         with:
-          name: dependencies
-          path: .
+          path: |
+            node_modules
+            .yarn
+          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
       - uses: actions/download-artifact@v4
         with:
           name: dist
@@ -123,10 +120,12 @@ jobs:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
-      - uses: actions/download-artifact@v4
+      - uses: actions/cache@v4
         with:
-          name: dependencies
-          path: .
+          path: |
+            node_modules
+            .yarn
+          key: ${{ runner.os }}-deps-${{ hashFiles('yarn.lock') }}
       - run: yarn build:packages
       - run: npm install -g npm@latest
       - name: Publish
