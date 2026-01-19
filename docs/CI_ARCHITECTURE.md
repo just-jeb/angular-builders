@@ -106,7 +106,9 @@ The CI uses **Turborepo** for affected detection, building and testing only pack
 GitHub Actions Workflow (.github/workflows/ci.yml)
 
 1. Build Job
-   ├── Install dependencies
+   ├── Restore dependencies cache (node_modules, .yarn, ~/.cache/Cypress, ~/.cache/puppeteer)
+   ├── Install dependencies (only if cache miss)
+   ├── Pre-download Puppeteer Chrome binary (for Karma tests)
    ├── turbo build --filter='@angular-builders/*...[origin/master]' --summarize
    │   └── Only builds packages affected by the change
    │   └── Includes Layer 1 (UT) + Layer 2 (schema tests)
@@ -119,8 +121,8 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 
 2. Integration Job (Matrix - only affected tests)
    ├── Runs only if has_tests == 'true'
+   ├── Restore dependencies cache (fail if cache miss)
    ├── Download dist artifacts
-   ├── Install dependencies
    └── For each matrix entry:
        ├── cd ${{ matrix.app }}
        └── ${{ matrix.command }}
@@ -128,6 +130,8 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 3. Publish Job (if on master or workflow_dispatch)
    └── Waits for integration (success or skipped)
    └── Only runs on push to master or manual workflow_dispatch
+   └── Restore dependencies cache (fail if cache miss)
+   └── Download dist artifacts
    └── Publish to npm via lerna-lite
    └── Uses OIDC (trusted publishing) - no npm tokens required
    └── Automatically generates provenance attestations
@@ -139,6 +143,47 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 - **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
 - **Isolation**: Each matrix job runs in its own environment (no port conflicts)
 - **Local parity**: Same test definitions run locally via `yarn test:local`
+- **Efficient Caching**: Dependencies installed once in build job, shared via cache across all jobs
+- **Automatic Cancellation**: In-progress runs are cancelled when new commits are pushed (via concurrency groups)
+
+---
+
+## Dependency Caching Strategy
+
+The CI workflow uses GitHub Actions cache to share dependencies across jobs, avoiding redundant installations:
+
+### Cached Directories
+
+- **`node_modules`**: All npm packages (Yarn workspace dependencies)
+- **`.yarn`**: Yarn 3+ installation state (`.yarn/install-state.gz`, cache, etc.)
+- **`~/.cache/Cypress`**: Cypress binary (downloaded by Cypress package)
+- **`~/.cache/puppeteer`**: Puppeteer Chrome binary (downloaded on first use)
+
+### Cache Key Strategy
+
+- **Primary key**: `deps-{os}-node20-{yarn.lock-hash}` - Exact match for dependency changes
+- **Restore keys**: `deps-{os}-node20-` - Partial match for cache hits on feature branches
+- **Fallback cache**: `~/.cache` (Yarn download cache) - Speeds up installs on cache miss
+
+### Cache Flow
+
+1. **Build Job**:
+   - Restores cache (or installs if miss)
+   - Always runs `yarn --immutable` (fast on cache hit, ensures completeness)
+   - Pre-downloads Puppeteer Chrome binary (triggers download if not cached)
+   - Saves cache at end of job
+
+2. **Integration Jobs**:
+   - Restore cache with `fail-on-cache-miss: true` (ensures build job completed)
+   - No `yarn install` needed - dependencies already available
+
+3. **Publish Job**:
+   - Restore cache with `fail-on-cache-miss: true`
+   - No `yarn install` needed - dependencies already available
+
+### Why Pre-download Puppeteer?
+
+Puppeteer downloads Chrome lazily on first use (not during `yarn install`). The build job explicitly triggers the download by calling `require('puppeteer').executablePath()`, ensuring Chrome is cached for integration jobs that run Karma tests.
 
 ---
 
