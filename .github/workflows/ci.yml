@@ -13,6 +13,10 @@ on:
         type: choice
         options: [beta, graduate]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
@@ -23,28 +27,42 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Required for turbo to compare branches
-      - name: Fetch base branch for comparison
-        run: git fetch origin master:master || true
+          fetch-depth: 0
+      - run: git fetch origin master:master || true
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
       - run: corepack enable
       - uses: actions/cache@v4
+        id: deps-cache
+        with:
+          path: |
+            node_modules
+            .yarn
+            ~/.cache/Cypress
+            ~/.cache/puppeteer
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          restore-keys: deps-${{ runner.os }}-node20-
+      - uses: actions/cache@v4
+        if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
           path: ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: yarn-dl-${{ runner.os }}-
       - run: yarn --immutable
-      - name: Build affected packages
-        run: yarn build:packages
-      - name: Discover tests
-        id: discover
+      # Ensure Puppeteer Chrome binary is downloaded (needed for Karma tests in integration jobs)
+      # Puppeteer downloads Chrome on first use, so we trigger it here to include it in cache
+      - run: |
+          for app in examples/custom-webpack/*/; do
+            if [ -f "$app/package.json" ] && grep -q "puppeteer" "$app/package.json"; then
+              (cd "$app" && node -e "try { require('puppeteer').executablePath(); } catch(e) {}" || true)
+            fi
+          done
+      - run: yarn build:packages
+      - id: discover
         run: |
           MATRIX=$(node scripts/discover-tests.js)
           echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
-          # Check if matrix has tests
           TEST_COUNT=$(echo "$MATRIX" | jq '.include | length')
           if [ "$TEST_COUNT" -gt 0 ]; then
             echo "has_tests=true" >> $GITHUB_OUTPUT
@@ -60,6 +78,7 @@ jobs:
   integration:
     needs: build
     if: needs.build.outputs.has_tests == 'true'
+    name: ${{ matrix.name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -70,25 +89,22 @@ jobs:
         with:
           node-version: 20.19.0
       - run: corepack enable
-      - uses: actions/cache@v4
+      - uses: actions/cache/restore@v4
         with:
-          path: ~/.cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
+          path: |
+            node_modules
+            .yarn
+            ~/.cache/Cypress
+            ~/.cache/puppeteer
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
       - uses: actions/download-artifact@v4
         with:
           name: dist
           path: packages
-      - run: yarn --immutable
-      - name: Install Xvfb
-        run: |
-          if ! command -v Xvfb &> /dev/null; then
-            sudo apt-get update && sudo apt-get install -y xvfb
-          fi
+      - run: sudo apt-get update && sudo apt-get install -y xvfb
       - name: ${{ matrix.purpose }}
         run: |
-          # Start Xvfb for Cypress tests on Linux
           Xvfb :99 &
           export DISPLAY=:99
           cd ${{ matrix.app }}
@@ -114,8 +130,23 @@ jobs:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
-      - run: yarn --immutable
-      - run: yarn build:packages
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            node_modules
+            .yarn
+            ~/.cache/Cypress
+            ~/.cache/puppeteer
+          key: deps-${{ runner.os }}-node20-${{ hashFiles('yarn.lock') }}
+          fail-on-cache-miss: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: packages
+      # Update npm for trusted publishing (OIDC) support
+      # npm 11.5.1+ required for full trusted publishing features
+      # Node 20.19.0 bundles npm 10.8.2, which is sufficient for basic provenance
+      # but insufficient for trusted publishing (OIDC) which lerna-lite uses
       - run: npm install -g npm@latest
       - name: Publish
         run: |
