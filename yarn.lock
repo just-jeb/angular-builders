@@ -3013,9 +3013,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^3.0.9":
-  version: 3.0.9
-  resolution: "@cypress/request@npm:3.0.9"
+"@cypress/request@npm:^3.0.10":
+  version: 3.0.10
+  resolution: "@cypress/request@npm:3.0.10"
   dependencies:
     aws-sign2: ~0.7.0
     aws4: ^1.8.0
@@ -3030,12 +3030,12 @@ __metadata:
     json-stringify-safe: ~5.0.1
     mime-types: ~2.1.19
     performance-now: ^2.1.0
-    qs: 6.14.0
+    qs: ~6.14.1
     safe-buffer: ^5.1.2
     tough-cookie: ^5.0.0
     tunnel-agent: ^0.6.0
     uuid: ^8.3.2
-  checksum: d22327b6fc52c8c6bbfa82b3a5b40f890f869da615c0dd494b3bf2c016eb3b1875082b451571d6b109a84c7e73a5869e9a997cdb71716e46900f607002e6afd0
+  checksum: f1504a39421ea1102d1045a8c3c11f52867c3449547ff2282847324f1935b7d9ba62fd6d0fc788b689fe59b7a418420e0c9a76cebb82f5c7b6704dfce6f1859f
   languageName: node
   linkType: hard
 
@@ -10424,11 +10424,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:15.6.0":
-  version: 15.6.0
-  resolution: "cypress@npm:15.6.0"
+"cypress@npm:15.9.0":
+  version: 15.9.0
+  resolution: "cypress@npm:15.9.0"
   dependencies:
-    "@cypress/request": ^3.0.9
+    "@cypress/request": ^3.0.10
     "@cypress/xvfb": ^1.2.4
     "@types/sinonjs__fake-timers": 8.1.1
     "@types/sizzle": ^2.3.2
@@ -10464,16 +10464,15 @@ __metadata:
     process: ^0.11.10
     proxy-from-env: 1.0.0
     request-progress: ^3.0.0
-    semver: ^7.7.1
     supports-color: ^8.1.1
-    systeminformation: 5.27.7
+    systeminformation: ^5.27.14
     tmp: ~0.2.4
     tree-kill: 1.2.2
     untildify: ^4.0.0
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 18345b12b95ba3cbcdc005863409155a8edf6eff57bd0e96cd14ac79a756d602d28a879ad758032f3c3325436fc71ebe5f900ae5698982b81fc0e3082770ee31
+  checksum: 8e9b135c16be87b8b1473faef235b755baf8668193919d6c2ad200e7f446c08777a5cbfd77dede6d769741f66f1118041a16ec69fa5fc9b2079b407c5b6b9af0
   languageName: node
   linkType: hard
 
@@ -12799,7 +12798,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     html-webpack-plugin: 5.6.6
     jasmine-core: 5.12.1
@@ -16844,7 +16843,7 @@ __metadata:
     "@types/jest": ^30.0.0
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     jest: 30.0.0
     jest-environment-jsdom: ^30.0.0
@@ -18602,12 +18601,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.14.0, qs@npm:^6.14.0":
+"qs@npm:^6.14.0":
   version: 6.14.0
   resolution: "qs@npm:6.14.0"
   dependencies:
     side-channel: ^1.1.0
   checksum: 189b52ad4e9a0da1a16aff4c58b2a554a8dad9bd7e287c7da7446059b49ca2e33a49e570480e8be406b87fccebf134f51c373cbce36c8c83859efa0c9b71d635
+  languageName: node
+  linkType: hard
+
+"qs@npm:~6.14.1":
+  version: 6.14.1
+  resolution: "qs@npm:6.14.1"
+  dependencies:
+    side-channel: ^1.1.0
+  checksum: 7fffab0344fd75bfb6b8c94b8ba17f3d3e823d25b615900f68b473c3a078e497de8eaa08f709eaaa170eedfcee50638a7159b98abef7d8c89c2ede79291522f2
   languageName: node
   linkType: hard
 
@@ -19365,7 +19373,7 @@ __metadata:
     "@cypress/schematic": 4.3.0
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
-    cypress: 15.6.0
+    cypress: 15.9.0
     jasmine-core: 5.12.1
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
@@ -19402,7 +19410,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     jasmine-core: 5.12.1
     karma: 6.4.4
@@ -19441,7 +19449,7 @@ __metadata:
     "@eslint/js": ^9.39.1
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     puppeteer: 24.30.0
     rxjs: 7.8.2
@@ -19475,7 +19483,7 @@ __metadata:
     "@eslint/js": ^9.39.1
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     puppeteer: 24.30.0
     rxjs: 7.8.2
@@ -19636,7 +19644,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.7.3, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.2, semver@npm:^7.7.1, semver@npm:^7.7.2, semver@npm:^7.7.3":
+"semver@npm:7.7.3, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:^7.6.0, semver@npm:^7.6.2, semver@npm:^7.7.2, semver@npm:^7.7.3":
   version: 7.7.3
   resolution: "semver@npm:7.7.3"
   bin:
@@ -19946,7 +19954,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     jasmine-core: 5.12.1
     jest: 30.0.0
@@ -20680,12 +20688,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"systeminformation@npm:5.27.7":
-  version: 5.27.7
-  resolution: "systeminformation@npm:5.27.7"
+"systeminformation@npm:^5.27.14":
+  version: 5.30.5
+  resolution: "systeminformation@npm:5.30.5"
   bin:
     systeminformation: lib/cli.js
-  checksum: 3d800de2e4ac9ab2c1f3f0a29901756c3ca08ed25f541b75452b545e6eb2c8c8ef4a82f8fbf0fe25c4b0865ef9bc7f8efd7ded813acc9f22c287d4daf6141a49
+  checksum: 95de9fcc8342ee8e4abe66058a39292b7c059927f869d16aec3ee498426e2a1a95dab412d03ae88738399a9dc972d9ad2917183b5c192ce015eeae98d366b525
   conditions: (os=darwin | os=linux | os=win32 | os=freebsd | os=openbsd | os=netbsd | os=sunos | os=android)
   languageName: node
   linkType: hard
@@ -20923,7 +20931,7 @@ __metadata:
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
-    cypress: 15.6.0
+    cypress: 15.9.0
     eslint: ^9.39.1
     jasmine-core: 5.12.1
     karma: 6.4.4
