@@ -5131,13 +5131,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:4.10.5, @lerna-lite/cli@npm:^4.10.5":
-  version: 4.10.5
-  resolution: "@lerna-lite/cli@npm:4.10.5"
+"@lerna-lite/cli@npm:4.11.0, @lerna-lite/cli@npm:^4.10.5":
+  version: 4.11.0
+  resolution: "@lerna-lite/cli@npm:4.11.0"
   dependencies:
-    "@lerna-lite/core": 4.10.5
-    "@lerna-lite/init": 4.10.5
-    "@lerna-lite/npmlog": 4.10.4
+    "@lerna-lite/core": 4.11.0
+    "@lerna-lite/init": 4.11.0
+    "@lerna-lite/npmlog": 4.11.0
     dedent: ^1.7.1
     dotenv: ^17.2.3
     import-local: ^3.2.0
@@ -5158,18 +5158,18 @@ __metadata:
       optional: true
   bin:
     lerna: dist/cli.js
-  checksum: 2a7513a7c09dd57cbd7110c8121b5d24905e949a2e9b50a2e6e5214c14d3447ef0d7524b9513ed8f1af27ab75032cae363d8e11c55315da8063a4603cc641bce
+  checksum: 0b7b5b576fbd13d09430f5a9e591725f737142c7d516ff3be7a6ff5f049566db2f8697afe3d27068a8831c98ea13cb93578b852b0d3ae294e92f5862522e4f90
   languageName: node
   linkType: hard
 
-"@lerna-lite/core@npm:4.10.5":
-  version: 4.10.5
-  resolution: "@lerna-lite/core@npm:4.10.5"
+"@lerna-lite/core@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@lerna-lite/core@npm:4.11.0"
   dependencies:
     "@inquirer/expand": ^4.0.23
     "@inquirer/input": ^4.3.1
     "@inquirer/select": ^4.4.2
-    "@lerna-lite/npmlog": 4.10.4
+    "@lerna-lite/npmlog": 4.11.0
     "@npmcli/run-script": ^10.0.3
     ci-info: ^4.3.1
     dedent: ^1.7.1
@@ -5181,7 +5181,7 @@ __metadata:
     load-json-file: ^7.0.1
     npm-package-arg: ^13.0.2
     p-map: ^7.0.4
-    p-queue: ^9.0.1
+    p-queue: ^9.1.0
     semver: ^7.7.3
     slash: ^5.1.0
     tinyglobby: ^0.2.15
@@ -5191,25 +5191,25 @@ __metadata:
     write-package: ^7.2.0
     yaml: ^2.8.2
     zeptomatch: ^2.1.0
-  checksum: 670833cbc594c274656f555c9311c3a93450a84b541233ae1204615b9c0f14fc5f6b1ed2c205dbacc0ca0fd308476afa701ca5194415b96eddd6a65cbef1c7c3
+  checksum: 4e800850807ba07870273477c0b478af8a4851b561cb7d904c0d96abec83e244194c6a7523e9c3a5fe72f17d0819ec6f738ccf1f8961afb802789f59a21b4e58
   languageName: node
   linkType: hard
 
-"@lerna-lite/init@npm:4.10.5":
-  version: 4.10.5
-  resolution: "@lerna-lite/init@npm:4.10.5"
+"@lerna-lite/init@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@lerna-lite/init@npm:4.11.0"
   dependencies:
-    "@lerna-lite/core": 4.10.5
+    "@lerna-lite/core": 4.11.0
     fs-extra: ^11.3.3
     p-map: ^7.0.4
     write-json-file: ^7.0.0
-  checksum: 09fc72f35fe8cf5339838eca2f5f16b9feee5bd7db7db6a3ff8d4ddafbcfe8a7d07e17feda5c7644807827d70d6e1c0150ec7c5def43142f3982c0091f79a617
+  checksum: 70fe6f9726bc881ff9b0ca04e7aced9a927b18d9f70778626888ddba3c0d9c134124c317f120cd60740249bfd9ffed650b6be563c72b0dd18dae7a5aeb5658ec
   languageName: node
   linkType: hard
 
-"@lerna-lite/npmlog@npm:4.10.4":
-  version: 4.10.4
-  resolution: "@lerna-lite/npmlog@npm:4.10.4"
+"@lerna-lite/npmlog@npm:4.11.0":
+  version: 4.11.0
+  resolution: "@lerna-lite/npmlog@npm:4.11.0"
   dependencies:
     aproba: ^2.1.0
     fast-string-width: ^3.0.2
@@ -5218,18 +5218,18 @@ __metadata:
     signal-exit: ^4.1.0
     tinyrainbow: ^3.0.3
     wide-align: ^1.1.5
-  checksum: 2f294a8b60d567e17476eea23d9dd6c01bcc93c285befbb5ef9787634802e78f852788ea19acdd90a780e6e4a67eb51b6818cf00aa58f0cc02c9dd240267a92d
+  checksum: 4ca89f2e6bbdc5bc445f1ad54cce10c5ceb984bc9af0f1f0db22a256f551c9c4d0fee9853c92be29450ee5b87086fb3a6751a58e2f520c7e2d5d0494d18f2522
   languageName: node
   linkType: hard
 
 "@lerna-lite/publish@npm:^4.10.5":
-  version: 4.10.5
-  resolution: "@lerna-lite/publish@npm:4.10.5"
+  version: 4.11.1
+  resolution: "@lerna-lite/publish@npm:4.11.1"
   dependencies:
-    "@lerna-lite/cli": 4.10.5
-    "@lerna-lite/core": 4.10.5
-    "@lerna-lite/npmlog": 4.10.4
-    "@lerna-lite/version": 4.10.5
+    "@lerna-lite/cli": 4.11.0
+    "@lerna-lite/core": 4.11.0
+    "@lerna-lite/npmlog": 4.11.0
+    "@lerna-lite/version": 4.11.1
     "@npmcli/arborist": ^9.1.9
     "@npmcli/package-json": ^7.0.4
     byte-size: ^9.0.1
@@ -5248,21 +5248,21 @@ __metadata:
     pacote: ^21.0.4
     semver: ^7.7.3
     ssri: ^13.0.0
-    tar: ^7.5.2
+    tar: ^7.5.3
     tinyglobby: ^0.2.15
     tinyrainbow: ^3.0.3
-  checksum: a300c0b0084912d7ea9a426ae2b6ee19341d3dad7af7dbf634c0889675abdde0e34b7e896cd608fe3ce4ad517c364aa670154f40fac07a883f3031a652318a8e
+  checksum: 58a48dd770aaa04173b49362557e302045f9594069a1d7888f0bc6900a6e05ad4f8e057b0e18e117a7e7b56c79c25c83ff4c9c157f549ea08e4c6b8135c17047
   languageName: node
   linkType: hard
 
-"@lerna-lite/version@npm:4.10.5":
-  version: 4.10.5
-  resolution: "@lerna-lite/version@npm:4.10.5"
+"@lerna-lite/version@npm:4.11.1":
+  version: 4.11.1
+  resolution: "@lerna-lite/version@npm:4.11.1"
   dependencies:
     "@conventional-changelog/git-client": ^2.5.1
-    "@lerna-lite/cli": 4.10.5
-    "@lerna-lite/core": 4.10.5
-    "@lerna-lite/npmlog": 4.10.4
+    "@lerna-lite/cli": 4.11.0
+    "@lerna-lite/core": 4.11.0
+    "@lerna-lite/npmlog": 4.11.0
     "@octokit/plugin-enterprise-rest": ^6.0.1
     "@octokit/rest": ^22.0.1
     conventional-changelog: ^7.1.1
@@ -5288,7 +5288,7 @@ __metadata:
     uuid: ^13.0.0
     write-json-file: ^7.0.0
     zeptomatch: ^2.1.0
-  checksum: da43830e6791a934293b902a1f31f859c5d0e3b7d33f5499c4a22ded772c596e39e6dd618b391971d1bb9cf2756a649291c817a02ec877775280097322bff659
+  checksum: 4880baf6b66053780d9c039df9defeb514afcfa8a2483c8b4446fb409a0cbfac506d65d714fa2b51978130cff7580646b337b8973dd2a5e731b8e54e584a46a8
   languageName: node
   linkType: hard
 
@@ -17527,7 +17527,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"p-queue@npm:^9.0.1":
+"p-queue@npm:^9.1.0":
   version: 9.1.0
   resolution: "p-queue@npm:9.1.0"
   dependencies:
@@ -20591,6 +20591,19 @@ __metadata:
     minizlib: ^3.1.0
     yallist: ^5.0.0
   checksum: 192559b0e7af17d57c7747592ef22c14d5eba2d9c35996320ccd20c3e2038160fe8d928fc5c08b2aa1b170c4d0a18c119441e81eae8f227ca2028d5bcaa6bf23
+  languageName: node
+  linkType: hard
+
+"tar@npm:^7.5.3":
+  version: 7.5.6
+  resolution: "tar@npm:7.5.6"
+  dependencies:
+    "@isaacs/fs-minipass": ^4.0.0
+    chownr: ^3.0.0
+    minipass: ^7.1.2
+    minizlib: ^3.1.0
+    yallist: ^5.0.0
+  checksum: 3d0c4940b78908cf7a796fcc7c05a804f5019e74526cbce7a094d381983393a994ae7521830f36156c369bc8a1e2da0dba8f41e9eb8eb090fce1c2a2025bc505
   languageName: node
   linkType: hard
 
