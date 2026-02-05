@@ -1,0 +1,17 @@
+name: Auto Approve
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    if: |
+      github.actor == 'just-jeb' ||
+      github.actor == 'renovate[bot]' ||
+      github.actor == 'allcontributors[bot]'
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: hmarr/auto-approve-action@v4
