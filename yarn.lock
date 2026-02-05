@@ -6345,9 +6345,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@puppeteer/browsers@npm:2.11.2":
-  version: 2.11.2
-  resolution: "@puppeteer/browsers@npm:2.11.2"
+"@puppeteer/browsers@npm:2.12.0":
+  version: 2.12.0
+  resolution: "@puppeteer/browsers@npm:2.12.0"
   dependencies:
     debug: ^4.4.3
     extract-zip: ^2.0.1
@@ -6358,7 +6358,7 @@ __metadata:
     yargs: ^17.7.2
   bin:
     browsers: lib/cjs/main-cli.js
-  checksum: 5411b6e59a2fceed4fa3220d747f5b69f913e46db684655c218dbbc7369b4eedbbc23faee563a731aa6f86a5a389a722e6146b659e78780ba4fd510cf78407a9
+  checksum: 8b65d45c8a9b17dfca8395317a07a5575b198aa193c9f92ecba0d834e88e17167550e9b9c3edcf52518373cd411567c167df16084aae324f7b4507e98ce4d27e
   languageName: node
   linkType: hard
 
@@ -9542,15 +9542,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromium-bidi@npm:13.0.1":
-  version: 13.0.1
-  resolution: "chromium-bidi@npm:13.0.1"
+"chromium-bidi@npm:13.1.0":
+  version: 13.1.0
+  resolution: "chromium-bidi@npm:13.1.0"
   dependencies:
     mitt: ^3.0.1
+    puppeteer: ^24.36.0
     zod: ^3.24.1
   peerDependencies:
     devtools-protocol: "*"
-  checksum: 4e47640bd09b16440ce23a14f75887b8ee43cd272b8cac159760d42c49f44e2f2622488af63a7c304f130b81ec022e4cd15bb832411b2ea02fed9986258ed39b
+  checksum: 85a44472e9e0586c8862e05699cc8a626508921d2d2e8074f37aaae00304b66f33c9cf265e25fbc910bc33e5a35b30dda9637051bc80fc021a4e1b26e7c6c294
   languageName: node
   linkType: hard
 
@@ -10806,10 +10807,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"devtools-protocol@npm:0.0.1551306":
-  version: 0.0.1551306
-  resolution: "devtools-protocol@npm:0.0.1551306"
-  checksum: 0116685433e21f3fb10acd68ee3337aed1586c95784e61d506d8d5b9133150ce4ce25a92f3e2b0d7635e2c8e9eed053e436b5703750f1952542d15ac432d15c2
+"devtools-protocol@npm:0.0.1566079":
+  version: 0.0.1566079
+  resolution: "devtools-protocol@npm:0.0.1566079"
+  checksum: 681d2699ea3d0f6507d35b03730aeb706df055d05f3993e794e187d9b407c8d40bf60339fd334c0d33269da0dfb2ff01742ef2b03ee96f7e92ae526c14237068
   languageName: node
   linkType: hard
 
@@ -12817,7 +12818,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.2.0
-    puppeteer: 24.36.1
+    puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -18459,34 +18460,34 @@ __metadata:
   languageName: node
   linkType: hard
 
-"puppeteer-core@npm:24.36.1":
-  version: 24.36.1
-  resolution: "puppeteer-core@npm:24.36.1"
+"puppeteer-core@npm:24.37.0":
+  version: 24.37.0
+  resolution: "puppeteer-core@npm:24.37.0"
   dependencies:
-    "@puppeteer/browsers": 2.11.2
-    chromium-bidi: 13.0.1
+    "@puppeteer/browsers": 2.12.0
+    chromium-bidi: 13.1.0
     debug: ^4.4.3
-    devtools-protocol: 0.0.1551306
+    devtools-protocol: 0.0.1566079
     typed-query-selector: ^2.12.0
     webdriver-bidi-protocol: 0.4.0
     ws: ^8.19.0
-  checksum: 00221534c72394b825b645716751b002279da36dc9067b2e6801c0dc095f7c32a797ed39b9a5f129eb6f74acdb86ece3be95903dc7693da667f443ff33b97b7b
+  checksum: f107c7dcdde404622b7390be59e0d0d471fd3707fc2c8a8d37a430ef66e2cae752a94680de1799a1eff8e53b5cef895c8c257ab92ba4ee570f4195895283e7c9
   languageName: node
   linkType: hard
 
-"puppeteer@npm:24.36.1":
-  version: 24.36.1
-  resolution: "puppeteer@npm:24.36.1"
+"puppeteer@npm:24.37.0, puppeteer@npm:^24.36.0":
+  version: 24.37.0
+  resolution: "puppeteer@npm:24.37.0"
   dependencies:
-    "@puppeteer/browsers": 2.11.2
-    chromium-bidi: 13.0.1
+    "@puppeteer/browsers": 2.12.0
+    chromium-bidi: 13.1.0
     cosmiconfig: ^9.0.0
-    devtools-protocol: 0.0.1551306
-    puppeteer-core: 24.36.1
+    devtools-protocol: 0.0.1566079
+    puppeteer-core: 24.37.0
     typed-query-selector: ^2.12.0
   bin:
     puppeteer: lib/cjs/puppeteer/node/cli.js
-  checksum: 3efb73a448099e12bf57217d031f072cb41eeaa4517d0276b2f2e504e40675a61295d09f5209d8a59b2d3e6dc9e4baf84cf350cf60bd7284c8b0f4432aecc0fd
+  checksum: bde0eb3b3f1bc2afc28234f0ead77ffb2f1da9edef3392bbdfacb8d7df3d58e27aaa4134c627fd86f2eeb517cf1bc9d84d406c914a5305156744e22f7bc06ca5
   languageName: node
   linkType: hard
 
@@ -19306,7 +19307,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.2.0
-    puppeteer: 24.36.1
+    puppeteer: 24.37.0
     rxjs: 7.8.2
     tslib: 2.8.1
     typescript: 5.9.3
@@ -19344,7 +19345,7 @@ __metadata:
     karma-coverage: 2.2.1
     karma-jasmine: 5.1.0
     karma-jasmine-html-reporter: 2.2.0
-    puppeteer: 24.36.1
+    puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -19377,7 +19378,7 @@ __metadata:
     angular-eslint: 20.7.0
     cypress: 15.10.0
     eslint: ^9.39.1
-    puppeteer: 24.36.1
+    puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -19411,7 +19412,7 @@ __metadata:
     angular-eslint: 20.7.0
     cypress: 15.10.0
     eslint: ^9.39.1
-    puppeteer: 24.36.1
+    puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
