@@ -951,6 +951,35 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular/cli@npm:21.1.1":
+  version: 21.1.1
+  resolution: "@angular/cli@npm:21.1.1"
+  dependencies:
+    "@angular-devkit/architect": 0.2101.1
+    "@angular-devkit/core": 21.1.1
+    "@angular-devkit/schematics": 21.1.1
+    "@inquirer/prompts": 7.10.1
+    "@listr2/prompt-adapter-inquirer": 3.0.5
+    "@modelcontextprotocol/sdk": 1.25.2
+    "@schematics/angular": 21.1.1
+    "@yarnpkg/lockfile": 1.1.0
+    algoliasearch: 5.46.2
+    ini: 6.0.0
+    jsonc-parser: 3.3.1
+    listr2: 9.0.5
+    npm-package-arg: 13.0.2
+    pacote: 21.0.4
+    parse5-html-rewriting-stream: 8.0.0
+    resolve: 1.22.11
+    semver: 7.7.3
+    yargs: 18.0.0
+    zod: 4.3.5
+  bin:
+    ng: bin/ng.js
+  checksum: d0dccae203f4118b5a9736fe0ab2beffa54a5120a12f0370e74b514a459ce90cd071ed5fdd9932a43ad5e2d17053426526870e45fe099b2db44262c2b4ae179a
+  languageName: node
+  linkType: hard
+
 "@angular/cli@npm:21.1.2":
   version: 21.1.2
   resolution: "@angular/cli@npm:21.1.2"
@@ -977,35 +1006,6 @@ __metadata:
   bin:
     ng: bin/ng.js
   checksum: 47cc75c834db3a9e3241e76405ebcb9701b056cc57ddd48b3ad885c97bda8c8ae1b11c63e962ecf491bc5b7a037536a3476baa6aefd809c77d31838462bf59b2
-  languageName: node
-  linkType: hard
-
-"@angular/cli@npm:^21.1.1":
-  version: 21.1.1
-  resolution: "@angular/cli@npm:21.1.1"
-  dependencies:
-    "@angular-devkit/architect": 0.2101.1
-    "@angular-devkit/core": 21.1.1
-    "@angular-devkit/schematics": 21.1.1
-    "@inquirer/prompts": 7.10.1
-    "@listr2/prompt-adapter-inquirer": 3.0.5
-    "@modelcontextprotocol/sdk": 1.25.2
-    "@schematics/angular": 21.1.1
-    "@yarnpkg/lockfile": 1.1.0
-    algoliasearch: 5.46.2
-    ini: 6.0.0
-    jsonc-parser: 3.3.1
-    listr2: 9.0.5
-    npm-package-arg: 13.0.2
-    pacote: 21.0.4
-    parse5-html-rewriting-stream: 8.0.0
-    resolve: 1.22.11
-    semver: 7.7.3
-    yargs: 18.0.0
-    zod: 4.3.5
-  bin:
-    ng: bin/ng.js
-  checksum: d0dccae203f4118b5a9736fe0ab2beffa54a5120a12f0370e74b514a459ce90cd071ed5fdd9932a43ad5e2d17053426526870e45fe099b2db44262c2b4ae179a
   languageName: node
   linkType: hard
 
@@ -4155,7 +4155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.39.2, @eslint/js@npm:^9.39.1":
+"@eslint/js@npm:9.39.2":
   version: 9.39.2
   resolution: "@eslint/js@npm:9.39.2"
   checksum: 362aa447266fa5717e762b2b252f177345cb0d7b2954113db9773b3a28898f7cbbc807e07f8078995e6da3f62791f7c5fa2c03517b7170a8e76613cf7fd83c92
@@ -7256,6 +7256,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:30.0.0":
+  version: 30.0.0
+  resolution: "@types/jest@npm:30.0.0"
+  dependencies:
+    expect: ^30.0.0
+    pretty-format: ^30.0.0
+  checksum: d80c0c30b2689693a2b5f5975ccc898fc194acd5a947ad3bc728c6f2d4ffad53da021b1c39b0c939d3ed4ee945c74f4fda800b6f1bd6283170e52cd3fe798411
+  languageName: node
+  linkType: hard
+
 "@types/jest@npm:^29.5.1":
   version: 29.5.14
   resolution: "@types/jest@npm:29.5.14"
@@ -7263,16 +7273,6 @@ __metadata:
     expect: ^29.0.0
     pretty-format: ^29.0.0
   checksum: 18dba4623f26661641d757c63da2db45e9524c9be96a29ef713c703a9a53792df9ecee9f7365a0858ddbd6440d98fe6b65ca67895ca5884b73cbc7ffc11f3838
-  languageName: node
-  linkType: hard
-
-"@types/jest@npm:^30.0.0":
-  version: 30.0.0
-  resolution: "@types/jest@npm:30.0.0"
-  dependencies:
-    expect: ^30.0.0
-    pretty-format: ^30.0.0
-  checksum: d80c0c30b2689693a2b5f5975ccc898fc194acd5a947ad3bc728c6f2d4ffad53da021b1c39b0c939d3ed4ee945c74f4fda800b6f1bd6283170e52cd3fe798411
   languageName: node
   linkType: hard
 
@@ -9005,7 +9005,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": ^21.1.1
+    "@angular/cli": 21.1.1
   languageName: unknown
   linkType: soft
 
@@ -11866,7 +11866,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.39.1":
+"eslint@npm:9.39.2":
   version: 9.39.2
   resolution: "eslint@npm:9.39.2"
   dependencies:
@@ -12805,12 +12805,12 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     html-webpack-plugin: 5.6.6
     jasmine-core: 5.13.0
     karma: 6.4.4
@@ -14553,7 +14553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^30.0.0":
+"jest-environment-jsdom@npm:30.2.0":
   version: 30.2.0
   resolution: "jest-environment-jsdom@npm:30.2.0"
   dependencies:
@@ -15274,7 +15274,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^26.0.0, jsdom@npm:^26.1.0":
+"jsdom@npm:26.1.0, jsdom@npm:^26.1.0":
   version: 26.1.0
   resolution: "jsdom@npm:26.1.0"
   dependencies:
@@ -16770,15 +16770,15 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
-    "@types/jest": ^30.0.0
+    "@eslint/js": 9.39.2
+    "@types/jest": 30.0.0
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     jest: 30.2.0
-    jest-environment-jsdom: ^30.0.0
-    jsdom: ^26.0.0
+    jest-environment-jsdom: 30.2.0
+    jsdom: 26.1.0
     ng-packagr: 21.1.0
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -19333,12 +19333,12 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     jasmine-core: 5.13.0
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
@@ -19373,11 +19373,11 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -19407,11 +19407,11 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     puppeteer: 24.37.0
     rxjs: 7.8.2
     ts-node: 10.9.2
@@ -19877,17 +19877,17 @@ __metadata:
     "@angular/platform-browser": 21.1.3
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     jasmine-core: 5.13.0
     jest: 30.2.0
-    jest-environment-jsdom: ^30.0.0
+    jest-environment-jsdom: 30.2.0
     jest-junit: 16.0.0
-    jsdom: ^26.0.0
+    jsdom: 26.1.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -20867,12 +20867,12 @@ __metadata:
     "@angular/platform-browser-dynamic": 21.1.3
     "@angular/router": 21.1.3
     "@cypress/schematic": 4.3.0
-    "@eslint/js": ^9.39.1
+    "@eslint/js": 9.39.2
     "@types/jasmine": 5.1.5
     "@types/node": 20.17.12
     angular-eslint: 20.7.0
     cypress: 15.10.0
-    eslint: ^9.39.1
+    eslint: 9.39.2
     jasmine-core: 5.13.0
     karma: 6.4.4
     karma-chrome-launcher: 3.2.0
