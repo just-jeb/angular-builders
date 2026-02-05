@@ -25,7 +25,7 @@ jobs:
       matrix: ${{ steps.discover.outputs.matrix }}
       has_tests: ${{ steps.discover.outputs.has_tests }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - run: git fetch origin master:master || true
@@ -84,7 +84,7 @@ jobs:
       fail-fast: false
       matrix: ${{ fromJson(needs.build.outputs.matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
         with:
           node-version: 20.19.0
@@ -121,7 +121,7 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
           fetch-depth: 0
