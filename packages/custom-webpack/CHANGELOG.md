@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0-beta.0...@angular-builders/custom-webpack@21.1.0-beta.1) (2026-02-15)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## 21.1.0-beta.0 (2026-01-18)
 
 * feat(ci): add Turborepo for affected detection (#1981) ([884098b](https://github.com/just-jeb/angular-builders/commit/884098b)), closes [#1981](https://github.com/just-jeb/angular-builders/issues/1981)

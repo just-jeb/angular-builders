@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.0...@angular-builders/jest@21.0.4-beta.1) (2026-02-15)
+
+### Bug Fixes
+
+* **jest:** matchMedia mock survives resetMocks option ([#1999](https://github.com/just-jeb/angular-builders/issues/1999)) ([7f2e4b4](https://github.com/just-jeb/angular-builders/commit/7f2e4b411a2d9e5b1702808124bd205ca5d676c2)), closes [#1983](https://github.com/just-jeb/angular-builders/issues/1983)
+
 ## <small>21.0.4-beta.0 (2026-01-16)</small>
 
 * ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
