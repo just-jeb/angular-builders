@@ -22,6 +22,7 @@
   },
   "scripts": {
     "build:packages": "rm -rf .turbo/runs && turbo build --filter='@angular-builders/*...[origin/master]' --summarize",
+    "build:packages:all": "rm -rf .turbo/runs && turbo build --filter='@angular-builders/*' --summarize",
     "test:local": "node scripts/run-local-tests.js",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",

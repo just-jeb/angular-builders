@@ -100,7 +100,7 @@ The CI discovers all `packages/*/tests/integration.js` files and creates a matri
 
 ## CI Workflow
 
-The CI uses **Turborepo** for affected detection, building and testing only packages that have changed.
+The CI uses **Turborepo** for build orchestration. On **pull requests**, affected detection builds and tests only packages that have changed. On **master events** (push or workflow_dispatch), all packages are built to ensure complete `dist` artifacts for publishing (see #2026).
 
 ```
 GitHub Actions Workflow (.github/workflows/ci.yml)
@@ -109,8 +109,9 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
    ├── Restore dependencies cache (node_modules, .yarn, ~/.cache/Cypress, ~/.cache/puppeteer)
    ├── Install dependencies (only if cache miss)
    ├── Pre-download Puppeteer Chrome binary (for Karma tests)
-   ├── turbo build --filter='@angular-builders/*...[origin/master]' --summarize
-   │   └── Only builds packages affected by the change
+   ├── Build: on PR → yarn build:packages (affected only); on master → yarn build:packages:all
+   │   └── PR: turbo build --filter='@angular-builders/*...[origin/master]' --summarize
+   │   └── Master: turbo build --filter='@angular-builders/*' --summarize (all packages)
    │   └── Includes Layer 1 (UT) + Layer 2 (schema tests)
    │   └── Creates .turbo/runs/*.json summary file
    ├── Discover tests (reads turbo summary)
@@ -139,7 +140,7 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
 
 **Key Benefits**:
 
-- **Affected Detection**: Only builds/tests packages changed by the PR
+- **Affected Detection (PRs)**: Only builds/tests packages changed by the PR. On master, all packages are built for publish safety.
 - **Parallelism**: All integration tests run in parallel (limited by GHA runner limits)
 - **Isolation**: Each matrix job runs in its own environment (no port conflicts)
 - **Local parity**: Same test definitions run locally via `yarn test:local`
@@ -215,16 +216,16 @@ The publish job uses **OIDC (OpenID Connect)** for authentication, which means:
 
 ## Turborepo and Affected Detection
 
-The CI uses Turborepo to detect which packages are affected by changes and only build/test those.
+The CI uses Turborepo for build orchestration. Behavior depends on the event:
+
+- **Pull requests**: Affected detection — only packages changed (vs. `origin/master`) are built and tested.
+- **Master events** (push or workflow_dispatch): All `@angular-builders/*` packages are built (`yarn build:packages:all`) so the publish job always has complete `dist` artifacts.
 
 ### How It Works
 
-Turborepo uses git diff to compare the current branch against the base branch and determines which workspace packages have changed. It then:
+**On PRs**: Turborepo compares the current branch to `origin/master` and determines which workspace packages have changed. It then builds only those packages (and their dependencies), creates `.turbo/runs/*.json`, and the test discovery script filters integration tests to affected packages.
 
-1. Builds only affected packages (and their dependencies)
-2. Creates a summary file (`.turbo/runs/*.json`) with metadata about the build
-3. The test discovery script (`scripts/discover-tests.js`) reads this summary to extract affected packages
-4. Filters integration tests to only run those for affected packages
+**On master**: The workflow runs `yarn build:packages:all`, which builds all `@angular-builders/*` packages (no git filter). The same summary and test discovery flow runs, so the full test matrix runs before publish.
 
 ### Configuration
 
