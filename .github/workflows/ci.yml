@@ -58,7 +58,14 @@ jobs:
               (cd "$app" && node -e "try { require('puppeteer').executablePath(); } catch(e) {}" || true)
             fi
           done
-      - run: yarn build:packages
+      # On master events (push/workflow_dispatch), build all packages to ensure dist
+      # is present for publishing. On PRs, use affected-only filter. (see #2026)
+      - run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            yarn build:packages
+          else
+            yarn build:packages:all
+          fi
       - id: discover
         run: |
           MATRIX=$(node scripts/discover-tests.js)
