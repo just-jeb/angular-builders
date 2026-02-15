@@ -118,11 +118,8 @@ jobs:
           ${{ matrix.command }}
 
   publish:
-    needs: integration
-    if: |
-      always() &&
-      (needs.integration.result == 'success' || needs.integration.result == 'skipped') &&
-      (github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch')
+    needs: [build, integration]
+    if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
