@@ -129,7 +129,7 @@ GitHub Actions Workflow (.github/workflows/ci.yml)
        └── ${{ matrix.command }}
 
 3. Publish Job (if on master or workflow_dispatch)
-   └── Waits for integration (success or skipped)
+   └── Requires build and integration to succeed
    └── Only runs on push to master or manual workflow_dispatch
    └── Restore dependencies cache (fail if cache miss)
    └── Download dist artifacts
