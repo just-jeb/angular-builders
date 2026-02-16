@@ -4,13 +4,13 @@
 
 ## At a Glance
 
-|                  |                                                                                                                                   |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Type**         | Self-contained Package                                                                                                            |
-| **Owns**         | `@angular-builders/custom-webpack` -- browser, server, dev-server, karma, and extract-i18n builders with webpack config injection |
-| **Does NOT own** | The webpack build pipeline itself (delegated to `@angular-devkit/build-angular`), esbuild-based builds                            |
+|                  |                                                                                                                                                          |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Type**         | Self-contained Package                                                                                                                                   |
+| **Owns**         | `@angular-builders/custom-webpack` -- browser, server, dev-server, karma, and extract-i18n builders with webpack config injection                        |
+| **Does NOT own** | The webpack build pipeline itself (delegated to `@angular-devkit/build-angular`), esbuild-based builds                                                   |
 | **Lifecycle**    | Maintained as long as Angular supports webpack builders. When Angular drops webpack, this package follows suit. (Source: SME interview, Jeb, 2026-02-16) |
-| **Users**        | Angular developers who need custom webpack configuration without ejecting from the CLI                                            |
+| **Users**        | Angular developers who need custom webpack configuration without ejecting from the CLI                                                                   |
 
 ## Navigation
 
@@ -60,9 +60,9 @@ Unlike `custom-esbuild`, this package resolves schemas directly via Node resolut
 
 ## Invariants
 
-**MUST:** The webpack config merge uses `webpack-merge`'s `mergeWithRules` with `DEFAULT_MERGE_RULES` that match loaders by `test` and `use.loader`, merging `use.options`. This approximates the old `smart` merge behavior.
+**MUST:** The webpack config merge uses `webpack-merge`'s `mergeWithRules` with `DEFAULT_MERGE_RULES` (in `src/webpack-config-merger.ts`) that match loaders by `test: Match` and `use.loader: Match`, merging `use.options: Merge`. These were hardcoded when migrating from the deprecated `smartStrategy` (webpack-merge v5) to `mergeWithRules` (webpack-merge v6) in commit `5d8194c` (Dec 2020). Changing these defaults breaks builds: removing `test: Match` causes rules with different test patterns to merge incorrectly; removing `use.loader: Match` prevents loader option merging by name, creating duplicate loaders; changing `options: Merge` to `Append` or `Replace` loses Angular's critical defaults. Evidence in `src/webpack-config-merger.spec.ts` line 177. (Source: code investigation, 2026-02-16)
 
-**MUST:** Plugin merging uses lodash `merge` by default (deep merge matching plugins by constructor name). With `replaceDuplicatePlugins: true`, user plugins replace base plugins entirely instead of merging.
+**MUST:** Plugin merging uses lodash `merge` by default (deep merge matching plugins by `constructor.name` string equality). Three methods exist (see `src/webpack-config-merger.ts` lines 26-39): (1) **Default merge** -- plugins of the same class have options deep-merged. (2) **Complete replacement** -- set `replaceDuplicatePlugins: true`; user plugin replaces the matching base plugin entirely. (3) **Factory function** -- bypasses merge entirely, user has full programmatic control. Spec tests at lines 6-33 and 77-118 confirm these behaviors. (Source: code investigation, 2026-02-16)
 
 **MUST NEVER:** Add custom properties to schema extensions without also adding them to the shared `src/schema.ext.json` (for properties shared across browser/server/karma) or the builder-specific `src/{builder}/schema.ext.json`.
 
@@ -106,13 +106,16 @@ module.exports = {
 
 ## Pitfalls
 
-| Trap                                                                 | Reality                                                                                                                                                                                                                                          |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| "Plugin merge is straightforward deep merge"                         | Plugins are matched by `constructor.name`. Unmatched base plugins are prepended, matched plugins are lodash-deep-merged (or replaced if `replaceDuplicatePlugins: true`). The ordering is: unmatched-base, then custom (with matches merged in). |
-| "The `dev-server` builder reads webpack config from its own options" | No -- `executeBrowserBasedBuilder` resolves the `buildTarget` and reads `customWebpackConfig` from THAT target's options. The dev-server's own options only control dev-server behavior.                                                         |
-| "`mergeStrategies` still works"                                      | Deprecated since v11. Only `mergeRules` is supported (using `webpack-merge` v6 `mergeWithRules`).                                                                                                                                                |
-| "The `verbose` option logs the full webpack config"                  | It only logs specific properties listed in `verbose.properties`, to the depth specified by `verbose.serializationDepth`. Angular's base webpack config is enormous.                                                                              |
-| "`indexTransform` receives just the HTML string"                     | The transform function signature is `(target: Target, indexHtml: string) => Promise<string>` -- note `target` comes first, unlike most Angular transforms.                                                                                       |
+| Trap                                                                 | Reality                                                                                                                                                                                                                                                                                    |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| "Plugin merge is straightforward deep merge"                         | Plugins are matched by `constructor.name`. Unmatched base plugins are prepended, matched plugins are lodash-deep-merged (or replaced if `replaceDuplicatePlugins: true`). The ordering is: unmatched-base, then custom (with matches merged in).                                           |
+| "Exporting a plugin replaces the base plugin"                        | No -- by default, options are quietly deep-merged. Users must set `replaceDuplicatePlugins: true` for actual replacement. Also, `replaceDuplicatePlugins` only affects plugins with matching `constructor.name` in both configs, not all plugins. (Source: code investigation, 2026-02-16) |
+| "Plugin constructor defaults are safe"                               | Plugin constructor defaults in the user's `new Plugin({...})` can silently override Angular's settings during the deep merge (README warns about this at line 383). Be explicit about which options you intend to set. (Source: code investigation, 2026-02-16)                            |
+| "Multiple instances of the same plugin class merge correctly"        | When both configs have multiple instances of the same class, matching is ambiguous and may clobber data. Avoid duplicate plugin instances across base and custom configs. (Source: code investigation, 2026-02-16)                                                                         |
+| "The `dev-server` builder reads webpack config from its own options" | No -- `executeBrowserBasedBuilder` resolves the `buildTarget` and reads `customWebpackConfig` from THAT target's options. The dev-server's own options only control dev-server behavior.                                                                                                   |
+| "`mergeStrategies` still works"                                      | Deprecated since v11. Only `mergeRules` is supported (using `webpack-merge` v6 `mergeWithRules`).                                                                                                                                                                                          |
+| "The `verbose` option logs the full webpack config"                  | It only logs specific properties listed in `verbose.properties`, to the depth specified by `verbose.serializationDepth`. Angular's base webpack config is enormous.                                                                                                                        |
+| "`indexTransform` receives just the HTML string"                     | The transform signature is `(target, indexHtml) => string                                                                                                                                                                                                                                  | Promise<string>`(see`src/transform-factories.ts`lines 32-50).`target`comes first because the most common use case is build-target-specific transformations (dev vs prod config). The README (lines 489-491) calls the first parameter`options`, but what is actually passed is the Architect `Target` object (project, target, configuration), not builder options. (Source: code investigation, 2026-02-16) |
 
 ## Testing
 

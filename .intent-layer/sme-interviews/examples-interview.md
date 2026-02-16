@@ -39,7 +39,7 @@ last_merged: 2026-02-16
 
 ### What's the canonical way to add a new example app for a new builder variant?
 
-> No answer provided — check existing examples for patterns.
+> Pattern from existing examples: (1) Create directory at `examples/{builder-name}/{variant-name}/` (e.g., `examples/custom-webpack/sanity-app-esm/`). (2) Initialize as a valid Angular workspace with `package.json`, `angular.json`, `tsconfig.json`, and `src/` directory. (3) It's auto-discovered by root workspace via Yarn 3 `"workspaces": ["packages/*", "examples/*"]`. (4) Add test entries to `packages/{builder-name}/tests/integration.js` with unique `id`, `app` path, and `command`. (5) Consider adding both CJS and ESM variants to cover module format edge cases (a historically fragile area). Key constraints: example apps must be independent (no cross-app deps), must never import from `packages/*/src/` directly (use built packages via workspace linking), and test commands must be runnable via `sh -c` from the app directory. (Source: code investigation, 2026-02-16)
 
 ## Tribal Knowledge
 

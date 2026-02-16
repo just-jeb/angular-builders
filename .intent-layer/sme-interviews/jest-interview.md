@@ -47,13 +47,13 @@ last_merged: 2026-02-16
 
 ### What approaches to zone.js setup have been tried and abandoned?
 
-> No specific answer — would need to check git history.
+> Four iterations found in git history: (1) **Pre-v16** — `import 'jest-preset-angular'` plus global mocks. (2) **v16-v18** — switched to `import 'jest-preset-angular/setup-jest'`. (3) **v19-v20** — explicit `setupZoneTestEnv()` from `jest-preset-angular/setup-env/zone`, always zone-based. (4) **v21+** — split into `setup-zoneless.ts` and `setup-zone.ts` to support Angular 21's zoneless default. The zoneless/zone split was driven by Angular's shift to zoneless as the default change detection strategy. Users upgrading to v21 must set `zoneless: false` if their app still uses zone.js. (Source: code investigation, 2026-02-16)
 
 ## Tribal Knowledge
 
 ### What do users most commonly get wrong when migrating from Karma to this Jest builder?
 
-> Would need to check migration-related issues to identify patterns.
+> Common mistakes from code analysis: (1) Not updating `tsconfig.spec.json` — forgetting to replace `jasmine` with `jest` in `types` array and remove Karma-specific `test.ts` from `files`. (2) Zone.js confusion post-v21 — not setting `zoneless: false` when app still uses zone.js (the default changed to `true`). (3) Configuration merge misunderstanding — not realizing `setupFilesAfterEnv` and `astTransformers` are concatenated (not replaced) during the 4-layer config merge. (4) Mock changes — expecting old mocks (`styleTransform`, `getComputedStyle`, `doctype`) that were removed in v21. (5) `resetMocks` breaking matchMedia — issue #1983, fixed by using regular function instead of `jest.fn().mockImplementation()`. (6) Not removing Karma deps and config files during migration. (Source: code investigation, 2026-02-16)
 
 ### What broke during the Jest 29 to Jest 30 upgrade? What lessons were learned?
 
@@ -65,7 +65,7 @@ last_merged: 2026-02-16
 
 ### What global mocks have been removed over time, and why?
 
-> Don't recall specifics — would need to check the folder history in git to identify which mocks were removed and why.
+> Removed in v21: `styleTransform` (jsdom missing `transform` on `document.body.style`), `getComputedStyle` (missing browser API), and `doctype` (missing document DOCTYPE) — all removed because Jest 30's jsdom supports them natively. Removed earlier (v20): `localStorage` and `sessionStorage` — Jest's jsdom already provides these. Only `matchMedia` remains in v21+ (jsdom still lacks native support). The matchMedia mock was also fixed to survive Jest's `resetMocks` option by switching from `jest.fn().mockImplementation()` to a regular function. Historical progression: pre-v16 had 6+ mocks, v16-v20 had 4, v21+ has only `matchMedia`. (Source: code investigation, 2026-02-16)
 
 ## Additional Notes
 

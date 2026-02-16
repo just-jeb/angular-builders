@@ -49,16 +49,19 @@ The `src/schemes.ts` file uses `originalSchemaPackage` to resolve `@angular/buil
 
 **MUST:** Always delegate to `@angular/build` functions (`buildApplication`, `executeDevServerBuilder`, `executeUnitTestBuilder`) -- never reimplement their logic.
 
-**MUST:** The dev-server builder MUST call `patchBuilderContext` before delegating. Without this, Angular CLI detects a non-`@angular/build:application` builder name and falls back to the Webpack dev server instead of Vite.
+**MUST:** The dev-server builder MUST call `patchBuilderContext` before delegating. The patch serves two critical functions: (1) **Server selection** -- remaps `@angular-builders/custom-esbuild:application` to `@angular/build:application` via `context.getBuilderNameForTarget()`, so Angular uses the Vite dev server instead of falling back to Webpack. (2) **Option stripping** -- intercepts `context.getTargetOptions()` to remove `plugins` and `indexHtmlTransformer` before Angular's builder receives them, preventing schema validation failures. Without this patch, `ng serve` uses the wrong server and/or fails validation. (Source: code investigation, 2026-02-16)
 
-**MUST NEVER:** Pass `plugins` or `indexHtmlTransformer` options through to Angular's builder. These are custom-esbuild-only options that must be consumed and removed before delegation. The dev-server's `patchBuilderContext` handles cleanup via `cleanBuildTargetOptions`.
+**MUST NEVER:** Pass `plugins` or `indexHtmlTransformer` options through to Angular's builder. These are custom-esbuild-only options that must be consumed and removed before delegation. The application builder passes them as separate `extensions` to `buildApplication()` (see `src/application/index.ts`). The dev-server strips them via `cleanBuildTargetOptions()` in `src/dev-server/patch-builder-context.ts`, which does `delete options.plugins; delete options.indexHtmlTransformer`. Without stripping, Angular's schema validation rejects the unknown properties. (Source: code investigation, 2026-02-16)
 
 ## Patterns
 
-**Do:** Plugins can be plain objects, arrays, or factory functions. Factories receive `(builderOptions, target)`.
+Three plugin patterns are supported (see `src/load-plugins.ts`): (Source: code investigation, 2026-02-16)
+
+**Do:** Use a factory function (recommended) -- export a function from a plain string plugin path.
 
 ```ts
-// Plugin as factory function -- gets access to builder options and target
+// Pattern 1: Factory function (string path in angular.json "plugins" array)
+// Receives 2 params: (builderOptions, target)
 export default (options: ApplicationBuilderOptions, target: Target): Plugin => ({
   name: 'my-plugin',
   setup(build) {
@@ -67,14 +70,25 @@ export default (options: ApplicationBuilderOptions, target: Target): Plugin => (
 });
 ```
 
+**Do:** Use a factory with custom options via `{path, options}` config object.
+
 ```ts
-// Plugin with options via {path, options} config
+// Pattern 2: Factory with custom options ({path, options} in angular.json)
 // angular.json: { "plugins": [{ "path": "./my-plugin.js", "options": { "key": "val" } }] }
-// Plugin file receives: (pluginOptions, builderOptions, target)
+// Receives 3 params: (pluginOptions, builderOptions, target)
 export default (pluginOptions, builderOptions, target): Plugin => ({ ... });
 ```
 
+**Do:** Export a static plugin object directly when no builder options access is needed.
+
+```ts
+// Pattern 3: Static plugin (no factory, no builder options access)
+export default { name: 'my-static-plugin', setup(build) { ... } };
+```
+
 **Don't:** Export an async factory that returns a Promise of plugins -- `loadPlugins` already `await`s the module load but does not await the factory return for the `{path, options}` form.
+
+**Don't:** Confuse parameter counts -- string paths give factories 2 params `(builderOptions, target)`, while `{path, options}` objects give factories 3 params `(pluginOptions, builderOptions, target)`. (Source: code investigation, 2026-02-16)
 
 ## Common Tasks
 
@@ -87,13 +101,16 @@ export default (pluginOptions, builderOptions, target): Plugin => ({ ... });
 
 ## Pitfalls
 
-| Trap                                          | Reality                                                                                                                                                                                                                            |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "The dev-server is just a passthrough"        | It patches `context.getBuilderNameForTarget` to map `@angular-builders/custom-esbuild` to `@angular/build:application`. Without this, Angular falls back to the Webpack dev server. See `src/dev-server/patch-builder-context.ts`. |
-| "The dev-server reads its own plugins config" | No -- it reads plugins from the **build target's** options. The dev-server config only has `middlewares`.                                                                                                                          |
-| "Unit-test builder supports Karma"            | No -- it hardcodes `runner: 'vitest'`. This is Angular's design choice -- Angular's own unit-test builder uses Vitest, and this package simply extends it. (Source: SME interview, Jeb, 2026-02-16)                                |
-| "`src/schemes.ts` resolves schemas normally"  | It uses `originalSchemaPackage` + `resolvePackagePath` to bypass `@angular/build`'s `exports` field in package.json, which does not expose internal schema files.                                                                  |
-| "Schema extension uses deep merge"            | `__REPLACE__` prefix in arrays triggers full replacement instead of merge. `__DELETE__` string value removes a property entirely. These are NOT standard lodash merge behaviors -- they are handled by `merge-schemes.ts`.         |
+| Trap                                          | Reality                                                                                                                                                                                                                             |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "The dev-server is just a passthrough"        | It patches `context.getBuilderNameForTarget` to map `@angular-builders/custom-esbuild` to `@angular/build:application`. Without this, Angular falls back to the Webpack dev server. See `src/dev-server/patch-builder-context.ts`.  |
+| "The dev-server reads its own plugins config" | No -- it reads plugins from the **build target's** options. The dev-server config only has `middlewares`.                                                                                                                           |
+| "Unit-test builder supports Karma"            | No -- it hardcodes `runner: 'vitest'`. This is Angular's design choice -- Angular's own unit-test builder uses Vitest, and this package simply extends it. (Source: SME interview, Jeb, 2026-02-16)                                 |
+| "`src/schemes.ts` resolves schemas normally"  | It uses `originalSchemaPackage` + `resolvePackagePath` to bypass `@angular/build`'s `exports` field in package.json, which does not expose internal schema files.                                                                   |
+| "Schema extension uses deep merge"            | `__REPLACE__` prefix in arrays triggers full replacement instead of merge. `__DELETE__` string value removes a property entirely. These are NOT standard lodash merge behaviors -- they are handled by `merge-schemes.ts`.          |
+| "Plugins go on the dev-server target"         | Dev-server schema only accepts `middlewares`, not `plugins`. Plugins must be configured on the application build target. The dev-server reads plugins from the build target it references. (Source: code investigation, 2026-02-16) |
+| "Plugin loading order is unpredictable"       | Plugins are loaded via `Promise.all` (parallel resolution) but output order matches declaration order in angular.json's `plugins` array. (Source: code investigation, 2026-02-16)                                                   |
+| "`.js` plugins are always CJS"                | `.js` means CJS or ESM depending on the package's `type` field. Users mixing extensions in wrong contexts is a common source of errors. Use `.cjs`/`.mjs` for explicit format. (Source: code investigation, 2026-02-16)             |
 
 ## Testing
 
