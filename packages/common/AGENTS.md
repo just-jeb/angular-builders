@@ -7,7 +7,7 @@
 |                  |                                                                              |
 | ---------------- | ---------------------------------------------------------------------------- |
 | **Type**         | Shared Kernel                                                                |
-| **Owns**         | CJS/ESM/TS module loading with ts-node registration, package path resolution |
+| **Owns**         | CJS/ESM/TS module loading with ts-node registration, package path resolution. Scope may grow if common patterns emerge across builders. (Source: SME interview, Jeb, 2026-02-16) |
 | **Does NOT own** | Builder logic, schema merging, CLI integration                               |
 | **Users**        | `custom-esbuild`, `custom-webpack`, `jest` (via `workspace:*` dependency)    |
 
@@ -32,7 +32,7 @@ Enforcement: All user-supplied module loading across the monorepo MUST go throug
 
 ## Invariants
 
-**MUST:** ts-node is registered at most once per process. A second call with a different `tsConfig` logs a warning and is silently skipped -- the first registration wins.
+**MUST:** ts-node is registered at most once per process. A second call with a different `tsConfig` logs a warning and is silently skipped -- the first registration wins. Registering with the wrong tsconfig first breaks everything. There is a known open issue related to this edge case. (Source: SME interview, Jeb, 2026-02-16)
 
 **MUST NEVER:** Call `loadModule` with a relative path. The caller is responsible for joining `workspaceRoot` with the user-provided relative path before passing it in.
 
@@ -60,6 +60,7 @@ const config = raw.default; // undefined if loadModule already unwrapped
 | "I can register ts-node with a different tsconfig for a second file" | ts-node registration is process-global and sticky. The first tsConfig wins; subsequent calls with a different tsConfig are silently ignored with a warning log.                      |
 | "ESM loading uses standard `import()`"                               | TypeScript unconditionally downlevels `import()` to `require()`. The code uses `new Function('modulePath', 'return import(modulePath)')` as a workaround. Do not "simplify" this.    |
 | "`resolvePackagePath` is just `path.join`"                           | It resolves from the package's actual installed location (via `require.resolve` on `package.json`), not from the workspace root. This matters when packages are hoisted differently. |
+| "ESM/CJS interop is straightforward" | ESM/CJS interop has been a significant pain point with multiple abandoned approaches before landing on the current implementation. Do not attempt to "simplify" the loading logic without understanding the full history of failures. (Source: SME interview, Jeb, 2026-02-16) |
 
 ## Testing
 

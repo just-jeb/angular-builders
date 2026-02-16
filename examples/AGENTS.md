@@ -1,13 +1,13 @@
 # Examples
 
-> Integration test fixtures -- Angular workspace apps used exclusively for CI and local integration testing of `@angular-builders/*` packages. You probably do not need to be here.
+> Integration test fixtures AND user-facing reference examples -- Angular workspace apps used for CI/local integration testing of `@angular-builders/*` packages, but also looked at by users for reference. You probably do not need to be here unless working on integration tests.
 
 ## At a Glance
 
 |                  |                                                                                                         |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | **Type**         | Test Fixtures Boundary                                                                                  |
-| **Owns**         | Angular app workspaces that exercise builder packages in real `ng build`/`ng test`/`ng serve` scenarios |
+| **Owns**         | Angular app workspaces that exercise builder packages in real `ng build`/`ng test`/`ng serve` scenarios. Dual purpose: test fixtures and user-facing documentation. (Source: SME interview, Jeb, 2026-02-16) |
 | **Does NOT own** | Builder logic (lives in `../packages/`), unit tests (live alongside source in each package)             |
 | **Users**        | CI pipeline, developers running integration tests locally                                               |
 
@@ -23,6 +23,8 @@
 - You are adding a new example app for a new builder or configuration variant
 
 **If you are:** fixing a builder bug, understanding builder architecture, or modifying builder logic -- go to [`../packages/AGENTS.md`](../packages/AGENTS.md) instead.
+
+**Adding a new integration test:** Usually modify an existing example app. If that cannot achieve the test goal, create a new example app. Always add the test case to the relevant `packages/{name}/tests/integration.js` file. (Source: SME interview, Jeb, 2026-02-16)
 
 ## Structure
 
@@ -59,10 +61,14 @@ Each example app is a standalone Angular workspace registered in the root `packa
 
 **MUST NEVER:** Import source code directly from `packages/*/src/`. Examples use the built packages via `dist/` (resolved through workspace linking).
 
+All example apps are independent and can be tested in any order -- there are no dependencies between them. (Source: SME interview, Jeb, 2026-02-16)
+
 ## Pitfalls
 
 | Trap                                     | Reality                                                                                                                                                                                                                                      |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "These are user-facing example projects" | They are primarily test fixtures. While they can serve as references, their configurations are designed to exercise edge cases (ESM/CJS variants, TypeScript configs, multi-project workspaces), not to be minimal getting-started examples. |
+| "These are purely user-facing example projects" | They serve dual purpose: primarily test fixtures but also user-facing references. Their configurations exercise edge cases (ESM/CJS variants, TypeScript configs, multi-project workspaces) and are not minimal getting-started examples. (Source: SME interview, Jeb, 2026-02-16) |
 | "I can run example app tests directly"   | You must build the relevant package first (`yarn build` from the package dir, or `yarn build:packages:all` from root). The examples link to `dist/`, not `src/`.                                                                             |
 | "Each example tests one thing"           | A single example app often serves multiple integration test entries with different configurations (`-c esm`, `-c cjs`, `-c production`, etc.). Check the integration.js file for the full test matrix.                                       |
+| "Integration tests are stable"           | The most common cause of flaky integration tests is dev server port conflicts when running tests in parallel. Tests may also behave differently in CI vs. local due to environment differences. (Source: SME interview, Jeb, 2026-02-16) |
+| "CJS/ESM variants are redundant"         | CJS and ESM example app variants specifically test that user configs work in both module formats -- a historically fragile area. Both variants are needed. (Source: SME interview, Jeb, 2026-02-16) |

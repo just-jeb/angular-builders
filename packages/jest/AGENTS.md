@@ -1,6 +1,6 @@
 # Jest Builder
 
-> Angular CLI builder that replaces Karma with Jest for `ng test`, managing configuration resolution, global mocks, and zone.js/zoneless setup.
+> Angular CLI builder that replaces Karma with Jest for `ng test`. The primary objective is hiding away the complexity behind Jest setup and the dependencies needed -- it encapsulates jest-preset-angular, handles mocks, handles multi-project setup, etc. (Source: SME interview, Jeb, 2026-02-16)
 
 ## At a Glance
 
@@ -8,7 +8,7 @@
 | ---------------- | ---------------------------------------------------------------------------------------------------------- |
 | **Type**         | Self-contained Package                                                                                     |
 | **Owns**         | `@angular-builders/jest` -- Jest test runner integration with Angular CLI, config resolution, global mocks |
-| **Does NOT own** | Jest itself, `jest-preset-angular` internals, application builds                                           |
+| **Does NOT own** | Jest itself, `jest-preset-angular` internals (though it is a required dependency), application builds      |
 | **Users**        | Angular developers who prefer Jest over Karma for unit testing                                             |
 
 ## Navigation
@@ -32,11 +32,15 @@ Handled by `JestConfigurationBuilder`, which merges configs in this order (later
 3. **Global custom** (`CustomConfigResolver.resolveGlobal()`) -- user's root-level jest config
 4. **Project custom** (`CustomConfigResolver.resolveForProject()`) -- user's project-level jest config (e.g., `jest.config.js`)
 
-The merge uses lodash `mergeWith` with special handling: `setupFilesAfterEnv` and `astTransformers` arrays are concatenated (not replaced). All other arrays follow standard lodash merge (index-based).
+The merge uses lodash `mergeWith` with special handling: `setupFilesAfterEnv` and `astTransformers` arrays are concatenated (not replaced). All other arrays follow standard lodash merge (index-based). The philosophy: the package's objective is to save users hassle, so if the most common use case is to add something on top of what already works, concatenation is the right default for these arrays. (Source: SME interview, Jeb, 2026-02-16)
 
 ## Invariants
 
 **MUST:** Builder-specific options (`config`, `globalMocks`, `zoneless`) are deleted from the options object before converting to Jest CLI args. These are consumed by the configuration builder and must not leak to Jest CLI.
+
+**MUST:** User's jest config must never be silently overwritten by builder defaults. The 4-layer merge exists specifically to ensure user config always takes precedence. (Source: SME interview, Jeb, 2026-02-16)
+
+**MUST:** The `jest-preset-angular` preset must never be dropped during the configuration merge. It is a required dependency that provides Angular-specific transformations. (Source: SME interview, Jeb, 2026-02-16)
 
 **MUST:** The `tsconfig` path in the `jest-preset-angular` transform config is resolved relative to the project root using `getTsConfigPath()`. If the user does not specify a `tsConfig` option, it falls back to `tsconfig.spec.json` in the project.
 
@@ -79,6 +83,8 @@ The merge uses lodash `mergeWith` with special handling: `setupFilesAfterEnv` an
 | "All array configs are concatenated during merge"                | Only `setupFilesAfterEnv` and `astTransformers` are concatenated. Other arrays use lodash's default index-based merge, which can produce unexpected results for arrays of different lengths.                       |
 | "The builder uses `@angular-builders/common` for config loading" | `CustomConfigResolver` uses its own `loadModule` from `@angular-builders/common` only indirectly. It also uses `require()` directly for JSON configs. The 4-layer config merge is entirely custom to this package. |
 | "Global mocks include style transforms"                          | Since v21, `globalMocks` defaults to `["matchMedia"]` only. The `styleTransform`, `getComputedStyle`, and `doctype` mocks were removed because Jest 30's jsdom supports them natively.                             |
+| "The Jest 29-to-30 upgrade was routine" | It caused significant breakage and required major rework. Major Jest version bumps are a known source of large breaking changes for this package. (Source: SME interview, Jeb, 2026-02-16) |
+| "Running Jest programmatically would be better" | The builder runs Jest via CLI (`run(argv)`) because historically there was no convenient way to run it programmatically. Whether this has changed in Jest 30 is unclear. This is a known limitation, not a design choice. (Source: SME interview, Jeb, 2026-02-16) |
 | "Test pattern matches all `.spec.ts` files"                      | The default `testMatch` pattern is `/\*_/_(\*.)@(spec                                                                                                                                                              | test).[tj]s?(x)`-- it matches both`spec`and`test` file naming conventions, in both TS and JS. |
 
 ## Testing

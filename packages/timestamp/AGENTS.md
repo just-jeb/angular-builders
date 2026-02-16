@@ -1,6 +1,6 @@
 # Timestamp Builder
 
-> Angular CLI builder that writes a formatted timestamp to a file. Serves as a minimal reference implementation of the builder pattern.
+> Tutorial/teaching builder that writes a formatted timestamp to a file. Created for the ["Angular CLI under the hood -- builders demystified"](https://www.justjeb.com/post/angular-cli-under-the-hood-builders-demystified) blog post. Not intended for production use -- its value is as a minimal example of how to write an Angular CLI builder. (Source: SME interview, Jeb, 2026-02-16)
 
 ## At a Glance
 
@@ -39,7 +39,7 @@
 | Trap                            | Reality                                                                                                                          |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | "Schema types are hand-written" | `src/schema.ts` is auto-generated from `src/schema.json` via `quicktype` during prebuild. Edit the JSON schema, not the TS file. |
-| "This is a toy/unused package"  | It is published to npm and used by consumers. It also has a full example app at `examples/timestamp/`.                           |
+| "This is a toy/unused package"  | It is published to npm but has minimal real-world usage. Its primary value is as a builder authoring reference. It has a full example app at `examples/timestamp/`. (Source: SME interview, Jeb, 2026-02-16) |
 
 ## Testing
 

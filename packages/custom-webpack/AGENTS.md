@@ -9,6 +9,7 @@
 | **Type**         | Self-contained Package                                                                                                            |
 | **Owns**         | `@angular-builders/custom-webpack` -- browser, server, dev-server, karma, and extract-i18n builders with webpack config injection |
 | **Does NOT own** | The webpack build pipeline itself (delegated to `@angular-devkit/build-angular`), esbuild-based builds                            |
+| **Lifecycle**    | Maintained as long as Angular supports webpack builders. When Angular drops webpack, this package follows suit. (Source: SME interview, Jeb, 2026-02-16) |
 | **Users**        | Angular developers who need custom webpack configuration without ejecting from the CLI                                            |
 
 ## Navigation
@@ -65,9 +66,11 @@ Unlike `custom-esbuild`, this package resolves schemas directly via Node resolut
 
 **MUST NEVER:** Add custom properties to schema extensions without also adding them to the shared `src/schema.ext.json` (for properties shared across browser/server/karma) or the builder-specific `src/{builder}/schema.ext.json`.
 
+**MUST NEVER:** Accidentally clobber Angular's critical webpack plugins during merge -- this breaks builds silently. Duplicate or conflicting loader rules cause subtle compilation issues. These are the two most dangerous merge failure modes. (Source: SME interview, Jeb, 2026-02-16)
+
 ## Patterns
 
-**Do:** Use a factory function for full webpack config control.
+**Do:** Use a factory function when you need access to Angular's resolved config, target info, or builder options. Use a static object export for simple, unconditional config additions. (Source: SME interview, Jeb, 2026-02-16)
 
 ```js
 // webpack.config.js -- factory function approach (recommended for complex cases)

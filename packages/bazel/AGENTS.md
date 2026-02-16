@@ -9,7 +9,8 @@
 | **Type**         | Self-contained Package                                                          |
 | **Owns**         | `@angular-builders/bazel` -- Angular Architect builder wrapping Bazel execution |
 | **Does NOT own** | Bazel workspace configuration, BUILD files, Angular build logic                 |
-| **Users**        | Angular developers using Bazel as their build system                            |
+| **Origin**       | Contributed by the Angular team as a bridge between Angular CLI and Bazel -- not organically developed by the angular-builders maintainer. (Source: SME interview, Jeb, 2026-02-16) |
+| **Users**        | Small user base. Mostly experimental/proof-of-concept. Not widely used in production. (Source: SME interview, Jeb, 2026-02-16) |
 
 ## Navigation
 

@@ -4,7 +4,7 @@ repository: angular-builders
 area: packages/custom-esbuild
 created: 2026-02-16
 status: complete
-last_merged: null
+last_merged: 2026-02-16
 ---
 
 # SME Interview: Custom ESBuild

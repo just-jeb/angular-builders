@@ -46,7 +46,7 @@ Every package follows the Angular Architect builder pattern:
 
 ## Invariants
 
-**MUST:** All packages use independent versioning (`"version": "independent"` in `lerna.json`). Each package has its own version in its `package.json`.
+**MUST:** All packages use independent versioning (`"version": "independent"` in `lerna.json`). Major versions are aligned to Angular (e.g., v21.x for Angular 21), but patches and minors are released independently per package since they have different change cadences. (Source: SME interview, Jeb, 2026-02-16)
 
 **MUST:** All packages publish under the `@angular-builders` npm scope with `"access": "public"`.
 
@@ -78,3 +78,5 @@ All packages track the same Angular major version. The `scripts/update-package.j
 | "`custom-esbuild` and `custom-webpack` are interchangeable" | They wrap completely different Angular build systems. `custom-esbuild` wraps `@angular/build` (Vite/esbuild). `custom-webpack` wraps `@angular-devkit/build-angular` (Webpack). They share only `common` and the schema-merge mechanism. |
 | "All packages have the same build script"                   | `custom-esbuild` and `custom-webpack` have an extra `merge-schemes.ts` step. `jest`, `bazel`, and `timestamp` use `quicktype` for schema generation. `common` has neither.                                                               |
 | "Turbo handles test execution"                              | Turbo only handles the `build` task. Testing is handled by Jest (unit tests) and the custom `scripts/run-local-tests.js` (integration tests).                                                                                            |
+| "New packages are planned proactively" | New packages are demand-driven -- added only if there is significant community demand. No current plans for new packages. (Source: SME interview, Jeb, 2026-02-16) |
+| "Publishing always works smoothly" | Historical incidents include: npm token/auth issues in CI, version conflicts and tag issues, and on two separate occasions a package was published without a `dist` folder (for different reasons each time). Always verify `dist/` exists before publish. (Source: SME interview, Jeb, 2026-02-16) |

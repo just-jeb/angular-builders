@@ -31,6 +31,7 @@
 - **`update-package.js`** -- Updates Angular dependency version ranges in a package's `package.json`.
   - **Usage:** `yarn update:package <angular-major-version>` (run from a package directory via the workspace script)
   - **Knows:** Which Angular packages use stable versioning (`^{major}.0.0`) vs pre-release versioning (`>=0.{major}00.0 < 0.{major+1}00.0`). This mapping is hardcoded in the script.
+  - **Note:** The goal is full automation of Angular version updates, but the process is not there yet. These scripts were created as steps toward that goal. (Source: SME interview, Jeb, 2026-02-16)
 
 - **`update-example.js`** -- Updates Angular dependencies in example app `package.json` files for a new Angular version.
 
@@ -47,6 +48,6 @@
 | Trap                                                     | Reality                                                                                                                                                          |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "Tests are discovered from example package.json scripts" | Tests are defined in `packages/*/tests/integration.js`, not in the example apps. The example apps are just the execution targets.                                |
-| "Affected filtering uses git diff"                       | It uses Turbo's build summary (`.turbo/runs/*.json`), not git. Turbo determines what is affected based on its own dependency graph and input hashing.            |
+| "Affected filtering uses git diff"                       | It uses Turbo's build summary (`.turbo/runs/*.json`), not git. Turbo was chosen because it understands the package dependency graph including transitive dependencies -- git diff only sees file changes and cannot determine which downstream packages are actually affected. (Source: SME interview, Jeb, 2026-02-16) |
 | "`update-package.js` updates all dependencies"           | It only updates Angular-specific dependencies (`@angular-devkit/*`, `@angular/build`, `@angular/compiler-cli`). Other deps are managed manually or via Renovate. |
 | "The architect version range follows semver"             | `@angular-devkit/architect` uses a non-standard `0.{major}00.0` versioning scheme. The update script hardcodes `isStable: false` for this package.               |

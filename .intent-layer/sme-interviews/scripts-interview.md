@@ -4,7 +4,7 @@ repository: angular-builders
 area: scripts
 created: 2026-02-16
 status: complete
-last_merged: null
+last_merged: 2026-02-16
 ---
 
 # SME Interview: Scripts (Build Infrastructure)

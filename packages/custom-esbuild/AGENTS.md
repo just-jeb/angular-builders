@@ -15,7 +15,7 @@
 
 - Parent: [`../AGENTS.md`](../AGENTS.md)
 - Related: [`../common/AGENTS.md`](../common/AGENTS.md) -- provides `loadModule` used for plugin and transformer loading
-- Related: [`../custom-webpack/AGENTS.md`](../custom-webpack/AGENTS.md) -- webpack counterpart, shares the schema-merging build step
+- Related: [`../custom-webpack/AGENTS.md`](../custom-webpack/AGENTS.md) -- webpack counterpart, shares the schema-merging build step. The goal is feature parity (index transforms, etc.) but the extension model is fundamentally different -- esbuild uses plugins while webpack uses config merging. (Source: SME interview, Jeb, 2026-02-16)
 
 ## Entry Points & Contracts
 
@@ -91,7 +91,7 @@ export default (pluginOptions, builderOptions, target): Plugin => ({ ... });
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "The dev-server is just a passthrough"        | It patches `context.getBuilderNameForTarget` to map `@angular-builders/custom-esbuild` to `@angular/build:application`. Without this, Angular falls back to the Webpack dev server. See `src/dev-server/patch-builder-context.ts`. |
 | "The dev-server reads its own plugins config" | No -- it reads plugins from the **build target's** options. The dev-server config only has `middlewares`.                                                                                                                          |
-| "Unit-test builder supports Karma"            | No -- it hardcodes `runner: 'vitest'`. Karma does not support esbuild plugins.                                                                                                                                                     |
+| "Unit-test builder supports Karma"            | No -- it hardcodes `runner: 'vitest'`. This is Angular's design choice -- Angular's own unit-test builder uses Vitest, and this package simply extends it. (Source: SME interview, Jeb, 2026-02-16)                                |
 | "`src/schemes.ts` resolves schemas normally"  | It uses `originalSchemaPackage` + `resolvePackagePath` to bypass `@angular/build`'s `exports` field in package.json, which does not expose internal schema files.                                                                  |
 | "Schema extension uses deep merge"            | `__REPLACE__` prefix in arrays triggers full replacement instead of merge. `__DELETE__` string value removes a property entirely. These are NOT standard lodash merge behaviors -- they are handled by `merge-schemes.ts`.         |
 
@@ -108,3 +108,5 @@ Verify: Unit tests check plugin loading for string paths, `{path, options}` obje
 
 **Breaks if changed:** Users' `angular.json` referencing `@angular-builders/custom-esbuild:application`, `:dev-server`, or `:unit-test`
 **Breaks us if changed:** `@angular/build` (builder functions + schema structure), `@angular-builders/common` (module loading), `esbuild` (Plugin type), `@angular-devkit/architect`
+
+The most common breakages from Angular upgrades are internal API moves (imports/exports renamed or moved between `@angular` packages) and plugin API changes (how Angular's esbuild integration handles plugins). (Source: SME interview, Jeb, 2026-02-16)
