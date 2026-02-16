@@ -16,6 +16,7 @@
 - Parent: [`../AGENTS.md`](../AGENTS.md)
 - Related: [`../examples/AGENTS.md`](../examples/AGENTS.md) -- the test fixtures that these scripts discover and execute
 - Related: [`../packages/AGENTS.md`](../packages/AGENTS.md) -- packages whose integration tests are discovered here
+- Related: [`../AGENTS.md`](../AGENTS.md) (CI Pipeline section) -- the GitHub Actions workflows that consume these scripts
 
 ## Entry Points & Contracts
 
@@ -35,7 +36,7 @@
 
 - **`update-example.js`** -- Updates Angular dependencies in example app `package.json` files for a new Angular version.
 
-- **`default-registry.sh`** -- Sets npm registry and runs Lerna publish for beta releases.
+- **`default-registry.sh`** -- Called by the CI publish job for beta releases. Runs `yarn lerna publish --dist-tag=next --preid=beta --conventional-prerelease --yes`. Publishes to npm under the `next` tag. The graduate path (stable release) is handled directly in `ci.yml` via `npm run graduate`.
 
 ## Invariants
 
