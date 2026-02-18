@@ -41,20 +41,15 @@ If an AI agent reports confusion or makes mistakes in a specific area:
 
 ## SME Interview Refresh
 
-To enrich Intent Nodes with tribal knowledge:
-
-1. Distribute interview files from `.intent-layer/sme-interviews/` to subject matter experts
-2. SMEs fill in answers and set `status: complete`
-3. Re-run the Intent Layer generator to merge answers into AGENTS.md nodes
+To enrich Intent Nodes with tribal knowledge, re-run the Intent Layer generator to create fresh SME interview templates. SMEs fill in answers and set `status: complete`, then re-run the generator to merge answers into AGENTS.md nodes.
 
 ## File Inventory
 
-| File                            | Purpose                                                           |
-| ------------------------------- | ----------------------------------------------------------------- |
-| `AGENTS.md` (root)              | Repository overview, navigation table, cross-cutting concerns     |
-| `CLAUDE.md` (each dir)          | Bridge file that references the local AGENTS.md                   |
-| `packages/AGENTS.md`            | Architectural layer overview for all builder packages             |
-| `packages/*/AGENTS.md`          | Per-package builder context                                       |
-| `examples/AGENTS.md`            | Test fixtures boundary -- signals agents away from this directory |
-| `scripts/AGENTS.md`             | CI and build infrastructure scripts                               |
-| `.intent-layer/sme-interviews/` | SME interview templates for tribal knowledge capture              |
+| File                   | Purpose                                                           |
+| ---------------------- | ----------------------------------------------------------------- |
+| `AGENTS.md` (root)     | Repository overview, navigation table, cross-cutting concerns     |
+| `CLAUDE.md` (each dir) | Bridge file that references the local AGENTS.md                   |
+| `packages/AGENTS.md`   | Architectural layer overview for all builder packages             |
+| `packages/*/AGENTS.md` | Per-package builder context                                       |
+| `examples/AGENTS.md`   | Test fixtures boundary -- signals agents away from this directory |
+| `scripts/AGENTS.md`    | CI and build infrastructure scripts                               |
