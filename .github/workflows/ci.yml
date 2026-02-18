@@ -4,6 +4,7 @@ on:
   push:
     branches: [master]
   pull_request:
+    types: [opened, synchronize, reopened, labeled]
   workflow_dispatch:
     inputs:
       release_type:
@@ -58,10 +59,10 @@ jobs:
               (cd "$app" && node -e "try { require('puppeteer').executablePath(); } catch(e) {}" || true)
             fi
           done
-      # On master events (push/workflow_dispatch), build all packages to ensure dist
-      # is present for publishing. On PRs, use affected-only filter. (see #2026)
+      # On PRs, build only affected packages unless 'ci:full' label is present.
+      # On master events (push/workflow_dispatch), build all packages. (see #2026)
       - run: |
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
+          if [ "${{ github.event_name }}" == "pull_request" ] && [ "${{ contains(github.event.pull_request.labels.*.name, 'ci:full') }}" != "true" ]; then
             yarn build:packages
           else
             yarn build:packages:all
