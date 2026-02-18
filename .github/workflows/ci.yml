@@ -30,7 +30,7 @@ jobs:
         with:
           fetch-depth: 0
       - run: git fetch origin master:master || true
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20.19.0
       - run: corepack enable
@@ -93,7 +93,7 @@ jobs:
       matrix: ${{ fromJson(needs.build.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20.19.0
       - run: corepack enable
@@ -130,7 +130,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PERSONAL_TOKEN }}
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20.19.0
           registry-url: 'https://registry.npmjs.org'
