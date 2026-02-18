@@ -139,6 +139,8 @@ Concurrency: in-progress runs are cancelled when new commits are pushed (grouped
 
 **MUST NEVER:** Use `ci(release)` in commit messages outside of the automated publish process -- it causes CI to skip the entire pipeline.
 
+**MUST:** When creating a pull request, read `.github/PULL_REQUEST_TEMPLATE.md` and use its structure for the PR body. Fill in all sections: PR checklist, PR type, current behavior, new behavior, and breaking change flag.
+
 ## Angular Major Version Upgrade Process
 
 The upgrade process is not fully automated. It partially originates from Renovate PRs, but each Angular major update also requires running `ng update` for apps in `examples/`. The goal is full automation but it currently requires manual steps. Work sometimes begins against Angular RCs to have PRs ready, so only a final version update is needed when the major release lands. The packages layer is where Angular CLI internal API changes are felt most -- internal API moves (renamed/moved packages or exports) and schema changes to builder options are the most common breakages. (Source: SME interview, Jeb, 2026-02-16)
