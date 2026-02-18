@@ -70,16 +70,16 @@ The biggest maintenance burdens are: (1) keeping up with Angular CLI internal AP
 
 ## Cross-Cutting Concerns
 
-| Concern                     | Pattern                                                                                                                       | Reference                                                                            |
-| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Module loading (CJS/ESM/TS) | All user-provided modules loaded via `@angular-builders/common`'s `loadModule()`                                              | [`packages/common/AGENTS.md`](packages/common/AGENTS.md)                             |
-| Angular version tracking    | All packages track the same Angular major. Update via `yarn update:packages <version>`                                        | [`scripts/AGENTS.md`](scripts/AGENTS.md)                                             |
-| Publishing                  | Independent versioning via Lerna-Lite. Beta on merge to master, graduation via manual dispatch. See [Release & Publishing](#release--publishing) below | `.github/workflows/ci.yml`                                                           |
-| Testing (unit)              | Jest (v29 for most packages, v30 for the jest package itself). Config at repo root: `jest-ut.config.js`, `jest-e2e.config.js` | Package-level `yarn test`                                                            |
-| Testing (integration)       | Defined in `packages/*/tests/integration.js`, executed against `examples/*` apps                                              | [`scripts/AGENTS.md`](scripts/AGENTS.md), [`examples/AGENTS.md`](examples/AGENTS.md) |
-| Code formatting             | Prettier via lint-staged + Husky pre-commit hook                                                                              | Root `package.json` prettier config                                                  |
-| Commits                     | Conventional Commits enforced via commitlint. Drives auto-generated CHANGELOGs                                                | `.commitlintrc.json`                                                                 |
-| Dependency updates          | Renovate bot with config in `renovate.json`                                                                                   | `renovate.json`                                                                      |
+| Concern                     | Pattern                                                                                                                                                                                                         | Reference                                                                            |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Module loading (CJS/ESM/TS) | All user-provided modules loaded via `@angular-builders/common`'s `loadModule()`                                                                                                                                | [`packages/common/AGENTS.md`](packages/common/AGENTS.md)                             |
+| Angular version tracking    | All packages track the same Angular major. Update via `yarn update:packages <version>`                                                                                                                          | [`scripts/AGENTS.md`](scripts/AGENTS.md)                                             |
+| Publishing                  | Independent versioning via Lerna-Lite. Beta on merge to master, graduation via manual dispatch. See [Release & Publishing](#release--publishing) below                                                          | `.github/workflows/ci.yml`                                                           |
+| Testing (unit)              | Jest (v29 for most packages, v30 for the jest package itself). Config at repo root: `jest-ut.config.js`, `jest-e2e.config.js`                                                                                   | Package-level `yarn test`                                                            |
+| Testing (integration)       | Defined in `packages/*/tests/integration.js`, executed against `examples/*` apps                                                                                                                                | [`scripts/AGENTS.md`](scripts/AGENTS.md), [`examples/AGENTS.md`](examples/AGENTS.md) |
+| Code formatting             | Prettier via lint-staged + Husky pre-commit hook                                                                                                                                                                | Root `package.json` prettier config                                                  |
+| Commits                     | Conventional Commits enforced via commitlint. Drives auto-generated CHANGELOGs                                                                                                                                  | `.commitlintrc.json`                                                                 |
+| Dependency updates          | Renovate bot with config in `renovate.json`                                                                                                                                                                     | `renovate.json`                                                                      |
 | Documentation               | Package READMEs are the npm page content (install steps, config examples, option docs). Update when builder options or Angular prerequisites change. Example READMEs are auto-generated scaffold -- ignore them | `packages/*/README.md`                                                               |
 
 ## Release & Publishing
@@ -103,7 +103,7 @@ Three GitHub Actions workflows in `.github/workflows/`:
 
 Three jobs in sequence:
 
-1. **Build**: Compile TypeScript + merge schemas + run unit/schema tests. On PRs: affected packages only (`turbo --filter='...[origin/master]'`). On master: all packages. Outputs a test matrix JSON and uploads `dist/` as an artifact.
+1. **Build**: Compile TypeScript + merge schemas + run unit/schema tests. On PRs: affected packages only (`turbo --filter='...[origin/master]'`), unless the `ci:full` label is present (which forces a full build and runs all integration tests). On master: all packages. Outputs a test matrix JSON and uploads `dist/` as an artifact.
 2. **Integration**: Matrix of ~41 tests running in parallel. Each job restores deps from cache, downloads `dist/` artifact, runs one test command in its example app directory. Only runs if build discovered tests.
 3. **Publish**: Runs on master push or manual dispatch. Downloads `dist/` artifact and runs Lerna publish (beta or graduate). Requires both build and integration to pass.
 
@@ -138,6 +138,8 @@ Concurrency: in-progress runs are cancelled when new commits are pushed (grouped
 **MUST NEVER:** Ship a breaking dependency update (e.g., Jest 30) as a minor version of a builder package. Breaking changes must wait for the next major version aligned with Angular. (Source: SME interview, Jeb, 2026-02-16)
 
 **MUST NEVER:** Use `ci(release)` in commit messages outside of the automated publish process -- it causes CI to skip the entire pipeline.
+
+**MUST:** When creating a pull request, read `.github/PULL_REQUEST_TEMPLATE.md` and use its structure for the PR body. Fill in all sections: PR checklist, PR type, current behavior, new behavior, and breaking change flag.
 
 ## Angular Major Version Upgrade Process
 
