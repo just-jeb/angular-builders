@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.3...@angular-builders/bazel@21.0.4-beta.4) (2026-02-18)
+
+**Note:** Version bump only for package @angular-builders/bazel
+
 ## [21.0.4-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.2...@angular-builders/bazel@21.0.4-beta.3) (2026-02-18)
 
 **Note:** Version bump only for package @angular-builders/bazel
