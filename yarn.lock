@@ -3043,16 +3043,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/schematic@npm:4.3.0":
-  version: 4.3.0
-  resolution: "@cypress/schematic@npm:4.3.0"
+"@cypress/schematic@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@cypress/schematic@npm:5.0.0"
   dependencies:
     jsonc-parser: ^3.3.1
     rxjs: ~7.8.2
+    semver: ^7.7.3
   peerDependencies:
-    "@angular/cli": ">=18.0.0"
-    "@angular/core": ">=18.0.0"
-  checksum: ae49c3c81e6e9c9d2cccf37395fb7a9d84ae164440c9d18418d2e0777a6a8c910ca71eb0bec2c6e0ead19d44b4bf0f0d68ef3f2c0905eac97d2c9965d7cbcf91
+    "@angular/cli": ">=20.0.0"
+    "@angular/core": ">=20.0.0"
+    cypress: ^15.8.0
+  checksum: c104fc98d5eedc2bb2cb8c746fc6ae2e67e276025961573523298eac9e73dd3b3ddecf089a575e64ded950c71123d62ed271bff1891c7d229e4f918f1fc3ae48
   languageName: node
   linkType: hard
 
@@ -19078,7 +19080,7 @@ __metadata:
     "@angular/platform-browser": 21.1.4
     "@angular/platform-browser-dynamic": 21.1.4
     "@angular/router": 21.1.4
-    "@cypress/schematic": 4.3.0
+    "@cypress/schematic": 5.0.0
     "@types/jasmine": 5.1.15
     "@types/node": 20.17.12
     cypress: 15.10.0
@@ -20642,7 +20644,7 @@ __metadata:
     "@angular/platform-browser": 21.1.4
     "@angular/platform-browser-dynamic": 21.1.4
     "@angular/router": 21.1.4
-    "@cypress/schematic": 4.3.0
+    "@cypress/schematic": 5.0.0
     "@eslint/js": ^9.39.1
     "@types/jasmine": 5.1.15
     "@types/node": 20.17.12
