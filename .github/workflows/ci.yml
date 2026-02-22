@@ -118,6 +118,21 @@ jobs:
           cd ${{ matrix.app }}
           ${{ matrix.command }}
 
+  ci-pass:
+    needs: [build, integration]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          if [ "${{ needs.build.result }}" != "success" ]; then
+            echo "Build failed or was cancelled"
+            exit 1
+          fi
+          if [ "${{ needs.integration.result }}" != "success" ] && [ "${{ needs.integration.result }}" != "skipped" ]; then
+            echo "Integration tests failed or were cancelled"
+            exit 1
+          fi
+
   publish:
     needs: [build, integration]
     if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
