@@ -54,7 +54,7 @@ examples/
   timestamp/           -- Tests @angular-builders/timestamp
 ```
 
-Each example app is a standalone Angular workspace registered in the root `package.json` workspaces.
+Each example app is a standalone Angular workspace registered in the root `package.json` workspaces. Note: `examples/*` only matches direct children (`bazel`, `timestamp`). The nested patterns (`examples/custom-esbuild/*`, `examples/custom-webpack/*`, `examples/jest/*`) are required because Yarn workspace globs are not recursive -- without them, apps in subdirectories would not be discovered.
 
 ## How Integration Tests Work
 
