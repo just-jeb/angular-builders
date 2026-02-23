@@ -53,3 +53,4 @@ To enrich Intent Nodes with tribal knowledge, re-run the Intent Layer generator 
 | `packages/*/AGENTS.md` | Per-package builder context                                       |
 | `examples/AGENTS.md`   | Test fixtures boundary -- signals agents away from this directory |
 | `scripts/AGENTS.md`    | CI and build infrastructure scripts                               |
+| `.github/AGENTS.md`    | CI workflows and GitHub Actions tribal knowledge                  |

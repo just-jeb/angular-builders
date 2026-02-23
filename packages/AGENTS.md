@@ -33,7 +33,7 @@ bazel            (standalone)
 timestamp        (standalone)
 ```
 
-All packages depend on `@angular-devkit/architect` for the builder contract. `custom-esbuild` uses `@angular/build`, while `custom-webpack` uses `@angular-devkit/build-angular`. These are different Angular build systems and must not be confused.
+Builder packages (`custom-esbuild`, `custom-webpack`, `jest`, `bazel`, `timestamp`) depend on `@angular-devkit/architect` for the builder contract. `common` depends on `@angular-devkit/core` instead (for `LoggerApi`). `custom-esbuild` uses `@angular/build`, while `custom-webpack` uses `@angular-devkit/build-angular` and `@angular/build` (for the `IndexHtmlTransform` type). These are different Angular build systems and must not be confused.
 
 ## Builder Pattern
 
@@ -56,13 +56,13 @@ Every package follows the Angular Architect builder pattern:
 
 ## Common Tasks
 
-| Task                                | How                                                               |
-| ----------------------------------- | ----------------------------------------------------------------- |
-| Build all packages                  | `yarn build:packages:all` from repo root                          |
-| Build affected packages (vs master) | `yarn build:packages` from repo root                              |
-| Build a single package              | `yarn build` from the package directory                           |
-| Run all integration tests           | `yarn test:local` from repo root                                  |
-| Run tests for one package           | `node scripts/run-local-tests.js --package <name>` from repo root |
+| Task                                | How                                                                                                                                                                            |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Build all packages                  | `yarn build:packages:all` from repo root                                                                                                                                       |
+| Build affected packages (vs master) | `yarn build:packages` from repo root                                                                                                                                           |
+| Build a single package              | `yarn build` from the package directory                                                                                                                                        |
+| Run all integration tests           | `yarn test:local` from repo root                                                                                                                                               |
+| Run tests for one package           | `node scripts/run-local-tests.js --package <name>` from repo root                                                                                                              |
 | Update package README               | Edit `packages/{name}/README.md` when adding/changing builder options or Angular prerequisites. READMEs are the npm page content (install steps, config examples, option docs) |
 
 ## Angular Version Alignment
@@ -74,11 +74,11 @@ All packages track the same Angular major version. The `scripts/update-package.j
 
 ## Pitfalls
 
-| Trap                                                        | Reality                                                                                                                                                                                                                                  |
-| ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "`custom-esbuild` and `custom-webpack` are interchangeable" | They wrap completely different Angular build systems. `custom-esbuild` wraps `@angular/build` (Vite/esbuild). `custom-webpack` wraps `@angular-devkit/build-angular` (Webpack). They share only `common` and the schema-merge mechanism. |
-| "All packages have the same build script"                   | `custom-esbuild` and `custom-webpack` have an extra `merge-schemes.ts` step. `jest`, `bazel`, and `timestamp` use `quicktype` for schema generation. `common` has neither.                                                               |
-| "Turbo handles test execution"                              | Turbo only handles the `build` task. Testing is handled by Jest (unit tests) and the custom `scripts/run-local-tests.js` (integration tests).                                                                                            |
-| "New packages are planned proactively" | New packages are demand-driven -- added only if there is significant community demand. No current plans for new packages. (Source: SME interview, Jeb, 2026-02-16) |
-| "Publishing always works smoothly" | Historical incidents include: npm token/auth issues in CI, version conflicts and tag issues, and on two separate occasions a package was published without a `dist` folder (for different reasons each time). Always verify `dist/` exists before publish. (Source: SME interview, Jeb, 2026-02-16) |
-| "CHANGELOGs are manually maintained" | They are fully auto-generated by Lerna-Lite from conventional commits during publish. Never edit them. |
+| Trap                                                        | Reality                                                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "`custom-esbuild` and `custom-webpack` are interchangeable" | They wrap completely different Angular build systems. `custom-esbuild` wraps `@angular/build` (Vite/esbuild). `custom-webpack` wraps `@angular-devkit/build-angular` (Webpack). They share only `common` and the schema-merge mechanism.                                                            |
+| "All packages have the same build script"                   | `custom-esbuild` and `custom-webpack` have an extra `merge-schemes.ts` step. `jest`, `bazel`, and `timestamp` use `quicktype` for schema generation. `common` has neither.                                                                                                                          |
+| "Turbo handles test execution"                              | Turbo only handles the `build` task. Testing is handled by Jest (unit tests) and the custom `scripts/run-local-tests.js` (integration tests).                                                                                                                                                       |
+| "New packages are planned proactively"                      | New packages are demand-driven -- added only if there is significant community demand. No current plans for new packages. (Source: SME interview, Jeb, 2026-02-16)                                                                                                                                  |
+| "Publishing always works smoothly"                          | Historical incidents include: npm token/auth issues in CI, version conflicts and tag issues, and on two separate occasions a package was published without a `dist` folder (for different reasons each time). Always verify `dist/` exists before publish. (Source: SME interview, Jeb, 2026-02-16) |
+| "CHANGELOGs are manually maintained"                        | They are fully auto-generated by Lerna-Lite from conventional commits during publish. Never edit them.                                                                                                                                                                                              |

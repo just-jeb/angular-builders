@@ -24,7 +24,8 @@ AGENTS.md files at semantic boundaries provide AI agents with context. Start her
 | Bazel builder                | [`packages/bazel/AGENTS.md`](packages/bazel/AGENTS.md)                   | Self-contained Package |
 | Timestamp builder            | [`packages/timestamp/AGENTS.md`](packages/timestamp/AGENTS.md)           | Self-contained Package |
 | Example apps / test fixtures | [`examples/AGENTS.md`](examples/AGENTS.md)                               | Test Fixtures Boundary |
-| CI & build scripts           | [`scripts/AGENTS.md`](scripts/AGENTS.md)                                 | Capability Domain      |
+| Build & test scripts         | [`scripts/AGENTS.md`](scripts/AGENTS.md)                                 | Capability Domain      |
+| CI & workflows               | [`.github/AGENTS.md`](.github/AGENTS.md)                                 | Capability Domain      |
 
 **Keep Intent Nodes in sync with code changes. See [`MAINTENANCE.md`](MAINTENANCE.md) for sync instructions and update procedures.**
 
@@ -38,7 +39,7 @@ The two primary packages -- `custom-esbuild` and `custom-webpack` -- wrap Angula
 
 ```
 custom-esbuild ──> common ──> ts-node, tsconfig-paths
-custom-webpack ──> common
+custom-webpack ──> common, @angular/build (IndexHtmlTransform type)
 jest ──────────> common
 bazel            (standalone -- no common dependency)
 timestamp        (standalone -- no common dependency)
@@ -75,7 +76,7 @@ The biggest maintenance burdens are: (1) keeping up with Angular CLI internal AP
 | Module loading (CJS/ESM/TS) | All user-provided modules loaded via `@angular-builders/common`'s `loadModule()`                                                                                                                                | [`packages/common/AGENTS.md`](packages/common/AGENTS.md)                             |
 | Angular version tracking    | All packages track the same Angular major. Update via `yarn update:packages <version>`                                                                                                                          | [`scripts/AGENTS.md`](scripts/AGENTS.md)                                             |
 | Publishing                  | Independent versioning via Lerna-Lite. Beta on merge to master, graduation via manual dispatch. See [Release & Publishing](#release--publishing) below                                                          | `.github/workflows/ci.yml`                                                           |
-| Testing (unit)              | Jest (v29 for most packages, v30 for the jest package itself). Config at repo root: `jest-ut.config.js`, `jest-e2e.config.js`                                                                                   | Package-level `yarn test`                                                            |
+| Testing (unit)              | Jest 30. Config at repo root: `jest-ut.config.js`, `jest-e2e.config.js`                                                                                                                                         | Package-level `yarn test`                                                            |
 | Testing (integration)       | Defined in `packages/*/tests/integration.js`, executed against `examples/*` apps                                                                                                                                | [`scripts/AGENTS.md`](scripts/AGENTS.md), [`examples/AGENTS.md`](examples/AGENTS.md) |
 | Code formatting             | Prettier via lint-staged + Husky pre-commit hook                                                                                                                                                                | Root `package.json` prettier config                                                  |
 | Commits                     | Conventional Commits enforced via commitlint. Drives auto-generated CHANGELOGs                                                                                                                                  | `.commitlintrc.json`                                                                 |
@@ -97,25 +98,13 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 ## CI Pipeline
 
-Three GitHub Actions workflows in `.github/workflows/`:
+| Workflow           | Trigger                          | Purpose                                                                   |
+| ------------------ | -------------------------------- | ------------------------------------------------------------------------- |
+| `ci.yml`           | push to master, PRs, manual      | Build → integration matrix → `ci-pass` gate → publish                     |
+| `auto-approve.yml` | PRs from trusted bots/maintainer | Auto-approve PRs from `just-jeb`, `renovate[bot]`, `allcontributors[bot]` |
+| `update.yml`       | manual dispatch                  | Update Angular version across packages and examples                       |
 
-### `ci.yml` -- Main CI (build, test, publish)
-
-Three jobs in sequence:
-
-1. **Build**: Compile TypeScript + merge schemas + run unit/schema tests. On PRs: affected packages only (`turbo --filter='...[origin/master]'`), unless the `ci:full` label is present (which forces a full build and runs all integration tests). On master: all packages. Outputs a test matrix JSON and uploads `dist/` as an artifact.
-2. **Integration**: Matrix of ~41 tests running in parallel. Each job restores deps from cache, downloads `dist/` artifact, runs one test command in its example app directory. Only runs if build discovered tests.
-3. **Publish**: Runs on master push or manual dispatch. Downloads `dist/` artifact and runs Lerna publish (beta or graduate). Requires both build and integration to pass.
-
-Concurrency: in-progress runs are cancelled when new commits are pushed (grouped by PR number or branch ref).
-
-**Dependency caching**: The build job installs deps and saves a cache keyed by `deps-{os}-node20-{yarn.lock hash}`. Integration and publish jobs restore this cache with `fail-on-cache-miss: true` (no redundant installs). Cached paths: `node_modules`, `.yarn`, `~/.cache/Cypress`, `~/.cache/puppeteer`.
-
-**Puppeteer gotcha**: Puppeteer downloads Chrome lazily on first use, not during `yarn install`. The build job explicitly triggers the download so Chrome is included in the cache for integration jobs that run Karma tests.
-
-### `auto-approve.yml` -- Auto-approves PRs from `just-jeb`, `renovate[bot]`, and `allcontributors[bot]`.
-
-### `update.yml` -- Manual dispatch to update Angular version across all packages and examples. Runs `update:packages` and `update:examples`, commits, and pushes directly to master.
+`ci.yml` has four jobs: **build** (compile + test discovery), **integration** (~41 parallel test matrix), **ci-pass** (aggregation gate for branch protection), **publish** (beta or graduate via Lerna-Lite). See [`.github/AGENTS.md`](.github/AGENTS.md) for CI tribal knowledge (cache warming, `ci:full` label, `ci-pass` gate).
 
 ### GitHub Templates
 
@@ -135,7 +124,7 @@ Concurrency: in-progress runs are cancelled when new commits are pushed (grouped
 
 **MUST NEVER:** Edit auto-generated files: `packages/jest/src/schema.ts`, `packages/bazel/src/schema.ts`, `packages/timestamp/src/schema.ts` (generated by quicktype), `dist/*/schema.json` (generated by merge-schemes), and `packages/*/CHANGELOG.md` (generated by Lerna-Lite from conventional commits).
 
-**MUST NEVER:** Ship a breaking dependency update (e.g., Jest 30) as a minor version of a builder package. Breaking changes must wait for the next major version aligned with Angular. (Source: SME interview, Jeb, 2026-02-16)
+**MUST NEVER:** Ship a breaking dependency update (e.g., a new webpack-merge major) as a minor version of a builder package. Breaking changes must wait for the next major version aligned with Angular. (Source: SME interview, Jeb, 2026-02-16)
 
 **MUST NEVER:** Use `ci(release)` in commit messages outside of the automated publish process -- it causes CI to skip the entire pipeline.
 
