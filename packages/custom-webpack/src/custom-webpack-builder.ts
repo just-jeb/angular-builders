@@ -1,7 +1,6 @@
 import * as path from 'node:path';
 import { inspect } from 'util';
 import { getSystemPath, logging, Path } from '@angular-devkit/core';
-import { get } from 'lodash';
 import { Configuration } from 'webpack';
 import { loadModule } from '@angular-builders/common';
 
@@ -11,6 +10,18 @@ import { TargetOptions } from './type-definition';
 import { mergeConfigs } from './webpack-config-merger';
 
 export const defaultWebpackConfigPath = 'webpack.config.js';
+
+/**
+ * Accesses a nested property by dot/bracket path (e.g. 'output.enabledChunkLoadingTypes[0]').
+ */
+function getByPath(obj: any, path: string): any {
+  const keys = path.replace(/\[(\d+)]/g, '.$1').split('.');
+  let result = obj;
+  for (const key of keys) {
+    result = result?.[key];
+  }
+  return result;
+}
 
 type CustomWebpackConfig =
   | Configuration
@@ -93,7 +104,7 @@ function logConfigProperties(
   // entirely. Users can provide a list of properties they want to be logged.
   if (config.verbose?.properties) {
     for (const property of config.verbose.properties) {
-      const value = get(webpackConfig, property);
+      const value = getByPath(webpackConfig, property);
       if (value) {
         const message = inspect(value, /* showHidden */ false, config.verbose.serializationDepth);
         logger.info(message);

@@ -1,7 +1,29 @@
 import { MergeRules } from './custom-webpack-builder-config';
 import { CustomizeRule, mergeWithRules } from 'webpack-merge';
 import { Configuration } from 'webpack';
-import { differenceWith, keyBy, merge } from 'lodash';
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  return (
+    value !== null && typeof value === 'object' && Object.getPrototypeOf(value) === Object.prototype
+  );
+}
+
+/**
+ * Recursively deep-merges source into target, mutating target.
+ * Arrays are replaced (not merged by index) to match lodash.merge behavior on plugin options.
+ */
+function deepMerge<T extends Record<string, any>>(target: T, source: Record<string, any>): T {
+  for (const key of Object.keys(source)) {
+    const targetVal = (target as any)[key];
+    const sourceVal = source[key];
+    if (isPlainObject(targetVal) && isPlainObject(sourceVal)) {
+      deepMerge(targetVal, sourceVal);
+    } else {
+      (target as any)[key] = sourceVal;
+    }
+  }
+  return target;
+}
 
 const DEFAULT_MERGE_RULES: MergeRules = {
   module: {
@@ -24,16 +46,19 @@ export function mergeConfigs(
   const mergedConfig: Configuration = mergeWithRules(mergeRules)(webpackConfig1, webpackConfig2);
 
   if (webpackConfig1.plugins && webpackConfig2.plugins) {
-    const conf1ExceptConf2 = differenceWith(
-      webpackConfig1.plugins,
-      webpackConfig2.plugins,
-      (item1, item2) => item1.constructor.name === item2.constructor.name
+    const conf1ExceptConf2 = webpackConfig1.plugins.filter(
+      item1 =>
+        !webpackConfig2.plugins!.some(item2 => item1.constructor.name === item2.constructor.name)
     );
     if (!replacePlugins) {
-      const conf1ByName = keyBy(webpackConfig1.plugins, 'constructor.name');
-      webpackConfig2.plugins = webpackConfig2.plugins.map(p =>
-        conf1ByName[p.constructor.name] ? merge(conf1ByName[p.constructor.name], p) : p
-      );
+      const conf1ByName: Record<string, (typeof webpackConfig1.plugins)[number]> = {};
+      for (const p of webpackConfig1.plugins) {
+        conf1ByName[p.constructor.name] = p;
+      }
+      webpackConfig2.plugins = webpackConfig2.plugins.map(p => {
+        const match = conf1ByName[p.constructor.name];
+        return match ? deepMerge(match as any, p as any) : p;
+      }) as typeof webpackConfig2.plugins;
     }
     mergedConfig.plugins = [...conf1ExceptConf2, ...webpackConfig2.plugins];
   }

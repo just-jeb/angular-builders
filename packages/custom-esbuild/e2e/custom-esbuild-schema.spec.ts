@@ -1,5 +1,4 @@
 import { resolvePackagePath } from '@angular-builders/common';
-import { remove } from 'lodash';
 
 describe('Custom ESBuild schema tests', () => {
   let customEsbuildApplicationSchema: any;
@@ -32,7 +31,9 @@ describe('Custom ESBuild schema tests', () => {
     const path = resolvePackagePath('@angular/build', 'src/builders/unit-test/schema.json');
     const originalUnitTestSchema = require(path);
     originalUnitTestSchema.properties['runner'] = undefined;
-    remove(originalUnitTestSchema.required, prop => prop === 'runner');
+    originalUnitTestSchema.required = originalUnitTestSchema.required.filter(
+      (prop: string) => prop !== 'runner'
+    );
     customEsbuildUnitTestSchema.properties['plugins'] = undefined;
     expect(originalUnitTestSchema.properties).toEqual(customEsbuildUnitTestSchema.properties);
     expect(originalUnitTestSchema.required).toEqual(customEsbuildUnitTestSchema.required);

@@ -1,5 +1,4 @@
 import { Path, resolve } from '@angular-devkit/core';
-import { isArray, mergeWith } from 'lodash';
 
 import { JestConfig } from './types';
 import { CustomConfigResolver } from './custom-config.resolver';
@@ -15,20 +14,55 @@ const ARRAY_PROPERTIES_TO_CONCAT = [
   'astTransformers',
 ];
 
+type MergeCustomizer = (objValue: any, srcValue: any, key: string) => any;
+
 /**
- * This function checks witch properties should be concat. Early return will
- * merge the data as lodash#merge would do it.
+ * Deep merge two objects, invoking a customizer for each key.
+ * If the customizer returns `undefined`, the default deep-merge behavior applies.
  */
-function concatArrayProperties(objValue: any[], srcValue: unknown, property: string) {
+function deepMergeWith(target: any, source: any, customizer: MergeCustomizer): any {
+  if (source === undefined || source === null) {
+    return target;
+  }
+  if (target === undefined || target === null) {
+    return source;
+  }
+  const result = { ...target };
+  for (const key of Object.keys(source)) {
+    const customResult = customizer(result[key], source[key], key);
+    if (customResult !== undefined) {
+      result[key] = customResult;
+    } else if (
+      typeof result[key] === 'object' &&
+      result[key] !== null &&
+      !Array.isArray(result[key]) &&
+      typeof source[key] === 'object' &&
+      source[key] !== null &&
+      !Array.isArray(source[key])
+    ) {
+      result[key] = deepMergeWith(result[key], source[key], customizer);
+    } else {
+      result[key] = source[key];
+    }
+  }
+  return result;
+}
+
+/**
+ * This function checks which properties should be concat. Returning `undefined`
+ * falls through to the default deep-merge behavior.
+ */
+function concatArrayProperties(objValue: any, srcValue: unknown, property: string): any {
   if (!ARRAY_PROPERTIES_TO_CONCAT.includes(property)) {
-    return;
+    return undefined;
   }
 
-  if (!isArray(objValue)) {
-    return mergeWith(objValue, srcValue, (obj, src) => {
-      if (isArray(obj)) {
+  if (!Array.isArray(objValue)) {
+    return deepMergeWith(objValue, srcValue, (obj, src) => {
+      if (Array.isArray(obj)) {
         return obj.concat(src);
       }
+      return undefined;
     });
   }
 
@@ -47,12 +81,9 @@ const buildConfiguration = async (
   const globalCustomConfig = await customConfigResolver.resolveGlobal(workspaceRoot);
   const projectCustomConfig = await customConfigResolver.resolveForProject(projectRoot, config);
 
-  return mergeWith(
-    globalDefaultConfig,
-    projectDefaultConfig,
-    globalCustomConfig,
-    projectCustomConfig,
-    concatArrayProperties
+  return [projectDefaultConfig, globalCustomConfig, projectCustomConfig].reduce(
+    (acc, cfg) => deepMergeWith(acc, cfg, concatArrayProperties),
+    globalDefaultConfig
   );
 };
 
