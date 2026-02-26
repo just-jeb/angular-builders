@@ -10,7 +10,8 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 
 /**
  * Recursively deep-merges source into target, mutating target.
- * Arrays are replaced (not merged by index) to match lodash.merge behavior on plugin options.
+ * Arrays are replaced entirely (unlike lodash.merge which merges by index).
+ * This is intentional for webpack plugin options where full replacement is the expected behavior.
  */
 function deepMerge<T extends Record<string, any>>(target: T, source: Record<string, any>): T {
   for (const key of Object.keys(source)) {
