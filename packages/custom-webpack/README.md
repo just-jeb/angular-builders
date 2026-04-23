@@ -28,6 +28,9 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # This documentation is for the latest major version only
 
+> ⚠️ **Version alignment:** The major version of `@angular-builders/custom-webpack` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-webpack@19.x`, Angular 20 requires `@angular-builders/custom-webpack@20.x`, etc. Using a mismatched version is the most common source of issues.
+
+
 ## Previous versions
 
 <details>
