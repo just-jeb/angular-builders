@@ -28,6 +28,9 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # This documentation is for the latest major version only
 
+> ⚠️ **Version alignment:** The major version of `@angular-builders/custom-webpack` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-webpack@19.x`, Angular 20 requires `@angular-builders/custom-webpack@20.x`, etc. Using a mismatched version is the most common source of issues.
+
+
 ## Previous versions
 
 <details>
@@ -36,7 +39,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 - [Version 20](https://github.com/just-jeb/angular-builders/blob/20.x.x/packages/custom-webpack/README.md)
 - [Version 19](https://github.com/just-jeb/angular-builders/blob/19.x.x/packages/custom-webpack/README.md)
 - [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/custom-webpack/README.md)
-- [Version 17](https://github.com/just-jeb/angular-builders/blob/17.x.x/packages/custom-webpack/README.md)
 - [Version 16](https://github.com/just-jeb/angular-builders/blob/16.x.x/packages/custom-webpack/README.md)
 - [Version 15](https://github.com/just-jeb/angular-builders/blob/15.x.x/packages/custom-webpack/README.md)
 - [Version 14](https://github.com/just-jeb/angular-builders/blob/14.x.x/packages/custom-webpack/README.md)
