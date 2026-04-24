@@ -1,8 +1,14 @@
 import { SchemaObject as JestBuilderSchema } from './schema';
 
 /**
- * Options whose values are positional arguments following a boolean flag.
- * Jest parses these via yargs `_` (non-flag args), not as repeated --flag value pairs.
+ * Options that Jest treats as a boolean flag with file paths as positional arguments.
+ * Jest parses these via yargs `_` (non-flag args), not as `--flag=value` or repeated flag pairs.
+ *
+ * Angular CLI passes comma-separated CLI values as a single string for array-type schema fields
+ * (e.g. `ng test --find-related-tests file1,file2` → options.findRelatedTests = 'file1,file2').
+ *
+ * These must be split and emitted as: `--findRelatedTests file1 file2`
+ *
  * See: https://jestjs.io/docs/cli#--findrelatedtests-spaceseparatedlistofsourcefiles
  */
 const POSITIONAL_ARRAY_OPTIONS = new Set(['findRelatedTests']);
@@ -17,20 +23,21 @@ export class OptionsConverter {
       let optionValue = options[option];
       if (option == '--') {
         nonFlagArgs = (optionValue as string[]).join(' ');
+      } else if (POSITIONAL_ARRAY_OPTIONS.has(option)) {
+        // Angular CLI passes comma-separated values as a single string for array-type schema fields.
+        // Split into individual paths and emit as: --flag path1 path2 (boolean + positional args).
+        const paths = Array.isArray(optionValue)
+          ? (optionValue as string[])
+          : (optionValue as string).split(',');
+        argv.push(`--${option}`);
+        positionalArgs.push(...paths);
       } else if (optionValue === true) {
         argv.push(`--${option}`);
       } else if (typeof optionValue === 'string' || typeof optionValue === 'number') {
         argv.push(`--${option}=${optionValue}`);
       } else if (Array.isArray(optionValue)) {
-        if (POSITIONAL_ARRAY_OPTIONS.has(option)) {
-          // These are boolean flags whose "values" are positional file args.
-          // e.g. --findRelatedTests file1 file2 (not --findRelatedTests=file1 --findRelatedTests=file2)
-          argv.push(`--${option}`);
-          positionalArgs.push(...optionValue);
-        } else {
-          for (const item of optionValue) {
-            argv.push(`--${option}`, item);
-          }
+        for (const item of optionValue) {
+          argv.push(`--${option}`, item);
         }
       }
     }

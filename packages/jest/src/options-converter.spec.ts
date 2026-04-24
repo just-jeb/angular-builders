@@ -32,25 +32,41 @@ describe('Convert options to Jest CLI arguments', () => {
     expect(argv).toEqual(['non-flag-1 non-flag-2']);
   });
 
-  it('Should convert findRelatedTests into a boolean flag followed by positional file args', () => {
-    const argv = optionsConverter.convertToCliArgs({
-      findRelatedTests: ['src/app/foo.ts', 'src/app/bar.ts'],
-    } as any);
-    expect(argv).toEqual(['--findRelatedTests', 'src/app/foo.ts', 'src/app/bar.ts']);
-  });
+  describe('findRelatedTests', () => {
+    it('Should split comma-separated string from Angular CLI into boolean flag + positional args', () => {
+      // Angular CLI passes comma-separated values as a single string for array schema fields
+      const argv = optionsConverter.convertToCliArgs({
+        findRelatedTests: 'src/app/foo.ts,src/app/bar.ts',
+      } as any);
+      expect(argv).toEqual(['--findRelatedTests', 'src/app/foo.ts', 'src/app/bar.ts']);
+    });
 
-  it('Should correctly place findRelatedTests positional args after other flags', () => {
-    const argv = optionsConverter.convertToCliArgs({
-      watch: true,
-      findRelatedTests: ['src/app/foo.ts'],
-      coverage: false,
-    } as any);
-    expect(argv).toContain('--watch');
-    expect(argv).toContain('--findRelatedTests');
-    // Positional arg must come after --findRelatedTests flag, at the end
-    const frtIdx = argv.indexOf('--findRelatedTests');
-    const fileIdx = argv.indexOf('src/app/foo.ts');
-    expect(fileIdx).toBeGreaterThan(frtIdx);
-    expect(argv[argv.length - 1]).toBe('src/app/foo.ts');
+    it('Should handle a single file path string', () => {
+      const argv = optionsConverter.convertToCliArgs({
+        findRelatedTests: 'src/app/foo.ts',
+      } as any);
+      expect(argv).toEqual(['--findRelatedTests', 'src/app/foo.ts']);
+    });
+
+    it('Should handle array value (e.g. from angular.json)', () => {
+      const argv = optionsConverter.convertToCliArgs({
+        findRelatedTests: ['src/app/foo.ts', 'src/app/bar.ts'],
+      } as any);
+      expect(argv).toEqual(['--findRelatedTests', 'src/app/foo.ts', 'src/app/bar.ts']);
+    });
+
+    it('Should place positional file args at the end, after other flags', () => {
+      const argv = optionsConverter.convertToCliArgs({
+        watch: true,
+        findRelatedTests: 'src/app/foo.ts,src/app/bar.ts',
+      } as any);
+      expect(argv).toContain('--watch');
+      expect(argv).toContain('--findRelatedTests');
+      const frtIdx = argv.indexOf('--findRelatedTests');
+      const fileIdx = argv.indexOf('src/app/foo.ts');
+      expect(fileIdx).toBeGreaterThan(frtIdx);
+      expect(argv[argv.length - 2]).toBe('src/app/foo.ts');
+      expect(argv[argv.length - 1]).toBe('src/app/bar.ts');
+    });
   });
 });
