@@ -107,6 +107,29 @@ The builder supports multi-project workspaces out of the box, the only thing req
   3.  Add on top of it _package.json_ jest config if exists (for **all** projects)
       **or**
       _jest.config.js_ from workspace root directory if exists
+
+      > **⚠️ Note on the `projects` field:** The builder acts as the Jest orchestrator via Angular CLI's project system. If your root `jest.config.js` (or `package.json` jest config) contains a `projects` field (used for running Jest standalone across a monorepo), the builder will merge it in and Jest will run **all** sub-projects instead of just the targeted Angular project — resulting in duplicated or unexpected test runs.
+      >
+      > If you use both `ng test` (via the builder) and `jest` directly (standalone), keep the `projects` field out of the root config and use a separate config file for standalone runs:
+      >
+      > **`jest.config.js`** — used by the Angular builder (no `projects` field):
+      > ```js
+      > module.exports = {
+      >   // shared options: transform, moduleNameMapper, coverageThreshold, etc.
+      > };
+      > ```
+      >
+      > **`jest.projects.config.js`** — used for standalone Jest CLI runs:
+      > ```js
+      > const baseConfig = require('./jest.config');
+      > module.exports = {
+      >   ...baseConfig,
+      >   projects: ['<rootDir>/apps/*', '<rootDir>/libs/*'],
+      > };
+      > ```
+      >
+      > Then run standalone Jest with `jest --config jest.projects.config.js`.
+
   4.  Add on top of it project specific config if it is specified inside _angular.json_
       **or**
       _jest.config.js_ from project directory (or src/ directory in case of non-project app) if exists.
