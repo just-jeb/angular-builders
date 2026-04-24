@@ -106,6 +106,15 @@ module.exports = [
     command:
       'node ../../../packages/jest/tests/validate.js my-shared-library --find-related-tests projects/my-shared-library/src/lib/my-shared-library.service.ts projects/my-shared-library/src/lib/my-shared-library.component.ts --expect-suites=2 --expect-tests=2',
   },
+  {
+    id: 'multi-project-find-related-comma',
+    name: 'jest: --find-related-tests comma-separated',
+    purpose: '--find-related-tests with comma-separated files (inline angular.json value) finds related tests',
+    app: 'examples/jest/multiple-apps',
+    command:
+      'node ../../../packages/jest/tests/validate.js my-shared-library "--find-related-tests=projects/my-shared-library/src/lib/my-shared-library.service.ts,projects/my-shared-library/src/lib/my-shared-library.component.ts" --expect-suites=2 --expect-tests=2',
+  },
+
 
   // E2E sanity
   {
