@@ -7,6 +7,9 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 # This documentation is for the latest major version only
 
+> ⚠️ **Version alignment:** The major version of `@angular-builders/jest` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/jest`@19.x, Angular 20 requires `@angular-builders/jest`@20.x, etc. Using a mismatched version is the most common source of issues.
+
+
 ## Previous versions
 
 <details>

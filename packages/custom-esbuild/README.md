@@ -21,6 +21,9 @@ Allow customizing ESBuild configuration
 
 # This documentation is for the latest major version only
 
+> ⚠️ **Version alignment:** The major version of `@angular-builders/custom-esbuild` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-esbuild`@19.x, Angular 20 requires `@angular-builders/custom-esbuild`@20.x, etc. Using a mismatched version is the most common source of issues.
+
+
 ## Previous versions
 
 <details>

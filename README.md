@@ -8,6 +8,8 @@ Builders' and Angular **major** versions **must** match.
 
 ## [Migration guide](./MIGRATION.MD)
 
+> ⚠️ **Version alignment:** The major version of `@angular-builders/*` packages must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/*@19.x`, Angular 20 requires `@angular-builders/*@20.x`, etc. Using a mismatched version is the most common source of issues.
+
 ## Previous versions
 
 <details>
