@@ -1,8 +1,10 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "rootDir": "src",
     "outDir": "dist",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": ["node"]
   },
   "files": [
     "src/index.ts"
