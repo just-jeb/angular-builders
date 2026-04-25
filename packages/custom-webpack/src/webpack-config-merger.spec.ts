@@ -361,4 +361,83 @@ describe('Webpack config merger test', () => {
 
     expect(mergeConfigs(conf1, conf2)).toEqual(expected);
   });
+
+  describe('Anonymous plain-object plugin handling', () => {
+    it('should preserve anonymous base plugins when user config has a plain-object plugin', () => {
+      // Regression test for: https://github.com/just-jeb/angular-builders/issues/1908
+      //
+      // Angular CLI injects anonymous plain-object plugins (e.g. the i18n hash-update
+      // plugin added in angular/angular-cli#16817) into the base webpack config.
+      // These plugins have constructor.name === 'Object' and MUST NOT be treated as
+      // duplicates of user-supplied plain-object plugins. Previously, any user
+      // plain-object plugin would cause Angular's anonymous plugins to be silently
+      // dropped or overwritten, breaking localized build hash regeneration.
+
+      let i18nHookCalled = false;
+      const angularI18nPlugin = {
+        apply(_compiler: any) {
+          i18nHookCalled = true;
+        },
+      };
+
+      let userHookCalled = false;
+      const userPlugin = {
+        apply(_compiler: any) {
+          userHookCalled = true;
+        },
+      };
+
+      const output = mergeConfigs(
+        { plugins: [angularI18nPlugin] },
+        { plugins: [userPlugin] }
+      );
+
+      expect(output.plugins).toHaveLength(2);
+      // Both anonymous plugins must survive and be callable
+      output.plugins!.forEach(p => (p as any).apply(null));
+      expect(i18nHookCalled).toBe(true);
+      expect(userHookCalled).toBe(true);
+    });
+
+    it('should keep anonymous base plugins before named plugins in merged output', () => {
+      const anonymousPlugin = { apply(_compiler: any) {} };
+      const namedPlugin = new webpack.DefinePlugin({ FOO: '"bar"' });
+
+      const output = mergeConfigs(
+        { plugins: [anonymousPlugin, namedPlugin] },
+        { plugins: [] }
+      );
+
+      expect(output.plugins).toHaveLength(2);
+      expect(output.plugins![0]).toBe(anonymousPlugin);
+      expect(output.plugins![1]).toBeInstanceOf(webpack.DefinePlugin);
+    });
+
+    it('should not deduplicate two anonymous plain-object plugins', () => {
+      const anonPlugin1 = { apply(_compiler: any) {} };
+      const anonPlugin2 = { apply(_compiler: any) {} };
+
+      const output = mergeConfigs(
+        { plugins: [anonPlugin1] },
+        { plugins: [anonPlugin2] }
+      );
+
+      // Both plain-object plugins must survive — neither is a duplicate of the other
+      expect(output.plugins).toHaveLength(2);
+    });
+
+    it('should still deduplicate named class-based plugins as before', () => {
+      const basePlugin = new webpack.HotModuleReplacementPlugin({ multiStep: true, requestTimeout: 1000 });
+      const userPlugin = new webpack.HotModuleReplacementPlugin({ requestTimeout: 500 });
+
+      const output = mergeConfigs(
+        { plugins: [basePlugin] },
+        { plugins: [userPlugin] }
+      );
+
+      // Named class plugins are still deduplicated (merged)
+      expect(output.plugins).toHaveLength(1);
+      expect(output.plugins![0]).toBeInstanceOf(webpack.HotModuleReplacementPlugin);
+    });
+  });
 });
