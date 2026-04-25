@@ -383,6 +383,37 @@ module.exports = {
 Keep in mind though that if there are default values in the plugin's constructor, they would override the corresponding values in the existing instance. So these you have to set explicitly to the same values Angular sets.  
 You can check out an example for plugins merge in the [unit tests](./src/webpack-config-merger.spec.ts) and in [this](https://github.com/just-jeb/angular-builders/issues/13) issue.
 
+> **⚠️ Plugin identification and anonymous plugins**
+>
+> The builder identifies plugins by their **constructor name** (`plugin.constructor.name`) to decide whether two plugins are the "same" and should be merged or replaced.
+> This means:
+>
+> - **Named class plugins** (e.g., `new DefinePlugin(...)`, `new CircularDependencyPlugin(...)`) are identified correctly and participate in merge/replace logic as expected.
+> - **Plain object plugins** (e.g., `{ apply(compiler) { ... } }`) have `constructor.name === 'Object'` and are therefore **indistinguishable from each other**. The builder cannot tell one anonymous plugin from another, so it treats them all as the same plugin type.
+>
+> If you add a plain-object plugin in your custom config, it will **not** be deduplicated or merged with other plain-object plugins — all anonymous plugins (yours and Angular's) are preserved as-is.
+>
+> If you want your plugin to participate in merge or replace logic (e.g., override an existing plugin of the same kind), give it a named constructor:
+>
+> ```js
+> // ✅ Named — participates in deduplication and merge
+> class MyPlugin {
+>   apply(compiler) { ... }
+> }
+> module.exports = { plugins: [new MyPlugin()] };
+>
+> // ✅ Also named — constructor.name is 'MyPlugin'
+> function MyPlugin() {}
+> MyPlugin.prototype.apply = function(compiler) { ... };
+> module.exports = { plugins: [new MyPlugin()] };
+>
+> // ❌ Anonymous — constructor.name is 'Object', cannot be deduplicated or merged
+> module.exports = { plugins: [{ apply(compiler) { ... } }] };
+> ```
+>
+> For full control over the merge, use a [function export](#custom-webpack-config-function) — you receive the full base config and return a new one, bypassing automatic merge entirely.
+
+
 ## Custom Webpack Promisified Config
 
 Webpack config can also export a `Promise` object that resolves custom config. Given the following example:
