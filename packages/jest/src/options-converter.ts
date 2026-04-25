@@ -22,14 +22,10 @@ export class OptionsConverter {
       if (option === '--') {
         nonFlagArgs = (optionValue as string[]).join(' ');
       } else if (POSITIONAL_ARRAY_OPTIONS.has(option)) {
-        // Normalise: Angular CLI may deliver a single comma-joined string (when the
-        // value is set inline in angular.json or passed as --flag=a,b on the CLI)
-        // or a proper array (when passed as space-separated args on the CLI).
-        const paths = Array.isArray(optionValue)
-          ? (optionValue as string[]).flatMap(v => v.split(','))
-          : (optionValue as string).split(',');
+        // These options use a boolean flag + trailing positional file paths.
+        // Angular CLI delivers them as a proper string array (one element per file).
         argv.push(`--${option}`);
-        positionalArgs.push(...paths);
+        positionalArgs.push(...(optionValue as string[]));
       } else if (optionValue === true) {
         argv.push(`--${option}`);
       } else if (typeof optionValue === 'string' || typeof optionValue === 'number') {

@@ -34,30 +34,20 @@ describe('Convert options to Jest CLI arguments', () => {
 
   // --- findRelatedTests regression tests ---
   // Jest treats --findRelatedTests as a boolean flag; source files are positional
-  // args (yargs `_`). Emitting --findRelatedTests file1 --findRelatedTests file2
-  // causes Jest to see no source files and run ALL tests instead of filtering.
+  // args (yargs `_`). Angular CLI delivers array schema fields as a proper string[].
   describe('findRelatedTests', () => {
-    it('should emit --findRelatedTests once and files as trailing positionals (array input)', () => {
-      const argv = optionsConverter.convertToCliArgs({
-        findRelatedTests: ['src/foo.spec.ts', 'src/bar.spec.ts'],
-      } as any);
-      // Expected: ['--findRelatedTests', 'src/foo.spec.ts', 'src/bar.spec.ts']
-      expect(argv).toEqual(['--findRelatedTests', 'src/foo.spec.ts', 'src/bar.spec.ts']);
-    });
-
-    it('should handle comma-separated paths in a single array element (Angular CLI inline style)', () => {
-      // Angular CLI delivers --find-related-tests=a.ts,b.ts as ['a.ts,b.ts'] (single element)
-      const argv = optionsConverter.convertToCliArgs({
-        findRelatedTests: ['src/foo.spec.ts,src/bar.spec.ts'],
-      } as any);
-      expect(argv).toEqual(['--findRelatedTests', 'src/foo.spec.ts', 'src/bar.spec.ts']);
-    });
-
-    it('should handle a single file path', () => {
+    it('should emit --findRelatedTests once and files as trailing positionals (single file)', () => {
       const argv = optionsConverter.convertToCliArgs({
         findRelatedTests: ['src/foo.spec.ts'],
       } as any);
       expect(argv).toEqual(['--findRelatedTests', 'src/foo.spec.ts']);
+    });
+
+    it('should emit --findRelatedTests once and files as trailing positionals (multiple files)', () => {
+      const argv = optionsConverter.convertToCliArgs({
+        findRelatedTests: ['src/foo.spec.ts', 'src/bar.spec.ts'],
+      } as any);
+      expect(argv).toEqual(['--findRelatedTests', 'src/foo.spec.ts', 'src/bar.spec.ts']);
     });
   });
 });
