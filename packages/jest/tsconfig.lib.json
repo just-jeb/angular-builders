@@ -3,9 +3,9 @@
   "compilerOptions": {
     "rootDir": "src",
     "outDir": "dist",
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": ["node", "jest"]
   },
   "files": ["src/index.ts"],
-  "types": ["jest"],
   "include": ["src/jest-config", "src/global-mocks"]
 }
