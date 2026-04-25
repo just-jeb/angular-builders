@@ -75,6 +75,14 @@
             },
             "itwcw": {
               "indexTransform": "./index-html.transform.ts"
+            },
+            "bundler-resolution-ts": {
+              "customWebpackConfig": {
+                "path": "./extra-webpack.config.bundler.ts",
+                "mergeRules": {
+                  "plugins": "prepend"
+                }
+              }
             }
           }
         },

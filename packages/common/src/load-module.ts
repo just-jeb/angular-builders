@@ -22,9 +22,16 @@ const _tsNodeRegister = (() => {
       project: tsConfig,
       compilerOptions: {
         module: 'CommonJS',
-        moduleResolution: 'node',
+        // We deliberately do NOT override moduleResolution here.
+        // The user's tsconfig moduleResolution setting (node, bundler, node16, etc.) is preserved.
+        // TypeScript allows moduleResolution:bundler with module:CommonJS, so type checking
+        // works correctly for all moduleResolution values — including 'bundler', which supports
+        // subpath package exports (e.g. '@angular/core/primitives/di').
+        // Overriding moduleResolution to 'node' (as was done previously) was the root cause of
+        // issue https://github.com/just-jeb/angular-builders/issues/2025: it prevented TypeScript
+        // from resolving subpath exports, causing TS2307 errors at build time.
         types: [
-          'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
+          'node', // NOTE: `node` is added so user configs can use Node.js globals (process, __dirname, etc.)
         ],
       },
     });
@@ -45,7 +52,6 @@ const _tsNodeRegister = (() => {
 /**
  * check for TS node registration
  * @param file: file name or file directory are allowed
- * @todo tsNodeRegistration: require ts-node if file extension is TypeScript
  */
 function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
   if (file?.endsWith('.ts')) {
@@ -90,7 +96,7 @@ export async function loadModule<T>(
       return require(modulePath);
     case '.ts':
       try {
-        // If it's a TS file then there are 2 cases for exporing an object.
+        // If it's a TS file then there are 2 cases for exporting an object.
         // The first one is `export blah`, transpiled into `module.exports = { blah} `.
         // The second is `export default blah`, transpiled into `{ default: { ... } }`.
         return require(modulePath).default || require(modulePath);

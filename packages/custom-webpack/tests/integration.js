@@ -97,4 +97,11 @@ module.exports = [
     app: 'examples/custom-webpack/sanity-app-esm',
     command: 'yarn build-ts -c tsEsm',
   },
+  {
+    id: 'ts-config-bundler-module-resolution',
+    name: 'custom-webpack: TS config with moduleResolution:bundler imports',
+    purpose: 'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
+    app: 'examples/custom-webpack/full-cycle-app',
+    command: 'yarn build -c bundler-resolution-ts',
+  },
 ];
