@@ -30,6 +30,14 @@ const _tsNodeRegister = (() => {
         // Overriding moduleResolution to 'node' (as was done previously) was the root cause of
         // issue https://github.com/just-jeb/angular-builders/issues/2025: it prevented TypeScript
         // from resolving subpath exports, causing TS2307 errors at build time.
+        resolveJsonModule: true,
+        // resolveJsonModule: true is required so that TypeScript webpack configs can import
+        // JSON files (e.g. `import pkg from './package.json'`). Without this, users on
+        // moduleResolution:'node' (the default for Angular projects before v17) get TS2732:
+        // "Cannot find module './foo.json'. Consider using '--resolveJsonModule'".
+        // This flag is safe to always enable: it has no downside and does not conflict
+        // with any other moduleResolution mode (node, node16, bundler, etc.).
+        // Fix for: https://github.com/just-jeb/angular-builders/issues/816
         types: [
           'node', // NOTE: `node` is added so user configs can use Node.js globals (process, __dirname, etc.)
         ],
