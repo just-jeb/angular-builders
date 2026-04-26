@@ -104,4 +104,11 @@ module.exports = [
     app: 'examples/custom-webpack/full-cycle-app',
     command: 'yarn build -c bundler-resolution-ts',
   },
+  {
+    id: 'ts-config-json-module-import',
+    name: 'custom-webpack: TS config with JSON import (moduleResolution:node)',
+    purpose: 'Builder loads TypeScript webpack config that imports a JSON file when using moduleResolution:node (regression for #816)',
+    app: 'examples/custom-webpack/full-cycle-app',
+    command: 'yarn build -c ts-config-json-import',
+  },
 ];
