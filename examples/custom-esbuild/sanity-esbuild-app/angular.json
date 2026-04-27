@@ -80,6 +80,14 @@
                   }
                 }
               ]
+            },
+            "target-options-test": {
+              "plugins": [
+                "esbuild/define-configuration-plugin.js"
+              ],
+              "indexHtmlTransformer": "esbuild/configuration-transformer.js",
+              "optimization": false,
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"

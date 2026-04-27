@@ -202,7 +202,10 @@ export default (builderOptions: ApplicationBuilderOptions, target: Target): Plug
     name: 'define-text',
     setup(build: PluginBuild) {
       const options = build.initialOptions;
+      // target.project is the Angular project name (e.g. "my-app")
       options.define.currentProject = JSON.stringify(target.project);
+      // target.configuration is the active build configuration (e.g. "production", "staging")
+      options.define.currentConfiguration = JSON.stringify(target.configuration ?? 'default');
     },
   };
 };
@@ -296,7 +299,9 @@ It is useful when you want to transform your `index.html` according to the build
 `index-html-transformer.js`:
 
 ```js
-module.exports = indexHtml => {
+module.exports = (indexHtml, target) => {
+  // target.configuration is the active build configuration (e.g. "production", "staging")
+  // target.project is the Angular project name
   const i = indexHtml.indexOf('</body>');
   const content = `<p>Dynamically inserted content</p>`;
   return `${indexHtml.slice(0, i)}
@@ -308,7 +313,11 @@ module.exports = indexHtml => {
 Alternatively, using TypeScript:
 
 ```ts
-export default (indexHtml: string) => {
+import type { Target } from '@angular-devkit/architect';
+
+export default (indexHtml: string, target: Target) => {
+  // target.configuration is the active build configuration (e.g. "production", "staging")
+  // target.project is the Angular project name
   const i = indexHtml.indexOf('</body>');
   const content = `<p>Dynamically inserted content</p>`;
   return `${indexHtml.slice(0, i)}

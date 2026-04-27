@@ -8,7 +8,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "build-target-options": "ng build --configuration target-options-test && node -e \"const fs = require('fs');const dist = 'dist/sanity-esbuild-app/browser';const indexHtml = fs.readFileSync(dist + '/index.html', 'utf8');const jsFiles = fs.readdirSync(dist).filter(f => f.endsWith('.js'));const mainJs = jsFiles.map(f => fs.readFileSync(dist + '/' + f, 'utf8')).join('');if (!indexHtml.includes('content=\\\"target-options-test\\\"')) { console.error('FAIL: indexHtmlTransformer did not inject configuration into index.html'); process.exit(1); }if (!mainJs.includes('target-options-test')) { console.error('FAIL: plugin did not inject buildConfiguration into JS bundle'); process.exit(1); }console.log('PASS: target.configuration is accessible in both plugin and indexHtmlTransformer');\""
   },
   "private": true,
   "dependencies": {
