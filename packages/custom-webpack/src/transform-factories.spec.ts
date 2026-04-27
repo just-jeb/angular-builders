@@ -36,6 +36,7 @@ describe('getTransforms', () => {
       project: 'test/tsconfig.test.json',
       compilerOptions: {
         module: 'CommonJS',
+        resolveJsonModule: true,
         types: ['node'],
       },
     });
