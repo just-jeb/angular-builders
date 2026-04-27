@@ -14,6 +14,7 @@ describe('Resolve project default configuration', () => {
       {
         stringifyContentPathRegex: '\\.(html|svg)$',
         tsconfig: getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)),
+        isolatedModules: true,
       },
     ]);
   });
@@ -28,6 +29,7 @@ describe('Resolve project default configuration', () => {
       {
         stringifyContentPathRegex: '\\.(html|svg)$',
         tsconfig: getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`)),
+        isolatedModules: true,
       },
     ]);
   });
