@@ -22,6 +22,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
   - [Custom Webpack Config Function](#custom-webpack-config-function)
 - [Index Transform](#index-transform)
   - [Example](#example-2)
+- [Customizing TypeScript Configuration for `customWebpackConfig` and `indexTransform`](#customizing-typescript-configuration-for-customwebpackconfig-and-indextransform)
 - [ES Modules (ESM) Support](#es-modules-esm-support)
 - [Verbose Logging](#verbose-logging)
 - [Further Reading](#further-reading)
@@ -581,6 +582,43 @@ export default (targetOptions: TargetOptions, indexHtml: string) => {
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
 Full example [here](../../examples/custom-webpack/full-cycle-app).
+
+
+# Customizing TypeScript Configuration for `customWebpackConfig` and `indexTransform`
+
+Both `customWebpackConfig` and `indexTransform` are loaded and executed using [`ts-node`](https://typestrong.org/ts-node/). By default, they use the application's `tsConfig` file specified in the build target options.
+
+If you need to use a different TypeScript configuration specifically for these files (for example, to reduce compilation warnings or apply different compiler settings), you can leverage [`ts-node`'s configuration options](https://typestrong.org/ts-node/docs/configuration/#via-tsconfigjson-recommended) directly within your `tsconfig.json`.
+
+## Example: Using ts-node Section in tsconfig.json
+
+Add a `ts-node` section to your `tsconfig.json` to specify overrides for webpack config and index transform loading:
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "commonjs",
+    // ... other options
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES2020",
+      // Customize compiler options for ts-node execution
+      "skipLibCheck": true,
+      "esModuleInterop": true
+    }
+  }
+}
+```
+
+This approach allows you to:
+- Use different compiler settings for your custom webpack config and index transform without affecting your application's TypeScript compilation
+- Reduce TypeScript warnings for files that are only used during the build process
+- Keep a single `tsconfig.json` while maintaining separate configurations for build-time and run-time code
+
+For more details on `ts-node` configuration options, see the [ts-node documentation](https://typestrong.org/ts-node/docs/configuration/).
 
 # ES Modules (ESM) Support
 
