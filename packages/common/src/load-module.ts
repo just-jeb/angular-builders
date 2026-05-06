@@ -20,21 +20,21 @@ const _tsNodeRegister = (() => {
 
     loadTsNode().register({
       project: tsConfig,
+      experimentalVmModules: true,
       compilerOptions: {
-        module: 'CommonJS',
+        module: 'ES2022',
         // We deliberately do NOT override moduleResolution here.
         // The user's tsconfig moduleResolution setting (node, bundler, node16, etc.) is preserved.
-        // TypeScript allows moduleResolution:bundler with module:CommonJS, so type checking
+        // TypeScript allows moduleResolution:bundler with module:ES2022, so type checking
         // works correctly for all moduleResolution values — including 'bundler', which supports
         // subpath package exports (e.g. '@angular/core/primitives/di').
-        // Overriding moduleResolution to 'node' (as was done previously) was the root cause of
-        // issue https://github.com/just-jeb/angular-builders/issues/2025: it prevented TypeScript
-        // from resolving subpath exports, causing TS2307 errors at build time.
+        // Using module: 'ES2022' allows top-level await in config files and enables proper
+        // ESM handling with experimentalVmModules. See: https://github.com/just-jeb/angular-builders/issues/1918
         types: [
           'node', // NOTE: `node` is added so user configs can use Node.js globals (process, __dirname, etc.)
         ],
       },
-    });
+    } as any);
 
     const tsConfigPaths = loadTsConfigPaths();
     const result = tsConfigPaths.loadConfig(tsConfig);
@@ -96,10 +96,9 @@ export async function loadModule<T>(
       return require(modulePath);
     case '.ts':
       try {
-        // If it's a TS file then there are 2 cases for exporting an object.
-        // The first one is `export blah`, transpiled into `module.exports = { blah} `.
-        // The second is `export default blah`, transpiled into `{ default: { ... } }`.
-        return require(modulePath).default || require(modulePath);
+        // With module: ES2022 in ts-node compilerOptions, TypeScript files are transpiled
+        // to ESM, so we must use dynamic import instead of require.
+        return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
       } catch (e: any) {
         if (e.code === 'ERR_REQUIRE_ESM') {
           // Load the ESM configuration file using the TypeScript dynamic import workaround.
