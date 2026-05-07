@@ -142,6 +142,14 @@ module.exports = [
     app: '.',
     command: 'node scripts/e2e-jest-migration.js',
   },
+  {
+    id: 'multi-project-coverage',
+    name: 'jest: multi-project coverage scoping',
+    purpose: 'Coverage output is scoped per project, not overwritten',
+    app: 'examples/jest/multiple-apps',
+    command:
+      'node ../../../packages/jest/tests/validate-coverage.js',
+  },
 
   // E2E sanity
   {
