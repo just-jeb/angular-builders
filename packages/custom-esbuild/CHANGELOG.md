@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.0-beta.10](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@21.1.0-beta.9...@angular-builders/custom-esbuild@21.1.0-beta.10) (2026-05-07)
+
+**Note:** Version bump only for package @angular-builders/custom-esbuild
+
 ## [21.1.0-beta.9](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-esbuild@21.1.0-beta.8...@angular-builders/custom-esbuild@21.1.0-beta.9) (2026-04-26)
 
 ### Bug Fixes
