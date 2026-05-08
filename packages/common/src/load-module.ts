@@ -1,10 +1,12 @@
 import * as path from 'node:path';
 import * as url from 'node:url';
+import * as fs from 'node:fs';
 import type { logging } from '@angular-devkit/core';
 
 const _tsNodeRegister = (() => {
   let lastTsConfig: string | undefined;
-  return (tsConfig: string, logger: logging.LoggerApi) => {
+  let lastEsmMode: boolean | undefined;
+  return (tsConfig: string, logger: logging.LoggerApi, esmMode: boolean = false) => {
     // Check if the function was previously called with the same tsconfig
     if (lastTsConfig && lastTsConfig !== tsConfig) {
       logger.warn(`Trying to register ts-node again with a different tsconfig - skipping the registration.
@@ -17,11 +19,12 @@ const _tsNodeRegister = (() => {
     }
 
     lastTsConfig = tsConfig;
+    lastEsmMode = esmMode;
 
-    loadTsNode().register({
+    const registerOptions: any = {
       project: tsConfig,
       compilerOptions: {
-        module: 'CommonJS',
+        module: esmMode ? 'ESNext' : 'CommonJS',
         // We deliberately do NOT override moduleResolution here.
         // The user's tsconfig moduleResolution setting (node, bundler, node16, etc.) is preserved.
         // TypeScript allows moduleResolution:bundler with module:CommonJS, so type checking
@@ -34,7 +37,14 @@ const _tsNodeRegister = (() => {
           'node', // NOTE: `node` is added so user configs can use Node.js globals (process, __dirname, etc.)
         ],
       },
-    });
+    };
+
+    // If ESM mode is detected, register with experimentalEsm flag
+    if (esmMode) {
+      registerOptions.experimentalEsm = true;
+    }
+
+    loadTsNode().register(registerOptions);
 
     const tsConfigPaths = loadTsConfigPaths();
     const result = tsConfigPaths.loadConfig(tsConfig);
@@ -50,13 +60,38 @@ const _tsNodeRegister = (() => {
 })();
 
 /**
+ * Detect if the workspace is configured for ESM by checking for type: "module" in workspace package.json
+ */
+function isEsmWorkspace(tsConfigPath: string): boolean {
+  try {
+    // Find workspace root by walking up from tsConfig location
+    let currentDir = path.dirname(tsConfigPath);
+    const root = path.parse(currentDir).root;
+
+    while (currentDir !== root) {
+      const pkgPath = path.join(currentDir, 'package.json');
+      if (fs.existsSync(pkgPath)) {
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+        return pkg.type === 'module';
+      }
+      currentDir = path.dirname(currentDir);
+    }
+  } catch {
+    // If we can't detect, default to CJS
+  }
+
+  return false;
+}
+
+/**
  * check for TS node registration
  * @param file: file name or file directory are allowed
  */
 function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
   if (file?.endsWith('.ts')) {
-    // Register TS compiler lazily
-    _tsNodeRegister(tsConfig, logger);
+    // Register TS compiler lazily, with ESM detection
+    const esmMode = isEsmWorkspace(tsConfig);
+    _tsNodeRegister(tsConfig, logger, esmMode);
   }
 }
 
