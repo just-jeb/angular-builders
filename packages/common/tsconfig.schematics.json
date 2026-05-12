@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/packages/common",
+    "rootDir": ".",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "module": "commonjs"
+  },
+  "include": [
+    "schematics/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

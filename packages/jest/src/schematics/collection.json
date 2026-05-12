@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "@angular-builders/jest Schematics",
+  "description": "Schematics for @angular-builders/jest",
+  "schematics": {
+    "ng-add": {
+      "description": "Install @angular-builders/jest and update angular.json builder configuration",
+      "factory": "./ng-add/index#ngAddSchematic"
+    },
+    "ng-add-init": {
+      "description": "Initialize @angular-builders/jest configuration after installation",
+      "factory": "../../../common/schematics/ng-add-init#createNgAddRule"
+    }
+  }
+}

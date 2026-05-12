@@ -18,7 +18,8 @@
   "main": "dist/index.js",
   "files": [
     "dist",
-    "builders.json"
+    "builders.json",
+    "schematics"
   ],
   "keywords": [
     "jest",
@@ -30,6 +31,21 @@
     "runner"
   ],
   "builders": "builders.json",
+  "schematics": "./dist/schematics/collection.json",
+  "ng-add": {
+    "package.json": {
+      "devDependencies": {
+        "@angular-builders/jest": "^21.0.0"
+      }
+    },
+    "postInstall": true
+  },
+  "ng-update": {
+    "migrations": "./dist/schematics/migrations.json",
+    "packageGroup": [
+      "@angular-builders/jest"
+    ]
+  },
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
     "build": "yarn prebuild && tsc -p tsconfig.lib.json && yarn postbuild",

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/package.json",
+  "name": "@angular-builders/schematics",
+  "version": "0.0.0",
+  "description": "Shared schematics for @angular-builders/* packages",
+  "schematics": {
+    "ng-add-init": {
+      "factory": "./ng-add-init:default",
+      "description": "Base factory for ng-add schematic initialization"
+    }
+  }
+}

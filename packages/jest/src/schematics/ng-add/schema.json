@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "@angular-builders/jest ng-add options",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The project name to configure with Jest builder"
+    },
+    "skipInstall": {
+      "type": "boolean",
+      "description": "Skip package installation",
+      "default": false
+    },
+    "skipConfig": {
+      "type": "boolean",
+      "description": "Skip angular.json configuration update",
+      "default": false
+    }
+  }
+}
