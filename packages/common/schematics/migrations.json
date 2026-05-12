@@ -1,0 +1,19 @@
+{
+  "schematics": [
+    {
+      "version": "18.0.0",
+      "description": "Update @angular-builders/* packages to v18 (Angular 18 compatibility)",
+      "factory": "./migrations/v18/index#default"
+    },
+    {
+      "version": "19.0.0",
+      "description": "Update @angular-builders/* packages to v19 (Angular 19 compatibility)",
+      "factory": "./migrations/v19/index#default"
+    },
+    {
+      "version": "21.0.0",
+      "description": "Update @angular-builders/* packages to v21 (major update with breaking changes)",
+      "factory": "./migrations/v21/index#default"
+    }
+  ]
+}

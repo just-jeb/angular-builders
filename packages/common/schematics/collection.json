@@ -8,5 +8,16 @@
       "factory": "./ng-add-init:default",
       "description": "Base factory for ng-add schematic initialization"
     }
+  },
+  "ng-update": {
+    "migrations": "./migrations/migrations.json",
+    "packageGroup": [
+      "@angular-builders/jest",
+      "@angular-builders/custom-webpack",
+      "@angular-builders/custom-esbuild",
+      "@angular-builders/bazel",
+      "@angular-builders/timestamp",
+      "@angular-builders/dev-server"
+    ]
   }
 }
