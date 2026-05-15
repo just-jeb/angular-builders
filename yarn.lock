@@ -190,9 +190,13 @@ __metadata:
   dependencies:
     "@angular-devkit/core": ^21.0.0
     rimraf: ^6.0.0
-    ts-node: ^10.0.0
     tsconfig-paths: ^4.2.0
     typescript: 5.9.3
+  peerDependencies:
+    ts-node: ^10.0.0
+  peerDependenciesMeta:
+    ts-node:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -212,7 +216,11 @@ __metadata:
   peerDependencies:
     "@angular/compiler-cli": ^21.0.0
     rxjs: ">=7.0.0"
+    ts-node: ^10.0.0
     vitest: ">=2"
+  peerDependenciesMeta:
+    ts-node:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -234,6 +242,10 @@ __metadata:
   peerDependencies:
     "@angular/compiler-cli": ^21.0.0
     rxjs: ">=7.0.0"
+    ts-node: ^10.0.0
+  peerDependenciesMeta:
+    ts-node:
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -259,6 +271,10 @@ __metadata:
     "@angular/platform-browser-dynamic": ^21.0.0
     jest: ^30.0.0
     rxjs: ">=7.0.0"
+    ts-node: ^10.0.0
+  peerDependenciesMeta:
+    ts-node:
+      optional: true
   languageName: unknown
   linkType: soft
 
