@@ -1,20 +1,5 @@
-let isTsEsmLoaderRegistered = false;
-
 export function registerTsProject(tsConfig: string) {
   const cleanupFunctions = [registerTsConfigPaths(tsConfig), registerTsNodeService(tsConfig)];
-
-  // Add ESM support for `.ts` files.
-  // NOTE: There is no cleanup function for this, as it's not possible to unregister the loader.
-  //       Based on limited testing, it doesn't seem to matter if we register it multiple times, but just in
-  //       case let's keep a flag to prevent it.
-  if (!isTsEsmLoaderRegistered) {
-    const module = require('node:module');
-    if (module.register && packageIsInstalled('ts-node/esm')) {
-      const url = require('node:url');
-      module.register(url.pathToFileURL(require.resolve('ts-node/esm')));
-    }
-    isTsEsmLoaderRegistered = true;
-  }
 
   return () => {
     cleanupFunctions.forEach(fn => fn());
@@ -29,6 +14,11 @@ function registerTsNodeService(tsConfig: string): VoidFunction {
     project: tsConfig,
     compilerOptions: {
       module: 'CommonJS',
+      // Override moduleResolution to 'node' so it is compatible with module: 'CommonJS'.
+      // User tsconfigs may specify moduleResolution: 'bundler' or 'Node16' which are
+      // incompatible with module: 'CommonJS' in transpileOnly mode (TS5095, TS5110).
+      // This override only affects ts-node transpilation, not type checking.
+      moduleResolution: 'node',
       types: [
         'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
       ],
@@ -56,13 +46,4 @@ function registerTsConfigPaths(tsConfig: string): VoidFunction {
   // context, considering that this is internal information not exposed
   // to the end user
   return () => {};
-}
-
-function packageIsInstalled(m: string): boolean {
-  try {
-    require.resolve(m);
-    return true;
-  } catch {
-    return false;
-  }
 }
