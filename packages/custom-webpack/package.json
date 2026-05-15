@@ -64,14 +64,13 @@
     "webpack-merge": "^6.0.0"
   },
   "peerDependencies": {
-    "@angular-devkit/build-angular": "^21.0.0",
     "@angular/compiler-cli": "^21.0.0",
-    "@angular/core": "^21.0.0",
-    "webpack": "^5.0.0"
+    "rxjs": ">=7.0.0"
   },
   "devDependencies": {
-    "@angular-builders/common": "workspace:*",
-    "@types/node": "^22.0.0",
-    "typescript": "5.9.3"
+    "jest": "30.4.2",
+    "rimraf": "^6.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "6.0.3"
   }
 }
