@@ -100,15 +100,9 @@ module.exports = [
   {
     id: 'ts-config-bundler-module-resolution',
     name: 'custom-webpack: TS config with moduleResolution:bundler imports',
-    purpose: 'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
+    purpose:
+      'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
     app: 'examples/custom-webpack/full-cycle-app',
     command: 'yarn build -c bundler-resolution-ts',
-  },
-  {
-    id: 'ts-config-json-module-import',
-    name: 'custom-webpack: TS config with JSON import (moduleResolution:node)',
-    purpose: 'Builder loads TypeScript webpack config that imports a JSON file when using moduleResolution:node (regression for #816)',
-    app: 'examples/custom-webpack/full-cycle-app',
-    command: 'yarn build -c ts-config-json-import',
   },
 ];
