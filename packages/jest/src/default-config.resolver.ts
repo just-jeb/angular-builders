@@ -1,4 +1,3 @@
-import { pick } from 'lodash';
 import { getSystemPath, normalize, Path } from '@angular-devkit/core';
 
 import { JestConfig } from './types';
@@ -13,9 +12,13 @@ const globalMocks = {
 };
 
 const getMockFiles = (enabledMocks: string[] = []): string[] =>
-  Object.values(pick(globalMocks, enabledMocks)).map(fileName =>
-    getSystemPath(normalize(`${__dirname}/global-mocks/${fileName}`))
-  );
+  Object.values(
+    Object.fromEntries(
+      enabledMocks
+        .filter(k => k in globalMocks)
+        .map(k => [k, globalMocks[k as keyof typeof globalMocks]])
+    )
+  ).map(fileName => getSystemPath(normalize(`${__dirname}/global-mocks/${fileName}`)));
 
 const getSetupFile = (zoneless: boolean = true): string => {
   const setupFileName = zoneless ? 'setup-zoneless.js' : 'setup-zone.js';
