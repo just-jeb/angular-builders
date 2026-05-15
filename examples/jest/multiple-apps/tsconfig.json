@@ -4,6 +4,7 @@
     "ignoreDeprecations": "6.0",
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
     "module": "es2022",
@@ -15,12 +16,8 @@
     "target": "es2022",
     "useDefineForClassFields": false,
     "paths": {
-      "my-shared-library": [
-        "dist/my-shared-library"
-      ],
-      "my-shared-library/*": [
-        "dist/my-shared-library/*"
-      ]
+      "my-shared-library": ["dist/my-shared-library"],
+      "my-shared-library/*": ["dist/my-shared-library/*"]
     }
   }
 }
