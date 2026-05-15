@@ -14,7 +14,6 @@ describe('loadIndexHtmlTransformer', () => {
     const transform = await loadIndexHtmlTransformer(
       'test/test-index-transform.js',
       './tsconfig.json',
-      null as any,
       mockTarget
     );
 

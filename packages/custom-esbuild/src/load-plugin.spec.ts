@@ -16,7 +16,6 @@ describe('loadPlugin', () => {
       ['test-plugin.js'],
       './test',
       './tsconfig.json',
-      null as any,
       {} as any,
       {} as any
     );
@@ -34,7 +33,6 @@ describe('loadPlugin', () => {
       ['test-plugin.js'],
       './test',
       './tsconfig.json',
-      null as any,
       mockOptions,
       mockTarget
     );
@@ -52,7 +50,6 @@ describe('loadPlugin', () => {
       [{ path: 'test-plugin.js', options: { test: 'test' } }],
       './test',
       './tsconfig.json',
-      null as any,
       mockOptions,
       mockTarget
     );
