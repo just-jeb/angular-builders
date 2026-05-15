@@ -35,7 +35,6 @@ export function executeCustomEsbuildUnitTestBuilder(
         buildOptions.plugins,
         workspaceRoot,
         tsConfig,
-        context.logger,
         options,
         context.target
       );
