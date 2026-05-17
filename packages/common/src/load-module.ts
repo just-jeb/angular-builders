@@ -5,7 +5,6 @@ import type { logging } from '@angular-devkit/core';
 
 const _tsNodeRegister = (() => {
   let lastTsConfig: string | undefined;
-  let lastEsmMode: boolean | undefined;
   return (tsConfig: string, logger: logging.LoggerApi, esmMode: boolean = false) => {
     // Check if the function was previously called with the same tsconfig
     if (lastTsConfig && lastTsConfig !== tsConfig) {
@@ -19,7 +18,6 @@ const _tsNodeRegister = (() => {
     }
 
     lastTsConfig = tsConfig;
-    lastEsmMode = esmMode;
 
     const registerOptions: any = {
       project: tsConfig,
