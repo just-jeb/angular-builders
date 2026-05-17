@@ -249,10 +249,12 @@ External `karma.conf.js` configuration:
 Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
 
 Fix this by:
+
 - adding `'@angular-devkit/build-angular'` to the `frameworks` array
 - adding `'@angular-devkit/build-angular/plugins/karma'` to the `plugins` array
 
 `karma.conf.js` example:
+
 ```js
 module.exports = function (config) {
   config.set({
@@ -583,11 +585,12 @@ Full example [here](../../examples/custom-webpack/full-cycle-app).
 
 ### Using a Custom TypeScript Configuration for indexTransform
 
-If your `indexTransform` file requires a different TypeScript configuration than the default `tsConfig` from the build target, you can specify it using the `ts-node` section in your `tsconfig.json`.
+If your `indexTransform` file requires different TypeScript settings than the build target's `tsConfig` (different `target`, custom `paths`, additional `lib` entries, etc.), you can specify them via the `ts-node` section of your `tsconfig.json`. The builder picks up these options when registering ts-node for transform/config loading.
 
-For example, if you want your `indexTransform.ts` to use a different `tsconfig` file:
+For example, to make `target` and `paths` available specifically when ts-node loads your transform:
 
 `tsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -595,7 +598,10 @@ For example, if you want your `indexTransform.ts` to use a different `tsconfig` 
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "commonjs"
+      "target": "ES2022",
+      "paths": {
+        "@shared/*": ["./shared/*"]
+      }
     }
   }
 }
@@ -604,6 +610,7 @@ For example, if you want your `indexTransform.ts` to use a different `tsconfig` 
 Or, to use an entirely different `tsconfig` file for `ts-node`:
 
 `tsconfig.json`:
+
 ```json
 {
   "compilerOptions": {
@@ -615,7 +622,11 @@ Or, to use an entirely different `tsconfig` file for `ts-node`:
 }
 ```
 
-This is useful when your `indexTransform` has different transpilation requirements than the main build (e.g., different module format, different target, or different lib configuration). For more details on `ts-node` configuration options, see the [ts-node documentation](https://typestrong.org/ts-node/docs/configuration/#via-tsconfigjson-recommended).
+> **Note:** ts-node is registered once per builder run; the first tsconfig encountered governs subsequent loads in the same process. If you have both an `indexTransform.ts` and a `webpack.config.ts`, both will resolve against the same ts-node configuration.
+
+> Some options the builder explicitly overrides (notably `module: "commonjs"`) cannot be changed through this mechanism. Use it for options the builder doesn't hard-code.
+
+For more details on `ts-node` configuration options, see the [ts-node documentation](https://typestrong.org/ts-node/docs/configuration/#via-tsconfigjson-recommended).
 
 The same approach applies to `customWebpackConfig` if it's written in TypeScript.
 
