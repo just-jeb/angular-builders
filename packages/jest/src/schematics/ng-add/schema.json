@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "AngularBuildersJestNgAdd",
+  "title": "@angular-builders/jest ng-add schema",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "Name of the project to configure. Defaults to the workspace default project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "skipInstall": {
+      "type": "boolean",
+      "description": "Skip running the package install task.",
+      "default": false
+    }
+  },
+  "required": []
+}

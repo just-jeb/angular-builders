@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Configure @angular-builders/jest as the test runner for an Angular workspace",
+      "factory": "./ng-add/index#default",
+      "schema": "./ng-add/schema.json"
+    }
+  }
+}

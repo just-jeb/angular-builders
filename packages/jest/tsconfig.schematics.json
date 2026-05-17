@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/schematics",
+    "rootDir": "./src/schematics",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "noImplicitAny": false,
+    "types": ["node"]
+  },
+  "include": ["src/schematics/**/*.ts"],
+  "exclude": ["src/schematics/**/*.spec.ts"]
+}

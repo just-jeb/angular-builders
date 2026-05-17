@@ -30,14 +30,19 @@
     "runner"
   ],
   "builders": "builders.json",
+  "schematics": "./dist/schematics/collection.json",
+  "ng-add": {
+    "save": "devDependencies"
+  },
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "yarn prebuild && tsc -p tsconfig.lib.json && yarn postbuild",
-    "postbuild": "yarn copy && yarn test",
+    "build": "yarn prebuild && tsc -p tsconfig.lib.json && tsc -p tsconfig.schematics.json && yarn postbuild",
+    "postbuild": "yarn copy && yarn copy:schematics && yarn test",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
+    "copy:schematics": "cpy \"src/schematics/**/*.json\" dist/schematics",
     "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "dependencies": {
