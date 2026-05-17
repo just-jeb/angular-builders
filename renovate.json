@@ -28,6 +28,12 @@
       "description": "Track GitHub-hosted runner image versions (runs-on), but never auto-merge them - a runner bump can change the CI environment and must be reviewed/tested.",
       "matchDatasources": ["github-runners"],
       "automerge": false
+    },
+    {
+      "description": "Hold TypeScript majors until Angular CLI's supported versions catch up — see #2123.",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }
