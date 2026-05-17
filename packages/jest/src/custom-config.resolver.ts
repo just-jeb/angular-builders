@@ -54,9 +54,16 @@ export class CustomConfigResolver {
     // Treat as file path
     const jestConfigPath = getSystemPath(join(projectRoot, configPath));
     if (!existsSync(jestConfigPath)) {
-      this.logger.warn(
-        `warning: unable to locate custom jest configuration file at path "${jestConfigPath}"`
-      );
+      // Only warn when the user explicitly pointed at a missing file.
+      // 'jest.config.js' is the schema default — best-effort discovery —
+      // and is legitimately absent when the user keeps config elsewhere
+      // (package.json `jest`, workspace-level jest.config.*, or an inline
+      // JestConfig object in angular.json). See #1102.
+      if (configPath !== 'jest.config.js') {
+        this.logger.warn(
+          `warning: unable to locate custom jest configuration file at path "${jestConfigPath}"`
+        );
+      }
       return {};
     }
     const tsConfig = getTsConfigPath(projectRoot, this.options);
