@@ -36,6 +36,15 @@ describe('getTransforms', () => {
     transforms.webpackConfiguration({});
 
     expect(tsNode.register).toHaveBeenCalledTimes(1);
+    expect(tsNode.register).toHaveBeenCalledWith({
+      transpileOnly: true,
+      project: 'test/tsconfig.test.json',
+      compilerOptions: {
+        module: 'CommonJS',
+        moduleResolution: 'node',
+        types: ['node'],
+      },
+    });
 
     const transforms2 = getTransforms(
       {

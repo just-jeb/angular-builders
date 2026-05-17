@@ -14,13 +14,19 @@ function registerTsNodeService(tsConfig: string): VoidFunction {
     project: tsConfig,
     compilerOptions: {
       module: 'CommonJS',
-      // Override moduleResolution to 'node' so it is compatible with module: 'CommonJS'.
-      // User tsconfigs may specify moduleResolution: 'bundler' or 'Node16' which are
-      // incompatible with module: 'CommonJS' in transpileOnly mode (TS5095, TS5110).
-      // This override only affects ts-node transpilation, not type checking.
+      // moduleResolution: 'node' is paired with module: 'CommonJS' above.
+      //
+      // Without this override, user tsconfigs declaring moduleResolution: 'bundler'
+      // or 'Node16' raise TS5095/TS5110 against the forced module: 'CommonJS'.
+      //
+      // Safe under transpileOnly: true — ts-node only transpiles, never resolves
+      // imports against this setting. The user's tsconfig still governs editor and
+      // build-time type checking. See PR #1659 and the regression it addresses
+      // (#1197, #1213). PR #2187 previously removed this override because it broke
+      // path resolution for user code; transpileOnly makes that case moot.
       moduleResolution: 'node',
       types: [
-        'node', // NOTE: `node` is added because users scripts can also use pure node's packages as webpack or others
+        'node', // user scripts (e.g. webpack.config) commonly require node builtins
       ],
     },
   });
