@@ -91,6 +91,14 @@ module.exports = [
 
   // TypeScript config loading
   {
+    id: 'ts-config-json-import',
+    name: 'custom-webpack: TS config JSON import',
+    purpose:
+      'Builder loads TypeScript webpack config that imports a JSON file (regression for #816). Fails without resolveJsonModule:true in ts-node options.',
+    app: 'examples/custom-webpack/sanity-app',
+    command: 'yarn build -c ts-json-import',
+  },
+  {
     id: 'ts-config-esm-imports',
     name: 'custom-webpack: TS config ESM imports',
     purpose: 'Builder loads TypeScript config with ESM imports',
