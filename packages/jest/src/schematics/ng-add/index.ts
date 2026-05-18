@@ -177,17 +177,6 @@ function scheduleInstall(options: NgAddOptions): Rule {
   };
 }
 
-// TODO: test scaffold - add a Jest spec using `SchematicTestRunner` to verify:
-//   1. angular.json `architect.test.builder` is rewritten to `@angular-builders/jest:run`
-//   2. karma/jasmine devDependencies are removed and @angular-builders/jest is added
-//   3. karma.conf.js and src/test.ts are deleted when present
-//   4. tsconfig.spec.json `types` swap to `['jest']` and `files` entry removed
-//   5. NodePackageInstallTask is scheduled (and skipped when skipInstall=true)
-// Blocker for v1: `@angular-devkit/schematics/testing` transitively imports `ora@9`
-// (ESM-only). The repo's ts-jest config rejects it with "Cannot use import statement
-// outside a module". Follow-up PR: extend `transformIgnorePatterns` and/or
-// `moduleNameMapper` to enable schematic specs in this jest config.
-
 export default function ngAdd(options: NgAddOptions = {}): Rule {
   return chain([
     updateAngularJson(options),
