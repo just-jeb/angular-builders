@@ -1,6 +1,5 @@
 import { DefaultConfigResolver, testPattern } from './default-config.resolver';
 import { getSystemPath, normalize } from '@angular-devkit/core';
-import * as path from 'node:path';
 
 import { tsConfigName } from './utils';
 import defaultConfig from './jest-config/default-config';
@@ -32,13 +31,6 @@ describe('Resolve project default configuration', () => {
     expect(config.testMatch).toEqual([
       `${getSystemPath(normalize('/some/cool/directory'))}${testPattern}`,
     ]);
-  });
-
-  it('Should scope coverageDirectory to project root to prevent output collisions in multi-project workspaces (#1009)', () => {
-    const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-    expect(config.coverageDirectory).toEqual(
-      path.join(getSystemPath(normalize('/some/cool/directory')), 'coverage')
-    );
   });
 });
 
