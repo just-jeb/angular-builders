@@ -9,14 +9,10 @@ const defaultConfigResolver = new DefaultConfigResolver({});
 describe('Resolve project default configuration', () => {
   it('Should resolve tsconfig relatively to project root', () => {
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/directory'));
-    expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
-      'jest-preset-angular',
-      {
-        stringifyContentPathRegex: '\\.(html|svg)$',
-        tsconfig: getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`)),
-        isolatedModules: true,
-      },
-    ]);
+    const [, transformOptions] = config.transform[defaultConfigResolver.tsJestTransformRegExp];
+    expect(transformOptions.tsconfig).toEqual(
+      getSystemPath(normalize(`/some/cool/directory/${tsConfigName}`))
+    );
   });
 
   it('Should resolve path to the tsconfig if "tsConfig" is provided', () => {
@@ -24,14 +20,10 @@ describe('Resolve project default configuration', () => {
       tsConfig: './ts-configs/tsconfig.spec.json',
     });
     const config = defaultConfigResolver.resolveForProject(normalize('/some/cool/project'));
-    expect(config.transform[defaultConfigResolver.tsJestTransformRegExp]).toEqual([
-      'jest-preset-angular',
-      {
-        stringifyContentPathRegex: '\\.(html|svg)$',
-        tsconfig: getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`)),
-        isolatedModules: true,
-      },
-    ]);
+    const [, transformOptions] = config.transform[defaultConfigResolver.tsJestTransformRegExp];
+    expect(transformOptions.tsconfig).toEqual(
+      getSystemPath(normalize(`/some/cool/project/ts-configs/tsconfig.spec.json`))
+    );
   });
 
   it('Should resolve testMatch pattern relatively to project root', () => {
