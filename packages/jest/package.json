@@ -30,10 +30,14 @@
     "runner"
   ],
   "builders": "builders.json",
+  "ng-update": {
+    "migrations": "./dist/schematics/migrations.json"
+  },
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "yarn prebuild && tsc -p tsconfig.lib.json && yarn postbuild",
-    "postbuild": "yarn copy && yarn test",
+    "build": "yarn prebuild && tsc -p tsconfig.lib.json && tsc -p tsconfig.schematics.json && yarn postbuild",
+    "postbuild": "yarn copy && yarn copy:schematics && yarn test",
+    "copy:schematics": "cpy \"src/schematics/**/*.json\" dist/schematics",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist src/schema.ts",

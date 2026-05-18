@@ -1,0 +1,25 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "migration-v18": {
+      "version": "18.0.0",
+      "description": "Migrate @angular-builders/jest from v17 to v18: switch to jest-preset-angular/setup-jest",
+      "factory": "./migrations/v18/index#default"
+    },
+    "migration-v19": {
+      "version": "19.0.0",
+      "description": "Migrate @angular-builders/jest from v18 to v19: use explicit setupZoneTestEnv() from jest-preset-angular/setup-env/zone",
+      "factory": "./migrations/v19/index#default"
+    },
+    "migration-v20": {
+      "version": "20.0.0",
+      "description": "Migrate @angular-builders/jest from v19 to v20: no breaking changes (no-op migration)",
+      "factory": "./migrations/v20/index#default"
+    },
+    "migration-v21": {
+      "version": "21.0.0",
+      "description": "Migrate @angular-builders/jest from v20 to v21: zoneless as default, reduced global mocks",
+      "factory": "./migrations/v21/index#default"
+    }
+  }
+}
