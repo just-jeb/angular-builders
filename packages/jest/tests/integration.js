@@ -14,6 +14,15 @@ module.exports = [
     app: 'examples/jest/simple-app',
     command: 'yarn test:esm --no-cache',
   },
+  {
+    id: 'config-inline-object',
+    name: 'jest: inline config object in angular.json',
+    purpose:
+      'Builder runs tests successfully when config is an inline object in angular.json, not a file path (no spurious warning, no crash)',
+    app: 'examples/jest/simple-app',
+    command:
+      'node ../../../packages/jest/tests/validate.js --run-script=test:inline-config --no-cache --expect-suites=2 --expect-tests=4',
+  },
 
   // CLI passthrough - validated tests
   {
