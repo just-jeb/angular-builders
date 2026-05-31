@@ -18,6 +18,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+# Karma uses the runner's preinstalled system Chrome (see karma.conf.js), so Puppeteer's
+# bundled Chrome is unused. Skip its download to avoid install-time failures when the
+# Chrome version is unavailable from Puppeteer's CDN or the cached binary is incomplete.
+env:
+  PUPPETEER_SKIP_DOWNLOAD: 'true'
+
 jobs:
   build:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
@@ -41,7 +47,6 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
-            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           restore-keys: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-
       - uses: actions/cache@v5
@@ -51,14 +56,6 @@ jobs:
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
       - run: yarn --immutable
-      # Ensure Puppeteer Chrome binary is downloaded (needed for Karma tests in integration jobs)
-      # Puppeteer downloads Chrome on first use, so we trigger it here to include it in cache
-      - run: |
-          for app in examples/custom-webpack/*/; do
-            if [ -f "$app/package.json" ] && grep -q "puppeteer" "$app/package.json"; then
-              (cd "$app" && node -e "try { require('puppeteer').executablePath(); } catch(e) {}" || true)
-            fi
-          done
       # On PRs, build only affected packages unless 'ci:full' label is present.
       # On master events (push/workflow_dispatch), build all packages. (see #2026)
       - run: |
@@ -103,7 +100,6 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
-            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v8
@@ -149,7 +145,6 @@ jobs:
             node_modules
             .yarn
             ~/.cache/Cypress
-            ~/.cache/puppeteer
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v8
