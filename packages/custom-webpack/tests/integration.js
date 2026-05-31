@@ -1,27 +1,4 @@
 module.exports = [
-  // Karma builder tests
-  {
-    id: 'karma-builder-sanity-app',
-    name: 'custom-webpack: Karma unit tests',
-    purpose: 'Karma builder executes unit tests with custom webpack config',
-    app: 'examples/custom-webpack/sanity-app',
-    command: 'yarn test --browsers=ChromeHeadlessCI',
-  },
-  {
-    id: 'karma-builder-sanity-app-esm',
-    name: 'custom-webpack: Karma ESM package',
-    purpose: 'Karma builder works in ESM package',
-    app: 'examples/custom-webpack/sanity-app-esm',
-    command: 'yarn test --browsers=ChromeHeadlessCI',
-  },
-  {
-    id: 'karma-builder-full-cycle',
-    name: 'custom-webpack: Karma full customization',
-    purpose: 'Karma builder works with full webpack customization',
-    app: 'examples/custom-webpack/full-cycle-app',
-    command: 'yarn test --browsers=ChromeHeadlessCI',
-  },
-
   // Browser/dev-server builder tests
   {
     id: 'browser-builder-basic',
@@ -100,7 +77,8 @@ module.exports = [
   {
     id: 'ts-config-bundler-module-resolution',
     name: 'custom-webpack: TS config with moduleResolution:bundler imports',
-    purpose: 'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
+    purpose:
+      'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
     app: 'examples/custom-webpack/full-cycle-app',
     command: 'yarn build -c bundler-resolution-ts',
   },

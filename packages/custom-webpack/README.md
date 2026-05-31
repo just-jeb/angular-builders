@@ -13,7 +13,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
   - [Custom Webpack `dev-server`](#custom-webpack-dev-server)
     - [Example](#example)
   - [Custom Webpack `server`](#custom-webpack-server)
-  - [Custom Webpack `karma`](#custom-webpack-karma)
   - [Custom Webpack `extract-i18n`](#custom-webpack-extract-i18n)
     - [Example](#example-1)
 - [Custom Webpack Config Object](#custom-webpack-config-object)
@@ -29,7 +28,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 # This documentation is for the latest major version only
 
 > ⚠️ **Version alignment:** The major version of `@angular-builders/custom-webpack` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-webpack@19.x`, Angular 20 requires `@angular-builders/custom-webpack@20.x`, etc. Using a mismatched version is the most common source of issues.
-
 
 ## Previous versions
 
@@ -71,7 +69,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
         "architect": {
           ...
           "[architect-target]": {
-            "builder": "@angular-builders/custom-webpack:[browser|server|karma|dev-server|extract-i18n]",
+            "builder": "@angular-builders/custom-webpack:[browser|server|dev-server|extract-i18n]",
             "options": {
               ...
             }
@@ -79,7 +77,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
     Where:
     - [project] is the name of the project to which you want to add the builder
     - [architect-target] is the name of build target you want to run (build, serve, test etc. or any custom target)
-    - [browser|server|karma|dev-server|extract-i18n] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [karma](#Custom-webpack-Karma), [dev-server](#Custom-webpack-dev-server) or [extract-i18n](#Custom-webpack-extract-i18n)
+    - [browser|server|dev-server|extract-i18n] one of the supported builders - [browser](#Custom-webpack-browser), [server](#Custom-webpack-server), [dev-server](#Custom-webpack-dev-server) or [extract-i18n](#Custom-webpack-extract-i18n)
 3.  If `[architect-target]` is not one of the predefined targets (like build, serve, test etc.) then run it like this:  
     `ng run [project]:[architect-target]`  
     If it is one of the predefined targets, you can run it with `ng [architect-target]`
@@ -106,7 +104,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 - [@angular-builders/custom-webpack:browser](#Custom-webpack-browser)
 - [@angular-builders/custom-webpack:server](#Custom-webpack-server)
-- [@angular-builders/custom-webpack:karma](#Custom-webpack-Karma)
 - [@angular-builders/custom-webpack:dev-server](#Custom-webpack-dev-server)
 - [@angular-builders/custom-webpack:extract-i18n](#Custom-webpack-extract-i18n)
 
@@ -215,58 +212,6 @@ Builder options:
 
 In this example `module.rules` entry from `extra-webpack.config.js` will be prepended to `module.rules` entry from Angular CLI underlying webpack config while all the rest will be appended.
 Since loaders are evaluated [from right to left](https://webpack.js.org/concepts/loaders/#configuration) this will effectively mean that the loaders you define in your custom configuration will be applied **after** the loaders defined by Angular CLI.
-
-## Custom Webpack `karma`
-
-Extended `@angular-devkit/build-angular:karma` builder that allows to specify additional webpack configuration (on top of the existing under the hood) and `index.html` transformations.
-The builder will run the same build as `@angular-devkit/build-angular:karma` does with extra parameters that are specified in the provided webpack configuration.
-
-Builder options:
-
-- All the `@angular-devkit/build-angular:karma` options
-- `customWebpackConfig`: [see below](#custom-webpack-config-object)
-
-`angular.json` Example:
-
-```js
-"architect": {
-  ...
-  "test": {
-    "builder": "@angular-builders/custom-webpack:karma",
-    "options": {
-      "customWebpackConfig": {
-        "path": "./extra-webpack.config.js"
-      },
-      "main": "src/test.ts",
-      "polyfills": ["zone.js"],
-      "tsConfig": "src/tsconfig.spec.json",
-      "karmaConfig": "src/karma.conf.js",
-    }
-```
-
-External `karma.conf.js` configuration:
-
-Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
-
-Fix this by:
-- adding `'@angular-devkit/build-angular'` to the `frameworks` array
-- adding `'@angular-devkit/build-angular/plugins/karma'` to the `plugins` array
-
-`karma.conf.js` example:
-```js
-module.exports = function (config) {
-  config.set({
-    basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma'),
-    ],
-    // ...
-```
 
 ## Custom Webpack `extract-i18n`
 
@@ -415,7 +360,6 @@ You can check out an example for plugins merge in the [unit tests](./src/webpack
 > ```
 >
 > For full control over the merge, use a [function export](#custom-webpack-config-function) — you receive the full base config and return a new one, bypassing automatic merge entirely.
-
 
 ## Custom Webpack Promisified Config
 

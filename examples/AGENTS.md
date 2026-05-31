@@ -45,7 +45,7 @@ examples/
     sanity-esbuild-app/       -- CJS/ESM/TS plugin variants, vitest builder
     sanity-esbuild-app-esm/   -- Same tests in an ESM-type package
   custom-webpack/
-    sanity-app/        -- Basic browser + dev-server + karma tests
+    sanity-app/        -- Basic browser + dev-server tests
     sanity-app-esm/    -- Same tests in an ESM-type package
     full-cycle-app/    -- Full webpack customization + indexTransform tests
   jest/

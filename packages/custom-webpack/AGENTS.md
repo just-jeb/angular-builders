@@ -7,7 +7,7 @@
 |                  |                                                                                                                                                          |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Type**         | Self-contained Package                                                                                                                                   |
-| **Owns**         | `@angular-builders/custom-webpack` -- browser, server, dev-server, karma, and extract-i18n builders with webpack config injection                        |
+| **Owns**         | `@angular-builders/custom-webpack` -- browser, server, dev-server, and extract-i18n builders with webpack config injection                               |
 | **Does NOT own** | The webpack build pipeline itself (delegated to `@angular-devkit/build-angular`), esbuild-based builds                                                   |
 | **Lifecycle**    | Maintained as long as Angular supports webpack builders. When Angular drops webpack, this package follows suit. (Source: SME interview, Jeb, 2026-02-16) |
 | **Users**        | Angular developers who need custom webpack configuration without ejecting from the CLI                                                                   |
@@ -20,11 +20,10 @@
 
 ## Entry Points & Contracts
 
-Five builders registered in `builders.json`:
+Four builders registered in `builders.json`:
 
 - **`browser`** (`src/browser/index.ts`) -- Wraps `executeBrowserBuilder`.
 - **`server`** (`src/server/index.ts`) -- Wraps `executeServerBuilder`.
-- **`karma`** (`src/karma/index.ts`) -- Wraps `executeKarmaBuilder`.
 - **`extract-i18n`** (`src/extract-i18n/index.ts`) -- Wraps `executeExtractI18nBuilder`.
 - **`dev-server`** (`src/dev-server/index.ts`) -- Wraps `executeDevServerBuilder` via `executeBrowserBasedBuilder`.
 
@@ -51,8 +50,8 @@ The `dev-server` and `extract-i18n` builders use `executeBrowserBasedBuilder` --
 This package extends Angular's base builder schemas with custom properties. During build:
 
 1. `tsc` compiles TypeScript
-2. `merge-schemes.ts` (repo root) reads `src/schemes.ts` which defines five schema merge operations
-3. Each merge takes an Angular base schema (from `@angular-devkit/build-angular`), applies extensions (including the shared `src/schema.ext.json` for browser/server/karma), and writes merged schemas to `dist/*/schema.json`
+2. `merge-schemes.ts` (repo root) reads `src/schemes.ts` which defines four schema merge operations
+3. Each merge takes an Angular base schema (from `@angular-devkit/build-angular`), applies extensions (including the shared `src/schema.ext.json` for browser/server), and writes merged schemas to `dist/*/schema.json`
 
 Unlike `custom-esbuild`, this package resolves schemas directly via Node resolution (no `originalSchemaPackage` needed) because `@angular-devkit/build-angular` exports its schema files.
 
@@ -64,7 +63,7 @@ Unlike `custom-esbuild`, this package resolves schemas directly via Node resolut
 
 **MUST:** Plugin merging uses lodash `merge` by default (deep merge matching plugins by `constructor.name` string equality). Three methods exist (see `src/webpack-config-merger.ts` lines 26-39): (1) **Default merge** -- plugins of the same class have options deep-merged. (2) **Complete replacement** -- set `replaceDuplicatePlugins: true`; user plugin replaces the matching base plugin entirely. (3) **Factory function** -- bypasses merge entirely, user has full programmatic control. Spec tests at lines 6-33 and 77-118 confirm these behaviors. (Source: code investigation, 2026-02-16)
 
-**MUST NEVER:** Add custom properties to schema extensions without also adding them to the shared `src/schema.ext.json` (for properties shared across browser/server/karma) or the builder-specific `src/{builder}/schema.ext.json`.
+**MUST NEVER:** Add custom properties to schema extensions without also adding them to the shared `src/schema.ext.json` (for properties shared across browser/server) or the builder-specific `src/{builder}/schema.ext.json`.
 
 **MUST NEVER:** Accidentally clobber Angular's critical webpack plugins during merge -- this breaks builds silently. Duplicate or conflicting loader rules cause subtle compilation issues. These are the two most dangerous merge failure modes. (Source: SME interview, Jeb, 2026-02-16)
 
@@ -128,5 +127,5 @@ Verify: `webpack-config-merger.spec.ts` covers merge rules, plugin replacement, 
 
 ## Dependencies
 
-**Breaks if changed:** Users' `angular.json` referencing `@angular-builders/custom-webpack:browser`, `:server`, `:dev-server`, `:karma`, `:extract-i18n`
+**Breaks if changed:** Users' `angular.json` referencing `@angular-builders/custom-webpack:browser`, `:server`, `:dev-server`, `:extract-i18n`
 **Breaks us if changed:** `@angular-devkit/build-angular` (builder functions + schema structure), `@angular/build` (`IndexHtmlTransform` type), `@angular-builders/common` (module loading), `webpack-merge`, `lodash`, `@angular-devkit/architect`
