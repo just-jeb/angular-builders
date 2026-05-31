@@ -1,7 +1,14 @@
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+const fs = require('fs');
+// Prefer the system Chrome (preinstalled and library-matched on CI runners); fall back to
+// Puppeteer's bundled Chrome for local dev. Puppeteer's bundled binary stopped launching on
+// updated CI runner images ("Cannot start ChromeHeadless"), so system Chrome is more robust.
+process.env.CHROME_BIN =
+  ['/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium-browser', '/usr/bin/chromium'].find(
+    p => fs.existsSync(p)
+  ) || require('puppeteer').executablePath();
 
 module.exports = function (config) {
   config.set({
