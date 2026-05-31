@@ -21,7 +21,7 @@ concurrency:
 jobs:
   build:
     if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.discover.outputs.matrix }}
       has_tests: ${{ steps.discover.outputs.has_tests }}
@@ -87,7 +87,7 @@ jobs:
     needs: build
     if: needs.build.outputs.has_tests == 'true'
     name: ${{ matrix.name }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.build.outputs.matrix) }}
@@ -121,7 +121,7 @@ jobs:
   ci-pass:
     needs: [build, integration]
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
         run: exit 1
@@ -129,7 +129,7 @@ jobs:
   publish:
     needs: [build, integration]
     if: github.ref == 'refs/heads/master' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
       id-token: write
