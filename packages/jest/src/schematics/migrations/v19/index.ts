@@ -1,21 +1,4 @@
-import { JsonValue } from '@angular-devkit/core';
-import { Rule, SchematicContext, SchematicsException, Tree } from '@angular-devkit/schematics';
-
-interface JsonRecord {
-  [key: string]: JsonValue;
-}
-
-function readJson(tree: Tree, path: string): JsonRecord {
-  const buffer = tree.read(path);
-  if (!buffer) {
-    throw new SchematicsException(`Could not read ${path}`);
-  }
-  return JSON.parse(buffer.toString('utf-8')) as JsonRecord;
-}
-
-function writeJson(tree: Tree, path: string, value: JsonRecord): void {
-  tree.overwrite(path, JSON.stringify(value, null, 2) + '\n');
-}
+import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 
 /**
  * v18 → v19 migration.

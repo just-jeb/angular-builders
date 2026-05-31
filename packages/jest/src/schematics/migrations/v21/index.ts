@@ -30,9 +30,11 @@ function writeJson(tree: Tree, path: string, value: JsonRecord): void {
  *
  * 1. **Zoneless default** — `zoneless` option now defaults to `true`. Apps
  *    still using zone.js change detection MUST explicitly set `zoneless: false`
- *    in `angular.json` under `architect.test.options`. This migration detects
- *    whether `@angular/core` is present and sets `zoneless: false` as a
- *    conservative default, preserving zone-based behaviour for existing apps.
+ *    in `angular.json` under `architect.test.options`. This migration scans the
+ *    workspace projects in `angular.json` for `test` targets using the
+ *    `@angular-builders/jest` builder and, where `zoneless` is not already set,
+ *    sets `zoneless: false` as a conservative default — preserving zone-based
+ *    behaviour for existing apps.
  *
  * 2. **Reduced global mocks** — `styleTransform`, `getComputedStyle`, and
  *    `doctype` mocks were removed (Jest 30's jsdom provides them natively).
