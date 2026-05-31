@@ -11,16 +11,25 @@ export class OptionsConverter {
       const optionValue = (options as Record<string, unknown>)[option];
       if (option == '--') {
         nonFlagArgs = (optionValue as string[]).join(' ');
-      } else if (
-        POSITIONAL_ARRAY_OPTIONS.has(option) &&
-        (Array.isArray(optionValue) || typeof optionValue === 'string')
-      ) {
-        argv.push(`--${option}`);
-        const items = Array.isArray(optionValue) ? optionValue : [optionValue];
+      } else if (POSITIONAL_ARRAY_OPTIONS.has(option)) {
+        const items = Array.isArray(optionValue)
+          ? optionValue
+          : typeof optionValue === 'string'
+            ? [optionValue]
+            : [];
+        const files: string[] = [];
         for (const item of items) {
           for (const file of String(item).split(',')) {
-            if (file) positionalsToAppend.push(file);
+            if (file) files.push(file);
           }
+        }
+        // Only emit the flag when actual file args are present. The option is an
+        // array with no schema default, so Angular materializes it as `[]` on every
+        // run; emitting a bare `--findRelatedTests` then makes Jest reject the argv
+        // and abort with a usage error.
+        if (files.length > 0) {
+          argv.push(`--${option}`);
+          positionalsToAppend.push(...files);
         }
       } else if (optionValue === true) {
         argv.push(`--${option}`);
