@@ -607,21 +607,6 @@ For example, to make `target` and `paths` available specifically when ts-node lo
 }
 ```
 
-Or, to use an entirely different `tsconfig` file for `ts-node`:
-
-`tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    ...
-  },
-  "ts-node": {
-    "tsconfig": "./tsconfig.ts-node.json"
-  }
-}
-```
-
 > **Note:** ts-node is registered once per builder run; the first tsconfig encountered governs subsequent loads in the same process. If you have both an `indexTransform.ts` and a `webpack.config.ts`, both will resolve against the same ts-node configuration.
 
 > Some options the builder explicitly overrides (notably `module: "commonjs"`) cannot be changed through this mechanism. Use it for options the builder doesn't hard-code.
