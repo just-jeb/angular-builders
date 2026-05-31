@@ -23,6 +23,11 @@
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
       "automerge": true
+    },
+    {
+      "description": "Track GitHub-hosted runner image versions (runs-on), but never auto-merge them - a runner bump can change the CI environment and must be reviewed/tested.",
+      "matchDatasources": ["github-runners"],
+      "automerge": false
     }
   ]
 }
