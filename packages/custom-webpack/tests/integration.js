@@ -91,6 +91,14 @@ module.exports = [
 
   // TypeScript config loading
   {
+    id: 'ts-config-json-import',
+    name: 'custom-webpack: TS config JSON import',
+    purpose:
+      'Builder loads TypeScript webpack config that imports a JSON file (regression for #816). Fails without resolveJsonModule:true in ts-node options.',
+    app: 'examples/custom-webpack/sanity-app',
+    command: 'yarn build -c ts-json-import',
+  },
+  {
     id: 'ts-config-esm-imports',
     name: 'custom-webpack: TS config ESM imports',
     purpose: 'Builder loads TypeScript config with ESM imports',
@@ -100,7 +108,8 @@ module.exports = [
   {
     id: 'ts-config-bundler-module-resolution',
     name: 'custom-webpack: TS config with moduleResolution:bundler imports',
-    purpose: 'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
+    purpose:
+      'Builder loads TypeScript webpack config that uses subpath exports requiring moduleResolution:bundler (regression for #2025)',
     app: 'examples/custom-webpack/full-cycle-app',
     command: 'yarn build -c bundler-resolution-ts',
   },
