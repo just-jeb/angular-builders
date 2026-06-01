@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.14](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.13...@angular-builders/jest@21.0.4-beta.14) (2026-06-01)
+
+### Bug Fixes
+
+* **jest:** suppress warning when jest config is provided inline in angular.json (fixes [#1102](https://github.com/just-jeb/angular-builders/issues/1102)) ([#2213](https://github.com/just-jeb/angular-builders/issues/2213)) ([6e7c93f](https://github.com/just-jeb/angular-builders/commit/6e7c93f2e9a02ff4dafdbb0544fb0da7ace6afb2))
+
 ## [21.0.4-beta.13](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.12...@angular-builders/jest@21.0.4-beta.13) (2026-06-01)
 
 ### Bug Fixes
