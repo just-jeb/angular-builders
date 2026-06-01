@@ -65,13 +65,19 @@ describe('Resolve project custom config', () => {
     expect(customConfig).toEqual({});
   });
 
-  it('should log a warning when the custom configuration is not found', async () => {
+  it('should log a warning when an explicitly configured custom configuration is not found', async () => {
     existsSyncMock.mockReturnValue(false);
     await customConfigResolver.resolveForProject(
       normalize('./myproject'),
       'project-jest.config.js'
     );
     expect(mockLogger.warn.mock.calls.length).toBe(1);
+  });
+
+  it('should NOT warn when the schema default jest.config.js is absent', async () => {
+    existsSyncMock.mockReturnValue(false);
+    await customConfigResolver.resolveForProject(normalize('./myproject'), 'jest.config.js');
+    expect(mockLogger.warn).not.toHaveBeenCalled();
   });
 
   it('Should parse and return inline JSON configuration', async () => {
@@ -87,28 +93,19 @@ describe('Resolve project custom config', () => {
 
   it('Should treat non-JSON string as file path', async () => {
     existsSyncMock.mockReturnValue(false);
-    await customConfigResolver.resolveForProject(
-      normalize('./myproject'),
-      'jest.config.js'
-    );
+    await customConfigResolver.resolveForProject(normalize('./myproject'), 'jest.config.js');
     expect(existsSyncMock).toHaveBeenCalled();
   });
 
   it('Should treat invalid JSON as file path', async () => {
     existsSyncMock.mockReturnValue(false);
-    await customConfigResolver.resolveForProject(
-      normalize('./myproject'),
-      '{invalid json'
-    );
+    await customConfigResolver.resolveForProject(normalize('./myproject'), '{invalid json');
     expect(existsSyncMock).toHaveBeenCalled();
   });
 
   it('Should not treat JSON array as config', async () => {
     existsSyncMock.mockReturnValue(false);
-    await customConfigResolver.resolveForProject(
-      normalize('./myproject'),
-      '["item1", "item2"]'
-    );
+    await customConfigResolver.resolveForProject(normalize('./myproject'), '["item1", "item2"]');
     // Arrays should be treated as file paths, not config objects
     expect(existsSyncMock).toHaveBeenCalled();
   });

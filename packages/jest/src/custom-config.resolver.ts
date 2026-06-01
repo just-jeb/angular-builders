@@ -4,7 +4,7 @@ import { loadModule } from '@angular-builders/common';
 
 import { JestConfig } from './types';
 import { SchemaObject as JestBuilderSchema } from './schema';
-import { getTsConfigPath } from './utils';
+import { DEFAULT_JEST_CONFIG, getTsConfigPath } from './utils';
 
 export class CustomConfigResolver {
   // https://jestjs.io/docs/configuration
@@ -54,9 +54,16 @@ export class CustomConfigResolver {
     // Treat as file path
     const jestConfigPath = getSystemPath(join(projectRoot, configPath));
     if (!existsSync(jestConfigPath)) {
-      this.logger.warn(
-        `warning: unable to locate custom jest configuration file at path "${jestConfigPath}"`
-      );
+      // Only warn when the user explicitly pointed at a missing file.
+      // DEFAULT_JEST_CONFIG (the schema default) is best-effort discovery —
+      // and is legitimately absent when the user keeps config elsewhere
+      // (package.json `jest`, workspace-level jest.config.*, or an inline
+      // JestConfig object in angular.json). See #1102.
+      if (configPath !== DEFAULT_JEST_CONFIG) {
+        this.logger.warn(
+          `warning: unable to locate custom jest configuration file at path "${jestConfigPath}"`
+        );
+      }
       return {};
     }
     const tsConfig = getTsConfigPath(projectRoot, this.options);

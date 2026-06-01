@@ -2,15 +2,18 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 
-// Parse args: separate jest args from --expect-* args
+// Parse args: separate jest args from --expect-* and --run-script=* args
 const jestArgs = [];
 const expectations = {};
+let runScript = 'test';
 
 for (let i = 2; i < process.argv.length; i++) {
   const arg = process.argv[i];
   if (arg.startsWith('--expect-')) {
     const [key, value] = arg.slice(9).split('=');
     expectations[key] = value;
+  } else if (arg.startsWith('--run-script=')) {
+    runScript = arg.slice('--run-script='.length);
   } else {
     jestArgs.push(arg);
   }
@@ -19,11 +22,11 @@ for (let i = 2; i < process.argv.length; i++) {
 // Quote args that contain spaces
 const quotedArgs = jestArgs.map(arg => (arg.includes(' ') ? `"${arg}"` : arg));
 
-console.log(`Running: yarn test ${quotedArgs.join(' ')}`);
+console.log(`Running: yarn ${runScript} ${quotedArgs.join(' ')}`);
 console.log(`Expectations:`, expectations);
 
 // Capture both stdout and stderr
-const output = execSync(`yarn test ${quotedArgs.join(' ')} 2>&1`, {
+const output = execSync(`yarn ${runScript} ${quotedArgs.join(' ')} 2>&1`, {
   encoding: 'utf-8',
 });
 
