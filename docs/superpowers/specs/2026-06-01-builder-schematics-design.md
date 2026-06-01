@@ -71,6 +71,13 @@ Each package that needs them: `src/schematics/migrations.json` + `migrations/<vN
 - Auto: bump `jest`/`jest-environment-jsdom`/`jsdom` → 30/30/26; patch `tsconfig.spec.json` (`module`/`moduleResolution: "Node16"`, `isolatedModules: true`); rename `configPath`→`config` and `testPathPattern`→`testPathPatterns` in angular.json; strip removed `globalMocks` values (`styleTransform`/`getComputedStyle`/`doctype`) and removed Jest options (`browser`/`init`/`mapCoverage`/`testURL`/`timers`); set `zoneless` by **detection** (zone.js in polyfills → `false`; else leave default `true`).
 - Advise (logger): `Node16` may surface pre-existing type errors; removed mocks may need manual replacement.
 
+**`ng update @22` (advisory-only — these land via v22-held breaking PRs):**
+
+The v22 jest breaking changes are internal default flips that apply automatically on upgrade (no user-file rewrite needed), so the migration's job is to _warn_, not transform:
+
+- **#2191 — `isolatedModules` now defaults to `true`** (faster ts-jest compile). Applies automatically. Advise: `const enum` across files and type-only re-exports without the `type` modifier will now error; fix the call sites, or restore `isolatedModules: false` in your jest config. Optionally grep spec sources for `const enum` to make the warning targeted. We do **not** auto-set `false` — the new default is intentional.
+- **#2212 — per-project coverage output** moves from `./coverage` to `<projectRoot>/coverage`. Affects only multi-project / `projectRoot !== workspaceRoot` workspaces — **detectable**, so warn only the affected ones: update any CI/tooling reading a hardcoded `./coverage/` path.
+
 ### 4.2 `custom-esbuild`
 
 **Why installed:** inject custom esbuild plugins / index-html transformers / configuration into the build without ejecting.
@@ -104,30 +111,32 @@ Each package that needs them: `src/schematics/migrations.json` + `migrations/<vN
 
 ## 5. Migration Chain Summary
 
-| Transition            | jest                  | custom-esbuild   | custom-webpack                          |
-| --------------------- | --------------------- | ---------------- | --------------------------------------- |
-| 17→18 / 18→19 / 19→20 | no-op                 | no-op            | no-op                                   |
-| 20→21                 | **migration (heavy)** | no-op (additive) | no-op                                   |
-| 21→22                 | no-op (pending)       | no-op            | **migration (Karma removal, advisory)** |
+| Transition            | jest                                   | custom-esbuild   | custom-webpack                          |
+| --------------------- | -------------------------------------- | ---------------- | --------------------------------------- |
+| 17→18 / 18→19 / 19→20 | no-op                                  | no-op            | no-op                                   |
+| 20→21                 | **migration (heavy)**                  | no-op (additive) | no-op                                   |
+| 21→22                 | **migration (advisory: #2191, #2212)** | no-op            | **migration (Karma removal, advisory)** |
 
-Only two real migrations exist: **jest `@21`** and **custom-webpack `@22`**. All other major transitions are plain dependency bumps handled by `ng update` itself — **no no-op placeholder migrations** (a deliberate departure from earlier prototypes that registered empty v18/v19/v20 migrations).
+Real migrations: **jest `@21`** (heavy auto-transform), **jest `@22`** and **custom-webpack `@22`** (advisory). All other major transitions are plain dependency bumps handled by `ng update` itself — **no no-op placeholder migrations** (a deliberate departure from earlier prototypes that registered empty v18/v19/v20 migrations).
+
+**The v22 migration set is defined by the v22-bound breaking PRs, not by master's changelog history.** Any PR labeled `breaking-change` and held for the major lands in v22 and MUST carry a migration step (auto-transform or logged advisory). Current set: **#2191** (jest isolatedModules default), **#2212** (jest per-project coverage), **#2260** (custom-webpack Karma removal). Re-enumerate `breaking-change`-labeled open PRs at the v22 cut to catch any added later.
 
 ## 6. Coverage Checklist (applied per builder)
 
-| Dimension                     | jest                                               | custom-esbuild                      | custom-webpack                      |
-| ----------------------------- | -------------------------------------------------- | ----------------------------------- | ----------------------------------- |
-| ng-add: deps add/remove       | +jest stack / −karma,jasmine                       | +self                               | +self                               |
-| ng-add: targets rewritten     | `test`                                             | `build`, `serve`, `test`(if Vitest) | `build`, `serve`                    |
-| ng-add: files created/deleted | del `karma.conf`,`test.ts`                         | —                                   | create `webpack.config.js`          |
-| ng-add: tsconfig edits        | spec `types`/`files`                               | —                                   | —                                   |
-| ng-add: detection             | Karma?, zoneless?                                  | test builder kind                   | webpack config present?             |
-| ng-add: flags                 | `--project`                                        | `--project`, `--unit-test`          | `--project`                         |
-| ng-add: idempotency           | `test` already `:run`                              | `build` already `:application`      | `build` already `:browser`          |
-| ng-update migrations          | `@21`                                              | none                                | `@22`                               |
-| migration auto transforms     | deps, tsconfig, renames, mocks, zoneless(detected) | —                                   | karma cleanup (gated)               |
-| migration advisories          | Node16, removed mocks                              | —                                   | no Karma replacement → Vitest/jest  |
-| package.json fields           | `schematics`, `ng-add`, `ng-update`                | `schematics`, `ng-add`              | `schematics`, `ng-add`, `ng-update` |
-| tests                         | ng-add + migration(+idempotency)                   | ng-add                              | ng-add + migration                  |
+| Dimension                     | jest                                                  | custom-esbuild                      | custom-webpack                      |
+| ----------------------------- | ----------------------------------------------------- | ----------------------------------- | ----------------------------------- |
+| ng-add: deps add/remove       | +jest stack / −karma,jasmine                          | +self                               | +self                               |
+| ng-add: targets rewritten     | `test`                                                | `build`, `serve`, `test`(if Vitest) | `build`, `serve`                    |
+| ng-add: files created/deleted | del `karma.conf`,`test.ts`                            | —                                   | create `webpack.config.js`          |
+| ng-add: tsconfig edits        | spec `types`/`files`                                  | —                                   | —                                   |
+| ng-add: detection             | Karma?, zoneless?                                     | test builder kind                   | webpack config present?             |
+| ng-add: flags                 | `--project`                                           | `--project`, `--unit-test`          | `--project`                         |
+| ng-add: idempotency           | `test` already `:run`                                 | `build` already `:application`      | `build` already `:browser`          |
+| ng-update migrations          | `@21`, `@22`                                          | none                                | `@22`                               |
+| migration auto transforms     | deps, tsconfig, renames, mocks, zoneless(detected)    | —                                   | karma cleanup (gated)               |
+| migration advisories          | Node16, removed mocks, isolatedModules, coverage path | —                                   | no Karma replacement → Vitest/jest  |
+| package.json fields           | `schematics`, `ng-add`, `ng-update`                   | `schematics`, `ng-add`              | `schematics`, `ng-add`, `ng-update` |
+| tests                         | ng-add + migration(+idempotency)                      | ng-add                              | ng-add + migration                  |
 
 ## 7. Packaging / Build
 
@@ -157,3 +166,18 @@ Only two real migrations exist: **jest `@21`** and **custom-webpack `@22`**. All
 - **Multi-project workspaces:** default to targeting all projects when there's no `defaultProject`; `--project` overrides. Validate behavior on the multi-project example fixtures.
 - **`Node16` tsconfig change** in jest `@21` can surface latent type errors in user code — advisory only; we don't attempt to fix user types.
 - **Existing WIP** (#2240, #2241, branches `feat/schematics-bundle`, `feat/jest-schematics-ng-add`, `feature/22-schematics-installation`) is reference-only. #2240/#2241 to be closed/superseded once the consolidated PR is up.
+
+## 11. Relationship to `MIGRATION.MD` and the upgrade runbook
+
+`MIGRATION.MD` (root, hand-written, per-major back to v7→v8) is today the _only_ migration aid — users read it and apply steps manually. Once `ng update` schematics exist, the two must be managed as a pair, not allowed to drift:
+
+- **`MIGRATION.MD` stays the human-canonical record** of per-major breaking changes (also serves users who don't run `ng update`).
+- **Each `MIGRATION.MD` breaking-change entry maps to a migration outcome**: either an auto-transform or a logged advisory. Both are driven by one source — the per-major breaking-change inventory. The v20→21 section already enumerates exactly what the jest `@21` schematic automates.
+- **Annotate automation in `MIGRATION.MD`**: mark each item ✅ automated by `ng update` vs ⚠️ manual. Migration `logger.warn` advisories should point users to the relevant `MIGRATION.MD` section for detail.
+- **CHANGELOG** stays auto-generated from conventional commits; it is orthogonal — `MIGRATION.MD` + the migration schematic are the human/automated migration pair.
+
+### Process invariant (for AGENTS.md + the upgrade runbook)
+
+> A breaking change landing in (or held for) a major release MUST ship with **both** (a) a migration step — auto-transform or logged advisory — in that builder's `migrations.json`, and (b) a `MIGRATION.MD` entry for that major.
+
+The upgrade runbook's per-major checklist therefore includes: **enumerate every `breaking-change`-labeled PR targeting the major → for each, confirm a migration step exists and a `MIGRATION.MD` entry exists.** This closes the loop between the "hold for next major" workflow and migration coverage.
