@@ -8,7 +8,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "build-target-options": "ng build --configuration target-options-test && node ../../../scripts/verify-target-options.js dist/sanity-esbuild-app/browser target-options-test"
   },
   "private": true,
   "dependencies": {
