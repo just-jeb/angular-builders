@@ -132,4 +132,6 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 ## Angular Major Version Upgrade Process
 
+**Runbook:** [`docs/runbooks/angular-major-upgrade.md`](docs/runbooks/angular-major-upgrade.md) — step-by-step procedure (branch, bump, `ng update` examples, fix breakage, migration coverage, RC→GA).
+
 The upgrade process is not fully automated. It partially originates from Renovate PRs, but each Angular major update also requires running `ng update` for apps in `examples/`. The goal is full automation but it currently requires manual steps. Work sometimes begins against Angular RCs to have PRs ready, so only a final version update is needed when the major release lands. The packages layer is where Angular CLI internal API changes are felt most -- internal API moves (renamed/moved packages or exports) and schema changes to builder options are the most common breakages. (Source: SME interview, Jeb, 2026-02-16)
