@@ -21,6 +21,7 @@ Allow customizing build configuration without ejecting webpack configuration (`n
   - [Custom Webpack Promisified Config](#custom-webpack-promisified-config)
   - [Custom Webpack Config Function](#custom-webpack-config-function)
 - [Index Transform](#index-transform)
+  - [Using a Custom TypeScript Configuration for indexTransform](#using-a-custom-typescript-configuration-for-indextransform)
   - [Example](#example-2)
 - [ES Modules (ESM) Support](#es-modules-esm-support)
 - [Verbose Logging](#verbose-logging)
@@ -29,7 +30,6 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 # This documentation is for the latest major version only
 
 > ⚠️ **Version alignment:** The major version of `@angular-builders/custom-webpack` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-webpack@19.x`, Angular 20 requires `@angular-builders/custom-webpack@20.x`, etc. Using a mismatched version is the most common source of issues.
-
 
 ## Previous versions
 
@@ -249,10 +249,12 @@ External `karma.conf.js` configuration:
 Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
 
 Fix this by:
+
 - adding `'@angular-devkit/build-angular'` to the `frameworks` array
 - adding `'@angular-devkit/build-angular/plugins/karma'` to the `plugins` array
 
 `karma.conf.js` example:
+
 ```js
 module.exports = function (config) {
   config.set({
@@ -415,7 +417,6 @@ You can check out an example for plugins merge in the [unit tests](./src/webpack
 > ```
 >
 > For full control over the merge, use a [function export](#custom-webpack-config-function) — you receive the full base config and return a new one, bypassing automatic merge entirely.
-
 
 ## Custom Webpack Promisified Config
 
@@ -581,6 +582,38 @@ export default (targetOptions: TargetOptions, indexHtml: string) => {
 In the example we add a paragraph with build configuration to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
 Full example [here](../../examples/custom-webpack/full-cycle-app).
+
+### Using a Custom TypeScript Configuration for indexTransform
+
+If your `indexTransform` file requires different TypeScript settings than the build target's `tsConfig` (different `target`, custom `paths`, additional `lib` entries, etc.), you can specify them via the `ts-node` section of your `tsconfig.json`. The builder picks up these options when registering ts-node for transform/config loading.
+
+For example, to make `target` and `paths` available specifically when ts-node loads your transform:
+
+`tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    ...
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "ES2022",
+      "paths": {
+        "@shared/*": ["./shared/*"]
+      }
+    }
+  }
+}
+```
+
+> **Note:** ts-node is registered once per builder run; the first tsconfig encountered governs subsequent loads in the same process. If you have both an `indexTransform.ts` and a `webpack.config.ts`, both will resolve against the same ts-node configuration.
+
+> Some options the builder explicitly overrides (notably `module: "commonjs"`) cannot be changed through this mechanism. Use it for options the builder doesn't hard-code.
+
+For more details on `ts-node` configuration options, see the [ts-node documentation](https://typestrong.org/ts-node/docs/configuration/#via-tsconfigjson-recommended).
+
+The same approach applies to `customWebpackConfig` if it's written in TypeScript.
 
 # ES Modules (ESM) Support
 
