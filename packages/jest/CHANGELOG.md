@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.13](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.12...@angular-builders/jest@21.0.4-beta.13) (2026-06-01)
+
+### Bug Fixes
+
+* **jest:** emit --findRelatedTests with positional file args (fixes [#2150](https://github.com/just-jeb/angular-builders/issues/2150), [#1859](https://github.com/just-jeb/angular-builders/issues/1859)) ([#2237](https://github.com/just-jeb/angular-builders/issues/2237)) ([47f3b67](https://github.com/just-jeb/angular-builders/commit/47f3b67e2ee487f4c8d9019f1cd83dbf2e0c7284))
+
 ## [21.0.4-beta.12](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.11...@angular-builders/jest@21.0.4-beta.12) (2026-06-01)
 
 **Note:** Version bump only for package @angular-builders/jest
