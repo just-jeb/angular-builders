@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.4-beta.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.3...@angular-builders/common@5.0.4-beta.4) (2026-06-01)
+
+### Bug Fixes
+
+* **common:** add resolveJsonModule to ts-node compilerOptions (fixes [#816](https://github.com/just-jeb/angular-builders/issues/816)) ([#2189](https://github.com/just-jeb/angular-builders/issues/2189)) ([6b16727](https://github.com/just-jeb/angular-builders/commit/6b16727b2c4c2298418484fe346b5db931764fbb))
+
 ## [5.0.4-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.2...@angular-builders/common@5.0.4-beta.3) (2026-04-26)
 
 ### Bug Fixes

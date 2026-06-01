@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.12](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.11...@angular-builders/jest@21.0.4-beta.12) (2026-06-01)
+
+**Note:** Version bump only for package @angular-builders/jest
+
 ## [21.0.4-beta.11](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.10...@angular-builders/jest@21.0.4-beta.11) (2026-05-09)
 
 **Note:** Version bump only for package @angular-builders/jest
