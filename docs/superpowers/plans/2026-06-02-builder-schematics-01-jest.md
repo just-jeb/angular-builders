@@ -696,6 +696,12 @@ Create `packages/jest/src/schematics/migrations.json`:
 ```
 
 > Threshold semantics: a user on Angular/builder `20.x` upgrading to `21.x` triggers `migration-v21` (`20 < 21.0.0 <= 21`). Upgrading `21.x → 22.x` triggers `migration-v22` only. A multi-major jump `20 → 22` runs both, v21 then v22 (CLI orders by `version`). `factory` paths are dist-relative (`./migrations/v21/index` → `dist/schematics/migrations/v21/index.js`).
+>
+> **Coverage from old versions (v17–v20) and the stepwise caveat — IMPORTANT.** `ng update` always executes the migrations from the version being installed (v22), so v22 being the first builder version to ship schematics is correct — v22's `migrations.json` is the single home for the whole history. The window math (`installed < version <= target`) means a user coming from **17/18/19/20** runs **both** `migration-v21` and `migration-v22` (17→20 were all no-op transitions, so nothing is missing); a user already on **21** correctly runs only `migration-v22` (they performed the heavy 20→21 step manually, before schematics existed).
+>
+> This full-range coverage holds **only if the builder is updated from its old major to 22 in a single `ng update @angular-builders/jest`.** If the builder is instead dragged *stepwise* through 21 — which shipped **no** `migrations.json` — the heavy `migration-v21` is silently skipped: v21 had nothing to run it, and the final `21 → 22` step's window `(21, 22]` excludes the `21.0.0` threshold. The supported flow (document in `MIGRATION.MD` + the upgrade runbook, see Plan 2c/2d): **upgrade the Angular framework stepwise to 22 (framework discipline requires it), leaving `@angular-builders/jest` untouched, then run `ng update @angular-builders/jest` once** so the window `(old, 22]` spans 21. The migration is idempotent + detection-based, so this is safe.
+>
+> **Execution-time validation (RC-gated):** confirm on `22.0.0-rc.2` that `ng update` actually permits a third-party package's old→22 multi-major jump and runs the spanned migrations. Angular *blocks* multi-major for the framework itself; packages that declare a `migrations.json` generally allow it, but this MUST be verified against the real CLI during implementation (add it to the integration e2e in Plan 04). If the CLI refuses the jump, fall back to documenting an explicit `ng update @angular-builders/jest@22 --from=<old> --migrate-only` invocation.
 
 - [ ] **Step 2: Verify it copies into dist**
 
