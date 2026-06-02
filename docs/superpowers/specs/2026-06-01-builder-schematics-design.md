@@ -103,11 +103,7 @@ The v22 jest breaking changes are internal default flips that apply automaticall
 - **Scaffold config:** if no `customWebpackConfig` is referenced and no `webpack.config.*` exists → create a starter `webpack.config.js` and set `customWebpackConfig` to it. If one already exists → leave it. (It's the reason the builder is installed; no prompt.)
 - Idempotent.
 
-**`ng update @22` (v22-gated; ships with #2260; mostly advisory):**
-
-- The `:karma` builder is removed in v22 with **no drop-in replacement**. Do **not** auto-delete the `test` target (would leave the project with no `ng test`).
-- Advise + leave a TODO: migrate the test target to `@angular-builders/custom-esbuild:unit-test` (Vitest) or `@angular-builders/jest` (replacement tracked in #1928).
-- Dead `karma.conf.*` / karma-jasmine-puppeteer devDeps: clean only once a replacement test target exists; otherwise advisory.
+**`ng update`: none.** (Superseded 2026-06-02 — see §12.) Angular **22 does not remove Karma** — it is deprecated (default flipped to Vitest) but `@angular/build:karma` still ships, and `ng update` keeps existing Karma users on Karma. The earlier `@22` Karma-removal migration assumed a removal that isn't happening in v22, so **custom-webpack ships `ng-add` only**, like custom-esbuild. PR #2260 (remove the custom-webpack Karma builder) is held for the future major where Angular actually removes Karma.
 
 ## 5. Migration Chain Summary
 
@@ -115,11 +111,11 @@ The v22 jest breaking changes are internal default flips that apply automaticall
 | --------------------- | -------------------------------------- | ---------------- | --------------------------------------- |
 | 17→18 / 18→19 / 19→20 | no-op                                  | no-op            | no-op                                   |
 | 20→21                 | **migration (heavy)**                  | no-op (additive) | no-op                                   |
-| 21→22                 | **migration (advisory: #2191, #2212)** | no-op            | **migration (Karma removal, advisory)** |
+| 21→22                 | **migration (advisory: #2191, #2212)** | no-op            | no-op (Karma retained in v22 — see §12) |
 
-Real migrations: **jest `@21`** (heavy auto-transform), **jest `@22`** and **custom-webpack `@22`** (advisory). All other major transitions are plain dependency bumps handled by `ng update` itself — **no no-op placeholder migrations** (a deliberate departure from earlier prototypes that registered empty v18/v19/v20 migrations).
+Real migrations: **jest `@21`** (heavy auto-transform) and **jest `@22`** (advisory). custom-webpack has **no migration** — the earlier `@22` Karma-removal migration was dropped 2026-06-02 (Angular 22 doesn't remove Karma; see §12). All other major transitions are plain dependency bumps handled by `ng update` itself — **no no-op placeholder migrations** (a deliberate departure from earlier prototypes that registered empty v18/v19/v20 migrations).
 
-**The v22 migration set is defined by the v22-bound breaking PRs, not by master's changelog history.** Any PR labeled `breaking-change` and held for the major lands in v22 and MUST carry a migration step (auto-transform or logged advisory). Current set: **#2191** (jest isolatedModules default), **#2212** (jest per-project coverage), **#2260** (custom-webpack Karma removal). Re-enumerate `breaking-change`-labeled open PRs at the v22 cut to catch any added later.
+**The v22 migration set is defined by the v22-bound breaking PRs, not by master's changelog history.** Any PR labeled `breaking-change` and held for the major lands in v22 and MUST carry a migration step (auto-transform or logged advisory). Current set: **#2191** (jest isolatedModules default) and **#2212** (jest per-project coverage). **#2260** (custom-webpack Karma removal) was **removed from the v22 set** 2026-06-02 — Karma is not removed in v22; #2260 is held for a future major (see §12). Re-enumerate `breaking-change`-labeled open PRs at the v22 cut to catch any added later.
 
 ## 6. Coverage Checklist (applied per builder)
 
@@ -181,3 +177,45 @@ Real migrations: **jest `@21`** (heavy auto-transform), **jest `@22`** and **cus
 > A breaking change landing in (or held for) a major release MUST ship with **both** (a) a migration step — auto-transform or logged advisory — in that builder's `migrations.json`, and (b) a `MIGRATION.MD` entry for that major.
 
 The upgrade runbook's per-major checklist therefore includes: **enumerate every `breaking-change`-labeled PR targeting the major → for each, confirm a migration step exists and a `MIGRATION.MD` entry exists.** This closes the loop between the "hold for next major" workflow and migration coverage.
+
+## 12. Design Amendments (2026-06-02)
+
+Four decisions made after the original design, grounded in the actual Angular `22.0.0-rc.3` install + Angular's published Karma roadmap. **These supersede the sections noted.**
+
+### 12.0 Karma roadmap finding (the basis for 12.1–12.3)
+
+Verified against installed `@angular/build` / `@angular-devkit/build-angular` `22.0.0-rc.3` and Angular docs:
+
+- **Karma is deprecated, NOT removed in v22.** The `karma` builder still ships in both build systems (not flagged deprecated/hidden in `builders.json`); `ng new` flips the **default** test runner to Vitest but still offers `--test-runner karma`. Vitest's `unit-test` builder is still `[EXPERIMENTAL]`.
+- **`ng update` to v22 keeps Karma users on Karma** — the application/`use-application-builder` migration rewrites the test builder to `@angular/build:karma`; it does NOT delete `karma.conf.js`/`test.ts` or switch to Vitest. Vitest is opt-in via `ng generate @angular/core:karma-to-vitest`.
+- **Karma security-only support** continues until ~12 months after Vitest is marked stable (clock not started — still experimental); Angular's deprecation policy is **min. two majors**, putting full removal at ≈v24+, not v22.
+- **Consequence:** users carry Karma into v22 as a supported config, so **we must keep supporting Karma** (custom-webpack `:karma` builder + jest's Karma→Jest path).
+- Sources: angular.dev/guide/testing/migrating-to-vitest; angular.dev/reference/releases; angular-cli commit 8654b3f (application migration migrates karma builder).
+
+### 12.1 custom-webpack: drop the `@22` migration; hold #2260 (supersedes §4.3, §5, §6)
+
+custom-webpack ships **`ng-add` only** (no `ng-update`, no `migrations.json`, no `ng-update` package.json field) — same shape as custom-esbuild. The `@22` Karma-removal migration is removed (false premise per 12.0). **PR #2260** (remove custom-webpack's `:karma` builder) is **held** for the major where Angular removes Karma; it must NOT land in v22. The v22 breaking-PR set is now just **#2191 + #2212** (both jest).
+
+### 12.2 jest `ng-add`: add Vitest→Jest as a first-class path (supersedes §4.1, §6)
+
+Keep the Karma→Jest path (Karma users persist into v22) AND add a Vitest→Jest path — the **forward-default** case, since fresh v22 apps default to Vitest. When `detectTestBuilder() === 'vitest'` (`@angular/build:unit-test` or any `:unit-test`):
+
+- Rewrite `test` → `@angular-builders/jest:run` (already happens regardless of incumbent).
+- Fix `tsconfig.spec.json` types (vitest globals → jest).
+- **Advise** (logger): spec code using `vi.*` / vitest imports needs manual porting to Jest APIs — the runner swap can't rewrite test code (same caveat as jasmine→jest).
+- Cleanup is lighter than Karma: Vitest is built into `@angular/build` (no `karma.conf` equivalent; the `unit-test` target is simply overwritten). Detection cell in §6 jest column becomes "Karma?, Vitest?, zoneless?".
+
+### 12.3 custom-esbuild `ng-add`: build-system guard against silent webpack→esbuild (supersedes §4.2, §6)
+
+`ng add @angular-builders/custom-esbuild` must NOT unconditionally rewrite `build`. Distinguish:
+
+- **build already `@angular/build:application`** (esbuild) → safe rewrite to `@angular-builders/custom-esbuild:application` (the common case; adds the custom layer over the same engine).
+- **build on webpack** (`@angular-devkit/build-angular:browser` or `@angular-builders/custom-webpack:browser`) → do **NOT** silently swap (that strands the user's `webpack.config.js`). Detect and **advise**: run Angular's `use-application-builder` migration first → then `ng add @angular-builders/custom-esbuild` → then port `webpack.config.js` plugins to esbuild `codePlugins` **manually** (no mechanical translation exists). Optional `--from-webpack` flag forces only the mechanical target rewrite.
+
+Rationale: custom-webpack→custom-esbuild is a real migration (esbuild replaces webpack), but the custom config — the reason the user is on custom-webpack — cannot be auto-translated, so full auto-migration is out of scope; detection + advisory is in scope and necessary for correctness (§6 custom-esbuild detection cell becomes "test builder kind; webpack guard").
+
+### 12.4 e2e fixtures (supersedes the Plan-2c/2d checklist Karma-fixture note)
+
+- Karma→Jest e2e fixture: generate via `ng new --test-runner karma` (works on v22) — the earlier "can't generate Karma on v22, use a checked-in fixture" note was based on the false removal premise.
+- Add a Vitest→Jest `ng add` e2e (default v22 app) and a custom-esbuild webpack-guard advisory check.
+- The local-only `ng add` approach (`npm pack` → `ng add ./<tarball>`) is unchanged.
