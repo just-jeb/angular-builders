@@ -1,10 +1,10 @@
-# Builder Schematics — Plan 03: `custom-webpack` ng-add + `@22` Migration Implementation Plan
+# Builder Schematics — Plan 03: `custom-webpack` ng-add Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Give `@angular-builders/custom-webpack` a first-class `ng add` (auto-detected, zero-prompt build/serve rewrite + starter `webpack.config.js` scaffold) and a v22-gated `ng update` `@22` migration that advises on the `:karma` removal without breaking `ng test`.
+**Goal:** Give `@angular-builders/custom-webpack` a first-class `ng add` (auto-detected, zero-prompt build/serve rewrite + starter `webpack.config.js` scaffold). custom-webpack ships **`ng-add` only** — no `ng-update`, no `migrations.json` — mirroring custom-esbuild (spec §12.1).
 
-**Architecture:** A new `src/schematics/` tree inside `packages/custom-webpack`, compiled to CommonJS in `dist/schematics/` by a dedicated `tsconfig.schematics.json`, exposed via `package.json` `schematics`/`ng-add`/`ng-update` fields. All workspace/JSON edits go through the shared `@angular-builders/common/schematics` helpers locked by Plan 0 (`setBuilderForTarget`, `addBuilderDevDependency`, `removeDevDependencies`, `removeFilesIfPresent`, `getProjectsToTarget`, `detectTestBuilder`, `isAtLeast`) plus the schematics `apply`/`mergeWith`/`template` rules for the scaffold. The package never hand-parses JSON, never touches `fs`, and never cross-imports another builder package. Unit tests run on the shared `SchematicTestHarness` from `@angular-builders/common/schematics/testing`.
+**Architecture:** A new `src/schematics/` tree inside `packages/custom-webpack`, compiled to CommonJS in `dist/schematics/` by a dedicated `tsconfig.schematics.json`, exposed via `package.json` `schematics`/`ng-add` fields (NO `ng-update`). All workspace/JSON edits go through the shared `@angular-builders/common/schematics` helpers locked by Plan 0 (`setBuilderForTarget`, `addBuilderDevDependency`, `getProjectsToTarget`) plus the schematics `apply`/`mergeWith`/`template` rules for the scaffold. The package never hand-parses JSON, never touches `fs`, and never cross-imports another builder package. Unit tests run on the shared `SchematicTestHarness` from `@angular-builders/common/schematics/testing`.
 
 **Tech Stack:** TypeScript 5.9 (CommonJS for schematics), `@angular-devkit/schematics` (`apply`, `url`, `template`, `move`, `mergeWith`, `chain`, `noop`), `@schematics/angular/utility` (`getWorkspace`/`updateWorkspace` via the shared helpers), `@angular-builders/common/schematics`, Jest 30 + `@angular-devkit/schematics/testing` (`SchematicTestRunner`, `UnitTestTree`).
 
@@ -18,11 +18,7 @@ This plan imports the **locked Shared API Contract** from Plan 0 (`docs/superpow
 // from '@angular-builders/common/schematics'
 setBuilderForTarget(projectName, targetName, builderName, options?): Rule;
 addBuilderDevDependency(name, version, opts?: { install?: boolean }): Rule;
-removeDevDependencies(names: string[]): Rule;
-removeFilesIfPresent(paths: string[]): Rule;
 getProjectsToTarget(workspace, optionProject?): string[];
-detectTestBuilder(workspace, projectName): 'karma'|'jest'|'vitest'|'other'|'none';
-isAtLeast(version: string, major: number): boolean;
 
 // from '@angular-builders/common/schematics/testing'
 class SchematicTestHarness {
@@ -48,19 +44,28 @@ For reading the workspace inside our own schematic logic we use `getWorkspace` f
 
 ---
 
+## Architecture decision: no `ng-update`, no migrations (spec §12.1)
+
+custom-webpack ships **`ng-add` only** — same shape as custom-esbuild. Rationale, recorded here so a future maintainer does not "fill the gap":
+
+- The earlier `@22` Karma-removal migration was premised on Angular removing Karma in v22. That premise is **false** (spec §12.0/§12.1): **Karma is deprecated, NOT removed in v22.** The `@angular/build:karma` builder still ships, `ng update` keeps Karma users on Karma, and Vitest's `unit-test` builder is still experimental. Angular's deprecation policy (min. two majors) puts full Karma removal at ≈v24+.
+- **PR #2260** (remove custom-webpack's `:karma` builder) is therefore **held** for the major where Angular actually removes Karma; it must NOT land in v22. With #2260 held, there is **no custom-webpack breaking PR for v22**, so per spec §5 there is no migration to ship. The v22 breaking set is now just **#2191 + #2212** (both jest).
+- Therefore: **NO** `src/schematics/migrations.json`, **NO** `migrations/` directory, **NO** `"ng-update"` field in `package.json`. The coverage checklist lists custom-webpack `package.json` fields as exactly `schematics`, `ng-add` (no `ng-update`) — identical to custom-esbuild.
+
+If a future custom-webpack breaking change is held for a major (e.g. #2260 when Karma is finally removed), that is when `migrations.json` + `ng-update` get added — not before.
+
+---
+
 ## File Structure
 
 - Create: `packages/custom-webpack/tsconfig.schematics.json` — extends repo-root `tsconfig.schematics.json`; `rootDir: src/schematics`, `outDir: dist/schematics`.
-- Modify: `packages/custom-webpack/package.json` — add `schematics`/`ng-add`/`ng-update` fields, schematics build steps, `copyfiles` dev dep.
+- Modify: `packages/custom-webpack/package.json` — add `schematics`/`ng-add` fields (NO `ng-update`), schematics build steps, `copyfiles` dev dep.
 - Create: `packages/custom-webpack/src/schematics/collection.json` — declares the `ng-add` schematic.
 - Create: `packages/custom-webpack/src/schematics/ng-add/schema.json` — `--project` flag only, no `x-prompt`.
 - Create: `packages/custom-webpack/src/schematics/ng-add/schema.ts` — typed options interface.
 - Create: `packages/custom-webpack/src/schematics/ng-add/index.ts` — the ng-add rule (delegates to common helpers + scaffold).
 - Create: `packages/custom-webpack/src/schematics/ng-add/files/webpack.config.js.template` — starter config scaffold.
 - Create: `packages/custom-webpack/src/schematics/ng-add/index.spec.ts` — ng-add tests.
-- Create: `packages/custom-webpack/src/schematics/migrations.json` — declares the `@22` migration with a `22.0.0` semver threshold.
-- Create: `packages/custom-webpack/src/schematics/migrations/v22/index.ts` — the advisory Karma-removal migration.
-- Create: `packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts` — migration tests.
 
 > The schematics tree is compiled separately to CJS. The library build (`tsc` of `tsconfig.json`, `files: ["src/index.ts"]`) does NOT include `src/schematics/**`, so no change to the existing lib build is needed beyond chaining the new steps.
 
@@ -94,15 +99,12 @@ Rationale: mirrors Plan 0's per-package tsconfig exactly. `**/files/**` keeps th
 
 Modify `packages/custom-webpack/package.json`.
 
-Add these top-level fields (next to the existing `"builders": "builders.json"`):
+Add these top-level fields (next to the existing `"builders": "builders.json"`). **Do NOT add `ng-update`** (spec §12.1 — no migration):
 
 ```json
   "schematics": "./dist/schematics/collection.json",
   "ng-add": {
     "save": "devDependencies"
-  },
-  "ng-update": {
-    "migrations": "./dist/schematics/migrations.json"
   },
 ```
 
@@ -126,7 +128,7 @@ Add `copyfiles` to `devDependencies` (keep the others):
     "copyfiles": "^2.4.1",
 ```
 
-> `tsc -p tsconfig.schematics.json` runs after the lib `tsc` and before `merge-schemes.ts`. `copy:schematics` copies `collection.json`, `migrations.json`, every `schema.json`, AND the `files/**` template (`-u 2` strips the `src/schematics` prefix so assets land at `dist/schematics/...`). This is the same copy step Plan 0 specifies.
+> `tsc -p tsconfig.schematics.json` runs after the lib `tsc` and before `merge-schemes.ts`. `copy:schematics` copies `collection.json`, every `schema.json`, AND the `files/**` template (`-u 2` strips the `src/schematics` prefix so assets land at `dist/schematics/...`). There is no `migrations.json` to copy (spec §12.1). This is the same copy step Plan 0 specifies.
 
 - [ ] **Step 3: Add a placeholder collection so the build has inputs, then verify it compiles**
 
@@ -154,7 +156,7 @@ Expected: exits 0; `packages/custom-webpack/dist/schematics/ng-add/index.js` exi
 
 ```bash
 git add packages/custom-webpack/tsconfig.schematics.json packages/custom-webpack/package.json packages/custom-webpack/src/schematics/collection.json packages/custom-webpack/src/schematics/ng-add/index.ts
-git commit --no-verify -m "build(custom-webpack): add schematics packaging (tsconfig + ng-add/ng-update fields)"
+git commit --no-verify -m "build(custom-webpack): add schematics packaging (tsconfig + ng-add field)"
 ```
 
 ---
@@ -579,325 +581,7 @@ git commit --no-verify -m "feat(custom-webpack): add ng-add (build/serve rewrite
 
 ---
 
-## Task 5: `@22` migration manifest
-
-**Files:**
-- Create: `packages/custom-webpack/src/schematics/migrations.json`
-
-- [ ] **Step 1: Write the migrations manifest**
-
-Create `packages/custom-webpack/src/schematics/migrations.json`:
-
-```json
-{
-  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
-  "schematics": {
-    "migration-v22": {
-      "version": "22.0.0",
-      "description": "Advise on the v22 :karma builder removal; clean dead karma assets only when a replacement test target exists.",
-      "factory": "./migrations/v22/index#migrateV22"
-    }
-  }
-}
-```
-
-> `version: "22.0.0"` is the semver threshold: `ng update` runs this migration when `installedVersion < 22.0.0 <= targetVersion` (spec §3.3, §4.3). The package.json `ng-update.migrations` field (Task 1) points here.
-
-- [ ] **Step 2: Commit**
-
-```bash
-git add packages/custom-webpack/src/schematics/migrations.json
-git commit --no-verify -m "feat(custom-webpack): register @22 migration manifest"
-```
-
----
-
-## Task 6: `@22` migration implementation (advisory Karma removal)
-
-**Files:**
-- Create: `packages/custom-webpack/src/schematics/migrations/v22/index.ts`
-- Test: `packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts`
-
-Behavior (spec §4.3, §6):
-- The `:karma` builder is removed in v22 with NO drop-in replacement. **Never** delete the `test` target (that would leave the project without `ng test`).
-- Emit a `context.logger` advisory + leave a TODO comment pointing users at `@angular-builders/custom-esbuild:unit-test` (Vitest) or `@angular-builders/jest` (replacement tracked in #1928).
-- Dead `karma.conf.*` files + karma/jasmine-puppeteer devDeps: clean (via `removeFilesIfPresent` / `removeDevDependencies`) **only** once a replacement test target exists (`detectTestBuilder` returns `vitest` or `jest`); otherwise advisory only.
-- Headless: NO prompts, never block.
-- The migration runs across all projects in the workspace.
-
-- [ ] **Step 1: Write the failing tests**
-
-Create `packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts`:
-
-```ts
-import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
-import { getWorkspace, updateWorkspace } from '@schematics/angular/utility';
-import { SchematicTestHarness } from '@angular-builders/common/schematics/testing';
-
-const MIGRATIONS = require.resolve('../../../../src/schematics/migrations.json');
-
-function runner(): SchematicTestRunner {
-  return new SchematicTestRunner('migrations', MIGRATIONS);
-}
-
-async function setTestBuilder(
-  tree: UnitTestTree,
-  project: string,
-  builder: string,
-): Promise<UnitTestTree> {
-  return (await runner()
-    .callRule(
-      updateWorkspace((ws) => {
-        ws.projects.get(project)!.targets.set('test', { builder, options: {} });
-      }),
-      tree,
-    )
-    .toPromise()) as UnitTestTree;
-}
-
-async function hasTestTarget(tree: UnitTestTree, project: string): Promise<boolean> {
-  const ws = await getWorkspace(tree);
-  return ws.projects.get(project)!.targets.has('test');
-}
-
-describe('custom-webpack @22 migration', () => {
-  it('logs an advisory and does NOT delete the karma test target (no replacement)', async () => {
-    const harness = new SchematicTestHarness();
-    let tree = await harness.createWorkspace({ projects: [{ name: 'app' }] });
-    tree = await setTestBuilder(tree, 'app', '@angular-builders/custom-webpack:karma');
-
-    const run = runner();
-    const logs: string[] = [];
-    run.logger.subscribe((e) => logs.push(e.message));
-
-    tree = (await run.runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-
-    // test target is preserved — user still has `ng test`
-    expect(await hasTestTarget(tree, 'app')).toBe(true);
-    // advisory points at the replacement options
-    const joined = logs.join('\n');
-    expect(joined).toContain('karma');
-    expect(joined).toContain('custom-esbuild:unit-test');
-    expect(joined).toContain('@angular-builders/jest');
-  });
-
-  it('does NOT clean karma.conf / karma devDeps when no replacement test target exists', async () => {
-    const harness = new SchematicTestHarness();
-    let tree = await harness.createWorkspace({ projects: [{ name: 'app' }] });
-    tree = await setTestBuilder(tree, 'app', '@angular-builders/custom-webpack:karma');
-    tree.create('/karma.conf.js', '// karma config');
-    tree.overwrite(
-      '/package.json',
-      JSON.stringify(
-        { devDependencies: { 'karma-jasmine-html-reporter': '^2.0.0', karma: '^6.4.0' } },
-        null,
-        2,
-      ),
-    );
-
-    tree = (await runner().runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-
-    // advisory-only: dead assets remain because there is no replacement runner yet
-    expect(tree.exists('/karma.conf.js')).toBe(true);
-    const pkg = JSON.parse(tree.readText('/package.json'));
-    expect(pkg.devDependencies.karma).toBe('^6.4.0');
-  });
-
-  it('cleans karma.conf / karma devDeps when a replacement test target exists', async () => {
-    const harness = new SchematicTestHarness();
-    let tree = await harness.createWorkspace({ projects: [{ name: 'app' }] });
-    // replacement already in place (e.g. user migrated test to Vitest unit-test)
-    tree = await setTestBuilder(tree, 'app', '@angular-builders/custom-esbuild:unit-test');
-    tree.create('/karma.conf.js', '// karma config');
-    tree.overwrite(
-      '/package.json',
-      JSON.stringify(
-        {
-          devDependencies: {
-            karma: '^6.4.0',
-            'karma-jasmine': '^5.1.0',
-            'karma-jasmine-html-reporter': '^2.0.0',
-            'karma-chrome-launcher': '^3.2.0',
-            'karma-coverage': '^2.2.0',
-            'jasmine-core': '^5.1.0',
-            typescript: '5.9.3',
-          },
-        },
-        null,
-        2,
-      ),
-    );
-
-    tree = (await runner().runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-
-    expect(tree.exists('/karma.conf.js')).toBe(false);
-    const pkg = JSON.parse(tree.readText('/package.json'));
-    expect(pkg.devDependencies.karma).toBeUndefined();
-    expect(pkg.devDependencies['karma-jasmine']).toBeUndefined();
-    expect(pkg.devDependencies['karma-chrome-launcher']).toBeUndefined();
-    // unrelated dep untouched
-    expect(pkg.devDependencies.typescript).toBe('5.9.3');
-    // and the test target (now the replacement) is still there
-    expect(await hasTestTarget(tree, 'app')).toBe(true);
-  });
-
-  it('is a no-op for projects with no karma test target', async () => {
-    const harness = new SchematicTestHarness();
-    let tree = await harness.createWorkspace({ projects: [{ name: 'app' }] });
-    tree = await setTestBuilder(tree, 'app', '@angular-builders/jest:run');
-    tree.create('/karma.conf.js', '// stray file');
-
-    tree = (await runner().runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-
-    // no karma builder anywhere → migration leaves karma.conf alone (it's not its job
-    // to clean unrelated stray files when there was never a karma target to migrate)
-    expect(tree.exists('/karma.conf.js')).toBe(true);
-    expect(await hasTestTarget(tree, 'app')).toBe(true);
-  });
-
-  it('is idempotent: running twice equals running once', async () => {
-    const harness = new SchematicTestHarness();
-    let tree = await harness.createWorkspace({ projects: [{ name: 'app' }] });
-    tree = await setTestBuilder(tree, 'app', '@angular-builders/custom-esbuild:unit-test');
-    tree.create('/karma.conf.js', '// karma config');
-    tree.overwrite(
-      '/package.json',
-      JSON.stringify({ devDependencies: { karma: '^6.4.0' } }, null, 2),
-    );
-
-    tree = (await runner().runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-    const afterFirst = tree.readText('/package.json');
-
-    tree = (await runner().runSchematic('migration-v22', {}, tree)) as UnitTestTree;
-    const afterSecond = tree.readText('/package.json');
-
-    expect(afterSecond).toBe(afterFirst);
-    expect(tree.exists('/karma.conf.js')).toBe(false);
-  });
-});
-```
-
-- [ ] **Step 2: Run tests to verify they fail**
-
-Run: `yarn jest --config jest-ut.config.js packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts`
-Expected: FAIL — `Cannot find module './migrations/v22/index'` / factory `migrateV22` not found.
-
-- [ ] **Step 3: Write the migration implementation**
-
-Create `packages/custom-webpack/src/schematics/migrations/v22/index.ts`:
-
-```ts
-import { chain, noop, Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { getWorkspace } from '@schematics/angular/utility';
-import {
-  detectTestBuilder,
-  removeDevDependencies,
-  removeFilesIfPresent,
-} from '@angular-builders/common/schematics';
-
-const KARMA_CONF_FILES = [
-  '/karma.conf.js',
-  '/karma.conf.ts',
-  '/karma.conf.cjs',
-  '/karma.conf.mjs',
-];
-
-const KARMA_DEV_DEPS = [
-  'karma',
-  'karma-jasmine',
-  'karma-jasmine-html-reporter',
-  'karma-chrome-launcher',
-  'karma-coverage',
-  'karma-jasmine-puppeteer',
-  'jasmine-core',
-];
-
-const ADVISORY =
-  '[custom-webpack] The `:karma` builder was removed in Angular v22 with no drop-in replacement.\n' +
-  '  Your `test` target was left in place so `ng test` keeps resolving, but it will not run under v22.\n' +
-  '  TODO: migrate your test target to one of:\n' +
-  '    • @angular-builders/custom-esbuild:unit-test  (Vitest)\n' +
-  '    • @angular-builders/jest                       (replacement tracked in #1928)\n' +
-  '  Once migrated, re-run `ng update` to clean up karma.conf.* and karma devDependencies.';
-
-/** True if any project still has a :karma test builder. */
-function hasKarmaTestTarget(
-  workspace: Awaited<ReturnType<typeof getWorkspace>>,
-): boolean {
-  for (const [name] of workspace.projects) {
-    if (detectTestBuilder(workspace, name) === 'karma') {
-      return true;
-    }
-  }
-  return false;
-}
-
-/** True if any project has a recognised replacement test runner (Vitest/Jest). */
-function hasReplacementTestTarget(
-  workspace: Awaited<ReturnType<typeof getWorkspace>>,
-): boolean {
-  for (const [name] of workspace.projects) {
-    const kind = detectTestBuilder(workspace, name);
-    if (kind === 'vitest' || kind === 'jest') {
-      return true;
-    }
-  }
-  return false;
-}
-
-export function migrateV22(): Rule {
-  return async (tree: Tree, context: SchematicContext) => {
-    const workspace = await getWorkspace(tree);
-
-    const stillOnKarma = hasKarmaTestTarget(workspace);
-    const hasReplacement = hasReplacementTestTarget(workspace);
-
-    // Advisory only when a project is still on the removed :karma builder.
-    if (stillOnKarma) {
-      context.logger.warn(ADVISORY);
-      // No replacement yet → leave karma assets untouched (advisory only).
-      return noop();
-    }
-
-    // No karma target remaining. Only clean dead karma assets when a real
-    // replacement test target exists (so we never strip karma from a workspace
-    // that simply has no test target at all). Idempotent: removeFilesIfPresent /
-    // removeDevDependencies are guarded no-ops when nothing is present.
-    if (hasReplacement) {
-      return chain([
-        removeFilesIfPresent(KARMA_CONF_FILES),
-        removeDevDependencies(KARMA_DEV_DEPS),
-      ]);
-    }
-
-    return noop();
-  };
-}
-```
-
-> Logic gates (spec §4.3 / §6):
-> - **Still on `:karma`** → advisory `logger.warn` + TODO; test target preserved; no file/dep deletion. (Karma removal is gated behind the real workspace state — the project's own builder — not a global Angular-version check, because by the time this `@22` migration runs the user is already on v22. The `version: "22.0.0"` manifest threshold is the version gate.)
-> - **Replacement present (Vitest/Jest)** → clean `karma.conf.*` + karma devDeps via Plan 0 guarded helpers.
-> - **Neither** (e.g. no test target, or non-karma `other`) → no-op; we never delete stray files that weren't tied to a karma target.
-> - Idempotent: second run sees no karma target + replacement, but the guarded helpers find nothing left to remove → same output.
-
-> **`isAtLeast` note:** The spec says "gate Karma-removal logic behind the installed Angular version where relevant (`isAtLeast`)." Here the version gate is the manifest `version: "22.0.0"` (ng update only runs this on a 22 upgrade), so an additional `isAtLeast` check on a read Angular version is redundant for the cleanup path. If a defensive guard is desired, read the installed `@angular/core` range from `/package.json` and wrap the cleanup branch in `isAtLeast(range, 22)`; it is intentionally omitted to avoid a brittle package.json read when the manifest threshold already provides the gate. `isAtLeast` remains imported-available from `@angular-builders/common/schematics` for implementers who prefer the belt-and-suspenders guard.
-
-- [ ] **Step 4: Run tests to verify they pass**
-
-Run: `yarn jest --config jest-ut.config.js packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts`
-Expected: PASS (5 tests).
-
-- [ ] **Step 5: Commit**
-
-```bash
-git add packages/custom-webpack/src/schematics/migrations/v22/index.ts packages/custom-webpack/src/schematics/migrations/v22/index.spec.ts
-git commit --no-verify -m "feat(custom-webpack): add @22 migration (advisory karma removal)"
-```
-
----
-
-## Task 7: End-to-end build verification
+## Task 5: End-to-end build verification
 
 **Files:** none (verification only)
 
@@ -908,72 +592,32 @@ Expected: exits 0. The build runs lib `tsc` → schematics `tsc` → `copy:schem
 
 - [ ] **Step 2: Verify the schematics assets shipped to dist**
 
-Run: `ls packages/custom-webpack/dist/schematics packages/custom-webpack/dist/schematics/ng-add packages/custom-webpack/dist/schematics/ng-add/files packages/custom-webpack/dist/schematics/migrations/v22`
+Run: `ls packages/custom-webpack/dist/schematics packages/custom-webpack/dist/schematics/ng-add packages/custom-webpack/dist/schematics/ng-add/files`
 Expected:
-- `dist/schematics/collection.json`, `dist/schematics/migrations.json`
+- `dist/schematics/collection.json`
 - `dist/schematics/ng-add/index.js`, `dist/schematics/ng-add/schema.json`
 - `dist/schematics/ng-add/files/webpack.config.js.template`
-- `dist/schematics/migrations/v22/index.js`
 
-- [ ] **Step 3: Verify package.json points at the dist manifests**
+- [ ] **Step 3: Verify package.json points at the dist manifest**
 
-Run: `node -e "const p=require('./packages/custom-webpack/package.json'); console.log(p.schematics, p['ng-add'].save, p['ng-update'].migrations)"`
-Expected: `./dist/schematics/collection.json devDependencies ./dist/schematics/migrations.json`
+Run: `node -e "const p=require('./packages/custom-webpack/package.json'); console.log(p.schematics, p['ng-add'].save)"`
+Expected: `./dist/schematics/collection.json devDependencies`
 
-- [ ] **Step 4: Run the full custom-webpack unit suite**
+- [ ] **Step 4: Confirm NO `ng-update` / migrations were introduced (spec §12.1)**
+
+Run: `node -e "const p=require('./packages/custom-webpack/package.json'); if(p['ng-update']) throw new Error('ng-update must NOT exist'); if(require('fs').existsSync('packages/custom-webpack/src/schematics/migrations.json')) throw new Error('migrations.json must NOT exist'); console.log('ok: no migrations')"`
+Expected: prints `ok: no migrations`.
+
+- [ ] **Step 5: Run the full custom-webpack unit suite**
 
 Run: `yarn jest --config jest-ut.config.js packages/custom-webpack`
 Expected: all schematics specs green + pre-existing custom-webpack specs still green.
 
-- [ ] **Step 5: Commit (if any incidental fixes were needed)**
+- [ ] **Step 6: Commit (if any incidental fixes were needed)**
 
 ```bash
 git add -A packages/custom-webpack
-git commit --no-verify -m "test(custom-webpack): verify schematics build + assets" || echo "nothing to commit"
-```
-
----
-
-## Task 8: MIGRATION.MD pairing (spec §11)
-
-**Files:**
-- Modify: `MIGRATION.MD` (repo root)
-
-Per the §11 process invariant, every breaking change held for a major MUST have BOTH a migration step AND a `MIGRATION.MD` entry. The `@22` migration here pairs with #2260 (custom-webpack `:karma` removal).
-
-- [ ] **Step 1: Read the current MIGRATION.MD structure**
-
-Run: `sed -n '1,40p' MIGRATION.MD`
-Expected: shows the per-major heading style (e.g. `## vN -> vN+1`). Match it exactly for the new section.
-
-- [ ] **Step 2: Add a v21 → v22 custom-webpack entry**
-
-Add a section (matching the file's existing heading style) documenting the v22 custom-webpack change. Use this content, adjusting the heading to match the file's convention:
-
-```markdown
-### @angular-builders/custom-webpack: Karma builder removed (v22)
-
-The `@angular-builders/custom-webpack:karma` builder is removed in v22, following
-Angular's removal of `@angular-devkit/build-angular:karma`. There is no drop-in
-replacement.
-
-- ⚠️ **Manual:** Migrate your `test` target to either
-  `@angular-builders/custom-esbuild:unit-test` (Vitest) or `@angular-builders/jest`
-  (replacement tracked in #1928). `ng update @angular-builders/custom-webpack` logs
-  this advisory but does NOT change your `test` target (doing so would leave you
-  without `ng test`).
-- ✅ **Automated by `ng update`:** Once a replacement test target is in place,
-  re-running `ng update` removes dead `karma.conf.*` files and karma/jasmine
-  devDependencies.
-```
-
-> Mark items ✅ automated vs ⚠️ manual per §11. The migration's `logger.warn` advisory should be understood to point users here.
-
-- [ ] **Step 3: Commit**
-
-```bash
-git add MIGRATION.MD
-git commit --no-verify -m "docs(custom-webpack): document v22 karma removal in MIGRATION.MD"
+git commit --no-verify -m "test(custom-webpack): verify schematics build + no-migrations invariant" || echo "nothing to commit"
 ```
 
 ---
@@ -988,46 +632,39 @@ git commit --no-verify -m "docs(custom-webpack): document v22 karma removal in M
 - Leave existing config (no prompt) → Task 4 `alreadyReferenced || webpackConfigFileExists` short-circuit. ✅
 - Idempotent (`build` already `:browser` → no-op) → Task 4 idempotency test. ✅
 - `--project` flag, zero prompts → Task 2 schema (no `x-prompt`), Task 4 `getProjectsToTarget`. Multi-project `--project` test. ✅
-- `@22` migration v22-gated, advisory, headless, no prompts → Task 5 (`version: "22.0.0"`), Task 6 (`logger.warn`, `noop`, never blocks). ✅
-- Do NOT auto-delete `test` target → Task 6; test asserts `hasTestTarget` stays true. ✅
-- Advisory points at `custom-esbuild:unit-test` / `@angular-builders/jest` (#1928) → Task 6 `ADVISORY`; test asserts both strings. ✅
-- Karma cleanup ONLY when replacement test target exists → Task 6 `hasReplacement` gate; tests for clean-with-replacement, no-clean-without. ✅
+- **No `ng-update` / migration** (spec §12.1 — Karma not removed in v22, #2260 held) → Architecture decision section + Task 5 Step 4 invariant check. ✅
 
 **Spec §6 coverage checklist (custom-webpack column):**
-- deps add/remove: +self (Task 4), −karma when replacement (Task 6). ✅
+- deps add/remove: +self (Task 4). ✅
 - targets rewritten: `build`, `serve` (Task 4). ✅
 - files created: `webpack.config.js` (Task 4). ✅
 - tsconfig edits: — (none; correct). ✅
-- detection: webpack config present? (`webpackConfigFileExists`), test builder kind (`detectTestBuilder`). ✅
+- detection: webpack config present? (`webpackConfigFileExists`). ✅
 - flags: `--project` (Task 2). ✅
 - idempotency: `build` already `:browser` (Task 4 test). ✅
-- migrations: `@22` (Tasks 5–6). ✅
-- migration auto transforms: karma cleanup (gated) (Task 6). ✅
-- migration advisories: no Karma replacement → Vitest/jest (Task 6). ✅
-- package.json fields: `schematics`, `ng-add`, `ng-update` (Task 1). ✅
-- tests: ng-add + migration (Tasks 4, 6). ✅
+- migrations: NONE — no `migrations.json`, no `ng-update` field (spec §12.1) → Architecture decision + Task 5 Step 4. ✅
+- package.json fields: `schematics`, `ng-add` (no `ng-update`) (Task 1). ✅
+- tests: ng-add (Task 4). ✅
 
-**Spec §7 (packaging) coverage:** per-package `tsconfig.schematics.json` extending root base (Task 1 Step 1); `tsc (lib) → tsc (schematics) → copy:schematics` sequence; `copy:schematics` copies `collection.json`/`migrations.json`/`schema.json` + `files/**` (Task 1 Step 2). Mirrors Plan 0 exactly. ✅
+**Spec §7 (packaging) coverage:** per-package `tsconfig.schematics.json` extending root base (Task 1 Step 1); `tsc (lib) → tsc (schematics) → copy:schematics` sequence; `copy:schematics` copies `collection.json`/`schema.json` + `files/**` (Task 1 Step 2). Mirrors Plan 0 exactly. ✅
 
-**Spec §8 (testing) coverage:** unit tests on `SchematicTestHarness` via `yarn jest --config jest-ut.config.js`; migration seeds pre-migration tree, asserts transforms, includes idempotency test (Task 6). Install task asserted as scheduled, not run (Task 4). ✅
+**Spec §8 (testing) coverage:** unit tests on `SchematicTestHarness` via `yarn jest --config jest-ut.config.js`; ng-add asserts transformed `angular.json`/`package.json`, scaffold create/skip, and idempotency (Task 4). Install task asserted as scheduled, not run (Task 4). ✅
 
-**Spec §11 (MIGRATION.MD pairing):** Task 8 adds the v22 entry with ✅/⚠️ annotations, paired with the `@22` migration. ✅
+**Spec §12.1 (no migration):** custom-webpack ships `ng-add` only — no `migrations.json`, no `ng-update` field, no `migrations/` directory. Rationale in the Architecture decision section; enforced by Task 5 Step 4. ✅
 
 **Constraints check:**
 - Imports Plan 0 helpers, never redefines them. ✅ (`setBuilderForTarget` available but `rewriteTargets` uses `updateWorkspace` for the two-target single-write case — documented; all other writes use Plan 0 helpers.)
-- No cross-import of other builder packages — only references esbuild/jest builder *names as strings* in advisories. ✅
-- Migration headless: only `context.logger`, never prompts, never blocks (`noop`/`chain`). ✅
+- No cross-import of other builder packages. ✅
 - ng-add zero prompts (`--project` flag, no `x-prompt`). ✅
-- `migrations.json` `version` is semver threshold `22.0.0`; version gating discussed (manifest threshold + optional `isAtLeast`). ✅
 
-**Placeholder scan:** every code/test step contains complete code; no TBD/TODO-in-plan/"handle edge cases". (The literal "TODO:" appears only inside the user-facing advisory string and MIGRATION.MD content, which is intentional product copy, not a plan gap.) ✅
+**Placeholder scan:** every code/test step contains complete code; no TBD/TODO-in-plan/"handle edge cases". ✅
 
-**Type consistency:** `NgAddSchema.project` used consistently; `ngAdd`/`migrateV22` factory names match `collection.json`/`migrations.json`; builder constant strings consistent across ng-add and tests; `detectTestBuilder` return values (`'karma'|'vitest'|'jest'`) match Plan 0's `TestBuilderKind`. ✅
+**Type consistency:** `NgAddSchema.project` used consistently; `ngAdd` factory name matches `collection.json`; builder constant strings consistent across ng-add and tests. ✅
 
 ---
 
 ## Execution Handoff
 
-**Gated:** Execute on a green `release/v22` base **after Plan 0** (which locks the imported API and adds the `@schematics/angular`/`@angular-devkit/schematics`/`copyfiles` packaging this plan mirrors). This plan is independent of the jest (Plan 01) and custom-esbuild (Plan 02) builder plans — it only references their builder *names* in advisory copy, never their code.
+**Gated:** Execute on a green `release/v22` base **after Plan 0** (which locks the imported API and adds the `@schematics/angular`/`@angular-devkit/schematics`/`copyfiles` packaging this plan mirrors). This plan is independent of the jest (Plan 01) and custom-esbuild (Plan 02) builder plans — it shares no code with them.
 
 Recommended approach: **subagent-driven-development** (fresh subagent per task, review between tasks).

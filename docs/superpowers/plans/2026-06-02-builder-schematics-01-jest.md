@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build the `@angular-builders/jest` schematics — a zero-prompt `ng add` that wires Jest into a workspace (replacing Karma when detected) and two `ng update` migrations (`@21` heavy auto-transform; `@22` advisory-only) — plus the per-package packaging that exposes them to the Angular CLI.
+**Goal:** Build the `@angular-builders/jest` schematics — a zero-prompt `ng add` that wires Jest into a workspace (replacing **Karma** when detected, and **Vitest** when detected — the forward-default since fresh v22 apps default to Vitest) and two `ng update` migrations (`@21` heavy auto-transform; `@22` advisory-only) — plus the per-package packaging that exposes them to the Angular CLI.
 
-**Architecture:** A new `src/schematics/` tree inside `packages/jest`, compiled to CommonJS in `dist/schematics/` by a dedicated `tsconfig.schematics.json` (mirrors Plan 0's pattern). The `ng-add` and migration entry points are thin `chain([...])` rules that delegate all workspace/JSON/dependency edits to the shared helpers locked by Plan 0 (`@angular-builders/common/schematics`) — never raw `fs` or hand-parsed JSON. Migrations run headless (Renovate/CI): no prompts, only `context.logger` advisories, safe detected defaults. `package.json` gains `schematics`/`ng-add`/`ng-update` fields pointing at the copied dist manifests.
+**Architecture:** A new `src/schematics/` tree inside `packages/jest`, compiled to CommonJS in `dist/schematics/` by a dedicated `tsconfig.schematics.json` (mirrors Plan 0's pattern). `ng add` detects the incumbent test runner and adapts: **Karma** (heavy cleanup), **Vitest** (the v22 forward-default — light cleanup + port advisory), or none/already-jest. The `ng-add` and migration entry points are thin `chain([...])` rules that delegate all workspace/JSON/dependency edits to the shared helpers locked by Plan 0 (`@angular-builders/common/schematics`) — never raw `fs` or hand-parsed JSON. Migrations run headless (Renovate/CI): no prompts, only `context.logger` advisories, safe detected defaults. `package.json` gains `schematics`/`ng-add`/`ng-update` fields pointing at the copied dist manifests.
 
 **Tech Stack:** TypeScript 5.9 (CommonJS for schematics), `@angular-devkit/schematics`, `@schematics/angular/utility`, `@angular-builders/common/schematics` (Plan 0 helpers), Jest 30 + `@angular-devkit/schematics/testing` (`SchematicTestRunner`, `UnitTestTree`) driven through `SchematicTestHarness` from `@angular-builders/common/schematics/testing`.
 
@@ -374,6 +374,8 @@ git commit -m "feat(jest): ng-add adds jest stack and rewrites test target"
 
 When Karma is detected, ng-add must additionally remove karma/jasmine devDeps, delete `karma.conf.js` + `src/test.ts`, and fix `tsconfig.spec.json` (types jasmine→jest, drop `test.ts` from `files`).
 
+> **Incumbent-runner branches (spec §4.1 + §12.2).** ng-add handles three incumbents: **Karma** (this task — heavy cleanup), **Vitest** (Task 4b — lighter cleanup, the forward-default), and **no runner / already-jest** (Task 3). The shared `fixSpecTsconfig` helper added below removes both `jasmine` **and** `vitest`/`vitest/globals` from `tsconfig.spec.json` `types`, so it serves both the Karma and Vitest paths. The Vitest implementation (Task 4b Step 3) is folded into the same `ngAdd` as a sibling branch to `hasKarma`.
+
 **Files:**
 - Modify: `packages/jest/src/schematics/ng-add/index.ts`
 - Test: `packages/jest/src/schematics/ng-add/index.spec.ts` (add a describe block)
@@ -516,11 +518,15 @@ function hasKarma(tree: Tree, workspace: Awaited<ReturnType<typeof readWorkspace
   return false;
 }
 
+// Spec-tsconfig `types` values that must be swapped for `jest` regardless of the
+// incumbent runner: `jasmine` (Karma) and `vitest`/`vitest/globals` (Vitest).
+const NON_JEST_SPEC_TYPES = ['jasmine', 'vitest', 'vitest/globals'];
+
 function fixSpecTsconfig(path: string): Rule {
   return editJsonFile(path, (json: JSONFile) => {
     const types = json.get(['compilerOptions', 'types']);
     if (Array.isArray(types)) {
-      const next = types.filter((t) => t !== 'jasmine');
+      const next = types.filter((t) => !NON_JEST_SPEC_TYPES.includes(t as string));
       if (!next.includes('jest')) next.push('jest');
       json.modify(['compilerOptions', 'types'], next);
     }
@@ -581,6 +587,163 @@ Expected: PASS (all describe blocks — no-Karma from Task 3 + Karma-present).
 ```bash
 git add packages/jest/src/schematics/ng-add/index.ts packages/jest/src/schematics/ng-add/index.spec.ts
 git commit -m "feat(jest): ng-add removes Karma and fixes spec tsconfig when detected"
+```
+
+---
+
+## Task 4b: `ng-add` — Vitest→Jest branch (forward-default)
+
+Fresh v22 apps default to **Vitest** (`@angular/build:unit-test`). This is the forward-default incumbent and must be a first-class `ng add` path (spec §12.2). When `detectTestBuilder() === 'vitest'` (test builder is `@angular/build:unit-test` or any `:unit-test`):
+
+- The `test` → `@angular-builders/jest:run` rewrite already happens regardless of incumbent (Task 3's `setBuilderForTarget` loop runs for every project), so no extra rewrite rule is needed — the `unit-test` target is simply **overwritten**.
+- Fix `tsconfig.spec.json` types (vitest globals → jest) via the shared `fixSpecTsconfig` helper from Task 4.
+- Emit a `context.logger` advisory: spec code using `vi.*` / vitest imports needs manual porting to Jest APIs — the runner swap can't rewrite test code (same caveat as jasmine→jest).
+- **Cleanup is lighter than Karma:** Vitest is built into `@angular/build` — there is no `karma.conf` equivalent to delete and no separate runner devDeps to remove (vitest isn't a top-level user dependency in a default app). So this branch only fixes the spec tsconfig + advises; it does **not** call `removeDevDependencies`/`removeFilesIfPresent`.
+
+**Files:**
+- Modify: `packages/jest/src/schematics/ng-add/index.ts`
+- Test: `packages/jest/src/schematics/ng-add/index.spec.ts` (add a describe block)
+
+- [ ] **Step 1: Write the failing test**
+
+Append to `packages/jest/src/schematics/ng-add/index.spec.ts`. Add this import at the top of the file (next to the existing imports):
+
+```ts
+import { logging } from '@angular-devkit/core';
+```
+
+Then append the describe block:
+
+```ts
+describe('jest ng-add (Vitest present)', () => {
+  async function vitestWorkspace(): Promise<UnitTestTree> {
+    let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    // seed a Vitest-shaped test target (the v22 default runner)
+    await runner()
+      .callRule(
+        updateWorkspace((ws) => {
+          ws.projects.get('app')!.targets.set('test', {
+            builder: '@angular/build:unit-test',
+            options: { buildTarget: 'app:build', tsConfig: 'tsconfig.spec.json' },
+          });
+        }),
+        tree,
+      )
+      .forEach((t) => (tree = t as UnitTestTree));
+
+    // a vitest-globals spec tsconfig (what `ng new` emits for the default runner)
+    tree.create(
+      '/tsconfig.spec.json',
+      JSON.stringify(
+        { compilerOptions: { types: ['vitest/globals'] }, include: ['src/**/*.spec.ts'] },
+        null,
+        2,
+      ),
+    );
+    return tree;
+  }
+
+  it('rewrites the Vitest test target to @angular-builders/jest:run', async () => {
+    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const ws = await readWorkspace(out);
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe(
+      '@angular-builders/jest:run',
+    );
+  });
+
+  it('fixes tsconfig.spec.json types (vitest globals → jest)', async () => {
+    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const cfg = JSON.parse(out.readText('/tsconfig.spec.json'));
+    expect(cfg.compilerOptions.types).toEqual(['jest']);
+  });
+
+  it('logs an advisory about manually porting vi.* / vitest specs to Jest', async () => {
+    const messages: string[] = [];
+    const r = runner();
+    r.logger.subscribe((e: logging.LogEntry) => messages.push(e.message));
+    await r.runSchematic('ng-add', {}, await vitestWorkspace());
+    const joined = messages.join('\n');
+    expect(joined).toMatch(/vitest/i);
+    expect(joined).toMatch(/vi\.\*|manual/i);
+  });
+
+  it('does not delete files or remove devDependencies (lighter than Karma)', async () => {
+    const tree = await vitestWorkspace();
+    const beforeDeps = JSON.parse(tree.readText('/package.json')).devDependencies ?? {};
+    const out = (await runner().runSchematic('ng-add', {}, tree)) as UnitTestTree;
+    const afterDeps = JSON.parse(out.readText('/package.json')).devDependencies ?? {};
+    // every pre-existing devDep is still present (only jest stack was added, nothing removed)
+    for (const dep of Object.keys(beforeDeps)) {
+      expect(afterDeps[dep]).toBeDefined();
+    }
+    // no karma cleanup files were touched (none existed; none created/deleted)
+    expect(out.exists('/karma.conf.js')).toBe(false);
+  });
+});
+```
+
+> Detection uses Plan 0's `detectTestBuilder`, which returns `'vitest'` for any `:unit-test` builder (`builder.endsWith(':unit-test')`). The harness seeds the target explicitly so the test is independent of which runner the installed `application` generator defaults to.
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `yarn jest --config jest-ut.config.js packages/jest/src/schematics/ng-add/index.spec.ts`
+Expected: FAIL — the Vitest describe block fails (tsconfig types still `['vitest/globals']`; no advisory logged). The rewrite assertion may already pass (Task 3's loop rewrites every project's `test` target regardless of incumbent) — confirm it does and that the tsconfig/advisory assertions fail.
+
+- [ ] **Step 3: Write minimal implementation**
+
+In `packages/jest/src/schematics/ng-add/index.ts`, add a Vitest branch as a sibling to the `hasKarma` branch. The `test`→`:run` rewrite is already done by Task 3's `setBuilderForTarget` loop; this branch only adds the spec-tsconfig fix and the advisory.
+
+Add a `hasVitest` detector (next to `hasKarma`):
+
+```ts
+function hasVitest(workspace: Awaited<ReturnType<typeof readWorkspace>>): boolean {
+  for (const name of workspace.projects.keys()) {
+    if (detectTestBuilder(workspace, name) === 'vitest') return true;
+  }
+  return false;
+}
+```
+
+In `ngAdd`, after the `if (hasKarma(...)) { ... }` block, add the Vitest branch (it shares the `specPaths` discovery pattern but skips dep/file removal):
+
+```ts
+    if (hasVitest(workspace)) {
+      context.logger.warn(
+        '[@angular-builders/jest] Detected Vitest as the current test runner. The `test` target ' +
+          'was switched to @angular-builders/jest:run, but spec code using `vi.*` (e.g. vi.fn, ' +
+          'vi.mock, vi.spyOn) or `import ... from \'vitest\'` is NOT rewritten — port it to the ' +
+          'Jest API (jest.fn, jest.mock, jest.spyOn) manually. Cleanup is lighter than Karma: ' +
+          'Vitest is built into @angular/build, so there is no karma.conf-style file to remove.',
+      );
+      const specPaths = new Set<string>(['/tsconfig.spec.json']);
+      for (const projectName of projects) {
+        const root = workspace.projects.get(projectName)?.root ?? '';
+        specPaths.add(root ? `/${root}/tsconfig.spec.json` : '/tsconfig.spec.json');
+      }
+      for (const specPath of specPaths) {
+        rules.push(fixSpecTsconfig(specPath));
+      }
+    }
+```
+
+Because the advisory uses `context.logger`, change the `ngAdd` rule's context parameter name from `_context` to `context` (it is currently unused). The full updated signature line:
+
+```ts
+  return async (tree: Tree, context: SchematicContext) => {
+```
+
+> The Vitest and Karma branches are mutually exclusive in practice (a project has one test builder), but the code does not assume that — each branch guards independently. The shared `fixSpecTsconfig` (Task 4) already strips `vitest`/`vitest/globals` from `types` via `NON_JEST_SPEC_TYPES`. No `removeDevDependencies`/`removeFilesIfPresent` is invoked in the Vitest branch — matching the "lighter than Karma" intent (spec §12.2).
+
+- [ ] **Step 4: Run test to verify it passes**
+
+Run: `yarn jest --config jest-ut.config.js packages/jest/src/schematics/ng-add/index.spec.ts`
+Expected: PASS (no-Karma from Task 3 + Karma-present from Task 4 + Vitest-present from this task).
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add packages/jest/src/schematics/ng-add/index.ts packages/jest/src/schematics/ng-add/index.spec.ts
+git commit -m "feat(jest): ng-add adds Vitest→Jest path (spec tsconfig fix + advisory)"
 ```
 
 ---
@@ -1558,6 +1721,7 @@ ng-add:
 - Add jest stack (`jest`, `jest-preset-angular`, `jest-environment-jsdom`) + the builder itself via `addBuilderDevDependency` → Task 3 `JEST_STACK`. ✅
 - Rewrite `test` → `@angular-builders/jest:run` via `setBuilderForTarget`; schedule install → Task 3. ✅
 - Karma detected (builder `:karma` OR `karma.conf.*` OR karma/jasmine in devDeps): `removeDevDependencies`, `removeFilesIfPresent(['karma.conf.js','src/test.ts'])`, fix `tsconfig.spec.json` (types jasmine→jest, drop `test.ts`) → Task 4 `hasKarma`/`fixSpecTsconfig`. ✅
+- Vitest detected (`detectTestBuilder === 'vitest'`, i.e. `:unit-test`): rewrite already covered by Task 3's loop (overwrites the `unit-test` target); fix `tsconfig.spec.json` types (vitest globals → jest via shared `fixSpecTsconfig`); logger advisory that `vi.*`/vitest imports need manual porting; **no** dep/file removal (lighter than Karma — Vitest is built into `@angular/build`) → Task 4b `hasVitest`/`fixSpecTsconfig` + advisory (spec §12.2). ✅
 - Set `zoneless` to match `isZoneless` rather than prompting → Task 3 (zoneless) + Task 5 (zone branch). ✅
 - Idempotent (`test` already `:run` → no-op) → Task 5. ✅
 - Only `--project` flag, no `x-prompt` → Task 2 schema. ✅
@@ -1583,11 +1747,11 @@ Packaging (§7):
 - `copy:schematics` build step mirroring Plan 0 (`copyfiles -u 2`) → Task 1. ✅
 
 §6 coverage checklist (jest column):
-- deps add/remove (+jest stack / −karma,jasmine) → Tasks 3,4. ✅
-- targets rewritten (`test`) → Task 3. ✅
-- files deleted (`karma.conf`,`test.ts`) → Task 4. ✅
-- tsconfig edits (spec `types`/`files`) → Task 4. ✅
-- detection (Karma?, zoneless?) → Tasks 4,3/5. ✅
+- deps add/remove (+jest stack / −karma,jasmine; Vitest path removes nothing) → Tasks 3,4,4b. ✅
+- targets rewritten (`test`, from any incumbent incl. Vitest `:unit-test`) → Task 3 (loop runs regardless of incumbent). ✅
+- files deleted (`karma.conf`,`test.ts`; none for Vitest) → Task 4. ✅
+- tsconfig edits (spec `types`/`files`; vitest globals→jest) → Tasks 4,4b. ✅
+- detection (Karma?, Vitest?, zoneless?) → Tasks 4,4b,3/5. ✅
 - flags (`--project`) → Task 2. ✅
 - idempotency (`test` already `:run`) → Task 5. ✅
 - migrations `@21`,`@22` → Tasks 6–12. ✅
@@ -1600,13 +1764,15 @@ Packaging (§7):
 
 §11 MIGRATION.MD pairing: both `@21` and `@22` advisories point users at the relevant MIGRATION.MD section (`logger.warn` text references "MIGRATION.MD (v20→v21)" / "(v21→v22)") → Tasks 10,12. ✅
 
-§2 principles: no `x-prompt` anywhere; migrations emit only `context.logger` advisories with safe detected defaults and never block → Tasks 2,10,12. ✅
+§2 principles: no `x-prompt` anywhere; ng-add and migrations emit only `context.logger` advisories with safe detected defaults and never block → Tasks 2,4b,10,12. ✅
+
+§12.2 (Vitest→Jest, supersedes §4.1/§6): Karma→Jest path retained (Task 4) AND a first-class Vitest→Jest path added (Task 4b) — rewrite covered by Task 3's incumbent-agnostic loop, spec tsconfig types fixed (vitest globals→jest), `vi.*`/vitest-import porting advisory logged, no dep/file cleanup (lighter than Karma). §6 jest detection cell is now "Karma?, Vitest?, zoneless?". ✅
 
 **Plan 0 reuse:** Every workspace/JSON/dep edit goes through Plan 0 helpers (`setBuilderForTarget`, `addBuilderDevDependency`, `removeDevDependencies`, `removeFilesIfPresent`, `editJsonFile`, `getProjectsToTarget`, `detectTestBuilder`, `isZoneless`) or `@schematics/angular/utility` (`readWorkspace`/`updateWorkspace`/`JSONFile`). No shared helper is redefined; no raw `fs`. ✅
 
 **Placeholder scan:** Every code step contains complete code; no TBD/TODO/"handle edge cases"/"similar to above". The two contingency steps (Task 5 Step 3, Task 11 Step 3) are explicitly gated "only if a test failed" and contain either the exact fix code (Task 5) or a concrete diagnostic procedure (Task 11). ✅
 
-**Type consistency:** `NgAddOptions` (Task 2) used in Tasks 3/4. `ngAdd`/`migrateV21`/`migrateV22` factory names match `collection.json`/`migrations.json` `factory` references (Tasks 2,6). Builder string `@angular-builders/jest:run` consistent across ng-add and migrations. Dep versions consistent (`jest ^30.0.0`, `jest-environment-jsdom ^30.0.0`, `jsdom ^26.0.0`, builder `^22.0.0`). The combined import note in Task 10 prevents duplicate `@schematics/angular/utility` / `@angular-builders/common/schematics` import lines accumulating across Tasks 7–10. ✅
+**Type consistency:** `NgAddOptions` (Task 2) used in Tasks 3/4/4b. `ngAdd`/`migrateV21`/`migrateV22` factory names match `collection.json`/`migrations.json` `factory` references (Tasks 2,6). Builder string `@angular-builders/jest:run` consistent across ng-add (Karma + Vitest branches) and migrations. The Vitest branch (Task 4b) reuses the shared `fixSpecTsconfig`/`NON_JEST_SPEC_TYPES` and `detectTestBuilder` (returns `'vitest'` for `:unit-test`) — no helper redefined; the only `ngAdd` edit beyond the new branch is renaming `_context`→`context` for the advisory. Dep versions consistent (`jest ^30.0.0`, `jest-environment-jsdom ^30.0.0`, `jsdom ^26.0.0`, builder `^22.0.0`). The combined import note in Task 10 prevents duplicate `@schematics/angular/utility` / `@angular-builders/common/schematics` import lines accumulating across Tasks 7–10. ✅
 
 **Calibration risk (flagged, not a gap):** Tests assume the Angular `application` schematic produces a zoneless app (no zone.js polyfill) and roots projects under `projects/<name>`. If the installed v22 generator differs, calibrate the *expected* values (as Plan 0 Task 3/4 instructs) — the rule logic is fixed; only fixture expectations adapt. The `r.tasks`/`runner.logger` APIs are standard `SchematicTestRunner` surface.
 

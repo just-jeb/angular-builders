@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Give `@angular-builders/custom-esbuild` a first-class `ng add` that auto-wires the `build` → `:application` and `serve` → `:dev-server` builders (preserving options), and keeps unit tests consistent by rewiring a Vitest `test` target to `:unit-test` (with `buildTarget`) so esbuild `codePlugins` apply to tests too — all auto-detected, zero prompts, with `--project` and `--unit-test` as the only flags.
+**Goal:** Give `@angular-builders/custom-esbuild` a first-class `ng add` that auto-wires the `build` → `:application` and `serve` → `:dev-server` builders (preserving options) **when the existing build is already esbuild** (`@angular/build:application`), and keeps unit tests consistent by rewiring a Vitest `test` target to `:unit-test` (with `buildTarget`) so esbuild `codePlugins` apply to tests too. When the existing build is **webpack** (`@angular-devkit/build-angular:browser` or `@angular-builders/custom-webpack:browser`), it does **NOT** silently swap to esbuild — it leaves the targets alone and logs an advisory (run Angular's `use-application-builder` migration first, then `ng add`, then port plugins to `codePlugins` manually). The `--from-webpack` flag forces only the mechanical target rewrite from a webpack build. All auto-detected, zero prompts, with `--project`, `--unit-test`, and `--from-webpack` as the only flags.
 
 **Architecture:** A thin per-package `src/schematics/` tree compiled by a dedicated `tsconfig.schematics.json` to CommonJS in `dist/schematics/` (Angular schematics must be CJS), exactly mirroring Plan 0's packaging. The `ng-add` schematic is a `chain([...])` of shared `Rule` factories imported from `@angular-builders/common/schematics` (locked by Plan 0) plus custom-esbuild-specific wiring. **No migrations:** custom-esbuild first shipped at v17 and every change since (plugins, indexHtmlTransformer, the `unit-test` builder added in 20.1.0) was purely additive — no user-facing config ever broke — so there is no `migrations.json` and no `ng-update` field.
 
@@ -49,7 +49,7 @@ If a future custom-esbuild breaking change is held for a major, that is when `mi
 
 - Create: `packages/custom-esbuild/tsconfig.schematics.json` — extends root `tsconfig.schematics.json` (from Plan 0); `rootDir: src/schematics`, `outDir: dist/schematics`.
 - Create: `packages/custom-esbuild/src/schematics/collection.json` — registers the `ng-add` schematic.
-- Create: `packages/custom-esbuild/src/schematics/ng-add/schema.json` — `--project` + `--unit-test` flags, no `x-prompt`.
+- Create: `packages/custom-esbuild/src/schematics/ng-add/schema.json` — `--project` + `--unit-test` + `--from-webpack` flags, no `x-prompt`.
 - Create: `packages/custom-esbuild/src/schematics/ng-add/schema.ts` — the typed `Schema` interface for `ng-add` options.
 - Create: `packages/custom-esbuild/src/schematics/ng-add/index.ts` — the `ng-add` rule factory (the only logic file).
 - Create: `packages/custom-esbuild/src/schematics/ng-add/index.spec.ts` — unit tests.
@@ -59,6 +59,12 @@ If a future custom-esbuild breaking change is held for a major, that is when `mi
 - build → `@angular-builders/custom-esbuild:application`
 - serve → `@angular-builders/custom-esbuild:dev-server`
 - test (Vitest) → `@angular-builders/custom-esbuild:unit-test`
+
+**Incumbent build-builder constants** (what the workspace may already have on `build`, used by the §12.3 guard):
+- esbuild (safe to rewrite) → `@angular/build:application`
+- webpack (guard — do NOT rewrite without `--from-webpack`) → `@angular-devkit/build-angular:browser` OR `@angular-builders/custom-webpack:browser`
+
+> The build-builder guard reads `workspace.projects.get(projectName).targets.get('build')?.builder` **directly** — there is no shared build-builder detection helper in Plan 0 (Plan 0 only exposes `detectTestBuilder`), and we intentionally do **not** invent one here. The check is a small inline classification (esbuild vs webpack vs other) local to `ng-add/index.ts`.
 
 ---
 
@@ -181,13 +187,19 @@ Create `packages/custom-esbuild/src/schematics/ng-add/schema.json`:
       "description": "Force-create a Vitest unit-test target wired to @angular-builders/custom-esbuild:unit-test, even if no test target exists.",
       "default": false,
       "alias": "unit-test"
+    },
+    "fromWebpack": {
+      "type": "boolean",
+      "description": "Force the mechanical target rewrite (build → :application, serve → :dev-server) even when the current build is a webpack builder. By default a webpack build is left untouched with an advisory, because esbuild plugins cannot be auto-translated from webpack.config.js. Use only if you accept porting your webpack config to esbuild codePlugins manually.",
+      "default": false,
+      "alias": "from-webpack"
     }
   },
   "additionalProperties": false
 }
 ```
 
-> **No `x-prompt` anywhere** (spec §2, §4.2: zero prompts). `$default.$source: projectName` lets the CLI fill `project` from the current directory's project context but never prompts. `--unit-test` maps to `unitTest` via the `alias`.
+> **No `x-prompt` anywhere** (spec §2, §4.2: zero prompts). `$default.$source: projectName` lets the CLI fill `project` from the current directory's project context but never prompts. `--unit-test` maps to `unitTest` via the `alias`; `--from-webpack` maps to `fromWebpack`. `--from-webpack` (spec §12.3) is an explicit user override of the webpack-build guard.
 
 - [ ] **Step 3: Write the typed Schema interface**
 
@@ -199,6 +211,13 @@ export interface Schema {
   project?: string;
   /** Force-create a Vitest unit-test target even if none exists. */
   unitTest?: boolean;
+  /**
+   * Force the mechanical build/serve rewrite even when the current build is a
+   * webpack builder. Without this, a webpack build is left untouched with an
+   * advisory (spec §12.3). The user must port their webpack config to esbuild
+   * codePlugins manually afterwards.
+   */
+  fromWebpack?: boolean;
 }
 ```
 
@@ -211,9 +230,9 @@ git commit -m "feat(custom-esbuild): add ng-add collection + schema manifests"
 
 ---
 
-## Task 3: ng-add — build + serve rewrite with option preservation
+## Task 3: ng-add — build + serve rewrite with option preservation (esbuild build only)
 
-Start with the core rewrite. Builds the `ngAdd` factory incrementally; later tasks extend it.
+Start with the core rewrite, **guarded on the incumbent build builder** (spec §12.3): the rewrite fires only when `build` is already esbuild (`@angular/build:application`). The webpack-guard branch (leave + advise, plus `--from-webpack`) is added in Task 3b. Builds the `ngAdd` factory incrementally; later tasks extend it.
 
 **Files:**
 - Create: `packages/custom-esbuild/src/schematics/ng-add/index.ts`
@@ -313,8 +332,28 @@ const PACKAGE_NAME = '@angular-builders/custom-esbuild';
 const BUILD_BUILDER = '@angular-builders/custom-esbuild:application';
 const SERVE_BUILDER = '@angular-builders/custom-esbuild:dev-server';
 
+// Incumbent build builders the guard classifies (spec §12.3).
+const ESBUILD_BUILD = '@angular/build:application';
+const WEBPACK_BUILDS = [
+  '@angular-devkit/build-angular:browser',
+  '@angular-builders/custom-webpack:browser',
+];
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION: string = require('../../../package.json').version;
+
+/**
+ * Classify the project's current `build` builder for the §12.3 guard.
+ * Inline (no shared helper — Plan 0 exposes only detectTestBuilder).
+ */
+function classifyBuildBuilder(
+  builder: string | undefined,
+): 'esbuild' | 'webpack' | 'none' | 'other' {
+  if (!builder) return 'none';
+  if (builder === ESBUILD_BUILD || builder === BUILD_BUILDER) return 'esbuild';
+  if (WEBPACK_BUILDS.includes(builder)) return 'webpack';
+  return 'other';
+}
 
 export function ngAdd(options: Schema): Rule {
   return async (tree: Tree, _context: SchematicContext) => {
@@ -327,12 +366,20 @@ export function ngAdd(options: Schema): Rule {
 
     for (const projectName of projects) {
       const project = workspace.projects.get(projectName)!;
+      const buildKind = classifyBuildBuilder(
+        project.targets.get('build')?.builder,
+      );
 
-      if (project.targets.has('build')) {
-        rules.push(setBuilderForTarget(projectName, 'build', BUILD_BUILDER));
-      }
-      if (project.targets.has('serve')) {
-        rules.push(setBuilderForTarget(projectName, 'serve', SERVE_BUILDER));
+      // §12.3 guard: only rewrite when the build is already esbuild
+      // (`@angular/build:application` or our own `:application`). The webpack
+      // branch (leave + advise / --from-webpack) is added in Task 3b.
+      if (buildKind === 'esbuild') {
+        if (project.targets.has('build')) {
+          rules.push(setBuilderForTarget(projectName, 'build', BUILD_BUILDER));
+        }
+        if (project.targets.has('serve')) {
+          rules.push(setBuilderForTarget(projectName, 'serve', SERVE_BUILDER));
+        }
       }
     }
 
@@ -341,7 +388,7 @@ export function ngAdd(options: Schema): Rule {
 }
 ```
 
-> `setBuilderForTarget` (Plan 0) rewrites only the `builder` field and merges any passed `options` — passing no `options` here preserves all existing target options. `addBuilderDevDependency` with `{ install: true }` schedules a `NodePackageInstallTask`; the test asserts the dep entry, not a real install. `~${VERSION}` pins to the installed package's own version (the builder major == Angular major invariant).
+> `setBuilderForTarget` (Plan 0) rewrites only the `builder` field and merges any passed `options` — passing no `options` here preserves all existing target options. `addBuilderDevDependency` with `{ install: true }` schedules a `NodePackageInstallTask`; the test asserts the dep entry, not a real install. `~${VERSION}` pins to the installed package's own version (the builder major == Angular major invariant). `classifyBuildBuilder` treats our own `:application` as `esbuild` too, so re-running on an already-wired workspace stays in the rewrite branch (idempotent — Task 7). The webpack/none/other kinds are handled in Task 3b.
 
 - [ ] **Step 4: Run test to verify it passes**
 
@@ -353,6 +400,161 @@ Expected: PASS (1 test, all assertions).
 ```bash
 git add packages/custom-esbuild/src/schematics/ng-add/index.ts packages/custom-esbuild/src/schematics/ng-add/index.spec.ts
 git commit -m "feat(custom-esbuild): ng-add rewrites build/serve preserving options"
+```
+
+---
+
+## Task 3b: ng-add — webpack-build guard + `--from-webpack` (spec §12.3)
+
+A webpack `build` must NOT be silently swapped to esbuild — that strands the user's `webpack.config.js`. Instead: leave `build`/`serve` untouched and emit a `context.logger` advisory describing the manual path (`use-application-builder` migration → `ng add` → port plugins to `codePlugins`). The `--from-webpack` flag overrides the guard and forces only the mechanical target rewrite.
+
+**Files:**
+- Modify: `packages/custom-esbuild/src/schematics/ng-add/index.ts`
+- Test: `packages/custom-esbuild/src/schematics/ng-add/index.spec.ts`
+
+- [ ] **Step 1: Add the failing tests**
+
+Append to `packages/custom-esbuild/src/schematics/ng-add/index.spec.ts`:
+
+```ts
+describe('custom-esbuild ng-add: webpack-build guard (spec §12.3)', () => {
+  async function seedWebpackBuild(
+    builder: string,
+  ): Promise<UnitTestTree> {
+    const tree = await new SchematicTestHarness().createWorkspace({
+      projects: [{ name: 'app' }],
+    });
+    return (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', {
+            builder,
+            options: { outputPath: 'dist/app' },
+          });
+          project.targets.set('serve', {
+            builder: '@angular-devkit/build-angular:dev-server',
+            options: { buildTarget: 'app:build' },
+          });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+  }
+
+  it('does NOT rewrite an @angular-devkit/build-angular:browser build; logs an advisory', async () => {
+    const seeded = await seedWebpackBuild('@angular-devkit/build-angular:browser');
+
+    const r = runner();
+    const logs: string[] = [];
+    r.logger.subscribe((entry) => logs.push(entry.message));
+
+    const out = await r.runSchematic('ng-add', { project: 'app' }, seeded);
+
+    const ws = await readWorkspace(out);
+    const build = ws.projects.get('app')!.targets.get('build')!;
+    const serve = ws.projects.get('app')!.targets.get('serve')!;
+
+    // unchanged — no silent swap
+    expect(build.builder).toBe('@angular-devkit/build-angular:browser');
+    expect(serve.builder).toBe('@angular-devkit/build-angular:dev-server');
+
+    // advisory names the migration path and the --from-webpack escape hatch
+    expect(logs.some((m) => m.includes('use-application-builder'))).toBe(true);
+    expect(logs.some((m) => m.includes('--from-webpack'))).toBe(true);
+  });
+
+  it('does NOT rewrite a custom-webpack:browser build; logs an advisory', async () => {
+    const seeded = await seedWebpackBuild('@angular-builders/custom-webpack:browser');
+
+    const r = runner();
+    const logs: string[] = [];
+    r.logger.subscribe((entry) => logs.push(entry.message));
+
+    const out = await r.runSchematic('ng-add', { project: 'app' }, seeded);
+
+    const ws = await readWorkspace(out);
+    expect(ws.projects.get('app')!.targets.get('build')!.builder).toBe(
+      '@angular-builders/custom-webpack:browser',
+    );
+    expect(logs.some((m) => m.includes('use-application-builder'))).toBe(true);
+  });
+
+  it('--from-webpack forces the mechanical build/serve rewrite from a webpack build', async () => {
+    const seeded = await seedWebpackBuild('@angular-devkit/build-angular:browser');
+
+    const out = await ngAdd(seeded, { project: 'app', fromWebpack: true });
+
+    const ws = await readWorkspace(out);
+    const build = ws.projects.get('app')!.targets.get('build')!;
+    const serve = ws.projects.get('app')!.targets.get('serve')!;
+
+    expect(build.builder).toBe('@angular-builders/custom-esbuild:application');
+    // mechanical rewrite preserves existing options
+    expect((build.options as Record<string, unknown>).outputPath).toBe('dist/app');
+    expect(serve.builder).toBe('@angular-builders/custom-esbuild:dev-server');
+    expect((serve.options as Record<string, unknown>).buildTarget).toBe('app:build');
+  });
+});
+```
+
+- [ ] **Step 2: Run the tests to verify they fail**
+
+Run: `yarn jest --config jest-ut.config.js packages/custom-esbuild/src/schematics/ng-add/index.spec.ts -t "webpack-build guard"`
+Expected: FAIL — the first two cases log no advisory (no `webpack` branch yet), and the `--from-webpack` case leaves `build` on `@angular-devkit/build-angular:browser` (the guard from Task 3 only rewrites `esbuild` builds, and `fromWebpack` is not yet consulted).
+
+- [ ] **Step 3: Extend the implementation**
+
+In `packages/custom-esbuild/src/schematics/ng-add/index.ts`, change the factory's async arrow to use the `context` parameter (rename `_context` → `context`):
+
+```ts
+  return async (tree: Tree, context: SchematicContext) => {
+```
+
+Replace the §12.3 guard block (the `if (buildKind === 'esbuild') { ... }` added in Task 3) with the full branch set:
+
+```ts
+      // §12.3 guard: distinguish the incumbent build builder.
+      const wantsForcedRewrite = options.fromWebpack === true;
+
+      if (buildKind === 'esbuild' || wantsForcedRewrite) {
+        // esbuild build → safe rewrite (common case).
+        // --from-webpack → forced mechanical rewrite even from a webpack build
+        // (user accepts porting webpack.config.js plugins to codePlugins manually).
+        if (project.targets.has('build')) {
+          rules.push(setBuilderForTarget(projectName, 'build', BUILD_BUILDER));
+        }
+        if (project.targets.has('serve')) {
+          rules.push(setBuilderForTarget(projectName, 'serve', SERVE_BUILDER));
+        }
+      } else if (buildKind === 'webpack') {
+        // Webpack build → do NOT silently swap to esbuild (strands webpack.config.js).
+        context.logger.info(
+          `[@angular-builders/custom-esbuild] Project "${projectName}" builds with a ` +
+            `webpack builder ("${project.targets.get('build')!.builder}"). custom-esbuild ` +
+            `runs on esbuild, so it will NOT rewrite your build target automatically — that ` +
+            `would strand your webpack.config.js. To migrate: (1) run Angular's ` +
+            `"use-application-builder" migration to move onto "@angular/build:application", ` +
+            `(2) re-run "ng add @angular-builders/custom-esbuild", then (3) port your ` +
+            `webpack.config.js plugins to esbuild "codePlugins" manually (there is no ` +
+            `automatic translation). To skip the guard and force only the target rewrite now, ` +
+            `re-run with "--from-webpack". Leaving build/serve unchanged.`,
+        );
+      }
+```
+
+> `wantsForcedRewrite` (`--from-webpack`) joins the `esbuild` branch so the mechanical rewrite (`build`→`:application`, `serve`→`:dev-server`, options preserved by `setBuilderForTarget`) runs even from a webpack build. The advisory is emitted only for the default (un-forced) webpack case and names the exact path: `use-application-builder` → `ng add` → manual `codePlugins` port. `buildKind === 'none'`/`'other'` projects fall through untouched (no advisory) — `ng add` still adds the devDep and processes any test target. No auto-translation of webpack config is attempted (spec §12.3: out of scope).
+
+- [ ] **Step 4: Run the tests to verify they pass**
+
+Run: `yarn jest --config jest-ut.config.js packages/custom-esbuild/src/schematics/ng-add/index.spec.ts`
+Expected: PASS — webpack-guard suite (no-rewrite + advisory for both webpack builders, `--from-webpack` mechanical rewrite) green; Task 3 esbuild rewrite still green.
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add packages/custom-esbuild/src/schematics/ng-add/index.ts packages/custom-esbuild/src/schematics/ng-add/index.spec.ts
+git commit -m "feat(custom-esbuild): ng-add guards webpack builds, adds --from-webpack (spec §12.3)"
 ```
 
 ---
@@ -554,13 +756,7 @@ Expected: FAIL — no advisory logged (the `karma`/`jest` branch is not implemen
 
 - [ ] **Step 3: Extend the implementation**
 
-In `packages/custom-esbuild/src/schematics/ng-add/index.ts`, change the factory's async arrow to use the `context` parameter (rename `_context` → `context`):
-
-```ts
-  return async (tree: Tree, context: SchematicContext) => {
-```
-
-Then extend the `testKind` block (added in Task 4) to handle Karma/Jest with an advisory:
+In `packages/custom-esbuild/src/schematics/ng-add/index.ts`, the factory's async arrow already uses the `context` parameter (renamed `_context` → `context` in Task 3b for the webpack advisory). Extend the `testKind` block (added in Task 4) to handle Karma/Jest with an advisory:
 
 ```ts
       const testKind = detectTestBuilder(workspace, projectName);
@@ -793,7 +989,7 @@ git commit -m "test(custom-esbuild): assert ng-add idempotency"
 - [ ] **Step 1: Run the full custom-esbuild unit suite**
 
 Run: `yarn jest --config jest-ut.config.js packages/custom-esbuild/src/schematics`
-Expected: all `ng-add` describe blocks green (build/serve, Vitest, Karma/Jest, --unit-test, idempotency).
+Expected: all `ng-add` describe blocks green (build/serve, webpack-build guard, Vitest, Karma/Jest, --unit-test, idempotency).
 
 - [ ] **Step 2: Build the package end-to-end**
 
@@ -824,9 +1020,11 @@ git commit -m "chore(custom-esbuild): verify schematics build + no-migrations in
 
 ## Self-Review
 
-**Spec §4.2 (custom-esbuild) coverage:**
+**Spec §4.2 + §12.3 (custom-esbuild) coverage:**
 - Add self to devDeps via `addBuilderDevDependency` → Task 3 Step 3. ✅
-- Rewrite `build` → `:application`, `serve` → `:dev-server`, preserve options → Task 3 (asserts `tsConfig`/`outputPath`/`buildTarget` preserved). ✅
+- Rewrite `build` → `:application`, `serve` → `:dev-server`, preserve options — **only when build is already esbuild** (`@angular/build:application`) → Task 3 (guarded; asserts `tsConfig`/`outputPath`/`buildTarget` preserved). ✅
+- **Webpack-build guard (§12.3):** build on `@angular-devkit/build-angular:browser` or `@angular-builders/custom-webpack:browser` → NO rewrite + `context.logger` advisory (`use-application-builder` → `ng add` → manual `codePlugins` port) → Task 3b (cases a + b). ✅
+- **`--from-webpack` flag (§12.3):** forces only the mechanical build/serve rewrite from a webpack build → Task 3b (case c), schema.json Task 2. ✅
 - Schedule install → Task 3 (`addBuilderDevDependency(..., { install: true })`). ✅
 - Vitest `test` (`detectTestBuilder==='vitest'`) → auto-rewrite to `:unit-test`, wire `buildTarget` to `<project>:build` → Task 4. ✅
 - Karma/Jest `test` → leave untouched + `context.logger` advisory pointing at `custom-esbuild:unit-test` → Task 5. ✅
@@ -836,25 +1034,25 @@ git commit -m "chore(custom-esbuild): verify schematics build + no-migrations in
 
 **Spec §6 coverage checklist (custom-esbuild column):**
 - deps add/remove: +self → Task 3. ✅
-- targets rewritten: `build`, `serve`, `test`(if Vitest) → Tasks 3–4. ✅
+- targets rewritten: `build`, `serve` (only if build is esbuild, or `--from-webpack`), `test`(if Vitest) → Tasks 3, 3b, 4. ✅
 - files created/deleted: — (none) → no task needed; `copy:schematics` has no `files/**` line (Task 1). ✅
 - tsconfig edits: — (none). ✅
-- detection: test builder kind → `detectTestBuilder` usage Task 4. ✅
-- flags: `--project`, `--unit-test` → schema.json Task 2, used Tasks 3/6. ✅
+- detection: test builder kind; webpack guard → `detectTestBuilder` usage Task 4; inline `classifyBuildBuilder` (build-builder guard) Tasks 3/3b. ✅
+- flags: `--project`, `--unit-test`, `--from-webpack` → schema.json Task 2, used Tasks 3/3b/6. ✅
 - idempotency: `build` already `:application` → Task 7. ✅
 - ng-update migrations: none → Architecture + Task 8 Step 4. ✅
 - package.json fields: `schematics`, `ng-add` (no `ng-update`) → Task 1 Step 2. ✅
-- tests: ng-add → Tasks 3–7. ✅
+- tests: ng-add → Tasks 3, 3b, 4–7. ✅
 
 **Spec §7 (packaging):** per-package `tsconfig.schematics.json` extending root base; `tsc (lib) → merge-schemes → tsc (schematics) → copy:schematics`; `schematics` field → dist-relative `collection.json`; no `ng-update` field → Task 1. Mirrors Plan 0 packaging pattern exactly. ✅
 
 **Spec §8 (testing):** `SchematicTestRunner` + `UnitTestTree` on shared `SchematicTestHarness`; assert transformed `angular.json`/`package.json`; install task scheduled but not run (assert dep entry) → Tasks 3–7. ✅
 
-**Plan 0 API usage:** `setBuilderForTarget`, `addBuilderDevDependency`, `getProjectsToTarget`, `detectTestBuilder`, `SchematicTestHarness` — all called with Plan 0's exact signatures; none redefined. ✅ No cross-import of other builder packages (only `@angular-builders/common/schematics`). ✅
+**Plan 0 API usage:** `setBuilderForTarget`, `addBuilderDevDependency`, `getProjectsToTarget`, `detectTestBuilder`, `SchematicTestHarness` — all called with Plan 0's exact signatures; none redefined. The build-builder guard reads `project.targets.get('build')?.builder` directly via a local `classifyBuildBuilder`; no new shared helper was invented (per §12.3 integration note). ✅ No cross-import of other builder packages — the webpack constants (`@angular-devkit/build-angular:browser`, `@angular-builders/custom-webpack:browser`) are plain string literals for detection, not imports. ✅
 
 **Placeholder scan:** No TBD/TODO/"handle edge cases"; every code step shows complete code; every command has expected output. ✅
 
-**Type consistency:** `Schema` interface (`project?`, `unitTest?`) defined in Task 2, used in Tasks 3/6. Builder-name constants (`BUILD_BUILDER`, `SERVE_BUILDER`, `TEST_BUILDER`, `PACKAGE_NAME`) consistent across Tasks 3–6. Factory export name `ngAdd` matches `collection.json` `factory: "./ng-add/index#ngAdd"`. ✅
+**Type consistency:** `Schema` interface (`project?`, `unitTest?`, `fromWebpack?`) defined in Task 2, used in Tasks 3b/6. Builder-name constants (`BUILD_BUILDER`, `SERVE_BUILDER`, `TEST_BUILDER`, `PACKAGE_NAME`, plus guard constants `ESBUILD_BUILD`/`WEBPACK_BUILDS`) consistent across Tasks 3–6. Inline `classifyBuildBuilder` introduced in Task 3, extended in Task 3b — no shared build-builder helper invented (Plan 0 exposes only `detectTestBuilder`). Factory export name `ngAdd` matches `collection.json` `factory: "./ng-add/index#ngAdd"`. ✅
 
 ---
 
