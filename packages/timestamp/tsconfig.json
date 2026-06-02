@@ -2,7 +2,9 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "noImplicitAny": false
+    "rootDir": "src",
+    "noImplicitAny": false,
+    "types": ["node"]
   },
   "files": [
     "src/index.ts"

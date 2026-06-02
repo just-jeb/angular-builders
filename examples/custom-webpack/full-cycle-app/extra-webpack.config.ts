@@ -1,5 +1,5 @@
 import { Configuration, DefinePlugin } from 'webpack';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { version } from '@project';
 
 /**
