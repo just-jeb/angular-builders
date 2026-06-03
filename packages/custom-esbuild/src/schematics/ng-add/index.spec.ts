@@ -128,3 +128,50 @@ describe('custom-esbuild ng-add: Vitest test target', () => {
     expect((test.options as Record<string, unknown>).tsConfig).toBe('tsconfig.spec.json');
   });
 });
+
+describe('custom-esbuild ng-add: Karma / Jest test target', () => {
+  it('leaves a Karma test target untouched and logs an advisory', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: {} });
+          project.targets.set('test', { builder: '@angular-devkit/build-angular:karma', options: { karmaConfig: 'karma.conf.js' } });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const r = runner();
+    const logs: string[] = [];
+    r.logger.subscribe((entry) => logs.push(entry.message));
+    const out = await r.runSchematic('ng-add', { project: 'app' }, seeded);
+    const ws = await readWorkspace(out);
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe('@angular-devkit/build-angular:karma');
+    expect((ws.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>).karmaConfig).toBe('karma.conf.js');
+    expect(logs.some((m) => m.includes('custom-esbuild:unit-test'))).toBe(true);
+  });
+
+  it('leaves a Jest test target untouched and logs an advisory', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: {} });
+          project.targets.set('test', { builder: '@angular-builders/jest:run', options: {} });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const r = runner();
+    const logs: string[] = [];
+    r.logger.subscribe((entry) => logs.push(entry.message));
+    const out = await r.runSchematic('ng-add', { project: 'app' }, seeded);
+    const ws = await readWorkspace(out);
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe('@angular-builders/jest:run');
+    expect(logs.some((m) => m.includes('custom-esbuild:unit-test'))).toBe(true);
+  });
+});

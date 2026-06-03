@@ -65,11 +65,21 @@ export function ngAdd(options: Schema): Rule {
       }
 
       const testKind = detectTestBuilder(workspace, projectName);
-      if (testKind === 'vitest') {
+      const wantsForcedVitest = options.unitTest === true;
+
+      if (wantsForcedVitest || testKind === 'vitest') {
         rules.push(
           setBuilderForTarget(projectName, 'test', TEST_BUILDER, {
             buildTarget: `${projectName}:build`,
           }),
+        );
+      } else if (testKind === 'karma' || testKind === 'jest') {
+        context.logger.info(
+          `[@angular-builders/custom-esbuild] Project "${projectName}" uses a ` +
+            `${testKind === 'karma' ? 'Karma' : 'Jest'} test runner; esbuild plugins do not ` +
+            `apply there. To run your tests through esbuild/Vitest with the same plugins, ` +
+            `switch the test target to "${TEST_BUILDER}" (or run ` +
+            `"ng add @angular-builders/custom-esbuild --unit-test"). Leaving the test target unchanged.`,
         );
       }
     }
