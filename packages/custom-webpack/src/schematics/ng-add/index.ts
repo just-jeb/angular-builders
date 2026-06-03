@@ -11,6 +11,7 @@ import {
   url,
 } from '@angular-devkit/schematics';
 import { readWorkspace as getWorkspace, updateWorkspace } from '@schematics/angular/utility';
+import { workspaces } from '@angular-devkit/core';
 import {
   addBuilderDevDependency,
   getProjectsToTarget,
@@ -80,7 +81,7 @@ function scaffoldConfig(projectName: string): Rule {
 export function ngAdd(options: NgAddSchema): Rule {
   return async (tree: Tree, context: SchematicContext) => {
     const workspace = await getWorkspace(tree);
-    const projects = getProjectsToTarget(workspace, options.project);
+    const projects = getProjectsToTarget(workspace as unknown as workspaces.WorkspaceDefinition, options.project);
 
     if (projects.length === 0) {
       context.logger.warn('[custom-webpack] No projects found to configure.');
