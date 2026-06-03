@@ -1,3 +1,4 @@
+import { JsonValue } from '@angular-devkit/core';
 import { Rule, Tree } from '@angular-devkit/schematics';
 import { updateWorkspace, addDependency, DependencyType, InstallBehavior } from '@schematics/angular/utility';
 import { JSONFile } from '@schematics/angular/utility/json-file';
@@ -14,9 +15,9 @@ export function setBuilderForTarget(
     const target = project.targets.get(targetName);
     if (target) {
       target.builder = builderName;
-      if (options) target.options = { ...(target.options ?? {}), ...options };
+      if (options) target.options = { ...(target.options ?? {}), ...(options as Record<string, JsonValue>) };
     } else {
-      project.targets.add({ name: targetName, builder: builderName, options: options ?? {} });
+      project.targets.add({ name: targetName, builder: builderName, options: (options ?? {}) as Record<string, JsonValue> });
     }
   });
 }
