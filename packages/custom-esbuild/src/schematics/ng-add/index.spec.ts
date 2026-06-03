@@ -218,3 +218,38 @@ describe('custom-esbuild ng-add: --unit-test flag', () => {
     expect((test.options as Record<string, unknown>).buildTarget).toBe('app:build');
   });
 });
+
+describe('custom-esbuild ng-add: idempotency', () => {
+  it('is a no-op when build is already :application (running twice == once)', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: {} });
+          project.targets.set('serve', { builder: '@angular/build:dev-server', options: { buildTarget: 'app:build' } });
+          project.targets.set('test', { builder: '@angular/build:unit-test', options: { tsConfig: 'tsconfig.spec.json' } });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const once = await ngAdd(seeded, { project: 'app' });
+    const twice = await ngAdd(once, { project: 'app' });
+
+    const wsOnce = await readWorkspace(once);
+    const wsTwice = await readWorkspace(twice);
+
+    for (const ws of [wsOnce, wsTwice]) {
+      const project = ws.projects.get('app')!;
+      expect(project.targets.get('build')!.builder).toBe('@angular-builders/custom-esbuild:application');
+      expect(project.targets.get('serve')!.builder).toBe('@angular-builders/custom-esbuild:dev-server');
+      const test = project.targets.get('test')!;
+      expect(test.builder).toBe('@angular-builders/custom-esbuild:unit-test');
+      expect((test.options as Record<string, unknown>).buildTarget).toBe('app:build');
+      expect((test.options as Record<string, unknown>).tsConfig).toBe('tsconfig.spec.json');
+    }
+
+    expect(twice.readText('/angular.json')).toBe(once.readText('/angular.json'));
+  });
+});
