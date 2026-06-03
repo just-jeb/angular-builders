@@ -175,3 +175,46 @@ describe('custom-esbuild ng-add: Karma / Jest test target', () => {
     expect(logs.some((m) => m.includes('custom-esbuild:unit-test'))).toBe(true);
   });
 });
+
+describe('custom-esbuild ng-add: --unit-test flag', () => {
+  it('force-creates a Vitest unit-test target when none exists', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: {} });
+          project.targets.delete('test');
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const out = await ngAdd(seeded, { project: 'app', unitTest: true });
+    const ws = await readWorkspace(out);
+    const test = ws.projects.get('app')!.targets.get('test');
+    expect(test).toBeDefined();
+    expect(test!.builder).toBe('@angular-builders/custom-esbuild:unit-test');
+    expect((test!.options as Record<string, unknown>).buildTarget).toBe('app:build');
+  });
+
+  it('rewrites an existing Vitest target the same way under --unit-test', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: {} });
+          project.targets.set('test', { builder: '@angular/build:unit-test', options: {} });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const out = await ngAdd(seeded, { project: 'app', unitTest: true });
+    const ws = await readWorkspace(out);
+    const test = ws.projects.get('app')!.targets.get('test')!;
+    expect(test.builder).toBe('@angular-builders/custom-esbuild:unit-test');
+    expect((test.options as Record<string, unknown>).buildTarget).toBe('app:build');
+  });
+});
