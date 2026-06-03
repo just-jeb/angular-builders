@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "AngularBuildersCustomWebpackNgAdd",
+  "title": "Add @angular-builders/custom-webpack",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The project to wire @angular-builders/custom-webpack into.",
+      "$default": { "$source": "projectName" }
+    }
+  },
+  "additionalProperties": false
+}
