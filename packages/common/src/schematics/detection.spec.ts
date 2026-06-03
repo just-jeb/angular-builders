@@ -29,6 +29,27 @@ describe('getProjectsToTarget', () => {
 });
 
 describe('detectTestBuilder', () => {
+  // Apply a workspace mutation rule to a tree and return the updated tree.
+  async function applyWorkspace(
+    tree: import('@angular-devkit/schematics/testing').UnitTestTree,
+    builder: string,
+    options: Record<string, unknown> = {},
+  ) {
+    const rule = updateWorkspace((workspace) => {
+      workspace.projects.get('app')!.targets.set('test', {
+        builder,
+        options: options as never,
+      });
+    });
+    const { SchematicTestRunner } = await import('@angular-devkit/schematics/testing');
+    const NG_COLLECTION = path.join(
+      path.dirname(require.resolve('@schematics/angular/package.json')),
+      'collection.json',
+    );
+    const runner = new SchematicTestRunner('t', NG_COLLECTION);
+    return runner.callRule(rule, tree).toPromise() as Promise<typeof tree>;
+  }
+
   it('returns "none" when no test target', async () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     // application schematic may add no test target under zoneless/standalone defaults
@@ -38,25 +59,26 @@ describe('detectTestBuilder', () => {
     }
   });
 
-  it('detects karma', async () => {
+  it('detects a dedicated :karma builder (webpack projects)', async () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
-    tree = await (async () => {
-      const rule = updateWorkspace((workspace) => {
-        workspace.projects.get('app')!.targets.set('test', {
-          builder: '@angular-devkit/build-angular:karma',
-          options: {},
-        });
-      });
-      // apply the rule via a runner-less call:
-      const { SchematicTestRunner } = await import('@angular-devkit/schematics/testing');
-      const NG_COLLECTION = path.join(
-        path.dirname(require.resolve('@schematics/angular/package.json')),
-        'collection.json',
-      );
-      const runner = new SchematicTestRunner('t', NG_COLLECTION);
-      return runner.callRule(rule, tree).toPromise() as Promise<typeof tree>;
-    })();
+    tree = await applyWorkspace(tree, '@angular-devkit/build-angular:karma');
     expect(detectTestBuilder(await load(tree), 'app')).toBe('karma');
+  });
+
+  it('detects Karma on a v22 :unit-test builder via runner option', async () => {
+    let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    tree = await applyWorkspace(tree, '@angular/build:unit-test', { runner: 'karma' });
+    expect(detectTestBuilder(await load(tree), 'app')).toBe('karma');
+  });
+
+  it('detects Vitest on a :unit-test builder (runner "vitest" or unset)', async () => {
+    let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    tree = await applyWorkspace(tree, '@angular/build:unit-test', { runner: 'vitest' });
+    expect(detectTestBuilder(await load(tree), 'app')).toBe('vitest');
+
+    let tree2 = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    tree2 = await applyWorkspace(tree2, '@angular/build:unit-test');
+    expect(detectTestBuilder(await load(tree2), 'app')).toBe('vitest');
   });
 });
 

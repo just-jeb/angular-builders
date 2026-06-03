@@ -94,7 +94,10 @@ export function ngAdd(options: NgAddOptions): Rule {
 
     for (const projectName of projects) {
       const zoneless = isZoneless(tree, workspace as unknown as workspaces.WorkspaceDefinition, projectName);
-      rules.push(setBuilderForTarget(projectName, 'test', JEST_BUILDER, { zoneless }));
+      // replaceOptions: the previous test target may be a :unit-test (Karma/Vitest) or :karma
+      // builder whose options (runner, buildTarget, karmaConfig, ...) are meaningless to — and
+      // would be forwarded as bogus CLI args by — the Jest builder. Start from a clean jest config.
+      rules.push(setBuilderForTarget(projectName, 'test', JEST_BUILDER, { zoneless }, { replaceOptions: true }));
     }
 
     if (hasKarma(tree, workspace)) {

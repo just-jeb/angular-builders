@@ -181,6 +181,47 @@ describe('jest ng-add (Vitest present)', () => {
     }
     expect(out.exists('/karma.conf.js')).toBe(false);
   });
+
+  it('strips the prior :unit-test options (runner, buildTarget) from the jest target', async () => {
+    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const ws = await readWorkspace(out);
+    const options = ws.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>;
+    // buildTarget belongs to the Vitest unit-test builder; it must not leak to the Jest builder.
+    expect(options['buildTarget']).toBeUndefined();
+    expect(options['runner']).toBeUndefined();
+    expect(options['zoneless']).toBe(true);
+  });
+});
+
+describe('jest ng-add (v22 Karma via :unit-test runner option)', () => {
+  // Angular 22 default (esbuild) apps express Karma as @angular/build:unit-test + runner:"karma",
+  // not a dedicated :karma builder. The schematic must detect this as Karma and rewrite to Jest
+  // with a clean option set (no stale `runner`).
+  async function v22KarmaWorkspace(): Promise<UnitTestTree> {
+    let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    await runner()
+      .callRule(
+        updateWorkspace((ws) => {
+          ws.projects.get('app')!.targets.set('test', {
+            builder: '@angular/build:unit-test',
+            options: { runner: 'karma', buildTarget: 'app:build' },
+          });
+        }),
+        tree,
+      )
+      .forEach((t) => (tree = t as UnitTestTree));
+    return tree;
+  }
+
+  it('rewrites to @angular-builders/jest:run and drops the stale runner option', async () => {
+    const out = (await runner().runSchematic('ng-add', {}, await v22KarmaWorkspace())) as UnitTestTree;
+    const ws = await readWorkspace(out);
+    const test = ws.projects.get('app')!.targets.get('test')!;
+    expect(test.builder).toBe('@angular-builders/jest:run');
+    const options = test.options as Record<string, unknown>;
+    expect(options['runner']).toBeUndefined();
+    expect(options['buildTarget']).toBeUndefined();
+  });
 });
 
 describe('jest ng-add (zoneless detection + idempotency)', () => {

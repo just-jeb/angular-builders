@@ -8,6 +8,7 @@ export function setBuilderForTarget(
   targetName: string,
   builderName: string,
   options?: Record<string, unknown>,
+  opts: { replaceOptions?: boolean } = {},
 ): Rule {
   return updateWorkspace((workspace) => {
     const project = workspace.projects.get(projectName);
@@ -15,7 +16,14 @@ export function setBuilderForTarget(
     const target = project.targets.get(targetName);
     if (target) {
       target.builder = builderName;
-      if (options) target.options = { ...(target.options ?? {}), ...(options as Record<string, JsonValue>) };
+      // By default merge onto the existing options. `replaceOptions` discards them — used when
+      // switching to a builder whose option shape is incompatible with the previous one (e.g.
+      // replacing a :unit-test target, whose `runner`/`buildTarget` must not leak to the new builder).
+      if (opts.replaceOptions) {
+        target.options = (options ?? {}) as Record<string, JsonValue>;
+      } else if (options) {
+        target.options = { ...(target.options ?? {}), ...(options as Record<string, JsonValue>) };
+      }
     } else {
       project.targets.add({ name: targetName, builder: builderName, options: (options ?? {}) as Record<string, JsonValue> });
     }

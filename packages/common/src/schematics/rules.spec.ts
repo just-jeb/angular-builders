@@ -24,6 +24,27 @@ describe('setBuilderForTarget', () => {
     expect(target.builder).toBe('@angular-builders/custom-esbuild:application');
     expect((target.options as Record<string, unknown>)['foo']).toBe(1);
   });
+
+  it('replaceOptions discards the previous builder options', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    // Seed a :unit-test-shaped test target whose options must NOT carry over.
+    const seeded = (await runner()
+      .callRule(setBuilderForTarget('app', 'test', '@angular/build:unit-test', { runner: 'karma', buildTarget: 'app:build' }), tree)
+      .toPromise()) as UnitTestTree;
+    const out = (await runner()
+      .callRule(
+        setBuilderForTarget('app', 'test', '@angular-builders/jest:run', { zoneless: true }, { replaceOptions: true }),
+        seeded,
+      )
+      .toPromise()) as UnitTestTree;
+    const ws = await readWorkspace(out);
+    const target = ws.projects.get('app')!.targets.get('test')!;
+    expect(target.builder).toBe('@angular-builders/jest:run');
+    const options = target.options as Record<string, unknown>;
+    expect(options['runner']).toBeUndefined();
+    expect(options['buildTarget']).toBeUndefined();
+    expect(options['zoneless']).toBe(true);
+  });
 });
 
 describe('addBuilderDevDependency', () => {

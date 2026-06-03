@@ -27,11 +27,17 @@ export function detectTestBuilder(
   projectName: string,
 ): TestBuilderKind {
   const project = workspace.projects.get(projectName);
-  const builder = project?.targets.get('test')?.builder;
+  const test = project?.targets.get('test');
+  const builder = test?.builder;
   if (!builder) return 'none';
+  // Webpack-based projects keep a dedicated Karma builder (e.g. @angular-devkit/build-angular:karma).
   if (builder.endsWith(':karma')) return 'karma';
   if (builder === '@angular-builders/jest:run') return 'jest';
-  if (builder.endsWith(':unit-test')) return 'vitest';
+  // Angular 22 unified Karma and Vitest under the `:unit-test` builder, distinguished only by the
+  // `runner` option. `runner: "karma"` is Karma; "vitest" (or unset, the default) is Vitest.
+  if (builder.endsWith(':unit-test')) {
+    return test?.options?.['runner'] === 'karma' ? 'karma' : 'vitest';
+  }
   return 'other';
 }
 
