@@ -116,6 +116,14 @@ module.exports = [
     command:
       'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/karma-to-jest.ng-add.json',
   },
+  {
+    id: 'ng-add-vitest-to-jest',
+    name: 'jest: ng add Vitest->Jest',
+    purpose: 'ng add rewrites a Vitest unit-test target to Jest; ng build + ng test green',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/vitest-to-jest.ng-add.json',
+  },
 
   // E2E sanity
   {
