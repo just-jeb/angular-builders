@@ -1,0 +1,7 @@
+{
+  "describes": "jest @21 migration post-migration build smoke",
+  "generates": "a fresh v22 app, seeded with the pre-21 jest config shape",
+  "runs": "scripts/e2e-jest-migration.js",
+  "window": "ng update @angular-builders/jest --migrate-only --from=20.0.0 --to=22.0.0",
+  "proves": "renames (configPath->config, testPathPattern->testPathPatterns[]) + tsconfig Node16/isolatedModules, then ng build + ng test green under v22"
+}

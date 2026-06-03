@@ -70,12 +70,13 @@ describe('jest @21 migration — builder option renames', () => {
     expect(opts['configPath']).toBeUndefined();
   });
 
-  it('renames testPathPattern → testPathPatterns', async () => {
+  it('renames testPathPattern → testPathPatterns and wraps the string in an array', async () => {
     const tree = await seedWithTestOptions({ testPathPattern: 'foo' });
     const out = (await runner().runSchematic('migration-v21', {}, tree)) as UnitTestTree;
     const ws = await readWorkspace(out);
     const opts = ws.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>;
-    expect(opts['testPathPatterns']).toBe('foo');
+    // Jest 30's testPathPatterns is a string array, not the old single-string testPathPattern.
+    expect(opts['testPathPatterns']).toEqual(['foo']);
     expect(opts['testPathPattern']).toBeUndefined();
   });
 });
@@ -234,7 +235,7 @@ describe('jest @21 migration — idempotency', () => {
 
     expect(optsTwice['config']).toBe('jest.config.js');
     expect(optsTwice['configPath']).toBeUndefined();
-    expect(optsTwice['testPathPatterns']).toBe('foo');
+    expect(optsTwice['testPathPatterns']).toEqual(['foo']);
     expect(optsTwice['globalMocks']).toEqual(['matchMedia']);
     expect(optsTwice['browser']).toBeUndefined();
     expect(optsTwice['zoneless']).toBe(false);

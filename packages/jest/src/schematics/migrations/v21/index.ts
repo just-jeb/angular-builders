@@ -51,6 +51,11 @@ function renameBuilderOptions(): Rule {
           delete options[from];
         }
       }
+      // Jest 30 renamed the single-string `testPathPattern` to the array-valued
+      // `testPathPatterns`. Wrap a carried-over string value so it matches the schema.
+      if (typeof options['testPathPatterns'] === 'string') {
+        options['testPathPatterns'] = [options['testPathPatterns']];
+      }
       test.options = options as unknown as Record<string, JsonValue>;
     }
   });

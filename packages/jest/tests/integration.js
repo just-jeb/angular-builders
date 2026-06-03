@@ -124,6 +124,13 @@ module.exports = [
     command:
       'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/vitest-to-jest.ng-add.json',
   },
+  {
+    id: 'ng-update-jest-v21-smoke',
+    name: 'jest: @21 migration post-build smoke',
+    purpose: 'jest @21 migration produces valid config; ng build + ng test green under v22',
+    app: '.',
+    command: 'node scripts/e2e-jest-migration.js',
+  },
 
   // E2E sanity
   {
