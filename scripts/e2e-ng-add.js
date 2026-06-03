@@ -107,6 +107,22 @@ function linkNodeModules(workdir) {
   }
 }
 
+// Create a directory of no-op package-manager shims (npm/yarn/pnpm/cnpm) to prepend to PATH
+// during the `ng add` run. The schematic schedules a NodePackageInstallTask; with node_modules
+// symlinked to the workspace, a real install would write THROUGH the symlink and mutate the
+// repo. We intentionally do not exercise npm's installer (that's the CLI's job, not our
+// schematic's, and everything needed is already workspace-linked) — so we let the task run
+// against a no-op PM. Every tree change the schematic makes still happens; only the install
+// is neutered. ng build/test afterwards resolve from the symlinked workspace modules.
+function makePackageManagerShim() {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pm-noop-'));
+  for (const pm of ['npm', 'yarn', 'pnpm', 'cnpm']) {
+    const file = path.join(dir, pm);
+    fs.writeFileSync(file, '#!/bin/sh\nexit 0\n', { mode: 0o755 });
+  }
+  return dir;
+}
+
 // Generate a fresh app inline with the workspace CLI; returns the app directory.
 function generateFixture(spec, parentDir) {
   const { name, args = [] } = spec.generate;
@@ -166,10 +182,16 @@ function main() {
       throw new Error(`ng add failed with status ${r.status}`);
     }
   } else {
-    // Default: real CLI, collection resolved from the workspace-linked package, no install.
+    // Default: real CLI, collection resolved from the workspace-linked package. The schematic's
+    // install task runs against a no-op PM shim (see makePackageManagerShim) so it can't mutate
+    // the symlinked workspace node_modules.
+    const shimDir = makePackageManagerShim();
     const args = ['add', spec.package, '--collection', spec.package, '--skip-confirmation',
-      '--skip-install', ...(spec.ngAddArgs || [])];
-    const r = run(NG_BIN, args, { cwd: workdir });
+      ...(spec.ngAddArgs || [])];
+    const r = run(NG_BIN, args, {
+      cwd: workdir,
+      env: { ...process.env, PATH: `${shimDir}${path.delimiter}${process.env.PATH}` },
+    });
     fs.writeFileSync(logFile, r.stdout + r.stderr);
     if ((spec.expectAddSucceeds !== false) && r.status !== 0) {
       throw new Error(`ng add failed with status ${r.status}`);
