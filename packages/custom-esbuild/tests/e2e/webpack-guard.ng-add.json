@@ -1,0 +1,18 @@
+{
+  "generate": {
+    "name": "webpack-guard-app",
+    "args": ["--routing=false", "--style=scss"]
+  },
+  "prepareWorkdir": [
+    "node -e \"const fs=require('fs'),f='angular.json',j=JSON.parse(fs.readFileSync(f)),a=j.projects['webpack-guard-app'].architect;a.build.builder='@angular-devkit/build-angular:browser';a.serve.builder='@angular-devkit/build-angular:dev-server';fs.writeFileSync(f,JSON.stringify(j,null,2));\""
+  ],
+  "package": "@angular-builders/custom-esbuild",
+  "ngAddArgs": [],
+  "expectAddSucceeds": true,
+  "asserts": [
+    { "fn": "assertBuilderForTarget", "args": ["webpack-guard-app", "build", "@angular-devkit/build-angular:browser"] },
+    { "fn": "assertBuilderForTarget", "args": ["webpack-guard-app", "serve", "@angular-devkit/build-angular:dev-server"] },
+    { "fn": "assertLogContains", "args": ["use-application-builder"] }
+  ],
+  "post": []
+}
