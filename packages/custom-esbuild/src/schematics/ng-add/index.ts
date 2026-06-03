@@ -2,6 +2,7 @@ import { chain, Rule, SchematicContext, Tree } from '@angular-devkit/schematics'
 import { readWorkspace } from '@schematics/angular/utility';
 import {
   addBuilderDevDependency,
+  detectTestBuilder,
   getProjectsToTarget,
   setBuilderForTarget,
 } from '@angular-builders/common/schematics';
@@ -11,6 +12,7 @@ import { Schema } from './schema';
 const PACKAGE_NAME = '@angular-builders/custom-esbuild';
 const BUILD_BUILDER = '@angular-builders/custom-esbuild:application';
 const SERVE_BUILDER = '@angular-builders/custom-esbuild:dev-server';
+const TEST_BUILDER = '@angular-builders/custom-esbuild:unit-test';
 
 const ESBUILD_BUILD = '@angular/build:application';
 const WEBPACK_BUILDS = [
@@ -59,6 +61,15 @@ export function ngAdd(options: Schema): Rule {
             `(2) re-run "ng add @angular-builders/custom-esbuild", then (3) port your ` +
             `webpack.config.js plugins to esbuild "codePlugins" manually. ` +
             `To skip the guard and force only the target rewrite now, re-run with "--from-webpack". Leaving build/serve unchanged.`,
+        );
+      }
+
+      const testKind = detectTestBuilder(workspace, projectName);
+      if (testKind === 'vitest') {
+        rules.push(
+          setBuilderForTarget(projectName, 'test', TEST_BUILDER, {
+            buildTarget: `${projectName}:build`,
+          }),
         );
       }
     }

@@ -105,3 +105,26 @@ describe('custom-esbuild ng-add: webpack-build guard (spec §12.3)', () => {
     expect(ws.projects.get('app')!.targets.get('serve')!.builder).toBe('@angular-builders/custom-esbuild:dev-server');
   });
 });
+
+describe('custom-esbuild ng-add: Vitest test target', () => {
+  it('auto-rewrites @angular/build:unit-test → :unit-test and wires buildTarget', async () => {
+    const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
+    const seeded = (await runner()
+      .callRule(
+        updateWorkspace((workspace) => {
+          const project = workspace.projects.get('app')!;
+          project.targets.set('build', { builder: '@angular/build:application', options: { tsConfig: 'tsconfig.app.json' } });
+          project.targets.set('test', { builder: '@angular/build:unit-test', options: { tsConfig: 'tsconfig.spec.json' } });
+        }),
+        tree,
+      )
+      .toPromise()) as UnitTestTree;
+
+    const out = await ngAdd(seeded, { project: 'app' });
+    const ws = await readWorkspace(out);
+    const test = ws.projects.get('app')!.targets.get('test')!;
+    expect(test.builder).toBe('@angular-builders/custom-esbuild:unit-test');
+    expect((test.options as Record<string, unknown>).buildTarget).toBe('app:build');
+    expect((test.options as Record<string, unknown>).tsConfig).toBe('tsconfig.spec.json');
+  });
+});
