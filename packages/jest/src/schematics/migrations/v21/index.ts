@@ -1,4 +1,5 @@
 import { chain, Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { JsonValue, workspaces } from '@angular-devkit/core';
 import { readWorkspace, updateWorkspace } from '@schematics/angular/utility';
 import { JSONFile } from '@schematics/angular/utility/json-file';
 import { editJsonFile, isZoneless } from '@angular-builders/common/schematics';
@@ -50,7 +51,7 @@ function renameBuilderOptions(): Rule {
           delete options[from];
         }
       }
-      test.options = options;
+      test.options = options as unknown as Record<string, JsonValue>;
     }
   });
 }
@@ -73,7 +74,7 @@ function stripRemovedOptions(): Rule {
       for (const removed of REMOVED_JEST_OPTIONS) {
         if (removed in options) delete options[removed];
       }
-      test.options = options;
+      test.options = options as unknown as Record<string, JsonValue>;
     }
   });
 }
@@ -85,10 +86,10 @@ function setZonelessByDetection(): Rule {
       for (const [name, project] of ws.projects) {
         const test = project.targets.get('test');
         if (!test || test.builder !== '@angular-builders/jest:run') continue;
-        if (!isZoneless(tree, workspace, name)) {
+        if (!isZoneless(tree, workspace as unknown as workspaces.WorkspaceDefinition, name)) {
           const options = (test.options ?? {}) as Record<string, unknown>;
           options['zoneless'] = false;
-          test.options = options;
+          test.options = options as unknown as Record<string, JsonValue>;
         }
       }
     });

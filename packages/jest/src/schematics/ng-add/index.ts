@@ -1,4 +1,5 @@
 import { chain, Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { workspaces } from '@angular-devkit/core';
 import { JSONFile } from '@schematics/angular/utility/json-file';
 import { readWorkspace } from '@schematics/angular/utility';
 import {
@@ -37,7 +38,7 @@ const KARMA_FILES = ['karma.conf.js', 'src/test.ts'];
 
 function hasKarma(tree: Tree, workspace: Awaited<ReturnType<typeof readWorkspace>>): boolean {
   for (const name of workspace.projects.keys()) {
-    if (detectTestBuilder(workspace, name) === 'karma') return true;
+    if (detectTestBuilder(workspace as unknown as workspaces.WorkspaceDefinition, name) === 'karma') return true;
   }
   if (tree.exists('/karma.conf.js') || tree.exists('/karma.conf.ts')) return true;
   if (tree.exists('/package.json')) {
@@ -50,7 +51,7 @@ function hasKarma(tree: Tree, workspace: Awaited<ReturnType<typeof readWorkspace
 
 function hasVitest(workspace: Awaited<ReturnType<typeof readWorkspace>>): boolean {
   for (const name of workspace.projects.keys()) {
-    if (detectTestBuilder(workspace, name) === 'vitest') return true;
+    if (detectTestBuilder(workspace as unknown as workspaces.WorkspaceDefinition, name) === 'vitest') return true;
   }
   return false;
 }
@@ -78,7 +79,7 @@ function fixSpecTsconfig(path: string): Rule {
 export function ngAdd(options: NgAddOptions): Rule {
   return async (tree: Tree, context: SchematicContext) => {
     const workspace = await readWorkspace(tree);
-    const projects = getProjectsToTarget(workspace, options.project);
+    const projects = getProjectsToTarget(workspace as unknown as workspaces.WorkspaceDefinition, options.project);
 
     const rules: Rule[] = [];
 
@@ -92,7 +93,7 @@ export function ngAdd(options: NgAddOptions): Rule {
     });
 
     for (const projectName of projects) {
-      const zoneless = isZoneless(tree, workspace, projectName);
+      const zoneless = isZoneless(tree, workspace as unknown as workspaces.WorkspaceDefinition, projectName);
       rules.push(setBuilderForTarget(projectName, 'test', JEST_BUILDER, { zoneless }));
     }
 
