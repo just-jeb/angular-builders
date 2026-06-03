@@ -1,4 +1,5 @@
 import { chain, Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { workspaces } from '@angular-devkit/core';
 import { readWorkspace } from '@schematics/angular/utility';
 import {
   addBuilderDevDependency,
@@ -32,7 +33,7 @@ function classifyBuildBuilder(builder: string | undefined): 'esbuild' | 'webpack
 
 export function ngAdd(options: Schema): Rule {
   return async (tree: Tree, context: SchematicContext) => {
-    const workspace = await readWorkspace(tree);
+    const workspace = (await readWorkspace(tree)) as unknown as workspaces.WorkspaceDefinition;
     const projects = getProjectsToTarget(workspace, options.project);
 
     const rules: Rule[] = [
