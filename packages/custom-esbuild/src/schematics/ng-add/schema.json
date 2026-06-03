@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "CustomEsbuildNgAdd",
+  "title": "@angular-builders/custom-esbuild ng-add options",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The project to add custom-esbuild to.",
+      "$default": { "$source": "projectName" }
+    },
+    "unitTest": {
+      "type": "boolean",
+      "description": "Force-create a Vitest unit-test target.",
+      "default": false,
+      "alias": "unit-test"
+    },
+    "fromWebpack": {
+      "type": "boolean",
+      "description": "Force the mechanical target rewrite even when the current build is a webpack builder.",
+      "default": false,
+      "alias": "from-webpack"
+    }
+  },
+  "additionalProperties": false
+}
