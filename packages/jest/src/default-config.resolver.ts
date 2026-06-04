@@ -1,5 +1,6 @@
 import { pick } from 'lodash';
 import { getSystemPath, normalize, Path } from '@angular-devkit/core';
+import * as path from 'node:path';
 
 import { JestConfig } from './types';
 import { getTsConfigPath } from './utils';
@@ -39,6 +40,9 @@ export class DefaultConfigResolver {
   resolveForProject(projectRoot: Path): JestConfig {
     return {
       testMatch: [`${getSystemPath(projectRoot)}${testPattern}`],
+      // Scope coverage output to the project directory so that multiple projects
+      // in a workspace don't overwrite each other's coverage reports. See #1009.
+      coverageDirectory: path.join(getSystemPath(projectRoot), 'coverage'),
       transform: {
         [this.tsJestTransformRegExp]: [
           'jest-preset-angular',
