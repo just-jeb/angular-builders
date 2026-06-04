@@ -31,19 +31,26 @@
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "yarn prebuild && tsc && ts-node ../../merge-schemes.ts && yarn postbuild",
+    "build": "yarn prebuild && tsc && tsc -p tsconfig.schematics.json && yarn copy:schematics && ts-node ../../merge-schemes.ts && yarn postbuild",
+    "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics && copyfiles -u 2 \"src/schematics/**/files/**\" dist/schematics",
     "postbuild": "yarn test && yarn run e2e",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
     "clean": "rimraf dist"
   },
   "builders": "builders.json",
+  "schematics": "./dist/schematics/collection.json",
+  "ng-add": {
+    "save": "devDependencies"
+  },
   "dependencies": {
     "@angular-builders/common": "workspace:*",
     "@angular-devkit/architect": ">=0.2200.0-rc.2 < 0.2300.0",
     "@angular-devkit/build-angular": "^22.0.0-rc.2",
     "@angular-devkit/core": "^22.0.0-rc.2",
+    "@angular-devkit/schematics": "^22.0.0-rc.2",
     "@angular/build": "^22.0.0-rc.2",
+    "@schematics/angular": "^22.0.0-rc.2",
     "lodash": "^4.17.15",
     "webpack-merge": "^6.0.0"
   },
@@ -52,6 +59,7 @@
     "rxjs": ">=7.0.0"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "jest": "30.4.2",
     "rimraf": "^6.0.0",
     "ts-node": "^10.0.0",

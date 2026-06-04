@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "migration-v21": {
+      "version": "21.0.0",
+      "description": "Migrate jest builder config for v21: bump deps, Node16 tsconfig, rename builder options, strip removed mocks/options, set zoneless by detection.",
+      "factory": "./migrations/v21/index#migrateV21"
+    },
+    "migration-v22": {
+      "version": "22.0.0",
+      "description": "Advise on v22 jest breaking changes (isolatedModules default, per-project coverage path). Advisory only — no file changes.",
+      "factory": "./migrations/v22/index#migrateV22"
+    }
+  }
+}

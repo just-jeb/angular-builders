@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "JestNgAddSchema",
+  "title": "@angular-builders/jest ng-add options",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The project to set up Jest for. Defaults to all projects (or the default project) when omitted.",
+      "$default": {
+        "$source": "projectName"
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,4 +1,14 @@
 module.exports = [
+  // --- ng add e2e (Plan 04): real CLI ng add on an inline-generated webpack-shaped app ---
+  {
+    id: 'ng-add-webpack-rewrite-scaffold',
+    name: 'custom-webpack: ng add rewrite + scaffold',
+    purpose: 'ng add rewrites build/serve and scaffolds webpack.config.js; ng build green',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/custom-webpack/tests/e2e/webpack-add.ng-add.json',
+  },
+
   // Karma builder tests
   {
     id: 'karma-builder-sanity-app',
