@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ng-add": {
+      "description": "Wire @angular-builders/custom-esbuild into the workspace (build, serve, and Vitest unit-test targets).",
+      "factory": "./ng-add/index#ngAdd",
+      "schema": "./ng-add/schema.json"
+    }
+  }
+}

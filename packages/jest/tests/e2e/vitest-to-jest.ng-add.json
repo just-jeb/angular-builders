@@ -1,0 +1,13 @@
+{
+  "generate": {
+    "name": "vitest-app",
+    "args": ["--routing=false", "--style=scss"]
+  },
+  "package": "@angular-builders/jest",
+  "ngAddArgs": [],
+  "asserts": [
+    { "fn": "assertBuilderForTarget", "args": ["vitest-app", "test", "@angular-builders/jest:run"] },
+    { "fn": "assertDevDependency", "args": ["jest"] }
+  ],
+  "post": ["npx ng build", "npx ng test"]
+}

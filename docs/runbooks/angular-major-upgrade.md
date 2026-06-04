@@ -65,6 +65,23 @@ For the major, **enumerate every `breaking-change`-labeled PR** targeting it (`g
 
 This is an **invariant**: a breaking change must not land in a major without both. CHANGELOGs are auto-generated from commits (orthogonal).
 
+#### RC-validated: multi-major `ng update` window (v22)
+
+Validated against `@angular/cli@22.0.0-rc.2` on `2026-06-03` via the `ng-update-jest-v21-smoke` e2e
+(`scripts/e2e-jest-migration.js`):
+
+- `ng update @angular-builders/jest --migrate-only --from=20.0.0 --to=22.0.0` runs **all** migrations
+  whose version falls in the `(from, to]` window in one step — observed `migration-v21` (the heavy
+  config transform) **and** the `migration-v22` advisory both firing. So a user on an old major who
+  jumps straight to 22 gets the spanned migrations; they are not skipped.
+- Supported flow for older users: upgrade the Angular framework to 22, then run
+  `ng update @angular-builders/jest` once (or `--migrate-only --from=<old>` to run only the builder's
+  migrations). The post-migration config builds and tests green under v22 — proven by the e2e, which
+  runs `ng build` + `ng test` on the migrated app.
+- E2E coverage of the migration output itself lives in `packages/jest/tests/integration.js`
+  (`ng-update-jest-v21-smoke`); the ng-add paths are the `ng-add-*` entries there and in the
+  `custom-esbuild`/`custom-webpack` integration files.
+
 ### 6. Stack feature work
 
 Develop/rebase v`<N>`-bound features (e.g. schematics) and held breaking PRs on `release/v<N>`.

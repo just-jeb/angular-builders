@@ -1,0 +1,14 @@
+{
+  "generate": {
+    "name": "esbuild-add-app",
+    "args": ["--routing=false", "--style=scss"]
+  },
+  "package": "@angular-builders/custom-esbuild",
+  "ngAddArgs": [],
+  "asserts": [
+    { "fn": "assertBuilderForTarget", "args": ["esbuild-add-app", "build", "@angular-builders/custom-esbuild:application"] },
+    { "fn": "assertBuilderForTarget", "args": ["esbuild-add-app", "serve", "@angular-builders/custom-esbuild:dev-server"] },
+    { "fn": "assertDevDependency", "args": ["@angular-builders/custom-esbuild"] }
+  ],
+  "post": ["npx ng build"]
+}
