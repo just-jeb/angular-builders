@@ -1,4 +1,24 @@
 module.exports = [
+  // --- ng add e2e (Plan 04): real CLI ng add on an inline-generated app ---
+  // [OPTIONAL] esbuild safe-rewrite — least regression-prone; demotable under ci:full if matrix
+  // cost demands it (the webpack-guard case already proves the build-builder classifier).
+  {
+    id: 'ng-add-esbuild-rewrite',
+    name: 'custom-esbuild: ng add build/serve rewrite',
+    purpose: 'ng add rewrites esbuild build/serve to custom-esbuild; ng build green',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/custom-esbuild/tests/e2e/esbuild-add.ng-add.json',
+  },
+  {
+    id: 'ng-add-esbuild-webpack-guard',
+    name: 'custom-esbuild: ng add webpack guard',
+    purpose: 'ng add leaves a webpack build untouched and emits the use-application-builder advisory',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/custom-esbuild/tests/e2e/webpack-guard.ng-add.json',
+  },
+
   // Vitest builder tests
   {
     id: 'vitest-builder-esm-config',

@@ -1,0 +1,14 @@
+{
+  "generate": {
+    "name": "karma-app",
+    "args": ["--test-runner", "karma", "--routing=false", "--style=scss"]
+  },
+  "package": "@angular-builders/jest",
+  "ngAddArgs": [],
+  "asserts": [
+    { "fn": "assertBuilderForTarget", "args": ["karma-app", "test", "@angular-builders/jest:run"] },
+    { "fn": "assertFileAbsent", "args": ["karma.conf.js"] },
+    { "fn": "assertDevDependency", "args": ["jest"] }
+  ],
+  "post": ["npx ng test"]
+}

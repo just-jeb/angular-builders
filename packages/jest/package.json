@@ -30,9 +30,17 @@
     "runner"
   ],
   "builders": "builders.json",
+  "schematics": "./dist/schematics/collection.json",
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "ng-update": {
+    "migrations": "./dist/schematics/migrations.json"
+  },
   "scripts": {
     "prebuild": "yarn clean && yarn generate",
-    "build": "yarn prebuild && tsc -p tsconfig.lib.json && yarn postbuild",
+    "build": "yarn prebuild && tsc -p tsconfig.lib.json && tsc -p tsconfig.schematics.json && yarn copy:schematics && yarn postbuild",
+    "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics && copyfiles -u 2 \"src/schematics/**/files/**\" dist/schematics",
     "postbuild": "yarn copy && yarn test",
     "test": "jest --config ../../jest-ut.config.js",
     "e2e": "jest --config ../../jest-e2e.config.js",
@@ -44,6 +52,8 @@
     "@angular-builders/common": "workspace:*",
     "@angular-devkit/architect": ">=0.2200.0-rc.2 < 0.2300.0",
     "@angular-devkit/core": "^22.0.0-rc.2",
+    "@angular-devkit/schematics": "^22.0.0-rc.2",
+    "@schematics/angular": "^22.0.0-rc.2",
     "jest-preset-angular": "^16.0.0",
     "lodash": "^4.17.15"
   },
@@ -57,6 +67,7 @@
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
+    "copyfiles": "^2.4.1",
     "cpy-cli": "^7.0.0",
     "jest": "30.4.2",
     "quicktype": "^15.0.260",

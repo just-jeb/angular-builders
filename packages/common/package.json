@@ -3,6 +3,17 @@
   "version": "5.0.4-beta.3",
   "description": "Common utility functions shared between @angular-builders packages",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./schematics": {
+      "default": "./dist/schematics/index.js"
+    },
+    "./schematics/testing": {
+      "default": "./dist/schematics/testing.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -20,15 +31,19 @@
   },
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "yarn prebuild && tsc",
+    "build": "yarn prebuild && tsc && tsc -p tsconfig.schematics.json && yarn copy:schematics",
+    "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics && copyfiles -u 2 \"src/schematics/**/files/**\" dist/schematics",
     "clean": "rimraf dist"
   },
   "dependencies": {
     "@angular-devkit/core": "^22.0.0-rc.2",
+    "@angular-devkit/schematics": "^22.0.0-rc.2",
+    "@schematics/angular": "^22.0.0-rc.2",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
+    "copyfiles": "^2.4.1",
     "rimraf": "^6.0.0",
     "typescript": "6.0.3"
   }

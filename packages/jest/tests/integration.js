@@ -107,6 +107,31 @@ module.exports = [
       'node ../../../packages/jest/tests/validate.js my-shared-library --find-related-tests projects/my-shared-library/src/lib/my-shared-library.service.ts projects/my-shared-library/src/lib/my-shared-library.component.ts --expect-suites=2 --expect-tests=2',
   },
 
+  // --- ng add e2e (Plan 04): real CLI ng add on an inline-generated app, then ng test ---
+  {
+    id: 'ng-add-karma-to-jest',
+    name: 'jest: ng add Karma->Jest',
+    purpose: 'ng add detects a Karma test target and ng test runs green via Jest',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/karma-to-jest.ng-add.json',
+  },
+  {
+    id: 'ng-add-vitest-to-jest',
+    name: 'jest: ng add Vitest->Jest',
+    purpose: 'ng add rewrites a Vitest unit-test target to Jest; ng build + ng test green',
+    app: '.',
+    command:
+      'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/vitest-to-jest.ng-add.json',
+  },
+  {
+    id: 'ng-update-jest-v21-smoke',
+    name: 'jest: @21 migration post-build smoke',
+    purpose: 'jest @21 migration produces valid config; ng build + ng test green under v22',
+    app: '.',
+    command: 'node scripts/e2e-jest-migration.js',
+  },
+
   // E2E sanity
   {
     id: 'e2e-simple-app',
