@@ -1,5 +1,10 @@
 import * as path from 'node:path';
-import { BuilderContext, createBuilder, targetFromTargetString } from '@angular-devkit/architect';
+import {
+  Builder,
+  BuilderContext,
+  createBuilder,
+  targetFromTargetString,
+} from '@angular-devkit/architect';
 import {
   DevServerBuilderOptions,
   DevServerBuilderOutput,
@@ -79,6 +84,10 @@ export function executeCustomDevServerBuilder(
   );
 }
 
-export default createBuilder<DevServerBuilderOptions & json.JsonObject>(
-  executeCustomDevServerBuilder
-);
+// Explicit Builder<T> annotation (not inferred): some @angular-devkit dep trees nest a second
+// copy of @angular-devkit/core under @angular-devkit/architect, making the inferred default
+// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
+const builder: Builder<DevServerBuilderOptions & json.JsonObject> = createBuilder<
+  DevServerBuilderOptions & json.JsonObject
+>(executeCustomDevServerBuilder);
+export default builder;

@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { BuilderContext, createBuilder } from '@angular-devkit/architect';
+import { Builder, BuilderContext, createBuilder } from '@angular-devkit/architect';
 import { buildApplication } from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { defer, switchMap } from 'rxjs';
@@ -38,6 +38,10 @@ export function buildCustomEsbuildApplication(
   }).pipe(switchMap(extensions => buildApplication(options, context, extensions)));
 }
 
-export default createBuilder<json.JsonObject & CustomEsbuildApplicationSchema>(
-  buildCustomEsbuildApplication
-);
+// Explicit Builder<T> annotation (not inferred): some @angular-devkit dep trees nest a second
+// copy of @angular-devkit/core under @angular-devkit/architect, making the inferred default
+// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
+const builder: Builder<json.JsonObject & CustomEsbuildApplicationSchema> = createBuilder<
+  json.JsonObject & CustomEsbuildApplicationSchema
+>(buildCustomEsbuildApplication);
+export default builder;
