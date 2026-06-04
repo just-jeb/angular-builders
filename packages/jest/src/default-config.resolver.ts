@@ -47,6 +47,16 @@ export class DefaultConfigResolver {
             stringifyContentPathRegex: '\\.(html|svg)$',
             // Join with the default `tsConfigName` if the `tsConfig` option is not provided
             tsconfig: getTsConfigPath(projectRoot, this.options),
+            // Default to isolatedModules: true for significantly faster compilation.
+            // With isolatedModules: false (the previous implicit default), ts-jest uses the
+            // TypeScript language service to build a full cross-file Program for every test
+            // file, which becomes extremely slow with Angular 19+ code (signals, new control
+            // flow, standalone-by-default). Angular 19+ users report 2min → 15min regressions.
+            // Cross-file type checking is better handled by `tsc --noEmit` or `ng build`.
+            // Users who need the old behaviour can opt out via their jest.config.ts:
+            //   transform: { '...': ['jest-preset-angular', { isolatedModules: false }] }
+            // BREAKING CHANGE: targeted for the next major version.
+            isolatedModules: true,
           },
         ],
       },
