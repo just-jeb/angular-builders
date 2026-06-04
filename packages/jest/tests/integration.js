@@ -24,6 +24,17 @@ module.exports = [
       'node ../../../packages/jest/tests/validate.js --run-script=test:inline-config --no-cache --expect-suites=2 --expect-tests=4',
   },
 
+  // isolatedModules default - behavioral proof
+  {
+    id: 'isolated-modules-default',
+    name: 'jest: isolatedModules:true default works',
+    purpose:
+      'Tests pass correctly with isolatedModules:true (default since v21), regression for #1899',
+    app: 'examples/jest/simple-app',
+    command:
+      'node ../../../packages/jest/tests/validate.js --no-cache --expect-suites=2 --expect-tests=4',
+  },
+
   // CLI passthrough - validated tests
   {
     id: 'cli-no-cache',
