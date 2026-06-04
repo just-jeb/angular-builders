@@ -1,3 +1,53 @@
+# Migration from version 21 to version 22
+
+## What's new: automated `ng add` and `ng update`
+
+Version 22 introduces Angular schematics for the builder packages, so you no longer have to wire builders into `angular.json` by hand:
+
+- `ng add @angular-builders/jest` — sets up the Jest builder as your `ng test` runner. Detects an existing Karma, Vitest (Angular 22's new default), or Jest setup and migrates the test target accordingly.
+- `ng add @angular-builders/custom-esbuild` / `ng add @angular-builders/custom-webpack` — scaffold the custom build setup.
+- `ng update @angular-builders/jest` — runs the version migrations below automatically.
+
+The `ng update` migration window is `(from, to]`, so a project on **any version from 17 through 21 can jump straight to 22** in a single `ng update @angular-builders/jest`. The v21 migration (dep bumps, `Node16` tsconfig, option renames/removals — see the v20→v21 section below) and the v22 advisory both run in order.
+
+## Breaking Changes
+
+### Jest builder: `isolatedModules` now defaults to `true`
+
+`ts-jest` `isolatedModules` now defaults to **`true`** (previously implicitly `false`) for significantly faster compilation. This is a behavior change in the builder itself — it is **not** rewritten into your config.
+
+Impact: a `const enum` shared across files, and type-only re-exports without the `type` modifier, will now error under `isolatedModules`.
+
+- To keep the old behavior, set `isolatedModules: false` in your Jest config.
+- Otherwise, fix the call sites: convert `const enum` to a regular `enum` (or `as const`), and use `export type` for type-only re-exports.
+
+`ng update @angular-builders/jest` does **not** change this for you — it runs an advisory migration that warns and lists any `const enum` it finds. The new default is intentional.
+
+### Jest builder: coverage output is now scoped per-project
+
+`coverageDirectory` now defaults to `<projectRoot>/coverage` instead of `./coverage`. In multi-project workspaces this prevents projects from overwriting each other's coverage reports.
+
+Impact: update any CI/tooling that reads a hardcoded `./coverage/` path. The `ng update` advisory migration warns and lists affected projects.
+
+## Custom ESBuild builder
+
+- No breaking changes (except for updating to Angular 22).
+- `ng add @angular-builders/custom-esbuild` is now available.
+
+## Custom Webpack builder
+
+- No breaking changes (except for updating to Angular 22).
+- `ng add @angular-builders/custom-webpack` is now available (scaffolds a `webpack.config.js`).
+
+## Angular 22 test runner note (Karma vs Vitest)
+
+Angular 22 unifies test runners under the `@angular/build:unit-test` builder with a `runner` option (`"vitest"` is the default for new apps; `"karma"` is still supported). `@angular-builders/jest` replaces this with its own `:run` target:
+
+- `ng add @angular-builders/jest` detects a Karma, Vitest, or existing Jest setup and rewrites the test target to the Jest builder. For a Vitest project it also fixes `tsconfig.spec.json` types (`vitest` → `jest`) and advises on any `vi.*` usages in your specs.
+- Karma is **not removed** in Angular 22 — it's deprecated. Running `ng update @angular/core` to v22 keeps existing Karma users on Karma (Angular rewrites the target to `@angular/build:unit-test` with `runner: "karma"`). Migrating to Jest stays opt-in via `ng add @angular-builders/jest`.
+
+---
+
 # Migration from version 20 to version 21
 
 ## Breaking Changes
