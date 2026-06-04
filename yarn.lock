@@ -9141,7 +9141,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-colors@npm:4.1.3, ansi-colors@npm:^4.1.3":
+"ansi-colors@npm:4.1.3":
   version: 4.1.3
   resolution: "ansi-colors@npm:4.1.3"
   checksum: a9c2ec842038a1fabc7db9ece7d3177e2fe1c5dc6f0c51ecfbf5f39911427b89c00b5dc6b8bd95f82a26e9b16aaae2e83d45f060e98070ce4d1333038edceb0e
@@ -12093,7 +12093,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.28.0":
+"esbuild@npm:0.28.0, esbuild@npm:^0.28.0":
   version: 0.28.0
   resolution: "esbuild@npm:0.28.0"
   dependencies:
@@ -17019,7 +17019,7 @@ __metadata:
     jest: 30.4.2
     jest-environment-jsdom: 30.4.1
     jsdom: 29.1.1
-    ng-packagr: 21.2.5
+    ng-packagr: 22.0.0
     rxjs: 7.8.2
     ts-node: 10.9.2
     tslib: 2.8.1
@@ -17108,20 +17108,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ng-packagr@npm:21.2.5":
-  version: 21.2.5
-  resolution: "ng-packagr@npm:21.2.5"
+"ng-packagr@npm:22.0.0":
+  version: 22.0.0
+  resolution: "ng-packagr@npm:22.0.0"
   dependencies:
     "@ampproject/remapping": ^2.3.0
     "@rollup/plugin-json": ^6.1.0
     "@rollup/wasm-node": ^4.24.0
     ajv: ^8.17.1
-    ansi-colors: ^4.1.3
     browserslist: ^4.26.0
     chokidar: ^5.0.0
     commander: ^14.0.0
     dependency-graph: ^1.0.0
-    esbuild: ^0.27.0
+    esbuild: ^0.28.0
     find-cache-directory: ^6.0.0
     injection-js: ^2.4.0
     jsonc-parser: ^3.3.1
@@ -17135,10 +17134,10 @@ __metadata:
     sass: ^1.81.0
     tinyglobby: ^0.2.12
   peerDependencies:
-    "@angular/compiler-cli": ^21.0.0 || ^21.2.0-next
+    "@angular/compiler-cli": ^22.0.0 || ^22.1.0-next.0
     tailwindcss: ^2.0.0 || ^3.0.0 || ^4.0.0
     tslib: ^2.3.0
-    typescript: ">=5.9 <6.0"
+    typescript: ">=6.0 <6.1"
   dependenciesMeta:
     rollup:
       optional: true
@@ -17147,7 +17146,7 @@ __metadata:
       optional: true
   bin:
     ng-packagr: src/cli/main.js
-  checksum: 3a37dd8dd21f532aa6242b962107de0f1c1b3bf3da002e12121036ccb66c5357d8dc39eff077afb89a1f235962d8ff1176063e93b162f304086bcdcd6cb326e0
+  checksum: 2c7c174924833e6652395ecf05b56095fd440b1e24b7ba7d15e1d2e66151cb5f74b13a426a3f9169d628a136342632b2fba4f103da6135fca94cbd9f6f58b942
   languageName: node
   linkType: hard
 
