@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.9](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.8...@angular-builders/timestamp@21.0.4-beta.9) (2026-06-04)
+
+### Bug Fixes
+
+* **timestamp:** annotate default export with Builder<T> to avoid TS2742 ([#2275](https://github.com/just-jeb/angular-builders/issues/2275)) ([e32a3a1](https://github.com/just-jeb/angular-builders/commit/e32a3a198fd946c1867c21375246d7cb6ac1a568))
+
 ## [21.0.4-beta.8](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.7...@angular-builders/timestamp@21.0.4-beta.8) (2026-05-09)
 
 **Note:** Version bump only for package @angular-builders/timestamp
