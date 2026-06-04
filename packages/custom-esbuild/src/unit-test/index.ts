@@ -1,5 +1,10 @@
 import * as path from 'node:path';
-import { BuilderContext, createBuilder, targetFromTargetString } from '@angular-devkit/architect';
+import {
+  Builder,
+  BuilderContext,
+  createBuilder,
+  targetFromTargetString,
+} from '@angular-devkit/architect';
 import { executeUnitTestBuilder, UnitTestBuilderOptions } from '@angular/build';
 import { getSystemPath, json, normalize } from '@angular-devkit/core';
 import { from, switchMap } from 'rxjs';
@@ -52,6 +57,10 @@ export function executeCustomEsbuildUnitTestBuilder(
   );
 }
 
-export default createBuilder<json.JsonObject & CustomEsbuildUnitTestSchema>(
-  executeCustomEsbuildUnitTestBuilder
-);
+// Explicit Builder<T> annotation (not inferred): some @angular-devkit dep trees nest a second
+// copy of @angular-devkit/core under @angular-devkit/architect, making the inferred default
+// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
+const builder: Builder<json.JsonObject & CustomEsbuildUnitTestSchema> = createBuilder<
+  json.JsonObject & CustomEsbuildUnitTestSchema
+>(executeCustomEsbuildUnitTestBuilder);
+export default builder;

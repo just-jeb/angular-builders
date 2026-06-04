@@ -1,4 +1,4 @@
-import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { Builder, BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { normalize, Path, schema, json, workspaces } from '@angular-devkit/core';
 import { NodeJsSyncHost } from '@angular-devkit/core/node';
 import { run } from 'jest';
@@ -70,4 +70,10 @@ export function runJest(
   return from(runJestCLI()).pipe(map(() => ({ success: true })));
 }
 
-export default createBuilder<JestBuilderSchema & json.JsonObject>(runJest);
+// Explicit Builder<T> annotation (not inferred): some @angular-devkit dep trees nest a second
+// copy of @angular-devkit/core under @angular-devkit/architect, making the inferred default
+// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
+const builder: Builder<JestBuilderSchema & json.JsonObject> = createBuilder<
+  JestBuilderSchema & json.JsonObject
+>(runJest);
+export default builder;
