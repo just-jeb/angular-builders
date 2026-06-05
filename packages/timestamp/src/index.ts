@@ -1,5 +1,5 @@
 import { SchemaObject as TimestampBuilderSchema } from './schema';
-import { Builder, BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { Observable, bindNodeCallback, from, of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { getSystemPath, normalize, json } from '@angular-devkit/core';
@@ -27,9 +27,4 @@ export function createTimestamp(
   );
 }
 
-// Explicit Builder<T> annotation (not inferred): newer @angular-devkit dep trees nest a second
-// copy of @angular-devkit/core under @angular-devkit/architect, which makes the inferred default
-// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
-const timestampBuilder: Builder<json.JsonObject & TimestampBuilderSchema> =
-  createBuilder(createTimestamp);
-export default timestampBuilder;
+export default createBuilder<json.JsonObject & TimestampBuilderSchema>(createTimestamp);
