@@ -1,4 +1,4 @@
-import { Builder, BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import type { JsonObject } from '@angular-devkit/core';
 import { getNativeBinary as bazeliskBin } from '@bazel/bazelisk/bazelisk';
 import { getNativeBinary as ibazelBin } from '@bazel/ibazel';
@@ -35,8 +35,4 @@ async function _bazelBuilder(
   }
 }
 
-// Explicit Builder<T> annotation (not inferred): some @angular-devkit dep trees nest a second
-// copy of @angular-devkit/core under @angular-devkit/architect, making the inferred default
-// export type non-portable (TS2742). Naming the type from @angular-devkit/architect avoids it.
-const builder: Builder<JsonObject & Schema> = createBuilder(_bazelBuilder);
-export default builder;
+export default createBuilder(_bazelBuilder);
