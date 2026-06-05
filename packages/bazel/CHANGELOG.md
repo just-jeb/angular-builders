@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.0.4-beta.6](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.5...@angular-builders/bazel@21.0.4-beta.6) (2026-06-05)
+
+### Reverts
+
+* remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
+
 ## [21.0.4-beta.5](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.4...@angular-builders/bazel@21.0.4-beta.5) (2026-06-04)
 
 ### Bug Fixes
