@@ -173,7 +173,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/bazel@workspace:packages/bazel"
   dependencies:
-    "@angular-devkit/architect": < 0.2201.0
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@bazel/bazelisk": ^1.26.0
     "@bazel/ibazel": ^0.28.0
@@ -201,7 +201,7 @@ __metadata:
   resolution: "@angular-builders/custom-esbuild@workspace:packages/custom-esbuild"
   dependencies:
     "@angular-builders/common": "workspace:*"
-    "@angular-devkit/architect": < 0.2201.0
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@angular/build": ^21.0.0
     esbuild: 0.28.0
@@ -221,7 +221,7 @@ __metadata:
   resolution: "@angular-builders/custom-webpack@workspace:packages/custom-webpack"
   dependencies:
     "@angular-builders/common": "workspace:*"
-    "@angular-devkit/architect": < 0.2201.0
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/build-angular": ^21.0.0
     "@angular-devkit/core": ^21.0.0
     "@angular/build": ^21.0.0
@@ -242,7 +242,7 @@ __metadata:
   resolution: "@angular-builders/jest@workspace:packages/jest"
   dependencies:
     "@angular-builders/common": "workspace:*"
-    "@angular-devkit/architect": < 0.2201.0
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@types/jest": ^30.0.0
     cpy-cli: ^7.0.0
@@ -266,7 +266,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@angular-builders/timestamp@workspace:packages/timestamp"
   dependencies:
-    "@angular-devkit/architect": < 0.2201.0
+    "@angular-devkit/architect": ">=0.2100.0 < 0.2200.0"
     "@angular-devkit/core": ^21.0.0
     "@types/dateformat": 5.0.3
     cpy-cli: ^7.0.0
@@ -288,7 +288,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:0.2102.14":
+"@angular-devkit/architect@npm:0.2102.14, @angular-devkit/architect@npm:>=0.2100.0 < 0.2200.0":
   version: 0.2102.14
   resolution: "@angular-devkit/architect@npm:0.2102.14"
   dependencies:
@@ -297,18 +297,6 @@ __metadata:
   bin:
     architect: bin/cli.js
   checksum: fe8f858ace182be6193e7bedda55eab00f76e8514cf86d61335788f4e87ae0046c1dc7c81f569ad88ac8c62684986b4cff4b78aa51626c9983196e26fa1beda6
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/architect@npm:< 0.2201.0":
-  version: 0.2200.0
-  resolution: "@angular-devkit/architect@npm:0.2200.0"
-  dependencies:
-    "@angular-devkit/core": 22.0.0
-    rxjs: 7.8.2
-  bin:
-    architect: bin/cli.js
-  checksum: 4c06ffcfb29c494b0837ce0c84093159dc7691aa049ab6e7a8f82403bf65e3e6a6c4e1d3e02ecb4c98ec1c2d1231b3aac7e617b24b355c95903da4a4df3af6e6
   languageName: node
   linkType: hard
 
@@ -628,25 +616,6 @@ __metadata:
     chokidar:
       optional: true
   checksum: acfef9520698ecf0fd2bba6e37021b1a9d011a09cb83d95e50b75adb926aaed5cb0e13928a6f63e29634329ffbce4a9001dbcadbbce10cfcd0d27c40cef771ee
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/core@npm:22.0.0":
-  version: 22.0.0
-  resolution: "@angular-devkit/core@npm:22.0.0"
-  dependencies:
-    ajv: 8.20.0
-    ajv-formats: 3.0.1
-    jsonc-parser: 3.3.1
-    picomatch: 4.0.4
-    rxjs: 7.8.2
-    source-map: 0.7.6
-  peerDependencies:
-    chokidar: ^5.0.0
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  checksum: df8a8b8b5250740d46753d8c9f36c2aab3558d45ab1d003d1ec8a089de711c8af2cced27e743c372020b368274617246ec0f239cfc3be502807ca005709ca8d3
   languageName: node
   linkType: hard
 
@@ -9092,18 +9061,6 @@ __metadata:
     json-schema-traverse: ^1.0.0
     require-from-string: ^2.0.2
   checksum: bcdf6c7b040ca488108e2b4e219b31cf9ed478331007d4dd1ed8acc3946dd6b84295817c0f4724207b8dd8589c9966168b2fd4c7f32109d4b8526cdd3743e936
-  languageName: node
-  linkType: hard
-
-"ajv@npm:8.20.0":
-  version: 8.20.0
-  resolution: "ajv@npm:8.20.0"
-  dependencies:
-    fast-deep-equal: ^3.1.3
-    fast-uri: ^3.0.1
-    json-schema-traverse: ^1.0.0
-    require-from-string: ^2.0.2
-  checksum: 4f18ca5fcccff8c8b9a4d6f1a6a3a70ffc888e787624ca66f2d0162e04e8f9f2d289d8a1acdb9520d18bffcee975e7a789a9f8292b5c2c577c408cd2c3308cad
   languageName: node
   linkType: hard
 
