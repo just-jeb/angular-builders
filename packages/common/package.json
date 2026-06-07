@@ -33,14 +33,14 @@
     "prebuild": "yarn clean",
     "build": "yarn prebuild && tsc && tsc -p tsconfig.schematics.json && yarn copy:schematics",
     "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics && copyfiles -u 2 \"src/schematics/**/files/**\" dist/schematics",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "test": "jest --config ../../jest-ut.config.js packages/common/src/load-module.spec.ts"
   },
   "dependencies": {
     "@angular-devkit/core": "^22.0.0-rc.2",
     "@angular-devkit/schematics": "^22.0.0-rc.2",
     "@schematics/angular": "^22.0.0-rc.2",
-    "ts-node": "^10.0.0",
-    "tsconfig-paths": "^4.2.0"
+    "jiti": "^2.7.0"
   },
   "devDependencies": {
     "copyfiles": "^2.4.1",
