@@ -38,7 +38,7 @@ The two primary packages -- `custom-esbuild` and `custom-webpack` -- wrap Angula
 ### Package Dependency Graph
 
 ```
-custom-esbuild ──> common ──> ts-node, tsconfig-paths
+custom-esbuild ──> common ──> jiti, get-tsconfig
 custom-webpack ──> common, @angular/build (IndexHtmlTransform type)
 jest ──────────> common
 bazel            (standalone -- no common dependency)

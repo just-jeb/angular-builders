@@ -23,7 +23,6 @@ Allow customizing ESBuild configuration
 
 > ⚠️ **Version alignment:** The major version of `@angular-builders/custom-esbuild` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/custom-esbuild`@19.x, Angular 20 requires `@angular-builders/custom-esbuild`@20.x, etc. Using a mismatched version is the most common source of issues.
 
-
 ## Previous versions
 
 <details>
@@ -334,5 +333,22 @@ Custom ESBuild builder fully supports ESM.
 
 - If your app has `"type": "module"` both `plugin.js` and `index-html-transformer.js` will be treated as ES modules, unless you change their file extension to `.cjs`. In that case they'll be treated as CommonJS Modules. [Example](../../examples/custom-esbuild/sanity-esbuild-app-esm).
 - For `"type": "commonjs"` (or unspecified type) both `plugin.js` and `index-html-transformer.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-esbuild/sanity-esbuild-app).
-- If you want to use TS config in ESM app, you must set the loader to `ts-node/esm` when running `ng build`. Also, in that case `tsconfig.json` for `ts-node` no longer defaults to `tsConfig` from the `application` target - you have to specify it manually via environment variable. [Example](../../examples/custom-esbuild/sanity-esbuild-app-esm/package.json#L9).  
-  _Note that tsconfig paths are not supported in TS configs within ESM apps. That is because [tsconfig-paths](https://github.com/dividab/tsconfig-paths) do not support ESM._
+- **TypeScript plugins and transformers work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. (Earlier versions required forcing a `ts-node/esm` loader through `NODE_OPTIONS`; that is no longer necessary.) TypeScript path aliases are supported in both module formats.
+
+### Type-checking TypeScript plugins and transformers
+
+`.ts` plugins and `indexHtmlTransformer` files are loaded with [jiti](https://github.com/unjs/jiti) and **transpiled, not type-checked**, at build time. Your editor still type-checks them as you write. To enforce type-checking in CI, add a dedicated tsconfig that includes them and run `tsc`:
+
+`tsconfig.build-config.json`:
+
+```jsonc
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": true },
+  "include": ["plugins/**/*.ts", "index-html-transformer.ts"],
+}
+```
+
+```bash
+tsc --noEmit -p tsconfig.build-config.json
+```

@@ -4,12 +4,12 @@
 
 ## At a Glance
 
-|                  |                                                                                                                                                                                  |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Type**         | Shared Kernel                                                                                                                                                                    |
-| **Owns**         | CJS/ESM/TS module loading with ts-node registration, package path resolution. Scope may grow if common patterns emerge across builders. (Source: SME interview, Jeb, 2026-02-16) |
-| **Does NOT own** | Builder logic, schema merging, CLI integration                                                                                                                                   |
-| **Users**        | `custom-esbuild`, `custom-webpack`, `jest` (via `workspace:*` dependency)                                                                                                        |
+|                  |                                                                                                                                                                 |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Type**         | Shared Kernel                                                                                                                                                   |
+| **Owns**         | CJS/ESM/TS module loading via jiti, package path resolution. Scope may grow if common patterns emerge across builders. (Source: SME interview, Jeb, 2026-02-16) |
+| **Does NOT own** | Builder logic, schema merging, CLI integration                                                                                                                  |
+| **Users**        | `custom-esbuild`, `custom-webpack`, `jest` (via `workspace:*` dependency)                                                                                       |
 
 ## Navigation
 
@@ -21,19 +21,19 @@
 ## Entry Points & Contracts
 
 - `loadModule<T>(modulePath, tsConfig, logger): Promise<T>` -- Loads a user-provided module (plugin, config, transformer) regardless of format.
-  - **Guarantees:** Handles four extension cases (see `src/load-module.ts` lines 83-122): `.mjs` (ESM via dynamic import), `.cjs` (CJS via `require`), `.ts` (TypeScript via ts-node, with ESM fallback on `ERR_REQUIRE_ESM`), and a default case for `.js` and all other extensions (try CJS first, fall back to ESM on `ERR_REQUIRE_ESM`). For `.ts` and `.js` files, unwraps default exports: `require(path).default || require(path)`. (Source: code investigation, 2026-02-16)
-  - **Does NOT handle:** `.jsx`, `.tsx`, `.mts`, `.cts` extensions. JSON files are not explicitly handled but may work through Node's native `require()`. (Source: code investigation, 2026-02-16)
-  - **Requires:** Absolute `modulePath`. A valid `tsConfig` path (used for ts-node registration). An Angular `LoggerApi` instance.
+  - **Guarantees:** Loads `.ts`, `.mts`, `.cts`, `.js`, `.mjs`, and `.cjs` uniformly via [jiti](https://github.com/unjs/jiti) (`jiti.import`). TypeScript is **transpiled, not type-checked**. Default exports are unwrapped via jiti's `interopDefault` (`mod.default ?? mod`): a single default is returned; a nested `{ default: ... }` is preserved. TypeScript path aliases (`baseUrl`/`paths`) are resolved from the passed `tsConfig`. (Source: code investigation, 2026-06-07)
+  - **Does NOT handle:** `.jsx`/`.tsx`. Build-time type-checking (run `tsc --noEmit` separately). (Source: code investigation, 2026-06-07)
+  - **Requires:** Absolute `modulePath`. A `tsConfig` path (used for path-alias resolution). An Angular `LoggerApi` instance (retained for API compatibility; currently unused). (Source: code investigation, 2026-06-07)
 
 - `resolvePackagePath(packageName, subPath): string` -- Resolves a file path within an installed npm package by locating its `package.json` first.
   - **Guarantees:** Returns the absolute joined path.
   - **Requires:** The package must be installed and resolvable via `require.resolve`.
 
-Enforcement: All user-supplied module loading across the monorepo MUST go through `loadModule`. Direct `require()` or `import()` of user config files bypasses ts-node registration and ESM handling.
+Enforcement: All user-supplied module loading across the monorepo MUST go through `loadModule`. Direct `require()` or `import()` of user config files bypasses jiti's TypeScript transpilation and ESM/CJS interop.
 
 ## Invariants
 
-**MUST:** ts-node is registered at most once per process. A second call with a different `tsConfig` logs a warning and is silently skipped -- the first registration wins. Registering with the wrong tsconfig first breaks everything. There is a known open issue related to this edge case. (Source: SME interview, Jeb, 2026-02-16)
+**MUST:** Each distinct `tsConfig` gets its own isolated jiti instance (cached by tsconfig path). Loads with different tsconfigs do not interfere -- there is no process-global "first tsconfig wins" registration (the old ts-node limitation, now removed). (Source: code investigation, 2026-06-07)
 
 **MUST NEVER:** Call `loadModule` with a relative path. The caller is responsible for joining `workspaceRoot` with the user-provided relative path before passing it in.
 
@@ -56,22 +56,23 @@ const config = raw.default; // undefined if loadModule already unwrapped
 
 ## Pitfalls
 
-| Trap                                                                 | Reality                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| "I can register ts-node with a different tsconfig for a second file" | ts-node registration is process-global and sticky. The first tsConfig wins; subsequent calls with a different tsConfig are silently ignored with a warning log. `_tsNodeRegister` (lines 5-43) only registers once. (Source: code investigation, 2026-02-16)                                                                                                                                                                                                                                                  |
-| "Default export unwrapping is simple"                                | `loadModule` does `require(path).default \|\| require(path)` for `.ts` and `.js` files (lines 96, 111). If a module exports `{ default: { default: ... } }`, the outer default is unwrapped, returning the inner `{ default: ... }` object -- not the deeply nested value. Users exporting double-wrapped defaults will get unexpected results. (Source: code investigation, 2026-02-16)                                                                                                                      |
-| "ESM loading uses standard `import()`"                               | TypeScript unconditionally downlevels `import()` to `require()`, which cannot load ESM modules. The code uses `new Function('modulePath', 'return import(modulePath)')` to create the import expression at runtime, preventing TypeScript from transforming it. This is the same pattern used by Angular CLI internally. Can be dropped once TypeScript supports preserving dynamic imports (see JSDoc at `src/load-module.ts` lines 57-71). Do not "simplify" this. (Source: code investigation, 2026-02-16) |
-| "`resolvePackagePath` is just `path.join`"                           | It resolves from the package's actual installed location (via `require.resolve` on `package.json`), not from the workspace root. This matters when packages are hoisted differently.                                                                                                                                                                                                                                                                                                                          |
-| "ESM/CJS interop is straightforward"                                 | ESM/CJS interop has been a significant pain point with multiple abandoned approaches before landing on the current implementation. Do not attempt to "simplify" the loading logic without understanding the full history of failures. (Source: SME interview, Jeb, 2026-02-16)                                                                                                                                                                                                                                |
+| Trap                                                            | Reality                                                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "I can pin ts-node compiler options / one tsconfig per process" | There is no ts-node anymore. Loading is via jiti with one isolated instance per `tsConfig` (cached by path), so different configs/transforms resolve against their own tsconfig. (Source: code investigation, 2026-06-07)                                                                                                                                                                                        |
+| "Default export unwrapping is simple"                           | `loadModule` returns `mod.default ?? mod` over jiti's `interopDefault` result. A single default export is unwrapped; a nested `{ default: ... }` is preserved (covered by `load-module.spec.ts`). Double-wrapped defaults still yield the inner object, not the deepest value. (Source: code investigation, 2026-06-07)                                                                                          |
+| "jiti's `tsconfigPaths` option honors any tsconfig path"        | It does not -- jiti/`get-tsconfig` treats the path as a search location and only loads a file literally named `tsconfig.json`, walking up otherwise. Build targets use names like `tsconfig.app.json`, so `loadModule` parses the exact `tsConfig` via `get-tsconfig`'s `parseTsconfig` and builds jiti's `alias` map itself. Do not switch to `tsconfigPaths: <path>`. (Source: code investigation, 2026-06-07) |
+| "`resolvePackagePath` is just `path.join`"                      | It resolves from the package's actual installed location (via `require.resolve` on `package.json`), not from the workspace root. This matters when packages are hoisted differently.                                                                                                                                                                                                                             |
+| "ESM/CJS interop is straightforward"                            | ESM/CJS interop has been a significant pain point with multiple abandoned approaches before landing on the current implementation. Do not attempt to "simplify" the loading logic without understanding the full history of failures. (Source: SME interview, Jeb, 2026-02-16)                                                                                                                                   |
 
 ## Testing
 
 ```bash
-# No dedicated unit tests -- tested transitively through consumer packages
+# Loader unit tests (all module formats + #816/#2025 regressions):
+npx jest --config jest-ut.config.js packages/common/src/load-module.spec.ts
 yarn build  # from packages/common
 ```
 
 ## Dependencies
 
 **Breaks if changed:** `custom-esbuild` (plugin loading), `custom-webpack` (config + transform loading), `jest` (listed dependency but indirect usage)
-**Breaks us if changed:** `ts-node`, `tsconfig-paths`, `@angular-devkit/core` (for `logging.LoggerApi` type)
+**Breaks us if changed:** `jiti` (module loading + TS transform), `get-tsconfig` (tsconfig path-alias parsing), `@angular-devkit/core` (for `logging.LoggerApi` type)
