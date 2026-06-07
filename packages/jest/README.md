@@ -9,7 +9,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 > ⚠️ **Version alignment:** The major version of `@angular-builders/jest` must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/jest`@19.x, Angular 20 requires `@angular-builders/jest`@20.x, etc. Using a mismatched version is the most common source of issues.
 
-
 ## Previous versions
 
 <details>
@@ -54,7 +53,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Updating Typescript configurations
 
 1. In _tsconfig.spec.json_ (root directory, used by Jest):
-
    - Replace `jasmine` in `types` array with `jest`  
      _You want your tests to be type-checked against Jest typings and not Jasmine._
    - Remove `test.ts` entry from `files` array  
@@ -94,6 +92,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
 - `config` - path to jest config file or a Jest configuration object, relative to _project root_ (or src/ directory in case of non-project app), defaults to `jest.config.js`. Other extensions are also supported. The Jest configuration might be written in TypeScript, but you should explicitly specify the path to the `jest.config.ts`. The configuration is merged on top of the default configuration, so there is no need to specify the whole jest configuration in this file. Just specify the _changes_ you'd like to make to the default configuration.
 
   You can also provide configuration directly as an object:
+
   ```json
   "options": {
     "config": {
@@ -104,7 +103,6 @@ The builder supports multi-project workspaces out of the box, the only thing req
   ```
 
   The way the configurations are merged is as following:
-
   1.  Take the [default configuration](https://github.com/just-jeb/angular-builders/blob/master/packages/jest/src/jest-config/default-config.ts) from the library
   2.  Add on top of it default project specific config (that is dynamic due to different root directories). Used to scope single project test runs.
   3.  Add on top of it _package.json_ jest config if exists (for **all** projects)
@@ -116,6 +114,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
       > If you use both `ng test` (via the builder) and `jest` directly (standalone), keep the `projects` field out of the root config and use a separate config file for standalone runs:
       >
       > **`jest.config.js`** — used by the Angular builder (no `projects` field):
+      >
       > ```js
       > module.exports = {
       >   // shared options: transform, moduleNameMapper, coverageThreshold, etc.
@@ -123,6 +122,7 @@ The builder supports multi-project workspaces out of the box, the only thing req
       > ```
       >
       > **`jest.projects.config.js`** — used for standalone Jest CLI runs:
+      >
       > ```js
       > const baseConfig = require('./jest.config');
       > module.exports = {
@@ -242,4 +242,22 @@ module.exports = {
     '^.+\\.js$': 'babel-jest',
   },
 };
+```
+
+### Top-level `await` in test files
+
+Test files are compiled to CommonJS by `ts-jest`/`jest-preset-angular`, and top-level `await` (an `await` at module scope, e.g. `const { AppComponent } = await import('./app.component');` outside of any function) is not valid in CommonJS. You will see:
+
+```
+SyntaxError: await is only valid in async functions and the top level bodies of modules
+```
+
+Jest's native ES module support that would allow this is still experimental, so the builder does not enable it. Instead, move the dynamic import into an async hook:
+
+```ts
+let AppComponent;
+
+beforeAll(async () => {
+  ({ AppComponent } = await import('./app.component'));
+});
 ```
