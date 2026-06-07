@@ -14,6 +14,15 @@ module.exports = [
     app: 'examples/jest/simple-app',
     command: 'yarn test:esm --no-cache',
   },
+  {
+    id: 'config-inline-object',
+    name: 'jest: inline config object in angular.json',
+    purpose:
+      'Builder runs tests successfully when config is an inline object in angular.json, not a file path (no spurious warning, no crash)',
+    app: 'examples/jest/simple-app',
+    command:
+      'node ../../../packages/jest/tests/validate.js --run-script=test:inline-config --no-cache --expect-suites=2 --expect-tests=4',
+  },
 
   // isolatedModules default - behavioral proof
   {
@@ -116,6 +125,22 @@ module.exports = [
     app: 'examples/jest/multiple-apps',
     command:
       'node ../../../packages/jest/tests/validate.js my-shared-library --find-related-tests projects/my-shared-library/src/lib/my-shared-library.service.ts projects/my-shared-library/src/lib/my-shared-library.component.ts --expect-suites=2 --expect-tests=2',
+  },
+  {
+    id: 'multi-project-find-related-single',
+    name: 'jest: --find-related-tests single file filters correctly',
+    purpose: '--find-related-tests with one source file runs only its related spec',
+    app: 'examples/jest/multiple-apps',
+    command:
+      'node ../../../packages/jest/tests/validate.js my-shared-library --find-related-tests projects/my-shared-library/src/lib/my-shared-library.service.ts --expect-suites=1 --expect-tests=1',
+  },
+  {
+    id: 'multi-project-find-related-comma',
+    name: 'jest: --find-related-tests comma-separated paths',
+    purpose: 'Comma-separated --find-related-tests value is split into positional file args',
+    app: 'examples/jest/multiple-apps',
+    command:
+      'node ../../../packages/jest/tests/validate.js my-shared-library --find-related-tests=projects/my-shared-library/src/lib/my-shared-library.service.ts,projects/my-shared-library/src/lib/my-shared-library.component.ts --expect-suites=2 --expect-tests=2',
   },
 
   // --- ng add e2e (Plan 04): real CLI ng add on an inline-generated app, then ng test ---

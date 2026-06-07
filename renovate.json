@@ -28,6 +28,23 @@
       "description": "Track GitHub-hosted runner image versions (runs-on), but never auto-merge them - a runner bump can change the CI environment and must be reviewed/tested.",
       "matchDatasources": ["github-runners"],
       "automerge": false
+    },
+    {
+      "description": "Hold TypeScript majors until Angular CLI's supported versions catch up — see #2123.",
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
+      "description": "@angular-devkit/architect uses Angular's 0.{major}{minor}.{patch} scheme (0.2102 = v21.2). Renovate treats the leading 0 as the major, so a v21->v22 bump (0.2102 -> 0.2200) looks like a minor and slips past major-hold rules — it gets bundled into routine patch PRs and fragments the dep tree (see #2263). Reinterpret the real Angular major via regex versioning.",
+      "matchPackageNames": ["@angular-devkit/architect"],
+      "versioning": "regex:^0\\.(?<major>\\d{2})(?<minor>\\d{2})\\.(?<patch>\\d+)$"
+    },
+    {
+      "description": "Hold @angular-devkit/architect Angular-major bumps until the builders move that major — same policy as the TypeScript-major hold above. See #2263.",
+      "matchPackageNames": ["@angular-devkit/architect"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     }
   ]
 }

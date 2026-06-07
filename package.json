@@ -33,6 +33,7 @@
     "update:examples": "yarn workspaces foreach --exclude '@angular-builders/*' run update:example"
   },
   "devDependencies": {
+    "@angular/build": "^22.0.0-rc.2",
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-conventional": "^21.0.0",
     "@lerna-lite/cli": "^5.0.0",
@@ -40,12 +41,12 @@
     "@types/lodash": "^4.14.118",
     "@types/node": "^24.0.0",
     "husky": "^9.0.0",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^17.0.0",
     "lodash": "^4.17.15",
     "prettier": "^3.0.0",
     "ts-jest": "29.4.11",
     "turbo": "^2.4.0",
-    "vitest": "4.1.7"
+    "vitest": "4.1.8"
   },
   "lint-staged": {
     "*.{js,ts,html,md}": [

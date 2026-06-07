@@ -106,6 +106,13 @@
             "zoneless": false
           }
         },
+        "test-inline-config": {
+          "builder": "@angular-builders/jest:run",
+          "options": {
+            "config": { "testTimeout": 10000, "verbose": true },
+            "zoneless": false
+          }
+        },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {

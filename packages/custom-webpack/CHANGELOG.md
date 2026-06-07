@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [21.1.0-beta.13](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0-beta.12...@angular-builders/custom-webpack@21.1.0-beta.13) (2026-06-05)
+
+### Reverts
+
+* remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
+
+## [21.1.0-beta.12](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0-beta.11...@angular-builders/custom-webpack@21.1.0-beta.12) (2026-06-04)
+
+### Bug Fixes
+
+* **builders:** annotate builder default exports with Builder<T> to avoid TS2742 ([#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([7db3848](https://github.com/just-jeb/angular-builders/commit/7db3848c7c3bf8362904130cbab8c7711cdac4ed))
+
+## [21.1.0-beta.11](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0-beta.10...@angular-builders/custom-webpack@21.1.0-beta.11) (2026-06-01)
+
+### Bug Fixes
+
+* **common:** add resolveJsonModule to ts-node compilerOptions (fixes [#816](https://github.com/just-jeb/angular-builders/issues/816)) ([#2189](https://github.com/just-jeb/angular-builders/issues/2189)) ([6b16727](https://github.com/just-jeb/angular-builders/commit/6b16727b2c4c2298418484fe346b5db931764fbb))
+
 ## [21.1.0-beta.10](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0-beta.9...@angular-builders/custom-webpack@21.1.0-beta.10) (2026-05-09)
 
 **Note:** Version bump only for package @angular-builders/custom-webpack
