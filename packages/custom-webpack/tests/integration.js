@@ -123,7 +123,7 @@ module.exports = [
     name: 'custom-webpack: TS config ESM imports',
     purpose: 'Builder loads TypeScript config with ESM imports',
     app: 'examples/custom-webpack/sanity-app-esm',
-    command: 'yarn build-ts -c tsEsm',
+    command: 'yarn build -c tsEsm',
   },
   {
     id: 'ts-config-bundler-module-resolution',
