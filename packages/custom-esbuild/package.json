@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "prebuild": "yarn clean",
-    "build": "yarn prebuild && tsc && ts-node ../../merge-schemes.ts && tsc -p tsconfig.schematics.json && yarn copy:schematics && yarn postbuild",
+    "build": "yarn prebuild && tsc && jiti ../../merge-schemes.ts && tsc -p tsconfig.schematics.json && yarn copy:schematics && yarn postbuild",
     "copy:schematics": "copyfiles -u 2 \"src/schematics/**/*.json\" dist/schematics",
     "postbuild": "yarn test && yarn run e2e",
     "test": "jest --config ../../jest-ut.config.js",
@@ -61,7 +61,6 @@
     "esbuild": "0.28.0",
     "jest": "30.4.2",
     "rimraf": "^6.0.0",
-    "ts-node": "^10.0.0",
     "typescript": "6.0.3"
   }
 }
