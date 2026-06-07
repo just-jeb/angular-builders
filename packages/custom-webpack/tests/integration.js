@@ -9,6 +9,16 @@ module.exports = [
       'node scripts/e2e-ng-add.js --spec packages/custom-webpack/tests/e2e/webpack-add.ng-add.json',
   },
 
+  // --- ng update e2e: ts-node -> jiti loader migration (real CLI) + post-migration build ---
+  {
+    id: 'ng-update-loader-migration-smoke',
+    name: 'custom-webpack: jiti loader migration post-build smoke',
+    purpose:
+      'v22 ng update strips the NODE_OPTIONS ts-node/esm workaround, lifts a ts-node tsconfig section, and removes ts-node deps; ng build is green with a .ts webpack config loaded via jiti',
+    app: '.',
+    command: 'node scripts/e2e-loader-migration.js',
+  },
+
   // Karma builder tests
   {
     id: 'karma-builder-sanity-app',
