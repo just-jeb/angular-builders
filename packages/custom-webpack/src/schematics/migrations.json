@@ -1,0 +1,10 @@
+{
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "migration-v22": {
+      "version": "22.0.0",
+      "description": "Migrate from ts-node to the jiti loader: strip the ts-node/esm NODE_OPTIONS workaround from npm scripts, remove ts-node/tsconfig-paths devDependencies, lift `ts-node` tsconfig path options into compilerOptions, and advise on the build-time type-checking change.",
+      "factory": "./migrations/v22/index#migrateV22"
+    }
+  }
+}

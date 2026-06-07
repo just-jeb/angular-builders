@@ -8,11 +8,18 @@ export function migrateV22(): Rule {
         '`const enum` used across files and type-only re-exports without the `type` modifier ' +
         'will now error. Fix the call sites, or restore `isolatedModules: false` in your jest ' +
         'config. We do not change this automatically — the new default is intentional. ' +
-        'See MIGRATION.MD (v21→v22) and #2191.',
+        'See MIGRATION.MD (v21→v22) and #2191.'
+    );
+
+    context.logger.warn(
+      '[@angular-builders/jest] v22: a TypeScript jest config (e.g. `jest.config.ts`) is now ' +
+        'loaded via jiti instead of ts-node. `ts-node` is no longer required just to read the ' +
+        'config, and the config is no longer type-checked when loaded. No action needed unless ' +
+        'you relied on that load-time type check.'
     );
 
     const constEnumHits: string[] = [];
-    tree.visit((path) => {
+    tree.visit(path => {
       if (!path.endsWith('.ts')) return;
       if (path.includes('/node_modules/') || path.includes('/dist/')) return;
       const content = tree.readText(path);
@@ -22,7 +29,7 @@ export function migrateV22(): Rule {
       context.logger.warn(
         '[@angular-builders/jest] Found `const enum` in: ' +
           constEnumHits.join(', ') +
-          ' — these may break under isolatedModules. Convert to a regular `enum` or `as const`.',
+          ' — these may break under isolatedModules. Convert to a regular `enum` or `as const`.'
       );
     }
 
@@ -35,7 +42,7 @@ export function migrateV22(): Rule {
         '[@angular-builders/jest] v22: per-project coverage output now writes to ' +
           '<projectRoot>/coverage instead of ./coverage for projects: ' +
           affected.join(', ') +
-          '. Update any CI/tooling that reads a hardcoded `./coverage/` path. See #2212.',
+          '. Update any CI/tooling that reads a hardcoded `./coverage/` path. See #2212.'
       );
     }
 

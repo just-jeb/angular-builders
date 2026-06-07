@@ -126,6 +126,8 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 **MUST NEVER:** Ship a breaking dependency update (e.g., a new webpack-merge major) as a minor version of a builder package. Breaking changes must wait for the next major version aligned with Angular. (Source: SME interview, Jeb, 2026-02-16)
 
+**MUST:** Any PR introducing a breaking change that requires changes to a user's project (code, config, npm scripts, dependencies, or workspace files) MUST ship the corresponding `ng update` migration schematic in the same PR — users should never have to perform the migration by hand. The affected builder packages expose `ng update` via their `migrations.json` (`ng-update` field in `package.json`); shared migration logic lives in `@angular-builders/common/schematics` (e.g. `migrateToJitiLoader`) and per-package migrations delegate to it. Automate everything that can be applied safely; only `logger.warn` for changes that cannot be made automatically without risking the user's build.
+
 **MUST NEVER:** Use `ci(release)` in commit messages outside of the automated publish process -- it causes CI to skip the entire pipeline.
 
 **MUST:** When creating a pull request, read `.github/PULL_REQUEST_TEMPLATE.md` and use its structure for the PR body. Fill in all sections: PR checklist, PR type, current behavior, new behavior, and breaking change flag.
