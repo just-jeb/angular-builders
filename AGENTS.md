@@ -31,7 +31,7 @@ AGENTS.md files at semantic boundaries provide AI agents with context. Start her
 
 ## Architecture
 
-This is a Yarn 3 monorepo managed by Turbo (builds) and Lerna-Lite (publishing). It publishes six `@angular-builders/*` npm packages that extend Angular CLI's Architect build system. Builders' major versions track Angular's major version (currently 21).
+This is a Yarn 3 monorepo managed by Turbo (builds) and Lerna-Lite (publishing). It publishes six `@angular-builders/*` npm packages that extend Angular CLI's Architect build system. Builders' major versions track Angular's major version (currently 22).
 
 The two primary packages -- `custom-esbuild` and `custom-webpack` -- wrap Angular's two build systems respectively: `@angular/build` (esbuild/Vite) and `@angular-devkit/build-angular` (Webpack). They allow users to inject custom build configuration without ejecting from the CLI. The `jest` package replaces Karma with Jest for `ng test`. `bazel` and `timestamp` are thinner wrappers.
 
@@ -114,7 +114,7 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 ## Invariants
 
-**MUST:** Builder major versions match Angular CLI major version. A v21 builder requires Angular CLI 21.
+**MUST:** Builder major versions match Angular CLI major version. A v22 builder requires Angular CLI 22.
 
 **MUST:** All packages publish under `@angular-builders` npm scope with public access.
 
