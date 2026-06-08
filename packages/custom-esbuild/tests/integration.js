@@ -13,7 +13,8 @@ module.exports = [
   {
     id: 'ng-add-esbuild-webpack-guard',
     name: 'custom-esbuild: ng add webpack guard',
-    purpose: 'ng add leaves a webpack build untouched and emits the use-application-builder advisory',
+    purpose:
+      'ng add leaves a webpack build untouched and emits the use-application-builder advisory',
     app: '.',
     command:
       'node scripts/e2e-ng-add.js --spec packages/custom-esbuild/tests/e2e/webpack-guard.ng-add.json',
@@ -53,7 +54,7 @@ module.exports = [
     name: 'custom-esbuild: Vitest TS config',
     purpose: 'Unit test builder loads TypeScript config',
     app: 'examples/custom-esbuild/sanity-esbuild-app-esm',
-    command: 'yarn test-ts -c tsEsm --no-watch',
+    command: 'yarn test -c tsEsm --no-watch',
   },
 
   // Application builder + plugins tests
@@ -106,15 +107,14 @@ module.exports = [
     name: 'custom-esbuild: TS plugins ESM imports',
     purpose: 'Builder loads TypeScript plugins with ESM imports',
     app: 'examples/custom-esbuild/sanity-esbuild-app-esm',
-    command: 'yarn build-ts -c tsEsm',
+    command: 'yarn build -c tsEsm',
   },
 
   // Target options accessibility (#1690, #1710)
   {
     id: 'target-options-in-plugin-and-transformer',
     name: 'custom-esbuild: target.configuration accessible in plugin and indexHtmlTransformer',
-    purpose:
-      'Factory plugin and indexHtmlTransformer both receive target.configuration at runtime',
+    purpose: 'Factory plugin and indexHtmlTransformer both receive target.configuration at runtime',
     app: 'examples/custom-esbuild/sanity-esbuild-app',
     command: 'yarn build-target-options',
   },

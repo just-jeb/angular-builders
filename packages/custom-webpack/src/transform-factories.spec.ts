@@ -1,51 +1,48 @@
-jest.mock('ts-node', () => ({
-  register: jest.fn(),
-}));
-jest.mock('tsconfig-paths', () => ({
-  loadConfig: jest.fn().mockReturnValue({}),
-}));
-import { getTransforms } from './transform-factories';
+import { Target } from '@angular-devkit/architect';
+import { loadModule } from '@angular-builders/common';
+import { getTransforms, indexHtmlTransformFactory } from './transform-factories';
 
-const logger = { warn: jest.fn(msg => console.log(msg)) };
+// Module loading is the responsibility of `@angular-builders/common` (covered by
+// its own load-module.spec). The previous ts-node "register once / warn on a
+// different tsconfig" behavior no longer exists: jiti uses an isolated instance
+// per tsconfig, so there is no process-global registration to assert. These tests
+// verify transform-factories' own wiring instead.
+jest.mock('@angular-builders/common', () => ({ loadModule: jest.fn() }));
 
-describe('getTransforms', () => {
+const mockedLoadModule = loadModule as jest.MockedFunction<typeof loadModule>;
+const logger = { warn: jest.fn(), info: jest.fn() } as any;
+
+describe('transform factories', () => {
   beforeEach(() => {
-    jest.resetModules();
     jest.clearAllMocks();
   });
 
-  it('should call ts-node register once with typescript index-html-transform & custom-webpack-config AND warn if called with a different config', () => {
-    jest.mock('test/index-transform.test.ts', () => jest.fn(), { virtual: true });
-    jest.mock('test/webpack.test.config.ts', () => jest.fn(), { virtual: true });
-    const tsNode = require('ts-node') as jest.Mocked<typeof import('ts-node')>;
-
-    const transforms = getTransforms(
-      {
-        customWebpackConfig: {
-          path: 'webpack.test.config.ts',
-        },
-        indexTransform: 'index-transform.test.ts',
-        tsConfig: 'tsconfig.test.json',
-      },
-      { workspaceRoot: './test', logger } as any
+  it('produces a null indexHtml transform when no indexTransform is configured', () => {
+    const { indexHtml } = getTransforms(
+      { customWebpackConfig: { path: 'webpack.config.ts' }, tsConfig: 'tsconfig.json' } as any,
+      { workspaceRoot: '/root', target: {} as Target, logger } as any
     );
-    transforms.webpackConfiguration({});
 
-    expect(tsNode.register).toHaveBeenCalledTimes(1);
-    expect(logger.warn).not.toHaveBeenCalled();
+    expect(indexHtml).toBeNull();
+  });
 
-    const transforms2 = getTransforms(
-      {
-        customWebpackConfig: {
-          path: 'webpack.test.config.ts',
-        },
-        indexTransform: '',
-        tsConfig: 'tsconfig.test2.json',
-      },
-      { workspaceRoot: './test', logger } as any
+  it('loads the index transform via loadModule and passes the target', async () => {
+    const transformer = jest.fn().mockResolvedValue('<html>transformed</html>');
+    mockedLoadModule.mockResolvedValue(transformer as never);
+    const target = { project: 'app', target: 'build' } as Target;
+
+    const indexHtml = indexHtmlTransformFactory(
+      { indexTransform: 'index.transform.ts', tsConfig: 'tsconfig.json' } as any,
+      { workspaceRoot: '/root', target, logger } as any
     );
-    transforms2.webpackConfiguration({});
 
-    expect(logger.warn).toHaveBeenCalledTimes(1);
+    const result = await indexHtml!('<html></html>');
+
+    expect(mockedLoadModule).toHaveBeenCalledTimes(1);
+    const [transformPath, tsConfigPath] = mockedLoadModule.mock.calls[0];
+    expect(transformPath).toContain('index.transform.ts');
+    expect(tsConfigPath).toContain('tsconfig.json');
+    expect(transformer).toHaveBeenCalledWith(target, '<html></html>');
+    expect(result).toBe('<html>transformed</html>');
   });
 });

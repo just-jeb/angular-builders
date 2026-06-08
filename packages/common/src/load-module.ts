@@ -1,153 +1,124 @@
+/// <reference types="node" />
+// The triple-slash reference above explicitly pulls in `@types/node` global typings
+// (`require`, `process`, `__filename`, the `node:` import specifiers). This package's
+// tsconfig does not set a `types` field, and `@types/node` is not auto-discovered for
+// this program; the previous implementation only got node globals transitively via
+// `typeof import('ts-node')`. Removing ts-node removed that side effect, so we declare
+// the dependency on node types directly here.
 import * as path from 'node:path';
-import * as url from 'node:url';
+import { createJiti } from 'jiti';
+import { parseTsconfig } from 'get-tsconfig';
 import type { logging } from '@angular-devkit/core';
 
-const _tsNodeRegister = (() => {
-  let lastTsConfig: string | undefined;
-  return (tsConfig: string, logger: logging.LoggerApi) => {
-    // Check if the function was previously called with the same tsconfig
-    if (lastTsConfig && lastTsConfig !== tsConfig) {
-      logger.warn(`Trying to register ts-node again with a different tsconfig - skipping the registration.
-                   tsconfig 1: ${lastTsConfig}
-                   tsconfig 2: ${tsConfig}`);
-    }
+type Jiti = ReturnType<typeof createJiti>;
 
-    if (lastTsConfig) {
-      return;
-    }
-
-    lastTsConfig = tsConfig;
-
-    loadTsNode().register({
-      project: tsConfig,
-      compilerOptions: {
-        module: 'CommonJS',
-        // We deliberately do NOT override moduleResolution here.
-        // The user's tsconfig moduleResolution setting (node, bundler, node16, etc.) is preserved.
-        // TypeScript allows moduleResolution:bundler with module:CommonJS, so type checking
-        // works correctly for all moduleResolution values — including 'bundler', which supports
-        // subpath package exports (e.g. '@angular/core/primitives/di').
-        // Overriding moduleResolution to 'node' (as was done previously) was the root cause of
-        // issue https://github.com/just-jeb/angular-builders/issues/2025: it prevented TypeScript
-        // from resolving subpath exports, causing TS2307 errors at build time.
-        resolveJsonModule: true,
-        // resolveJsonModule: true is required so that TypeScript webpack configs can import
-        // JSON files (e.g. `import pkg from './package.json'`). Without this, users on
-        // moduleResolution:'node' (the default for Angular projects before v17) get TS2732:
-        // "Cannot find module './foo.json'. Consider using '--resolveJsonModule'".
-        // This flag is safe to always enable: it has no downside and does not conflict
-        // with any other moduleResolution mode (node, node16, bundler, etc.).
-        // Fix for: https://github.com/just-jeb/angular-builders/issues/816
-        types: [
-          'node', // NOTE: `node` is added so user configs can use Node.js globals (process, __dirname, etc.)
-        ],
-      },
-    });
-
-    const tsConfigPaths = loadTsConfigPaths();
-    const result = tsConfigPaths.loadConfig(tsConfig);
-    // The `loadConfig` returns a `ConfigLoaderResult` which must be guarded with
-    // the `resultType` check.
-    if (result.resultType === 'success') {
-      const { absoluteBaseUrl: baseUrl, paths } = result;
-      if (baseUrl && paths) {
-        tsConfigPaths.register({ baseUrl, paths });
-      }
-    }
-  };
-})();
+// Cache one jiti instance per tsconfig. Repeated loads with the same tsconfig
+// reuse the transform cache; different tsconfigs get isolated instances, so there
+// is no process-global "first tsconfig wins" stickiness (the old ts-node limitation).
+const jitiByTsConfig = new Map<string, Jiti>();
 
 /**
- * check for TS node registration
- * @param file: file name or file directory are allowed
- */
-function tsNodeRegister(file: string = '', tsConfig: string, logger: logging.LoggerApi) {
-  if (file?.endsWith('.ts')) {
-    // Register TS compiler lazily
-    _tsNodeRegister(tsConfig, logger);
-  }
-}
-
-/**
- * This uses a dynamic import to load a module which may be ESM.
- * CommonJS code can load ESM code via a dynamic import. Unfortunately, TypeScript
- * will currently, unconditionally downlevel dynamic import into a require call.
- * require calls cannot load ESM code and will result in a runtime error. To workaround
- * this, a Function constructor is used to prevent TypeScript from changing the dynamic import.
- * Once TypeScript provides support for keeping the dynamic import this workaround can
- * be dropped.
+ * Builds a jiti `alias` map from a tsconfig's `baseUrl` + `paths`, resolving
+ * `extends` so aliases declared in a base config are honored.
  *
- * @param modulePath The path of the module to load.
- * @returns A Promise that resolves to the dynamically imported module.
+ * Why not jiti's built-in `tsconfigPaths: <path>` option? Internally jiti hands the
+ * string to `get-tsconfig`'s `getTsconfig()`, which treats it as a *search location*
+ * and only ever loads a file literally named `tsconfig.json` — it ignores any other
+ * filename (e.g. `tsconfig.app.json`, which Angular build targets routinely use) and
+ * walks up to the nearest `tsconfig.json`. That silently resolves aliases against the
+ * wrong config and breaks per-target isolation. Parsing the exact file we were handed
+ * with `get-tsconfig`'s `parseTsconfig()` (which honors the precise path and resolves
+ * `extends`) and feeding jiti an explicit `alias` map keeps each jiti instance isolated.
+ *
+ * We use `get-tsconfig` rather than `require('typescript')` deliberately: `common` is a
+ * *published* package and does not declare `typescript` as a runtime dependency, so
+ * `require('typescript')` is unreliable under non-hoisted installs (pnpm / Yarn PnP) —
+ * a strict resolver would fail and aliases would silently break. `get-tsconfig` is a
+ * declared, zero-dependency dependency (the same parser jiti uses internally), so it
+ * always resolves. A missing/invalid tsconfig degrades gracefully to an empty map
+ * (jiti still loads the module — only `paths` aliases are unavailable).
  */
-function loadEsmModule<T>(modulePath: string | URL): Promise<T> {
-  return new Function('modulePath', `return import(modulePath);`)(modulePath) as Promise<T>;
+function tsConfigAliases(tsConfig: string): Record<string, string> {
+  let compilerOptions: { baseUrl?: string; paths?: Record<string, string[]> } | undefined;
+  try {
+    compilerOptions = parseTsconfig(tsConfig).compilerOptions;
+  } catch {
+    return {};
+  }
+
+  const { baseUrl, paths } = compilerOptions ?? {};
+  if (!paths) {
+    return {};
+  }
+
+  // `get-tsconfig` returns `baseUrl` (and the `paths` targets) relative to the *directory
+  // of the tsconfig file we passed* — even when they originate from an extended base
+  // config, it rewrites them to be relative to that directory. So resolve baseUrl against
+  // the tsconfig's dir, and each target against baseUrl. If baseUrl is absent, paths
+  // resolve directly against the tsconfig's dir.
+  const tsConfigDir = path.dirname(tsConfig);
+  const base = baseUrl ? path.resolve(tsConfigDir, baseUrl) : tsConfigDir;
+
+  const aliases: Record<string, string> = {};
+  for (const [alias, targets] of Object.entries(paths)) {
+    const target = targets?.[0];
+    if (!target) {
+      continue;
+    }
+    // Strip the trailing `/*` wildcard from both sides so jiti (prefix matching)
+    // maps `@x/*` -> the resolved target directory; non-wildcard aliases map 1:1.
+    const aliasKey = alias.replace(/\/\*$/, '');
+    const targetPath = target.replace(/\/\*$/, '');
+    aliases[aliasKey] = path.resolve(base, targetPath);
+  }
+
+  return aliases;
+}
+
+function getJiti(tsConfig: string): Jiti {
+  let jiti = jitiByTsConfig.get(tsConfig);
+  if (!jiti) {
+    jiti = createJiti(__filename, {
+      // Resolve TypeScript path aliases (baseUrl/paths) from the build target's
+      // tsconfig. Replaces the previous explicit `tsconfig-paths` registration.
+      // We parse the tsconfig ourselves (see `tsConfigAliases`) rather than using
+      // jiti's `tsconfigPaths` option, which mishandles non-`tsconfig.json` filenames.
+      alias: tsConfigAliases(tsConfig),
+      // Merge module.exports + default export into a single value (Proxy-based),
+      // replacing the previous `require(p).default || require(p)` unwrapping.
+      interopDefault: true,
+      // Persist the transform cache to disk between runs for faster reloads.
+      fsCache: true,
+    });
+    jitiByTsConfig.set(tsConfig, jiti);
+  }
+
+  return jiti;
 }
 
 /**
- * Loads CJS and ESM modules based on extension
+ * Loads a user-provided module (webpack/esbuild config, plugin, or index-html
+ * transformer) regardless of format: `.ts`, `.mts`, `.cts`, `.js`, `.mjs`, `.cjs`.
+ *
+ * All CJS/ESM/TS interop is delegated to jiti. TypeScript is transpiled
+ * transpile-only — there is NO build-time type-checking (run `tsc --noEmit`
+ * separately if you want it; see the package README). This replaces the previous
+ * ts-node + tsconfig-paths + hand-rolled dynamic-import implementation.
+ *
+ * @param modulePath Absolute path to the module to load.
+ * @param tsConfig Absolute path to the tsconfig used for path-alias resolution.
+ * @param _logger Angular logger (retained for API compatibility; unused).
  */
 export async function loadModule<T>(
   modulePath: string,
   tsConfig: string,
-  logger: logging.LoggerApi
+  _logger: logging.LoggerApi
 ): Promise<T> {
-  tsNodeRegister(modulePath, tsConfig, logger);
+  const jiti = getJiti(tsConfig);
+  const mod = await jiti.import<T | { default?: T }>(modulePath);
 
-  switch (path.extname(modulePath)) {
-    case '.mjs':
-      // Load the ESM configuration file using the TypeScript dynamic import workaround.
-      // Once TypeScript provides support for keeping the dynamic import this workaround can be
-      // changed to a direct dynamic import.
-      return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
-    case '.cjs':
-      return require(modulePath);
-    case '.ts':
-      try {
-        // If it's a TS file then there are 2 cases for exporting an object.
-        // The first one is `export blah`, transpiled into `module.exports = { blah} `.
-        // The second is `export default blah`, transpiled into `{ default: { ... } }`.
-        return require(modulePath).default || require(modulePath);
-      } catch (e: any) {
-        if (e.code === 'ERR_REQUIRE_ESM') {
-          // Load the ESM configuration file using the TypeScript dynamic import workaround.
-          // Once TypeScript provides support for keeping the dynamic import this workaround can be
-          // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
-        }
-        throw e;
-      }
-    //.js
-    default:
-      // The file could be either CommonJS or ESM.
-      // CommonJS is tried first then ESM if loading fails.
-      try {
-        return require(modulePath).default || require(modulePath);
-      } catch (e: any) {
-        if (e.code === 'ERR_REQUIRE_ESM') {
-          // Load the ESM configuration file using the TypeScript dynamic import workaround.
-          // Once TypeScript provides support for keeping the dynamic import this workaround can be
-          // changed to a direct dynamic import.
-          return (await loadEsmModule<{ default: T }>(url.pathToFileURL(modulePath))).default;
-        }
-
-        throw e;
-      }
-  }
-}
-
-/**
- * Loads `ts-node` lazily. Moved to a separate function to declare
- * a return type, more readable than an inline variant.
- */
-function loadTsNode(): typeof import('ts-node') {
-  return require('ts-node');
-}
-
-/**
- * Loads `tsconfig-paths` lazily. Moved to a separate function to declare
- * a return type, more readable than an inline variant.
- */
-function loadTsConfigPaths(): typeof import('tsconfig-paths') {
-  return require('tsconfig-paths');
+  // With interopDefault, `mod` already merges named + default exports. The explicit
+  // `.default` access preserves parity with the previous unwrap for modules that
+  // only set a default export, without over-unwrapping a nested `{ default: ... }`.
+  return ((mod as { default?: T })?.default ?? mod) as T;
 }

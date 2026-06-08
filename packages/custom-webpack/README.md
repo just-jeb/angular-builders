@@ -583,37 +583,25 @@ In the example we add a paragraph with build configuration to your `index.html`.
 
 Full example [here](../../examples/custom-webpack/full-cycle-app).
 
-### Using a Custom TypeScript Configuration for indexTransform
+### Type-checking TypeScript configs and transforms
 
-If your `indexTransform` file requires different TypeScript settings than the build target's `tsConfig` (different `target`, custom `paths`, additional `lib` entries, etc.), you can specify them via the `ts-node` section of your `tsconfig.json`. The builder picks up these options when registering ts-node for transform/config loading.
+`customWebpackConfig` and `indexTransform` files written in TypeScript are loaded with [jiti](https://github.com/unjs/jiti) and **transpiled, not type-checked**, at build time. Your editor still type-checks them as you write, and TypeScript path aliases (`baseUrl`/`paths`) declared in the build target's `tsConfig` are honored.
 
-For example, to make `target` and `paths` available specifically when ts-node loads your transform:
+To enforce type-checking of these files in CI, add a dedicated tsconfig that includes them and run `tsc`:
 
-`tsconfig.json`:
+`tsconfig.build-config.json`:
 
-```json
+```jsonc
 {
-  "compilerOptions": {
-    ...
-  },
-  "ts-node": {
-    "compilerOptions": {
-      "target": "ES2022",
-      "paths": {
-        "@shared/*": ["./shared/*"]
-      }
-    }
-  }
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": true },
+  "include": ["webpack.config.ts", "index-html-transform.ts"],
 }
 ```
 
-> **Note:** ts-node is registered once per builder run; the first tsconfig encountered governs subsequent loads in the same process. If you have both an `indexTransform.ts` and a `webpack.config.ts`, both will resolve against the same ts-node configuration.
-
-> Some options the builder explicitly overrides (notably `module: "commonjs"`) cannot be changed through this mechanism. Use it for options the builder doesn't hard-code.
-
-For more details on `ts-node` configuration options, see the [ts-node documentation](https://typestrong.org/ts-node/docs/configuration/#via-tsconfigjson-recommended).
-
-The same approach applies to `customWebpackConfig` if it's written in TypeScript.
+```bash
+tsc --noEmit -p tsconfig.build-config.json
+```
 
 # ES Modules (ESM) Support
 
@@ -621,8 +609,7 @@ Custom Webpack builder fully supports ESM.
 
 - If your app has `"type": "module"` both `custom-webpack.js` and `index-transform.js` will be treated as ES modules, unless you change their file extension to `.cjs`. In that case they'll be treated as CommonJS Modules. [Example](../../examples/custom-webpack/sanity-app-esm).
 - For `"type": "commonjs"` (or unspecified type) both `custom-webpack.js` and `index-transform.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-webpack/sanity-app).
-- If you want to use TS config in ESM app, you must set the loader to `ts-node/esm` when running `ng build`. Also, in that case `tsconfig.json` for `ts-node` no longer defaults to `tsConfig` from the `browser` target - you have to specify it manually via environment variable. [Example](../../examples/custom-webpack/sanity-app-esm/package.json#L10).  
-  _Note that tsconfig paths are not supported in TS configs within ESM apps. That is because [tsconfig-paths](https://github.com/dividab/tsconfig-paths) do not support ESM._
+- **TypeScript configs and transforms work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. (Earlier versions required forcing a `ts-node/esm` loader through `NODE_OPTIONS`; that is no longer necessary.) TypeScript path aliases are supported in both module formats.
 
 # Verbose Logging
 

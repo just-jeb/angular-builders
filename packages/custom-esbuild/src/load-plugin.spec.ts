@@ -1,17 +1,24 @@
 import { loadPlugins } from './load-plugins';
 import { Target } from '@angular-devkit/architect';
 import { Plugin } from 'esbuild';
+import { loadModule } from '@angular-builders/common';
 import { CustomEsbuildApplicationSchema } from './custom-esbuild-schema';
+
+// Module loading is the responsibility of `@angular-builders/common` (covered by
+// its own load-module.spec). Here we mock `loadModule` so these tests exercise
+// loadPlugins' own logic (factory invocation, argument passing, flattening).
+jest.mock('@angular-builders/common', () => ({ loadModule: jest.fn() }));
+
+const mockedLoadModule = loadModule as jest.MockedFunction<typeof loadModule>;
 
 describe('loadPlugin', () => {
   beforeEach(() => {
-    jest.resetModules();
     jest.clearAllMocks();
   });
 
   it('should load a plugin without configuration', async () => {
     const mockPlugin = { name: 'mock' } as Plugin;
-    jest.mock('test/test-plugin.js', () => mockPlugin, { virtual: true });
+    mockedLoadModule.mockResolvedValue(mockPlugin as never);
     const plugin = await loadPlugins(
       ['test-plugin.js'],
       './test',
@@ -29,7 +36,7 @@ describe('loadPlugin', () => {
     const pluginFactory = jest.fn().mockReturnValue(mockPlugin);
     const mockOptions = { tsConfig: './tsconfig.json' } as CustomEsbuildApplicationSchema;
     const mockTarget = { target: 'test' } as Target;
-    jest.mock('test/test-plugin.js', () => pluginFactory, { virtual: true });
+    mockedLoadModule.mockResolvedValue(pluginFactory as never);
     const plugin = await loadPlugins(
       ['test-plugin.js'],
       './test',
@@ -47,7 +54,7 @@ describe('loadPlugin', () => {
     const pluginFactory = jest.fn();
     const mockOptions = { tsConfig: './tsconfig.json' } as CustomEsbuildApplicationSchema;
     const mockTarget = { target: 'test' } as Target;
-    jest.mock('test/test-plugin.js', () => pluginFactory, { virtual: true });
+    mockedLoadModule.mockResolvedValue(pluginFactory as never);
     const plugin = await loadPlugins(
       [{ path: 'test-plugin.js', options: { test: 'test' } }],
       './test',
