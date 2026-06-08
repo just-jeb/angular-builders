@@ -2,10 +2,19 @@ import { logging, Path } from '@angular-devkit/core';
 import { Configuration } from 'webpack';
 import { CustomizeRule } from 'webpack-merge';
 
+import { loadModule } from '@angular-builders/common';
+
 import { CustomWebpackBuilder, defaultWebpackConfigPath } from './custom-webpack-builder';
 import { MergeRules } from './custom-webpack-builder-config';
 import * as webpackConfigMerger from './webpack-config-merger';
 import { TargetOptions } from './type-definition';
+
+// Module loading is the responsibility of `@angular-builders/common` (covered by
+// its own load-module.spec). We mock `loadModule` so these tests exercise the
+// builder's own logic (factory vs object vs promise handling, merge, verbose logging).
+jest.mock('@angular-builders/common', () => ({ loadModule: jest.fn() }));
+
+const mockedLoadModule = loadModule as jest.MockedFunction<typeof loadModule>;
 
 const baseWebpackConfig = {
   entry: './main.ts',
@@ -54,8 +63,10 @@ const customWebpackFunctionObj = {
 
 const tsConfig = './tsconfig.app.json';
 
-function createConfigFile<T>(fileName: string, content: T) {
-  jest.mock(`${__dirname}/${fileName}`, () => content, { virtual: true });
+function createConfigFile<T>(_fileName: string, content: T) {
+  // The builder loads the user webpack config through `loadModule`; returning the
+  // content from the mock stands in for the file at `_fileName`.
+  mockedLoadModule.mockResolvedValue(content as never);
 }
 
 describe('CustomWebpackBuilder', () => {

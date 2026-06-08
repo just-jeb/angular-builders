@@ -1,12 +1,21 @@
 // Should be defined before any import due to the hoisting
 const existsSyncMock = jest.fn();
 
-import { getSystemPath, normalize } from '@angular-devkit/core';
+import { normalize } from '@angular-devkit/core';
 // TODO: find a way to mock 'fs' only for custom-config.resolver
 jest.mock('fs', () => ({ existsSync: existsSyncMock }));
 
+import { loadModule } from '@angular-builders/common';
+
 import { CustomConfigResolver } from './custom-config.resolver';
 
+// `jest.config.{js,ts}` files are loaded through `@angular-builders/common`'s
+// `loadModule` (covered by its own load-module.spec). Mock it here so these tests
+// exercise the resolver's own logic. `package.json` configs use `require` directly
+// and are still mocked via the virtual module registry below.
+jest.mock('@angular-builders/common', () => ({ loadModule: jest.fn() }));
+
+const mockedLoadModule = loadModule as jest.MockedFunction<typeof loadModule>;
 const jestConfig = { blah: true };
 const mockLogger = <any>{ warn: jest.fn() };
 const customConfigResolver = new CustomConfigResolver({}, mockLogger);
@@ -24,7 +33,7 @@ describe('Resolve global custom config', () => {
 
   it('Should return jest configuration from workspace jest.config.js if exists and no configuration provided in package.json', async () => {
     jest.mock('package.json', () => ({}), { virtual: true });
-    jest.mock('jest.config.js', () => jestConfig, { virtual: true });
+    mockedLoadModule.mockResolvedValue(jestConfig as never);
     existsSyncMock.mockReturnValue(true);
     const customConfig = await customConfigResolver.resolveGlobal(normalize('./'));
     expect(customConfig).toEqual(jestConfig);
@@ -45,9 +54,7 @@ describe('Resolve project custom config', () => {
   });
 
   it('Should return jest configuration from project jest.config.js if exists', async () => {
-    jest.mock(getSystemPath(normalize('./myproject/project-jest.config.js')), () => jestConfig, {
-      virtual: true,
-    });
+    mockedLoadModule.mockResolvedValue(jestConfig as never);
     existsSyncMock.mockReturnValue(true);
     const customConfig = await customConfigResolver.resolveForProject(
       normalize('./myproject'),
