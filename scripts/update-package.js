@@ -8,7 +8,9 @@ const rawArg = process.argv.slice(2)[0];
 
 const parseTarget = arg => {
   if (arg === undefined || arg === '') {
-    throw new Error('No version argument provided. Pass a major (e.g. 22) or explicit version (e.g. 22.0.0-rc.2).');
+    throw new Error(
+      'No version argument provided. Pass a major (e.g. 22) or explicit version (e.g. 22.0.0-rc.2).'
+    );
   }
   const major = Number.parseInt(arg, 10);
   if (Number.isNaN(major)) {
@@ -30,6 +32,8 @@ const isStable = {
   '@angular/build': true,
   '@angular/core': true,
   '@angular/platform-browser-dynamic': true,
+  '@schematics/angular': true,
+  '@angular-devkit/schematics': true,
 };
 
 const stableRange = () => (explicit ? `^${explicit}` : `^${major}.0.0`);
