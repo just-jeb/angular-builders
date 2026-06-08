@@ -14,6 +14,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 <details>
   <summary>Click to expand</summary>
 
+- [Version 21](https://github.com/just-jeb/angular-builders/blob/21.x.x/packages/jest/README.md)
 - [Version 20](https://github.com/just-jeb/angular-builders/blob/20.x.x/packages/jest/README.md)
 - [Version 19](https://github.com/just-jeb/angular-builders/blob/19.x.x/packages/jest/README.md)
 - [Version 18](https://github.com/just-jeb/angular-builders/blob/18.x.x/packages/jest/README.md)
@@ -35,7 +36,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 ## Prerequisites
 
-- [Angular CLI 21](https://www.npmjs.com/package/@angular/cli)
+- [Angular CLI 22](https://www.npmjs.com/package/@angular/cli)
 - [Jest 30](https://www.npmjs.com/package/jest)
 
 ## Installation
