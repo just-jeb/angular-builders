@@ -14,8 +14,13 @@ on:
         type: choice
         options: [beta, graduate]
 
+# Scope the concurrency group by event_name so a push-triggered run cannot cancel a
+# workflow_dispatch run (and vice versa). A graduation/beta publish pushes the
+# `ci(release): publish` commit to master mid-job; without event_name in the key, that
+# push spawns a same-group run that cancels the still-running publish (lerna pushes git
+# tags BEFORE npm publish, so the kill can land mid-publish -> tags pushed, packages not).
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 # Karma uses the runner's preinstalled system Chrome (see karma.conf.js), so Puppeteer's
