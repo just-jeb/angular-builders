@@ -8,20 +8,22 @@ on:
   workflow_dispatch:
     inputs:
       release_type:
-        description: 'Release type'
+        description: 'Release type (recover = re-publish packages missing from the registry)'
         required: true
         default: 'beta'
         type: choice
-        options: [beta, graduate]
+        options: [beta, graduate, recover]
 
-# Scope the concurrency group by event_name so a push-triggered run cannot cancel a
-# workflow_dispatch run (and vice versa). A graduation/beta publish pushes the
-# `ci(release): publish` commit to master mid-job; without event_name in the key, that
-# push spawns a same-group run that cancels the still-running publish (lerna pushes git
-# tags BEFORE npm publish, so the kill can land mid-publish -> tags pushed, packages not).
+# Cancel superseded in-progress runs (rapid pushes / PR re-pushes) as usual, EXCEPT the
+# `ci(release): publish` commit that a beta/graduate publish pushes to master mid-job. That
+# push would otherwise spawn a same-group run that cancels the still-running publish — and
+# since lerna pushes git tags BEFORE the per-package npm publish loop, the kill can land
+# mid-loop (tags pushed, packages not; this is how the v22 beta published only 2 of 6).
+# Excluding ci(release) commits (same guard as the build job's skip) keeps normal
+# cancellation while letting an in-flight publish run to completion.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ !contains(github.event.head_commit.message, 'ci(release)') }}
 
 # Karma uses the runner's preinstalled system Chrome (see karma.conf.js), so Puppeteer's
 # bundled Chrome is unused. Skip its download to avoid install-time failures when the
@@ -162,6 +164,10 @@ jobs:
           git config --global user.email ${{ secrets.GIT_EMAIL }}
           if [ "${{ github.event.inputs.release_type }}" == "graduate" ]; then
             yarn graduate --yes
+          elif [ "${{ github.event.inputs.release_type }}" == "recover" ]; then
+            # Recover a partial publish: publish only packages whose current version
+            # (from package.json) isn't on the registry yet. No version bump, no new tags.
+            yarn lerna publish from-package --dist-tag=next --yes
           else
             bash scripts/default-registry.sh
           fi
