@@ -100,6 +100,5 @@ When the major reaches GA: bump ranges from RC to final (`update:packages <N>` n
 
 - Scripts: `scripts/update-package.js`, `scripts/update-example.js`, `scripts/AGENTS.md`
 - Workflow: `.github/workflows/update.yml` (manual dispatch, input = version)
-- Migration design: `docs/superpowers/specs/2026-06-01-builder-schematics-design.md`
 - Per-major user guide: `MIGRATION.MD`
 - Breakage context: `packages/AGENTS.md`, root `AGENTS.md` → "Angular Major Version Upgrade Process"
