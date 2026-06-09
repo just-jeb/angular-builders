@@ -7,11 +7,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+- All packages now require Angular 22.
 
 ### Features
 
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+- upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
 
 ## [21.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.10...@angular-builders/timestamp@21.0.4) (2026-06-08)
 
@@ -21,13 +21,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Reverts
 
-* remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
+- remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
 
 ## [21.0.4-beta.9](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.8...@angular-builders/timestamp@21.0.4-beta.9) (2026-06-04)
 
 ### Bug Fixes
 
-* **timestamp:** annotate default export with Builder<T> to avoid TS2742 ([#2275](https://github.com/just-jeb/angular-builders/issues/2275)) ([e32a3a1](https://github.com/just-jeb/angular-builders/commit/e32a3a198fd946c1867c21375246d7cb6ac1a568))
+- **timestamp:** annotate default export with Builder<T> to avoid TS2742 ([#2275](https://github.com/just-jeb/angular-builders/issues/2275)) ([e32a3a1](https://github.com/just-jeb/angular-builders/commit/e32a3a198fd946c1867c21375246d7cb6ac1a568))
 
 ## [21.0.4-beta.8](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.7...@angular-builders/timestamp@21.0.4-beta.8) (2026-05-09)
 
@@ -71,8 +71,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## <small>21.0.3-beta.0 (2026-01-14)</small>
 
-* ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
-* ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
+- ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
+- ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
 
 ## [21.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.1-beta.0...@angular-builders/timestamp@21.0.2) (2026-01-13)
 
@@ -94,21 +94,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* All packages now require Angular 21
+- All packages now require Angular 21
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [21.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@20.1.0-beta.1...@angular-builders/timestamp@21.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES
 
-* All packages now require Angular 21
+- All packages now require Angular 21
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [20.1.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@20.1.0-beta.0...@angular-builders/timestamp@20.1.0-beta.1) (2025-11-13)
 
@@ -118,7 +118,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **custom-esbuild:** add `unit-test` builder ([#1935](https://github.com/just-jeb/angular-builders/issues/1935)) ([00972a8](https://github.com/just-jeb/angular-builders/commit/00972a880d4747c521d4aa5f03b7268ec0b43e29))
+- **custom-esbuild:** add `unit-test` builder ([#1935](https://github.com/just-jeb/angular-builders/issues/1935)) ([00972a8](https://github.com/just-jeb/angular-builders/commit/00972a880d4747c521d4aa5f03b7268ec0b43e29))
 
 ## [20.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@20.0.0-beta.0...@angular-builders/timestamp@20.0.0) (2025-06-25)
 
@@ -128,11 +128,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** upgrade to Angular 20
+- **deps:** upgrade to Angular 20
 
 ### Miscellaneous Chores
 
-* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+- **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
 
 ## [19.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@19.0.1-beta.0...@angular-builders/timestamp@19.0.1) (2025-04-07)
 
@@ -150,11 +150,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 19 (#1871)
+- **deps:** update to Angular 19 (#1871)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+- **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
 
 ## [18.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@18.0.0-beta.3...@angular-builders/timestamp@18.0.0) (2024-06-17)
 

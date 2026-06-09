@@ -7,67 +7,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* All packages now require Angular 22
-* TypeScript configs/plugins are now transpiled (no build-time
-type-checking). Run `tsc --noEmit` separately to type-check config files.
-
-* test(custom-webpack,custom-esbuild,jest): mock loadModule instead of faking config files
-
-The jiti-based loader loads modules outside Jest's module registry, so specs can no
-longer fake user config files via jest.mock(path, {virtual:true}). Mock common's
-loadModule instead (loading is covered by common's own load-module.spec). Also drops
-the obsolete ts-node register-once/warn assertions, which no longer apply.
-
-* build!: run merge-schemes.ts via jiti and remove ts-node entirely
-
-merge-schemes.ts was executed with ts-node at build time; run it with jiti's CLI
-instead (added as a root devDependency) and drop ts-node from custom-webpack and
-custom-esbuild. ts-node is no longer used anywhere in the repo.
-* ts-node is no longer a dependency of @angular-builders packages.
-
-* test(examples): drop ts-node and ts-node/esm NODE_OPTIONS workaround
-
-TypeScript configs/plugins now load via jiti through the builders, so the ESM apps
-no longer need TS_NODE_PROJECT/NODE_OPTIONS='--loader ts-node/esm', and no example
-needs ts-node. Verified by the ts-config / esm / json-import / bundler-resolution
-integration tests passing with ts-node absent.
-
-* docs: update AGENTS.md and READMEs for jiti loader
-
-Reflect the jiti-based loader: drop ts-node/tsconfig-paths references and the
-ESM NODE_OPTIONS workaround, document transpile-only loading + tsc --noEmit
-type-check guidance, and record the get-tsconfig alias-resolution rationale.
-* **jest:** scope coverage output per-project in multi-project workspaces (fixes #1009) (#2212)
-* **jest:** isolatedModules now defaults to true. This disables
-cross-file TypeScript type checking during jest runs. Targeted for the
-next major version.
-
-* test(jest): replace config-shape assertions with behavioral integration test
-
-Remove isolatedModules:true assertions from the unit spec — they tested
-implementation details (object shape), not user-visible behavior. Replace
-with targeted assertions on tsconfig path resolution, which is the actual
-behavioral contract of the resolver.
-
-Add isolated-modules-default integration test entry that proves Angular
-component tests still pass end-to-end with isolatedModules:true active,
-providing the behavioral regression guard for #1899.
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+- All packages now require Angular 22.
+- User TypeScript config/plugin modules now load via `jiti` instead of `ts-node`. Configs are transpiled rather than type-checked (run `tsc --noEmit` separately if you relied on build-time type-checking); `ts-node` and `tsconfig-paths` are no longer dependencies; and the `NODE_OPTIONS='--loader ts-node/esm'` workaround for ESM apps is no longer needed.
+- `isolatedModules` now defaults to `true` for faster compilation, which disables cross-file TypeScript type-checking during Jest runs. Set `isolatedModules: false` in your config to restore the previous behavior.
+- Coverage output is now scoped per project: `coverageDirectory` defaults to `<projectRoot>/coverage` instead of `./coverage`, so projects in a multi-project workspace no longer overwrite each other's reports.
 
 ### Features
 
-* ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [2191/#2212](https://github.com/2191/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260) [#2212](https://github.com/just-jeb/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260)
-* replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+- ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [#22](https://github.com/just-jeb/angular-builders/issues/22)
+- replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
+- upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
 
 ### Bug Fixes
 
-* **jest:** default isolatedModules to true for faster compilation (fixes [#1899](https://github.com/just-jeb/angular-builders/issues/1899)) ([#2191](https://github.com/just-jeb/angular-builders/issues/2191)) ([acd2d37](https://github.com/just-jeb/angular-builders/commit/acd2d3702a4a970dd18c5b8a82214fbaed856a8e))
-* **jest:** scope coverage output per-project in multi-project workspaces (fixes [#1009](https://github.com/just-jeb/angular-builders/issues/1009)) ([#2212](https://github.com/just-jeb/angular-builders/issues/2212)) ([0ac5d6d](https://github.com/just-jeb/angular-builders/commit/0ac5d6db008f441567d7485867cda56aaa00bebc))
+- **jest:** default isolatedModules to true for faster compilation (fixes [#1899](https://github.com/just-jeb/angular-builders/issues/1899)) ([#2191](https://github.com/just-jeb/angular-builders/issues/2191)) ([acd2d37](https://github.com/just-jeb/angular-builders/commit/acd2d3702a4a970dd18c5b8a82214fbaed856a8e))
+- **jest:** scope coverage output per-project in multi-project workspaces (fixes [#1009](https://github.com/just-jeb/angular-builders/issues/1009)) ([#2212](https://github.com/just-jeb/angular-builders/issues/2212)) ([0ac5d6d](https://github.com/just-jeb/angular-builders/commit/0ac5d6db008f441567d7485867cda56aaa00bebc))
 
 ### Miscellaneous Chores
 
-* graduate Angular 22 from RC to GA ([daec882](https://github.com/just-jeb/angular-builders/commit/daec8828f1dcd34c989af6ae782a431b3f3205ee))
+- graduate Angular 22 from RC to GA ([daec882](https://github.com/just-jeb/angular-builders/commit/daec8828f1dcd34c989af6ae782a431b3f3205ee))
 
 ## [21.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.17...@angular-builders/jest@21.0.4) (2026-06-08)
 
@@ -81,25 +39,25 @@ providing the behavioral regression guard for #1899.
 
 ### Reverts
 
-* remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
+- remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
 
 ## [21.0.4-beta.15](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.14...@angular-builders/jest@21.0.4-beta.15) (2026-06-04)
 
 ### Bug Fixes
 
-* **builders:** annotate builder default exports with Builder<T> to avoid TS2742 ([#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([7db3848](https://github.com/just-jeb/angular-builders/commit/7db3848c7c3bf8362904130cbab8c7711cdac4ed))
+- **builders:** annotate builder default exports with Builder<T> to avoid TS2742 ([#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([7db3848](https://github.com/just-jeb/angular-builders/commit/7db3848c7c3bf8362904130cbab8c7711cdac4ed))
 
 ## [21.0.4-beta.14](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.13...@angular-builders/jest@21.0.4-beta.14) (2026-06-01)
 
 ### Bug Fixes
 
-* **jest:** suppress warning when jest config is provided inline in angular.json (fixes [#1102](https://github.com/just-jeb/angular-builders/issues/1102)) ([#2213](https://github.com/just-jeb/angular-builders/issues/2213)) ([6e7c93f](https://github.com/just-jeb/angular-builders/commit/6e7c93f2e9a02ff4dafdbb0544fb0da7ace6afb2))
+- **jest:** suppress warning when jest config is provided inline in angular.json (fixes [#1102](https://github.com/just-jeb/angular-builders/issues/1102)) ([#2213](https://github.com/just-jeb/angular-builders/issues/2213)) ([6e7c93f](https://github.com/just-jeb/angular-builders/commit/6e7c93f2e9a02ff4dafdbb0544fb0da7ace6afb2))
 
 ## [21.0.4-beta.13](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.12...@angular-builders/jest@21.0.4-beta.13) (2026-06-01)
 
 ### Bug Fixes
 
-* **jest:** emit --findRelatedTests with positional file args (fixes [#2150](https://github.com/just-jeb/angular-builders/issues/2150), [#1859](https://github.com/just-jeb/angular-builders/issues/1859)) ([#2237](https://github.com/just-jeb/angular-builders/issues/2237)) ([47f3b67](https://github.com/just-jeb/angular-builders/commit/47f3b67e2ee487f4c8d9019f1cd83dbf2e0c7284))
+- **jest:** emit --findRelatedTests with positional file args (fixes [#2150](https://github.com/just-jeb/angular-builders/issues/2150), [#1859](https://github.com/just-jeb/angular-builders/issues/1859)) ([#2237](https://github.com/just-jeb/angular-builders/issues/2237)) ([47f3b67](https://github.com/just-jeb/angular-builders/commit/47f3b67e2ee487f4c8d9019f1cd83dbf2e0c7284))
 
 ## [21.0.4-beta.12](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.11...@angular-builders/jest@21.0.4-beta.12) (2026-06-01)
 
@@ -121,7 +79,7 @@ providing the behavioral regression guard for #1899.
 
 ### Bug Fixes
 
-* **deps:** add rxjs>=7 as peer dependency to custom-esbuild, custom-webpack, and jest (fixes [#1863](https://github.com/just-jeb/angular-builders/issues/1863)) ([#2188](https://github.com/just-jeb/angular-builders/issues/2188)) ([2e067f5](https://github.com/just-jeb/angular-builders/commit/2e067f51eb3efb65fbef7050b8a10c499a585f0a))
+- **deps:** add rxjs>=7 as peer dependency to custom-esbuild, custom-webpack, and jest (fixes [#1863](https://github.com/just-jeb/angular-builders/issues/1863)) ([#2188](https://github.com/just-jeb/angular-builders/issues/2188)) ([2e067f5](https://github.com/just-jeb/angular-builders/commit/2e067f51eb3efb65fbef7050b8a10c499a585f0a))
 
 ## [21.0.4-beta.7](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.6...@angular-builders/jest@21.0.4-beta.7) (2026-03-10)
 
@@ -151,11 +109,11 @@ providing the behavioral regression guard for #1899.
 
 ### Bug Fixes
 
-* **jest:** matchMedia mock survives resetMocks option ([#1999](https://github.com/just-jeb/angular-builders/issues/1999)) ([7f2e4b4](https://github.com/just-jeb/angular-builders/commit/7f2e4b411a2d9e5b1702808124bd205ca5d676c2)), closes [#1983](https://github.com/just-jeb/angular-builders/issues/1983)
+- **jest:** matchMedia mock survives resetMocks option ([#1999](https://github.com/just-jeb/angular-builders/issues/1999)) ([7f2e4b4](https://github.com/just-jeb/angular-builders/commit/7f2e4b411a2d9e5b1702808124bd205ca5d676c2)), closes [#1983](https://github.com/just-jeb/angular-builders/issues/1983)
 
 ## <small>21.0.4-beta.0 (2026-01-16)</small>
 
-* ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
+- ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
 
 ## <small>21.0.3 (2026-01-14)</small>
 
@@ -167,8 +125,8 @@ providing the behavioral regression guard for #1899.
 
 ## <small>21.0.3-beta.0 (2026-01-14)</small>
 
-* ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
-* ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
+- ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
+- ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
 
 ## [21.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.1-beta.0...@angular-builders/jest@21.0.2) (2026-01-13)
 
@@ -190,12 +148,14 @@ providing the behavioral regression guard for #1899.
 
 ### ⚠ BREAKING CHANGES
 
-* **jest:** configPath option renamed to config
+- **jest:** configPath option renamed to config
 
 The config option now accepts:
+
 - File path (string): "jest.config.js"
 - JSON string: '{"verbose": true}'
 - Inline object in angular.json
+
 * **jest:** zoneless is now the default
 
 Apps using zone.js change detection must set zoneless: false in angular.json.
@@ -203,45 +163,50 @@ Apps using zone.js change detection must set zoneless: false in angular.json.
 globalMocks option now only supports matchMedia. The styleTransform,
 getComputedStyle, and doctype mocks have been removed as Jest 30's
 jsdom supports these natively.
-* **jest:** Requires Jest 30
+
+- **jest:** Requires Jest 30
 
 Users must upgrade:
 npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
 
 Also requires tsconfig.spec.json update for moduleResolution compatibility:
 {
-  "compilerOptions": {
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "isolatedModules": true
-  }
+"compilerOptions": {
+"module": "Node16",
+"moduleResolution": "Node16",
+"isolatedModules": true
+}
 }
 
 Schema changes:
+
 - testPathPattern renamed to testPathPatterns
 - Removed: browser, init, mapCoverage, testURL, timers
+
 * All packages now require Angular 21
 
 ### Features
 
-* **jest:** add zoneless testing support ([1f23ca4](https://github.com/just-jeb/angular-builders/commit/1f23ca453017c40d4b78a9383eb8ccd19959a234)), closes [#1934](https://github.com/just-jeb/angular-builders/issues/1934)
-* **jest:** rename configPath to config with object support ([7bfe312](https://github.com/just-jeb/angular-builders/commit/7bfe31233d86cd04798055d19a552e7d8ab424a3)), closes [#108](https://github.com/just-jeb/angular-builders/issues/108)
-* **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
+- **jest:** add zoneless testing support ([1f23ca4](https://github.com/just-jeb/angular-builders/commit/1f23ca453017c40d4b78a9383eb8ccd19959a234)), closes [#1934](https://github.com/just-jeb/angular-builders/issues/1934)
+- **jest:** rename configPath to config with object support ([7bfe312](https://github.com/just-jeb/angular-builders/commit/7bfe31233d86cd04798055d19a552e7d8ab424a3)), closes [#108](https://github.com/just-jeb/angular-builders/issues/108)
+- **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [21.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@20.0.1-beta.1...@angular-builders/jest@21.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES
 
-* **jest:** configPath option renamed to config
+- **jest:** configPath option renamed to config
 
 The config option now accepts:
+
 - File path (string): "jest.config.js"
 - JSON string: '{"verbose": true}'
 - Inline object in angular.json
+
 * **jest:** zoneless is now the default
 
 Apps using zone.js change detection must set zoneless: false in angular.json.
@@ -249,34 +214,37 @@ Apps using zone.js change detection must set zoneless: false in angular.json.
 globalMocks option now only supports matchMedia. The styleTransform,
 getComputedStyle, and doctype mocks have been removed as Jest 30's
 jsdom supports these natively.
-* **jest:** Requires Jest 30
+
+- **jest:** Requires Jest 30
 
 Users must upgrade:
 npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
 
 Also requires tsconfig.spec.json update for moduleResolution compatibility:
 {
-  "compilerOptions": {
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "isolatedModules": true
-  }
+"compilerOptions": {
+"module": "Node16",
+"moduleResolution": "Node16",
+"isolatedModules": true
+}
 }
 
 Schema changes:
+
 - testPathPattern renamed to testPathPatterns
 - Removed: browser, init, mapCoverage, testURL, timers
+
 * All packages now require Angular 21
 
 ### Features
 
-* **jest:** add zoneless testing support ([1f23ca4](https://github.com/just-jeb/angular-builders/commit/1f23ca453017c40d4b78a9383eb8ccd19959a234)), closes [#1934](https://github.com/just-jeb/angular-builders/issues/1934)
-* **jest:** rename configPath to config with object support ([7bfe312](https://github.com/just-jeb/angular-builders/commit/7bfe31233d86cd04798055d19a552e7d8ab424a3)), closes [#108](https://github.com/just-jeb/angular-builders/issues/108)
-* **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
+- **jest:** add zoneless testing support ([1f23ca4](https://github.com/just-jeb/angular-builders/commit/1f23ca453017c40d4b78a9383eb8ccd19959a234)), closes [#1934](https://github.com/just-jeb/angular-builders/issues/1934)
+- **jest:** rename configPath to config with object support ([7bfe312](https://github.com/just-jeb/angular-builders/commit/7bfe31233d86cd04798055d19a552e7d8ab424a3)), closes [#108](https://github.com/just-jeb/angular-builders/issues/108)
+- **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [20.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@20.0.1-beta.0...@angular-builders/jest@20.0.1-beta.1) (2025-11-13)
 
@@ -294,15 +262,15 @@ Schema changes:
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** upgrade to Angular 20
+- **deps:** upgrade to Angular 20
 
 ### Features
 
-* migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
+- migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
 
 ### Miscellaneous Chores
 
-* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+- **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
 
 ## [19.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@19.0.1-beta.1...@angular-builders/jest@19.0.1) (2025-04-07)
 
@@ -328,11 +296,11 @@ Schema changes:
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 19 (#1871)
+- **deps:** update to Angular 19 (#1871)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+- **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
 
 ## [18.0.1-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@18.0.1-beta.1...@angular-builders/jest@18.0.1-beta.2) (2024-10-30)
 

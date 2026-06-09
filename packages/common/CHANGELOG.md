@@ -7,42 +7,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* TypeScript configs/plugins are now transpiled (no build-time
-type-checking). Run `tsc --noEmit` separately to type-check config files.
-
-* test(custom-webpack,custom-esbuild,jest): mock loadModule instead of faking config files
-
-The jiti-based loader loads modules outside Jest's module registry, so specs can no
-longer fake user config files via jest.mock(path, {virtual:true}). Mock common's
-loadModule instead (loading is covered by common's own load-module.spec). Also drops
-the obsolete ts-node register-once/warn assertions, which no longer apply.
-
-* build!: run merge-schemes.ts via jiti and remove ts-node entirely
-
-merge-schemes.ts was executed with ts-node at build time; run it with jiti's CLI
-instead (added as a root devDependency) and drop ts-node from custom-webpack and
-custom-esbuild. ts-node is no longer used anywhere in the repo.
-* ts-node is no longer a dependency of @angular-builders packages.
-
-* test(examples): drop ts-node and ts-node/esm NODE_OPTIONS workaround
-
-TypeScript configs/plugins now load via jiti through the builders, so the ESM apps
-no longer need TS_NODE_PROJECT/NODE_OPTIONS='--loader ts-node/esm', and no example
-needs ts-node. Verified by the ts-config / esm / json-import / bundler-resolution
-integration tests passing with ts-node absent.
-
-* docs: update AGENTS.md and READMEs for jiti loader
-
-Reflect the jiti-based loader: drop ts-node/tsconfig-paths references and the
-ESM NODE_OPTIONS workaround, document transpile-only loading + tsc --noEmit
-type-check guidance, and record the get-tsconfig alias-resolution rationale.
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+- All packages now require Angular 22.
+- User TypeScript config/plugin modules now load via `jiti` instead of `ts-node`. Configs are transpiled rather than type-checked (run `tsc --noEmit` separately if you relied on build-time type-checking); `ts-node` and `tsconfig-paths` are no longer dependencies; and the `NODE_OPTIONS='--loader ts-node/esm'` workaround for ESM apps is no longer needed.
 
 ### Features
 
-* ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [2191/#2212](https://github.com/2191/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260) [#2212](https://github.com/just-jeb/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260)
-* replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+- ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [#22](https://github.com/just-jeb/angular-builders/issues/22)
+- replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
+- upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
 
 ## [5.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.4...@angular-builders/common@5.0.4) (2026-06-08)
 
@@ -52,13 +24,13 @@ type-check guidance, and record the get-tsconfig alias-resolution rationale.
 
 ### Bug Fixes
 
-* **common:** add resolveJsonModule to ts-node compilerOptions (fixes [#816](https://github.com/just-jeb/angular-builders/issues/816)) ([#2189](https://github.com/just-jeb/angular-builders/issues/2189)) ([6b16727](https://github.com/just-jeb/angular-builders/commit/6b16727b2c4c2298418484fe346b5db931764fbb))
+- **common:** add resolveJsonModule to ts-node compilerOptions (fixes [#816](https://github.com/just-jeb/angular-builders/issues/816)) ([#2189](https://github.com/just-jeb/angular-builders/issues/2189)) ([6b16727](https://github.com/just-jeb/angular-builders/commit/6b16727b2c4c2298418484fe346b5db931764fbb))
 
 ## [5.0.4-beta.3](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.2...@angular-builders/common@5.0.4-beta.3) (2026-04-26)
 
 ### Bug Fixes
 
-* **common:** remove moduleResolution override in ts-node register (fixes [#2025](https://github.com/just-jeb/angular-builders/issues/2025)) ([#2187](https://github.com/just-jeb/angular-builders/issues/2187)) ([a0daa6a](https://github.com/just-jeb/angular-builders/commit/a0daa6a9730c4f918667f5f9a99dc373a41c1382))
+- **common:** remove moduleResolution override in ts-node register (fixes [#2025](https://github.com/just-jeb/angular-builders/issues/2025)) ([#2187](https://github.com/just-jeb/angular-builders/issues/2187)) ([a0daa6a](https://github.com/just-jeb/angular-builders/commit/a0daa6a9730c4f918667f5f9a99dc373a41c1382))
 
 ## [5.0.4-beta.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.1...@angular-builders/common@5.0.4-beta.2) (2026-02-23)
 
@@ -78,12 +50,12 @@ type-check guidance, and record the get-tsconfig alias-resolution rationale.
 
 ## <small>5.0.3-beta.1 (2026-01-14)</small>
 
-* fix(common): add missing repository field for npm provenance validation (#1979) ([7c83889](https://github.com/just-jeb/angular-builders/commit/7c83889)), closes [#1979](https://github.com/just-jeb/angular-builders/issues/1979)
+- fix(common): add missing repository field for npm provenance validation (#1979) ([7c83889](https://github.com/just-jeb/angular-builders/commit/7c83889)), closes [#1979](https://github.com/just-jeb/angular-builders/issues/1979)
 
 ## <small>5.0.3-beta.0 (2026-01-14)</small>
 
-* ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
-* ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
+- ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
+- ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
 
 ## [5.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.1-beta.0...@angular-builders/common@5.0.2) (2026-01-13)
 
@@ -105,63 +77,67 @@ type-check guidance, and record the get-tsconfig alias-resolution rationale.
 
 ### ⚠ BREAKING CHANGES
 
-* **jest:** Requires Jest 30
+- **jest:** Requires Jest 30
 
 Users must upgrade:
 npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
 
 Also requires tsconfig.spec.json update for moduleResolution compatibility:
 {
-  "compilerOptions": {
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "isolatedModules": true
-  }
+"compilerOptions": {
+"module": "Node16",
+"moduleResolution": "Node16",
+"isolatedModules": true
+}
 }
 
 Schema changes:
+
 - testPathPattern renamed to testPathPatterns
 - Removed: browser, init, mapCoverage, testURL, timers
+
 * All packages now require Angular 21
 
 ### Features
 
-* **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
+- **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [5.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@4.0.1-beta.0...@angular-builders/common@5.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES
 
-* **jest:** Requires Jest 30
+- **jest:** Requires Jest 30
 
 Users must upgrade:
 npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
 
 Also requires tsconfig.spec.json update for moduleResolution compatibility:
 {
-  "compilerOptions": {
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "isolatedModules": true
-  }
+"compilerOptions": {
+"module": "Node16",
+"moduleResolution": "Node16",
+"isolatedModules": true
+}
 }
 
 Schema changes:
+
 - testPathPattern renamed to testPathPatterns
 - Removed: browser, init, mapCoverage, testURL, timers
+
 * All packages now require Angular 21
 
 ### Features
 
-* **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
+- **jest:** upgrade to Jest 30 via jest-preset-angular v16 ([ca4b6d9](https://github.com/just-jeb/angular-builders/commit/ca4b6d91372ff0bc2c827135a9f3ce2b4bc3e0f9)), closes [#1931](https://github.com/just-jeb/angular-builders/issues/1931)
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [4.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@4.0.0...@angular-builders/common@4.0.1-beta.0) (2025-11-13)
 
@@ -175,15 +151,15 @@ Schema changes:
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** upgrade to Angular 20
+- **deps:** upgrade to Angular 20
 
 ### Features
 
-* migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
+- migrate to @angular/build ([db2fc68](https://github.com/just-jeb/angular-builders/commit/db2fc689cf58be44bcbee6a13e9729ec88138e1b))
 
 ### Miscellaneous Chores
 
-* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+- **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
 
 ## [3.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@3.0.1-beta.0...@angular-builders/common@3.0.1) (2025-04-07)
 
@@ -201,11 +177,11 @@ Schema changes:
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 19 (#1871)
+- **deps:** update to Angular 19 (#1871)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+- **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
 
 ## [2.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@2.0.0-beta.1...@angular-builders/common@2.0.0) (2024-06-17)
 
