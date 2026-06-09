@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.0-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@22.0.0-beta.0...@angular-builders/custom-webpack@22.0.0-beta.1) (2026-06-09)
+
+**Note:** Version bump only for package @angular-builders/custom-webpack
+
 ## [22.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/custom-webpack@21.1.0...@angular-builders/custom-webpack@22.0.0-beta.0) (2026-06-09)
 
 ### ⚠ BREAKING CHANGES
