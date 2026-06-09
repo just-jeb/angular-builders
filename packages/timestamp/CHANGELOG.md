@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4...@angular-builders/timestamp@22.0.0-beta.0) (2026-06-09)
+
+### ⚠ BREAKING CHANGES
+
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+
+### Features
+
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+
 ## [21.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/timestamp@21.0.4-beta.10...@angular-builders/timestamp@21.0.4) (2026-06-08)
 
 **Note:** Version bump only for package @angular-builders/timestamp

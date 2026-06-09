@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4...@angular-builders/jest@22.0.0-beta.0) (2026-06-09)
+
+### ⚠ BREAKING CHANGES
+
+* All packages now require Angular 22
+* TypeScript configs/plugins are now transpiled (no build-time
+type-checking). Run `tsc --noEmit` separately to type-check config files.
+
+* test(custom-webpack,custom-esbuild,jest): mock loadModule instead of faking config files
+
+The jiti-based loader loads modules outside Jest's module registry, so specs can no
+longer fake user config files via jest.mock(path, {virtual:true}). Mock common's
+loadModule instead (loading is covered by common's own load-module.spec). Also drops
+the obsolete ts-node register-once/warn assertions, which no longer apply.
+
+* build!: run merge-schemes.ts via jiti and remove ts-node entirely
+
+merge-schemes.ts was executed with ts-node at build time; run it with jiti's CLI
+instead (added as a root devDependency) and drop ts-node from custom-webpack and
+custom-esbuild. ts-node is no longer used anywhere in the repo.
+* ts-node is no longer a dependency of @angular-builders packages.
+
+* test(examples): drop ts-node and ts-node/esm NODE_OPTIONS workaround
+
+TypeScript configs/plugins now load via jiti through the builders, so the ESM apps
+no longer need TS_NODE_PROJECT/NODE_OPTIONS='--loader ts-node/esm', and no example
+needs ts-node. Verified by the ts-config / esm / json-import / bundler-resolution
+integration tests passing with ts-node absent.
+
+* docs: update AGENTS.md and READMEs for jiti loader
+
+Reflect the jiti-based loader: drop ts-node/tsconfig-paths references and the
+ESM NODE_OPTIONS workaround, document transpile-only loading + tsc --noEmit
+type-check guidance, and record the get-tsconfig alias-resolution rationale.
+* **jest:** scope coverage output per-project in multi-project workspaces (fixes #1009) (#2212)
+* **jest:** isolatedModules now defaults to true. This disables
+cross-file TypeScript type checking during jest runs. Targeted for the
+next major version.
+
+* test(jest): replace config-shape assertions with behavioral integration test
+
+Remove isolatedModules:true assertions from the unit spec — they tested
+implementation details (object shape), not user-visible behavior. Replace
+with targeted assertions on tsconfig path resolution, which is the actual
+behavioral contract of the resolver.
+
+Add isolated-modules-default integration test entry that proves Angular
+component tests still pass end-to-end with isolatedModules:true active,
+providing the behavioral regression guard for #1899.
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+
+### Features
+
+* ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [2191/#2212](https://github.com/2191/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260) [#2212](https://github.com/just-jeb/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260)
+* replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+
+### Bug Fixes
+
+* **jest:** default isolatedModules to true for faster compilation (fixes [#1899](https://github.com/just-jeb/angular-builders/issues/1899)) ([#2191](https://github.com/just-jeb/angular-builders/issues/2191)) ([acd2d37](https://github.com/just-jeb/angular-builders/commit/acd2d3702a4a970dd18c5b8a82214fbaed856a8e))
+* **jest:** scope coverage output per-project in multi-project workspaces (fixes [#1009](https://github.com/just-jeb/angular-builders/issues/1009)) ([#2212](https://github.com/just-jeb/angular-builders/issues/2212)) ([0ac5d6d](https://github.com/just-jeb/angular-builders/commit/0ac5d6db008f441567d7485867cda56aaa00bebc))
+
+### Miscellaneous Chores
+
+* graduate Angular 22 from RC to GA ([daec882](https://github.com/just-jeb/angular-builders/commit/daec8828f1dcd34c989af6ae782a431b3f3205ee))
+
 ## [21.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@21.0.4-beta.17...@angular-builders/jest@21.0.4) (2026-06-08)
 
 **Note:** Version bump only for package @angular-builders/jest

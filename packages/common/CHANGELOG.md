@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4...@angular-builders/common@6.0.0-beta.0) (2026-06-09)
+
+### ⚠ BREAKING CHANGES
+
+* TypeScript configs/plugins are now transpiled (no build-time
+type-checking). Run `tsc --noEmit` separately to type-check config files.
+
+* test(custom-webpack,custom-esbuild,jest): mock loadModule instead of faking config files
+
+The jiti-based loader loads modules outside Jest's module registry, so specs can no
+longer fake user config files via jest.mock(path, {virtual:true}). Mock common's
+loadModule instead (loading is covered by common's own load-module.spec). Also drops
+the obsolete ts-node register-once/warn assertions, which no longer apply.
+
+* build!: run merge-schemes.ts via jiti and remove ts-node entirely
+
+merge-schemes.ts was executed with ts-node at build time; run it with jiti's CLI
+instead (added as a root devDependency) and drop ts-node from custom-webpack and
+custom-esbuild. ts-node is no longer used anywhere in the repo.
+* ts-node is no longer a dependency of @angular-builders packages.
+
+* test(examples): drop ts-node and ts-node/esm NODE_OPTIONS workaround
+
+TypeScript configs/plugins now load via jiti through the builders, so the ESM apps
+no longer need TS_NODE_PROJECT/NODE_OPTIONS='--loader ts-node/esm', and no example
+needs ts-node. Verified by the ts-config / esm / json-import / bundler-resolution
+integration tests passing with ts-node absent.
+
+* docs: update AGENTS.md and READMEs for jiti loader
+
+Reflect the jiti-based loader: drop ts-node/tsconfig-paths references and the
+ESM NODE_OPTIONS workaround, document transpile-only loading + tsc --noEmit
+type-check guidance, and record the get-tsconfig alias-resolution rationale.
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+
+### Features
+
+* ng add / ng update schematics for jest, custom-esbuild, custom-webpack ([#2267](https://github.com/just-jeb/angular-builders/issues/2267)) ([062f423](https://github.com/just-jeb/angular-builders/commit/062f423cbe2f87d97017ef4801cf6afb209f9191)), closes [2191/#2212](https://github.com/2191/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260) [#2212](https://github.com/just-jeb/angular-builders/issues/2212) [#2260](https://github.com/just-jeb/angular-builders/issues/2260)
+* replace ts-node with jiti for loading TypeScript modules ([#2287](https://github.com/just-jeb/angular-builders/issues/2287)) ([0348e06](https://github.com/just-jeb/angular-builders/commit/0348e06df73f57e62a8803a20c8b7b66b664a5d0)), closes [#816](https://github.com/just-jeb/angular-builders/issues/816)
+* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+
 ## [5.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/common@5.0.4-beta.4...@angular-builders/common@5.0.4) (2026-06-08)
 
 **Note:** Version bump only for package @angular-builders/common
