@@ -7,11 +7,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) (#2264)
+- All packages now require Angular 22.
 
 ### Features
 
-* upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
+- upgrade builders + examples to Angular 22 (22.0.0-rc.2) ([#2264](https://github.com/just-jeb/angular-builders/issues/2264)) ([9ed7020](https://github.com/just-jeb/angular-builders/commit/9ed7020edc14b706fb3bbcbf811ac8ad3ea7e132))
 
 ## [21.0.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.6...@angular-builders/bazel@21.0.4) (2026-06-08)
 
@@ -21,13 +21,13 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Reverts
 
-* remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
+- remove redundant TS2742 builder annotations ([#2275](https://github.com/just-jeb/angular-builders/issues/2275), [#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([#2279](https://github.com/just-jeb/angular-builders/issues/2279)) ([a2882e5](https://github.com/just-jeb/angular-builders/commit/a2882e511ae2fa44dc445dbc9e73882de70981b5))
 
 ## [21.0.4-beta.5](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.4...@angular-builders/bazel@21.0.4-beta.5) (2026-06-04)
 
 ### Bug Fixes
 
-* **builders:** annotate builder default exports with Builder<T> to avoid TS2742 ([#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([7db3848](https://github.com/just-jeb/angular-builders/commit/7db3848c7c3bf8362904130cbab8c7711cdac4ed))
+- **builders:** annotate builder default exports with Builder<T> to avoid TS2742 ([#2278](https://github.com/just-jeb/angular-builders/issues/2278)) ([7db3848](https://github.com/just-jeb/angular-builders/commit/7db3848c7c3bf8362904130cbab8c7711cdac4ed))
 
 ## [21.0.4-beta.4](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.4-beta.3...@angular-builders/bazel@21.0.4-beta.4) (2026-02-18)
 
@@ -47,7 +47,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## <small>21.0.4-beta.0 (2026-01-16)</small>
 
-* ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
+- ci: revamp CI/CD with parallel matrix jobs (#1980) ([8de5b74](https://github.com/just-jeb/angular-builders/commit/8de5b74)), closes [#1980](https://github.com/just-jeb/angular-builders/issues/1980)
 
 ## <small>21.0.3 (2026-01-14)</small>
 
@@ -55,8 +55,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## <small>21.0.3-beta.0 (2026-01-14)</small>
 
-* ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
-* ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
+- ci(release): publish ([9c0d187](https://github.com/just-jeb/angular-builders/commit/9c0d187))
+- ci(release): publish ([5d8e5f7](https://github.com/just-jeb/angular-builders/commit/5d8e5f7))
 
 ## [21.0.2](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@21.0.1-beta.0...@angular-builders/bazel@21.0.2) (2026-01-13)
 
@@ -78,21 +78,21 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* All packages now require Angular 21
+- All packages now require Angular 21
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [21.0.0-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@20.0.1-beta.1...@angular-builders/bazel@21.0.0-beta.0) (2025-12-17)
 
 ### ⚠ BREAKING CHANGES
 
-* All packages now require Angular 21
+- All packages now require Angular 21
 
 ### Miscellaneous Chores
 
-* upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
+- upgrade to Angular 21 ([98059dc](https://github.com/just-jeb/angular-builders/commit/98059dcfc2c2654f4672cb6f4597835522ee50ba)), closes [#1957](https://github.com/just-jeb/angular-builders/issues/1957)
 
 ## [20.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@20.0.1-beta.0...@angular-builders/bazel@20.0.1-beta.1) (2025-11-13)
 
@@ -110,11 +110,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** upgrade to Angular 20
+- **deps:** upgrade to Angular 20
 
 ### Miscellaneous Chores
 
-* **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
+- **deps:** upgrade to Angular 20 ([4f673a8](https://github.com/just-jeb/angular-builders/commit/4f673a8ae090c226b67c4e249a161a968e1964da))
 
 ## [19.0.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@19.0.1-beta.0...@angular-builders/bazel@19.0.1) (2025-04-07)
 
@@ -132,11 +132,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### ⚠ BREAKING CHANGES
 
-* **deps:** update to Angular 19 (#1871)
+- **deps:** update to Angular 19 (#1871)
 
 ### Miscellaneous Chores
 
-* **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
+- **deps:** update to Angular 19 ([#1871](https://github.com/just-jeb/angular-builders/issues/1871)) ([d3b17ed](https://github.com/just-jeb/angular-builders/commit/d3b17ed1e520c299f0327b9b5c38a55494b0a19a))
 
 ## [18.0.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/bazel@18.0.0-beta.3...@angular-builders/bazel@18.0.0) (2024-06-17)
 
