@@ -29,14 +29,33 @@ Impact: a `const enum` shared across files, and type-only re-exports without the
 
 Impact: update any CI/tooling that reads a hardcoded `./coverage/` path. The `ng update` advisory migration warns and lists affected projects.
 
+### All builders: TypeScript config & plugin files now load via `jiti` (`ts-node` removed)
+
+`@angular-builders/common` — the loader shared by `custom-esbuild`, `custom-webpack`, and `jest` for your TypeScript config/plugin files (`webpack.config.ts`, esbuild `plugins.ts`, a `.ts` Jest config, etc.) — now uses [`jiti`](https://github.com/unjs/jiti) instead of `ts-node`. `ts-node` and `tsconfig-paths` are no longer dependencies of any `@angular-builders` package.
+
+What changes for you:
+
+- **No build-time type-checking of config/plugin files.** `jiti` transpiles (strips types) rather than type-checking. Your config runs the same, but a type error inside it no longer fails the build. To keep type-checking, run `tsc --noEmit` on those files separately (e.g. in CI).
+- **The `NODE_OPTIONS='--loader ts-node/esm'` workaround is gone.** ESM apps previously needed `TS_NODE_PROJECT` / `--loader ts-node/esm` to load `.ts` configs; `jiti` handles ESM/CJS/TS natively, so those npm-script wrappers can be removed.
+- **`ts-node` / `tsconfig-paths` can be dropped from `devDependencies`** (unless you use them elsewhere).
+- **`ts-node`-specific tsconfig options** (the `"ts-node"` section) no longer apply; path mappings belong in `compilerOptions`.
+
+✅ **Mostly automated.** `ng update @angular-builders/custom-esbuild` / `ng update @angular-builders/custom-webpack` run a migration (the `jest` builder runs the same logic as an advisory) that:
+
+- strips the `NODE_OPTIONS='--loader ts-node/esm'` workaround from your npm scripts,
+- removes the `ts-node` / `tsconfig-paths` devDependencies,
+- lifts path-mapping options out of the `"ts-node"` tsconfig section into `compilerOptions`.
+
+⚠️ **Manual:** the loss of build-time type-checking is intentional and can't be restored via config — add a `tsc --noEmit` step if you relied on it. Any non-path `"ts-node"` overrides that can't be migrated safely are logged as advisories rather than changed.
+
 ## Custom ESBuild builder
 
-- No breaking changes (except for updating to Angular 22).
+- No breaking changes beyond the shared `jiti` loader change above and updating to Angular 22.
 - `ng add @angular-builders/custom-esbuild` is now available.
 
 ## Custom Webpack builder
 
-- No breaking changes (except for updating to Angular 22).
+- No breaking changes beyond the shared `jiti` loader change above and updating to Angular 22.
 - `ng add @angular-builders/custom-webpack` is now available (scaffolds a `webpack.config.js`).
 
 ## Angular 22 test runner note (Karma vs Vitest)
