@@ -9,7 +9,9 @@ const rawArg = process.argv.slice(2)[0];
 
 const parseTarget = arg => {
   if (arg === undefined || arg === '') {
-    throw new Error('No version argument provided. Pass a major (e.g. 22), an explicit version (e.g. 22.0.0-rc.2), or a dist-tag (e.g. next).');
+    throw new Error(
+      'No version argument provided. Pass a major (e.g. 22), an explicit version (e.g. 22.0.0-rc.2), or a dist-tag (e.g. next).'
+    );
   }
   const major = Number.parseInt(arg, 10);
   // `spec` is what we hand to npm/ng (`@angular/cli@<spec>`).
@@ -33,7 +35,9 @@ const checkNodeVersion = () => {
       majorVersion >= 24;
 
     if (!meetRequirements) {
-      console.warn(`⚠️  Warning: Angular CLI ${spec} requires Node.js ^20.19.0 || ^22.12.0 || >=24.0.0`);
+      console.warn(
+        `⚠️  Warning: Angular CLI ${spec} requires Node.js ^20.19.0 || ^22.12.0 || >=24.0.0`
+      );
       console.warn(`   Current version: ${nodeVersion}`);
       console.warn(`   Attempting to continue, but update may fail...`);
     }
@@ -46,13 +50,30 @@ const ngUpdateFlags = () => {
   return needsNext ? ' --next' : '';
 };
 
+// angular-eslint ships its own `ng update` migration (`@angular-eslint/schematics`) and
+// tracks the Angular major 1:1. `ng update @angular/core @angular/cli` does NOT touch it,
+// so without this each major strands angular-eslint on the previous version — which drags a
+// duplicate previous-major `@angular-devkit/*` subtree into `yarn.lock`. Update it in the
+// same pass when the app depends on it. Skipped for prereleases/tags: angular-eslint RCs
+// lag Angular's, so target it only once the major is stable.
+const extraUpdateTargets = () => {
+  const deps = { ...package.dependencies, ...package.devDependencies };
+  const usesAngularEslint =
+    'angular-eslint' in deps ||
+    '@angular-eslint/schematics' in deps ||
+    '@angular-eslint/builder' in deps;
+  if (!usesAngularEslint) return '';
+  if (major === null || spec.includes('-') || spec === 'next') return '';
+  return ` @angular-eslint/schematics@${major}`;
+};
+
 const runNgUpdate = () => {
   console.log(`Updating Angular version for ${package.name} to ${spec}`);
   checkNodeVersion();
 
   try {
     // Try using npx with specific CLI version first for better compatibility
-    const command = `npx @angular/cli@${spec} update @angular/core@${spec} @angular/cli@${spec}${ngUpdateFlags()} --create-commits --verbose`;
+    const command = `npx @angular/cli@${spec} update @angular/core@${spec} @angular/cli@${spec}${extraUpdateTargets()}${ngUpdateFlags()} --create-commits --verbose`;
     console.log(`Running: ${command}`);
 
     execSync(command, {
@@ -72,10 +93,13 @@ const runNgUpdate = () => {
           cwd: process.cwd(),
           stdio: 'inherit',
         });
-        execSync(`yarn ng update @angular/core@${spec}${ngUpdateFlags()} --create-commits --verbose`, {
-          cwd: process.cwd(),
-          stdio: 'inherit',
-        });
+        execSync(
+          `yarn ng update @angular/core@${spec}${extraUpdateTargets()}${ngUpdateFlags()} --create-commits --verbose`,
+          {
+            cwd: process.cwd(),
+            stdio: 'inherit',
+          }
+        );
         console.log(`✅ Successfully updated ${package.name} using fallback method`);
       } catch (fallbackError) {
         console.log(`❌ Fallback also failed: ${fallbackError.message}`);
