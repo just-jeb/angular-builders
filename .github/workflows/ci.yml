@@ -71,7 +71,9 @@ jobs:
       # resolved version and is a no-op if already present, guaranteeing the saved cache holds
       # the matching binary regardless of restore-key fallback. See #2293 (bump merged with no
       # e2e run) and https://docs.cypress.io/app/continuous-integration/overview.
-      - run: yarn cypress install
+      # Invoke the hoisted binary directly: in Yarn Berry `yarn cypress` resolves to a script
+      # name, and Cypress is a workspace (example) dependency, not a root one.
+      - run: node_modules/.bin/cypress install
       # On PRs, build only affected packages unless 'ci:full' label is present.
       # On master events (push/workflow_dispatch), build all packages. (see #2026)
       - run: |
