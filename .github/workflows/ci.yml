@@ -58,7 +58,13 @@ jobs:
       - uses: actions/cache@v5
         if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
-          path: ~/.cache
+          # Exclude ~/.cache/Cypress: the Cypress binary has its own version-keyed cache
+          # (below), restored by the integration jobs. This broad ~/.cache cache would
+          # otherwise duplicate the ~200MB binary that no job restores from here, wasting the
+          # repo's Actions cache budget and risking eviction of the dedicated cypress cache.
+          path: |
+            ~/.cache
+            !~/.cache/Cypress
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
       # The Cypress binary (~/.cache/Cypress/<version>) is cached separately from node_modules,
