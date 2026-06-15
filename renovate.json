@@ -45,6 +45,11 @@
       "matchPackageNames": ["@angular-devkit/architect"],
       "matchUpdateTypes": ["major"],
       "enabled": false
+    },
+    {
+      "description": "Angular framework (@angular/*) and Angular CLI (@angular/cli + @angular-devkit/*) ship on the same version train and must move together. Renovate's monorepo presets put them in two separate groups, so one can merge ahead of the other — that leaves @angular-devkit/core resolved at two versions at once, its Logger class gets two distinct identities, and custom-esbuild fails to compile ('_subject is protected but type Logger is not a class derived from Logger'). This is what broke the standalone angular-cli-monorepo patch bump in #2299. Group both scopes into one PR so the whole Angular tree always bumps atomically. (The architect major-hold above still applies — majors remain a deliberate manual step via the update workflow.)",
+      "groupName": "angular",
+      "matchPackageNames": ["@angular/**", "@angular-devkit/**"]
     }
   ]
 }
