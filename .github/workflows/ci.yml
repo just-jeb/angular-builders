@@ -58,7 +58,14 @@ jobs:
       - uses: actions/cache@v5
         if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
-          path: ~/.cache
+          # Scope to corepack's download dir only (~/.cache/node holds the Yarn release).
+          # The broad ~/.cache also contains ~/.cache/Cypress, which has its own version-keyed
+          # cache (below) restored by the integration jobs; caching it here too would duplicate
+          # the ~200MB binary that no job restores from this cache, wasting the repo's Actions
+          # cache budget and risking eviction of the dedicated cypress cache. (A `!~/.cache/Cypress`
+          # exclude does NOT work — actions/cache doesn't resolve ~ in negative patterns — so
+          # narrow with a positive path instead.)
+          path: ~/.cache/node
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
       # The Cypress binary (~/.cache/Cypress/<version>) is cached separately from node_modules,
