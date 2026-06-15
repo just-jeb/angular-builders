@@ -9200,9 +9200,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:15.16.0":
-  version: 15.16.0
-  resolution: "cypress@npm:15.16.0"
+"cypress@npm:15.15.0":
+  version: 15.15.0
+  resolution: "cypress@npm:15.15.0"
   dependencies:
     "@cypress/request": "npm:^4.0.0"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -9224,6 +9224,7 @@ __metadata:
     eventemitter2: "npm:6.4.7"
     execa: "npm:4.1.0"
     executable: "npm:^4.1.1"
+    extract-zip: "npm:2.0.1"
     fs-extra: "npm:^9.1.0"
     hasha: "npm:5.2.2"
     is-installed-globally: "npm:~0.4.0"
@@ -9242,10 +9243,10 @@ __metadata:
     tree-kill: "npm:1.2.2"
     tslib: "npm:1.14.1"
     untildify: "npm:^4.0.0"
-    yauzl: "npm:^3.3.1"
+    yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/9cee32e8cfc5e5f245ecea1ee9cfd1a9217b052bd88c42a1980986ee58eb3433c1f3be8a04e97e45161fae562fd4cc6e95746727e0263575c093bf2996232e93
+  checksum: 10c0/991d19140f86dbe02fd52300eccb04d1b33ce646a0c4db10e2fb7c09e144aa67b26b12c67501305756c5220ff63cb927b845cb63a2346afeb86a03bf3265d979
   languageName: node
   linkType: hard
 
@@ -10600,7 +10601,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"extract-zip@npm:^2.0.1":
+"extract-zip@npm:2.0.1, extract-zip@npm:^2.0.1":
   version: 2.0.1
   resolution: "extract-zip@npm:2.0.1"
   dependencies:
@@ -11063,7 +11064,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     html-webpack-plugin: "npm:5.6.7"
     jasmine-core: "npm:6.3.0"
@@ -14460,7 +14461,7 @@ __metadata:
     "@types/jest": "npm:30.0.0"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     jest: "npm:30.4.2"
     jest-environment-jsdom: "npm:30.4.1"
@@ -16764,7 +16765,7 @@ __metadata:
     "@cypress/schematic": "npm:5.0.0"
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.2"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
     karma-chrome-launcher: "npm:3.2.0"
@@ -16801,7 +16802,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
@@ -16839,7 +16840,7 @@ __metadata:
     "@eslint/js": "npm:10.0.1"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     puppeteer: "npm:25.1.0"
     rxjs: "npm:7.8.2"
@@ -16872,7 +16873,7 @@ __metadata:
     "@eslint/js": "npm:10.0.1"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     puppeteer: "npm:25.1.0"
     rxjs: "npm:7.8.2"
@@ -17308,7 +17309,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     jasmine-core: "npm:6.3.0"
     jest: "npm:30.4.2"
@@ -18194,7 +18195,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.2"
     angular-eslint: "npm:22.0.0"
-    cypress: "npm:15.16.0"
+    cypress: "npm:15.15.0"
     eslint: "npm:10.5.0"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
@@ -19925,15 +19926,6 @@ __metadata:
     buffer-crc32: "npm:~0.2.3"
     fd-slicer: "npm:~1.1.0"
   checksum: 10c0/f265002af7541b9ec3589a27f5fb8f11cf348b53cc15e2751272e3c062cd73f3e715bc72d43257de71bbaecae446c3f1b14af7559e8ab0261625375541816422
-  languageName: node
-  linkType: hard
-
-"yauzl@npm:^3.3.1":
-  version: 3.4.0
-  resolution: "yauzl@npm:3.4.0"
-  dependencies:
-    pend: "npm:~1.2.0"
-  checksum: 10c0/17a98c42c0065e8af429eb8a61f7a0e4562181ed54080366b838f34f741b6829f167f804787c86b7646bb042707f35871739f053de0548285e405a2eae4da025
   languageName: node
   linkType: hard
 
