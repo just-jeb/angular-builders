@@ -53,7 +53,6 @@ jobs:
           path: |
             node_modules
             .yarn
-            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           restore-keys: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-
       - uses: actions/cache@v5
@@ -62,17 +61,25 @@ jobs:
           path: ~/.cache
           key: yarn-dl-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: yarn-dl-${{ runner.os }}-
+      # The Cypress binary (~/.cache/Cypress/<version>) is cached separately from node_modules,
+      # NOT folded into the deps cache. Reason: the deps cache uses actions/cache (save-on-miss)
+      # keyed by yarn.lock; once it holds a binary, an exact key hit never re-saves, so a stale
+      # binary "snowballs" — a Cypress version bump can't replace it and integration jobs fail
+      # with "the Cypress binary is missing" for the new version. (This is how #2293's bump
+      # broke master.) Keying this cache by yarn.lock means a bump forces a fresh save; the
+      # `cypress install` step below downloads the resolved version into it. restore-keys lets
+      # an unrelated lockfile change reuse the previous binary so install no-ops.
+      - uses: actions/cache@v5
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: cypress-${{ runner.os }}-
       - run: yarn --immutable
-      # Cypress downloads its binary to ~/.cache/Cypress via a postinstall script, but that
-      # script is skipped when yarn restores build-state from a prior cache (restore-keys
-      # serves the previous yarn.lock's cache on any dep change). The binary then never
-      # re-downloads on a Cypress version bump, so integration jobs fail with "the Cypress
-      # binary is missing" for the new version. `cypress install` downloads the binary for the
-      # resolved version and is a no-op if already present, guaranteeing the saved cache holds
-      # the matching binary regardless of restore-key fallback. See #2293 (bump merged with no
-      # e2e run) and https://docs.cypress.io/app/continuous-integration/overview.
-      # Invoke the hoisted binary directly: in Yarn Berry `yarn cypress` resolves to a script
-      # name, and Cypress is a workspace (example) dependency, not a root one.
+      # Populate the Cypress cache above with the resolved version's binary (idempotent — a
+      # no-op if already present). yarn's own postinstall skips this when build-state is
+      # restored from cache, so do it explicitly. Invoke the hoisted binary directly: in Yarn
+      # Berry `yarn cypress` resolves to a script name, and Cypress is a workspace (example)
+      # dependency, not a root one.
       - run: node_modules/.bin/cypress install
       # On PRs, build only affected packages unless 'ci:full' label is present.
       # On master events (push/workflow_dispatch), build all packages. (see #2026)
@@ -117,9 +124,15 @@ jobs:
           path: |
             node_modules
             .yarn
-            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
+      # Restore the Cypress binary saved by the build job (same key). e2e tests (yarn e2e)
+      # launch Cypress, which needs its binary present in ~/.cache/Cypress.
+      - uses: actions/cache/restore@v5
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: cypress-${{ runner.os }}-
       - uses: actions/download-artifact@v8
         with:
           name: dist
@@ -162,7 +175,6 @@ jobs:
           path: |
             node_modules
             .yarn
-            ~/.cache/Cypress
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           fail-on-cache-miss: true
       - uses: actions/download-artifact@v8
