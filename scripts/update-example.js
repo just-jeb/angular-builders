@@ -1,4 +1,6 @@
 const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 const package = require(`${process.cwd()}/package.json`);
 
 // Accepts either an integer major (e.g. `22`), an explicit version
@@ -134,12 +136,59 @@ const updateNonAngularApp = () => {
   }
 };
 
+// `ng update` only rewrites the workspace's own package.json. ng-packagr library
+// sub-projects (projects/*/package.json) carry their own Angular peerDependencies,
+// which ng update never touches — so a major bump strands them on the previous major
+// while the host app moves forward. Renovate later catches the gap and files a
+// straggler PR (this is what #2308 was). Propagate the host's freshly-resolved
+// @angular/* versions into any library sub-project so the whole example moves majors
+// atomically. Copies the host's exact spec verbatim, so caret/exact/prerelease ranges
+// are preserved as-is.
+const updateLibrarySubProjects = () => {
+  const projectsDir = path.join(process.cwd(), 'projects');
+  if (!fs.existsSync(projectsDir)) return;
+
+  const host = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf8'));
+  const hostDeps = { ...host.dependencies, ...host.devDependencies };
+  // @angular/* ship in lockstep on one version train, so @angular/core's resolved
+  // spec is the right value for every @angular/* entry in the sub-project.
+  const targetSpec = hostDeps['@angular/core'];
+  if (!targetSpec) {
+    console.warn('⚠️  No @angular/core in host package.json; skipping sub-project update.');
+    return;
+  }
+
+  for (const entry of fs.readdirSync(projectsDir)) {
+    const pkgPath = path.join(projectsDir, entry, 'package.json');
+    if (!fs.existsSync(pkgPath)) continue;
+
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+    let changed = false;
+    for (const depType of ['dependencies', 'devDependencies', 'peerDependencies']) {
+      const deps = pkg[depType];
+      if (!deps) continue;
+      for (const name of Object.keys(deps)) {
+        if (name.startsWith('@angular/') && deps[name] !== targetSpec) {
+          console.log(`  ${entry}/${depType}: ${name} ${deps[name]} -> ${targetSpec}`);
+          deps[name] = targetSpec;
+          changed = true;
+        }
+      }
+    }
+    if (changed) {
+      fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+      console.log(`✅ Updated sub-project ${path.relative(process.cwd(), pkgPath)}`);
+    }
+  }
+};
+
 const updateExample = () => {
   console.log('Current working directory:', process.cwd());
   if (package.name === 'bazel-example') {
     updateNonAngularApp();
   } else {
     runNgUpdate();
+    updateLibrarySubProjects();
   }
 };
 
