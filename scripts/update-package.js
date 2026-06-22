@@ -1,4 +1,5 @@
-const { writeFileSync } = require('fs');
+const { writeFileSync, readFileSync } = require('fs');
+const path = require('path');
 const package = require(`${process.cwd()}/package.json`);
 
 // Accepts either an integer major (e.g. `22`) or an explicit version string
@@ -49,6 +50,59 @@ const architectRange = () => {
   return `>=0.${major}00.0 < 0.${major + 1}00.0`;
 };
 
+// The root package.json pins `@angular-devkit/architect` and `@angular-devkit/core`
+// via `resolutions` (added in PR #2307). The builders declare a wide architect range
+// (`>=0.{major}00.0 < 0.{major+1}00.0`); without these pins, that range re-resolves to
+// an older architect than the one `@angular/build` pins for a given patch train,
+// duplicating architect and producing two `BuilderContext`/`Logger` type identities
+// that break the `custom-esbuild` tsc build. The pins must track the *exact* Angular
+// version, so they only apply when an explicit version (with minor/patch) is given.
+//
+// `@angular-devkit/core` uses the plain Angular version (e.g. `22.1.0`). `architect`
+// uses the `0.{major}{minor padded to 2}.{patch}` scheme (`22.1.0` -> `0.2201.0`,
+// `22.0.3` -> `0.2200.3`), carrying any prerelease tag (`22.0.0-rc.2` -> `0.2200.0-rc.2`).
+const architectVersion = version => {
+  const [base, ...preParts] = version.split('-');
+  const pre = preParts.length ? `-${preParts.join('-')}` : '';
+  const [maj, min = '0', patch = '0'] = base.split('.');
+  return `0.${maj}${String(min).padStart(2, '0')}.${patch}${pre}`;
+};
+
+const updateRootResolutions = () => {
+  if (!explicit) {
+    console.log(
+      'No explicit version (with minor/patch) given; leaving root resolutions untouched. ' +
+        'Pass a full version (e.g. 22.1.0) to keep @angular-devkit pins in sync.'
+    );
+    return;
+  }
+
+  const rootPackagePath = path.join(__dirname, '..', 'package.json');
+  const rootPackage = JSON.parse(readFileSync(rootPackagePath, 'utf8'));
+  if (!rootPackage.resolutions) return;
+
+  const pins = {
+    '@angular-devkit/core': explicit,
+    '@angular-devkit/architect': architectVersion(explicit),
+  };
+
+  let changed = false;
+  for (const [name, version] of Object.entries(pins)) {
+    if (name in rootPackage.resolutions && rootPackage.resolutions[name] !== version) {
+      console.log(
+        `Updating root resolution ${name}: ${rootPackage.resolutions[name]} -> ${version}`
+      );
+      rootPackage.resolutions[name] = version;
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    writeFileSync(rootPackagePath, JSON.stringify(rootPackage, null, 2) + '\n');
+    console.log('Successfully updated root resolutions');
+  }
+};
+
 const determineVersions = deps => {
   let newDeps = [];
   for (const [name, stable] of Object.entries(isStable)) {
@@ -85,6 +139,7 @@ const updatePackage = () => {
   } else {
     console.log(`No dependencies to update`);
   }
+  updateRootResolutions();
 };
 
 updatePackage();
