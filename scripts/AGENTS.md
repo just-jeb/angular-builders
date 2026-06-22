@@ -32,6 +32,7 @@
 - **`update-package.js`** -- Updates Angular dependency version ranges in a package's `package.json`.
   - **Usage:** `yarn update:package <angular-major-version>` (run from a package directory via the workspace script)
   - **Knows:** Which Angular packages use stable versioning (`^{major}.0.0`) vs pre-release versioning (`>=0.{major}00.0 < 0.{major+1}00.0`). This mapping is hardcoded in the script.
+  - **Also maintains root `resolutions`:** rewrites the root `package.json` pins for `@angular-devkit/architect` and `@angular-devkit/core` (added in PR #2307 to force a single architect/core version — see root `AGENTS.md`). These need _exact_ versions, so they are only rewritten when an **explicit version with a minor/patch** is passed (e.g. `22.1.0`); a bare major (`22`) leaves them untouched and logs a notice. `@angular-devkit/core` gets the plain version (`22.1.0`); `@angular-devkit/architect` gets the `0.{major}{minor padded to 2}.{patch}` form (`22.1.0` → `0.2201.0`, `22.0.3` → `0.2200.3`, prerelease tags carried). The root path is resolved via `__dirname/..`, so it targets the same root regardless of which workspace package the script runs from (it runs once per builder package via `yarn update:packages` — idempotent).
   - **Note:** The goal is full automation of Angular version updates, but the process is not there yet. These scripts were created as steps toward that goal. (Source: SME interview, Jeb, 2026-02-16)
 
 - **`update-example.js`** -- Updates Angular dependencies in example app `package.json` files for a new Angular version.
