@@ -18,8 +18,10 @@ describe('jest ng-add (no Karma)', () => {
     const pkg = JSON.parse(out.readText('/package.json'));
     expect(pkg.devDependencies['@angular-builders/jest']).toBeDefined();
     expect(pkg.devDependencies['jest']).toBeDefined();
-    expect(pkg.devDependencies['jest-preset-angular']).toBeDefined();
     expect(pkg.devDependencies['jest-environment-jsdom']).toBeDefined();
+    // jest-preset-angular resolves transitively from @angular-builders/jest, so ng-add does
+    // not add it to the consuming project's devDependencies.
+    expect(pkg.devDependencies['jest-preset-angular']).toBeUndefined();
     expect(r.tasks.length).toBeGreaterThan(0);
   });
 
