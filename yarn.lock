@@ -258,7 +258,7 @@ __metadata:
     copyfiles: "npm:^2.4.1"
     cpy-cli: "npm:^7.0.0"
     jest: "npm:30.4.2"
-    jest-preset-angular: "npm:^16.0.0"
+    jest-preset-angular: "npm:^17.0.0"
     lodash: "npm:^4.17.15"
     quicktype: "npm:^15.0.260"
     rimraf: "npm:^6.0.0"
@@ -3740,7 +3740,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/environment-jsdom-abstract@npm:30.4.1, @jest/environment-jsdom-abstract@npm:^30.0.0":
+"@jest/environment-jsdom-abstract@npm:30.4.1, @jest/environment-jsdom-abstract@npm:^30.4.1":
   version: 30.4.1
   resolution: "@jest/environment-jsdom-abstract@npm:30.4.1"
   dependencies:
@@ -10101,7 +10101,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-wasm@npm:0.28.0, esbuild-wasm@npm:>=0.23.0":
+"esbuild-wasm@npm:0.28.0":
   version: 0.28.0
   resolution: "esbuild-wasm@npm:0.28.0"
   bin:
@@ -10110,7 +10110,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.28.0, esbuild@npm:>=0.23.0, esbuild@npm:^0.28.0":
+"esbuild-wasm@npm:>=0.28.0":
+  version: 0.28.1
+  resolution: "esbuild-wasm@npm:0.28.1"
+  bin:
+    esbuild: bin/esbuild
+  checksum: 10c0/876de242aaaca622b8e9462688203bbfbd20fb31e671ec91c4126828f38a7e81de4446ab50b4572b35781cbb9d728f4019368890436cb43559ea7c1e31b8aec3
+  languageName: node
+  linkType: hard
+
+"esbuild@npm:0.28.0, esbuild@npm:^0.28.0":
   version: 0.28.0
   resolution: "esbuild@npm:0.28.0"
   dependencies:
@@ -10199,7 +10208,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:0.28.1":
+"esbuild@npm:0.28.1, esbuild@npm:>=0.28.0":
   version: 0.28.1
   resolution: "esbuild@npm:0.28.1"
   dependencies:
@@ -12975,29 +12984,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-preset-angular@npm:^16.0.0":
-  version: 16.1.5
-  resolution: "jest-preset-angular@npm:16.1.5"
+"jest-preset-angular@npm:^17.0.0":
+  version: 17.0.0
+  resolution: "jest-preset-angular@npm:17.0.0"
   dependencies:
-    "@jest/environment-jsdom-abstract": "npm:^30.0.0"
+    "@jest/environment-jsdom-abstract": "npm:^30.4.1"
     bs-logger: "npm:^0.2.6"
-    esbuild: "npm:>=0.23.0"
-    esbuild-wasm: "npm:>=0.23.0"
-    jest-util: "npm:^30.0.0"
-    pretty-format: "npm:^30.0.0"
-    ts-jest: "npm:^29.4.0"
+    esbuild: "npm:>=0.28.0"
+    esbuild-wasm: "npm:>=0.28.0"
+    jest-util: "npm:^30.4.1"
+    pretty-format: "npm:^30.4.1"
+    ts-jest: "npm:^29.4.11"
   peerDependencies:
-    "@angular/compiler-cli": ">=19.0.0 <22.0.0"
-    "@angular/core": ">=19.0.0 <22.0.0"
-    "@angular/platform-browser": ">=19.0.0 <22.0.0"
-    "@angular/platform-browser-dynamic": ">=19.0.0 <22.0.0"
+    "@angular/compiler-cli": ">=20.0.0 <23.0.0"
+    "@angular/core": ">=20.0.0 <23.0.0"
+    "@angular/platform-browser": ">=20.0.0 <23.0.0"
     jest: ^30.0.0
     jsdom: ">=26.0.0"
-    typescript: ">=5.5"
+    typescript: ">=5.8"
   dependenciesMeta:
     esbuild:
       optional: true
-  checksum: 10c0/b1b20d6fd7513bb9bf664065eee41aed7e2f2ab8c52e3fceca46e1f5de6bc19a9e8fcc923a8f43530bd9740e2e462330a754ad165ececfc341009d7f38f5c910
+  checksum: 10c0/8e48b300e2f987e596befda58b18291c56e6e396ca45bc81d7378ad4d377234dd4bdd125a1a775614115d781cbb1e80996a81c1f59f32d759349dd9a28ec4106
   languageName: node
   linkType: hard
 
@@ -13123,7 +13131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-util@npm:30.4.1, jest-util@npm:^30.0.0":
+"jest-util@npm:30.4.1, jest-util@npm:^30.4.1":
   version: 30.4.1
   resolution: "jest-util@npm:30.4.1"
   dependencies:
@@ -15983,7 +15991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.4.1, pretty-format@npm:^30.0.0":
+"pretty-format@npm:30.4.1, pretty-format@npm:^30.0.0, pretty-format@npm:^30.4.1":
   version: 30.4.1
   resolution: "pretty-format@npm:30.4.1"
   dependencies:
@@ -18663,7 +18671,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-jest@npm:29.4.11, ts-jest@npm:^29.4.0":
+"ts-jest@npm:29.4.11, ts-jest@npm:^29.4.11":
   version: 29.4.11
   resolution: "ts-jest@npm:29.4.11"
   dependencies:
