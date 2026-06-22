@@ -19,7 +19,7 @@ const JEST_BUILDER = '@angular-builders/jest:run';
 const JEST_STACK: Array<[name: string, version: string]> = [
   ['@angular-builders/jest', '^22.0.0'],
   ['jest', '^30.0.0'],
-  ['jest-preset-angular', '^16.0.0'],
+  ['jest-preset-angular', '^17.0.0'],
   ['jest-environment-jsdom', '^30.0.0'],
 ];
 
