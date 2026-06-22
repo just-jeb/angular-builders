@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.1-beta.1](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@22.0.1-beta.0...@angular-builders/jest@22.0.1-beta.1) (2026-06-22)
+
+### Bug Fixes
+
+* **jest:** stop pinning jest-preset-angular in ng-add; resolve it transitively ([#2319](https://github.com/just-jeb/angular-builders/issues/2319)) ([f5f993f](https://github.com/just-jeb/angular-builders/commit/f5f993f8136774f6a387b2943a5dd6a556f41b09))
+
 ## [22.0.1-beta.0](https://github.com/just-jeb/angular-builders/compare/@angular-builders/jest@22.0.0...@angular-builders/jest@22.0.1-beta.0) (2026-06-22)
 
 **Note:** Version bump only for package @angular-builders/jest
