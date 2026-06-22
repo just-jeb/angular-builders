@@ -33,9 +33,9 @@ describe('detectTestBuilder', () => {
   async function applyWorkspace(
     tree: import('@angular-devkit/schematics/testing').UnitTestTree,
     builder: string,
-    options: Record<string, unknown> = {},
+    options: Record<string, unknown> = {}
   ) {
-    const rule = updateWorkspace((workspace) => {
+    const rule = updateWorkspace(workspace => {
       workspace.projects.get('app')!.targets.set('test', {
         builder,
         options: options as never,
@@ -44,7 +44,7 @@ describe('detectTestBuilder', () => {
     const { SchematicTestRunner } = await import('@angular-devkit/schematics/testing');
     const NG_COLLECTION = path.join(
       path.dirname(require.resolve('@schematics/angular/package.json')),
-      'collection.json',
+      'collection.json'
     );
     const runner = new SchematicTestRunner('t', NG_COLLECTION);
     return runner.callRule(rule, tree).toPromise() as Promise<typeof tree>;

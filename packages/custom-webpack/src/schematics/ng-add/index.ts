@@ -12,10 +12,7 @@ import {
 } from '@angular-devkit/schematics';
 import { readWorkspace as getWorkspace, updateWorkspace } from '@schematics/angular/utility';
 import { workspaces } from '@angular-devkit/core';
-import {
-  addBuilderDevDependency,
-  getProjectsToTarget,
-} from '@angular-builders/common/schematics';
+import { addBuilderDevDependency, getProjectsToTarget } from '@angular-builders/common/schematics';
 import { NgAddSchema } from './schema';
 
 const PACKAGE_NAME = '@angular-builders/custom-webpack';
@@ -35,7 +32,7 @@ function webpackConfigFileExists(tree: Tree): boolean {
 }
 
 function rewriteTargets(projectName: string): Rule {
-  return updateWorkspace((workspace) => {
+  return updateWorkspace(workspace => {
     const project = workspace.projects.get(projectName);
     if (!project) return;
     const build = project.targets.get('build');
@@ -57,7 +54,9 @@ function scaffoldConfig(projectName: string): Rule {
       buildOptions['customWebpackConfig'] !== false;
 
     if (alreadyReferenced || webpackConfigFileExists(tree)) {
-      context.logger.info('[custom-webpack] A webpack config is already present; leaving it untouched.');
+      context.logger.info(
+        '[custom-webpack] A webpack config is already present; leaving it untouched.'
+      );
       return noop();
     }
 
@@ -65,7 +64,7 @@ function scaffoldConfig(projectName: string): Rule {
 
     return chain([
       mergeWith(templateSource),
-      updateWorkspace((ws) => {
+      updateWorkspace(ws => {
         const buildTarget = ws.projects.get(projectName)?.targets.get('build');
         if (buildTarget) {
           buildTarget.options = {
@@ -81,7 +80,10 @@ function scaffoldConfig(projectName: string): Rule {
 export function ngAdd(options: NgAddSchema): Rule {
   return async (tree: Tree, context: SchematicContext) => {
     const workspace = await getWorkspace(tree);
-    const projects = getProjectsToTarget(workspace as unknown as workspaces.WorkspaceDefinition, options.project);
+    const projects = getProjectsToTarget(
+      workspace as unknown as workspaces.WorkspaceDefinition,
+      options.project
+    );
 
     if (projects.length === 0) {
       context.logger.warn('[custom-webpack] No projects found to configure.');

@@ -1,6 +1,11 @@
 import { JsonValue } from '@angular-devkit/core';
 import { Rule, Tree } from '@angular-devkit/schematics';
-import { updateWorkspace, addDependency, DependencyType, InstallBehavior } from '@schematics/angular/utility';
+import {
+  updateWorkspace,
+  addDependency,
+  DependencyType,
+  InstallBehavior,
+} from '@schematics/angular/utility';
 import { JSONFile } from '@schematics/angular/utility/json-file';
 
 export function setBuilderForTarget(
@@ -8,9 +13,9 @@ export function setBuilderForTarget(
   targetName: string,
   builderName: string,
   options?: Record<string, unknown>,
-  opts: { replaceOptions?: boolean } = {},
+  opts: { replaceOptions?: boolean } = {}
 ): Rule {
-  return updateWorkspace((workspace) => {
+  return updateWorkspace(workspace => {
     const project = workspace.projects.get(projectName);
     if (!project) throw new Error(`Project "${projectName}" not found.`);
     const target = project.targets.get(targetName);
@@ -25,7 +30,11 @@ export function setBuilderForTarget(
         target.options = { ...(target.options ?? {}), ...(options as Record<string, JsonValue>) };
       }
     } else {
-      project.targets.add({ name: targetName, builder: builderName, options: (options ?? {}) as Record<string, JsonValue> });
+      project.targets.add({
+        name: targetName,
+        builder: builderName,
+        options: (options ?? {}) as Record<string, JsonValue>,
+      });
     }
   });
 }
@@ -33,7 +42,7 @@ export function setBuilderForTarget(
 export function addBuilderDevDependency(
   name: string,
   version: string,
-  opts: { install?: boolean } = {},
+  opts: { install?: boolean } = {}
 ): Rule {
   return addDependency(name, version, {
     type: DependencyType.Dev,

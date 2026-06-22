@@ -24,6 +24,8 @@
     "build:packages": "rm -rf .turbo/runs && turbo build --filter='@angular-builders/*...[origin/master]' --summarize",
     "build:packages:all": "rm -rf .turbo/runs && turbo build --filter='@angular-builders/*' --summarize",
     "test:local": "node scripts/run-local-tests.js",
+    "format": "prettier --write \"**/*.{js,ts,html,md}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,html,md}\"",
     "lerna": "lerna",
     "graduate": "lerna publish --conventional-commits --conventional-graduate",
     "prepare": "husky",

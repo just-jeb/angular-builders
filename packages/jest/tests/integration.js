@@ -149,16 +149,14 @@ module.exports = [
     name: 'jest: ng add Karma->Jest',
     purpose: 'ng add detects a Karma test target and ng test runs green via Jest',
     app: '.',
-    command:
-      'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/karma-to-jest.ng-add.json',
+    command: 'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/karma-to-jest.ng-add.json',
   },
   {
     id: 'ng-add-vitest-to-jest',
     name: 'jest: ng add Vitest->Jest',
     purpose: 'ng add rewrites a Vitest unit-test target to Jest; ng build + ng test green',
     app: '.',
-    command:
-      'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/vitest-to-jest.ng-add.json',
+    command: 'node scripts/e2e-ng-add.js --spec packages/jest/tests/e2e/vitest-to-jest.ng-add.json',
   },
   {
     id: 'ng-update-jest-v21-smoke',
@@ -172,8 +170,7 @@ module.exports = [
     name: 'jest: multi-project coverage scoping',
     purpose: 'Coverage output is scoped per project, not overwritten',
     app: 'examples/jest/multiple-apps',
-    command:
-      'node ../../../packages/jest/tests/validate-coverage.js',
+    command: 'node ../../../packages/jest/tests/validate-coverage.js',
   },
 
   // E2E sanity

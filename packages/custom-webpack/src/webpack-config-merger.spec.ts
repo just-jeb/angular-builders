@@ -387,10 +387,7 @@ describe('Webpack config merger test', () => {
         },
       };
 
-      const output = mergeConfigs(
-        { plugins: [angularI18nPlugin] },
-        { plugins: [userPlugin] }
-      );
+      const output = mergeConfigs({ plugins: [angularI18nPlugin] }, { plugins: [userPlugin] });
 
       expect(output.plugins).toHaveLength(2);
       // Both anonymous plugins must survive and be callable
@@ -403,10 +400,7 @@ describe('Webpack config merger test', () => {
       const anonymousPlugin = { apply(_compiler: any) {} };
       const namedPlugin = new webpack.DefinePlugin({ FOO: '"bar"' });
 
-      const output = mergeConfigs(
-        { plugins: [anonymousPlugin, namedPlugin] },
-        { plugins: [] }
-      );
+      const output = mergeConfigs({ plugins: [anonymousPlugin, namedPlugin] }, { plugins: [] });
 
       expect(output.plugins).toHaveLength(2);
       expect(output.plugins![0]).toBe(anonymousPlugin);
@@ -417,23 +411,20 @@ describe('Webpack config merger test', () => {
       const anonPlugin1 = { apply(_compiler: any) {} };
       const anonPlugin2 = { apply(_compiler: any) {} };
 
-      const output = mergeConfigs(
-        { plugins: [anonPlugin1] },
-        { plugins: [anonPlugin2] }
-      );
+      const output = mergeConfigs({ plugins: [anonPlugin1] }, { plugins: [anonPlugin2] });
 
       // Both plain-object plugins must survive — neither is a duplicate of the other
       expect(output.plugins).toHaveLength(2);
     });
 
     it('should still deduplicate named class-based plugins as before', () => {
-      const basePlugin = new webpack.HotModuleReplacementPlugin({ multiStep: true, requestTimeout: 1000 });
+      const basePlugin = new webpack.HotModuleReplacementPlugin({
+        multiStep: true,
+        requestTimeout: 1000,
+      });
       const userPlugin = new webpack.HotModuleReplacementPlugin({ requestTimeout: 500 });
 
-      const output = mergeConfigs(
-        { plugins: [basePlugin] },
-        { plugins: [userPlugin] }
-      );
+      const output = mergeConfigs({ plugins: [basePlugin] }, { plugins: [userPlugin] });
 
       // Named class plugins are still deduplicated (merged)
       expect(output.plugins).toHaveLength(1);

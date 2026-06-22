@@ -40,7 +40,7 @@ const OPTION_RENAMES: Record<string, string> = {
 };
 
 function renameBuilderOptions(): Rule {
-  return updateWorkspace((workspace) => {
+  return updateWorkspace(workspace => {
     for (const project of workspace.projects.values()) {
       const test = project.targets.get('test');
       if (!test || test.builder !== '@angular-builders/jest:run') continue;
@@ -65,7 +65,7 @@ const REMOVED_GLOBAL_MOCKS = ['styleTransform', 'getComputedStyle', 'doctype'];
 const REMOVED_JEST_OPTIONS = ['browser', 'init', 'mapCoverage', 'testURL', 'timers'];
 
 function stripRemovedOptions(): Rule {
-  return updateWorkspace((workspace) => {
+  return updateWorkspace(workspace => {
     for (const project of workspace.projects.values()) {
       const test = project.targets.get('test');
       if (!test || test.builder !== '@angular-builders/jest:run') continue;
@@ -73,7 +73,7 @@ function stripRemovedOptions(): Rule {
 
       if (Array.isArray(options['globalMocks'])) {
         options['globalMocks'] = (options['globalMocks'] as unknown[]).filter(
-          (v) => !REMOVED_GLOBAL_MOCKS.includes(v as string),
+          v => !REMOVED_GLOBAL_MOCKS.includes(v as string)
         );
       }
       for (const removed of REMOVED_JEST_OPTIONS) {
@@ -87,7 +87,7 @@ function stripRemovedOptions(): Rule {
 function setZonelessByDetection(): Rule {
   return async (tree: Tree) => {
     const workspace = await readWorkspace(tree);
-    return updateWorkspace((ws) => {
+    return updateWorkspace(ws => {
       for (const [name, project] of ws.projects) {
         const test = project.targets.get('test');
         if (!test || test.builder !== '@angular-builders/jest:run') continue;
@@ -106,12 +106,12 @@ export function migrateV21(): Rule {
     context.logger.warn(
       '[@angular-builders/jest] v21 migration applied. Note: tsconfig.spec.json now uses ' +
         'module/moduleResolution "Node16", which may surface pre-existing type errors in your ' +
-        'spec code — fix the reported type issues.',
+        'spec code — fix the reported type issues.'
     );
     context.logger.warn(
       '[@angular-builders/jest] Removed globalMocks (styleTransform, getComputedStyle, doctype) ' +
         'were stripped from your config; if your tests relied on them, replace them manually. ' +
-        'See MIGRATION.MD (v20→v21) for details.',
+        'See MIGRATION.MD (v20→v21) for details.'
     );
     return chain([
       bumpDeps(),

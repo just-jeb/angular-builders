@@ -5,7 +5,7 @@ export type TestBuilderKind = 'karma' | 'jest' | 'vitest' | 'other' | 'none';
 
 export function getProjectsToTarget(
   workspace: workspaces.WorkspaceDefinition,
-  optionProject?: string,
+  optionProject?: string
 ): string[] {
   const names = [...workspace.projects.keys()];
   if (optionProject) {
@@ -24,7 +24,7 @@ export function getProjectsToTarget(
 
 export function detectTestBuilder(
   workspace: workspaces.WorkspaceDefinition,
-  projectName: string,
+  projectName: string
 ): TestBuilderKind {
   const project = workspace.projects.get(projectName);
   const test = project?.targets.get('test');
@@ -44,7 +44,7 @@ export function detectTestBuilder(
 export function isZoneless(
   tree: Tree,
   workspace: workspaces.WorkspaceDefinition,
-  projectName: string,
+  projectName: string
 ): boolean {
   const project = workspace.projects.get(projectName);
   const buildOptions = project?.targets.get('build')?.options ?? {};
@@ -54,13 +54,13 @@ export function isZoneless(
     : typeof polyfills === 'string'
       ? [polyfills]
       : [];
-  const hasZone = polyfillList.some((p) => p === 'zone.js' || p.includes('zone.js'));
+  const hasZone = polyfillList.some(p => p === 'zone.js' || p.includes('zone.js'));
   if (hasZone) return false;
 
   // Fallback: look for provideZonelessChangeDetection in any bootstrap source.
   const root = project?.root ?? '';
-  const mainCandidates = ['src/main.ts', 'src/app/app.config.ts'].map((p) =>
-    root ? `${root}/${p}` : p,
+  const mainCandidates = ['src/main.ts', 'src/app/app.config.ts'].map(p =>
+    root ? `${root}/${p}` : p
   );
   for (const candidate of mainCandidates) {
     if (tree.exists(candidate)) {

@@ -20,7 +20,9 @@ export class AppComponent {
   constructor() {
     this.title = typeof title !== 'undefined' ? title : 'sanity-esbuild-app';
     this.subtitle = typeof subtitle !== 'undefined' ? subtitle : 'sanity-esbuild-app subtitle';
-    this.titleByOption = typeof titleByOption !== 'undefined' ? titleByOption : 'sanity-esbuild-app optionTitle';
-    this.buildConfiguration = typeof buildConfiguration !== 'undefined' ? buildConfiguration : 'no-config';
+    this.titleByOption =
+      typeof titleByOption !== 'undefined' ? titleByOption : 'sanity-esbuild-app optionTitle';
+    this.buildConfiguration =
+      typeof buildConfiguration !== 'undefined' ? buildConfiguration : 'no-config';
   }
 }

@@ -18,6 +18,7 @@ export class AppComponent {
   constructor() {
     this.title = typeof title !== 'undefined' ? title : 'sanity-esbuild-app-esm';
     this.subtitle = typeof subtitle !== 'undefined' ? subtitle : 'sanity-esbuild-app-esm subtitle';
-    this.titleByOption = typeof titleByOption !== 'undefined' ? titleByOption : 'sanity-esbuild-app-esm optionTitle';
+    this.titleByOption =
+      typeof titleByOption !== 'undefined' ? titleByOption : 'sanity-esbuild-app-esm optionTitle';
   }
 }

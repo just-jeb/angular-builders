@@ -7,7 +7,7 @@ export interface SemverParts {
 export function parseVersion(version: string): SemverParts {
   const cleaned = version.trim().replace(/^[\^~>=v\s]+/, '');
   const [core] = cleaned.split('-');
-  const [major = 0, minor = 0, patch = 0] = core.split('.').map((n) => parseInt(n, 10) || 0);
+  const [major = 0, minor = 0, patch = 0] = core.split('.').map(n => parseInt(n, 10) || 0);
   return { major, minor, patch };
 }
 

@@ -14,7 +14,7 @@ function makeRunner(): { runner: SchematicTestRunner; messages: string[] } {
 
 function snapshot(tree: UnitTestTree): Record<string, string> {
   const out: Record<string, string> = {};
-  tree.visit((path) => {
+  tree.visit(path => {
     try {
       out[path] = tree.readText(path);
     } catch {
@@ -45,12 +45,12 @@ describe('jest @22 migration — advisory only', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           (ws.projects.get('app') as { root: string }).root = '';
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
     await runner.runSchematic('migration-v22', {}, tree);
     expect(messages.join('\n')).not.toMatch(/coverage/i);
   });

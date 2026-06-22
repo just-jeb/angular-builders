@@ -15,7 +15,10 @@ export async function loadPlugins(
   workspaceRoot: string,
   tsConfig: string,
   logger: logging.LoggerApi,
-  builderOptions: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema | CustomEsbuildUnitTestSchema,
+  builderOptions:
+    | CustomEsbuildApplicationSchema
+    | CustomEsbuildDevServerSchema
+    | CustomEsbuildUnitTestSchema,
   target: Target
 ): Promise<Plugin[]> {
   const plugins = await Promise.all(
@@ -25,7 +28,10 @@ export async function loadPlugins(
           | Plugin
           | Plugin[]
           | ((
-              options: CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema | CustomEsbuildUnitTestSchema,
+              options:
+                | CustomEsbuildApplicationSchema
+                | CustomEsbuildDevServerSchema
+                | CustomEsbuildUnitTestSchema,
               target: Target
             ) => Plugin | Plugin[])
         >(path.join(workspaceRoot, pluginConfig), tsConfig, logger);

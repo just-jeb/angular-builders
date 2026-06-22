@@ -21,7 +21,7 @@ async function seed(): Promise<UnitTestTree> {
   tree.overwrite('/package.json', JSON.stringify(pkg, null, 2));
   tree.create(
     '/tsconfig.spec.json',
-    JSON.stringify({ compilerOptions: { module: 'esnext', types: ['jest'] } }, null, 2),
+    JSON.stringify({ compilerOptions: { module: 'esnext', types: ['jest'] } }, null, 2)
   );
   return tree;
 }
@@ -49,15 +49,15 @@ describe('jest @21 migration — builder option renames', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular-builders/jest:run',
             options,
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
     return tree;
   }
 
@@ -86,15 +86,15 @@ describe('jest @21 migration — strip removed mocks/options', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular-builders/jest:run',
             options,
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
     return tree;
   }
 
@@ -132,7 +132,7 @@ describe('jest @21 migration — zoneless detection + advisories', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           const build = ws.projects.get('app')!.targets.get('build')!;
           build.options = { ...(build.options ?? {}), polyfills: ['zone.js'] };
           ws.projects.get('app')!.targets.set('test', {
@@ -140,9 +140,9 @@ describe('jest @21 migration — zoneless detection + advisories', () => {
             options: {},
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     const out = (await runner().runSchematic('migration-v21', {}, tree)) as UnitTestTree;
     const ws = await readWorkspace(out);
@@ -154,15 +154,15 @@ describe('jest @21 migration — zoneless detection + advisories', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular-builders/jest:run',
             options: {},
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     const out = (await runner().runSchematic('migration-v21', {}, tree)) as UnitTestTree;
     const ws = await readWorkspace(out);
@@ -192,11 +192,11 @@ describe('jest @21 migration — idempotency', () => {
     tree.overwrite('/package.json', JSON.stringify(pkg, null, 2));
     tree.create(
       '/tsconfig.spec.json',
-      JSON.stringify({ compilerOptions: { module: 'esnext', types: ['jest'] } }, null, 2),
+      JSON.stringify({ compilerOptions: { module: 'esnext', types: ['jest'] } }, null, 2)
     );
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           const build = ws.projects.get('app')!.targets.get('build')!;
           build.options = { ...(build.options ?? {}), polyfills: ['zone.js'] };
           ws.projects.get('app')!.targets.set('test', {
@@ -209,20 +209,30 @@ describe('jest @21 migration — idempotency', () => {
             },
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
     return tree;
   }
 
   it('run twice == run once', async () => {
-    const once = (await runner().runSchematic('migration-v21', {}, await seedFull())) as UnitTestTree;
+    const once = (await runner().runSchematic(
+      'migration-v21',
+      {},
+      await seedFull()
+    )) as UnitTestTree;
     const twice = (await runner().runSchematic('migration-v21', {}, once)) as UnitTestTree;
 
     const wsOnce = await readWorkspace(once);
     const wsTwice = await readWorkspace(twice);
-    const optsOnce = wsOnce.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>;
-    const optsTwice = wsTwice.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>;
+    const optsOnce = wsOnce.projects.get('app')!.targets.get('test')!.options as Record<
+      string,
+      unknown
+    >;
+    const optsTwice = wsTwice.projects.get('app')!.targets.get('test')!.options as Record<
+      string,
+      unknown
+    >;
     expect(optsTwice).toEqual(optsOnce);
 
     const pkgOnce = JSON.parse(once.readText('/package.json'));

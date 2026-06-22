@@ -62,7 +62,12 @@ function seedPre21Shape(workdir) {
   const specPath = path.join(workdir, 'tsconfig.spec.json');
   const spec = {
     extends: './tsconfig.json',
-    compilerOptions: { outDir: './out-tsc/spec', module: 'ESNext', moduleResolution: 'node', types: ['jest'] },
+    compilerOptions: {
+      outDir: './out-tsc/spec',
+      module: 'ESNext',
+      moduleResolution: 'node',
+      types: ['jest'],
+    },
     include: ['src/**/*.spec.ts', 'src/**/*.d.ts'],
   };
   fs.writeFileSync(specPath, JSON.stringify(spec, null, 2));
@@ -70,7 +75,22 @@ function seedPre21Shape(workdir) {
 
 function main() {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'jest-mig-'));
-  if (run(NG_BIN, ['new', APP, '--directory', APP, '--skip-install', '--skip-git', '--routing=false', '--style=scss'], { cwd: tmp }) !== 0) {
+  if (
+    run(
+      NG_BIN,
+      [
+        'new',
+        APP,
+        '--directory',
+        APP,
+        '--skip-install',
+        '--skip-git',
+        '--routing=false',
+        '--style=scss',
+      ],
+      { cwd: tmp }
+    ) !== 0
+  ) {
     throw new Error('ng new failed');
   }
   const workdir = path.join(tmp, APP);
@@ -83,7 +103,15 @@ function main() {
 
   const status = run(
     NG_BIN,
-    ['update', '@angular-builders/jest', '--migrate-only', '--from=20.0.0', '--to=22.0.0', '--allow-dirty', '--force'],
+    [
+      'update',
+      '@angular-builders/jest',
+      '--migrate-only',
+      '--from=20.0.0',
+      '--to=22.0.0',
+      '--allow-dirty',
+      '--force',
+    ],
     { cwd: workdir, env }
   );
   if (status !== 0) throw new Error(`ng update --migrate-only failed with status ${status}`);
@@ -95,7 +123,8 @@ function main() {
   if (testOpts.configPath !== undefined) throw new Error('configPath not renamed (still present)');
   if (testOpts.config === undefined) throw new Error('config (renamed from configPath) missing');
   if (testOpts.testPathPattern !== undefined) throw new Error('testPathPattern not renamed');
-  if (testOpts.testPathPatterns === undefined) throw new Error('testPathPatterns (renamed) missing');
+  if (testOpts.testPathPatterns === undefined)
+    throw new Error('testPathPatterns (renamed) missing');
 
   const spec = JSON.parse(fs.readFileSync(path.join(workdir, 'tsconfig.spec.json'), 'utf8'));
   if (spec.compilerOptions.module !== 'Node16') throw new Error('tsconfig module not Node16');
@@ -103,8 +132,10 @@ function main() {
   console.log('[jest-migration] transform assertions OK');
 
   // Prove the migrated config is valid/runnable under v22.
-  if (run('sh', ['-c', 'npx ng build'], { cwd: workdir, env }) !== 0) throw new Error('ng build failed post-migration');
-  if (run('sh', ['-c', 'npx ng test'], { cwd: workdir, env }) !== 0) throw new Error('ng test failed post-migration');
+  if (run('sh', ['-c', 'npx ng build'], { cwd: workdir, env }) !== 0)
+    throw new Error('ng build failed post-migration');
+  if (run('sh', ['-c', 'npx ng test'], { cwd: workdir, env }) !== 0)
+    throw new Error('ng test failed post-migration');
 
   console.log('[jest-migration] PASS');
 }

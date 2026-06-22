@@ -6,6 +6,6 @@ function defineTitleByOptionPlugin(pluginOptions) {
       options.define.titleByOption = JSON.stringify(pluginOptions.title);
     },
   };
-};
+}
 
 export default defineTitleByOptionPlugin;

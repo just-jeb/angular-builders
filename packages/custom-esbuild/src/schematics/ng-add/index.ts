@@ -24,7 +24,9 @@ const WEBPACK_BUILDS = [
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const VERSION: string = require('../../../package.json').version;
 
-function classifyBuildBuilder(builder: string | undefined): 'esbuild' | 'webpack' | 'none' | 'other' {
+function classifyBuildBuilder(
+  builder: string | undefined
+): 'esbuild' | 'webpack' | 'none' | 'other' {
   if (!builder) return 'none';
   if (builder === ESBUILD_BUILD || builder === BUILD_BUILDER) return 'esbuild';
   if (WEBPACK_BUILDS.includes(builder)) return 'webpack';
@@ -36,9 +38,7 @@ export function ngAdd(options: Schema): Rule {
     const workspace = (await readWorkspace(tree)) as unknown as workspaces.WorkspaceDefinition;
     const projects = getProjectsToTarget(workspace, options.project);
 
-    const rules: Rule[] = [
-      addBuilderDevDependency(PACKAGE_NAME, `~${VERSION}`, { install: true }),
-    ];
+    const rules: Rule[] = [addBuilderDevDependency(PACKAGE_NAME, `~${VERSION}`, { install: true })];
 
     for (const projectName of projects) {
       const project = workspace.projects.get(projectName)!;
@@ -61,7 +61,7 @@ export function ngAdd(options: Schema): Rule {
             `"use-application-builder" migration to move onto "@angular/build:application", ` +
             `(2) re-run "ng add @angular-builders/custom-esbuild", then (3) port your ` +
             `webpack.config.js plugins to esbuild "codePlugins" manually. ` +
-            `To skip the guard and force only the target rewrite now, re-run with "--from-webpack". Leaving build/serve unchanged.`,
+            `To skip the guard and force only the target rewrite now, re-run with "--from-webpack". Leaving build/serve unchanged.`
         );
       }
 
@@ -72,7 +72,7 @@ export function ngAdd(options: Schema): Rule {
         rules.push(
           setBuilderForTarget(projectName, 'test', TEST_BUILDER, {
             buildTarget: `${projectName}:build`,
-          }),
+          })
         );
       } else if (testKind === 'karma' || testKind === 'jest') {
         context.logger.info(
@@ -80,7 +80,7 @@ export function ngAdd(options: Schema): Rule {
             `${testKind === 'karma' ? 'Karma' : 'Jest'} test runner; esbuild plugins do not ` +
             `apply there. To run your tests through esbuild/Vitest with the same plugins, ` +
             `switch the test target to "${TEST_BUILDER}" (or run ` +
-            `"ng add @angular-builders/custom-esbuild --unit-test"). Leaving the test target unchanged.`,
+            `"ng add @angular-builders/custom-esbuild --unit-test"). Leaving the test target unchanged.`
         );
       }
     }

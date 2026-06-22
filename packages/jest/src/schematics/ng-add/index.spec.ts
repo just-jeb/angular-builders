@@ -29,21 +29,19 @@ describe('jest ng-add (no Karma)', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular-devkit/build-angular:karma',
             options: {},
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     const out = (await runner().runSchematic('ng-add', {}, tree)) as UnitTestTree;
     const ws = await readWorkspace(out);
-    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe(
-      '@angular-builders/jest:run',
-    );
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe('@angular-builders/jest:run');
   });
 
   it('sets zoneless to match detection (zoneless workspace → true)', async () => {
@@ -60,15 +58,15 @@ describe('jest ng-add (Karma present)', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular-devkit/build-angular:karma',
             options: { polyfills: ['zone.js', 'zone.js/testing'] },
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     const pkg = JSON.parse(tree.readText('/package.json'));
     pkg.devDependencies = {
@@ -88,8 +86,8 @@ describe('jest ng-add (Karma present)', () => {
       JSON.stringify(
         { compilerOptions: { types: ['jasmine'] }, files: ['src/test.ts', 'src/polyfills.ts'] },
         null,
-        2,
-      ),
+        2
+      )
     );
     return tree;
   }
@@ -128,37 +126,43 @@ describe('jest ng-add (Vitest present)', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular/build:unit-test',
             options: { buildTarget: 'app:build', tsConfig: 'tsconfig.spec.json' },
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     tree.create(
       '/tsconfig.spec.json',
       JSON.stringify(
         { compilerOptions: { types: ['vitest/globals'] }, include: ['src/**/*.spec.ts'] },
         null,
-        2,
-      ),
+        2
+      )
     );
     return tree;
   }
 
   it('rewrites the Vitest test target to @angular-builders/jest:run', async () => {
-    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const out = (await runner().runSchematic(
+      'ng-add',
+      {},
+      await vitestWorkspace()
+    )) as UnitTestTree;
     const ws = await readWorkspace(out);
-    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe(
-      '@angular-builders/jest:run',
-    );
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe('@angular-builders/jest:run');
   });
 
   it('fixes tsconfig.spec.json types (vitest globals → jest)', async () => {
-    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const out = (await runner().runSchematic(
+      'ng-add',
+      {},
+      await vitestWorkspace()
+    )) as UnitTestTree;
     const cfg = JSON.parse(out.readText('/tsconfig.spec.json'));
     expect(cfg.compilerOptions.types).toEqual(['jest']);
   });
@@ -185,7 +189,11 @@ describe('jest ng-add (Vitest present)', () => {
   });
 
   it('strips the prior :unit-test options (runner, buildTarget) from the jest target', async () => {
-    const out = (await runner().runSchematic('ng-add', {}, await vitestWorkspace())) as UnitTestTree;
+    const out = (await runner().runSchematic(
+      'ng-add',
+      {},
+      await vitestWorkspace()
+    )) as UnitTestTree;
     const ws = await readWorkspace(out);
     const options = ws.projects.get('app')!.targets.get('test')!.options as Record<string, unknown>;
     // buildTarget belongs to the Vitest unit-test builder; it must not leak to the Jest builder.
@@ -203,20 +211,24 @@ describe('jest ng-add (v22 Karma via :unit-test runner option)', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           ws.projects.get('app')!.targets.set('test', {
             builder: '@angular/build:unit-test',
             options: { runner: 'karma', buildTarget: 'app:build' },
           });
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
     return tree;
   }
 
   it('rewrites to @angular-builders/jest:run and drops the stale runner option', async () => {
-    const out = (await runner().runSchematic('ng-add', {}, await v22KarmaWorkspace())) as UnitTestTree;
+    const out = (await runner().runSchematic(
+      'ng-add',
+      {},
+      await v22KarmaWorkspace()
+    )) as UnitTestTree;
     const ws = await readWorkspace(out);
     const test = ws.projects.get('app')!.targets.get('test')!;
     expect(test.builder).toBe('@angular-builders/jest:run');
@@ -231,13 +243,13 @@ describe('jest ng-add (zoneless detection + idempotency)', () => {
     let tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           const build = ws.projects.get('app')!.targets.get('build')!;
           build.options = { ...(build.options ?? {}), polyfills: ['zone.js'] };
         }),
-        tree,
+        tree
       )
-      .forEach((t) => (tree = t as UnitTestTree));
+      .forEach(t => (tree = t as UnitTestTree));
 
     const out = (await runner().runSchematic('ng-add', {}, tree)) as UnitTestTree;
     const ws = await readWorkspace(out);
@@ -251,9 +263,7 @@ describe('jest ng-add (zoneless detection + idempotency)', () => {
     const twice = (await runner().runSchematic('ng-add', {}, once)) as UnitTestTree;
 
     const ws = await readWorkspace(twice);
-    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe(
-      '@angular-builders/jest:run',
-    );
+    expect(ws.projects.get('app')!.targets.get('test')!.builder).toBe('@angular-builders/jest:run');
     const pkg = JSON.parse(twice.readText('/package.json'));
     expect(pkg.devDependencies['jest']).toBe('^30.0.0');
   });

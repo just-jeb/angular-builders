@@ -9,7 +9,6 @@ module.exports = {
     // schematics specs can import from the in-tree dist without a yarn re-install.
     '^@angular-builders/common/schematics/testing$':
       '<rootDir>/packages/common/dist/schematics/testing.js',
-    '^@angular-builders/common/schematics$':
-      '<rootDir>/packages/common/dist/schematics/index.js',
+    '^@angular-builders/common/schematics$': '<rootDir>/packages/common/dist/schematics/index.js',
   },
 };

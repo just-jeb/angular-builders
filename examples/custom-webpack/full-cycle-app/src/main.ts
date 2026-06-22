@@ -7,4 +7,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-bootstrapApplication(AppComponent, {providers: [provideZoneChangeDetection()]});
+bootstrapApplication(AppComponent, { providers: [provideZoneChangeDetection()] });
