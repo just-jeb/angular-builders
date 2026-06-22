@@ -16,10 +16,14 @@ import { NgAddOptions } from './schema';
 
 const JEST_BUILDER = '@angular-builders/jest:run';
 
+// jest-preset-angular is intentionally NOT listed here: it is a direct dependency of
+// @angular-builders/jest, so under a hoisting installer (Yarn node-modules linker, default
+// npm) it resolves transitively from the builder and the bare `preset: 'jest-preset-angular'`
+// specifier works without the consuming project declaring it. Pinning it here only created a
+// second, independently-versioned copy that drifted from the builder's own dependency.
 const JEST_STACK: Array<[name: string, version: string]> = [
   ['@angular-builders/jest', '^22.0.0'],
   ['jest', '^30.0.0'],
-  ['jest-preset-angular', '^17.0.0'],
   ['jest-environment-jsdom', '^30.0.0'],
 ];
 
