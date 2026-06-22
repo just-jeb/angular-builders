@@ -10,14 +10,22 @@ import {
   editJsonFile,
 } from './rules';
 
-const NG = path.join(path.dirname(require.resolve('@schematics/angular/package.json')), 'collection.json');
+const NG = path.join(
+  path.dirname(require.resolve('@schematics/angular/package.json')),
+  'collection.json'
+);
 const runner = () => new SchematicTestRunner('t', NG);
 
 describe('setBuilderForTarget', () => {
   it('rewrites the builder and merges options', async () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     const out = (await runner()
-      .callRule(setBuilderForTarget('app', 'build', '@angular-builders/custom-esbuild:application', { foo: 1 }), tree)
+      .callRule(
+        setBuilderForTarget('app', 'build', '@angular-builders/custom-esbuild:application', {
+          foo: 1,
+        }),
+        tree
+      )
       .toPromise()) as UnitTestTree;
     const ws = await readWorkspace(out);
     const target = ws.projects.get('app')!.targets.get('build')!;
@@ -29,12 +37,24 @@ describe('setBuilderForTarget', () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     // Seed a :unit-test-shaped test target whose options must NOT carry over.
     const seeded = (await runner()
-      .callRule(setBuilderForTarget('app', 'test', '@angular/build:unit-test', { runner: 'karma', buildTarget: 'app:build' }), tree)
+      .callRule(
+        setBuilderForTarget('app', 'test', '@angular/build:unit-test', {
+          runner: 'karma',
+          buildTarget: 'app:build',
+        }),
+        tree
+      )
       .toPromise()) as UnitTestTree;
     const out = (await runner()
       .callRule(
-        setBuilderForTarget('app', 'test', '@angular-builders/jest:run', { zoneless: true }, { replaceOptions: true }),
-        seeded,
+        setBuilderForTarget(
+          'app',
+          'test',
+          '@angular-builders/jest:run',
+          { zoneless: true },
+          { replaceOptions: true }
+        ),
+        seeded
       )
       .toPromise()) as UnitTestTree;
     const ws = await readWorkspace(out);
@@ -51,7 +71,10 @@ describe('addBuilderDevDependency', () => {
   it('adds the package to devDependencies', async () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     const out = (await runner()
-      .callRule(addBuilderDevDependency('@angular-builders/jest', '~22.0.0', { install: false }), tree)
+      .callRule(
+        addBuilderDevDependency('@angular-builders/jest', '~22.0.0', { install: false }),
+        tree
+      )
       .toPromise()) as UnitTestTree;
     const pkg = JSON.parse(out.readText('/package.json'));
     expect(pkg.devDependencies['@angular-builders/jest']).toBe('~22.0.0');
@@ -63,7 +86,7 @@ describe('removeDevDependencies', () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
     tree.overwrite(
       '/package.json',
-      JSON.stringify({ devDependencies: { karma: '^6.0.0', jasmine: '^5.0.0' } }, null, 2),
+      JSON.stringify({ devDependencies: { karma: '^6.0.0', jasmine: '^5.0.0' } }, null, 2)
     );
     const out = (await runner()
       .callRule(removeDevDependencies(['karma', 'not-there']), tree)
@@ -88,11 +111,16 @@ describe('removeFilesIfPresent', () => {
 describe('editJsonFile', () => {
   it('mutates JSON via JSONFile', async () => {
     const tree = await new SchematicTestHarness().createWorkspace({ projects: [{ name: 'app' }] });
-    tree.create('/tsconfig.spec.json', JSON.stringify({ compilerOptions: { types: ['jasmine'] } }, null, 2));
+    tree.create(
+      '/tsconfig.spec.json',
+      JSON.stringify({ compilerOptions: { types: ['jasmine'] } }, null, 2)
+    );
     const out = (await runner()
       .callRule(
-        editJsonFile('/tsconfig.spec.json', (json) => json.modify(['compilerOptions', 'types'], ['jest'])),
-        tree,
+        editJsonFile('/tsconfig.spec.json', json =>
+          json.modify(['compilerOptions', 'types'], ['jest'])
+        ),
+        tree
       )
       .toPromise()) as UnitTestTree;
     const cfg = JSON.parse(out.readText('/tsconfig.spec.json'));

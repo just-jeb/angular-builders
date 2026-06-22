@@ -178,7 +178,7 @@ function main() {
     const args = ['add', tarballAbs, '--skip-confirmation', ...(spec.ngAddArgs || [])];
     const r = run(NG_BIN, args, { cwd: workdir });
     fs.writeFileSync(logFile, r.stdout + r.stderr);
-    if ((spec.expectAddSucceeds !== false) && r.status !== 0) {
+    if (spec.expectAddSucceeds !== false && r.status !== 0) {
       throw new Error(`ng add failed with status ${r.status}`);
     }
   } else {
@@ -186,14 +186,20 @@ function main() {
     // install task runs against a no-op PM shim (see makePackageManagerShim) so it can't mutate
     // the symlinked workspace node_modules.
     const shimDir = makePackageManagerShim();
-    const args = ['add', spec.package, '--collection', spec.package, '--skip-confirmation',
-      ...(spec.ngAddArgs || [])];
+    const args = [
+      'add',
+      spec.package,
+      '--collection',
+      spec.package,
+      '--skip-confirmation',
+      ...(spec.ngAddArgs || []),
+    ];
     const r = run(NG_BIN, args, {
       cwd: workdir,
       env: { ...process.env, PATH: `${shimDir}${path.delimiter}${process.env.PATH}` },
     });
     fs.writeFileSync(logFile, r.stdout + r.stderr);
-    if ((spec.expectAddSucceeds !== false) && r.status !== 0) {
+    if (spec.expectAddSucceeds !== false && r.status !== 0) {
       throw new Error(`ng add failed with status ${r.status}`);
     }
   }

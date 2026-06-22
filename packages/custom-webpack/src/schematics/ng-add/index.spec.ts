@@ -8,16 +8,27 @@ function runner(): SchematicTestRunner {
   return new SchematicTestRunner('custom-webpack', COLLECTION);
 }
 
-async function runNgAdd(tree: UnitTestTree, options: Record<string, unknown> = {}): Promise<UnitTestTree> {
+async function runNgAdd(
+  tree: UnitTestTree,
+  options: Record<string, unknown> = {}
+): Promise<UnitTestTree> {
   return runner().runSchematic('ng-add', options, tree) as Promise<UnitTestTree>;
 }
 
-async function builderOf(tree: UnitTestTree, project: string, target: string): Promise<string | undefined> {
+async function builderOf(
+  tree: UnitTestTree,
+  project: string,
+  target: string
+): Promise<string | undefined> {
   const ws = await getWorkspace(tree);
   return ws.projects.get(project)?.targets.get(target)?.builder;
 }
 
-async function optionsOf(tree: UnitTestTree, project: string, target: string): Promise<Record<string, unknown>> {
+async function optionsOf(
+  tree: UnitTestTree,
+  project: string,
+  target: string
+): Promise<Record<string, unknown>> {
   const ws = await getWorkspace(tree);
   return (ws.projects.get(project)?.targets.get(target)?.options ?? {}) as Record<string, unknown>;
 }
@@ -35,7 +46,9 @@ describe('custom-webpack ng-add', () => {
     tree = await runNgAdd(tree);
 
     expect(await builderOf(tree, 'app', 'build')).toBe('@angular-builders/custom-webpack:browser');
-    expect(await builderOf(tree, 'app', 'serve')).toBe('@angular-builders/custom-webpack:dev-server');
+    expect(await builderOf(tree, 'app', 'serve')).toBe(
+      '@angular-builders/custom-webpack:dev-server'
+    );
 
     const buildOptions = await optionsOf(tree, 'app', 'build');
     for (const key of Object.keys(originalBuildOptions)) {
@@ -51,7 +64,7 @@ describe('custom-webpack ng-add', () => {
 
     const pkg = JSON.parse(tree.readText('/package.json'));
     expect(pkg.devDependencies['@angular-builders/custom-webpack']).toBeDefined();
-    expect(run.tasks.some((t) => t.name === 'node-package')).toBe(true);
+    expect(run.tasks.some(t => t.name === 'node-package')).toBe(true);
   });
 
   it('scaffolds webpack.config.js and wires customWebpackConfig when none exists', async () => {
@@ -87,11 +100,11 @@ describe('custom-webpack ng-add', () => {
     const { updateWorkspace } = await import('@schematics/angular/utility');
     tree = (await runner()
       .callRule(
-        updateWorkspace((ws) => {
+        updateWorkspace(ws => {
           const opts = ws.projects.get('app')!.targets.get('build')!.options!;
           opts['customWebpackConfig'] = { path: 'extra-webpack.config.js' };
         }),
-        tree,
+        tree
       )
       .toPromise()) as UnitTestTree;
 
@@ -112,7 +125,9 @@ describe('custom-webpack ng-add', () => {
     tree = await runNgAdd(tree);
 
     expect(await builderOf(tree, 'app', 'build')).toBe('@angular-builders/custom-webpack:browser');
-    expect(await builderOf(tree, 'app', 'serve')).toBe('@angular-builders/custom-webpack:dev-server');
+    expect(await builderOf(tree, 'app', 'serve')).toBe(
+      '@angular-builders/custom-webpack:dev-server'
+    );
     expect(tree.readText('/webpack.config.js')).toBe(firstConfig);
   });
 
@@ -123,6 +138,8 @@ describe('custom-webpack ng-add', () => {
     tree = await runNgAdd(tree, { project: 'b' });
 
     expect(await builderOf(tree, 'b', 'build')).toBe('@angular-builders/custom-webpack:browser');
-    expect(await builderOf(tree, 'a', 'build')).not.toBe('@angular-builders/custom-webpack:browser');
+    expect(await builderOf(tree, 'a', 'build')).not.toBe(
+      '@angular-builders/custom-webpack:browser'
+    );
   });
 });

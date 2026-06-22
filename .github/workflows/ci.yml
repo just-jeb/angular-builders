@@ -112,6 +112,31 @@ jobs:
           name: dist
           path: packages/*/dist
 
+  # Repo-wide formatting gate. Prettier is enforced at commit time by lint-staged, but that
+  # only touches staged files, so the tree drifts after a prettier/config change. This job
+  # runs `prettier --check` over the whole repo (same globs as the `format`/`format:check`
+  # root scripts and lint-staged) and fails on any drift. Kept as its own lightweight job
+  # (no build, no Cypress) so it runs in parallel with build/integration; it is wired into
+  # `ci-pass` below so branch protection enforces it.
+  format:
+    if: github.event_name == 'workflow_dispatch' || (!contains(github.event.head_commit.message, 'ci(release)'))
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+      - run: corepack enable
+      - uses: actions/cache/restore@v5
+        with:
+          path: |
+            node_modules
+            .yarn
+          key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
+          restore-keys: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-
+      - run: yarn --immutable
+      - run: yarn format:check
+
   integration:
     needs: build
     if: needs.build.outputs.has_tests == 'true'
@@ -153,7 +178,7 @@ jobs:
           ${{ matrix.command }}
 
   ci-pass:
-    needs: [build, integration]
+    needs: [build, format, integration]
     if: always()
     runs-on: ubuntu-24.04
     steps:

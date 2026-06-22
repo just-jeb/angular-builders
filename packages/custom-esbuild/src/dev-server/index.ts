@@ -73,9 +73,7 @@ export function executeCustomDevServerBuilder(
 
       return { middleware, buildPlugins, indexHtmlTransformer };
     }),
-    switchMap((extensions) =>
-      executeDevServerBuilder(options, context, extensions)
-    )
+    switchMap(extensions => executeDevServerBuilder(options, context, extensions))
   );
 }
 

@@ -6,7 +6,7 @@ import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/te
 // in Node 22+ which enforces the exports map. Resolve via package.json instead.
 const NG_COLLECTION = path.join(
   path.dirname(require.resolve('@schematics/angular/package.json')),
-  'collection.json',
+  'collection.json'
 );
 
 export interface WorkspaceProjectSpec {
@@ -46,7 +46,7 @@ export class SchematicTestHarness {
           skipTests: false,
           standalone: true,
         },
-        tree,
+        tree
       );
     }
 

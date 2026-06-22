@@ -66,7 +66,11 @@ export function mergeConfigs(
           : p
       );
     }
-    mergedConfig.plugins = [...anonymousConf1Plugins, ...namedConf1ExceptConf2, ...webpackConfig2.plugins];
+    mergedConfig.plugins = [
+      ...anonymousConf1Plugins,
+      ...namedConf1ExceptConf2,
+      ...webpackConfig2.plugins,
+    ];
   }
   return mergedConfig;
 }
