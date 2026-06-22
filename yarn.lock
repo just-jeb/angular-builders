@@ -290,18 +290,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@angular-devkit/architect@npm:0.2200.0, @angular-devkit/architect@npm:>= 0.2200.0 < 0.2300.0, @angular-devkit/architect@npm:>=0.2200.0 < 0.2300.0":
-  version: 0.2200.0
-  resolution: "@angular-devkit/architect@npm:0.2200.0"
-  dependencies:
-    "@angular-devkit/core": "npm:22.0.0"
-    rxjs: "npm:7.8.2"
-  bin:
-    architect: bin/cli.js
-  checksum: 10c0/b0b5fb1ca4ec9e8fc4eed8a75810a9c9ab654ec7d5f111e08348cac41ab51c2e5ae5090f83d89b7ecb7aa74da5b00c244cfe601ad8e41bc883a43e91ac212e37
-  languageName: node
-  linkType: hard
-
 "@angular-devkit/architect@npm:0.2200.3":
   version: 0.2200.3
   resolution: "@angular-devkit/architect@npm:0.2200.3"
@@ -535,25 +523,6 @@ __metadata:
     webpack: ^5.30.0
     webpack-dev-server: ^5.0.2
   checksum: 10c0/41a0f20150b321b52223a3011ea49246a5b41ad622faca26d9adbb56b3c091ff1778c0d145f2225bfbe36c7e68fc82324af6b5545376afb784194b1e90501cc2
-  languageName: node
-  linkType: hard
-
-"@angular-devkit/core@npm:22.0.0, @angular-devkit/core@npm:>= 22.0.0 < 23.0.0, @angular-devkit/core@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "@angular-devkit/core@npm:22.0.0"
-  dependencies:
-    ajv: "npm:8.20.0"
-    ajv-formats: "npm:3.0.1"
-    jsonc-parser: "npm:3.3.1"
-    picomatch: "npm:4.0.4"
-    rxjs: "npm:7.8.2"
-    source-map: "npm:0.7.6"
-  peerDependencies:
-    chokidar: ^5.0.0
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  checksum: 10c0/f7115f661a29bb0fa52ed06325c1dcd5058512770c36cfc5c42e53f6f3cf9a33581da0eeb0c8f9119ae3c8fa056607b1d2434c4c9952b7ad022f8416cf1be48e
   languageName: node
   linkType: hard
 
@@ -871,34 +840,6 @@ __metadata:
     vitest:
       optional: true
   checksum: 10c0/a35aad38979952995181696f6d6780f904a71f1616d85d7a10a41f75a64cb6d69853ff55d41c9829805763dadc2c3858d024dc490dbfadcbd0e5744b64e805c2
-  languageName: node
-  linkType: hard
-
-"@angular/cli@npm:22.0.0":
-  version: 22.0.0
-  resolution: "@angular/cli@npm:22.0.0"
-  dependencies:
-    "@angular-devkit/architect": "npm:0.2200.0"
-    "@angular-devkit/core": "npm:22.0.0"
-    "@angular-devkit/schematics": "npm:22.0.0"
-    "@inquirer/prompts": "npm:8.4.2"
-    "@listr2/prompt-adapter-inquirer": "npm:4.2.3"
-    "@modelcontextprotocol/sdk": "npm:1.29.0"
-    "@schematics/angular": "npm:22.0.0"
-    "@yarnpkg/lockfile": "npm:1.1.0"
-    algoliasearch: "npm:5.52.0"
-    ini: "npm:6.0.0"
-    jsonc-parser: "npm:3.3.1"
-    listr2: "npm:10.2.1"
-    npm-package-arg: "npm:13.0.2"
-    pacote: "npm:21.5.0"
-    parse5-html-rewriting-stream: "npm:8.0.1"
-    semver: "npm:7.7.4"
-    yargs: "npm:18.0.0"
-    zod: "npm:4.4.2"
-  bin:
-    ng: bin/ng.js
-  checksum: 10c0/83d0b629414e4de1df623bf455b684e0b30250ff276e3d34837d806607c0674101d182010b74062028d7557b582b4b4b1f9d0015f81b4c801ed3209a88db2ecb
   languageName: node
   linkType: hard
 
@@ -6223,18 +6164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@schematics/angular@npm:22.0.0, @schematics/angular@npm:^22.0.0":
-  version: 22.0.0
-  resolution: "@schematics/angular@npm:22.0.0"
-  dependencies:
-    "@angular-devkit/core": "npm:22.0.0"
-    "@angular-devkit/schematics": "npm:22.0.0"
-    jsonc-parser: "npm:3.3.1"
-    typescript: "npm:6.0.3"
-  checksum: 10c0/2546eda2e79e2f4023ead4c5935520b9fa8982155d4ea14b8248538b82ba2625dffbe1b5a1ad97939f3378667e144eb82a777a83e1747baa51534f3cf6ac8fd4
-  languageName: node
-  linkType: hard
-
 "@schematics/angular@npm:22.0.3":
   version: 22.0.3
   resolution: "@schematics/angular@npm:22.0.3"
@@ -6244,6 +6173,18 @@ __metadata:
     jsonc-parser: "npm:3.3.1"
     typescript: "npm:6.0.3"
   checksum: 10c0/9e39d3f7c6ef08e9393ecd927db3d9c192020afd074013694f42533a755e3ec314f5788f63d31b9bff59b215eba3caa6b010a3b5bd598a72cb2c3805b8c9991d
+  languageName: node
+  linkType: hard
+
+"@schematics/angular@npm:^22.0.0":
+  version: 22.0.0
+  resolution: "@schematics/angular@npm:22.0.0"
+  dependencies:
+    "@angular-devkit/core": "npm:22.0.0"
+    "@angular-devkit/schematics": "npm:22.0.0"
+    jsonc-parser: "npm:3.3.1"
+    typescript: "npm:6.0.3"
+  checksum: 10c0/2546eda2e79e2f4023ead4c5935520b9fa8982155d4ea14b8248538b82ba2625dffbe1b5a1ad97939f3378667e144eb82a777a83e1747baa51534f3cf6ac8fd4
   languageName: node
   linkType: hard
 
@@ -8229,7 +8170,7 @@ __metadata:
   resolution: "bazel-example@workspace:examples/bazel"
   dependencies:
     "@angular-builders/bazel": "workspace:*"
-    "@angular/cli": "npm:22.0.0"
+    "@angular/cli": "npm:22.0.3"
   languageName: unknown
   linkType: soft
 
@@ -15479,33 +15420,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pacote@npm:21.5.0, pacote@npm:^21.0.0, pacote@npm:^21.0.2, pacote@npm:^21.5.0":
-  version: 21.5.0
-  resolution: "pacote@npm:21.5.0"
-  dependencies:
-    "@gar/promise-retry": "npm:^1.0.0"
-    "@npmcli/git": "npm:^7.0.0"
-    "@npmcli/installed-package-contents": "npm:^4.0.0"
-    "@npmcli/package-json": "npm:^7.0.0"
-    "@npmcli/promise-spawn": "npm:^9.0.0"
-    "@npmcli/run-script": "npm:^10.0.0"
-    cacache: "npm:^20.0.0"
-    fs-minipass: "npm:^3.0.0"
-    minipass: "npm:^7.0.2"
-    npm-package-arg: "npm:^13.0.0"
-    npm-packlist: "npm:^10.0.1"
-    npm-pick-manifest: "npm:^11.0.1"
-    npm-registry-fetch: "npm:^19.0.0"
-    proc-log: "npm:^6.0.0"
-    sigstore: "npm:^4.0.0"
-    ssri: "npm:^13.0.0"
-    tar: "npm:^7.4.3"
-  bin:
-    pacote: bin/index.js
-  checksum: 10c0/f91ee9c3645300b52eebdce461d4e1d8a9311e9ddf7f55f87532cd3df0282379613b0a9703f97d81c9efaae382f08fcf29e359d7f47f0e9c9670cfb7fc472954
-  languageName: node
-  linkType: hard
-
 "pacote@npm:21.5.1":
   version: 21.5.1
   resolution: "pacote@npm:21.5.1"
@@ -15530,6 +15444,33 @@ __metadata:
   bin:
     pacote: bin/index.js
   checksum: 10c0/61649e22d3c03e5de416c2073032120820ef494f8dece2bcf205d1e17f0ea76d02872d5f2e0804832ba39c1ccc73b454152f7466bfa717053e7a552db690cd4a
+  languageName: node
+  linkType: hard
+
+"pacote@npm:^21.0.0, pacote@npm:^21.0.2, pacote@npm:^21.5.0":
+  version: 21.5.0
+  resolution: "pacote@npm:21.5.0"
+  dependencies:
+    "@gar/promise-retry": "npm:^1.0.0"
+    "@npmcli/git": "npm:^7.0.0"
+    "@npmcli/installed-package-contents": "npm:^4.0.0"
+    "@npmcli/package-json": "npm:^7.0.0"
+    "@npmcli/promise-spawn": "npm:^9.0.0"
+    "@npmcli/run-script": "npm:^10.0.0"
+    cacache: "npm:^20.0.0"
+    fs-minipass: "npm:^3.0.0"
+    minipass: "npm:^7.0.2"
+    npm-package-arg: "npm:^13.0.0"
+    npm-packlist: "npm:^10.0.1"
+    npm-pick-manifest: "npm:^11.0.1"
+    npm-registry-fetch: "npm:^19.0.0"
+    proc-log: "npm:^6.0.0"
+    sigstore: "npm:^4.0.0"
+    ssri: "npm:^13.0.0"
+    tar: "npm:^7.4.3"
+  bin:
+    pacote: bin/index.js
+  checksum: 10c0/f91ee9c3645300b52eebdce461d4e1d8a9311e9ddf7f55f87532cd3df0282379613b0a9703f97d81c9efaae382f08fcf29e359d7f47f0e9c9670cfb7fc472954
   languageName: node
   linkType: hard
 
