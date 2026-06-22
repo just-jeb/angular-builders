@@ -16,6 +16,7 @@
       "rangeStrategy": "replace"
     },
     {
+      "description": "Pin every example dependency to an exact version. Examples are test fixtures, not published packages, so they must resolve deterministically. A loose range here (e.g. bazel's `@angular/cli: \"22\"`) is pinned to the *currently-resolved* version on the next run instead of bumped to latest — so that one example lags every other by a patch and fragments the dep tree (duplicate @angular-devkit/architect). This broke CI and required #2307; the recurrence source (the `yarn add` path in scripts/update-example.js) now pins with `--exact`. Keep example specs exact so this rule only ever has to maintain pins, never repair loose ranges.",
       "matchPaths": ["examples/**"],
       "rangeStrategy": "pin"
     },
