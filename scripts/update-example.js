@@ -122,7 +122,15 @@ const updateNonAngularApp = () => {
   checkNodeVersion();
 
   try {
-    execSync(`yarn add -D @angular/cli@${spec}`, {
+    // `--exact` is required so a bare-major arg (e.g. `22`) lands an exact pin
+    // (`22.0.3`) rather than yarn's default caret/loose range (`22`/`^22.0.0`).
+    // Every other example is pinned exactly by `ng update`; this path is the only
+    // one that goes through `yarn add`. A loose range here diverges under Renovate's
+    // `rangeStrategy: pin` (examples/**): it gets *pinned to the currently-resolved
+    // version* instead of bumped to latest, so bazel lags every other example by a
+    // patch and fragments the dep tree (duplicate @angular-devkit/architect). This
+    // is what broke CI and required #2307.
+    execSync(`yarn add -D --exact @angular/cli@${spec}`, {
       cwd: process.cwd(),
       stdio: 'inherit',
     });
