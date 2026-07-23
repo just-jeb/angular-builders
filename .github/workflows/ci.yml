@@ -47,7 +47,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack enable
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         id: deps-cache
         with:
           path: |
@@ -55,7 +55,7 @@ jobs:
             .yarn
           key: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-${{ hashFiles('yarn.lock') }}
           restore-keys: deps-${{ runner.os }}-node${{ hashFiles('.nvmrc') }}-
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         if: steps.deps-cache.outputs.cache-hit != 'true'
         with:
           # Scope to corepack's download dir only (~/.cache/node holds the Yarn release).
@@ -76,7 +76,7 @@ jobs:
       # broke master.) Keying this cache by yarn.lock means a bump forces a fresh save; the
       # `cypress install` step below downloads the resolved version into it. restore-keys lets
       # an unrelated lockfile change reuse the previous binary so install no-ops.
-      - uses: actions/cache@v5
+      - uses: actions/cache@v6
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
@@ -127,7 +127,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack enable
-      - uses: actions/cache/restore@v5
+      - uses: actions/cache/restore@v6
         with:
           path: |
             node_modules
@@ -151,7 +151,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: corepack enable
-      - uses: actions/cache/restore@v5
+      - uses: actions/cache/restore@v6
         with:
           path: |
             node_modules
@@ -160,7 +160,7 @@ jobs:
           fail-on-cache-miss: true
       # Restore the Cypress binary saved by the build job (same key). e2e tests (yarn e2e)
       # launch Cypress, which needs its binary present in ~/.cache/Cypress.
-      - uses: actions/cache/restore@v5
+      - uses: actions/cache/restore@v6
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
@@ -202,7 +202,7 @@ jobs:
           node-version-file: '.nvmrc'
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
-      - uses: actions/cache/restore@v5
+      - uses: actions/cache/restore@v6
         with:
           path: |
             node_modules
