@@ -134,6 +134,8 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 **MUST:** When creating a pull request, read `.github/PULL_REQUEST_TEMPLATE.md` and use its structure for the PR body. Fill in all sections: PR checklist, PR type, current behavior, new behavior, and breaking change flag.
 
+**MUST NEVER:** Push straight to `master`. A repository ruleset requires every change to arrive through a pull request and to pass the `ci-pass` status check. Jeb is a bypass actor, so a direct push **succeeds** and only reports the bypass in its output — the guard will not stop you, which is exactly why this is written down. This applies to documentation-only commits too. Note that `gh api repos/just-jeb/angular-builders/rules/branches/master` returns `[]` for a bypass actor, so an empty rules list is not evidence that master is unprotected.
+
 ## Local Failure Triage
 
 A failing local jest or build run here is **frequently environment contamination, not a
