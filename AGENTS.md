@@ -130,7 +130,44 @@ Lerna-Lite manages versioning and publishing. Packages use **independent version
 
 **MUST NEVER:** Use `ci(release)` in commit messages outside of the automated publish process -- it causes CI to skip the entire pipeline.
 
+**MUST NEVER:** Drop Karma support for v22. Angular 22 **deprecates Karma but does not remove it**, and Jeb expects it to survive several more majors — a `feat/remove-karma-v22` branch was once created on the false premise that v22 removed it. Keep the Karma→Jest migration path in the jest builder and schematics; when Angular does eventually remove Karma, `custom-webpack`'s Karma builder follows suit. Related v22 detail: Angular 22 unifies Karma and Vitest under one `@angular/build:unit-test` builder, distinguished by `options.runner: "karma" | "vitest"`, while a dedicated `@angular-devkit/build-angular:karma` builder still exists for webpack projects. So `detectTestBuilder` must read `options.runner` for `:unit-test` targets rather than assuming `:unit-test` means Vitest.
+
 **MUST:** When creating a pull request, read `.github/PULL_REQUEST_TEMPLATE.md` and use its structure for the PR body. Fill in all sections: PR checklist, PR type, current behavior, new behavior, and breaking change flag.
+
+## Local Failure Triage
+
+A failing local jest or build run here is **frequently environment contamination, not a
+defect in the branch**. Read the complete error output before theorizing about toolchain
+or code causes — the full text usually names the real cause outright. Rule these out
+first:
+
+- **Stale git worktrees under `.claude/worktrees/`** produce jest-haste-map errors:
+  `Haste module naming collision` / `the name "@angular-builders/common" was looked up in
+the Haste module map … several different files`. Each leftover worktree holds a
+  duplicate `packages/*/package.json`, so jest sees N copies and can't resolve workspace
+  packages. Check `git worktree list` and remove the stale ones, or run jest with
+  `--modulePathIgnorePatterns "/\.claude/"`.
+- **Stale `packages/*/dist`** after a `git reset` or branch switch means tests assert
+  against old compiled code — one sighting had pristine source with 0 occurrences of a
+  `resolveJsonModule` pattern while built dist had 3. Rebuild the package
+  (`cd packages/<pkg> && yarn build`).
+- **Bare `yarn jest` uses babel, not ts-jest**, so it throws
+  `SyntaxError: Unexpected token` on plain TS type syntax. The correct local unit-test
+  command is the package's own `yarn test` (`jest --config ../../jest-ut.config.js`).
+
+This is worth the discipline: verifying a `master` → `release/v22` merge once burned two
+wrong root-cause theories (a supposed TS6/ts-jest incompatibility) plus an invalid
+baseline from bare `yarn jest`, when the full error had named 30+ stale worktrees
+immediately. The branch was never broken.
+
+**Run `yarn install` after switching branches.** Husky's pre-commit runs
+`yarn lint-staged`, and when `node_modules` is stale relative to the checked-out branch's
+lockfile, Yarn 3 can't resolve the `lint-staged` binary (install-state is keyed to the
+lockfile) — it fails with "Couldn't find a script named lint-staged". This bites hardest
+crossing the `master` (v21) and `release/v22` lines, which pin different lint-staged
+majors (`^17` vs `^16`). It is not a husky bug and not worktree-specific. Don't reach for
+`git commit --no-verify`; that hides the mismatch. Reserve it for when a reinstall
+genuinely cannot run.
 
 ## Angular Major Version Upgrade Process
 
