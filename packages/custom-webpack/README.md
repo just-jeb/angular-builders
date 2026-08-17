@@ -7,7 +7,9 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 # Table of Contents
 
 - [Usage](#usage)
+  - [Manual setup](#manual-setup)
   - [For Example](#for-example)
+- [Updating](#updating)
 - [Builders](#builders)
   - [Custom Webpack `browser`](#custom-webpack-browser)
   - [Custom Webpack `dev-server`](#custom-webpack-dev-server)
@@ -62,6 +64,33 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 # Usage
 
+Run:
+
+```
+ng add @angular-builders/custom-webpack
+```
+
+This adds `@angular-builders/custom-webpack` as a dev dependency and installs it, then rewires your project's `build` and `serve` targets (whichever of the two exist) to the `custom-webpack` builders, keeping their existing options intact. If neither a `customWebpackConfig` option nor a `webpack.config.js`/`.ts`/`.cjs`/`.mjs` file already sits at your workspace root, it also scaffolds an empty `webpack.config.js` there and points `build` at it.
+
+In a workspace with more than one project, pass `--project`:
+
+```
+ng add @angular-builders/custom-webpack --project my-app
+```
+
+Without `--project`, it resolves to your single project, or to the workspace's `defaultProject` when several exist, or to every project if neither of those applies. If the resolution comes up empty it warns and leaves your project untouched.
+
+Two things worth knowing before you run it:
+
+- It does not check what builder your `build` target was already using. If that target was on `@angular/build:application` (the esbuild builder), `ng add` overwrites it with `custom-webpack` anyway, and you're left to reconcile the two setups yourself.
+- If a webpack config file already exists at the workspace root but nothing in `angular.json` points `customWebpackConfig` at it, the schematic leaves both the file and your config untouched — you'll need to wire `customWebpackConfig` up by hand.
+
+It never touches your `test` target, so a project running Karma keeps running Karma exactly as before.
+
+## Manual setup
+
+`ng add` does the above automatically; this is what to do if you'd rather set it up by hand, or need to understand what the schematic changed.
+
 1.  `npm i -D @angular-builders/custom-webpack`
 2.  In your `angular.json`:
     ```js
@@ -102,6 +131,16 @@ Allow customizing build configuration without ejecting webpack configuration (`n
           }
   ```
 - Run the build: `ng build`
+
+# Updating
+
+```
+ng update @angular-builders/custom-webpack
+```
+
+Version 22 switches how TypeScript webpack configs and index transforms are loaded, from `ts-node` to [jiti](https://github.com/unjs/jiti). Updating to 22 runs a migration that cleans up the old setup for you: it strips `TS_NODE_PROJECT` and the `ts-node/esm` loader flags out of your npm scripts (dropping a now-redundant leading `cross-env`), removes the `ts-node` and `tsconfig-paths` dependencies, and lifts any `paths`/`baseUrl` sitting under a `ts-node.compilerOptions` block in your tsconfigs up to the top-level `compilerOptions`, leaving keys you'd already set there alone. The `ts-node` block itself is only deleted once nothing else is left in it; otherwise it stays in place with a warning that what remains no longer does anything. This runs across `tsconfig.json`, `tsconfig.base.json`, and every tsconfig referenced by a target in your workspace.
+
+The migration also warns you that build-time type-checking for these files goes away. From here they're just transpiled — see [Type-checking TypeScript configs and transforms](#type-checking-typescript-configs-and-transforms) for what that means and how to get it back in CI.
 
 # Builders
 
@@ -247,7 +286,9 @@ Builder options:
 
 External `karma.conf.js` configuration:
 
-Starting with Angular v20, generating an [external karma config](https://angular.dev/guide/testing#configuration) will cause tests to hang while utilizing `@angular-builders/custom-webpack:karma`.
+Angular 22 deprecates Karma but keeps it running, and for webpack projects it still ships as its own dedicated builder, `@angular-devkit/build-angular:karma` — the one `@angular-builders/custom-webpack:karma` wraps. (Angular 22 also introduces a unified `@angular/build:unit-test` builder that picks Karma or Vitest via `options.runner`, but that's the esbuild path; it doesn't apply here.)
+
+An issue present since Angular v20 still applies: generating an [external karma config](https://angular.dev/guide/testing#configuration) causes tests to hang under `@angular-builders/custom-webpack:karma`.
 
 Fix this by:
 
@@ -347,7 +388,7 @@ The following properties are available:
 - `replaceDuplicatePlugins`: Defaults to `false`. If `true`, the plugins in custom webpack config will replace the corresponding plugins in default Angular CLI webpack configuration. If `false`, the [default behavior](#merging-plugins-configuration) will be applied.
   **Note that if `true`, this option will override `mergeRules` for `plugins` field.**
 
-Webpack configuration can be also written in TypeScript. In this case, it is the application's `tsConfig` file which will be used by `tsnode` for `customWebpackConfig.ts` execution. Given the following example:
+Webpack configuration can be also written in TypeScript. In this case, `customWebpackConfig.ts` is loaded with [jiti](https://github.com/unjs/jiti), using the application's `tsConfig` file for path resolution (see [Type-checking TypeScript configs and transforms](#type-checking-typescript-configs-and-transforms) for how type errors are handled). Given the following example:
 
 ```ts
 // extra-webpack.config.ts
@@ -520,7 +561,7 @@ module.exports = async config => {
 Since Angular 8 `index.html` is not generated as part of the Webpack build. If you want to modify your `index.html` you should use `indexTransform` option.  
 `indexTransform` is a path (relative to workspace root) to a `.js` or `.ts` file that exports transformation function for `index.html`.  
 Function signature is as following:
-If `indexTransform` is written in TypeScript, it is the application's `tsConfig` file which will be use by `tsnode` for `indexTransform.ts` execution.
+If `indexTransform` is written in TypeScript, it is loaded with [jiti](https://github.com/unjs/jiti), using the application's `tsConfig` file for path resolution (see [Type-checking TypeScript configs and transforms](#type-checking-typescript-configs-and-transforms)).
 
 ```typescript
 (options: TargetOptions, indexHtmlContent: string) => string | Promise<string>;
@@ -610,7 +651,7 @@ Custom Webpack builder fully supports ESM.
 
 - If your app has `"type": "module"` both `custom-webpack.js` and `index-transform.js` will be treated as ES modules, unless you change their file extension to `.cjs`. In that case they'll be treated as CommonJS Modules. [Example](../../examples/custom-webpack/sanity-app-esm).
 - For `"type": "commonjs"` (or unspecified type) both `custom-webpack.js` and `index-transform.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-webpack/sanity-app).
-- **TypeScript configs and transforms work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. (Earlier versions required forcing a `ts-node/esm` loader through `NODE_OPTIONS`; that is no longer necessary.) TypeScript path aliases are supported in both module formats.
+- **TypeScript configs and transforms work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. Versions before 22 needed a `ts-node/esm` loader forced through `NODE_OPTIONS`; the [jiti migration](#updating) removes that workaround for you when you run `ng update`. TypeScript path aliases are supported in both module formats.
 
 # Verbose Logging
 
