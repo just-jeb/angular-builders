@@ -56,7 +56,13 @@ Allow customizing build configuration without ejecting webpack configuration (`n
 
 </details>
 
-## [Quick guide](https://www.justjeb.com/post/customizing-angular-cli-build)
+## Which package do you need?
+
+Look at the `build` target in your `angular.json`. If it names a webpack builder such as `@angular-devkit/build-angular:browser`, this is the right package.
+
+Applications generated since Angular 17 use the esbuild-based `application` builder (`@angular/build:application` in current versions), and those builds have no webpack configuration to customize. Those workspaces want [`@angular-builders/custom-esbuild`](https://www.npmjs.com/package/@angular-builders/custom-esbuild), which exposes esbuild plugins and an index transform the way this package exposes a webpack config.
+
+Webpack is still fully supported here, and a great many workspaces are still built with it.
 
 ## Prerequisites:
 
@@ -689,3 +695,4 @@ Custom Webpack allows enabling verbose logging for configuration properties. Thi
 # Further Reading
 
 - [Customizing Angular CLI build - an alternative to ng eject](https://medium.com/angular-in-depth/customizing-angular-cli-build-an-alternative-to-ng-eject-v2-c655768b48cc)
+- [Customizing the Angular CLI build](https://www.justjeb.com/post/customizing-angular-cli-build) — background from 2021 on why the builder layer exists and what it replaced. Its setup steps describe the manual path; [Usage](#usage) above covers `ng add`.

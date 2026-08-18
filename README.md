@@ -57,7 +57,7 @@ Have any questions? Would like to discuss something?
 
 # Further reading
 
-[Angular CLI under the hood - builders demystified](https://www.justjeb.com/post/angular-cli-under-the-hood-builders-demystified)
+[Angular CLI under the hood - builders demystified](https://www.justjeb.com/post/angular-cli-under-the-hood-builders-demystified) — what the Architect layer is and how a builder works, taught by building one from scratch. It explains the mechanism these packages plug into; setup instructions live in the package READMEs above.
 
 ## Contributors ✨
 

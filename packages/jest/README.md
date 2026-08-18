@@ -32,8 +32,6 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 </details>
 
-## [Quick guide](https://www.justjeb.com/post/angular-cli-ng-test-with-jest)
-
 ## Prerequisites
 
 - [Angular CLI 22](https://www.npmjs.com/package/@angular/cli)
@@ -294,3 +292,7 @@ beforeAll(async () => {
   ({ AppComponent } = await import('./app.component'));
 });
 ```
+
+## Further reading
+
+- [Running `ng test` with Jest](https://www.justjeb.com/post/angular-cli-ng-test-with-jest) — background from 2021 on switching a workspace from Karma to Jest by hand, published years before the `ng add` schematic existed. Worth reading to see what the schematic now does on your behalf; for setup, follow [Installation](#installation).
