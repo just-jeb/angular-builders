@@ -15,7 +15,7 @@ ng add @angular-builders/<package>     # set the builder up in your workspace
 ng update @angular-builders/<package>  # move an existing project to a new major
 ```
 
-`ng update` applies every migration between the version you have installed and the one you are moving to, so a project several majors behind catches up in a single command. Each package README documents what its schematics change for you and which changes they can only warn about. `bazel` and `timestamp` have no schematics, so those two are still configured by hand.
+`ng update` applies every migration between the version you have installed and the one you are moving to, so the builder's own migrations all run in one pass. Updating from version 17 or later is supported. Builder majors track Angular majors, so a project moving up several versions upgrades Angular first, and this command then brings the builder in line. Each package README documents what its schematics change for you and which changes they can only warn about. `bazel` and `timestamp` have no schematics, so those two are still configured by hand.
 
 > ⚠️ **Version alignment:** The major version of `@angular-builders/*` packages must match the major version of `@angular/core` in your project. For example, Angular 19 requires `@angular-builders/*@19.x`, Angular 20 requires `@angular-builders/*@20.x`, etc. Using a mismatched version is the most common source of issues.
 

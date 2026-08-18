@@ -70,13 +70,11 @@ Webpack is still fully supported here, and a great many workspaces are still bui
 
 # Usage
 
-Run:
-
 ```
 ng add @angular-builders/custom-webpack
 ```
 
-This adds `@angular-builders/custom-webpack` as a dev dependency and installs it, then rewires your project's `build` and `serve` targets (whichever of the two exist) to the `custom-webpack` builders, keeping their existing options intact. If neither a `customWebpackConfig` option nor a `webpack.config.js`/`.ts`/`.cjs`/`.mjs` file already sits at your workspace root, it also scaffolds an empty `webpack.config.js` there and points `build` at it.
+This adds `@angular-builders/custom-webpack` as a dev dependency and installs it, then rewires your project's `build` and `serve` targets (whichever exist) to the `custom-webpack` builders, keeping their existing options intact. If neither a `customWebpackConfig` option nor a webpack config already sits at your workspace root, it also scaffolds an empty `webpack.config.js` there and points `build` at it.
 
 In a workspace with more than one project, pass `--project`:
 
@@ -84,14 +82,14 @@ In a workspace with more than one project, pass `--project`:
 ng add @angular-builders/custom-webpack --project my-app
 ```
 
-Without `--project`, it resolves to your single project, or to the workspace's `defaultProject` when several exist, or to every project if neither of those applies. If the resolution comes up empty it warns and leaves your project untouched.
+Without it, a single-project workspace is configured automatically; a multi-project workspace falls back to `defaultProject`, or configures every project if that isn't set either.
 
 Two things worth knowing before you run it:
 
 - It does not check what builder your `build` target was already using. If that target was on `@angular/build:application` (the esbuild builder), `ng add` overwrites it with `custom-webpack` anyway, and you're left to reconcile the two setups yourself.
 - If a webpack config file already exists at the workspace root but nothing in `angular.json` points `customWebpackConfig` at it, the schematic leaves both the file and your config untouched — you'll need to wire `customWebpackConfig` up by hand.
 
-It never touches your `test` target, so a project running Karma keeps running Karma exactly as before.
+It never touches your `test` target, so a project running Karma keeps running Karma, and running the schematic again is safe — it just picks up from whatever's already configured.
 
 ## Manual setup
 
@@ -144,9 +142,13 @@ It never touches your `test` target, so a project running Karma keeps running Ka
 ng update @angular-builders/custom-webpack
 ```
 
-Version 22 switches how TypeScript webpack configs and index transforms are loaded, from `ts-node` to [jiti](https://github.com/unjs/jiti). Updating to 22 runs a migration that cleans up the old setup for you: it strips `TS_NODE_PROJECT` and the `ts-node/esm` loader flags out of your npm scripts (dropping a now-redundant leading `cross-env`), removes the `ts-node` and `tsconfig-paths` dependencies, and lifts any `paths`/`baseUrl` sitting under a `ts-node.compilerOptions` block in your tsconfigs up to the top-level `compilerOptions`, leaving keys you'd already set there alone. The `ts-node` block itself is only deleted once nothing else is left in it; otherwise it stays in place with a warning that what remains no longer does anything. This runs across `tsconfig.json`, `tsconfig.base.json`, and every tsconfig referenced by a target in your workspace.
+Version 22 replaces `ts-node` with [jiti](https://github.com/unjs/jiti) for loading TypeScript webpack configs and index transforms. The migration cleans up the old setup for you: it strips the `ts-node/esm` loader workaround out of your npm scripts, removes the `ts-node` and `tsconfig-paths` devDependencies, and lifts path-mapping options out of a `ts-node` tsconfig section into `compilerOptions`. Full details are in the [migration guide](https://github.com/just-jeb/angular-builders/blob/master/MIGRATION.MD).
 
-The migration also warns you that build-time type-checking for these files goes away. From here they're just transpiled — see [Type-checking TypeScript configs and transforms](#type-checking-typescript-configs-and-transforms) for what that means and how to get it back in CI.
+The one thing it can't automate: from here, these files are transpiled without type-checking — see [Type-checking TypeScript configs and transforms](#type-checking-typescript-configs-and-transforms) for what that means and how to get it back in CI.
+
+Updating from version 17 or later is supported, and every migration between your installed version and the target runs in a single `ng update` pass.
+
+`@angular-builders/custom-webpack@22` peer-depends on Angular 22, so the project needs to already be on Angular 22 before this update applies. The migration above only covers the builder's own setup. Getting Angular itself to 22 is a step `ng update @angular-builders/custom-webpack` doesn't do for you.
 
 # Builders
 

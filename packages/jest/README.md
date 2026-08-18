@@ -43,11 +43,11 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 $ ng add @angular-builders/jest
 ```
 
-This adds the missing devDependencies (`@angular-builders/jest`, `jest`, `jest-environment-jsdom`) and schedules the package manager install, so there's no separate install step after it. On the `test` target of each project it targets, it sets the builder to `@angular-builders/jest:run` and replaces any existing test options — including a prior Karma or Vitest setup — with a computed `zoneless` value, worked out from the project's build polyfills and its use of `provideZonelessChangeDetection`. It also rewrites `tsconfig.spec.json` to drop the old test framework's types and file entries and add `jest`.
+This adds the Jest packages it needs and installs them. On the `test` target of each targeted project, it sets the builder to `@angular-builders/jest:run` and replaces the existing test options wholesale — including any prior Karma or Vitest setup — with a computed `zoneless` value based on whether the project is zone-based. It also rewrites `tsconfig.spec.json` to drop the old framework's types and file entries and add `jest`.
 
-If it finds Karma — a Karma test target, a `karma.conf.js` or `karma.conf.ts` at the repo root, or Karma/Jasmine packages in `devDependencies` — it removes the Karma devDependencies and deletes `karma.conf.js` and `src/test.ts`. If it finds Vitest instead, it leaves your devDependencies and spec files alone. Any spec using `vi.*` or importing from `vitest` still needs porting to the Jest API by hand — the schematic warns about this but doesn't do it for you.
+If it detects an existing Karma setup, it removes the Karma devDependencies and deletes `karma.conf.js` and `src/test.ts`. If it finds Vitest instead, it leaves devDependencies and spec files alone — specs using `vi.*` or importing from `vitest` still need porting to the Jest API by hand, and the schematic only warns about this.
 
-Target a single project in a multi-project workspace with `ng add @angular-builders/jest --project my-app`. Without `--project`, it falls back to the workspace's `defaultProject` if one is set, or otherwise runs against every project. The schematic is idempotent, so running it again after adding a new project, or after fixing something by hand, is safe.
+Target a single project with `ng add @angular-builders/jest --project my-app`; without it, the schematic falls back to `defaultProject` or runs against every project. It's idempotent, so running it again after adding a project, or after fixing something by hand, is safe.
 
 ## Manual setup
 
@@ -108,13 +108,13 @@ The builder supports multi-project workspaces out of the box, the only thing req
 $ ng update @angular-builders/jest
 ```
 
-Two migrations ship with the package, one per version boundary you cross.
+Every migration between your installed version and the target runs in one pass, so a project several majors behind picks them all up in one command. Supported from version 17 onward.
 
-Updating from below v21 runs a migration that touches your workspace files directly: it pins `jest` and `jest-environment-jsdom` to `^30` and `jsdom` to `^26` wherever they're already present, sets `module`/`moduleResolution` to `Node16` and `isolatedModules: true` in `tsconfig.spec.json`, and updates every `@angular-builders/jest:run` test target — renaming the `configPath` option to `config` and `testPathPattern` to `testPathPatterns` (wrapping a bare string into an array), removing the discontinued `globalMocks` entries (`styleTransform`, `getComputedStyle`, `doctype`) and the retired Jest CLI options (`browser`, `init`, `mapCoverage`, `testURL`, `timers`), and writing `zoneless: false` on any project it detects as zone-based.
+Crossing v21 runs a migration that edits your workspace: it bumps the Jest packages, sets `Node16` module resolution and `isolatedModules` in `tsconfig.spec.json`, renames and removes builder options that changed in that version, and writes `zoneless: false` on any project it detects as zone-based. The full list of renamed and removed options is in the [migration guide](https://github.com/just-jeb/angular-builders/blob/master/MIGRATION.MD).
 
-Updating to v22 runs a second migration that changes nothing on disk. It only warns, about three things it can't fix for you automatically: that ts-jest's `isolatedModules` now defaults to `true` (and it lists any `const enum` in your source that this breaks), that config loading goes through jiti now, and that projects with a non-empty `root` write coverage under `<projectRoot>/coverage`.
+Crossing v22 runs a second migration that touches nothing on disk. It only warns: ts-jest's `isolatedModules` now defaults to `true` (it lists any `const enum` in your source that this breaks), config loading now goes through jiti, and projects with a non-empty `root` write coverage under `<projectRoot>/coverage`.
 
-Each migration runs only when `ng update` crosses its major, so a project several versions behind picks up both in one command.
+`@angular-builders/jest@22` peer-depends on Angular 22, so your project needs to be on Angular 22 before this update applies. The migrations above run in one pass; getting your project to Angular 22 is a separate step this command doesn't run.
 
 ## Builder options
 
