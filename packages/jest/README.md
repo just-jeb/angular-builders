@@ -32,14 +32,28 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 
 </details>
 
-## [Quick guide](https://www.justjeb.com/post/angular-cli-ng-test-with-jest)
-
 ## Prerequisites
 
 - [Angular CLI 22](https://www.npmjs.com/package/@angular/cli)
 - [Jest 30](https://www.npmjs.com/package/jest)
 
 ## Installation
+
+```sh
+$ ng add @angular-builders/jest
+```
+
+This adds the Jest packages it needs and installs them. On the `test` target of each targeted project, it sets the builder to `@angular-builders/jest:run` and replaces the existing test options wholesale — including any prior Karma or Vitest setup — with a computed `zoneless` value based on whether the project is zone-based. It also rewrites `tsconfig.spec.json` to drop the old framework's types and file entries and add `jest`.
+
+If it detects an existing Karma setup, it removes the Karma devDependencies and deletes `karma.conf.js` and `src/test.ts`. If it finds Vitest instead, it leaves devDependencies and spec files alone — specs using `vi.*` or importing from `vitest` still need porting to the Jest API by hand, and the schematic only warns about this.
+
+Target a single project with `ng add @angular-builders/jest --project my-app`; without it, the schematic falls back to `defaultProject` or runs against every project. It's idempotent, so running it again after adding a project, or after fixing something by hand, is safe.
+
+## Manual setup
+
+`ng add @angular-builders/jest` above already performs everything in this section. It's here for workspaces the schematic doesn't fit — a custom test target, a config layout it doesn't recognize — or if you'd rather wire things up by hand.
+
+### Removing Karma and installing the builder
 
 1. Remove Karma related libraries and files:
    ```sh
@@ -51,7 +65,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
    $ npm i -D jest @types/jest @angular-builders/jest
    ```
 
-## Updating Typescript configurations
+### Updating Typescript configurations
 
 1. In _tsconfig.spec.json_ (root directory, used by Jest):
    - Replace `jasmine` in `types` array with `jest`  
@@ -65,7 +79,7 @@ The builder comes to provide zero configuration setup for Jest while keeping the
      `tsconfig.json` is the config file that your IDE uses so you have to instruct it explicitly to use Jest typings.  
       Bear in mind that the other side of the coin is that your IDE will propose you Jest types in your e2e tests._
 
-## Running with Angular CLI
+### Running with Angular CLI
 
 - In your `angular.json`:
   ```json
@@ -87,6 +101,20 @@ The builder comes to provide zero configuration setup for Jest while keeping the
 ## Multi-projects workspace support
 
 The builder supports multi-project workspaces out of the box, the only thing required is editing _tsconfig.spec.json_ in the relevant project directory as described [above](#updating-typescript-configurations).
+
+## Upgrading with `ng update`
+
+```sh
+$ ng update @angular-builders/jest
+```
+
+Every migration between your installed version and the target runs in one pass, so a project several majors behind picks them all up in one command. Supported from version 17 onward.
+
+Crossing v21 runs a migration that edits your workspace: it bumps the Jest packages, sets `Node16` module resolution and `isolatedModules` in `tsconfig.spec.json`, renames and removes builder options that changed in that version, and writes `zoneless: false` on any project it detects as zone-based. The full list of renamed and removed options is in the [migration guide](https://github.com/just-jeb/angular-builders/blob/master/MIGRATION.MD).
+
+Crossing v22 runs a second migration that touches nothing on disk. It only warns: ts-jest's `isolatedModules` now defaults to `true` (it lists any `const enum` in your source that this breaks), config loading now goes through jiti, and projects with a non-empty `root` write coverage under `<projectRoot>/coverage`.
+
+`@angular-builders/jest@22` peer-depends on Angular 22, so your project needs to be on Angular 22 before this update applies. The migrations above run in one pass; getting your project to Angular 22 is a separate step this command doesn't run.
 
 ## Builder options
 
@@ -155,10 +183,12 @@ The builder supports multi-project workspaces out of the box, the only thing req
   }
   ```
 
+  `ng update @angular-builders/jest` sets this automatically on any project it detects as zone-based, so most workspaces updating from v20 never need the manual edit above.
+
 - `globalMocks` - array (default: `["matchMedia"]`).
   Only `matchMedia` is supported as jsdom still doesn't implement `window.matchMedia`.
 
-  **BREAKING CHANGE in v21:** The `styleTransform`, `getComputedStyle`, and `doctype` mocks have been removed as Jest 30's jsdom now supports these natively.
+  **BREAKING CHANGE in v21:** The `styleTransform`, `getComputedStyle`, and `doctype` mocks have been removed as Jest 30's jsdom now supports these natively. The `ng update` migration strips these entries out of any test target that still references them.
 
   If you need custom browser API mocks, add your own setup file via `setupFilesAfterEnv` in your jest config.
 
@@ -262,3 +292,7 @@ beforeAll(async () => {
   ({ AppComponent } = await import('./app.component'));
 });
 ```
+
+## Further reading
+
+- [Running `ng test` with Jest](https://www.justjeb.com/post/angular-cli-ng-test-with-jest) — background from 2021 on switching a workspace from Karma to Jest by hand, published years before the `ng add` schematic existed. Worth reading to see what the schematic now does on your behalf; for setup, follow [Installation](#installation).

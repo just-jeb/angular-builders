@@ -7,6 +7,7 @@ Allow customizing ESBuild configuration
 # Table of Contents
 
 - [Usage](#usage)
+  - [Manual setup](#manual-setup)
   - [For Example](#for-example)
 - [Builders](#builders)
   - [Custom ESBuild `application`](#custom-esbuild-application)
@@ -17,6 +18,7 @@ Allow customizing ESBuild configuration
     - [Example](#example-1)
 - [Index Transform](#index-transform)
   - [Example](#example-2)
+- [Updating](#updating)
 - [ES Modules (ESM) Support](#es-modules-esm-support)
 
 # This documentation is for the latest major version only
@@ -41,6 +43,26 @@ Allow customizing ESBuild configuration
 - [Angular CLI 22](https://www.npmjs.com/package/@angular/cli)
 
 # Usage
+
+```bash
+ng add @angular-builders/custom-esbuild
+```
+
+This is the fastest path. It adds `@angular-builders/custom-esbuild` as a dev dependency and installs it, then updates `angular.json` for you. When a project's `build` target is already on esbuild (`@angular/build:application`), the schematic rewrites `build` to `@angular-builders/custom-esbuild:application` and `serve` to `@angular-builders/custom-esbuild:dev-server`, merging your existing options into the new target definitions. A `test` target already running Vitest gets rewired to `@angular-builders/custom-esbuild:unit-test` in the same pass, and running the schematic again is safe.
+
+When the `build` target is still on webpack, the schematic leaves it alone by default and logs what to do: run Angular's `use-application-builder` migration first, re-run `ng add @angular-builders/custom-esbuild`, then port anything in `webpack.config.js` into esbuild plugins by hand — see the `plugins` option [below](#custom-esbuild-application).
+
+Options:
+
+| Option             | What it does                                                                                                                                                                     |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--project <name>` | The project to configure; omit it in a single-project workspace. In a multi-project workspace it falls back to `defaultProject`, or configures every project if none is set.     |
+| `--unit-test`      | Creates a `test` target on `@angular-builders/custom-esbuild:unit-test`, or moves a Karma or Jest one onto it; without the flag, an existing Karma or Jest target is left alone. |
+| `--from-webpack`   | Runs the mechanical `build`/`serve` rewrite on a webpack project ahead of Angular's `use-application-builder` migration, leaving the plugin port manual.                         |
+
+## Manual setup
+
+`ng add` performs the steps below on your behalf. Reach for this section if you're wiring the builder in without the schematic, or want to see exactly what changes in `angular.json`.
 
 1.  `npm i -D @angular-builders/custom-esbuild`
 2.  In your `angular.json`:
@@ -241,7 +263,7 @@ The `@angular-builders/custom-esbuild:dev-server` is an enhanced version of the 
 ## Custom ESBuild `unit-test`
 
 The `@angular-builders/custom-esbuild:unit-test` builder is an enhanced version of the `@angular/build:unit-test` builder that reuses your application ESBuild plugins during test execution. It reads the `plugins` from the referenced `:application` build target and runs the official unit test builder with those plugins applied.
-There is no need to specify a `runner` option as the only supported test runner is Vitest.
+There is no need to specify a `runner` option as the only supported test runner is Vitest. A project still on Karma keeps its `test` target untouched when you run `ng add @angular-builders/custom-esbuild`; pass `--unit-test` to move it onto this builder.
 
 ### Example-1
 
@@ -328,17 +350,29 @@ export default (indexHtml: string, target: Target) => {
 
 In the example we add a paragraph with an example content to your `index.html`. It is a very simple example without any asynchronous code but you can also return a `Promise` from this function.
 
+# Updating
+
+```bash
+ng update @angular-builders/custom-esbuild
+```
+
+Version 22 replaced `ts-node` with [jiti](https://github.com/unjs/jiti) for loading `.ts` plugins and `indexHtmlTransformer` files. The migration cleans up the old setup: it strips the `ts-node/esm` loader workaround out of your npm scripts, removes the `ts-node` and `tsconfig-paths` devDependencies, and lifts path-mapping options out of a `ts-node` tsconfig section into `compilerOptions`. See the [migration guide](https://github.com/just-jeb/angular-builders/blob/master/MIGRATION.MD) for the full detail.
+
+One thing it can't automate: jiti transpiles `.ts` plugins and transformers at build time without type-checking them. See [Type-checking TypeScript plugins and transformers](#type-checking-typescript-plugins-and-transformers) for the CI-side workaround.
+
+Every migration between your installed version and the target runs in one pass, and updating from version 17 or later is supported. `@angular-builders/custom-esbuild@22` peer-depends on Angular 22, though, so the project needs to be on Angular 22 already before this command's migrations apply. Upgrading Angular itself is a separate step you run first.
+
 # ES Modules (ESM) Support
 
 Custom ESBuild builder fully supports ESM.
 
 - If your app has `"type": "module"` both `plugin.js` and `index-html-transformer.js` will be treated as ES modules, unless you change their file extension to `.cjs`. In that case they'll be treated as CommonJS Modules. [Example](../../examples/custom-esbuild/sanity-esbuild-app-esm).
 - For `"type": "commonjs"` (or unspecified type) both `plugin.js` and `index-html-transformer.js` will be treated as CommonJS modules unless you change their file extension to `.mjs`. In that case they'll be treated as ES Modules. [Example](../../examples/custom-esbuild/sanity-esbuild-app).
-- **TypeScript plugins and transformers work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. (Earlier versions required forcing a `ts-node/esm` loader through `NODE_OPTIONS`; that is no longer necessary.) TypeScript path aliases are supported in both module formats.
+- **TypeScript plugins and transformers work in both CommonJS and ESM projects with no extra setup** — just point the builder at your `.ts` file. Versions before 22 needed a `ts-node/esm` loader forced through `NODE_OPTIONS`; v22 moved to jiti and dropped that requirement. Running [`ng update @angular-builders/custom-esbuild`](#updating) strips the old `NODE_OPTIONS` setup from your scripts for you. TypeScript path aliases are supported in both module formats.
 
 ### Type-checking TypeScript plugins and transformers
 
-`.ts` plugins and `indexHtmlTransformer` files are loaded with [jiti](https://github.com/unjs/jiti) and **transpiled, not type-checked**, at build time. Your editor still type-checks them as you write. To enforce type-checking in CI, add a dedicated tsconfig that includes them and run `tsc`:
+`.ts` plugins and `indexHtmlTransformer` files are loaded with [jiti](https://github.com/unjs/jiti) and **transpiled, not type-checked**, at build time — the switch from `ts-node` in v22, covered by the [migration above](#updating). `ng update` handles the script, dependency, and tsconfig cleanup that switch requires; the type-checking gap it leaves behind is what this section is for. Your editor still type-checks them as you write. To enforce type-checking in CI, add a dedicated tsconfig that includes them and run `tsc`:
 
 `tsconfig.build-config.json`:
 

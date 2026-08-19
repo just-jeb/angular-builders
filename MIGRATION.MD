@@ -8,7 +8,9 @@ Version 22 introduces Angular schematics for the builder packages, so you no lon
 - `ng add @angular-builders/custom-esbuild` / `ng add @angular-builders/custom-webpack` — scaffold the custom build setup.
 - `ng update @angular-builders/jest` — runs the version migrations below automatically.
 
-The `ng update` migration window is `(from, to]`, so a project on **any version from 17 through 21 can jump straight to 22** in a single `ng update @angular-builders/jest`. The v21 migration (dep bumps, `Node16` tsconfig, option renames/removals — see the v20→v21 section below) and the v22 advisory both run in order.
+`ng update` runs every migration between the version you have installed and the one you are moving to, so the builder's own migrations all apply in one pass. For jest that is the v21 migration (dep bumps, `Node16` tsconfig, option renames/removals — see the v20→v21 section below) followed by the v22 advisory, in that order. Updating from version 17 or later is supported.
+
+Builder majors track Angular majors, and `@angular-builders/*@22` peer-depends on Angular 22, so a project several versions behind upgrades Angular first. `ng update @angular-builders/jest` then brings the builder in line; it does not perform the Angular upgrade for you.
 
 ## Breaking Changes
 
@@ -91,6 +93,7 @@ Users of `@angular-builders/jest` must update their `tsconfig.spec.json` to incl
 ### Required Changes
 
 1. **Update Jest to v30** - `jest-preset-angular` v16 requires Jest 30:
+
    ```bash
    npm install --save-dev jest@^30.0.0 jest-environment-jsdom@^30.0.0 jsdom@^26.0.0
    ```
@@ -110,6 +113,7 @@ Users of `@angular-builders/jest` must update their `tsconfig.spec.json` to incl
 ### Builder Schema Changes
 
 The following builder options have been **removed** (Jest 30 no longer supports them):
+
 - `browser` - Removed from Jest 30
 - `init` - Removed from Jest 30
 - `mapCoverage` - Was deprecated, now removed
@@ -117,10 +121,12 @@ The following builder options have been **removed** (Jest 30 no longer supports 
 - `timers` - Removed (use `fakeTimers` in jest config instead)
 
 The following builder options have been **renamed**:
+
 - `configPath` → `config` (now also supports inline JSON configuration in addition to file paths)
 - `testPathPattern` → `testPathPatterns` (now accepts multiple patterns)
 
 The following **defaults have changed**:
+
 - `testRunner` - Default changed from `jasmine2` to `jest-circus/runner`
 - `globalMocks` - Default changed from `["styleTransform", "matchMedia"]` to `["matchMedia"]`. The `styleTransform`, `getComputedStyle`, and `doctype` mocks have been removed as Jest 30's jsdom now supports these natively.
 - `zoneless` - New option, defaults to `true` for Angular 21+ zoneless applications. Set to `false` if your app uses zone.js change detection.
@@ -134,10 +140,12 @@ For more details, see the [Jest 30 changelog](https://jestjs.io/blog/2024/11/14/
 ## Breaking Changes
 
 ### Node.js Version Requirements
+
 - **Minimum Node.js version is now 20.19.0** (previously 18.19.1)
 - Node.js 18 is no longer supported
 
 ### Example Projects: TSLint → ESLint Migration
+
 All example projects have been migrated from the deprecated TSLint to modern ESLint using Angular's official migration tools. If you're using these examples as reference, update your linting setup accordingly by running `ng add @angular-eslint/schematics`.
 
 ## Custom ESBuild builder
@@ -145,6 +153,7 @@ All example projects have been migrated from the deprecated TSLint to modern ESL
 1. The `forceEsbuild` property has been removed from the dev-server configuration. This property is no longer supported since the builder now uses `@angular/build` directly, which uses esbuild by default.
 
    **Before:**
+
    ```json
    "serve": {
      "builder": "@angular-builders/custom-esbuild:dev-server",
@@ -156,6 +165,7 @@ All example projects have been migrated from the deprecated TSLint to modern ESL
    ```
 
    **After:**
+
    ```json
    "serve": {
      "builder": "@angular-builders/custom-esbuild:dev-server",
@@ -168,6 +178,7 @@ All example projects have been migrated from the deprecated TSLint to modern ESL
 2. **New Feature:** Plugins can now access builder options and target information through factory functions. This is a **non-breaking** enhancement - existing plugins continue to work unchanged.
 
    **New capability:**
+
    ```ts
    // esbuild/plugins.ts
    import type { Plugin } from 'esbuild';
@@ -180,7 +191,7 @@ All example projects have been migrated from the deprecated TSLint to modern ESL
        setup(build) {
          // Access current project name
          build.initialOptions.define.PROJECT_NAME = JSON.stringify(target.project);
-         
+
          // Access builder options like outputPath, tsConfig, etc.
          console.log('Building for project:', target.project);
          console.log('Output path:', builderOptions.outputPath);
