@@ -8695,6 +8695,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chrome-remote-interface@npm:0.33.3":
+  version: 0.33.3
+  resolution: "chrome-remote-interface@npm:0.33.3"
+  dependencies:
+    commander: "npm:2.11.x"
+    ws: "npm:^7.2.0"
+  bin:
+    chrome-remote-interface: bin/client.js
+  checksum: 10c0/fcc32714a9d20b21a62417341116e79e7838800e8545ce968b360486ccfa88873f631702a5b549c70801ed6358c32213bcd8657d6fab8eceb8c55ac0c43ceaf7
+  languageName: node
+  linkType: hard
+
 "chrome-trace-event@npm:^1.0.2":
   version: 1.0.4
   resolution: "chrome-trace-event@npm:1.0.4"
@@ -8950,6 +8962,13 @@ __metadata:
     table-layout: "npm:^0.4.3"
     typical: "npm:^2.6.1"
   checksum: 10c0/6d43f95b3fc77759510b0ee6195887f04e62c79b0537e0884f586008280509629f5914fb1ea88bfbf43dec0a539c2cda194607c62d1ba5d19682bddb9cfbff7f
+  languageName: node
+  linkType: hard
+
+"commander@npm:2.11.x":
+  version: 2.11.0
+  resolution: "commander@npm:2.11.0"
+  checksum: 10c0/19eaec3099eba7cc24617fd2bddf6430d62f9e91f0dbfc4abcc5a025f9a6c657526fea5f09243f90c99f87b0df29c29ab4aa4f250888987f658eda617238e55c
   languageName: node
   linkType: hard
 
@@ -9520,9 +9539,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:15.20.1":
-  version: 15.20.1
-  resolution: "cypress@npm:15.20.1"
+"cypress@npm:15.21.0":
+  version: 15.21.0
+  resolution: "cypress@npm:15.21.0"
   dependencies:
     "@cypress/request": "npm:^4.0.0"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -9535,6 +9554,7 @@ __metadata:
     buffer: "npm:^5.7.1"
     cachedir: "npm:^2.4.0"
     chalk: "npm:^4.1.0"
+    chrome-remote-interface: "npm:0.33.3"
     ci-info: "npm:^4.1.0"
     cli-table3: "npm:0.6.1"
     commander: "npm:^6.2.1"
@@ -9564,7 +9584,7 @@ __metadata:
     yauzl: "npm:^3.3.1"
   bin:
     cypress: bin/cypress
-  checksum: 10c0/35ae3824ca0038dcc8d92acf62fe12a1a22ece34c42a7834e6d45989ae822b2278605dec6bb1ebdea495f347db4b5b9daec848f65f180eb830a61da025eb34ed
+  checksum: 10c0/96f76fd57c3362619613f1e5da18f9c3e93686b80707bf4142f6d8ddca926110d622843463085d699dcb7f6db2532ec89854a8337694b971cdc7e86b4f5af4d0
   languageName: node
   linkType: hard
 
@@ -11404,7 +11424,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     html-webpack-plugin: "npm:5.6.8"
     jasmine-core: "npm:6.3.0"
@@ -14755,7 +14775,7 @@ __metadata:
     "@types/jest": "npm:30.0.0"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     jest: "npm:30.4.2"
     jest-environment-jsdom: "npm:30.4.1"
@@ -17000,7 +17020,7 @@ __metadata:
     "@cypress/schematic": "npm:5.0.0"
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.3"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
     karma-chrome-launcher: "npm:3.2.0"
@@ -17037,7 +17057,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
@@ -17075,7 +17095,7 @@ __metadata:
     "@eslint/js": "npm:10.0.1"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     puppeteer: "npm:25.7.0"
     rxjs: "npm:7.8.2"
@@ -17108,7 +17128,7 @@ __metadata:
     "@eslint/js": "npm:10.0.1"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     puppeteer: "npm:25.7.0"
     rxjs: "npm:7.8.2"
@@ -17544,7 +17564,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     jasmine-core: "npm:6.3.0"
     jest: "npm:30.4.2"
@@ -18375,7 +18395,7 @@ __metadata:
     "@types/jasmine": "npm:6.0.0"
     "@types/node": "npm:24.13.3"
     angular-eslint: "npm:22.1.0"
-    cypress: "npm:15.20.1"
+    cypress: "npm:15.21.0"
     eslint: "npm:10.8.1"
     jasmine-core: "npm:6.3.0"
     karma: "npm:6.4.4"
@@ -19965,6 +19985,21 @@ __metadata:
     sort-keys: "npm:^6.0.0"
     write-file-atomic: "npm:^6.0.0"
   checksum: 10c0/095607e497883994bb556d55696e39c8faea94a4c9441f199c94b8d03a857abfbc3b2e1dbcbca8b599609bb6d553a3af0d8dbbc22a43767dff7de53f8c4c6e49
+  languageName: node
+  linkType: hard
+
+"ws@npm:^7.2.0":
+  version: 7.5.13
+  resolution: "ws@npm:7.5.13"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: 10c0/e223726bbda5768ed58ec9252d04eda7018ef380ea122bb94e595a4d7a02b5baeb423933936576fddb8fa51b642375f7ae814bf0f6f5d9a3ce290566578a8c5a
   languageName: node
   linkType: hard
 
