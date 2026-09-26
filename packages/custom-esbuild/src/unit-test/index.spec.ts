@@ -62,6 +62,7 @@ describe('executeCustomEsbuildUnitTestBuilder', () => {
     'reporters',
     'setupFiles',
     'exclude',
+    'plugins',
   ] as const)(
     'should not pass an empty %s array that is not in angular.json to the Angular builder',
     async option => {
@@ -81,6 +82,14 @@ describe('executeCustomEsbuildUnitTestBuilder', () => {
       expect(delegated).toHaveProperty(option, []);
     }
   );
+
+  it('should keep an empty array for an option set in angular.json that a CLI flag emptied', async () => {
+    rawTestOptions = { coverageReporters: ['html'] };
+
+    const delegated = await delegatedOptions({ coverageReporters: [] });
+
+    expect(delegated).toHaveProperty('coverageReporters', []);
+  });
 
   it('should read the raw options of the test target being run', async () => {
     await delegatedOptions({});

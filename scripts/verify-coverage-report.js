@@ -17,12 +17,13 @@ if (!coverageArg) {
 
 const coverageDir = path.resolve(process.cwd(), coverageArg);
 
-if (!fs.existsSync(coverageDir)) {
+if (!fs.existsSync(coverageDir) || !fs.statSync(coverageDir).isDirectory()) {
   console.error(`FAIL: coverage directory ${coverageDir} was not created.`);
   process.exit(1);
 }
 
-const entries = fs.readdirSync(coverageDir);
+// Ignore OS artefacts such as .DS_Store so they cannot stand in for a report.
+const entries = fs.readdirSync(coverageDir).filter(entry => !entry.startsWith('.'));
 if (entries.length === 0) {
   console.error(`FAIL: coverage directory ${coverageDir} is empty (no reporter ran).`);
   process.exit(1);

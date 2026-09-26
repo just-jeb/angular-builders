@@ -34,7 +34,7 @@ async function dropUnsetEmptyArrayOptions(
   for (const option of Object.keys(options) as (keyof CustomEsbuildUnitTestSchema)[]) {
     const value = options[option];
 
-    if (Array.isArray(value) && !value.length && !(option in rawOptions)) {
+    if (Array.isArray(value) && !value.length && !Object.hasOwn(rawOptions, option)) {
       delete options[option];
     }
   }
