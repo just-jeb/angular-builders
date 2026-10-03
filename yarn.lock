@@ -4942,6 +4942,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@inquirer/expand@npm:^5.1.5":
+  version: 5.1.5
+  resolution: "@inquirer/expand@npm:5.1.5"
+  dependencies:
+    "@inquirer/core": "npm:^12.0.3"
+    "@inquirer/type": "npm:4.1.1"
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 10c0/30791746f2f7ba061daccb2f601d293442b1d3f6b30436bd3b3f47ed2ffcae40b1cd178e6e575237f14e85a9e2e48ca884d7c4d316ae0cfd9d2c1007b8761613
+  languageName: node
+  linkType: hard
+
 "@inquirer/external-editor@npm:^3.0.5":
   version: 3.0.5
   resolution: "@inquirer/external-editor@npm:3.0.5"
@@ -4983,6 +4998,21 @@ __metadata:
     "@types/node":
       optional: true
   checksum: 10c0/9c3614f8d79fc2bec07a088858a58967a162046c9292b0c6f0c6f63396cf391181cfb54bb636f5b3dce8d23924c24ee4a0310183a493c94190e4750218f3744d
+  languageName: node
+  linkType: hard
+
+"@inquirer/input@npm:^5.1.6":
+  version: 5.1.6
+  resolution: "@inquirer/input@npm:5.1.6"
+  dependencies:
+    "@inquirer/core": "npm:^12.0.3"
+    "@inquirer/type": "npm:4.1.1"
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 10c0/aaf2a5db5e4ce9d45905ec4006d8772e49785682fa4cd0be66fe8324eaaffc77b9ef47ad5656d617c90be2f2a395c10e3a22e65f4b20ed09a0b5453161fa6125
   languageName: node
   linkType: hard
 
@@ -5085,6 +5115,23 @@ __metadata:
     "@types/node":
       optional: true
   checksum: 10c0/3c6d0151b5a29111254a58eaf8b93bb4c476e68b0751526d8bff61a4bea457bdbe782890ae33977c5d2015f436596b5d32a8bb0677bfdf610f5f5998e65f5a92
+  languageName: node
+  linkType: hard
+
+"@inquirer/select@npm:^5.2.5":
+  version: 5.2.5
+  resolution: "@inquirer/select@npm:5.2.5"
+  dependencies:
+    "@inquirer/ansi": "npm:^2.0.8"
+    "@inquirer/core": "npm:^12.0.3"
+    "@inquirer/figures": "npm:^2.0.9"
+    "@inquirer/type": "npm:4.1.1"
+  peerDependencies:
+    "@types/node": ">=18"
+  peerDependenciesMeta:
+    "@types/node":
+      optional: true
+  checksum: 10c0/93b227b1cd7d7139b7aec58314aee90c690f91a6816ed1b0abc2334772c1d5d24c6f1e213844f1f251d8c1e7bdc7fb0e8151b8b8b95686e09d3c8991dabe65e8
   languageName: node
   linkType: hard
 
@@ -5885,16 +5932,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna-lite/cli@npm:5.6.1, @lerna-lite/cli@npm:^5.0.0":
-  version: 5.6.1
-  resolution: "@lerna-lite/cli@npm:5.6.1"
+"@lerna-lite/cli@npm:5.6.2, @lerna-lite/cli@npm:^5.0.0":
+  version: 5.6.2
+  resolution: "@lerna-lite/cli@npm:5.6.2"
   dependencies:
-    "@lerna-lite/core": "npm:5.6.1"
-    "@lerna-lite/init": "npm:5.6.1"
+    "@lerna-lite/core": "npm:5.6.2"
+    "@lerna-lite/init": "npm:5.6.2"
     "@lerna-lite/npmlog": "npm:5.4.1"
     dotenv: "npm:^17.4.2"
     import-local: "npm:^3.2.0"
-    yargs: "npm:^18.1.0"
+    yargs: "npm:^18.2.0"
   peerDependenciesMeta:
     "@lerna-lite/exec":
       optional: true
@@ -5910,40 +5957,40 @@ __metadata:
       optional: true
   bin:
     lerna: dist/cli.js
-  checksum: 10c0/176c9a676eae79de7b63d2fa5c9e5403a3122bc80f2afebb7e266bf5d78c7e58af90d7aedb066d48ecdc06e32cc50e09ff329283a1f318cb5184cb1a83b59efa
+  checksum: 10c0/05c500c91432dc1b5e37db6b5ff9da7821814f1e98a9218231efa88b30655a56340c0f1cd9d8ad7b7e1f0a4fbc46387bd50168f742eff669f230f053cdc5eabd
   languageName: node
   linkType: hard
 
-"@lerna-lite/core@npm:5.6.1":
-  version: 5.6.1
-  resolution: "@lerna-lite/core@npm:5.6.1"
+"@lerna-lite/core@npm:5.6.2":
+  version: 5.6.2
+  resolution: "@lerna-lite/core@npm:5.6.2"
   dependencies:
-    "@inquirer/expand": "npm:^5.1.1"
-    "@inquirer/input": "npm:^5.1.2"
-    "@inquirer/select": "npm:^5.2.1"
+    "@inquirer/expand": "npm:^5.1.5"
+    "@inquirer/input": "npm:^5.1.6"
+    "@inquirer/select": "npm:^5.2.5"
     "@lerna-lite/npmlog": "npm:5.4.1"
     "@npmcli/run-script": "npm:^10.0.4"
     ci-info: "npm:^4.4.0"
     json5: "npm:^2.2.3"
     lilconfig: "npm:^3.1.3"
     npm-package-arg: "npm:^13.0.2"
-    tinyexec: "npm:^1.3.0"
-    verkit: "npm:^0.4.0"
+    tinyexec: "npm:^1.3.1"
+    verkit: "npm:^0.5.0"
     write-file-atomic: "npm:^7.0.1"
     write-json-file: "npm:^7.0.0"
-    yaml: "npm:^2.9.0"
+    yaml: "npm:^2.9.1"
     zeptomatch: "npm:^2.1.0"
-  checksum: 10c0/bb2e665119996a677757ed9453673f08bd01636b2c9aae1164307c6c376a2d71b218528e82281666b5679a7058f63a1f8715412f652615b09fdb560e898be78c
+  checksum: 10c0/a0371e85962b8e79ff6579dcb26635ea236a63807f20483d8207c2ab26a78f7f6d63cc02e4c957638edcd49e6c0d8ad5a4049c54e8a4d627fb70b97702aed809
   languageName: node
   linkType: hard
 
-"@lerna-lite/init@npm:5.6.1":
-  version: 5.6.1
-  resolution: "@lerna-lite/init@npm:5.6.1"
+"@lerna-lite/init@npm:5.6.2":
+  version: 5.6.2
+  resolution: "@lerna-lite/init@npm:5.6.2"
   dependencies:
-    "@lerna-lite/core": "npm:5.6.1"
+    "@lerna-lite/core": "npm:5.6.2"
     write-json-file: "npm:^7.0.0"
-  checksum: 10c0/16e12458920d2454276e0e5e0a6e0703be0be5a1e92d7ba9d37598c7de17efc1a284dc49fbf17f35a90b78743601f631e0021d78641c3337627399690a448d8a
+  checksum: 10c0/b47f9596dc47469fadf305dfed4744219d279689792d6497f29f020cbfeab97b5e969ceb4124943372aa5a36080a0e0dfea7e86bda8cd72949cc060c223f00f0
   languageName: node
   linkType: hard
 
@@ -5958,13 +6005,13 @@ __metadata:
   linkType: hard
 
 "@lerna-lite/publish@npm:^5.0.0":
-  version: 5.6.1
-  resolution: "@lerna-lite/publish@npm:5.6.1"
+  version: 5.6.2
+  resolution: "@lerna-lite/publish@npm:5.6.2"
   dependencies:
-    "@lerna-lite/cli": "npm:5.6.1"
-    "@lerna-lite/core": "npm:5.6.1"
+    "@lerna-lite/cli": "npm:5.6.2"
+    "@lerna-lite/core": "npm:5.6.2"
     "@lerna-lite/npmlog": "npm:5.4.1"
-    "@lerna-lite/version": "npm:5.6.1"
+    "@lerna-lite/version": "npm:5.6.2"
     "@npmcli/arborist": "npm:^9.9.1"
     "@npmcli/package-json": "npm:^7.0.5"
     ci-info: "npm:^4.4.0"
@@ -5976,34 +6023,34 @@ __metadata:
     pacote: "npm:^21.5.1"
     ssri: "npm:^13.0.1"
     tar: "npm:^7.5.22"
-    verkit: "npm:^0.4.0"
-  checksum: 10c0/904bf445855fda122f2e1ea3ada7c6a8990f57e3503982f226827fc308405bf168111b0a6c8c449a92ef16500bd8e7eb6e6a9735d97ee80e31a998b27e42b156
+    verkit: "npm:^0.5.0"
+  checksum: 10c0/ce3d1fa82b8672fcd99f4099d92139890ea56f4fcae165c68532b755b411ea207f0445447a189e48457d7aad22d87131649388f62046ad8f1380d7b59e486781
   languageName: node
   linkType: hard
 
-"@lerna-lite/version@npm:5.6.1":
-  version: 5.6.1
-  resolution: "@lerna-lite/version@npm:5.6.1"
+"@lerna-lite/version@npm:5.6.2":
+  version: 5.6.2
+  resolution: "@lerna-lite/version@npm:5.6.2"
   dependencies:
     "@conventional-changelog/git-client": "npm:^3.1.2"
-    "@conventional-changelog/template": "npm:^1.3.0"
-    "@lerna-lite/cli": "npm:5.6.1"
-    "@lerna-lite/core": "npm:5.6.1"
+    "@conventional-changelog/template": "npm:^1.4.0"
+    "@lerna-lite/cli": "npm:5.6.2"
+    "@lerna-lite/core": "npm:5.6.2"
     "@lerna-lite/npmlog": "npm:5.4.1"
     "@octokit/plugin-enterprise-rest": "npm:^6.0.1"
     "@octokit/rest": "npm:^22.0.1"
     conventional-changelog: "npm:^8.1.3"
-    conventional-changelog-angular: "npm:^9.3.0"
+    conventional-changelog-angular: "npm:^9.4.0"
     conventional-changelog-writer: "npm:^9.2.1"
     conventional-commits-parser: "npm:^7.1.2"
     conventional-recommended-bump: "npm:^12.1.0"
     git-url-parse: "npm:^16.1.0"
     handlebars: "npm:^4.7.9"
     npm-package-arg: "npm:^13.0.2"
-    verkit: "npm:^0.4.0"
+    verkit: "npm:^0.5.0"
     write-json-file: "npm:^7.0.0"
     zeptomatch: "npm:^2.1.0"
-  checksum: 10c0/391f9e855454c351ac13c9f9a346e9ff85594ad8b757fd13bdd810b77205b2575e97480c9f115e06985e86fcfdd264a5cbd66021507b533022a7f56b25710e3c
+  checksum: 10c0/dff2eb97305b7bcc106ebe61bf09e13438421f24f0ccc698c7ec113e0fee7d59c37735833a5bb4a2c4a7ead3099966b900bb876ad1522ad9cb745aa59bc25b7a
   languageName: node
   linkType: hard
 
@@ -11175,7 +11222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"conventional-changelog-angular@npm:^9.3.0":
+"conventional-changelog-angular@npm:^9.4.0":
   version: 9.4.0
   resolution: "conventional-changelog-angular@npm:9.4.0"
   dependencies:
@@ -21318,6 +21365,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tinyexec@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "tinyexec@npm:1.3.1"
+  checksum: 10c0/c590369cb3fa73cc18a3998caec8a00f9712d91309c881be3ac52b160fb2f80c7b1fbf3591858ab6abab47ad55385b0c86ec19982e32441a01f55298dab9ccd2
+  languageName: node
+  linkType: hard
+
 "tinyglobby@npm:0.2.16":
   version: 0.2.16
   resolution: "tinyglobby@npm:0.2.16"
@@ -22133,10 +22187,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"verkit@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "verkit@npm:0.4.0"
-  checksum: 10c0/a3b794fa0902a3643ee2ae073eeb6fcc50e1245aa339f888aab7e02120d9d195beae9894fd1a8f8ea0fc2c0b20f089459d6d1aecfebe889e94bf8bf70f01c60e
+"verkit@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "verkit@npm:0.5.0"
+  checksum: 10c0/0bad45304bd0b3d2e56e4bdb422a43863c7a86902741eb632adb104ea37e1213706e08be4eaa7b3e28f843658be56ace16081d3ed3478477a5872f94a83ef7d0
   languageName: node
   linkType: hard
 
@@ -23140,6 +23194,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"yaml@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "yaml@npm:2.9.1"
+  bin:
+    yaml: bin.mjs
+  checksum: 10c0/9d06676ef02b89559a8b10a71882bd2cdae81e8393dc8dbc871615c3259475d9609ad973d19cb3c9e71e72d6206e3d1e7aa241c7e55f3d16fd2e77db305827d6
+  languageName: node
+  linkType: hard
+
 "yargs-parser@npm:^11.1.1":
   version: 11.1.1
   resolution: "yargs-parser@npm:11.1.1"
@@ -23171,7 +23234,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs@npm:18.1.0, yargs@npm:^18.1.0":
+"yargs@npm:18.1.0":
   version: 18.1.0
   resolution: "yargs@npm:18.1.0"
   dependencies:
@@ -23246,6 +23309,20 @@ __metadata:
     y18n: "npm:^5.0.5"
     yargs-parser: "npm:^22.0.0"
   checksum: 10c0/bf290e4723876ea9c638c786a5c42ac28e03c9ca2325e1424bf43b94e5876456292d3ed905b853ebbba6daf43ed29e772ac2a6b3c5fb1b16533245d6211778f3
+  languageName: node
+  linkType: hard
+
+"yargs@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "yargs@npm:18.2.0"
+  dependencies:
+    cliui: "npm:^9.0.1"
+    escalade: "npm:^3.1.1"
+    get-caller-file: "npm:^2.0.5"
+    string-width: "npm:^8.2.1"
+    y18n: "npm:^5.0.5"
+    yargs-parser: "npm:^22.0.0"
+  checksum: 10c0/7419338c3c00f9143ec6b6ab168335061c6f5342d161642aec23ff119e28cac1c417e0eca1d7dc82fd084f07207cc5d34c7d8315f605c0e3dbf12c350e405f3f
   languageName: node
   linkType: hard
 
