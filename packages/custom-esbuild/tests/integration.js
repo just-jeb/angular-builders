@@ -56,6 +56,13 @@ module.exports = [
     app: 'examples/custom-esbuild/sanity-esbuild-app-esm',
     command: 'yarn test -c tsEsm --no-watch',
   },
+  {
+    id: 'vitest-builder-coverage',
+    name: 'custom-esbuild: Vitest coverage report',
+    purpose: 'ng test --coverage writes a report to coverage/<project> (#2420)',
+    app: 'examples/custom-esbuild/sanity-esbuild-app',
+    command: 'yarn test-coverage',
+  },
 
   // Application builder + plugins tests
   {

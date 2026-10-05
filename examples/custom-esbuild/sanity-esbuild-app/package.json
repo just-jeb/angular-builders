@@ -9,7 +9,8 @@
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "build-target-options": "ng build --configuration target-options-test && node ../../../scripts/verify-target-options.js dist/sanity-esbuild-app/browser target-options-test"
+    "build-target-options": "ng build --configuration target-options-test && node ../../../scripts/verify-target-options.js dist/sanity-esbuild-app/browser target-options-test",
+    "test-coverage": "rm -rf coverage && ng test --no-watch --coverage && node ../../../scripts/verify-coverage-report.js coverage/sanity-esbuild-app"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +35,7 @@
     "@angular/language-service": "22.1.6",
     "@eslint/js": "10.0.1",
     "@types/node": "24.13.3",
+    "@vitest/coverage-v8": "4.1.11",
     "angular-eslint": "22.2.0",
     "cypress": "15.21.1",
     "eslint": "10.9.1",
