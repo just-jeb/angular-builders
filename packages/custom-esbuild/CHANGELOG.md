@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.2...%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.3) (2026-10-05)
+
+### Bug Fixes
+
+* **custom-esbuild:** drop empty array options in unit-test builder ([#2422](https://github.com/just-jeb/angular-builders/issues/2422)) ([cbaba07](https://github.com/just-jeb/angular-builders/commit/cbaba071a13aa0170a8e0c7ec9b997f467b5f64f)), closes [#2420](https://github.com/just-jeb/angular-builders/issues/2420)
+
 ## [22.0.2-beta.2](https://github.com/just-jeb/angular-builders/compare/%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.1...%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.2) (2026-10-03)
 
 **Note:** Version bump only for package @angular-builders/custom-esbuild
