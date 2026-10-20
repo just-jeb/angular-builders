@@ -46,10 +46,10 @@ Schema defaults: `path` defaults to `"./timestamp"`, `format` defaults to `"dd/m
 
 ## Common Tasks
 
-| Task                    | How                                    |
-| ----------------------- | -------------------------------------- |
-| Build the package       | `yarn build` from `packages/timestamp` |
-| Regenerate schema types | Automatic via prebuild (`quicktype`)   |
+| Task                    | How                                      |
+| ----------------------- | ---------------------------------------- |
+| Build the package       | `yarn build` from `packages/timestamp`   |
+| Regenerate schema types | Automatic via prebuild (`yarn generate`) |
 
 ## Pitfalls
 

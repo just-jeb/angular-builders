@@ -50,10 +50,10 @@ Required fields: `targetLabel` (string) and `bazelCommand` (enum: "build", "test
 
 ## Common Tasks
 
-| Task                    | How                                                                                     |
-| ----------------------- | --------------------------------------------------------------------------------------- |
-| Build the package       | `yarn build` from `packages/bazel`                                                      |
-| Regenerate schema types | `quicktype -s schema src/schema.json -o src/schema.ts` (done automatically in prebuild) |
+| Task                    | How                                                                                        |
+| ----------------------- | ------------------------------------------------------------------------------------------ |
+| Build the package       | `yarn build` from `packages/bazel`                                                         |
+| Regenerate schema types | `yarn generate` (wraps `scripts/generate-schema-types.js`; done automatically in prebuild) |
 
 ## Pitfalls
 

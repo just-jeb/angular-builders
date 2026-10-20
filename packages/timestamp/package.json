@@ -26,7 +26,7 @@
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
-    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
+    "generate": "node ../../scripts/generate-schema-types.js"
   },
   "dependencies": {
     "@angular-devkit/architect": ">=0.2200.0 < 0.2300.0",
