@@ -88,8 +88,7 @@ function migrateTsNodeTsconfigSections(packageName: string, tsconfigPaths: strin
       if (!tree.exists(path)) continue;
       const json = new JSONFile(tree, path);
       const section = json.get(['ts-node']) as
-        | { compilerOptions?: Record<string, JsonValue> }
-        | undefined;
+        { compilerOptions?: Record<string, JsonValue> } | undefined;
       const tsNodeCompilerOptions = section?.compilerOptions;
       if (!tsNodeCompilerOptions) continue;
 

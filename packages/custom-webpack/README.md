@@ -361,7 +361,7 @@ The following properties are available:
 
 - `path`: path to the extra webpack configuration, defaults to `webpack.config.js`.
   The configuration file can export either an object or a function. If it is an object it shall contain only modifications and additions, you don't have to specify the whole webpack configuration.  
-   Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:
+  Thus, if you'd like to add some options to `style-loader` (which already there because of default Angular configuration), you only have to specify this part of the loader:
   ```js
   {
     test: /\.css$/,
@@ -376,7 +376,7 @@ The following properties are available:
   }
   ```
   The builder will take care of merging the delta with the existing configuration provided by Angular.  
-   In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
+  In more complicated cases you'd probably want to [use a function](#custom-webpack-config-function) instead of an object.
 - `mergeRules`: webpack config merge rules, as described [here](https://github.com/survivejs/webpack-merge#mergewithrules). Defaults to:
 
   ```ts

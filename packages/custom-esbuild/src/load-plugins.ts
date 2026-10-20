@@ -16,9 +16,7 @@ export async function loadPlugins(
   tsConfig: string,
   logger: logging.LoggerApi,
   builderOptions:
-    | CustomEsbuildApplicationSchema
-    | CustomEsbuildDevServerSchema
-    | CustomEsbuildUnitTestSchema,
+    CustomEsbuildApplicationSchema | CustomEsbuildDevServerSchema | CustomEsbuildUnitTestSchema,
   target: Target
 ): Promise<Plugin[]> {
   const plugins = await Promise.all(
