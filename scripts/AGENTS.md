@@ -37,6 +37,8 @@
 
 - **`update-example.js`** -- Updates Angular dependencies in example app `package.json` files for a new Angular version.
 
+- **`generate-schema-types.js`** -- Run from a package directory by the `generate` script of `jest`, `bazel` and `timestamp`. Generates the git-ignored `src/schema.ts` from `src/schema.json` with quicktype. quicktype 26 emits an index signature for a top-level `additionalProperties`; jest's `string[]` one clashes with every typed option, so the types come from a temp copy of the schema with that keyword relaxed to `true` (`unknown` index signature). The shipped `schema.json` is never modified. Also passes `--no-prefer-unions` to keep string enums as TypeScript `enum`s.
+
 - **`default-registry.sh`** -- Called by the CI publish job for beta releases. Runs `yarn lerna publish --dist-tag=next --preid=beta --conventional-prerelease --yes`. Publishes to npm under the `next` tag. The graduate path (stable release) is handled directly in `ci.yml` via `npm run graduate`.
 
 ## Invariants

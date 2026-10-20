@@ -89,12 +89,12 @@ The `matchMedia` mock was also fixed (issue #1983) to survive Jest's `resetMocks
 
 ## Common Tasks
 
-| Task                    | How                                                                            |
-| ----------------------- | ------------------------------------------------------------------------------ |
-| Build the package       | `yarn build` from `packages/jest`                                              |
-| Run unit tests          | `yarn test` from `packages/jest`                                               |
-| Run integration tests   | `node scripts/run-local-tests.js --package jest` from repo root                |
-| Regenerate schema types | `quicktype -s schema src/schema.json -o src/schema.ts` (automatic in prebuild) |
+| Task                    | How                                                                               |
+| ----------------------- | --------------------------------------------------------------------------------- |
+| Build the package       | `yarn build` from `packages/jest`                                                 |
+| Run unit tests          | `yarn test` from `packages/jest`                                                  |
+| Run integration tests   | `node scripts/run-local-tests.js --package jest` from repo root                   |
+| Regenerate schema types | `yarn generate` (wraps `scripts/generate-schema-types.js`; automatic in prebuild) |
 
 ## Pitfalls
 
