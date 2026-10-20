@@ -2,7 +2,7 @@
   "name": "@angular-builders/bazel",
   "description": "Run Bazel under the Angular CLI",
   "license": "Apache-2.0",
-  "version": "22.0.0",
+  "version": "22.0.1-beta.0",
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +30,7 @@
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
-    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
+    "generate": "node ../../scripts/generate-schema-types.js"
   },
   "dependencies": {
     "@angular-devkit/architect": ">=0.2200.0 < 0.2300.0",
@@ -41,7 +41,7 @@
     "@angular-devkit/core": "^22.0.0",
     "@types/node": "^24.0.0",
     "cpy-cli": "^7.0.0",
-    "quicktype": "^15.0.260",
+    "quicktype": "^26.0.0",
     "rimraf": "^6.0.0",
     "typescript": "6.0.3"
   }

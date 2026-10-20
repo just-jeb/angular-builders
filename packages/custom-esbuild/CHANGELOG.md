@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [22.0.2-beta.4](https://github.com/just-jeb/angular-builders/compare/%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.3...%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.4) (2026-10-20)
+
+**Note:** Version bump only for package @angular-builders/custom-esbuild
+
 ## [22.0.2-beta.3](https://github.com/just-jeb/angular-builders/compare/%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.2...%40angular-builders%2Fcustom-esbuild%4022.0.2-beta.3) (2026-10-05)
 
 ### Bug Fixes
