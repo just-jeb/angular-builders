@@ -37,6 +37,12 @@
       "enabled": false
     },
     {
+      "description": "Hold jasmine-core majors until zone.js supports them. jasmine-core 7 blocks monkey patching, and zone.js/testing (which Angular's Karma builder always loads) still patches jasmine.getEnv().describe/it, so every Karma example dies with 'Cannot assign to read only property describe' (see #2394). Angular and Angular CLI still pin jasmine-core 6.3. Lift this once a zone.js release patches jasmine 7.",
+      "matchPackageNames": ["jasmine-core"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
       "description": "@angular-devkit/architect uses Angular's 0.{major}{minor}.{patch} scheme (0.2102 = v21.2). Renovate treats the leading 0 as the major, so a v21->v22 bump (0.2102 -> 0.2200) looks like a minor and slips past major-hold rules — it gets bundled into routine patch PRs and fragments the dep tree (see #2263). Reinterpret the real Angular major via regex versioning.",
       "matchPackageNames": ["@angular-devkit/architect"],
       "versioning": "regex:^0\\.(?<major>\\d{2})(?<minor>\\d{2})\\.(?<patch>\\d+)$"
