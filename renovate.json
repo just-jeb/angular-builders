@@ -37,8 +37,8 @@
       "enabled": false
     },
     {
-      "description": "Hold jasmine-core majors until zone.js supports them. jasmine-core 7 blocks monkey patching, and zone.js/testing (which Angular's Karma builder always loads) still patches jasmine.getEnv().describe/it, so every Karma example dies with 'Cannot assign to read only property describe' (see #2394). Angular and Angular CLI still pin jasmine-core 6.3. Lift this once a zone.js release patches jasmine 7.",
-      "matchPackageNames": ["jasmine-core"],
+      "description": "Hold jasmine-core majors, and the @types/jasmine majors that describe them, until zone.js supports them. jasmine-core 7 blocks monkey patching, and zone.js/testing (which Angular's Karma builder always loads) still patches jasmine.getEnv().describe/it, so every Karma example dies with 'Cannot assign to read only property describe' (see #2394). Angular and Angular CLI still pin jasmine-core 6.3. Lift this once a zone.js release patches jasmine 7.",
+      "matchPackageNames": ["jasmine-core", "@types/jasmine"],
       "matchUpdateTypes": ["major"],
       "enabled": false
     },
