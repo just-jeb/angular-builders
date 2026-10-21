@@ -9,7 +9,7 @@
   "prHourlyLimit": 3,
   "rebaseWhen": "behind-base-branch",
   "updateInternalDeps": true,
-  "postUpdateOptions": ["yarnDedupeFewer"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
       "matchPaths": ["packages/**"],
