@@ -65,7 +65,8 @@ export function executeCustomDevServerBuilder(
             path.join(workspaceRoot, buildOptions.indexHtmlTransformer),
             tsConfig,
             context.logger,
-            context.target
+            context.target,
+            buildOptions
           )
         : undefined;
 

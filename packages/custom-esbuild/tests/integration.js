@@ -117,11 +117,12 @@ module.exports = [
     command: 'yarn build -c tsEsm',
   },
 
-  // Target options accessibility (#1690, #1710)
+  // Target options accessibility (#1690, #1710, #2419)
   {
     id: 'target-options-in-plugin-and-transformer',
     name: 'custom-esbuild: target.configuration accessible in plugin and indexHtmlTransformer',
-    purpose: 'Factory plugin and indexHtmlTransformer both receive target.configuration at runtime',
+    purpose:
+      'Factory plugin and indexHtmlTransformer both receive target.configuration at runtime; the transformer also receives the builder options',
     app: 'examples/custom-esbuild/sanity-esbuild-app',
     command: 'yarn build-target-options',
   },
