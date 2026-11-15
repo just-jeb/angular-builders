@@ -26,15 +26,17 @@ describe('transform factories', () => {
     expect(indexHtml).toBeNull();
   });
 
-  it('loads the index transform via loadModule and passes the target', async () => {
+  it('loads the index transform via loadModule and passes the target and options', async () => {
     const transformer = jest.fn().mockResolvedValue('<html>transformed</html>');
     mockedLoadModule.mockResolvedValue(transformer as never);
     const target = { project: 'app', target: 'build' } as Target;
+    const options = { indexTransform: 'index.transform.ts', tsConfig: 'tsconfig.json' } as any;
 
-    const indexHtml = indexHtmlTransformFactory(
-      { indexTransform: 'index.transform.ts', tsConfig: 'tsconfig.json' } as any,
-      { workspaceRoot: '/root', target, logger } as any
-    );
+    const indexHtml = indexHtmlTransformFactory(options, {
+      workspaceRoot: '/root',
+      target,
+      logger,
+    } as any);
 
     const result = await indexHtml!('<html></html>');
 
@@ -42,7 +44,20 @@ describe('transform factories', () => {
     const [transformPath, tsConfigPath] = mockedLoadModule.mock.calls[0];
     expect(transformPath).toContain('index.transform.ts');
     expect(tsConfigPath).toContain('tsconfig.json');
-    expect(transformer).toHaveBeenCalledWith(target, '<html></html>');
+    expect(transformer).toHaveBeenCalledWith(target, '<html></html>', options);
     expect(result).toBe('<html>transformed</html>');
+  });
+
+  it('keeps two-argument transforms working', async () => {
+    mockedLoadModule.mockResolvedValue(
+      ((target: Target, html: string) => `${html} ${target.project}`) as never
+    );
+
+    const indexHtml = indexHtmlTransformFactory(
+      { indexTransform: 'index.transform.js', tsConfig: 'tsconfig.json' } as any,
+      { workspaceRoot: '/root', target: { project: 'app', target: 'build' }, logger } as any
+    );
+
+    await expect(indexHtml!('<html></html>')).resolves.toBe('<html></html> app');
   });
 });

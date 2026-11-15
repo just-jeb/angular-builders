@@ -10,7 +10,7 @@ import { CustomWebpackBuilder } from './custom-webpack-builder';
 import { CustomWebpackSchema } from './custom-webpack-schema';
 
 interface IndexHtmlTransformWithOptions {
-  (options: Target, indexHtml: string): Promise<string>;
+  (target: Target, indexHtml: string, options: CustomWebpackSchema): string | Promise<string>;
 }
 
 export const customWebpackConfigTransformFactory: (
@@ -45,7 +45,7 @@ export const indexHtmlTransformFactory: (
       logger
     );
 
-    return transform(target, indexHtml);
+    return transform(target, indexHtml, options);
   };
 };
 
