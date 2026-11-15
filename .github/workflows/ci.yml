@@ -82,6 +82,8 @@ jobs:
           key: cypress-${{ runner.os }}-${{ hashFiles('yarn.lock') }}
           restore-keys: cypress-${{ runner.os }}-
       - run: yarn --immutable
+      # Fails when .nvmrc is not Angular's minimum Node (see .github/AGENTS.md, "Node version").
+      - run: node scripts/check-node-version.js
       # Populate the Cypress cache above with the resolved version's binary (idempotent — a
       # no-op if already present). yarn's own postinstall skips this when build-state is
       # restored from cache, so do it explicitly. Invoke the hoisted binary directly: in Yarn

@@ -25,6 +25,8 @@
   - **Module mode:** Exports `{ discoverTests, getAffectedPackages }` (consumed by `run-local-tests.js`)
   - **Affected filtering:** If `.turbo/runs/*.json` exists, parses the most recent summary to find which `@angular-builders/*` packages were built, and filters tests to only those packages.
 
+- **`check-node-version.js`** -- Fails (exit 1) unless `.nvmrc` is on the minimum Node line of the installed `@angular/build`'s `engines.node` and at or above that minimum. Run by CI and `yarn check:node`.
+
 - **`run-local-tests.js`** -- Runs integration tests locally in parallel.
   - **Flags:** `--package <name>`, `--id <test-id>`, `--concurrency <N>`, `--verbose`
   - **Guarantees:** Runs each test in its example app directory via `sh -c`. Reports pass/fail with duration. Exit code 1 if any test fails.

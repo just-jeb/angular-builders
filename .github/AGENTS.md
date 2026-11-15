@@ -25,3 +25,5 @@
 **Puppeteer cache warming:** Chrome downloads lazily on first use, not during `yarn install`. The build job explicitly triggers the download so Chrome is included in the dependency cache for integration jobs that run Karma tests.
 
 **`ci:full` label -- when to apply:** Apply when changes touch shared infra (root configs, `common`, `scripts/`) where Turbo's affected-package filter may miss downstream breakage. The `labeled` event type on `pull_request` is required for this to work on already-open PRs -- without it, adding the label after PR creation has no effect.
+
+**Node version:** `.nvmrc` holds the minimum Node of the current Angular major, and every workflow reads it (`node-version-file`; `update.yml` too). Renovate holds `node` and `@types/node` below the next major (`renovate.json`), so PRs like "update node.js to v26" are closed, not merged. The hold moves forward through `scripts/check-node-version.js` (run in the `ci.yml` build job and as `yarn check:node`): when an Angular update raises the minimum in `@angular/build`'s `engines`, CI fails with the exact `.nvmrc` value to set. Steps are in `docs/runbooks/angular-major-upgrade.md`, step 4.
