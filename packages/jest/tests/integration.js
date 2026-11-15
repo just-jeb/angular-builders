@@ -188,4 +188,14 @@ module.exports = [
     app: 'examples/jest/multiple-apps',
     command: 'yarn e2e',
   },
+
+  // Install resolution with npm (#2387)
+  {
+    id: 'npm-peer-resolution',
+    name: 'jest: npm installs into a fresh Angular app',
+    purpose:
+      'npm resolves the packed builder into an ng-new dependency set with no ERESOLVE and no nested Angular copy, regression for #2387',
+    app: 'examples/jest/simple-app',
+    command: 'node ../../../packages/jest/tests/npm-peer-resolution.js',
+  },
 ];
