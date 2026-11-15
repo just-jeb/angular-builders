@@ -30,7 +30,8 @@ export function buildCustomEsbuildApplication(
           path.join(workspaceRoot, options.indexHtmlTransformer),
           tsConfig,
           context.logger,
-          context.target
+          context.target,
+          options
         )
       : undefined;
 
