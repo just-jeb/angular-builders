@@ -31,6 +31,7 @@
     "prepare": "husky",
     "update:package": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-package.js",
     "update:example": "cd $INIT_CWD && yarn node ${PROJECT_CWD}/scripts/update-example.js",
+    "check:node": "node scripts/check-node-version.js",
     "update:packages": "yarn workspaces foreach -A --include '@angular-builders/*' run update:package",
     "update:examples": "yarn workspaces foreach -A --exclude '@angular-builders/*' run update:example"
   },
@@ -41,7 +42,7 @@
     "@lerna-lite/cli": "^5.0.0",
     "@lerna-lite/publish": "^5.0.0",
     "@types/lodash": "^4.14.118",
-    "@types/node": "^24.0.0",
+    "@types/node": "^22.0.0",
     "@vitest/coverage-v8": "5.1.0",
     "husky": "^9.0.0",
     "jiti": "^2.7.0",

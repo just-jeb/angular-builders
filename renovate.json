@@ -31,6 +31,16 @@
       "automerge": false
     },
     {
+      "description": "Develop and test on the minimum Node that the current Angular major supports (.nvmrc), and type against the same line. Hold Node and @types/node to that major so Renovate stops proposing newer majors (#2460). The hold moves forward with Angular: when an Angular update raises the minimum, scripts/check-node-version.js fails CI until .nvmrc is bumped, and the same commit bumps allowedVersions here and @types/node. See .github/AGENTS.md, 'Node version'.",
+      "matchDatasources": ["node-version"],
+      "allowedVersions": "<23"
+    },
+    {
+      "description": "Keep @types/node on the same major as .nvmrc. Bump together with the Node line (see the Node hold above).",
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "<23"
+    },
+    {
       "description": "Hold TypeScript majors until Angular CLI's supported versions catch up — see #2123.",
       "matchPackageNames": ["typescript"],
       "matchUpdateTypes": ["major"],

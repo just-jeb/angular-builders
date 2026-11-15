@@ -14,7 +14,7 @@ A new Angular major reaches **RC** (start prework so PRs are ready when GA lands
 ## Preconditions
 
 - Clean root install: `yarn install` (a stale `node_modules` breaks Husky hooks — e.g. `yarn commitlint` not resolving — and builds).
-- Node satisfies the target Angular's requirement (Angular 20+: `^20.19 || ^22.12 || >=24`).
+- Node satisfies the target Angular's requirement, and `.nvmrc` holds that requirement's minimum (see step 4).
 
 ## Procedure
 
@@ -54,7 +54,10 @@ Runs `npx @angular/cli@<N> update @angular/core@<N> @angular/cli@<N> --create-co
 yarn install
 yarn build:packages:all
 yarn test:local                 # integration matrix against examples/*
+yarn check:node                 # .nvmrc must be Angular's minimum Node
 ```
+
+**Node version:** the repo runs on the minimum Node of the current Angular major (`engines.node` of `@angular/build`; Angular 22: `^22.22.3 || ^24.15.0 || >=26.0.0`, so 22.22.3). `yarn check:node` (also run in CI) fails after an Angular bump that raises the minimum. Fix it in the same PR: set `.nvmrc` to the new minimum, move the `"<23"` cap in the two Node rules of `renovate.json` and the `@types/node` ranges (root, `packages/bazel`, `packages/timestamp`, `examples/*`) to the new major line, then `yarn install`. Published packages' `engines` follow what the builders support for consumers, so leave them alone here.
 
 **This is the judgment core.** Expect breakage in the **packages layer** — internal Angular API moves (renamed/moved packages or exports) and builder-option schema changes are the most common (see `packages/AGENTS.md`). Fix per-package, rebuild, re-run until green.
 
