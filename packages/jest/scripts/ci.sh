@@ -93,3 +93,6 @@ cd ../../../packages/jest
 
 (ciApp ../../examples/jest/simple-app simpleAppTestOptions)
 (ciApp ../../examples/jest/multiple-apps multiAppTestOptions)
+
+# npm must install the packed builder into a fresh Angular app (#2387)
+node tests/npm-peer-resolution.js
